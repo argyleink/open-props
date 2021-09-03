@@ -1,0 +1,24 @@
+{
+  "name": "vite-preset-env",
+  "author": "Adam Argyle",
+  "license": "ISC",
+  "version": "0.0.0",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "blingblingjs": "2.x",
+    "canvas-confetti": "^1.3.3"
+  },
+  "devDependencies": {
+    "postcss-easings": "3.x",
+    "postcss-preset-env": "6.7.x",
+    "vite": "2.x  || >2.0.0-alpha"
+  }
+}

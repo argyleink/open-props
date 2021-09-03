@@ -1,0 +1,26 @@
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+
+:root {
+  color-scheme: dark light;
+}
+
+* {
+  box-sizing: border-box;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+
+  display: grid;
+  place-content: center;
+  gap: 2ch;
+
+  font-family: system-ui, sans-serif;
+}
