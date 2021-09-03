@@ -1,0 +1,31 @@
+:root {
+  --ease:               easeInOutExpo;
+
+  --ease-in-quad:       easeInQuad;
+  --ease-in-cubic:      easeInCubic;
+  --ease-in-quart:      easeInQuart;
+  --ease-in-quint:      easeInQuint;
+  --ease-in-expo:       easeInExpo;
+  --ease-in-circ:       easeInCirc;
+  --ease-in-back:       easeInBack;
+  /* --ease-in-bounce:     easeInBounce; */
+  /* --ease-in-elastic:    easeInElastic; */
+  --ease-out-quad:      easeOutQuad;
+  --ease-out-cubic:     easeOutCubic;
+  --ease-out-quart:     easeOutQuart;
+  --ease-out-quint:     easeOutQuint;
+  --ease-out-expo:      easeOutExpo;
+  --ease-out-circ:      easeOutCirc;
+  --ease-out-back:      easeOutBack;
+  /* --ease-out-bounce:    easeOutBounce; */
+  /* --ease-out-elastic:   easeOutElastic; */
+  --ease-in-out-quad:   easeInOutQuad;
+  --ease-in-out-cubic:  easeInOutCubic;
+  --ease-in-out-quart:  easeInOutQuart;
+  --ease-in-out-quint:  easeInOutQuint;
+  --ease-in-out-expo:   easeInOutExpo;
+  --ease-in-out-circ:   easeInOutCirc;
+  --ease-in-out-back:   easeInOutBack;
+  /* --ease-in-out-bounce: easeInOutBounce; */
+  /* --ease-in-out-elastic: easeInOutElastic; */
+}

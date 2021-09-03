@@ -1,0 +1,26 @@
+@import 'src/reset.css';
+@import 'src/brand.css';
+
+body {
+  display: grid;
+  place-content: center;
+  padding: var(--size-8);
+}
+
+main {
+  display: grid;
+  justify-items: flex-start;
+  gap: var(--size-3);
+
+  & > h1 {
+    padding-block: var(--size-3);
+    padding-inline: var(--size-5);
+    box-shadow: var(--shadow-normal);
+    border-radius: var(--radius-lg);
+  }
+}
+
+h1 { font-size: var(--size-6-fluid) }
+h2 { font-size: var(--size-5-fluid) }
+h3 { font-size: var(--size-4-fluid) }
+h4 { font-size: var(--size-3-fluid) }

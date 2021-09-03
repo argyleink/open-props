@@ -1,0 +1,20 @@
+:root {
+  --shadow: 220 0% 15%;
+  --shadow-strength: 1%;
+
+  --shadow-normal:
+    0 -2px 5px 0 hsl(var(--shadow) / calc(var(--shadow-strength) + 5%)),
+    0 1px 1px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 10%)),
+    0 2px 2px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 12%)),
+    0 5px 5px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 13%)),
+    0 9px 9px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 14%)),
+    0 16px 16px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 20%))
+  ;
+  /* --shadow-short: ;
+  --shadow-long: ; */
+
+  @media (--dark) {
+    --shadow-strength: 5%;
+    --shadow: 220 0% 2%;
+  }
+}

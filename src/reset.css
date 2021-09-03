@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+:root {
+  color-scheme: dark light;
+}
+
+html {
+  block-size: 100%;
+
+  &:focus-within {
+    @media (--motionOK) {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+body {
+  min-block-size: 100%;
+  font-family: var(--font-sans);
+}
+
+:where(h1,h2,h3,h4,h5,h6) {
+  line-height: var(--font-leading-normal);
+  max-inline-size: var(--size-header-normal);
+}
+
+p {
+  line-height: var(--font-leading-normal);
+  font-size: var(--size-4);
+  font-weight: var(--font-book);
+  max-inline-size: var(--size-content-normal);
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 1px;
+}
+
+a, button {
+  touch-action: manipulation;
+}
+
+img, picture {
+  max-inline-size: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}

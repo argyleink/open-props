@@ -1,0 +1,48 @@
+:root {
+  --size-000: -.5rem;
+  --size-00: -.25rem;
+  --size-1: .25rem;
+  --size-2: .5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 2.5rem;
+  --size-9: 3rem;
+  --size-10: 3.5rem;
+  --size-11: 4rem;
+  --size-12: 5rem;
+  --size-13: 7rem;
+  --size-14: 9rem;
+  --size-15: 10rem;
+
+  --size-1-fluid: clamp(.5rem, .5 * 2vw, .5 * 1.5rem);
+  --size-2-fluid: clamp(.75rem, .75 * 2vw, .75 * 1.5rem);
+  --size-3-fluid: clamp(1rem, 1 * 2vw, 1 * 1.5rem);
+  --size-4-fluid: clamp(1.25rem, 1.25 * 2vw, 1.25 * 1.5rem);
+  --size-5-fluid: clamp(1.5rem, 1.5 * 2vw, 1.5 * 1.5rem);
+  --size-6-fluid: clamp(2rem, 2 * 2vw, 2 * 1.5rem);
+
+  --size-content-narrow: 20ch;
+  --size-content-normal: 45ch;
+  --size-content-wide: 70ch;
+
+  --size-header-narrow: 15ch;
+  --size-header-normal: 25ch;
+  --size-header-wide: 40ch;
+
+  --width-1: 240px;
+  --width-2: 320px;
+  --width-3: 480px;
+  --width-4: 540px;
+  --width-5: 640px;
+  --width-6: 720px;
+  --width-7: 768px;
+  --width-8: 896px;
+  --width-9: 1024px;
+  --width-10: 1152px;
+  --width-11: 1280px;
+  --width-12: 1440px;
+  --width-13: 1920px;
+}

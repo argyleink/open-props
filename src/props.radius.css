@@ -1,0 +1,12 @@
+:root {
+  --radius-sm: 2px;
+  --radius-md: 5px;
+  --radius-lg: 1rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 4rem;
+  --radius-3xl: 8rem;
+
+  --radius-round: 100vmax;
+  --radius-blob-1: 30% 70% 70% 30% / 53% 30% 70% 47% ;
+  --radius-blob-2: 53% 47% 34% 66% / 63% 46% 54% 37% ;
+}

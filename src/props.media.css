@@ -1,0 +1,3 @@
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+@custom-media --dark (prefers-color-scheme: dark);
+@custom-media --light (prefers-color-scheme: light);
