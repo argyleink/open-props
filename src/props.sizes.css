@@ -1,4 +1,9 @@
 :root {
+  --size-screen-height: 100vh;
+  --size-screen-width: 100vw;
+  /* --size-screen-height: 100dvb;
+  --size-screen-width: 100dvi; */
+
   --size-000: -.5rem;
   --size-00: -.25rem;
   --size-1: .25rem;

@@ -3,26 +3,39 @@
   --font-serif: serif;
   --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
 
-  --font-light: 100;
+  --font-thin: 100;
   --font-semilight: 200;
-  --font-book: 300;
-  --font-regular: 400;
+  --font-light: 300;
+  --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
-  --font-semibold: 800;
+  --font-extrabold: 800;
   --font-black: 900;
 
   --font-leading-none: 1.1;
-  --font-leading-xs: 1.15;
-  --font-leading-sm: 1.25;
+  --font-leading-tight: 1.25;
+  --font-leading-snug: 1.375;
   --font-leading-normal: 1.5;
-  --font-leading-lg: 1.75;
-  --font-leading-xl: 2;
+  --font-leading-relaxed: 1.75;
+  --font-leading-loose: 2;
 
-  --font-kerning-00: -.05em;
-  --font-kerning-xs: .025em;
-  --font-kerning-sm: .05em;
-  --font-kerning-lg: .1em;
-  --font-kerning-xl: .25em;
+  /* --font-leading-0: 1.1;
+  --font-leading-1: 1.25;
+  --font-leading-2: 1.375;
+  --font-leading-3: 1.5;
+  --font-leading-4: 1.75;
+  --font-leading-5: 2; */
+
+  --font-tracking-tighter: -.05em;
+  --font-tracking-tight: .025em;
+  --font-tracking-wide: .025em;
+  --font-tracking-wider: .05em;
+  --font-tracking-widest: .1em;
+
+  /* --font-tracking-00: -.05em;
+  --font-tracking-1: .025em;
+  --font-tracking-2: .025em;
+  --font-tracking-3: .05em;
+  --font-tracking-4: .1em; */
 }
