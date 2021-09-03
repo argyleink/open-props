@@ -16,7 +16,7 @@ main {
     padding-block: var(--size-3);
     padding-inline: var(--size-5);
     box-shadow: var(--shadow-normal);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-4);
   }
 }
 

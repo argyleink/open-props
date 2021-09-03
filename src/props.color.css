@@ -1,0 +1,16 @@
+:root {
+  --gray-chroma: 0%;
+  --gray-hue: 0deg;
+  --gray-base: var(--gray-chroma) var(--gray-hue);
+  --gray-mid: lch(50% var(--gray-base));
+
+  --cool-gray-chroma: 20%;
+  --cool-gray-hue: 210deg;
+  --cool-gray-base: var(--cool-gray-chroma) var(--cool-gray-hue);
+  --cool-gray-mid: lch(50% var(--cool-gray-base));
+
+  --red-chroma: 80%;
+  --red-hue: 0deg;
+  --red-base: var(--red-chroma) var(--red-hue);
+  --red-mid: lch(50% var(--red-base));
+}
