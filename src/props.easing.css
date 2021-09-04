@@ -1,5 +1,27 @@
 :root {
-  --ease:               easeInOutExpo;
+  --ease-1: cubic-bezier(.25, 0, .5, 1);
+  --ease-2: cubic-bezier(.25, 0, .4, 1);
+  --ease-3: cubic-bezier(.25, 0, .3, 1);
+  --ease-4: cubic-bezier(.25, 0, .2, 1);
+  --ease-5: cubic-bezier(.25, 0, .1, 1);
+
+  --easein-1: cubic-bezier(.25, 0, 1, 1);
+  --easein-2: cubic-bezier(.50, 0, 1, 1);
+  --easein-3: cubic-bezier(.70, 0, 1, 1);
+  --easein-4: cubic-bezier(.90, 0, 1, 1);
+  --easein-5: cubic-bezier(1, 0, 1, 1);
+
+  --easeout-1: cubic-bezier(0, 0, .75, 1);
+  --easeout-2: cubic-bezier(0, 0, .50, 1);
+  --easeout-3: cubic-bezier(0, 0, .3, 1);
+  --easeout-4: cubic-bezier(0, 0, .1, 1);
+  --easeout-5: cubic-bezier(0, 0, 0, 1);
+
+  --easeinout-1: cubic-bezier(.1, 0, .9, 1);
+  --easeinout-2: cubic-bezier(.3, 0, .7, 1);
+  --easeinout-3: cubic-bezier(.5, 0, .5, 1);
+  --easeinout-4: cubic-bezier(.7, 0, .3, 1);
+  --easeinout-5: cubic-bezier(.9, 0, .1, 1);
 
   --ease-in-quad:       easeInQuad;
   --ease-in-cubic:      easeInCubic;
@@ -8,8 +30,6 @@
   --ease-in-expo:       easeInExpo;
   --ease-in-circ:       easeInCirc;
   --ease-in-back:       easeInBack;
-  /* --ease-in-bounce:     easeInBounce; */
-  /* --ease-in-elastic:    easeInElastic; */
   --ease-out-quad:      easeOutQuad;
   --ease-out-cubic:     easeOutCubic;
   --ease-out-quart:     easeOutQuart;
@@ -17,8 +37,6 @@
   --ease-out-expo:      easeOutExpo;
   --ease-out-circ:      easeOutCirc;
   --ease-out-back:      easeOutBack;
-  /* --ease-out-bounce:    easeOutBounce; */
-  /* --ease-out-elastic:   easeOutElastic; */
   --ease-in-out-quad:   easeInOutQuad;
   --ease-in-out-cubic:  easeInOutCubic;
   --ease-in-out-quart:  easeInOutQuart;
@@ -26,6 +44,4 @@
   --ease-in-out-expo:   easeInOutExpo;
   --ease-in-out-circ:   easeInOutCirc;
   --ease-in-out-back:   easeInOutBack;
-  /* --ease-in-out-bounce: easeInOutBounce; */
-  /* --ease-in-out-elastic: easeInOutElastic; */
 }

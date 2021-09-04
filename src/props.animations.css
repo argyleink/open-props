@@ -1,37 +1,25 @@
 :root {
-  --animation-spin: spin 1s linear infinite;
-  --animation-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animation-spin: spin 2s linear infinite;
+  --animation-ping: ping 5s var(--ease) infinite;
+  --animation-blink: blink 1s var(--ease) infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg) }
 }
 
 @keyframes ping {
-  75%, 100% {
+  90%, 100% {
     transform: scale(2);
     opacity: 0;
   }
 }
 
-@keyframes pulse {
+@keyframes blink {
   0%, 100% {
     opacity: 1;
   }
   50% {
     opacity: .5;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
