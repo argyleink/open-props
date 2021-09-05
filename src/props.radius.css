@@ -6,7 +6,7 @@
   --radius-5: 4rem;
   --radius-6: 8rem;
 
-  --radius-round: 100vmax;
+  --radius-round: 1e5px;
   --radius-blob-1: 30% 70% 70% 30% / 53% 30% 70% 47% ;
   --radius-blob-2: 53% 47% 34% 66% / 63% 46% 54% 37% ;
 }
