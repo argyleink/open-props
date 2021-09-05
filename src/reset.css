@@ -1,12 +1,18 @@
+/* todo: add :where() all over? */
+
+*, ::before, ::after { box-sizing: border-box; }
+
 * {
-  box-sizing: border-box;
   background-origin: border-box;
   background-repeat: no-repeat;
+  border-width: 0;
+  border-style: solid;
   margin: 0;
 }
 
 :root {
   color-scheme: dark light;
+  font-family: var(--font-sans);
 }
 
 html {
@@ -19,38 +25,73 @@ html {
   }
 }
 
-body {
-  min-block-size: 100%;
-  font-family: var(--font-sans);
-}
+body { min-block-size: 100%; }
 
-:where(h1,h2,h3,h4,h5,h6) {
-  line-height: var(--font-leading-normal);
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--font-leading-3);
   max-inline-size: var(--size-header-normal);
 }
 
 p {
-  line-height: var(--font-leading-normal);
+  line-height: var(--font-leading-3);
   font-size: var(--size-4);
   font-weight: var(--font-book);
   max-inline-size: var(--size-content-normal);
 }
 
-a {
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 1px;
-}
-
-a, button {
+a, area, button, input, label, select, summary, textarea, [tabindex] {
+  cursor: pointer;
   touch-action: manipulation;
 }
 
-img, picture {
+button {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+img, svg, video {
   max-inline-size: 100%;
-  display: block;
+  block-size: auto;
 }
 
 input, button, textarea, select {
   font: inherit;
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+textarea { resize: block; }
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
+}
+
+svg {
+  stroke: none;
+  fill: currentColor;
+
+  &:not([fill]) {
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &:not([width]) {
+    max-inline-size: 5ch;
+  }
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+pre { white-space: pre-wrap; }
+
+small { 
+  font-size: .75ch; 
+  max-inline-size: var(--size-content-tight);
 }
