@@ -13,29 +13,29 @@
   --font-extrabold: 800;
   --font-black: 900;
 
-  --font-leading-none: 1.1;
+  /* --font-leading-none: 1.1;
   --font-leading-tight: 1.25;
   --font-leading-snug: 1.375;
   --font-leading-normal: 1.5;
   --font-leading-relaxed: 1.75;
-  --font-leading-loose: 2;
+  --font-leading-loose: 2; */
 
-  /* --font-leading-0: 1.1;
+  --font-leading-0: 1.1;
   --font-leading-1: 1.25;
   --font-leading-2: 1.375;
   --font-leading-3: 1.5;
   --font-leading-4: 1.75;
-  --font-leading-5: 2; */
+  --font-leading-5: 2;
 
-  --font-tracking-tighter: -.05em;
+  /* --font-tracking-tighter: -.05em;
   --font-tracking-tight: .025em;
   --font-tracking-wide: .025em;
   --font-tracking-wider: .05em;
-  --font-tracking-widest: .1em;
+  --font-tracking-widest: .1em; */
 
-  /* --font-tracking-00: -.05em;
+  --font-tracking-00: -.05em;
   --font-tracking-1: .025em;
   --font-tracking-2: .025em;
   --font-tracking-3: .05em;
-  --font-tracking-4: .1em; */
+  --font-tracking-4: .1em;
 }

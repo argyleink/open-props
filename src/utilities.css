@@ -1,0 +1,7 @@
+.border-between-inline > * + * {
+  border-inline-start-width: var(--border);
+}
+
+.border-between-block > * + * {
+  border-block-start-width: var(--border);
+}
