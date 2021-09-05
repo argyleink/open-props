@@ -1,5 +1,6 @@
 @import 'src/reset.css';
 @import 'src/brand.css';
+/* @import 'src/utilities.css'; */
 
 body {
   display: grid;
@@ -13,12 +14,8 @@ main {
   gap: var(--size-4-fluid);
 
   & > h1 {
-    padding-block: var(--size-3);
-    padding-inline: var(--size-5);
     margin-block-end: var(--size-8);
-    box-shadow: var(--shadow-normal);
-    border-radius: var(--radius-4);
-    line-height: var(--font-leading-tight);
+    line-height: var(--font-leading-1);
   }
 }
 
