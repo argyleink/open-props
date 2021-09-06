@@ -16,6 +16,7 @@ main {
   & > h1 {
     margin-block-end: var(--size-8);
     line-height: var(--font-leading-1);
+    box-shadow: var(--shadow-2);
   }
 }
 
