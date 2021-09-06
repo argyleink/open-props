@@ -1,3 +1,1 @@
-import $ from 'blingblingjs'
-
-console?.log('ready.')
+console?.log('nothin to see here.')
