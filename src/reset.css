@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   line-height: var(--font-leading-3);
   font-size: var(--size-4);
-  font-weight: var(--font-book);
+  font-weight: var(--font-normal);
   max-inline-size: var(--size-content-normal);
 }
 
