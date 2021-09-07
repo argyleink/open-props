@@ -5,3 +5,9 @@
 .border-between-block > * + * {
   border-block-start-width: var(--border);
 }
+
+.gradient-border {
+  border-width: var(--size-3);
+  border-image-slice: 1;
+  border-image-source: var(--conic-gradient-3);
+}
