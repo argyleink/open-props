@@ -1,6 +1,12 @@
+* {
+  border-width: 0;
+  border-style: solid;
+}
+
 :root {
-  --border: 1px;
-  --border-1: 2px;
-  --border-2: 4px;
-  --border-3: 10px;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-3: 5px;
+  --border-4: 10px;
+  --border-5: 25px;
 }
