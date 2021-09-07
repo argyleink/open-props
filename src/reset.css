@@ -6,18 +6,13 @@
 * {
   background-origin: border-box;
   background-repeat: no-repeat;
-  border-width: 0;
-  border-style: solid;
   margin: 0;
-}
-
-:root {
-  color-scheme: dark light;
-  font-family: var(--font-sans);
 }
 
 html {
   block-size: 100%;
+  color-scheme: dark light;
+  font-family: var(--font-sans);
   line-height: var(--font-leading-3);
 
   &:focus-within {
@@ -30,15 +25,15 @@ html {
 body { min-block-size: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
-  max-inline-size: var(--size-header-normal);
+  max-inline-size: var(--size-header-2);
   line-height: var(--font-relative-leading-3);
 }
 
 p {
   font-size: var(--size-4);
   font-weight: var(--font-normal);
-  max-inline-size: var(--size-content-normal);
   line-height: var(--font-leading-3);
+  max-inline-size: var(--size-content-2);
 }
 
 a, area, button, input, label, select, summary, textarea, [tabindex] {
@@ -95,5 +90,5 @@ pre { white-space: pre-wrap; }
 
 small { 
   font-size: .75ch; 
-  max-inline-size: var(--size-content-tight);
+  max-inline-size: var(--size-content-1);
 }
