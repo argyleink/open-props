@@ -1,0 +1,4 @@
+:root {
+  --grid-stack: [stack] 1fr / [stack] 1fr;
+  --grid-ram: repeat(auto-fit, minmax(min(100%, 1fr), 1fr));
+}
