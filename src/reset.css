@@ -1,5 +1,4 @@
 /* todo: add :where() all over? */
-/* shift all props to html {}? */
 
 *, ::before, ::after { box-sizing: border-box; }
 

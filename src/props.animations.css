@@ -1,4 +1,4 @@
-:root {
+html {
   --animation-spin: spin 2s linear infinite;
   --animation-ping: ping 5s var(--ease) infinite;
   --animation-blink: blink 1s var(--ease) infinite;

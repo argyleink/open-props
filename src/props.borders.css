@@ -3,7 +3,7 @@
   border-style: solid;
 }
 
-:root {
+html {
   --border-1: 1px;
   --border-2: 2px;
   --border-3: 5px;
