@@ -1,20 +1,3 @@
-/* :root {
-  --gray-chroma: 0%;
-  --gray-hue: 0deg;
-  --gray-base: var(--gray-chroma) var(--gray-hue);
-  --gray-mid: lch(50% var(--gray-base));
-
-  --cool-gray-chroma: 20%;
-  --cool-gray-hue: 210deg;
-  --cool-gray-base: var(--cool-gray-chroma) var(--cool-gray-hue);
-  --cool-gray-mid: lch(50% var(--cool-gray-base));
-
-  --red-chroma: 80%;
-  --red-hue: 0deg;
-  --red-base: var(--red-chroma) var(--red-hue);
-  --red-mid: lch(50% var(--red-base));
-} */
-
 /* generated with props.colors.src.js */
 :root {
   --gray-50: #f8f9fa;
@@ -148,3 +131,20 @@
   --orange-8: #e8590c;
   --orange-9: #d9480f;
 }
+
+/* :root {
+  --gray-chroma: 0%;
+  --gray-hue: 0deg;
+  --gray-base: var(--gray-chroma) var(--gray-hue);
+  --gray-mid: lch(50% var(--gray-base));
+
+  --cool-gray-chroma: 20%;
+  --cool-gray-hue: 210deg;
+  --cool-gray-base: var(--cool-gray-chroma) var(--cool-gray-hue);
+  --cool-gray-mid: lch(50% var(--cool-gray-base));
+
+  --red-chroma: 80%;
+  --red-hue: 0deg;
+  --red-base: var(--red-chroma) var(--red-hue);
+  --red-mid: lch(50% var(--red-base));
+} */
