@@ -18,6 +18,7 @@
 
 html {
   block-size: 100%;
+  line-height: var(--font-leading-3);
 
   &:focus-within {
     @media (--motionOK) {
@@ -29,15 +30,15 @@ html {
 body { min-block-size: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: var(--font-leading-3);
   max-inline-size: var(--size-header-normal);
+  line-height: var(--font-relative-leading-3);
 }
 
 p {
-  line-height: var(--font-leading-3);
   font-size: var(--size-4);
   font-weight: var(--font-normal);
   max-inline-size: var(--size-content-normal);
+  line-height: var(--font-leading-3);
 }
 
 a, area, button, input, label, select, summary, textarea, [tabindex] {

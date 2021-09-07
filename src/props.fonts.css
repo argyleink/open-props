@@ -1,6 +1,6 @@
 :root {
   --font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-  --font-serif: serif;
+  --font-serif: ui-serif,serif;
   --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
 
   --font-thin: 100;
@@ -13,13 +13,7 @@
   --font-extrabold: 800;
   --font-black: 900;
 
-  /* --font-leading-none: 1.1;
-  --font-leading-tight: 1.25;
-  --font-leading-snug: 1.375;
-  --font-leading-normal: 1.5;
-  --font-leading-relaxed: 1.75;
-  --font-leading-loose: 2; */
-
+  --font-leading-00: .95;
   --font-leading-0: 1.1;
   --font-leading-1: 1.25;
   --font-leading-2: 1.375;
@@ -27,11 +21,12 @@
   --font-leading-4: 1.75;
   --font-leading-5: 2;
 
-  /* --font-tracking-tighter: -.05em;
-  --font-tracking-tight: .025em;
-  --font-tracking-wide: .025em;
-  --font-tracking-wider: .05em;
-  --font-tracking-widest: .1em; */
+  --font-relative-leading-1: calc(1rem + 1.1ch);
+  --font-relative-leading-2: calc(1rem + 1.25ch);
+  --font-relative-leading-3: calc(1rem + 1.5ch);
+  --font-relative-leading-4: calc(1rem + 2ch);
+  --font-relative-leading-5: calc(1rem + 2.5ch);
+  --font-relative-leading-6: calc(1rem + 3ch);
 
   --font-tracking-00: -.05em;
   --font-tracking-1: .025em;
