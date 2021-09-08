@@ -6,38 +6,49 @@
 body {
   display: grid;
   place-content: center;
-  padding: var(--size-8);
+  padding-inline: var(--size-8);
 }
 
-main {
-  display: grid;
-  justify-items: flex-start;
-  gap: var(--size-fluid-4);
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding-block: var(--size-5);
 
-  & > h1 {
-    margin-block-end: var(--size-8);
+  & > a {
+    color: var(--text-1);
+    text-decoration-color: var(--brand);
+  }
+
+  & > a:first-child {
+    flex: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-2);
+
+    & > svg {
+      block-size: 3ch;
+    }
   }
 }
 
-.fluid-headers {
+.hero {
+  margin-block: var(--size-fluid-6);
+  display: grid;
+  gap: var(--size-6);
+
+  & > h1 {
+    background-image: var(--conic-gradient-3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* .fluid-headers {
   & h1 { font-size: var(--font-size-fluid-3) }
   & h2 { font-size: var(--font-size-fluid-2) }
   & h3 { font-size: var(--font-size-fluid-1) }
   & h4 { font-size: var(--font-size-fluid-00) }
-}
+} */
 
 a { color: var(--brand) }
-
-button {
-  padding: var(--size-fluid-2) var(--size-fluid-4);
-  border-radius: var(--radius-2);
-  color: var(--indigo-2);
-  border-width: var(--size-fluid-1);
-  border-image-slice: 1;
-  border-image-source: var(--conic-gradient-3);
-  background-color: transparent;
-
-  &:hover {
-    background-color: var(--indigo-7);
-  }
-}
