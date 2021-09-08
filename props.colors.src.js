@@ -6,7 +6,7 @@ const colors = Object
 
 const customizeIncrements = num =>
   num === '50'
-    ? num
+    ? num.replaceAll('50', '0')
     : num.replaceAll('0', '')
 
 const vars = colors.reduce((root, [color, shades]) => {

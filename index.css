@@ -7,13 +7,14 @@ body {
   display: grid;
   place-content: center;
   padding-inline: var(--size-8);
+  padding-block: var(--size-6);
+  gap: var(--size-8);
 }
 
 nav {
   display: flex;
   align-items: center;
   gap: var(--size-4);
-  padding-block: var(--size-5);
 
   & > a {
     color: var(--text-1);
@@ -33,9 +34,11 @@ nav {
 }
 
 .hero {
-  margin-block: var(--size-fluid-6);
+  padding-block: var(--size-fluid-6);
   display: grid;
   gap: var(--size-6);
+  border-block-end-width: 1px;
+  border-color: var(--orange-5);
 
   & > h1 {
     background-image: var(--conic-gradient-3);
