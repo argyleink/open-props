@@ -5,7 +5,7 @@ html {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg) }
+  to { transform: rotate(1turn) }
 }
 
 @keyframes ping {
