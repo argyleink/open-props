@@ -2,8 +2,48 @@
 @custom-media --dark (prefers-color-scheme: dark);
 @custom-media --light (prefers-color-scheme: light);
 
+@custom-media --portrait (orientation:portrait);
+@custom-media --landscape (orientation:landscape);
+
+@custom-media --safari (-webkit-hyphens:none);
+@custom-media --firefox (-moz-appearance:none);
+/* @custom-media --chrome (-webkit-hyphens:none); */
+
 /* todo: 
-- common widths (see sizes)
-- browser targeting
 - contrast preferences?
 */
+
+@custom-media --xs-phone              (width <= 240px);
+@custom-media --sm-phone              (width <= 360px);
+@custom-media --phone                 (width <= 480px);
+@custom-media --phablet               (width <= 768px);
+@custom-media --tablet                (width <= 1024px);
+@custom-media --laptop                (width <= 1440px);
+@custom-media --desktop               (width <= 1920px);
+@custom-media --xs-phone-n-up         (width > 240px);
+@custom-media --sm-phone-n-up         (width > 360px);
+@custom-media --phone-n-up            (width > 480px);
+@custom-media --phablet-n-up          (width > 768px);
+@custom-media --tablet-n-up           (width > 1024px);
+@custom-media --laptop-n-up           (width > 1440px);
+@custom-media --desktop-n-up          (width > 1920px);
+
+
+
+/* More specific queries */
+@custom-media --mobile-sm                (0px <= width <= 360px) and (orientation: portrait);
+@custom-media --mobile-large             (width > 360px) and (orientation: portrait);
+@custom-media --mobile-sm-landscape      (0px <= width <= 480px) and (orientation: landscape);
+@custom-media --mobile-large-landscape   (width > 480px) and (orientation: landscape);
+@custom-media --tablet-sm-landscape      (600px <= width <= 960px) and (orientation: landscape);
+@custom-media --tablet-large-landscape   (width > 960px) and (orientation: landscape);
+@custom-media --tablet-sm                (width >= 600px) and (orientation: portrait);
+@custom-media --tablet-large             (600px < width <= 840px) and (orientation : portrait);
+@custom-media --desktop-xs-landscape     (0px <= width <= 480px) and (orientation: landscape);
+@custom-media --desktop-xs               (0px <= width <= 480px) and (orientation: landscape);
+@custom-media --desktop-sm-landscape     (width >= 481px) and (width <= 840px) and (aspect >=ratio: 4/3);
+@custom-media --desktop-sm               (width >= 481px) and (width <= 840px) and (aspect <=ratio: 4/3);
+@custom-media --desktop-medium-landscape (width >= 841px) and (width <= 1280px) and (aspect >=ratio: 4/3);
+@custom-media --desktop-medium           (width >= 841px) and (width <= 1280px) and (aspect <=ratio: 4/3);
+@custom-media --desktop-large            (width >= 1281px) and (width <= 1600px);
+@custom-media --desktop-xlarge           (width >= 1601px) and (width >= 1920px);
