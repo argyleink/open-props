@@ -23,6 +23,8 @@ html {
   --easeinout-4: cubic-bezier(.7, 0, .3, 1);
   --easeinout-5: cubic-bezier(.9, 0, .1, 1);
 
+  --ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
+
   --ease-in-quad:       easeInQuad;
   --ease-in-cubic:      easeInCubic;
   --ease-in-quart:      easeInQuart;
