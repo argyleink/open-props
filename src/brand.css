@@ -1,3 +1,5 @@
+@import "props.media.css";
+
 html {
   --brand: var(--pink-6);
 
