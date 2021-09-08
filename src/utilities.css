@@ -11,3 +11,9 @@
   border-image-slice: 1;
   border-image-source: var(--conic-gradient-3);
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
