@@ -1,4 +1,4 @@
-*:not(hr,fieldset) {
+*:not(fieldset) {
   border-width: 0;
   border-style: solid;
 }

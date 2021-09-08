@@ -27,9 +27,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-black);
 }
 
-h1, h2 {
-  max-inline-size: var(--size-header-2);
-}
+h1 { max-inline-size: var(--size-header-1); }
+h2 { max-inline-size: var(--size-header-2); }
 
 h3, h4, h5, h6 {
   max-inline-size: var(--size-header-3);
@@ -54,10 +53,23 @@ a, area, button, input, label, select, summary, textarea, [tabindex] {
   touch-action: manipulation;
 }
 
+a {
+  text-decoration-color: var(--text-1);
+
+  &:not(:hover) {
+    text-decoration: inherit;
+  }
+}
+
 button {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
 }
 
 img, svg, video {
@@ -73,11 +85,6 @@ input, button, textarea, select {
 }
 
 textarea { resize: block; }
-
-img, svg, video, canvas, audio, iframe, embed, object {
-  display: block;
-  vertical-align: middle;
-}
 
 svg {
   stroke: none;
@@ -102,11 +109,12 @@ code, kbd, samp, pre {
 pre { white-space: pre-wrap; }
 
 small { 
-  font-size: max(.8rem, var(--font-size-00)); 
+  font-size: max(.5em, var(--font-size-00)); 
   max-inline-size: var(--size-content-1);
 }
 
 hr {
   margin-block: var(--size-fluid-5);
-  border-color: var(--gray-50);
+  height: 2px;
+  background-color: var(--surface-3);
 }
