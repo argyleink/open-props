@@ -1,5 +1,6 @@
 @import 'src/reset.css';
 @import 'src/brand.css';
+@import 'src/theme.css';
 /* @import 'src/utilities.css'; */
 
 body {
@@ -11,14 +12,32 @@ body {
 main {
   display: grid;
   justify-items: flex-start;
-  gap: var(--size-4-fluid);
+  gap: var(--size-fluid-4);
 
   & > h1 {
     margin-block-end: var(--size-8);
   }
 }
 
-h1 { font-size: var(--size-6-fluid) }
-h2 { font-size: var(--size-5-fluid) }
-h3 { font-size: var(--size-4-fluid) }
-h4 { font-size: var(--size-3-fluid) }
+.fluid-headers {
+  & h1 { font-size: var(--font-size-fluid-3) }
+  & h2 { font-size: var(--font-size-fluid-2) }
+  & h3 { font-size: var(--font-size-fluid-1) }
+  & h4 { font-size: var(--font-size-fluid-00) }
+}
+
+a { color: var(--brand) }
+
+button {
+  padding: var(--size-fluid-2) var(--size-fluid-4);
+  border-radius: var(--radius-2);
+  color: var(--indigo-2);
+  border-width: var(--size-fluid-1);
+  border-image-slice: 1;
+  border-image-source: var(--conic-gradient-3);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--indigo-7);
+  }
+}
