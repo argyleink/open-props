@@ -1,10 +1,14 @@
-:root {
-  --brand: hotpink;
-  accent-color: var(--brand);
-}
+/* todo: dark saturation reduction */
 
 html {
+  --brand: var(--pink-6);
+
   scrollbar-color: var(--brand) Canvas;
+  accent-color: var(--brand);
+
+  @media(--dark) {
+    --brand: var(--pink-4);
+  }
 }
 
 :focus-visible { outline-color: var(--brand); }

@@ -24,8 +24,16 @@ html {
 body { min-block-size: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
+  line-height: var(--font-relative-leading-2);
+  font-weight: var(--font-black);
+}
+
+h1, h2, h3 {
   max-inline-size: var(--size-header-2);
-  line-height: var(--font-relative-leading-3);
+}
+
+h4, h5, h6 {
+  max-inline-size: var(--size-header-3);
 }
 
 p {
@@ -90,4 +98,9 @@ pre { white-space: pre-wrap; }
 small { 
   font-size: .75ch; 
   max-inline-size: var(--size-content-1);
+}
+
+hr {
+  margin-block: var(--size-3-fluid);
+  border-color: var(--gray-50);
 }
