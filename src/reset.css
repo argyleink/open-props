@@ -107,6 +107,16 @@ code, kbd, samp, pre {
 }
 
 pre { white-space: pre-wrap; }
+ul,dl { font-size: var(--font-size-3); }
+
+dt { 
+  font-weight: var(--font-bold); 
+  color: var(--text-1);
+
+  &:not(:first-of-type) {
+    margin-block-start: var(--size-5);
+  }
+}
 
 small { 
   font-size: max(.5em, var(--font-size-00)); 
