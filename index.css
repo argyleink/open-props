@@ -8,7 +8,24 @@ body {
   place-content: center;
   padding-inline: var(--size-8);
   padding-block: var(--size-6);
-  gap: var(--size-8);
+}
+
+section {
+  padding-block: var(--size-fluid-6);
+  
+  &:not(:last-of-type) { border-block-end-width: 1px }
+  &:nth-of-type(1) { border-color: var(--orange-5) }
+  &:nth-of-type(2) { border-color: var(--red-5) }
+  &:nth-of-type(3) { border-color: var(--pink-5) }
+  &:nth-of-type(4) { border-color: var(--purple-5) }
+  &:nth-of-type(4) { border-color: var(--indigo-5) }
+  &:nth-of-type(4) { border-color: var(--blue-5) }
+  &:nth-of-type(4) { border-color: var(--green-5) }
+}
+
+header, section {
+  display: grid;
+  gap: var(--size-4);
 }
 
 nav {
@@ -34,12 +51,6 @@ nav {
 }
 
 .hero {
-  padding-block: var(--size-fluid-6);
-  display: grid;
-  gap: var(--size-6);
-  border-block-end-width: 1px;
-  border-color: var(--orange-5);
-
   & > h1 {
     background-image: var(--conic-gradient-3);
     -webkit-background-clip: text;
