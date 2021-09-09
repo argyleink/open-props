@@ -110,6 +110,8 @@ code, kbd, samp, pre {
 pre { white-space: pre-wrap }
 ul,ol,dl { font-size: var(--font-size-2) }
 ol,ul { padding-inline-start: var(--size-8); }
+dt { max-inline-size: var(--size-header-3); }
+li,dd { max-inline-size: var(--size-content-2); }
 
 dt { 
   font-weight: var(--font-bold); 
