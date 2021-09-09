@@ -1,6 +1,5 @@
 @import "props.media.css";
 /* todo: add :where() all over? */
-/* figcaption */
 
 *, ::before, ::after { box-sizing: border-box; }
 
@@ -22,7 +21,7 @@ html {
   }
 }
 
-body { min-block-size: 100%; }
+body { min-block-size: 100% }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--font-relative-leading-2);
@@ -44,7 +43,7 @@ h5 { font-size: var(--font-size-3) }
 h6 { font-size: var(--font-size-2) }
 
 p {
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-2);
   font-weight: var(--font-normal);
   line-height: var(--font-leading-3);
   max-inline-size: var(--size-content-2);
@@ -86,7 +85,7 @@ input, button, textarea, select {
   letter-spacing: inherit;
 }
 
-textarea { resize: block; }
+textarea { resize: block }
 
 svg {
   stroke: none;
@@ -108,8 +107,9 @@ code, kbd, samp, pre {
   font-family: var(--font-mono);
 }
 
-pre { white-space: pre-wrap; }
-ul,dl { font-size: var(--font-size-3); }
+pre { white-space: pre-wrap }
+ul,ol,dl { font-size: var(--font-size-2) }
+ol,ul { padding-inline-start: var(--size-8); }
 
 dt { 
   font-weight: var(--font-bold); 
@@ -129,4 +129,26 @@ hr {
   margin-block: var(--size-fluid-5);
   height: 2px;
   background-color: var(--surface-3);
+}
+
+figure {
+  display: grid;
+  gap: var(--size-2);
+  place-items: center;
+
+  & > figcaption {
+    font-size: var(--font-size-1);
+    max-inline-size: var(--size-content-2); 
+  }
+}
+
+blockquote {
+  font-family: var(--font-serif);
+  border-inline-start-width: var(--border-size-2);
+  padding-inline-start: var(--size-3);
+  position: relative;
+
+  & > footer {
+    font-family: var(--font-sans);
+  }
 }
