@@ -1,5 +1,6 @@
 @import "props.media.css";
 /* todo: add :where() all over? */
+/* figcaption */
 
 *, ::before, ::after { box-sizing: border-box; }
 
