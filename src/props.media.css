@@ -1,49 +1,45 @@
-@custom-media --motionOK (prefers-reduced-motion: no-preference);
-@custom-media --dark (prefers-color-scheme: dark);
-@custom-media --light (prefers-color-scheme: light);
+@custom-media --motionOK      (prefers-reduced-motion: no-preference);
+@custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
+@custom-media --useDataOK     (prefers-reduced-data: no-preference);
+@custom-media --dark          (prefers-color-scheme: dark);
+@custom-media --light         (prefers-color-scheme: light);
+@custom-media --highContrast  (prefers-contrast: high);
+@custom-media --lowContrast   (prefers-contrast: low);
 
-@custom-media --portrait (orientation:portrait);
-@custom-media --landscape (orientation:landscape);
+@custom-media --portrait      (orientation: portrait);
+@custom-media --landscape     (orientation: landscape);
 
-@custom-media --safari (-webkit-hyphens:none);
-@custom-media --firefox (-moz-appearance:none);
-/* @custom-media --chrome (-webkit-hyphens:none); */
+@custom-media --HDcolor       (dynamic-range: high);
 
-/* todo: 
-- contrast preferences?
-*/
+@custom-media --xxs-only      (0px <= width <= 240px);
+@custom-media --xxs-n-up      (width >= 240px);
+@custom-media --xxs-n-below   (width <= 240px);
+@custom-media --xxs-phone     (--xxs-only) and (--portrait);
 
-@custom-media --xs-phone              (width <= 240px);
-@custom-media --sm-phone              (width <= 360px);
-@custom-media --phone                 (width <= 480px);
-@custom-media --phablet               (width <= 768px);
-@custom-media --tablet                (width <= 1024px);
-@custom-media --laptop                (width <= 1440px);
-@custom-media --desktop               (width <= 1920px);
-@custom-media --xs-phone-n-up         (width > 240px);
-@custom-media --sm-phone-n-up         (width > 360px);
-@custom-media --phone-n-up            (width > 480px);
-@custom-media --phablet-n-up          (width > 768px);
-@custom-media --tablet-n-up           (width > 1024px);
-@custom-media --laptop-n-up           (width > 1440px);
-@custom-media --desktop-n-up          (width > 1920px);
+@custom-media --xs-only       (240px <= width <= 360px);
+@custom-media --xs-n-up       (width >= 360px);
+@custom-media --xs-n-below    (width <= 360px);
+@custom-media --xs-phone      (--xs-only) and (--portrait);
 
+@custom-media --sm-only       (360px <= width <= 480px);
+@custom-media --sm-n-up       (width >= 480px);
+@custom-media --sm-n-below    (width <= 480px);
+@custom-media --sm-phone      (--sm-only) and (--portrait);
 
+@custom-media --md-only       (480px <= width <= 768px);
+@custom-media --md-n-up       (width >= 768px);
+@custom-media --md-n-below    (width <= 768px);
+@custom-media --md-phone      (--md-only) and (--portrait);
 
-/* More specific queries */
-@custom-media --mobile-sm                (0px <= width <= 360px) and (orientation: portrait);
-@custom-media --mobile-large             (width > 360px) and (orientation: portrait);
-@custom-media --mobile-sm-landscape      (0px <= width <= 480px) and (orientation: landscape);
-@custom-media --mobile-large-landscape   (width > 480px) and (orientation: landscape);
-@custom-media --tablet-sm-landscape      (600px <= width <= 960px) and (orientation: landscape);
-@custom-media --tablet-large-landscape   (width > 960px) and (orientation: landscape);
-@custom-media --tablet-sm                (width >= 600px) and (orientation: portrait);
-@custom-media --tablet-large             (600px < width <= 840px) and (orientation : portrait);
-@custom-media --desktop-xs-landscape     (0px <= width <= 480px) and (orientation: landscape);
-@custom-media --desktop-xs               (0px <= width <= 480px) and (orientation: landscape);
-@custom-media --desktop-sm-landscape     (width >= 481px) and (width <= 840px) and (aspect >=ratio: 4/3);
-@custom-media --desktop-sm               (width >= 481px) and (width <= 840px) and (aspect <=ratio: 4/3);
-@custom-media --desktop-medium-landscape (width >= 841px) and (width <= 1280px) and (aspect >=ratio: 4/3);
-@custom-media --desktop-medium           (width >= 841px) and (width <= 1280px) and (aspect <=ratio: 4/3);
-@custom-media --desktop-large            (width >= 1281px) and (width <= 1600px);
-@custom-media --desktop-xlarge           (width >= 1601px) and (width >= 1920px);
+@custom-media --lg-only       (768px <= width <= 1024px);
+@custom-media --lg-n-up       (width >= 1024px);
+@custom-media --lg-n-below    (width <= 1024px);
+@custom-media --lg-phone      (--lg-only) and (--portrait);
+
+@custom-media --xl-only       (1024px <= width <= 1440px);
+@custom-media --xl-n-up       (width >= 1440px);
+@custom-media --xl-n-below    (width <= 1440px);
+
+@custom-media --xxl-only      (1440px <= width <= 1920px);
+@custom-media --xxl-n-up      (width >= 1920px);
+@custom-media --xxl-n-below   (width <= 1920px);
