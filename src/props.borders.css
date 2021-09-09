@@ -4,9 +4,9 @@
 }
 
 html {
-  --border-1: 1px;
-  --border-2: 2px;
-  --border-3: 5px;
-  --border-4: 10px;
-  --border-5: 25px;
+  --border-size-1: 1px;
+  --border-size-2: 2px;
+  --border-size-3: 5px;
+  --border-size-4: 10px;
+  --border-size-5: 25px;
 }
