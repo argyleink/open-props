@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Prrops</title>
+    <title>CSS "open-props" Project</title>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,11 +14,17 @@
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
+
+    <!-- 
+      todo: 
+        - move reset, theme, utils and brand to sep folder
+        - add dist/ folder with builds
+        - move docsite to branch
+    -->
+
     <nav>
       <a href="/">
-        <svg viewBox="0 0 24 24">
-          <path d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-        </svg>
+        <code>var(--free)</code>
       </a>
       <a href="#">About</a>
       <a href="#">Features</a>
@@ -27,8 +33,8 @@
 
     <section id="introduction">
       <header class="hero">
-        <h1>Import n' go<br>custom properties.</h1>
-        <p>A non-prescriptive, easy to remember, <b>value</b> focused set of utility CSS variables. For use with CSS files, web components, CSS-in-JS, design tokens, etc.</p>
+        <h1>Grab n' go<br>CSS <code>var()</code>'s!</h1>
+        <p>Easy to remember, custom property <b>utility values</b>.</p>
         <small>
           v0.0.1<br>
           Apache License
