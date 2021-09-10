@@ -64,3 +64,29 @@ nav {
 } */
 
 a { color: var(--brand) }
+
+.open-colors {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+
+  & > h4 {
+    flex: 2;
+  }
+
+  &.column-names {
+    text-align: center;
+    color: var(--text-2);
+
+    & > .color-swatch {
+      box-shadow: none;
+    }
+  }
+}
+
+.color-swatch {
+  border-radius: var(--border-radius-round);
+  box-shadow: inset 0 0 0 var(--border-size-1) var(--surface-3);
+  inline-size: var(--size-5);
+  block-size: var(--size-5);
+}

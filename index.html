@@ -51,9 +51,11 @@
         </dl>
       </header>
 
-      <h3>Learn the names in 3 examples:</h3>
+      <h3>Naming Convention:</h3>
+      <p>Usually you'll just be adjusting between 1 and 6, cycling through to find the right value.</p>
       <ol>
-        <li>var(--size-1), var(--gradient-1), etc</li>
+        <li>Colors range from 0 (nearly white) to 9 (nearly black)</li>
+        <li>var(--size-1) Sizes between 1-n are "safe" sizes</li>
         <li>var(--size-00) for allowed negative values</li>
         <li>var(--font-light) and `@media (--portrait)`</li>
       </ol>
@@ -82,7 +84,193 @@
       <header>
         <h2>Colors</h2>
         <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
+        <h4>Usage</h4>
+        <p><code>var(--gray-0)</code>, <code>var(--gray-1)</code> ... <code>var(--gray-9)</code></p>
       </header>
+      <article>
+        <div class="open-colors column-names">
+          <h4>&nbsp;</h4>
+          <span class="color-swatch">0</span>
+          <span class="color-swatch">1</span>
+          <span class="color-swatch">2</span>
+          <span class="color-swatch">3</span>
+          <span class="color-swatch">4</span>
+          <span class="color-swatch">5</span>
+          <span class="color-swatch">6</span>
+          <span class="color-swatch">7</span>
+          <span class="color-swatch">8</span>
+          <span class="color-swatch">9</span>
+        </div>
+        <div class="open-colors">
+          <h4>Gray</h4>
+          <span class="color-swatch" style="background-color: var(--gray-0)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-1)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-2)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-3)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-4)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-5)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-6)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-7)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-8)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Red</h4>
+          <span class="color-swatch" style="background-color: var(--red-0)"></span>
+          <span class="color-swatch" style="background-color: var(--red-1)"></span>
+          <span class="color-swatch" style="background-color: var(--red-2)"></span>
+          <span class="color-swatch" style="background-color: var(--red-3)"></span>
+          <span class="color-swatch" style="background-color: var(--red-4)"></span>
+          <span class="color-swatch" style="background-color: var(--red-5)"></span>
+          <span class="color-swatch" style="background-color: var(--red-6)"></span>
+          <span class="color-swatch" style="background-color: var(--red-7)"></span>
+          <span class="color-swatch" style="background-color: var(--red-8)"></span>
+          <span class="color-swatch" style="background-color: var(--red-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Pink</h4>
+          <span class="color-swatch" style="background-color: var(--pink-0)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-1)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-2)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-3)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-4)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-5)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-6)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-7)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-8)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Grape</h4>
+          <span class="color-swatch" style="background-color: var(--grape-0)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-1)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-2)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-3)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-4)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-5)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-6)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-7)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-8)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Violet</h4>
+          <span class="color-swatch" style="background-color: var(--violet-0)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-1)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-2)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-3)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-4)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-5)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-6)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-7)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-8)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Indigo</h4>
+          <span class="color-swatch" style="background-color: var(--indigo-0)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-1)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-2)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-3)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-4)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-5)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-6)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-7)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-8)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Blue</h4>
+          <span class="color-swatch" style="background-color: var(--blue-0)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-1)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-2)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-3)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-4)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-5)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-6)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-7)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-8)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Cyan</h4>
+          <span class="color-swatch" style="background-color: var(--cyan-0)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-1)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-2)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-3)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-4)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-5)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-6)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-7)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-8)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Teal</h4>
+          <span class="color-swatch" style="background-color: var(--teal-0)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-1)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-2)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-3)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-4)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-5)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-6)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-7)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-8)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Green</h4>
+          <span class="color-swatch" style="background-color: var(--green-0)"></span>
+          <span class="color-swatch" style="background-color: var(--green-1)"></span>
+          <span class="color-swatch" style="background-color: var(--green-2)"></span>
+          <span class="color-swatch" style="background-color: var(--green-3)"></span>
+          <span class="color-swatch" style="background-color: var(--green-4)"></span>
+          <span class="color-swatch" style="background-color: var(--green-5)"></span>
+          <span class="color-swatch" style="background-color: var(--green-6)"></span>
+          <span class="color-swatch" style="background-color: var(--green-7)"></span>
+          <span class="color-swatch" style="background-color: var(--green-8)"></span>
+          <span class="color-swatch" style="background-color: var(--green-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Lime</h4>
+          <span class="color-swatch" style="background-color: var(--lime-0)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-1)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-2)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-3)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-4)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-5)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-6)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-7)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-8)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Yellow</h4>
+          <span class="color-swatch" style="background-color: var(--yellow-0)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-1)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-2)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-3)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-4)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-5)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-6)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-7)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-8)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Orange</h4>
+          <span class="color-swatch" style="background-color: var(--orange-0)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-1)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-2)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-3)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-4)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-5)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-6)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-7)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-8)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-9)"></span>
+        </div>
+      </article>
     </section>
 
 
