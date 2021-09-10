@@ -90,3 +90,8 @@ a { color: var(--brand) }
   inline-size: var(--size-5);
   block-size: var(--size-5);
 }
+
+.font-size-example {
+  display: grid;
+  gap: var(--size-3);
+}
