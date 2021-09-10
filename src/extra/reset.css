@@ -1,8 +1,9 @@
-@import "brand.css";
-@import "../props.media.css";
-/* todo: enumerate imports here for bundling */
 /* todo: add :where() all over? */
-/* hd color */
+@import "brand.css";
+@import '../props.fonts.css';
+@import "../props.media.css";
+@import "../props.sizes.css";
+@import "../props.borders.css";
 
 *, ::before, ::after { box-sizing: border-box; }
 
