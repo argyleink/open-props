@@ -1,8 +1,8 @@
 @custom-media --motionOK      (prefers-reduced-motion: no-preference);
 @custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
 @custom-media --useDataOK     (prefers-reduced-data: no-preference);
-@custom-media --dark          (prefers-color-scheme: dark);
-@custom-media --light         (prefers-color-scheme: light);
+@custom-media --OSdark        (prefers-color-scheme: dark);
+@custom-media --OSlight       (prefers-color-scheme: light);
 @custom-media --highContrast  (prefers-contrast: high);
 @custom-media --lowContrast   (prefers-contrast: low);
 

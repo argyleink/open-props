@@ -34,7 +34,7 @@ html {
   --drop-shadow-3: ;
    */
 
-  @media (--dark) {
+  @media (--OSdark) {
     --shadow-strength: 35%;
     --shadow: 220 5% 0%;
   }
