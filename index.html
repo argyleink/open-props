@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>CSS "open-props" Project</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="deeppink" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="🙂">
+    <meta name="color-scheme" content="dark light">
+    <link rel="stylesheet" href="/src/index.css">
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+
+    <!-- 
+      todo: 
+        - move docsite to branch
+    -->
+
+    <nav>
+      <a href="/">
+        <code>var(--free)</code>
+      </a>
+      <a href="#">About</a>
+      <a href="#">Features</a>
+      <a href="#">Documentation</a>
+    </nav>
+
+    <section id="introduction">
+      <header class="hero">
+        <h1>Grab n' go<br>CSS custom properties.</h1>
+        <p>Easy to remember, custom property <b>utility values</b>.</p>
+        <small>
+          v0.0.1<br>
+          Apache License
+        </small>
+      </header>
+    </section>
+
+    <section id="about">
+      <header>
+        <h2>About</h2>
+        <dl>
+          <dt>Everything's optional</dt>
+          <dd>Grab some of the props, or all of em.</dd>
+          <dt>Small footprint</dt>
+          <dd>800b-40kb potential file size impact</dd>
+          <dt>No magic units</dt>
+          <dd>Almost like having design tokens</dd>
+          <dt>Easy to extend</dt>
+          <dd>Extend, overwrite, adapt, etc.. no prob.</dd>
+          <dt>Easy to remember</dt>
+          <dd>1's are small, 00's go to allowed negatives, with exceptions for typography and media query names</dd>
+        </dl>
+      </header>
+
+      <h3>Learn the names in 3 examples:</h3>
+      <ol>
+        <li>var(--size-1), var(--gradient-1), etc</li>
+        <li>var(--size-00) for allowed negative values</li>
+        <li>var(--font-light) and `@media (--portrait)`</li>
+      </ol>
+    </section>
+
+    <section id="colors">
+      <header>
+        <h2>Colors</h2>
+        <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
+      </header>
+    </section>
+
+
+
+    <section id="typography">
+      <header>
+        <h2>Typography</h2>
+        <p></p>
+      </header>
+      <h1>Almost before you knew it, we'd touched ground.</h1>
+      <h2>Almost before you knew it, we'd touched ground.</h2>
+      <h3>Almost before you knew it, we'd touched ground.</h3>
+      <h4>Almost before you knew it, we'd touched ground.</h4>
+      <h5>Almost before you knew it, we'd touched ground.</h5>
+      <h6>Almost before you knew it, we'd touched ground.</h6>
+    </section>
+
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>

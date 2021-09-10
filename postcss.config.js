@@ -1,12 +1,9 @@
 const postcssPresetEnv  = require('postcss-preset-env')
 const postcssEasings    = require('postcss-easings')
-const postcssImport     = require('postcss-import')
-const cssnano           = require('cssnano')
 
 module.exports = {
   plugins: [
     postcssEasings(),
-    postcssImport(),
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,
@@ -21,9 +18,6 @@ module.exports = {
         'focus-within-pseudo-class': false,
         'color-functional-notation': false,
       }
-    }),
-    cssnano({
-      preset: 'default'
     }),
   ]
 }
