@@ -105,7 +105,7 @@ svg {
   }
 
   &:not([width]) {
-    max-inline-size: 5ch;
+    max-inline-size: var(--size-10);
   }
 }
 
@@ -113,8 +113,9 @@ code, kbd, samp, pre { font-family: var(--font-mono) }
 pre { white-space: pre-wrap }
 code, kbd { white-space: nowrap }
 
-ol,ul { padding-inline-start: var(--size-8) }
-li,dd,p,figcaption { max-inline-size: var(--size-content-2) }
+ol, ul { padding-inline-start: var(--size-8) }
+li, dd, figcaption { max-inline-size: var(--size-content-2) }
+p { max-inline-size: var(--size-content-3) }
 
 dt { 
   font-weight: var(--font-bold); 
