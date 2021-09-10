@@ -1,8 +1,8 @@
 {
-  "name": "vite-preset-env",
+  "name": "open-props",
   "author": "Adam Argyle",
   "license": "ISC",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "browserslist": [
     "defaults"
   ],
@@ -10,11 +10,29 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "bundle": "concurrently npm:lib:*",
+    "lib:all": "postcss src/index.css -o props.min.css",
+    "lib:animations": "postcss src/props.animations.css -o props.animations.min.css",
+    "lib:aspects": "postcss src/props.aspects.css -o props.aspects.min.css",
+    "lib:borders": "postcss src/props.borders.css -o props.borders.min.css",
+    "lib:colors": "postcss src/props.colors.css -o props.colors.min.css",
+    "lib:easing": "postcss src/props.easing.css -o props.easings.min.css",
+    "lib:fonts": "postcss src/props.fonts.css -o props.fonts.min.css",
+    "lib:gradients": "postcss src/props.gradients.css -o props.gradients.min.css",
+    "lib:shadows": "postcss src/props.shadows.css -o props.shadows.min.css",
+    "lib:sizes": "postcss src/props.sizes.css -o props.sizes.min.css",
+    "lib:zindex": "postcss src/props.zindex.css -o props.zindex.min.css",
+    "lib:reset": "postcss src/extra/reset.css -o props.reset.min.css"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
+    "cssnano": "^5.0.8",
     "open-color": "^1.9.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "postcss-easings": "3.x",
+    "postcss-import": "^14.0.2",
     "postcss-preset-env": "6.7.x",
     "vite": "2.x  || >2.0.0-alpha"
   }

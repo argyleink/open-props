@@ -1,9 +1,5 @@
 /* todo: add :where() all over? */
 @import "brand.css";
-@import '../props.fonts.css';
-@import "../props.media.css";
-@import "../props.sizes.css";
-@import "../props.borders.css";
 
 *, ::before, ::after { box-sizing: border-box; }
 
