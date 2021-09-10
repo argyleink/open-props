@@ -1,7 +1,7 @@
-@import 'src/reset.css';
-@import 'src/brand.css';
-@import 'src/theme.css';
-/* @import 'src/utilities.css'; */
+@import 'src/extra/reset.css';
+@import 'src/extra/brand.css';
+@import 'src/extra/theme.css';
+/* @import 'src/extra/utilities.css'; */
 
 body {
   display: grid;

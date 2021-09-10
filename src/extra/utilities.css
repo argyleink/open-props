@@ -1,3 +1,5 @@
+/* todo: enumerate imports here for bundling */
+
 .border-between-inline > * + * {
   border-inline-start-width: var(--border);
 }

@@ -1,4 +1,4 @@
-@import "props.media.css";
+@import "../props.media.css";
 /* todo: enumerate imports here for bundling */
 
 html {
