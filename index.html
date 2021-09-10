@@ -28,7 +28,7 @@
         <h1>Grab n' go<br>CSS custom properties.</h1>
         <p>Easy to remember, custom property <b>utility values</b>.</p>
         <small>
-          v0.0.1<br>
+          v0.0.2<br>
           Apache License
         </small>
       </header>
@@ -50,9 +50,13 @@
           <dd>1's are small, 00's go to allowed negatives, with exceptions for typography and media query names</dd>
         </dl>
       </header>
+    </section>
 
-      <h3>Naming Convention:</h3>
-      <p>Usually you'll just be adjusting between 1 and 6, cycling through to find the right value.</p>
+    <section>
+      <header>
+        <h2>Naming Convention</h2>
+        <p>Usually you'll just be adjusting between 1 and 6, cycling through to find the right value.</p>
+      </header>
       <ol>
         <li>Colors range from 0 (nearly white) to 9 (nearly black)</li>
         <li>var(--size-1) Sizes between 1-n are "safe" sizes</li>
@@ -84,8 +88,12 @@
       <header>
         <h2>Colors</h2>
         <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
-        <h4>Usage</h4>
-        <p><code>var(--gray-0)</code>, <code>var(--gray-1)</code> ... <code>var(--gray-9)</code></p>
+        <pre>
+          color: var(--blue-6);
+          background-color: var(--blue-0);
+          border: 1px solid var(--blue-1);
+          text-shadow: 0 1px 0 var(--blue-9);
+        </pre>
       </header>
       <article>
         <div class="open-colors column-names">
@@ -273,19 +281,29 @@
       </article>
     </section>
 
-
+    <section id="aspect-ratio">
+      <header>
+        <h2>Aspect Ratios</h2>
+        <p></p>
+      </header>
+      <pre>
+        --aspect-box: 1;
+        --aspect-landscape: 4/3;
+        --aspect-portrait: 3/4;
+        --aspect-widescreen: 16/9; 
+      </pre>
+    </section>
 
     <section id="typography">
       <header>
         <h2>Typography</h2>
         <p></p>
       </header>
-      <h1>Almost before you knew it, we'd touched ground.</h1>
-      <h2>Almost before you knew it, we'd touched ground.</h2>
-      <h3>Almost before you knew it, we'd touched ground.</h3>
-      <h4>Almost before you knew it, we'd touched ground.</h4>
-      <h5>Almost before you knew it, we'd touched ground.</h5>
-      <h6>Almost before you knew it, we'd touched ground.</h6>
+      <iframe height="300" style="width: 100%;" scrolling="no" title="OpenProps Typography" src="https://codepen.io/argyleink/embed/ff97d80a1f995160df925a51682a0842?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/argyleink/pen/ff97d80a1f995160df925a51682a0842">
+  OpenProps Typography</a> by Adam Argyle (<a href="https://codepen.io/argyleink">@argyleink</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
     </section>
 
     <script type="module" src="/index.js"></script>
