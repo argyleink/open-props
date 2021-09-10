@@ -1,3 +1,3 @@
-@custom-media --safari  (-webkit-hyphens:none);
-@custom-media --firefox (-moz-appearance:none);
+@custom-media --safari  (-webkit-hyphens: none);
+@custom-media --firefox (-moz-appearance: none);
 @custom-media --chrome  (-webkit-tap-highlight-color: black);
