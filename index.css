@@ -1,5 +1,5 @@
 @import "open-props";
-@import "open-props/props.reset.min.css";
+@import "open-props/src/extra/reset.css";
 
 body {
   display: grid;
@@ -91,7 +91,15 @@ a { color: var(--brand) }
   block-size: var(--size-5);
 }
 
+.font-sizes {
+  display: grid;
+  gap: var(--size-7);
+}
+
 .font-size-example {
   display: grid;
-  gap: var(--size-3);
+
+  & > code {
+    justify-self: flex-start;
+  }
 }
