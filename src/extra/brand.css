@@ -1,15 +1,8 @@
-@import "../props.media.css";
-/* todo: enumerate imports here for bundling */
+@import "theme.css";
 
 html {
-  --brand: var(--pink-6);
-
   scrollbar-color: var(--brand) Canvas;
   accent-color: var(--brand);
-
-  @media(--dark) {
-    --brand: var(--pink-4);
-  }
 }
 
 :focus-visible { outline-color: var(--brand); }

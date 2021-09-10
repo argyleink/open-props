@@ -1,34 +1,16 @@
 @import "../props.media.css";
-@import "../props.color.css";
+@import "theme.light.css";
+@import "theme.dark.css";
 
-/* defining the themes from props */
-html {
-  color-scheme: light;
-
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-8);
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
-}
-
-@media (--dark) {
-  html {
-    color-scheme: dark;
-
-    --text-1: var(--gray-1);
-    --text-2: var(--gray-2);
-    --surface-1: var(--gray-9);
-    --surface-2: var(--gray-8);
-    --surface-3: var(--gray-7);
-    --surface-4: var(--gray-6);
-  }
-}
-
-/* using theme */
 html { 
   color: var(--text-2);
   background-color: var(--surface-1);
 }
-h1,h2,h3,h4,h5,h6,dt { color: var(--text-1) }
+
+h1, h2, h3, h4, h5, h6, dt { 
+  color: var(--text-1);
+}
+
+a {
+  color: var(--brand);
+}
