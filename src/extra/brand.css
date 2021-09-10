@@ -5,8 +5,12 @@ html {
   accent-color: var(--brand);
 }
 
+::selection    { 
+  background-color: var(--brand);
+  color: color-contrast(var(--brand));
+}
+
 :focus-visible { outline-color: var(--brand); }
-::selection    { background-color: var(--brand); }
 ::marker       { color: var(--brand); }
 :is(
   ::-webkit-calendar-picker-indicator,
