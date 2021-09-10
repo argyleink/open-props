@@ -11,6 +11,11 @@
   background-origin: border-box;
   background-repeat: no-repeat;
   margin: 0;
+
+  &:not(fieldset) {
+    border-width: 0;
+    border-style: solid;
+  }
 }
 
 html {
