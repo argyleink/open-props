@@ -42,7 +42,6 @@
     "postcss-cli": "^8.3.1",
     "postcss-easings": "3.x",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x",
-    "vite": "2.x  || >2.0.0-alpha"
+    "postcss-preset-env": "6.7.x"
   }
 }
