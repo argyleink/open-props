@@ -109,11 +109,10 @@ svg {
   }
 }
 
-code, kbd, samp, pre {
-  font-family: var(--font-mono);
-}
-
+code, kbd, samp, pre { font-family: var(--font-mono) }
 pre { white-space: pre-wrap }
+code, kbd { white-space: nowrap }
+
 ol,ul { padding-inline-start: var(--size-8) }
 li,dd,p,figcaption { max-inline-size: var(--size-content-2) }
 
