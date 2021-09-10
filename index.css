@@ -28,6 +28,7 @@ header, section {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--size-4);
 
@@ -85,10 +86,22 @@ a { color: var(--brand) }
 }
 
 .color-swatch {
+  --size: var(--size-5);
   border-radius: var(--border-radius-round);
-  box-shadow: inset 0 0 0 var(--border-size-1) var(--surface-3);
-  inline-size: var(--size-5);
-  block-size: var(--size-5);
+  box-shadow: var(--shadow-0);
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  @nest .column-names > & {
+    box-shadow: none;
+  }
+
+  @media (--sm-n-below) {
+    --size: var(--size-3);
+  }
+  @media (--xs-n-below) {
+    --size: var(--size-2);
+  }
 }
 
 .font-sizes {
