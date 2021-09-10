@@ -113,6 +113,12 @@ code, kbd, samp, pre { font-family: var(--font-mono) }
 pre { white-space: pre-wrap }
 code, kbd { white-space: nowrap }
 
+code {
+  padding: 0 var(--size-2) var(--size-1);
+  background: var(--surface-2);
+  border-radius: var(--border-radius-2);
+}
+
 ol, ul { padding-inline-start: var(--size-8) }
 li, dd, figcaption { max-inline-size: var(--size-content-2) }
 p { max-inline-size: var(--size-content-3) }
