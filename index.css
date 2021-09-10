@@ -1,3 +1,6 @@
+@import "open-props";
+@import "open-props/props.reset.min.css";
+
 body {
   display: grid;
   place-content: center;
