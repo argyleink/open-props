@@ -1,12 +1,7 @@
 @import "../props.media.css";
-/* todo: enumerate imports here for bundling */
+@import "../props.color.css";
 
-html { 
-  color: var(--text-2);
-  background-color: var(--surface-1);
-}
-h1,h2,h3,h4,h5,h6,dt { color: var(--text-1) }
-
+/* defining the themes from props */
 html {
   color-scheme: light;
 
@@ -30,3 +25,10 @@ html {
     --surface-4: var(--gray-6);
   }
 }
+
+/* using theme */
+html { 
+  color: var(--text-2);
+  background-color: var(--surface-1);
+}
+h1,h2,h3,h4,h5,h6,dt { color: var(--text-1) }
