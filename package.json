@@ -2,15 +2,24 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "ISC",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argyleink/open-props"
+  },
+  "keywords": [
+    "css",
+    "utilities",
+    "variables",
+    "custom properties",
+    "gradients"
+  ],
+  "main": "props.min.css",
+  "style": "props.min.css",
   "browserslist": [
     "defaults"
   ],
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
     "bundle": "concurrently npm:lib:*",
     "lib:all": "postcss src/index.css -o props.min.css",
     "lib:animations": "postcss src/props.animations.css -o props.animations.min.css",
