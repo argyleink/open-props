@@ -1,5 +1,5 @@
-@import "open-props";
-@import "open-props/reset.css";
+@import "open-props/src/index.css";
+@import "open-props/src/extra/reset.css";
 
 body {
   display: grid;
