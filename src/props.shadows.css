@@ -3,12 +3,7 @@
 html {
   --shadow-color: 220 3% 15%;
   --shadow-strength: 1%;
-
-  --shadow-00000: inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
-  --shadow-0000: inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
-  --shadow-000: inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
-  --shadow-00: inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
-  --shadow-0: inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  
   --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
   --shadow-2: 
     0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
@@ -29,6 +24,12 @@ html {
     0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
     0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%))
   ;
+
+  --inner-shadow-0: inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-1: inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-2: inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-3: inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-4: inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
   
   /* 
   --drop-shadow-1: ;
