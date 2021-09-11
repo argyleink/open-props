@@ -32,23 +32,21 @@
 
     <section id="introduction">
       <header class="hero">
-        <p><code>npm i open-props</code></p>
+        <p><code class="language-bash">npm i open-props</code></p>
         <h1>Grab n' go<br>CSS custom properties.</h1>
-        <p>Easy to remember, custom property <b>utility values</b>.</p>
-        <pre class="language-css line-numbers show-language"><code>
+        <p>Easy to remember, <b>custom property utility values</b>.</p>
+        <pre class="language-css"><code>
 @import "open-props";
 
 .button {
-  font: var(--font-sans);
-  font-weight: var(--font-bold);
   font-size: var(--font-size-fluid-1);
+
   padding-inline: var(--size-5);
   padding-block: var(--size-3);
-  background: var(--blue-7);
+
   color: var(--blue-0);
+  background: var(--blue-7);
   border-radius: var(--border-radius-round);
-  border-color: var(--blue-6);
-  border-width: var(--border-size-1);
   box-shadow: var(--shadow-3);
   
   @media (--motionOK) {
@@ -58,7 +56,6 @@
   @media (--OSdark) {
     background: var(--blue-1);
     color: var(--blue-9);
-    border-color: var(--blue-2);
   }
 }
         </code></pre>
@@ -75,16 +72,83 @@
         <dl>
           <dt>Everything's optional</dt>
           <dd>Grab some of the props, or all of em.</dd>
-          <dt>Small footprint</dt>
-          <dd>800b-40kb potential file size impact</dd>
           <dt>No magic units</dt>
-          <dd>Almost like having design tokens</dd>
-          <dt>Easy to extend</dt>
+          <dd>Design consistency without thinking</dd>
+          <dt>Easy to customize</dt>
           <dd>Extend, overwrite, adapt, etc.. no prob.</dd>
           <dt>Easy to remember</dt>
-          <dd>1's are small, 00's go to allowed negatives, with exceptions for typography and media query names</dd>
+          <dd>Try to keep the API surface area small and legible</dd>
         </dl>
       </header>
+    </section>
+
+    <section id="getting-started" class="scroll-overflow">
+      <header>
+        <h2>Getting Started</h2>
+        <p>PostCSS and pre-built version are available.</p>
+      </header>
+      <article>
+        <h3>Installation</h3>
+        <p>Grab the props from a URL or NPM</p>
+
+        <div>
+          <h5>NPM</h5>
+          <pre class="language-bash"><code>$ npm install open-props</code></pre>
+          
+          <p>Import pre-built bundle</p>
+          <pre class="language-css"><code>@import "open-props";</code></pre>
+
+          <p>Import PostCSS unbundled</p>
+          <pre class="language-css"><code>@import "open-props/src/index.css";</code></pre>
+        </div>
+
+        <div>
+          <h5>CDN</h5>
+
+          <p>Import pre-built bundle</p>
+          <pre class="language-css"><code>
+@import "https://unpkg.com/open-props";
+          </code></pre>
+
+          <p>or</p>
+
+          <pre class="language-html"><code>
+&#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+          </code></pre>
+
+          <p>Import PostCSS unbundled</p>
+          <pre class="language-css"><code>
+@import "https://unpkg.com/src/index.css";
+          </code></pre>
+        </div>
+      </article>
+      <article class="size-chart">
+        <div class="size">14K</div>
+        <div class="file">
+          <a href="https://unpkg.com/open-props">props.css</a>
+        </div>
+
+        <div class="size">3K</div>
+        <div class="file">reset.css</div>
+
+        <div class="size">662B</div>
+        <div class="file">animations.css</div>
+
+        <div class="size">90B</div>
+        <div class="file">aspects.css</div>
+
+        <div class="size">381B</div>
+        <div class="file">borders.css</div>
+       
+      
+      <!-- 2.3K props.colors.min.css
+      1.8K props.easings.min.css
+      1.4K props.fonts.min.css
+      5.5K props.gradients.min.css
+      1.6K props.shadows.min.css
+      911B props.sizes.min.css
+       94B props.zindex.min.css -->
+      </article>
     </section>
 
     <section>
@@ -123,11 +187,13 @@
       <header>
         <h2>Colors</h2>
         <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
-        <pre class="language-css line-numbers show-language"><code>
-color: var(--blue-6);
-background-color: var(--blue-0);
-border: 1px solid var(--blue-1);
-text-shadow: 0 1px 0 var(--blue-9);
+        <pre class="language-css"><code>
+.open-color-pallete {
+  color: var(--blue-6);
+  background-color: var(--blue-0);
+  border: 1px solid var(--blue-1);
+  text-shadow: 0 1px 0 var(--blue-2);
+}
         </code></pre>
       </header>
       <article>
@@ -321,7 +387,7 @@ text-shadow: 0 1px 0 var(--blue-9);
         <h2>Aspect Ratios</h2>
         <p></p>
       </header>
-      <pre class="language-css line-numbers show-language"><code>
+      <pre class="language-css"><code>
 --aspect-box: 1;
 --aspect-landscape: 4/3;
 --aspect-portrait: 3/4;
@@ -329,7 +395,7 @@ text-shadow: 0 1px 0 var(--blue-9);
       </code></pre>
     </section>
 
-    <section id="typography">
+    <section id="typography" class="scroll-overflow">
       <header>
         <h2>Typography</h2>
         <p></p>

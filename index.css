@@ -125,9 +125,15 @@ pre {
   }
 }
 
-#typography {
+.scroll-overflow {
   overflow-x: auto;
   max-inline-size: 100%;
+}
+
+.size-chart {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 0 var(--size-3);
 }
 
 .font-sizes {
