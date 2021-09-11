@@ -32,7 +32,7 @@ nav {
   align-items: center;
   gap: var(--size-4);
 
-  @media (--md-phone) {
+  @media (--md-n-below) {
     justify-content: center;
   }
 
@@ -51,7 +51,7 @@ nav {
       block-size: 3ch;
     }
 
-    @media (--md-phone) {
+    @media (--md-n-below) {
       flex-basis: 100%;
       justify-content: center;
     }
@@ -63,6 +63,14 @@ nav {
     background-image: var(--conic-gradient-3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (--OSdark) {
+      background-image: var(--conic-gradient-8);
+    }
+
+    @media (--sm-n-below) {
+      font-size: var(--font-size-fluid-3)
+    }
   }
 }
 
@@ -74,6 +82,10 @@ nav {
 } */
 
 a { color: var(--brand) }
+
+pre {
+  max-inline-size: max-content;
+}
 
 .open-colors {
   display: flex;
@@ -105,7 +117,7 @@ a { color: var(--brand) }
     box-shadow: none;
   }
 
-  @media (--sm-n-below) {
+  @media (--md-n-below) {
     --size: var(--size-3);
   }
   @media (--xs-n-below) {
@@ -113,9 +125,15 @@ a { color: var(--brand) }
   }
 }
 
+#typography {
+  overflow-x: auto;
+  max-inline-size: 100%;
+}
+
 .font-sizes {
   display: grid;
   gap: var(--size-7);
+  inline-size: max-content;
 }
 
 .font-size-example {
@@ -123,6 +141,6 @@ a { color: var(--brand) }
   gap: var(--size-2);
 
   & > code {
-    justify-self: flex-start;
+    justify-self: flex-start;;
   }
 }

@@ -10,7 +10,8 @@
     <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
     <meta name="description" content="🙂">
     <meta name="color-scheme" content="dark light">
-    <link rel="preload" href="//unpkg.com/prism-themes@1.1.0/themes/prism-atom-dark.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="//unpkg.com/prism-themes@1.8.0/themes/prism-material-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="//unpkg.com/prism-themes@1.8.0/themes/prism-nord.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
@@ -34,6 +35,33 @@
         <p><code>npm i open-props</code></p>
         <h1>Grab n' go<br>CSS custom properties.</h1>
         <p>Easy to remember, custom property <b>utility values</b>.</p>
+        <pre class="language-css line-numbers show-language"><code>
+@import "open-props";
+
+.button {
+  font: var(--font-sans);
+  font-weight: var(--font-bold);
+  font-size: var(--font-size-fluid-1);
+  padding-inline: var(--size-5);
+  padding-block: var(--size-3);
+  background: var(--blue-7);
+  color: var(--blue-0);
+  border-radius: var(--border-radius-round);
+  border-color: var(--blue-6);
+  border-width: var(--border-size-1);
+  box-shadow: var(--shadow-3);
+  
+  @media (--motionOK) {
+    transition: background .3s var(--easinout-3);
+  }
+
+  @media (--OSdark) {
+    background: var(--blue-1);
+    color: var(--blue-9);
+    border-color: var(--blue-2);
+  }
+}
+        </code></pre>
         <small>
           v0.0.5<br>
           Apache License
@@ -95,7 +123,7 @@
       <header>
         <h2>Colors</h2>
         <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
-        <pre class="language-js line-numbers show-language"><code>
+        <pre class="language-css line-numbers show-language"><code>
 color: var(--blue-6);
 background-color: var(--blue-0);
 border: 1px solid var(--blue-1);
@@ -293,12 +321,12 @@ text-shadow: 0 1px 0 var(--blue-9);
         <h2>Aspect Ratios</h2>
         <p></p>
       </header>
-      <pre>
+      <pre class="language-css line-numbers show-language"><code>
 --aspect-box: 1;
 --aspect-landscape: 4/3;
 --aspect-portrait: 3/4;
 --aspect-widescreen: 16/9; 
-      </pre>
+      </code></pre>
     </section>
 
     <section id="typography">
@@ -309,43 +337,43 @@ text-shadow: 0 1px 0 var(--blue-9);
       
       <article class="font-sizes">
         <div class="font-size-example">
-          <code>var(--font-size-000)</code>
+          <code class="language-css">var(--font-size-000)</code>
           <span style="font-size: var(--font-size-000)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-00)</code>
+          <code class="language-css">var(--font-size-00)</code>
           <span style="font-size: var(--font-size-00)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-1)</code>
+          <code class="language-css">var(--font-size-1)</code>
           <span style="font-size: var(--font-size-1)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-2)</code>
+          <code class="language-css">var(--font-size-2)</code>
           <span style="font-size: var(--font-size-2)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-3)</code>
+          <code class="language-css">var(--font-size-3)</code>
           <span style="font-size: var(--font-size-3)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-4)</code>
+          <code class="language-css">var(--font-size-4)</code>
           <span style="font-size: var(--font-size-4)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-5)</code>
+          <code class="language-css">var(--font-size-5)</code>
           <span style="font-size: var(--font-size-5)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-6)</code>
+          <code class="language-css">var(--font-size-6)</code>
           <span style="font-size: var(--font-size-6)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-7)</code>
+          <code class="language-css">var(--font-size-7)</code>
           <span style="font-size: var(--font-size-7)">Almost before you knew it, we'd touched ground.</span>
         </div>
         <div class="font-size-example">
-          <code>var(--font-size-8)</code>
+          <code class="language-css">var(--font-size-8)</code>
           <span style="font-size: var(--font-size-8)">Almost before you knew it, we'd touched ground.</span>
         </div>
       </article>
