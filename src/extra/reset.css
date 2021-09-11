@@ -120,6 +120,7 @@ code {
 }
 
 ol, ul { padding-inline-start: var(--size-8) }
+li { padding-inline-start: var(--size-2) }
 li, dd, figcaption { max-inline-size: var(--size-content-2) }
 p { max-inline-size: var(--size-content-3) }
 
