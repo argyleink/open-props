@@ -10,6 +10,7 @@
     <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
     <meta name="description" content="🙂">
     <meta name="color-scheme" content="dark light">
+    <link rel="preload" href="//unpkg.com/prism-themes@1.1.0/themes/prism-atom-dark.css" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
@@ -94,12 +95,12 @@
       <header>
         <h2>Colors</h2>
         <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
-        <pre>
+        <pre class="language-js line-numbers show-language"><code>
 color: var(--blue-6);
 background-color: var(--blue-0);
 border: 1px solid var(--blue-1);
 text-shadow: 0 1px 0 var(--blue-9);
-        </pre>
+        </code></pre>
       </header>
       <article>
         <div class="open-colors column-names">
