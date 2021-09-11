@@ -32,6 +32,10 @@ nav {
   align-items: center;
   gap: var(--size-4);
 
+  @media (--md-phone) {
+    justify-content: center;
+  }
+
   & > a {
     color: var(--text-1);
     text-decoration-color: var(--brand);
@@ -45,6 +49,11 @@ nav {
 
     & > svg {
       block-size: 3ch;
+    }
+
+    @media (--md-phone) {
+      flex-basis: 100%;
+      justify-content: center;
     }
   }
 }
@@ -111,6 +120,7 @@ a { color: var(--brand) }
 
 .font-size-example {
   display: grid;
+  gap: var(--size-2);
 
   & > code {
     justify-self: flex-start;
