@@ -1,5 +1,5 @@
 @import "open-props";
-@import "open-props/src/extra/reset.css";
+@import "open-props/reset.css";
 
 body {
   display: grid;
@@ -88,7 +88,7 @@ a { color: var(--brand) }
 .color-swatch {
   --size: var(--size-5);
   border-radius: var(--border-radius-round);
-  box-shadow: var(--shadow-0);
+  box-shadow: var(--inner-shadow-0);
   inline-size: var(--size);
   block-size: var(--size);
 
