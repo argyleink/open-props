@@ -145,6 +145,8 @@ pre {
 .font-size-example {
   display: grid;
   gap: var(--size-2);
+  grid-auto-flow: column;
+  align-items: center;
 
   & > code {
     justify-self: flex-start;;
