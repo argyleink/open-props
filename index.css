@@ -87,6 +87,16 @@ pre {
   max-inline-size: max-content;
 }
 
+blockquote {
+  border-color: var(--grape-5);
+  font-family: var(--font-sans);
+  background-color: var(--surface-2);
+  display: inline-block;
+  padding-block: var(--size-3);
+  padding-inline: var(--size-4);
+  max-inline-size: var(--size-content-2);
+}
+
 .open-colors {
   display: flex;
   align-items: center;
@@ -132,7 +142,7 @@ pre {
 
 .size-chart {
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: 5ch 1fr;
   gap: 0 var(--size-3);
 }
 
