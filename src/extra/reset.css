@@ -110,8 +110,12 @@ svg {
 }
 
 code, kbd, samp, pre { font-family: var(--font-mono) }
-pre { white-space: pre-wrap }
 code, kbd { white-space: nowrap }
+
+pre { 
+  white-space: pre-wrap; 
+  max-inline-size: max-content; 
+}
 
 :not(pre) > code {
   padding: 0 var(--size-2) var(--size-1);
