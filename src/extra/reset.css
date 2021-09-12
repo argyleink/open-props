@@ -114,7 +114,7 @@ code, kbd, samp, pre { font-family: var(--font-mono) }
 
 pre { 
   white-space: pre;
-  min-width: 0;
+  min-inline-size: 0;
   max-inline-size: max-content; 
 }
 
