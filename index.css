@@ -21,9 +21,14 @@ section {
   &:nth-of-type(7) { border-color: var(--green-5) }
 }
 
-header, section {
+section {
   display: grid;
   gap: var(--size-4);
+}
+
+header {
+  display: grid;
+  gap: var(--size-2);
 }
 
 nav {
@@ -83,10 +88,6 @@ nav {
 
 a { color: var(--brand) }
 
-pre {
-  max-inline-size: max-content;
-}
-
 blockquote {
   border-color: var(--grape-5);
   font-family: var(--font-sans);
@@ -135,9 +136,14 @@ blockquote {
   }
 }
 
-.scroll-overflow {
+.scroll-x-overflow {
   overflow-x: auto;
-  max-inline-size: 100%;
+  max-inline-size: 100vw;
+}
+
+.contain-pre {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .size-chart {
@@ -149,16 +155,26 @@ blockquote {
 .font-sizes {
   display: grid;
   gap: var(--size-7);
-  inline-size: max-content;
 }
 
-.font-size-example {
+.font-size-examples {
+  inline-size: max-content;
   display: grid;
   gap: var(--size-2);
-  grid-auto-flow: column;
+  grid-template-columns: max-content 1fr;
   align-items: center;
+  justify-items: flex-start;
+}
 
-  & > code {
-    justify-self: flex-start;;
-  }
+pre {min-width:0;max-inline-size:max-content;}
+.fit-pre-to-viewport {
+  max-inline-size: calc(100vw - var(--size-8))
+}
+.two-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: var(--size-content-2);
+  gap: 0 var(--size-10);
+  align-items: flex-start;
+  justify-content: space-between;
 }

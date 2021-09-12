@@ -30,12 +30,17 @@
       <a href="#">Documentation</a>
     </nav>
 
-    <section id="introduction">
+    <section id="introduction" class="two-wrap">
       <header class="hero">
         <p><code class="language-bash">npm i open-props</code></p>
         <h1>Grab n' go<br>CSS custom properties.</h1>
         <p>Easy to remember, <b>custom property utility values</b>.</p>
-        <pre class="language-css"><code>
+        <small>
+          v0.0.5<br>
+          Apache License
+        </small>
+      </header>
+      <div><pre class="language-css fit-pre-to-viewport"><code>
 @import "open-props";
 
 .button {
@@ -58,12 +63,7 @@
     color: var(--blue-9);
   }
 }
-        </code></pre>
-        <small>
-          v0.0.5<br>
-          Apache License
-        </small>
-      </header>
+        </code></pre></div>
     </section>
 
     <section id="about">
@@ -82,44 +82,48 @@
       </header>
     </section>
 
-    <section id="getting-started" class="scroll-overflow">
+    <section id="getting-started">
       <header>
         <h2>Getting Started</h2>
         <p>PostCSS and pre-built version are available.</p>
       </header>
       <article>
-        <h3>Installation</h3>
-        <p>Grab the props from a URL or NPM</p>
+        <header>
+          <h3>Installation</h3>
+          <p>Grab the props from a URL or NPM</p>
+        </header>
 
-        <div>
-          <h5>NPM</h5>
-          <pre class="language-bash"><code>$ npm install open-props</code></pre>
-          
-          <p>Import pre-built bundle</p>
-          <pre class="language-css"><code>@import "open-props";</code></pre>
+        <div class="two-wrap">
+          <div class="contain-pre">
+            <h5>NPM</h5>
+            <pre class="language-bash"><code>$ npm install open-props</code></pre>
+            
+            <p>Import pre-built bundle</p>
+            <pre class="language-css"><code>@import "open-props";</code></pre>
 
-          <p>Import PostCSS unbundled</p>
-          <pre class="language-css"><code>@import "open-props/src/index.css";</code></pre>
-        </div>
+            <p>Import PostCSS unbundled</p>
+            <pre class="language-css"><code>@import "open-props/src/index.css";</code></pre>
+          </div>
 
-        <div>
-          <h5>CDN</h5>
+          <div class="contain-pre">
+            <h5>CDN</h5>
 
-          <p>Import pre-built bundle</p>
-          <pre class="language-css"><code>
-@import "https://unpkg.com/open-props";
-          </code></pre>
+            <p>Import pre-built bundle</p>
+            <pre class="language-css"><code>
+  @import "https://unpkg.com/open-props";
+            </code></pre>
 
-          <p>or</p>
+            <p>or</p>
 
-          <pre class="language-html"><code>
-&#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
-          </code></pre>
+            <pre class="language-html"><code>
+  &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+            </code></pre>
 
-          <p>Import PostCSS unbundled</p>
-          <pre class="language-css"><code>
-@import "https://unpkg.com/src/index.css";
-          </code></pre>
+            <p>Import PostCSS unbundled</p>
+            <pre class="language-css"><code>
+  @import "https://unpkg.com/src/index.css";
+            </code></pre>
+          </div>
         </div>
       </article>
 
@@ -211,49 +215,44 @@
       <header>
         <h2>Naming Convention</h2>
         <blockquote>
-          <p>Usually you'll just be adjusting between 1 and 6, cycling through to find the right value.</p>
+          <p>Built for predictability and easy options cycling</p>
         </blockquote>
       </header>
       <ol>
         <li>Colors range from 0 (nearly white) to 9 (nearly black)</li>
-        <li>var(--size-1) Sizes between 1-n are "safe" sizes</li>
-        <li>var(--size-00) for allowed negative values</li>
-        <li>var(--font-light) and `@media (--portrait)`</li>
+        <li><code class="language-css">var(--size-1)</code>, <code class="language-css">var(--gradient-1)</code> are safe values</li>
+        <li><code class="language-css">var(--size-00)</code>, <code class="language-css">var(--font-leading-00)</code> are allowed unsafe negative values</li>
+        <li><code class="language-css">var(--font-light)</code> and <code class="language-css">@media (--portrait)</code> are examples of exceptions to the number system. to match common industry verbiage.</li>
       </ol>
     </section>
-
-    <!-- 
-      @import "open-props"; (14k)
-      @import "open-props/props.reset.min.css"; (3k)
-
-       14K props.min.css
-      3.0K props.reset.min.css
-       
-      662B props.animations.min.css
-       90B props.aspects.min.css
-      381B props.borders.min.css
-      2.3K props.colors.min.css
-      1.8K props.easings.min.css
-      1.4K props.fonts.min.css
-      5.5K props.gradients.min.css
-      1.6K props.shadows.min.css
-      911B props.sizes.min.css
-       94B props.zindex.min.css
-     -->
 
     <section id="colors">
       <header>
         <h2>Colors</h2>
-        <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>
-        <pre class="language-css"><code>
+        <div class="two-wrap">
+          <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>  
+          <div>
+            <h5>Vars Sample</h5>
+            <pre class="language-css"><code>
+var(--gray-2);
+var(--red-3);
+var(--grape-9);
+var(--blue-0);
+var(--orange-5);
+            </code></pre>
+            <h5>Usage Sample</h5>
+            <pre class="language-css fit-pre-to-viewport"><code>
 .open-color-pallete {
   color: var(--blue-6);
   background-color: var(--blue-0);
   border: 1px solid var(--blue-1);
   text-shadow: 0 1px 0 var(--blue-2);
 }
-        </code></pre>
+            </code></pre>
+          </div>
+        </div>
       </header>
+
       <article>
         <div class="open-colors column-names">
           <h4>&nbsp;</h4>
@@ -453,7 +452,7 @@
       </code></pre>
     </section>
 
-    <section id="typography" class="scroll-overflow">
+    <section id="typography">
       <header>
         <h2>Typography</h2>
         <p></p>
@@ -461,66 +460,42 @@
       
       <article class="font-sizes">
         <h4>Static Font Sizes</h4>
-        <div class="font-size-example">
+        <div class="scroll-x-overflow"><div class="font-size-examples">
           <code class="language-css">var(--font-size-000)</code>
           <span style="font-size: var(--font-size-000)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-00)</code>
           <span style="font-size: var(--font-size-00)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-1)</code>
           <span style="font-size: var(--font-size-1)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-2)</code>
           <span style="font-size: var(--font-size-2)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-3)</code>
           <span style="font-size: var(--font-size-3)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-4)</code>
           <span style="font-size: var(--font-size-4)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-5)</code>
           <span style="font-size: var(--font-size-5)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-6)</code>
           <span style="font-size: var(--font-size-6)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-7)</code>
           <span style="font-size: var(--font-size-7)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-8)</code>
           <span style="font-size: var(--font-size-8)">Almost before you knew it, we'd touched ground.</span>
-        </div>
+        </div></div>
       </article>
 
       <article class="font-sizes">
         <h4>Fluid Font Sizes</h4>
-        <div class="font-size-example">
+        <div class="scroll-x-overflow"><div class="font-size-examples">
           <code class="language-css">var(--font-size-fluid-00)</code>
           <span style="font-size: var(--font-size-fluid-00)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-fluid-1)</code>
           <span style="font-size: var(--font-size-fluid-1)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-fluid-2)</code>
           <span style="font-size: var(--font-size-fluid-2)">Almost before you knew it, we'd touched ground.</span>
-        </div>
-        <div class="font-size-example">
           <code class="language-css">var(--font-size-fluid-3)</code>
           <span style="font-size: var(--font-size-fluid-3)">Almost before you knew it, we'd touched ground.</span>
-        </div>
+        </div></div>
       </article>
     </section>
 
