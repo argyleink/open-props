@@ -113,7 +113,8 @@ code, kbd, samp, pre { font-family: var(--font-mono) }
 :not(pre) > code, kbd { white-space: nowrap }
 
 pre { 
-  white-space: pre; 
+  white-space: pre;
+  min-width: 0;
   max-inline-size: max-content; 
 }
 
