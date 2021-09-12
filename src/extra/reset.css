@@ -154,11 +154,8 @@ figure {
 }
 
 blockquote {
-  font-family: var(--font-serif);
-  border-inline-start-width: var(--border-size-2);
-  padding-inline-start: var(--size-3);
-
-  & > footer {
-    font-family: var(--font-sans);
-  }
+  border-inline-start-width: var(--border-size-3);
+  padding-block: var(--size-3);
+  padding-inline: var(--size-4);
+  max-inline-size: var(--size-content-2);
 }
