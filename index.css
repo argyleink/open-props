@@ -166,10 +166,10 @@ blockquote {
   justify-items: flex-start;
 }
 
-pre {min-width:0;max-inline-size:max-content;}
 .fit-pre-to-viewport {
   max-inline-size: calc(100vw - var(--size-8))
 }
+
 .two-wrap {
   display: flex;
   flex-wrap: wrap;
