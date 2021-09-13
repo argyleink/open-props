@@ -29,6 +29,7 @@
     "lib:easing": "postcss src/props.easing.css -o easings.css",
     "lib:fonts": "postcss src/props.fonts.css -o fonts.css",
     "lib:gradients": "postcss src/props.gradients.css -o gradients.css",
+    "lib:media": "postcss src/props.media.css -o media.css",
     "lib:shadows": "postcss src/props.shadows.css -o shadows.css",
     "lib:sizes": "postcss src/props.sizes.css -o sizes.css",
     "lib:zindex": "postcss src/props.zindex.css -o zindex.css",
