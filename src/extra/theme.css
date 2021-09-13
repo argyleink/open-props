@@ -11,6 +11,6 @@ h1, h2, h3, h4, h5, h6, dt {
   color: var(--text-1);
 }
 
-a {
+a[href] {
   color: var(--brand);
 }
