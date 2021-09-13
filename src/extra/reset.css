@@ -55,13 +55,17 @@ p, ul, ol, dl, h6 {
   font-size: var(--font-size-2);
 }
 
-a, area, button, input, label, select, summary, textarea, [tabindex] {
+a[href], area, button, input, label, select, summary, textarea, [tabindex] {
   cursor: pointer;
   touch-action: manipulation;
 }
 
 a {
-  text-decoration-color: var(--text-1);
+  color: var(--text-1);
+
+  &[href] {
+    text-decoration-color: var(--text-1);
+  }
 
   &:not(:hover) {
     text-decoration: inherit;
@@ -128,13 +132,10 @@ ol, ul { padding-inline-start: var(--size-8) }
 li { padding-inline-start: var(--size-2) }
 li, dd, figcaption { max-inline-size: var(--size-content-2) }
 p { max-inline-size: var(--size-content-3) }
+dt, summary { font-weight: var(--font-bold) }
 
-dt { 
-  font-weight: var(--font-bold); 
-
-  &:not(:first-of-type) {
-    margin-block-start: var(--size-5);
-  }
+dt:not(:first-of-type) {
+  margin-block-start: var(--size-5);
 }
 
 small { 
@@ -163,4 +164,23 @@ blockquote {
   padding-block: var(--size-3);
   padding-inline: var(--size-4);
   max-inline-size: var(--size-content-2);
+}
+
+summary {
+  background: var(--surface-3);
+  padding: var(--size-2) var(--size-3);
+  margin: calc(var(--size-3) * -1);
+  border-radius: var(--border-radius-2);
+}
+
+details {
+  padding: var(--size-3);
+  background: var(--surface-2);
+  border-radius: var(--border-radius-2);
+  
+  &[open] > summary {
+    margin-bottom: var(--size-2);
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
 }
