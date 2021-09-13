@@ -123,7 +123,7 @@ pre {
 }
 
 :not(pre) > code {
-  padding: 0 var(--size-2) var(--size-1);
+  padding: var(--size-1) var(--size-2);
   background: var(--surface-2);
   border-radius: var(--border-radius-2);
 }
