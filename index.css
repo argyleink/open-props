@@ -79,12 +79,10 @@ nav {
   }
 }
 
-/* .fluid-headers {
-  & h1 { font-size: var(--font-size-fluid-3) }
-  & h2 { font-size: var(--font-size-fluid-2) }
-  & h3 { font-size: var(--font-size-fluid-1) }
-  & h4 { font-size: var(--font-size-fluid-00) }
-} */
+:not(pre) > code[class*="language-"] {
+  padding: var(--size-1) var(--size-2);
+  white-space: nowrap;
+}
 
 a { color: var(--brand) }
 
