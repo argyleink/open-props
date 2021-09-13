@@ -24,26 +24,5 @@ html {
   --easeinout-5: cubic-bezier(.9, 0, .1, 1);
 
   --ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
-
-  --ease-in-quad:       easeInQuad;
-  --ease-in-cubic:      easeInCubic;
-  --ease-in-quart:      easeInQuart;
-  --ease-in-quint:      easeInQuint;
-  --ease-in-expo:       easeInExpo;
-  --ease-in-circ:       easeInCirc;
-  --ease-in-back:       easeInBack;
-  --ease-out-quad:      easeOutQuad;
-  --ease-out-cubic:     easeOutCubic;
-  --ease-out-quart:     easeOutQuart;
-  --ease-out-quint:     easeOutQuint;
-  --ease-out-expo:      easeOutExpo;
-  --ease-out-circ:      easeOutCirc;
-  --ease-out-back:      easeOutBack;
-  --ease-in-out-quad:   easeInOutQuad;
-  --ease-in-out-cubic:  easeInOutCubic;
-  --ease-in-out-quart:  easeInOutQuart;
-  --ease-in-out-quint:  easeInOutQuint;
-  --ease-in-out-expo:   easeInOutExpo;
-  --ease-in-out-circ:   easeInOutCirc;
-  --ease-in-out-back:   easeInOutBack;
+  /* todo: --ease-elastic-1-5; */
 }
