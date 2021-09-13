@@ -3,6 +3,9 @@ const postcssEasings    = require('postcss-easings')
 const postcssImport     = require('postcss-import')
 const cssnano           = require('cssnano')
 
+const inlineMediaQueries = process.env.npm_lifecycle_event === 'lib:media'
+// todo: inline MQs for 'lib:all' when it's supported better
+
 module.exports = {
   plugins: [
     postcssEasings(),
@@ -20,7 +23,7 @@ module.exports = {
         'focus-visible-pseudo-class': false,
         'focus-within-pseudo-class': false,
         'color-functional-notation': false,
-        'custom-media-queries': {preserve:true}
+        'custom-media-queries': {preserve:inlineMediaQueries}
       }
     }),
     cssnano({
