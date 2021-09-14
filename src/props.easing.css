@@ -25,4 +25,13 @@ html {
 
   --ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
   /* todo: --ease-elastic-1-5; */
+
+  --ease-squish: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* todo: --ease-squish-1-5; */
+
+  --ease-step-1: steps(2);
+  --ease-step-2: steps(3);
+  --ease-step-3: steps(4);
+  --ease-step-4: steps(7);
+  --ease-step-5: steps(10);
 }
