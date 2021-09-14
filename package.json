@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "open-color": "^1.9.1",
-    "open-props": "^0.0.7",
+    "open-props": "^0.0.8",
     "postcss-easings": "3.x",
     "postcss-preset-env": "6.7.x",
     "vite": "2.x  || >2.0.0-alpha"

@@ -25,7 +25,7 @@
         </svg>
         Open Props
       </a>
-      <a href="#">About</a>
+      <a href="#about">About</a>
       <a href="#">Features</a>
       <a href="#">Documentation</a>
     </nav>
@@ -34,7 +34,12 @@
       <header class="hero">
         <p><code class="language-bash">npm i open-props</code></p>
         <h1>Grab n' go<br>CSS custom properties.</h1>
-        <p>Easy to remember, <b>custom property utility values</b>.</p>
+        <p>Easy to remember, free <b>CSS variables</b>.</p>
+        <ul class="checkmark-list">
+          <li>Super atomic</li>
+          <li>Fulfill virtually any design</li>
+          <li>Useful anywhere CSS vars go</li>
+        </ul>
         <small>
           v0.0.8<br>
           Apache License
@@ -44,15 +49,13 @@
 @import "open-props";
 
 .button {
-  font-size: var(--font-size-fluid-1);
-
   padding-inline: var(--size-5);
   padding-block: var(--size-3);
 
   color: var(--blue-0);
-  background: var(--blue-7);
+  background-color: var(--blue-7);
   border-radius: var(--border-radius-round);
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--shadow-1);
   
   @media (--motionOK) {
     transition: background .3s var(--easinout-3);
@@ -69,107 +72,147 @@
     <section id="about">
       <header>
         <h2>About</h2>
-        <dl>
+      </header>
+      <dl class="responsive-dl">
+        <div>
           <dt>Everything's optional</dt>
           <dd>Grab some of the props, or all of em.</dd>
+        </div>
+        <div>
           <dt>No magic units</dt>
           <dd>Design consistency without thinking</dd>
+        </div>
+        <div>
           <dt>Easy to customize</dt>
           <dd>Extend, overwrite, adapt, etc.. no prob.</dd>
+        </div>
+        <div>
           <dt>Easy to remember</dt>
           <dd>Try to keep the API surface area small and legible</dd>
-        </dl>
+        </div>
+      </dl>
+    </section>
+
+    <section id="overview">
+      <header>
+        <h2>Overview</h2>
       </header>
-      <article>
-        <h5>
-          All open props 
-          <small>(except 
-            <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">
-              <code class="language-css">@custom-media</code>
-            </a>)
-          </small>
-        </h5>
-        <div class="size-chart">
-          <div class="size">13.8K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props">props.css</a>
-          </div>
+
+      <dl class="responsive-dl">
+        <div>
+          <dt>Bundles</dt>
+          <dd class="size-chart">
+            <div class="size"><strong>13.8</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props">props.css</a>
+              <br>
+              <small>
+                <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">
+                  <code class="language-css">@custom-media</code>
+                </a> not included
+              </small>
+            </div>
+
+            <div class="size"><strong>3.4</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/reset.css">reset.css</a>
+              <br>
+              <small> 
+                <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
+                and 
+                <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css">theme.css</a> included</small>
+            </div>
+          </dd>
         </div>
 
-        <h5>Essentials </h5>
-        <div class="size-chart">
-          <div class="size">662B</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/animations.css">animations.css</a>
-          </div>
+        <div>
+          <dt>Prop Packs ™</dt>
+          <dd class="size-chart">
+            <div class="size"><strong>662</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/animations.css">animations.css</a>
+            </div>
 
-          <div class="size">.09K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/aspects.css">aspects.css</a>
-          </div>
+            <div class="size"><strong>.09</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/aspects.css">aspects.css</a>
+            </div>
 
-          <div class="size">.38K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/borders.css">borders.css</a>
-          </div>
+            <div class="size"><strong>.38</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/borders.css">borders.css</a>
+            </div>
 
-          <div class="size">2.3K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/colors.css">colors.css</a>
-          </div>
+            <div class="size"><strong>2.3</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/colors.css">colors.css</a>
+            </div>
 
-          <div class="size">.75K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/easings.css">easings.css</a>
-          </div>
+            <div class="size"><strong>.75</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/easings.css">easings.css</a>
+            </div>
 
-          <div class="size">1.4K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/fonts.css">fonts.css</a>
-          </div>
+            <div class="size"><strong>1.4</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/fonts.css">fonts.css</a>
+            </div>
 
-          <div class="size">5.6K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/gradients.css">gradients.css</a>
-          </div>
+            <div class="size"><strong>5.6</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/gradients.css">gradients.css</a>
+            </div>
 
-          <div class="size">2.2K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/media.css">media.css</a>
-          </div>
+            <div class="size"><strong>2.2</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/media.css">media.css</a>
+            </div>
 
-          <div class="size">1.6K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/shadows.css">shadows.css</a>
-          </div>
+            <div class="size"><strong>1.6</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/shadows.css">shadows.css</a>
+            </div>
 
-          <div class="size">.9K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/sizes.css">sizes.css</a>
-          </div>
+            <div class="size"><strong>.9</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/sizes.css">sizes.css</a>
+            </div>
 
-          <div class="size">.09K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/zindex.css">zindex.css</a>
-          </div>
+            <div class="size"><strong>.09</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/zindex.css">zindex.css</a>
+            </div>
+
+            <div class="size"><strong>??</strong></div>
+            <div class="file">icons.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">svg.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">layouts.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">clips.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">masks.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">icons.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">counters.css <small>WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">utilities.css <small>WIP</small></div>
+          </dd>
         </div>
-
-        <h5>Extra</h5>
-        <div class="size-chart">
-          <div class="size">3.4K</div>
-          <div class="file">
-            <a href="https://unpkg.com/open-props/reset.css">reset.css</a>
-          </div>
-        </div>
-      </article>
+      </dl>
+      <blockquote>
+        <a href="https://postcss.org/">PostCSS</a> files also available
+      </blockquote>
     </section>
 
     <section id="getting-started">
       <header>
         <h2>Getting Started</h2>
-        <p>PostCSS and pre-built version are available.</p>
+        <p><a href="https://postcss.org/">PostCSS</a> and pre-built version are available.</p>
       </header>
-      <article>
+      <article class="installation">
         <header>
           <h3>Installation</h3>
           <p>Grab the props from a URL or NPM</p>
@@ -183,7 +226,7 @@
             <p>Import pre-built bundle</p>
             <pre class="language-css"><code>@import "open-props";</code></pre>
 
-            <p>Import PostCSS unbundled</p>
+            <p>Import <a href="https://postcss.org/">PostCSS</a> unbundled</p>
             <pre class="language-css"><code>@import "open-props/src/index.css";</code></pre>
           </div>
 
@@ -201,18 +244,16 @@
   &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
             </code></pre>
 
-            <p>Import PostCSS unbundled</p>
+            <p>Import <a href="https://postcss.org/">PostCSS</a> unbundled</p>
             <pre class="language-css"><code>
-  @import "https://unpkg.com/src/index.css";
+  @import "https://unpkg.com/open-props/src/index.css";
             </code></pre>
           </div>
         </div>
       </article>
-
-      
     </section>
 
-    <section>
+    <!-- <section>
       <header>
         <h2>Naming Convention</h2>
         <blockquote>
@@ -225,49 +266,51 @@
         <li><code class="language-css">var(--size-00)</code>, <code class="language-css">var(--font-leading-00)</code> are allowed unsafe negative values</li>
         <li><code class="language-css">var(--font-light)</code> and <code class="language-css">@media (--portrait)</code> are examples of exceptions to the number system. to match common industry verbiage.</li>
       </ol>
-    </section>
+    </section> -->
 
     <section id="colors">
       <header>
         <h2>Colors</h2>
-        <div class="two-wrap">
-          <p>Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI like font, background, border, etc.</p>  
-          <div>
-            <h5>Vars Sample</h5>
+        <p>Open Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI.</p>  
+      </header>
+      <div class="two-wrap">
+        <div>
+          
+          <h5>Vars Sample</h5>
+          <div class="var-examples">
             <pre class="language-css"><code>
-var(--gray-2);
-var(--red-3);
-var(--grape-9);
-var(--blue-0);
-var(--orange-5);
+.pinks {
+  --pink-0: #fff0f6;
+  ...
+  --pink-9: #a61e4d;
+}
             </code></pre>
-            <h5>Usage Sample</h5>
-            <pre class="language-css fit-pre-to-viewport"><code>
-.open-color-pallete {
-  color: var(--blue-6);
-  background-color: var(--blue-0);
-  border: 1px solid var(--blue-1);
-  text-shadow: 0 1px 0 var(--blue-2);
+            <pre class="language-css"><code>
+.oranges {
+  --orange-0: #fff4e6
+  ...
+  --orange-9: #d9480f;
 }
             </code></pre>
           </div>
         </div>
-      </header>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css fit-pre-to-viewport"><code>
+button.blue {
+  color: var(--blue-6);
+  background-color: var(--blue-0);
+  border: 1px solid var(--blue-1);
+  text-shadow: 0 1px 0 var(--blue-2);
 
-      <article>
-        <div class="open-colors column-names">
-          <h4>&nbsp;</h4>
-          <span class="color-swatch">0</span>
-          <span class="color-swatch">1</span>
-          <span class="color-swatch">2</span>
-          <span class="color-swatch">3</span>
-          <span class="color-swatch">4</span>
-          <span class="color-swatch">5</span>
-          <span class="color-swatch">6</span>
-          <span class="color-swatch">7</span>
-          <span class="color-swatch">8</span>
-          <span class="color-swatch">9</span>
+  &:hover {
+    background-color: var(--blue-1);
+  }
+}
+          </code></pre>
         </div>
+      </div>
+      <article>
         <div class="open-colors">
           <h4>Gray</h4>
           <span class="color-swatch" style="background-color: var(--gray-0)"></span>
