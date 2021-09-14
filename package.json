@@ -32,6 +32,7 @@
     "lib:media": "postcss src/props.media.css -o media.css",
     "lib:shadows": "postcss src/props.shadows.css -o shadows.css",
     "lib:sizes": "postcss src/props.sizes.css -o sizes.css",
+    "lib:supports": "postcss src/props.supports.css -o supports.css",
     "lib:zindex": "postcss src/props.zindex.css -o zindex.css",
     "lib:reset": "postcss src/extra/reset.css -o reset.css"
   },

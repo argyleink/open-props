@@ -3,7 +3,9 @@ const postcssEasings    = require('postcss-easings')
 const postcssImport     = require('postcss-import')
 const cssnano           = require('cssnano')
 
-const inlineMediaQueries = process.env.npm_lifecycle_event === 'lib:media'
+const lib = process.env.npm_lifecycle_event
+
+const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports'
 // todo: inline MQs for 'lib:all' when it's supported better
 
 module.exports = {
