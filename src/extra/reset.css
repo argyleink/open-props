@@ -175,7 +175,7 @@ summary {
 
 details {
   padding-inline: var(--size-3);
-  padding-block: var(--size-2) var(--size-3);
+  padding-block: var(--size-2);
   background: var(--surface-2);
   border-radius: var(--border-radius-2);
   
