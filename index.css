@@ -276,7 +276,7 @@ pre[class*="language-"] {
   & > div:nth-of-type(4) svg { color: var(--red-5) }
 
   & svg {
-    max-inline-size: var(--size-12);
+    inline-size: var(--size-12);
     border-width: var(--border-size-2);
     border-radius: var(--border-radius-round);
     padding: var(--size-2);
