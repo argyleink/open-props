@@ -85,16 +85,13 @@ nav {
   gap: var(--size-3);
 
   & > h1 {
+    font-size: var(--font-size-fluid-3);
     background-image: var(--conic-gradient-3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @media (--OSdark) {
       background-image: var(--conic-gradient-8);
-    }
-
-    @media (--sm-n-below) {
-      font-size: var(--font-size-fluid-3)
     }
   }
 
@@ -266,7 +263,7 @@ pre[class*="language-"] {
   
   @media (--md-n-below) {
     grid-template-columns: 1fr;
-    
+
     &:not(.bundle-sizes) {
       justify-items: center;
       text-align: center;
