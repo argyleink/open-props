@@ -87,6 +87,11 @@ nav {
   white-space: nowrap;
 }
 
+pre > code[class*="language-"] {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-2);
+}
+
 a { color: var(--brand) }
 
 blockquote {
@@ -110,6 +115,17 @@ pre {
   box-shadow: var(--inner-shadow-0);
   inline-size: 7%;
   block-size: var(--size);
+
+  &:is(:hover,:focus) {
+    transform: scale(1.5);
+    transition-duration: .1s;
+    transition-delay: 0s;
+    transition-timing-function: var(--ease-3);
+  }
+
+  @media (--motionOK) {
+    transition: transform 2s var(--easeout-5) 3s;
+  }
 
   @media (--md-n-below) {
     --size: var(--size-3);
@@ -137,7 +153,7 @@ pre {
 
 .font-sizes {
   display: grid;
-  gap: var(--size-7);
+  gap: var(--size-3);
 
   & > .scroll-x-overflow {
     margin-inline: calc(var(--size-8) * -1);
@@ -200,4 +216,25 @@ pre {
 .installation {
   display: grid;
   gap: var(--size-5);
+
+  & :is(pre, blockquote) {
+    margin-block-end: var(--size-5);
+  }
+
+  & blockquote {
+    margin-block-start: var(--size-2);
+  }
+}
+
+.aspect-demos {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--size-4);
+
+  & > div {
+    block-size: var(--size-15);
+    background: var(--surface-3);
+    display: grid;
+    place-content: center;
+  }
 }

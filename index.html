@@ -37,7 +37,7 @@
         <p>Easy to remember, <b>free CSS variables</b>.</p>
         <ul class="checkmark-list">
           <li>Subatomic</li>
-          <li>Fulfills virtually any design</li>
+          <li>Fulfill tons of designs</li>
           <li>Use anywhere CSS vars can go</li>
         </ul>
         <small>
@@ -101,7 +101,7 @@
       <dl class="responsive-dl">
         <div>
           <dt>Bundles</dt>
-          <dd class="size-chart">
+          <dd class="size-chart" style="row-gap: var(--size-3)">
             <div class="size"><strong>13.8</strong>kB</div>
             <div class="file">
               <a href="https://unpkg.com/open-props">props.css</a>
@@ -217,43 +217,94 @@
     <section id="getting-started">
       <header>
         <h2>Getting Started</h2>
-        <p><a href="https://postcss.org/">PostCSS</a> and pre-built version are available.</p>
+        <p><a href="https://postcss.org/">PostCSS</a> and pre-built versions available.</p>
       </header>
       <article class="installation">
         <header>
           <h3>Installation</h3>
-          <p>Grab the props from a URL or NPM</p>
+          <p>Grab the props with a URL or from NPM</p>
         </header>
 
         <div class="two-wrap">
           <div class="contain-pre">
-            <h5>NPM</h5>
-            <pre class="language-bash"><code>$ npm install open-props</code></pre>
+            <h4>NPM</h4>
+            <pre class="language-bash"><code>npm install open-props</code></pre>
             
-            <p>Import pre-built bundle</p>
-            <pre class="language-css"><code>@import "open-props";</code></pre>
+            <h5>CSS</h5>
+            <h6>Bundles</h6>
+            <pre class="language-css"><code>
+@import "open-props";
+@import "open-props/reset.css";
+            </code></pre>
 
-            <p>Import <a href="https://postcss.org/">PostCSS</a> unbundled</p>
-            <pre class="language-css"><code>@import "open-props/src/index.css";</code></pre>
+            <h6>Individual packs</h6>
+            <pre class="language-css"><code>
+@import "open-props/sizes.css";
+@import "open-props/colors.css";
+@import "open-props/gradients.css";
+...
+            </code></pre>
+
+            <h5>PostCSS</h5>
+            <h6>Entry points</h6>
+            <pre class="language-css"><code>
+@import "open-props/src/index.css";
+@import "open-props/src/extra/reset.css";
+            </code></pre>
+
+            <h6>Individual packs</h6>
+            <pre class="language-css"><code>
+@import "open-props/src/sizes.css";
+@import "open-props/src/aspects.css";
+@import "open-props/src/easings.css";
+...
+            </code></pre>
           </div>
 
           <div class="contain-pre">
-            <h5>CDN</h5>
+            <h4>CDN</h4>
+            <blockquote>
+              <p>No install step required.</p>
+            </blockquote>
 
-            <p>Import pre-built bundle</p>
+            <h5>CSS</h5>
+            <h6>Bundles</h6>
             <pre class="language-css"><code>
-  @import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/reset.css";
             </code></pre>
-
-            <p>or</p>
 
             <pre class="language-html"><code>
-  &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+&#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+&#60;link rel="stylesheet" href="https://unpkg.com/open-props/reset.css"/&#62;
             </code></pre>
 
-            <p>Import <a href="https://postcss.org/">PostCSS</a> unbundled</p>
+            <pre class="language-js"><code>
+import 'https://unpkg.com/open-props';
+import 'https://unpkg.com/open-props/reset.css';
+            </code></pre>
+
+            <h6>Individual packs</h6>
             <pre class="language-css"><code>
-  @import "https://unpkg.com/open-props/src/index.css";
+@import "https://unpkg.com/open-props/colors.css";
+@import "https://unpkg.com/open-props/easings.css";
+@import "https://unpkg.com/open-props/sizes.css";
+...
+            </code></pre>
+
+            <h5>PostCSS</h5>
+            <h6>Entry Points</h6>
+            <pre class="language-css"><code>
+@import "https://unpkg.com/open-props/src/index.css";
+@import "https://unpkg.com/open-props/src/extra/reset.css";
+            </code></pre>
+
+            <h6>Individual packs</h6>
+            <pre class="language-css"><code>
+@import "https://unpkg.com/open-props/src/colors.css";
+@import "https://unpkg.com/open-props/src/easings.css";
+@import "https://unpkg.com/open-props/src/sizes.css";
+...
             </code></pre>
           </div>
         </div>
@@ -493,24 +544,121 @@ button.blue {
     <section id="aspect-ratio">
       <header>
         <h2>Aspect Ratios</h2>
-        <p></p>
       </header>
-      <pre class="language-css"><code>
+      <div class="two-wrap">
+        <div>
+          
+          <h5>Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
 --aspect-box: 1;
 --aspect-landscape: 4/3;
 --aspect-portrait: 3/4;
 --aspect-widescreen: 16/9; 
-      </code></pre>
+--aspect-ultrawide: 18/5;
+--golden-ratio: 1.6180/1; 
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css fit-pre-to-viewport"><code>
+.video-thumbnail {
+  block-size: 480px;
+  aspect-ratio: var(--aspect-widescreen);
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="aspect-demos">
+        <div style="aspect-ratio: var(--aspect-box)">box</div>
+        <div style="aspect-ratio: var(--aspect-landscape)">landscape</div>
+        <div style="aspect-ratio: var(--aspect-portrait)">portrait</div>
+        <div style="aspect-ratio: var(--aspect-widescreen)">widescreen</div>
+        <div style="aspect-ratio: 1.6180/1">golden ratio</div>
+        <div style="aspect-ratio: 18/5">ultrawide</div>
+      </article>
     </section>
 
     <section id="typography">
       <header>
         <h2>Typography</h2>
-        <p></p>
       </header>
+
+      <article class="font-sizes">
+        <h4>Font Families</h4>
+        <pre class="language-css"><code>
+--font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+--font-serif: ui-serif,serif;
+--font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+        </code></pre>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Font Weights</h4>
+        <pre class="language-css"><code>
+--font-thin: 100;
+--font-semilight: 200;
+--font-light: 300;
+--font-normal: 400;
+--font-medium: 500;
+--font-semibold: 600;
+--font-bold: 700;
+--font-extrabold: 800;
+--font-black: 900;
+        </code></pre>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Font (Tracking || Kerning || Letter Spacing)</h4>
+        <pre class="language-css"><code>
+--font-tracking-00: -.05em;
+--font-tracking-1: .025em;
+--font-tracking-2: .025em;
+--font-tracking-3: .05em;
+--font-tracking-4: .1em;
+        </code></pre>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Font Leading</h4>
+        <pre class="language-css"><code>
+--font-leading-00: .95;
+--font-leading-0: 1.1;
+--font-leading-1: 1.25;
+--font-leading-2: 1.375;
+--font-leading-3: 1.5;
+--font-leading-4: 1.75;
+--font-leading-5: 2;
+        </code></pre>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Font Relative Leading</h4>
+        <pre class="language-css"><code>
+--font-relative-leading-1: calc(1rem + 1.1ch);
+--font-relative-leading-2: calc(1rem + 1.25ch);
+--font-relative-leading-3: calc(1rem + 1.5ch);
+--font-relative-leading-4: calc(1rem + 2ch);
+--font-relative-leading-5: calc(1rem + 2.5ch);
+--font-relative-leading-6: calc(1rem + 3ch);
+        </code></pre>
+      </article>
       
       <article class="font-sizes">
-        <h4>Static Font Sizes</h4>
+        <h4>Font Sizes</h4>
+        <pre class="language-css"><code>
+--font-size-000: .5rem;
+--font-size-00: .75rem;
+--font-size-1: 1rem;
+--font-size-2: 1.1rem;
+--font-size-3: 1.25rem;
+--font-size-4: 1.5rem;
+--font-size-5: 2rem;
+--font-size-6: 2.5rem;
+--font-size-7: 3rem;
+--font-size-8: 3.5rem;
+        </code></pre>
         <div class="scroll-x-overflow"><div class="font-size-examples">
           <code class="language-css">var(--font-size-000)</code>
           <span style="font-size: var(--font-size-000)">Almost before you knew it, we'd touched ground.</span>
@@ -532,6 +680,26 @@ button.blue {
           <span style="font-size: var(--font-size-7)">Almost before you knew it, we'd touched ground.</span>
           <code class="language-css">var(--font-size-8)</code>
           <span style="font-size: var(--font-size-8)">Almost before you knew it, we'd touched ground.</span>
+        </div></div>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Fluid Font Sizes</h4>
+        <pre class="language-css"><code>
+--font-size-fluid-00: clamp(.75rem, 2 * 1.5vw, 1rem);
+--font-size-fluid-1: clamp(1rem, 2 * 2vw, 1.5rem);
+--font-size-fluid-2: clamp(1.5rem, 2 * 3vw, 2.5rem);
+--font-size-fluid-3: clamp(2rem, 2 * 5vw, 3.5rem);
+        </code></pre>
+        <div class="scroll-x-overflow"><div class="font-size-examples">
+          <code class="language-css">var(--font-size-fluid-00)</code>
+          <span style="font-size: var(--font-size-fluid-00)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-fluid-1)</code>
+          <span style="font-size: var(--font-size-fluid-1)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-fluid-2)</code>
+          <span style="font-size: var(--font-size-fluid-2)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-fluid-3)</code>
+          <span style="font-size: var(--font-size-fluid-3)">Almost before you knew it, we'd touched ground.</span>
         </div></div>
       </article>
 
