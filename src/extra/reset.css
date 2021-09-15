@@ -109,7 +109,7 @@ svg {
   }
 
   &:not([width]) {
-    max-inline-size: var(--size-10);
+    inline-size: var(--size-10);
   }
 }
 
