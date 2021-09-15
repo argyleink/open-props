@@ -78,19 +78,41 @@
       </header>
       <dl class="responsive-dl">
         <div>
-          <dt>Everything's optional</dt>
+          <dt>
+            <svg  viewBox="0 0 24 24" >
+              <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+              <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+            </svg>
+            Everything's optional
+          </dt>
           <dd>Grab some of the props, or all of em.</dd>
         </div>
         <div>
-          <dt>No magic units</dt>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              <path d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+            </svg>
+            No magic units
+          </dt>
           <dd>Design consistency without thinking</dd>
         </div>
         <div>
-          <dt>Easy to customize</dt>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+            Easy to customize
+          </dt>
           <dd>Extend, overwrite, adapt, etc.. no prob.</dd>
         </div>
         <div>
-          <dt>Easy to remember</dt>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            Easy to remember
+          </dt>
           <dd>Try to keep the API surface area small and legible</dd>
         </div>
       </dl>
@@ -695,10 +717,10 @@ button.blue {
       <article class="font-sizes">
         <h4>Fluid Font Sizes</h4>
         <pre class="language-css"><code>
---font-size-fluid-00: clamp(.75rem, 2 * 1.5vw, 1rem);
---font-size-fluid-1: clamp(1rem, 2 * 2vw, 1.5rem);
---font-size-fluid-2: clamp(1.5rem, 2 * 3vw, 2.5rem);
---font-size-fluid-3: clamp(2rem, 2 * 5vw, 3.5rem);
+--font-size-fluid-00: clamp(.75rem, 1.5vw, 1rem);
+--font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
+--font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
+--font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
         </code></pre>
         <div class="scroll-x-overflow"><div class="font-size-examples">
           <code class="language-css">var(--font-size-fluid-00)</code>
