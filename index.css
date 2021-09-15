@@ -105,7 +105,7 @@ nav {
 
 :not(pre) > code[class*="language-"] {
   padding: var(--size-1) var(--size-2);
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--shadow-1);
   white-space: nowrap;
 }
 
@@ -114,11 +114,28 @@ pre > code[class*="language-"] {
   font-size: var(--font-size-2);
 }
 
+@media (--OSlight) {
+  pre[class*="language-"], code[class*="language-"] {
+    background: white;
+  }
+}
+
 a { color: var(--brand) }
 
 blockquote {
   border-color: var(--grape-5);
   background-color: var(--surface-2);
+
+  &.icon-quote {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--size-5);
+
+    & > svg {
+      inline-size: var(--size-7);
+      stroke: var(--text-2);
+    }
+  }
 }
 
 pre[class*="language-"] {
