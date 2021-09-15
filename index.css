@@ -114,6 +114,17 @@ pre > code[class*="language-"] {
   font-size: var(--font-size-2);
 }
 
+pre[class*="language-"], code[class*="language-"] {
+  @media (--OSlight) {
+    background: white;
+  }
+  @media (--OSdark) {
+    & *::selection {
+      background: black;
+    }
+  }
+}
+
 @media (--OSlight) {
   pre[class*="language-"], code[class*="language-"] {
     background: white;
