@@ -31,18 +31,4 @@ html {
   --size-header-1: 20ch;
   --size-header-2: 25ch;
   --size-header-3: 45rem;
-
-  --width-1: 240px;
-  --width-2: 320px;
-  --width-3: 480px;
-  --width-4: 540px;
-  --width-5: 640px;
-  --width-6: 720px;
-  --width-7: 768px;
-  --width-8: 896px;
-  --width-9: 1024px;
-  --width-10: 1152px;
-  --width-11: 1280px;
-  --width-12: 1440px;
-  --width-13: 1920px;
 }
