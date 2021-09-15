@@ -266,8 +266,11 @@ pre[class*="language-"] {
   
   @media (--md-n-below) {
     grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
+    
+    &:not(.bundle-sizes) {
+      justify-items: center;
+      text-align: center;
+    }
   }
 
   & > div:nth-of-type(1) svg { color: var(--grape-5) }
