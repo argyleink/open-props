@@ -130,6 +130,7 @@ blockquote {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: var(--size-5);
+    border-color: var(--lime-5);
 
     & > svg {
       inline-size: var(--size-7);
@@ -264,6 +265,16 @@ pre[class*="language-"] {
 
   & blockquote {
     margin-block-start: var(--size-2);
+  }
+
+  & h5 {
+    margin-block: var(--size-8) var(--size-2);
+    color: var(--lime-5);
+    border-bottom: var(--border-size-1) solid var(--surface-2);
+
+    @media (--OSlight) {
+      color: var(--blue-6);
+    }
   }
 }
 
