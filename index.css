@@ -55,7 +55,7 @@ nav {
   }
 
   & > a:first-child {
-    flex: 2;
+    margin-inline-end: auto;
     display: inline-flex;
     align-items: center;
     gap: var(--size-2);
