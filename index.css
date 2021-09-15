@@ -1,11 +1,23 @@
 @import "open-props/src/index.css";
 @import "open-props/src/extra/reset.css";
 
+:root {
+  --max-inline-body: calc(100vw - (var(--size-8) * 2));
+
+  @media (--md-n-below) {
+    --max-inline-body: calc(100vw - (var(--size-3) * 2));
+  }
+}
+
 body {
   display: grid;
   place-content: center;
   padding-inline: var(--size-8);
   padding-block: var(--size-6);
+
+  @media (--md-n-below) {
+    padding-inline: var(--size-3);
+  }
 }
 
 section {
@@ -37,10 +49,6 @@ nav {
   align-items: center;
   gap: var(--size-4);
 
-  @media (--md-n-below) {
-    justify-content: center;
-  }
-
   & > a[href] {
     color: var(--text-1);
     text-decoration-color: var(--brand);
@@ -51,14 +59,23 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: var(--size-2);
+    color: var(--indigo-4);
 
     & > svg {
       block-size: 3ch;
+      stroke: var(--indigo-6);
     }
 
     @media (--md-n-below) {
       flex-basis: 100%;
-      justify-content: center;
+    }
+
+    @media (--OSlight) {
+      color: var(--orange-8);
+
+      & > svg {
+        stroke: var(--orange-4);
+      }
     }
   }
 }
@@ -80,10 +97,15 @@ nav {
       font-size: var(--font-size-fluid-3)
     }
   }
+
+  & > blockquote {
+    justify-self: flex-start;
+  }
 }
 
 :not(pre) > code[class*="language-"] {
   padding: var(--size-1) var(--size-2);
+  box-shadow: var(--shadow-3);
   white-space: nowrap;
 }
 
@@ -99,8 +121,10 @@ blockquote {
   background-color: var(--surface-2);
 }
 
-pre {
+pre[class*="language-"] {
   box-shadow: var(--shadow-4);
+  max-inline-size: var(--max-inline-body);
+  justify-self: flex-start;
 }
 
 .open-colors {
@@ -159,6 +183,10 @@ pre {
     margin-inline: calc(var(--size-8) * -1);
     padding-inline: var(--size-8);
   }
+
+  & pre {
+    max-inline-size: var(--max-inline-body);
+  }
 }
 
 .font-size-examples {
@@ -184,10 +212,6 @@ pre {
   flex-wrap: wrap;
   gap: var(--size-5);
   align-items: flex-start;
-}
-
-.fit-pre-to-viewport {
-  max-inline-size: calc(100vw - var(--size-8))
 }
 
 .two-wrap {
@@ -233,6 +257,7 @@ pre {
 
   & > div {
     block-size: var(--size-15);
+    max-inline-size: var(--max-inline-body);
     background: var(--surface-3);
     display: grid;
     place-content: center;

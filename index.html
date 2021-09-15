@@ -37,15 +37,18 @@
         <p>Easy to remember, <b>free CSS variables</b>.</p>
         <ul class="checkmark-list">
           <li>Subatomic</li>
-          <li>Fulfill tons of designs</li>
-          <li>Use anywhere CSS vars can go</li>
+          <li>Conquer any design</li>
+          <li>Useful anywhere CSS vars can go</li>
         </ul>
+        <blockquote>
+          <span>Plus a bonus light+dark reset.css</span>
+        </blockquote>
         <small>
           v0.0.9<br>
           Apache License
         </small>
       </header>
-      <div><pre class="language-css fit-pre-to-viewport"><code>
+      <div><pre class="language-css"><code>
 @import "open-props";
 
 .button {
@@ -242,7 +245,7 @@
 @import "open-props/sizes.css";
 @import "open-props/colors.css";
 @import "open-props/gradients.css";
-...
+/* etc */
             </code></pre>
 
             <h5>PostCSS</h5>
@@ -257,7 +260,7 @@
 @import "open-props/src/sizes.css";
 @import "open-props/src/aspects.css";
 @import "open-props/src/easings.css";
-...
+/* etc */
             </code></pre>
           </div>
 
@@ -289,7 +292,7 @@ import 'https://unpkg.com/open-props/reset.css';
 @import "https://unpkg.com/open-props/colors.css";
 @import "https://unpkg.com/open-props/easings.css";
 @import "https://unpkg.com/open-props/sizes.css";
-...
+/* etc */
             </code></pre>
 
             <h5>PostCSS</h5>
@@ -304,7 +307,7 @@ import 'https://unpkg.com/open-props/reset.css';
 @import "https://unpkg.com/open-props/src/colors.css";
 @import "https://unpkg.com/open-props/src/easings.css";
 @import "https://unpkg.com/open-props/src/sizes.css";
-...
+/* etc */
             </code></pre>
           </div>
         </div>
@@ -354,7 +357,7 @@ import 'https://unpkg.com/open-props/reset.css';
         </div>
         <div>
           <h5>Usage Sample</h5>
-          <pre class="language-css fit-pre-to-viewport"><code>
+          <pre class="language-css"><code>
 button.blue {
   color: var(--blue-6);
   background-color: var(--blue-0);
@@ -562,7 +565,7 @@ button.blue {
         </div>
         <div>
           <h5>Usage Sample</h5>
-          <pre class="language-css fit-pre-to-viewport"><code>
+          <pre class="language-css"><code>
 .video-thumbnail {
   block-size: 480px;
   aspect-ratio: var(--aspect-widescreen);
