@@ -1,4 +1,8 @@
-/* todo: enumerate imports here for bundling */
+:where(.visually-hidden, .sr-only) {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 
 .border-between-inline > * + * {
   border-inline-start-width: var(--border);
