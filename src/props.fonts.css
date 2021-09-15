@@ -45,8 +45,8 @@ html {
   --font-size-7: 3rem;
   --font-size-8: 3.5rem;
 
-  --font-size-fluid-00: clamp(.75rem, 2 * 1.5vw, 1rem);
-  --font-size-fluid-1: clamp(1rem, 2 * 2vw, 1.5rem);
-  --font-size-fluid-2: clamp(1.5rem, 2 * 3vw, 2.5rem);
-  --font-size-fluid-3: clamp(2rem, 2 * 5vw, 3.5rem);
+  --font-size-fluid-00: clamp(.75rem, 1.5vw, 1rem);
+  --font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
+  --font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
+  --font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
 }
