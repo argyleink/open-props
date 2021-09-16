@@ -325,3 +325,11 @@ pre[class*="language-"] {
     place-content: center;
   }
 }
+
+#about header {
+  margin-block-end: var(--size-8);
+
+  @media (--md-n-below) {
+    text-align: center;
+  }
+}
