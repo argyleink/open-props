@@ -19,10 +19,8 @@ html {
   font-family: var(--font-sans);
   line-height: var(--font-leading-3);
 
-  &:focus-within {
-    @media (--motionOK) {
-      scroll-behavior: smooth;
-    }
+  @media (--motionOK) {
+    scroll-behavior: smooth;
   }
 }
 
