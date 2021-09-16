@@ -54,7 +54,7 @@ nav {
     text-decoration-color: var(--brand);
   }
 
-  & > a:first-child {
+  & > a[href="/"] {
     margin-inline-end: auto;
     display: inline-flex;
     align-items: center;
@@ -66,16 +66,25 @@ nav {
       stroke: var(--indigo-6);
     }
 
-    @media (--md-n-below) {
-      flex-basis: 100%;
-    }
-
     @media (--OSlight) {
       color: var(--orange-8);
 
       & > svg {
         stroke: var(--orange-4);
       }
+    }
+  }
+
+  & > a[href="#getting-started"] {
+    @media (--sm-n-below) {
+      display: none;
+    }
+  }
+
+  & > a[title="Source on Github"] {
+    & > svg {
+      fill: var(--surface-4);
+      stroke: none;
     }
   }
 }
@@ -93,10 +102,6 @@ nav {
     @media (--OSdark) {
       background-image: var(--conic-gradient-8);
     }
-  }
-
-  & > blockquote {
-    justify-self: flex-start;
   }
 }
 
@@ -133,6 +138,7 @@ a { color: var(--brand) }
 blockquote {
   border-color: var(--grape-5);
   background-color: var(--surface-2);
+  justify-self: flex-start;
 
   &.icon-quote {
     display: grid;
@@ -142,7 +148,7 @@ blockquote {
 
     & > svg {
       inline-size: var(--size-7);
-      stroke: var(--text-2);
+      stroke: var(--lime-3);
     }
   }
 }
