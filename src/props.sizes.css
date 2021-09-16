@@ -17,12 +17,16 @@ html {
   --size-14: 9rem;
   --size-15: 10rem;
 
-  --size-fluid-1: clamp(.5rem, 1vw, .5 * 1.5rem);
-  --size-fluid-2: clamp(.75rem, 1.5vw, .75 * 1.5rem);
-  --size-fluid-3: clamp(1rem, 2vw, 1 * 1.5rem);
-  --size-fluid-4: clamp(1.5rem, 3vw, 1.5 * 1.5rem);
-  --size-fluid-5: clamp(2rem, 4vw, 2 * 1.5rem);
-  --size-fluid-6: clamp(3rem, 6vw, 3 * 1.5rem);
+  --size-fluid-1: clamp(.5rem, 1vw, 1rem);
+  --size-fluid-2: clamp(1rem, 2vw, 1.5rem);
+  --size-fluid-3: clamp(1.5rem, 3vw, 2rem);
+  --size-fluid-4: clamp(2rem, 4vw, 3rem);
+  --size-fluid-5: clamp(3rem, 5vw, 4rem);
+  --size-fluid-6: clamp(4rem, 6vw, 5rem);
+  --size-fluid-7: clamp(5rem, 7vw, 6rem);
+  --size-fluid-8: clamp(6rem, 8vw, 7rem);
+  --size-fluid-9: clamp(7rem, 9vw, 8rem);
+  --size-fluid-10: clamp(8rem, 10vw, 10rem);
 
   --size-content-1: 20ch;
   --size-content-2: 45ch;
