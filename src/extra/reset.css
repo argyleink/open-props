@@ -1,6 +1,6 @@
 @import "brand.css";
 
-:where(*, ::before, ::after) { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: border-box; }
 
 * {
   background-origin: border-box;
