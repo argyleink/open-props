@@ -1,5 +1,5 @@
 @media (--OSdark) {
-  html {
+  :where(html) {
     color-scheme: dark;
 
     --brand: var(--pink-4);

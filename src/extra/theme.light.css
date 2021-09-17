@@ -1,4 +1,4 @@
-html {
+:where(html) {
   color-scheme: light;
 
   --brand: var(--pink-6);
