@@ -176,7 +176,7 @@ pre[class*="language-"] {
   }
 
   @media (--motionOK) {
-    transition: transform 2s var(--easeout-5) 3s;
+    transition: transform 2s var(--ease-out-5) 3s;
 
     &:is(:hover,:focus) {
       transition-duration: .1s;
@@ -205,6 +205,14 @@ pre[class*="language-"] {
   display: grid;
   grid-template-columns: 5ch 1fr;
   gap: 0 var(--size-3);
+
+  & .size {
+    color: var(--text-2);
+
+    & > strong {
+      color: var(--text-1);
+    }
+  }
 }
 
 .yellow-badge {
@@ -213,6 +221,11 @@ pre[class*="language-"] {
   border-color: var(--yellow-6);
   color: var(--yellow-2);
   border-radius: var(--border-radius-round);
+
+  @media (--OSlight) {
+    border-color: var(--orange-2);
+    color: var(--orange-6);
+  }
 }
 
 .font-sizes {
@@ -260,7 +273,10 @@ pre[class*="language-"] {
   flex-basis: var(--size-content-2);
   gap: var(--size-5) var(--size-10);
   align-items: flex-start;
-  justify-content: space-between;
+
+  &.two-between {
+    justify-content: space-between;
+  }
 }
 
 .checkmark-list ::marker {
