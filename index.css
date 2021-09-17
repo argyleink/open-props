@@ -59,7 +59,7 @@ nav {
     color: var(--indigo-4);
 
     & > svg {
-      block-size: 3ch;
+      inline-size: 3ch;
       stroke: var(--indigo-6);
     }
 
