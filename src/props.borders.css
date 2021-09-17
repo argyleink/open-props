@@ -1,4 +1,4 @@
-html {
+:where(html) {
   --border-size-1: 1px;
   --border-size-2: 2px;
   --border-size-3: 5px;

@@ -1,5 +1,5 @@
 /* generated with props.colors.src.js */
-html {
+:where(html) {
   --gradient-1: linear-gradient(#091E3A,#2F80ED,#2D9EE0);
   --gradient-2: linear-gradient(#9400D3,#4B0082);
   --gradient-3: linear-gradient(#c84e89,#F15F79);

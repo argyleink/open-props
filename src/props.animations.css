@@ -1,4 +1,4 @@
-html {
+:where(html) {
   --animation-fade-in: fade-in .5s var(--ease-3);
   --animation-fade-out: fade-out .5s var(--ease-3);
   --animation-slide-up: slide-up .5s var(--ease-3);

@@ -1,4 +1,4 @@
-html {
+:where(html) {
   --layer-1: 1;
   --layer-2: 2;
   --layer-3: 3;
