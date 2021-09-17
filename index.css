@@ -12,6 +12,7 @@
 body {
   display: grid;
   place-content: center;
+  justify-items: flex-start;
   padding-inline: var(--size-8);
   padding-block: var(--size-6);
 
@@ -274,8 +275,8 @@ pre[class*="language-"] {
   gap: var(--size-5) var(--size-10);
   align-items: flex-start;
 
-  &.two-between {
-    justify-content: space-between;
+  @media (--lg-n-above) {
+    column-gap: var(--size-15);
   }
 }
 
@@ -295,6 +296,10 @@ pre[class*="language-"] {
       justify-items: center;
       text-align: center;
     }
+  }
+
+  @media (--lg-n-above) {
+    column-gap: var(--size-15);
   }
 
   & > div:nth-of-type(1) svg { color: var(--grape-5) }
