@@ -129,22 +129,16 @@
 
       <dl class="responsive-dl bundle-sizes">
         <div>
-          <dt>Bundles</dt>
+          <dt>Library bundles</dt>
           <dd class="size-chart" style="row-gap: var(--size-3)">
             <div class="size"><strong>2.9</strong>kB</div>
             <div class="file">
               <a href="https://unpkg.com/open-props">props.css</a>
-              <br>
-              <small>
-                <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">
-                  <code class="language-css">@custom-media</code>
-                </a> not included
-              </small>
             </div>
 
             <div class="size"><strong>1</strong>kB</div>
             <div class="file">
-              <a href="https://unpkg.com/open-props/reset.css">reset.css</a>
+              <a href="https://unpkg.com/open-props/reset.css">reset.css</a> <small class="yellow-badge">optional</small>
               <br>
               <small> 
                 <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
@@ -218,23 +212,23 @@
             </div>
 
             <div class="size"><strong>??</strong></div>
-            <div class="file">icons.css <small>WIP</small></div>
+            <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">svg.css <small>WIP</small></div>
+            <div class="file">svg.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">layouts.css <small>WIP</small></div>
+            <div class="file">layouts.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">clips.css <small>WIP</small></div>
+            <div class="file">clips.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">masks.css <small>WIP</small></div>
+            <div class="file">masks.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">icons.css <small>WIP</small></div>
+            <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">lists.css <small>WIP</small></div>
+            <div class="file">lists.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">counters.css <small>WIP</small></div>
+            <div class="file">counters.css <small class="yellow-badge">WIP</small></div>
             <div class="size"><strong>??</strong></div>
-            <div class="file">utilities.css <small>WIP</small></div>
+            <div class="file">utilities.css <small class="yellow-badge">WIP</small></div>
           </dd>
         </div>
       </dl>
@@ -248,7 +242,7 @@
       <article class="installation">
         <header>
           <h3>Installation</h3>
-          <p>Grab the props with a URL or from NPM</p>
+          <p>Grab the props with a URL or from NPM.</p>
         </header>
 
         <div class="two-wrap">
@@ -263,11 +257,23 @@
 @import "open-props/reset.css";
             </code></pre>
 
+            <pre class="language-js"><code>
+import 'open-props';
+import 'open-props/reset.css';
+            </code></pre>
+
             <h6>Individual packs</h6>
             <pre class="language-css"><code>
 @import "open-props/sizes.css";
 @import "open-props/colors.css";
 @import "open-props/gradients.css";
+/* etc */
+            </code></pre>
+
+            <pre class="language-js"><code>
+import 'open-props/sizes.css';
+import 'open-props/colors.css';
+import 'open-props/gradients.css';
 /* etc */
             </code></pre>
 

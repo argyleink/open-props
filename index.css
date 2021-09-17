@@ -21,6 +21,8 @@ body {
 }
 
 section {
+  display: grid;
+  gap: var(--size-fluid-5);
   padding-block: var(--size-fluid-6);
   
   &:not(:last-of-type) { border-block-end-width: var(--border-size-1) }
@@ -31,11 +33,6 @@ section {
   &:nth-of-type(5) { border-color: var(--indigo-5) }
   &:nth-of-type(6) { border-color: var(--blue-5) }
   &:nth-of-type(7) { border-color: var(--green-5) }
-}
-
-section {
-  display: grid;
-  gap: var(--size-4);
 }
 
 header {
@@ -210,6 +207,14 @@ pre[class*="language-"] {
   gap: 0 var(--size-3);
 }
 
+.yellow-badge {
+  padding-inline: var(--size-1);
+  border-width: var(--border-size-1);
+  border-color: var(--yellow-6);
+  color: var(--yellow-2);
+  border-radius: var(--border-radius-round);
+}
+
 .font-sizes {
   display: grid;
   gap: var(--size-3);
@@ -308,9 +313,8 @@ pre[class*="language-"] {
   }
 
   & h5 {
-    margin-block: var(--size-8) var(--size-2);
-    color: var(--lime-5);
-    border-bottom: var(--border-size-1) solid var(--surface-2);
+    margin-block: var(--size-8) var(--size-4);
+    border-bottom: var(--border-size-1) solid var(--lime-5);
 
     @media (--OSlight) {
       color: var(--blue-6);
