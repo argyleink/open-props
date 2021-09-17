@@ -23,6 +23,13 @@
   }
 }
 
+@media (--motionOK) {
+  :focus {
+    transition: outline-offset .25s var(--ease-2);
+    outline-offset: 5px;
+  }
+}
+
 :where(body) { min-block-size: 100% }
 
 :where(h1, h2, h3, h4, h5, h6) {
