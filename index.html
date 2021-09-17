@@ -622,7 +622,19 @@ button.blue {
     <section id="typography">
       <header>
         <h2>Typography</h2>
+        <p>Liquid and static font sizes, smart line heights, other familiar looking typography variables, ready to go.</p>
       </header>
+      <div>
+        <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+.hero {
+  line-height: var(--font-relative-leading-2);
+  font-size: var(--font-size-fluid-3);
+  font-weight: var(--font-black);
+  font-family: var(--font-sans);
+}
+        </code></pre>
+      </div>
 
       <article class="font-sizes">
         <h4>Font Families</h4>
@@ -775,74 +787,200 @@ button.blue {
         </div>
       </div>
 
-      <div class="two-wrap">
-        <div>
-          <h5>Ease In</h5>
-          <div class="var-examples">
-            <pre class="language-css"><code>
---ease-in-1: cubic-bezier(.25, 0, 1, 1);
---ease-in-2: cubic-bezier(.50, 0, 1, 1);
---ease-in-3: cubic-bezier(.70, 0, 1, 1);
---ease-in-4: cubic-bezier(.90, 0, 1, 1);
---ease-in-5: cubic-bezier(1, 0, 1, 1);
-            </code></pre>
-          </div>
+      <div>
+        <h5>Ease In</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+  --ease-in-1: cubic-bezier(.25, 0, 1, 1);
+  --ease-in-2: cubic-bezier(.50, 0, 1, 1);
+  --ease-in-3: cubic-bezier(.70, 0, 1, 1);
+  --ease-in-4: cubic-bezier(.90, 0, 1, 1);
+  --ease-in-5: cubic-bezier(1, 0, 1, 1);
+          </code></pre>
         </div>
-        <div>
-          
+      </div>
+
+      <div>
+        <h5>Ease Out</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+  --ease-out-1: cubic-bezier(0, 0, .75, 1);
+  --ease-out-2: cubic-bezier(0, 0, .50, 1);
+  --ease-out-3: cubic-bezier(0, 0, .3, 1);
+  --ease-out-4: cubic-bezier(0, 0, .1, 1);
+  --ease-out-5: cubic-bezier(0, 0, 0, 1);
+          </code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease InOut</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+  --ease-inout-1: cubic-bezier(.1, 0, .9, 1);
+  --ease-inout-2: cubic-bezier(.3, 0, .7, 1);
+  --ease-inout-3: cubic-bezier(.5, 0, .5, 1);
+  --ease-inout-4: cubic-bezier(.7, 0, .3, 1);
+  --ease-inout-5: cubic-bezier(.9, 0, .1, 1);
+          </code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h5>Special Easings</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+  --ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
+  --ease-squish: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="sizes">
+      <header>
+        <h2>Sizes</h2>
+        <p>No <code class="language-css">px</code> here, relative units all the way. 0's are unsafe but common negative values, while 1-N are safe.</p>
+      </header>
+      <div>
+        <h5>Vars Overview</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+--size-{000-15}
+--size-fluid-{1-10}
+--size-content-{1-3}
+--size-header-{1-3}
+          </code></pre>
         </div>
       </div>
 
       <div class="two-wrap">
         <div>
-          <h5>Ease Out</h5>
+          <h5>Relative Sizes</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
---ease-out-1: cubic-bezier(0, 0, .75, 1);
---ease-out-2: cubic-bezier(0, 0, .50, 1);
---ease-out-3: cubic-bezier(0, 0, .3, 1);
---ease-out-4: cubic-bezier(0, 0, .1, 1);
---ease-out-5: cubic-bezier(0, 0, 0, 1);
+  --size-000: -.5rem;
+  --size-00: -.25rem;
+  --size-1: .25rem;
+  --size-2: .5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 2.5rem;
+  --size-9: 3rem;
+  --size-10: 3.5rem;
+  --size-11: 4rem;
+  --size-12: 5rem;
+  --size-13: 7rem;
+  --size-14: 9rem;
+  --size-15: 10rem;
             </code></pre>
           </div>
         </div>
         <div>
-          
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+article { 
+  display: grid;
+  gap: var(-size-3);
+}
+
+li { 
+  padding-inline-start: var(--size-2);
+}
+
+.icon {
+  inline-size: var(--size-5);
+  block-size: var(--size-5);
+}
+          </code></pre>
         </div>
       </div>
 
       <div class="two-wrap">
         <div>
-          <h5>Ease InOut</h5>
+          <h5>Fluid Sizes</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
- --ease-inout-1: cubic-bezier(.1, 0, .9, 1);
---ease-inout-2: cubic-bezier(.3, 0, .7, 1);
---ease-inout-3: cubic-bezier(.5, 0, .5, 1);
---ease-inout-4: cubic-bezier(.7, 0, .3, 1);
---ease-inout-5: cubic-bezier(.9, 0, .1, 1);
+  --size-fluid-1: clamp(.5rem, 1vw, 1rem);
+  --size-fluid-2: clamp(1rem, 2vw, 1.5rem);
+  --size-fluid-3: clamp(1.5rem, 3vw, 2rem);
+  --size-fluid-4: clamp(2rem, 4vw, 3rem);
+  --size-fluid-5: clamp(3rem, 5vw, 4rem);
+  --size-fluid-6: clamp(4rem, 6vw, 5rem);
+  --size-fluid-7: clamp(5rem, 7vw, 6rem);
+  --size-fluid-8: clamp(6rem, 8vw, 7rem);
+  --size-fluid-9: clamp(7rem, 9vw, 8rem);
+  --size-fluid-10: clamp(8rem, 10vw, 10rem);
             </code></pre>
           </div>
         </div>
         <div>
-         
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+body { 
+  padding: var(-size-fluid-3);
+}
+
+hr { 
+  margin-block: var(--size-fluid-5);
+}
+          </code></pre>
         </div>
       </div>
 
       <div class="two-wrap">
         <div>
-          <h5>Special Easings</h5>
+          <h5>Reading Content Sizes</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
---ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
---ease-squish: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --size-content-1: 20ch;
+  --size-content-2: 45ch;
+  --size-content-3: 60ch;
             </code></pre>
           </div>
         </div>
         <div>
-          
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+p { 
+  max-inline-size: var(--size-content-3);
+}
+
+aside { 
+  max-inline-size: var(--size-content-2);
+}
+          </code></pre>
         </div>
       </div>
+
+      <div class="two-wrap">
+        <div>
+          <h5>Headline Content Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+  --size-header-1: 20ch;
+  --size-header-2: 25ch;
+  --size-header-3: 45rem;
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+h1 { 
+  max-inline-size: var(--size-headline-2);
+}
+
+small { 
+  max-inline-size: var(--size-headline-1);
+}
+          </code></pre>
+        </div>
+      </div>
+
     </section>
 
     <script type="module" src="/index.js"></script>

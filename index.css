@@ -24,6 +24,7 @@ body {
 section {
   display: grid;
   gap: var(--size-fluid-5);
+  justify-items: flex-start;
   padding-block: var(--size-fluid-6);
   
   &:not(:last-of-type) { border-block-end-width: var(--border-size-1) }
