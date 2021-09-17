@@ -46,6 +46,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--size-4);
+  justify-self: stretch;
 
   & > a[href] {
     color: var(--text-1);
