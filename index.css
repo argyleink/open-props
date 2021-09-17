@@ -159,6 +159,10 @@ pre[class*="language-"] {
   justify-self: flex-start;
 }
 
+.just-stretch {
+  justify-self: stretch;
+}
+
 .open-colors {
   display: flex;
   align-items: center;
@@ -293,6 +297,7 @@ pre[class*="language-"] {
   
   @media (--md-n-below) {
     grid-template-columns: 1fr;
+    justify-self: stretch;
 
     &:not(.bundle-sizes) {
       justify-items: center;
