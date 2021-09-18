@@ -103,6 +103,26 @@ nav {
       background-image: var(--conic-gradient-8);
     }
   }
+
+  & .icon-quote {
+    border-color: var(--grape-4);
+
+    & > svg {
+      stroke: var(--grape-2);
+    }
+
+    @media (--OSlight) {
+      border-color: var(--orange-5);
+
+      & > svg {
+        stroke: var(--orange-7);
+      }
+    }
+  }
+
+  & small {
+    color: var(--gray-6);
+  }
 }
 
 :not(pre) > code[class*="language-"] {
@@ -145,10 +165,18 @@ blockquote {
     grid-template-columns: max-content 1fr;
     gap: var(--size-5);
     border-color: var(--lime-5);
+    align-items: center;
 
     & > svg {
       inline-size: var(--size-7);
       stroke: var(--lime-3);
+    }
+
+    &.indigo {
+      border-color: var(--indigo-5);
+      & > svg {
+        stroke: var(--indigo-3);
+      }
     }
   }
 }
