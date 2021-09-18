@@ -28,7 +28,7 @@
   --font-relative-lineheight-5: calc(1rem + 2.5ch);
   --font-relative-lineheight-6: calc(1rem + 3ch);
 
-  --font-letterspacing-00: -.05em;
+  --font-letterspacing-0: -.05em;
   --font-letterspacing-1: .025em;
   --font-letterspacing-2: .025em;
   --font-letterspacing-3: .05em;
