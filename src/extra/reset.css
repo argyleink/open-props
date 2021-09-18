@@ -16,7 +16,7 @@
 :where(html) {
   block-size: 100%;
   font-family: var(--font-sans);
-  line-height: var(--font-leading-3);
+  line-height: var(--font-lineheight-3);
 
   @media (--motionOK) {
     scroll-behavior: smooth;
@@ -33,8 +33,8 @@
 :where(body) { min-block-size: 100% }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  line-height: var(--font-relative-leading-2);
-  font-weight: var(--font-black);
+  line-height: var(--font-relative-lineheight-2);
+  font-weight: var(--font-weight-9);
 }
 
 :where(h1) { 
@@ -170,7 +170,7 @@
 :where(li) { padding-inline-start: var(--size-2) }
 :where(li, dd, figcaption) { max-inline-size: var(--size-content-2) }
 :where(p) { max-inline-size: var(--size-content-3) }
-:where(dt, summary) { font-weight: var(--font-bold) }
+:where(dt, summary) { font-weight: var(--font-weight-7) }
 
 :where(dt:not(:first-of-type)) {
   margin-block-start: var(--size-5);
