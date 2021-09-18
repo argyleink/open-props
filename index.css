@@ -226,6 +226,27 @@ pre[class*="language-"] {
   }
 }
 
+.ui-gradients {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: var(--size-2);
+}
+
+.gradient-swatch {
+  border-radius: var(--border-radius-2);
+  inline-size: 31%;
+  block-size: var(--size-fluid-5);
+
+  @media (--sm-n-above) {
+    inline-size: 18%;
+  }
+
+  @media (--md-n-above) {
+    inline-size: 15%;
+  }
+}
+
 .scroll-x-overflow {
   overflow-x: auto;
   max-inline-size: 100vw;

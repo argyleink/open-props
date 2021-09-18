@@ -406,10 +406,11 @@ import 'https://unpkg.com/open-props/reset.css';
         </div>
       </header>
 
-      <div>
-        <h5>Vars Overview</h5>
-        <div class="var-examples">
-          <pre class="language-css"><code>
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
 --color-gray-{0-9}
 --color-red-{0-9}
 --color-pink-{0-9}
@@ -423,28 +424,6 @@ import 'https://unpkg.com/open-props/reset.css';
 --color-line-{0-9}
 --color-yellow-{0-9}
 --color-orange-{0-9}
-          </code></pre>
-        </div>
-      </div>
-
-      <div class="block-wrap">
-        <div>
-          
-          <h5>Vars Sample</h5>
-          <div class="var-examples">
-            <pre class="language-css"><code>
-.pinks {
-  --pink-0: #fff0f6;
-  ...
-  --pink-9: #a61e4d;
-}
-            </code></pre>
-            <pre class="language-css"><code>
-.oranges {
-  --orange-0: #fff4e6
-  ...
-  --orange-9: #d9480f;
-}
             </code></pre>
           </div>
         </div>
@@ -633,6 +612,108 @@ button.blue {
           <span class="color-swatch" style="background-color: var(--orange-7)"></span>
           <span class="color-swatch" style="background-color: var(--orange-8)"></span>
           <span class="color-swatch" style="background-color: var(--orange-9)"></span>
+        </div>
+      </article>
+    </section>
+
+    <section id="gradients" class="just-stretch">
+      <header>
+        <h2>Gradients</h2>
+        <p>Open Props includes gradients from <a href="https://github.com/ghosh/uiGradients">UIgradients</a>.</p>
+      </header>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--gradient-{0-30}
+--conic-gradient-{0-30}
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+header {
+  background-image: var(--gradient-5);
+
+  @media (--OSdark) {
+    background-image: var(--conic-gradient-15);
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="just-stretch">
+        <h4>Linear Gradients</h4>
+        <div class="ui-gradients">
+          <span class="gradient-swatch" style="background-image: var(--gradient-1)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-2)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-3)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-4)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-5)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-6)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-7)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-8)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-9)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-10)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-11)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-12)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-13)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-14)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-15)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-16)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-17)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-18)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-19)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-20)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-21)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-22)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-23)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-24)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-25)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-26)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-27)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-28)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-29)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-30)"></span>
+        </div>
+      </article>
+
+      <article class="just-stretch">
+        <h4>Conic Gradients</h4>
+        <div class="ui-gradients">
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-1)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-2)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-3)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-4)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-5)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-6)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-7)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-8)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-9)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-10)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-11)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-12)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-13)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-14)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-15)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-16)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-17)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-18)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-19)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-20)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-21)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-22)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-23)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-24)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-25)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-26)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-27)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-28)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-29)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-30)"></span>
         </div>
       </article>
     </section>
