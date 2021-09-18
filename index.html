@@ -47,7 +47,7 @@
           <span>Plus a bonus light+dark reset.css</span>
         </blockquote>
         <small>
-          v0.0.11<br>
+          v0.0.13<br>
           Apache License
         </small>
       </header>
@@ -652,7 +652,7 @@ button.blue {
 .hero {
   line-height: var(--font-relative-leading-2);
   font-size: var(--font-size-fluid-3);
-  font-weight: var(--font-black);
+  font-weight: var(--font-weight-9);
   font-family: var(--font-sans);
 }
         </code></pre>
@@ -670,51 +670,51 @@ button.blue {
       <article class="font-sizes">
         <h4>Font Weights</h4>
         <pre class="language-css"><code>
---font-thin: 100;
---font-semilight: 200;
---font-light: 300;
---font-normal: 400;
---font-medium: 500;
---font-semibold: 600;
---font-bold: 700;
---font-extrabold: 800;
---font-black: 900;
+--font-weight-1: 100;
+--font-weight-2: 200;
+--font-weight-3: 300;
+--font-weight-4: 400;
+--font-weight-5: 500;
+--font-weight-6: 600;
+--font-weight-7: 700;
+--font-weight-8: 800;
+--font-weight-9: 900;
         </code></pre>
       </article>
 
       <article class="font-sizes">
         <h4>Font (Tracking || Kerning || Letter Spacing)</h4>
         <pre class="language-css"><code>
---font-tracking-00: -.05em;
---font-tracking-1: .025em;
---font-tracking-2: .025em;
---font-tracking-3: .05em;
---font-tracking-4: .1em;
+--font-letterspacing-00: -.05em;
+--font-letterspacing-1: .025em;
+--font-letterspacing-2: .025em;
+--font-letterspacing-3: .05em;
+--font-letterspacing-4: .1em;
         </code></pre>
       </article>
 
       <article class="font-sizes">
         <h4>Font Leading</h4>
         <pre class="language-css"><code>
---font-leading-00: .95;
---font-leading-0: 1.1;
---font-leading-1: 1.25;
---font-leading-2: 1.375;
---font-leading-3: 1.5;
---font-leading-4: 1.75;
---font-leading-5: 2;
+--font-lineheight-00: .95;
+--font-lineheight-0: 1.1;
+--font-lineheight-1: 1.25;
+--font-lineheight-2: 1.375;
+--font-lineheight-3: 1.5;
+--font-lineheight-4: 1.75;
+--font-lineheight-5: 2;
         </code></pre>
       </article>
 
       <article class="font-sizes">
         <h4>Font Relative Leading</h4>
         <pre class="language-css"><code>
---font-relative-leading-1: calc(1rem + 1.1ch);
---font-relative-leading-2: calc(1rem + 1.25ch);
---font-relative-leading-3: calc(1rem + 1.5ch);
---font-relative-leading-4: calc(1rem + 2ch);
---font-relative-leading-5: calc(1rem + 2.5ch);
---font-relative-leading-6: calc(1rem + 3ch);
+--font-relative-lineheight-1: calc(1rem + 1.1ch);
+--font-relative-lineheight-2: calc(1rem + 1.25ch);
+--font-relative-lineheight-3: calc(1rem + 1.5ch);
+--font-relative-lineheight-4: calc(1rem + 2ch);
+--font-relative-lineheight-5: calc(1rem + 2.5ch);
+--font-relative-lineheight-6: calc(1rem + 3ch);
         </code></pre>
       </article>
       
@@ -858,6 +858,19 @@ button.blue {
   --ease-inout-3: cubic-bezier(.5, 0, .5, 1);
   --ease-inout-4: cubic-bezier(.7, 0, .3, 1);
   --ease-inout-5: cubic-bezier(.9, 0, .1, 1);
+          </code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease Steps</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+--ease-step-1: steps(2);
+--ease-step-2: steps(3);
+--ease-step-3: steps(4);
+--ease-step-4: steps(7);
+--ease-step-5: steps(10);
           </code></pre>
         </div>
       </div>
