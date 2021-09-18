@@ -646,16 +646,33 @@ button.blue {
         <h2>Typography</h2>
         <p>Liquid and static font sizes, smart line heights, other familiar looking typography variables, ready to go.</p>
       </header>
-      <div>
-        <h5>Usage Sample</h5>
-          <pre class="language-css"><code>
+      <div class="two-wrap">
+
+
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--font-size-{00-8}
+--font-size-fluid{0-3}
+--font-weight-{1-9}
+--font-letterspacing-{0-4}
+--font-relative-lineheight-{1-6}
+            </code></pre>
+          </div>
+        </div>
+        
+        <div>
+          <h5>Usage Sample</h5>
+            <pre class="language-css"><code>
 .hero {
   line-height: var(--font-relative-leading-2);
   font-size: var(--font-size-fluid-3);
   font-weight: var(--font-weight-9);
   font-family: var(--font-sans);
 }
-        </code></pre>
+          </code></pre>
+        </div>
       </div>
 
       <article class="font-sizes">
@@ -683,9 +700,9 @@ button.blue {
       </article>
 
       <article class="font-sizes">
-        <h4>Font (Tracking || Kerning || Letter Spacing)</h4>
+        <h4>Letter Spacing</h4>
         <pre class="language-css"><code>
---font-letterspacing-00: -.05em;
+--font-letterspacing-0: -.05em;
 --font-letterspacing-1: .025em;
 --font-letterspacing-2: .025em;
 --font-letterspacing-3: .05em;
@@ -694,7 +711,7 @@ button.blue {
       </article>
 
       <article class="font-sizes">
-        <h4>Font Leading</h4>
+        <h4>Line Height</h4>
         <pre class="language-css"><code>
 --font-lineheight-00: .95;
 --font-lineheight-0: 1.1;
@@ -707,7 +724,7 @@ button.blue {
       </article>
 
       <article class="font-sizes">
-        <h4>Font Relative Leading</h4>
+        <h4>Relative Line Height</h4>
         <pre class="language-css"><code>
 --font-relative-lineheight-1: calc(1rem + 1.1ch);
 --font-relative-lineheight-2: calc(1rem + 1.25ch);
@@ -721,8 +738,8 @@ button.blue {
       <article class="font-sizes">
         <h4>Font Sizes</h4>
         <pre class="language-css"><code>
---font-size-000: .5rem;
---font-size-00: .75rem;
+--font-size-00: .5rem;
+--font-size-0: .75rem;
 --font-size-1: 1rem;
 --font-size-2: 1.1rem;
 --font-size-3: 1.25rem;
@@ -759,7 +776,7 @@ button.blue {
       <article class="font-sizes">
         <h4>Fluid Font Sizes</h4>
         <pre class="language-css"><code>
---font-size-fluid-00: clamp(.75rem, 1.5vw, 1rem);
+--font-size-fluid-0: clamp(.75rem, 1.5vw, 1rem);
 --font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
 --font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
 --font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
