@@ -33,10 +33,10 @@
       </a>
     </nav>
 
-    <section class="two-wrap">
+    <section class="block-wrap">
       <header class="hero">
         <p><code class="language-bash">npm i open-props</code></p>
-        <h1>Grab n' go<br>CSS custom properties.</h1>
+        <h1>Grab n' go<br>CSS custom props.</h1>
         <p>Easy to remember, <b>free CSS variables</b>.</p>
         <ul class="checkmark-list">
           <li>Subatomic utilities</li>
@@ -139,7 +139,7 @@
 
             <div class="size"><strong>1</strong>kB</div>
             <div class="file">
-              <a href="https://unpkg.com/open-props/reset.css">reset.css</a> <small class="yellow-badge">optional</small>
+              <a href="https://unpkg.com/open-props/reset.css">reset.css</a> <small class="green-badge">optional</small>
               <br>
               <small> 
                 <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
@@ -246,52 +246,67 @@
           <p>Grab the props with a URL or from NPM.</p>
         </header>
 
-        <div class="two-wrap">
+        <div class="block-wrap">
           <div class="contain-pre">
-            <h4>NPM</h4>
-            <pre class="language-bash"><code>npm install open-props</code></pre>
+            <div>
+              <h4>NPM</h4>
+              <pre class="language-bash"><code>npm install open-props</code></pre>
+            </div>
             
             <h5>CSS</h5>
-            <h6>Bundles</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Bundles</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
 @import "open-props";
 @import "open-props/reset.css";
-            </code></pre>
+                </code></pre>
 
-            <pre class="language-js"><code>
+                <pre class="language-js"><code>
 import 'open-props';
 import 'open-props/reset.css';
-            </code></pre>
+                </code></pre>
+              </div>
+            </div>
 
-            <h6>Individual packs</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Individual packs</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
 @import "open-props/sizes.css";
 @import "open-props/colors.css";
 @import "open-props/gradients.css";
 /* etc */
-            </code></pre>
+                </code></pre>
 
-            <pre class="language-js"><code>
+                <pre class="language-js"><code>
 import 'open-props/sizes.css';
 import 'open-props/colors.css';
 import 'open-props/gradients.css';
 /* etc */
-            </code></pre>
+                </code></pre>
+              </div>
+            </div>
 
             <h5>PostCSS</h5>
-            <h6>Entry points</h6>
-            <pre class="language-css"><code>
+
+            <div>
+              <h6>Entry points</h6>
+              <pre class="language-css"><code>
 @import "open-props/src/index.css";
 @import "open-props/src/extra/reset.css";
-            </code></pre>
+              </code></pre>
+            </div>
 
-            <h6>Individual packs</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Individual packs</h6>
+              <pre class="language-css"><code>
 @import "open-props/src/sizes.css";
 @import "open-props/src/aspects.css";
 @import "open-props/src/easings.css";
 /* etc */
-            </code></pre>
+              </code></pre>
+            </div>
           </div>
 
           <div class="contain-pre">
@@ -301,44 +316,54 @@ import 'open-props/gradients.css';
             </blockquote>
 
             <h5>CSS</h5>
-            <h6>Bundles</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Bundles</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/reset.css";
-            </code></pre>
+                </code></pre>
 
-            <pre class="language-html"><code>
+                <pre class="language-html"><code>
 &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
 &#60;link rel="stylesheet" href="https://unpkg.com/open-props/reset.css"/&#62;
-            </code></pre>
+                </code></pre>
 
-            <pre class="language-js"><code>
+                <pre class="language-js"><code>
 import 'https://unpkg.com/open-props';
 import 'https://unpkg.com/open-props/reset.css';
-            </code></pre>
+                </code></pre>
+              </div>
+            </div>
 
-            <h6>Individual packs</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Individual packs</h6>
+              <pre class="language-css"><code>
 @import "https://unpkg.com/open-props/colors.css";
 @import "https://unpkg.com/open-props/easings.css";
 @import "https://unpkg.com/open-props/sizes.css";
 /* etc */
-            </code></pre>
+              </code></pre>
+            </div>
 
             <h5>PostCSS</h5>
-            <h6>Entry Points</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Entry Points</h6>
+              <pre class="language-css"><code>
 @import "https://unpkg.com/open-props/src/index.css";
 @import "https://unpkg.com/open-props/src/extra/reset.css";
-            </code></pre>
+              </code></pre>
+            </div>
 
-            <h6>Individual packs</h6>
-            <pre class="language-css"><code>
+            <div>
+              <h6>Individual packs</h6>
+              <pre class="language-css"><code>
 @import "https://unpkg.com/open-props/src/colors.css";
 @import "https://unpkg.com/open-props/src/easings.css";
 @import "https://unpkg.com/open-props/src/sizes.css";
 /* etc */
-            </code></pre>
+              </code></pre>
+            </div>
           </div>
         </div>
       </article>
@@ -362,13 +387,15 @@ import 'https://unpkg.com/open-props/reset.css';
     <section id="colors">
       <header>
         <h2>Colors</h2>
-        <p>Open Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI.</p>
-        <blockquote class="icon-quote">
-          <svg viewBox="0 0 24 24">
-            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
-          <span>Open devtools, open the color picker, set the swatches to the page's custom properties, and enjoy picking from the set!</span>
-        </blockquote>
+        <div class="block-wrap">
+          <p>Open Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI.</p>
+          <blockquote class="icon-quote">
+            <svg viewBox="0 0 24 24">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            <span>Open devtools, open the color picker, set the swatches to the page's custom properties, and enjoy picking from the set!</span>
+          </blockquote>
+        </div>
       </header>
 
       <div>
@@ -392,7 +419,7 @@ import 'https://unpkg.com/open-props/reset.css';
         </div>
       </div>
 
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           
           <h5>Vars Sample</h5>
@@ -606,7 +633,7 @@ button.blue {
       <header>
         <h2>Aspect Ratios</h2>
       </header>
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           
           <h5>Vars Sample</h5>
@@ -646,7 +673,7 @@ button.blue {
         <h2>Typography</h2>
         <p>Liquid and static font sizes, smart line heights, other familiar looking typography variables, ready to go.</p>
       </header>
-      <div class="two-wrap">
+      <div class="block-wrap">
 
 
         <div>
@@ -813,7 +840,7 @@ button.blue {
         </div>
       </div>
 
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           <h5>Ease</h5>
           <div class="var-examples">
@@ -920,7 +947,7 @@ button.blue {
         </div>
       </div>
 
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           <h5>Relative Sizes</h5>
           <div class="var-examples">
@@ -965,7 +992,7 @@ li {
         </div>
       </div>
 
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           <h5>Fluid Sizes</h5>
           <div class="var-examples">
@@ -997,7 +1024,7 @@ hr {
         </div>
       </div>
 
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           <h5>Reading Content Sizes</h5>
           <div class="var-examples">
@@ -1022,7 +1049,7 @@ aside {
         </div>
       </div>
 
-      <div class="two-wrap">
+      <div class="block-wrap">
         <div>
           <h5>Headline Content Sizes</h5>
           <div class="var-examples">

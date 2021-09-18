@@ -23,7 +23,7 @@ body {
 
 section {
   display: grid;
-  gap: var(--size-fluid-5);
+  gap: var(--size-fluid-4);
   justify-items: flex-start;
   padding-block: var(--size-fluid-6);
   
@@ -206,6 +206,11 @@ pre[class*="language-"] {
 .contain-pre {
   display: grid;
   grid-template-columns: 1fr;
+  gap: var(--size-5);
+
+  & > div {
+    justify-self: flex-start;
+  }
 }
 
 .size-chart {
@@ -232,6 +237,19 @@ pre[class*="language-"] {
   @media (--OSlight) {
     border-color: var(--orange-2);
     color: var(--orange-6);
+  }
+}
+
+.green-badge {
+  padding-inline: var(--size-1);
+  border-width: var(--border-size-1);
+  border-color: var(--lime-6);
+  color: var(--lime-2);
+  border-radius: var(--border-radius-round);
+
+  @media (--OSlight) {
+    border-color: var(--green-2);
+    color: var(--green-6);
   }
 }
 
@@ -274,15 +292,19 @@ pre[class*="language-"] {
   align-items: flex-start;
 }
 
-.two-wrap {
+.block-wrap {
   display: flex;
   flex-wrap: wrap;
   flex-basis: var(--size-content-2);
-  gap: var(--size-5) var(--size-10);
+  gap: var(--size-5) var(--size-8);
   align-items: flex-start;
 
-  @media (--lg-n-above) {
-    column-gap: var(--size-15);
+  & .block-wrap {
+    row-gap: var(--size-1);
+  }
+
+  @media (--xl-n-above) {
+    column-gap: var(--size-10);
   }
 }
 
@@ -332,16 +354,8 @@ pre[class*="language-"] {
   display: grid;
   gap: var(--size-5);
 
-  & :is(pre, blockquote) {
-    margin-block-end: var(--size-5);
-  }
-
-  & blockquote {
-    margin-block-start: var(--size-2);
-  }
-
   & h5 {
-    margin-block: var(--size-8) var(--size-4);
+    margin-block-start: var(--size-5);
     border-bottom: var(--border-size-1) solid var(--lime-5);
 
     @media (--OSlight) {
