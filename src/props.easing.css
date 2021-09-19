@@ -23,11 +23,17 @@
   --ease-inout-4: cubic-bezier(.7, 0, .3, 1);
   --ease-inout-5: cubic-bezier(.9, 0, .1, 1);
 
-  --ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
-  /* todo: --ease-elastic-1-5; */
+  --ease-elastic-1: cubic-bezier(.5, .75, .75, 1.25);
+  --ease-elastic-2: cubic-bezier(.5, 1, .75, 1.25);
+  --ease-elastic-3: cubic-bezier(.5, 1.25, .75, 1.25);
+  --ease-elastic-4: cubic-bezier(.5, 1.5, .75, 1.25);
+  --ease-elastic-5: cubic-bezier(.5, 1.75, .75, 1.25);
 
-  --ease-squish: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  /* todo: --ease-squish-1-5; */
+  --ease-squish-1: cubic-bezier(.5, -.1, .1, 1.5);
+  --ease-squish-2: cubic-bezier(.5, -.3, .1, 1.5);
+  --ease-squish-3: cubic-bezier(.5, -.5, .1, 1.5);
+  --ease-squish-4: cubic-bezier(.5, -.7, .1, 1.5);
+  --ease-squish-5: cubic-bezier(.5, -.9, .1, 1.5);
 
   --ease-step-1: steps(2);
   --ease-step-2: steps(3);
