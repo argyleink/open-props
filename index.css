@@ -493,5 +493,6 @@ pre[class*="language-"] {
 }
 
 @keyframes ping-pong {
-  50% { transform: translateX(100%); }
+  40%,50% { transform: translateX(100%); }
+  0%, 90% { transform: translateX(0%); }
 }

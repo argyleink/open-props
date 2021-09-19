@@ -928,8 +928,8 @@ header {
 --ease-in-{1-5}
 --ease-out-{1-5}
 --ease-inout-{1-5}
---ease-elastic-{1-5} /* coming soon */
---ease-bounce-{1-5} /* coming soon */
+--ease-elastic-{1-5}
+--ease-squish-{1-5}
             </code></pre>
           </div>
         </div>
@@ -1044,6 +1044,54 @@ header {
       </div>
 
       <div>
+        <h5>Ease Elastic</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-elastic-1: cubic-bezier(.5, .75, .75, 1.25);
+--ease-elastic-2: cubic-bezier(.5, 1, .75, 1.25);
+--ease-elastic-3: cubic-bezier(.5, 1.25, .75, 1.25);
+--ease-elastic-4: cubic-bezier(.5, 1.5, .75, 1.25);
+--ease-elastic-5: cubic-bezier(.5, 1.75, .75, 1.25);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo elastic">
+            <div style="animation-timing-function: var(--ease-elastic-1)">Ease Elastic 1</div>
+            <div style="animation-timing-function: var(--ease-elastic-2)">Ease Elastic 2</div>
+            <div style="animation-timing-function: var(--ease-elastic-3)">Ease Elastic 3</div>
+            <div style="animation-timing-function: var(--ease-elastic-4)">Ease Elastic 4</div>
+            <div style="animation-timing-function: var(--ease-elastic-5)">Ease Elastic 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease Squish</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-squish-1: cubic-bezier(.5, -.1, .1, 1.5);
+--ease-squish-2: cubic-bezier(.5, -.3, .1, 1.5);
+--ease-squish-3: cubic-bezier(.5, -.5, .1, 1.5);
+--ease-squish-4: cubic-bezier(.5, -.7, .1, 1.5);
+--ease-squish-5: cubic-bezier(.5, -.9, .1, 1.5);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo squish">
+            <div style="animation-timing-function: var(--ease-squish-1)">Ease Squish 1</div>
+            <div style="animation-timing-function: var(--ease-squish-2)">Ease Squish 2</div>
+            <div style="animation-timing-function: var(--ease-squish-3)">Ease Squish 3</div>
+            <div style="animation-timing-function: var(--ease-squish-4)">Ease Squish 4</div>
+            <div style="animation-timing-function: var(--ease-squish-5)">Ease Squish 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
         <h5>Ease Steps</h5>
         <div class="block-wrap">
           <div>
@@ -1067,23 +1115,6 @@ header {
         </div>
       </div>
 
-      <div>
-        <h5>Special Easings</h5>
-        <div class="block-wrap">
-          <div>
-            <div class="var-examples">
-              <pre class="language-css"><code>
---ease-elastic: cubic-bezier(.2, .9, .4, 1.25);
---ease-squish: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-              </code></pre>
-            </div>
-          </div>
-          <div class="ease-demo ease">
-            <div style="animation-timing-function: var(--ease-elastic)">Ease Elastic</div>
-            <div style="animation-timing-function: var(--ease-squish)">Ease Squish</div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="sizes">
