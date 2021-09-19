@@ -28,13 +28,16 @@ section {
   padding-block: var(--size-fluid-6);
   
   &:not(:last-of-type) { border-block-end-width: var(--border-size-1) }
-  &:nth-of-type(1) { border-color: var(--orange-5) }
-  &:nth-of-type(2) { border-color: var(--red-5) }
-  &:nth-of-type(3) { border-color: var(--pink-5) }
-  &:nth-of-type(4) { border-color: var(--grape-5) }
-  &:nth-of-type(5) { border-color: var(--indigo-5) }
-  &:nth-of-type(6) { border-color: var(--blue-5) }
-  &:nth-of-type(7) { border-color: var(--green-5) }
+  &:nth-of-type(1n) { border-color: var(--orange-5) }
+  &:nth-of-type(2n) { border-color: var(--red-5) }
+  &:nth-of-type(3n) { border-color: var(--pink-5) }
+  &:nth-of-type(4n) { border-color: var(--grape-5) }
+  &:nth-of-type(5n) { border-color: var(--indigo-5) }
+  &:nth-of-type(6n) { border-color: var(--blue-5) }
+  &:nth-of-type(7n) { border-color: var(--green-5) }
+  &:nth-of-type(8n) { border-color: var(--violet-5) }
+  &:nth-of-type(9n) { border-color: var(--cyan-5) }
+  &:nth-of-type(10n) { border-color: var(--teal-5) }
 }
 
 header {
@@ -170,6 +173,10 @@ blockquote {
     & > svg {
       inline-size: var(--size-7);
       stroke: var(--lime-3);
+
+      @media (--OSlight) {
+        stroke: var(--lime-9);
+      }
     }
 
     &.indigo {
@@ -405,10 +412,10 @@ pre[class*="language-"] {
 
   & h5 {
     margin-block-start: var(--size-5);
-    border-bottom: var(--border-size-1) solid var(--lime-5);
+    border-bottom: var(--border-size-1) solid var(--violet-5);
 
     @media (--OSlight) {
-      color: var(--blue-6);
+      color: var(--violet-6);
     }
   }
 }
@@ -421,9 +428,15 @@ pre[class*="language-"] {
   & > div {
     block-size: var(--size-15);
     max-inline-size: var(--max-inline-body);
-    background: var(--surface-3);
+    border-width: var(--border-size-3);
+    border-color: var(--surface-4);
+    box-shadow: var(--shadow-3);
     display: grid;
     place-content: center;
+
+    @media (--OSlight) {
+      background: white;
+    }
   }
 }
 
