@@ -177,7 +177,7 @@
 }
 
 :where(small) { 
-  font-size: max(.5em, var(--font-size-00)); 
+  font-size: max(.5em, var(--font-size-0)); 
   max-inline-size: var(--size-content-1);
 }
 
