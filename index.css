@@ -130,7 +130,7 @@ nav {
 
 :not(pre) > code[class*="language-"] {
   padding: var(--size-1) var(--size-2);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--inner-shadow-0), var(--shadow-1);
   white-space: nowrap;
 }
 
@@ -192,6 +192,10 @@ pre[class*="language-"] {
   box-shadow: var(--shadow-4);
   max-inline-size: var(--max-inline-body);
   justify-self: flex-start;
+
+  @media (--OSdark) {
+    box-shadow: var(--shadow-3);
+  }
 }
 
 .just-stretch {
@@ -206,7 +210,7 @@ pre[class*="language-"] {
 
 .color-swatch {
   --size: var(--size-5);
-  border-radius: var(--border-radius-round);
+  border-radius: var(--radii-round);
   box-shadow: var(--inner-shadow-0);
   inline-size: 7%;
   block-size: var(--size);
@@ -241,7 +245,7 @@ pre[class*="language-"] {
 }
 
 .gradient-swatch {
-  border-radius: var(--border-radius-2);
+  border-radius: var(--radii-2);
   inline-size: 31%;
   block-size: var(--size-fluid-5);
 
@@ -288,7 +292,7 @@ pre[class*="language-"] {
   border-width: var(--border-size-1);
   border-color: var(--yellow-6);
   color: var(--yellow-2);
-  border-radius: var(--border-radius-round);
+  border-radius: var(--radii-round);
 
   @media (--OSlight) {
     border-color: var(--orange-2);
@@ -301,7 +305,7 @@ pre[class*="language-"] {
   border-width: var(--border-size-1);
   border-color: var(--lime-6);
   color: var(--lime-2);
-  border-radius: var(--border-radius-round);
+  border-radius: var(--radii-round);
 
   @media (--OSlight) {
     border-color: var(--green-2);
@@ -395,7 +399,7 @@ pre[class*="language-"] {
   & svg {
     inline-size: var(--size-12);
     border-width: var(--border-size-2);
-    border-radius: var(--border-radius-round);
+    border-radius: var(--radii-round);
     padding: var(--size-2);
     margin-inline-start: calc(var(--size-1) * -1);
     margin-block-end: var(--size-3);
@@ -463,7 +467,7 @@ pre[class*="language-"] {
     padding-inline: var(--size-4);
     padding-block: var(--size-1);
     background: var(--surface-4);
-    border-radius: var(--border-radius-round);
+    border-radius: var(--radii-round);
     
     @media (--motionOK) {
       animation: ping-pong 2s ease infinite;
