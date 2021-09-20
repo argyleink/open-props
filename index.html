@@ -722,6 +722,56 @@ header {
       </article>
     </section>
 
+    <section id="shadows">
+      <header>
+        <h2>Shadows</h2>
+      </header>
+      <div class="block-wrap">
+        <div>
+          
+          <h5>Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--shadow-color: 220 3% 15%;
+--shadow-strength: 1%;
+
+--shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+--shadow-2: 
+  0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 10px 20px -10px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%))
+;
+
+--inner-shadow-0: inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+--inner-shadow-1: inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+.card {
+  box-shadow: var(--shadow-1);
+
+  &:hover {
+    box-shadow: var(--shadow-3);
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="shadow-demos">
+        <div style="box-shadow: var(--shadow-1)"></div>
+        <div style="box-shadow: var(--shadow-2)"></div>
+        <div style="box-shadow: var(--shadow-3)"></div>
+        <div style="box-shadow: var(--shadow-4)"></div>
+        <div style="box-shadow: var(--inner-shadow-0)"></div>
+        <div style="box-shadow: var(--inner-shadow-1)"></div>
+        <div style="box-shadow: var(--inner-shadow-2)"></div>
+        <div style="box-shadow: var(--inner-shadow-3)"></div>
+        <div style="box-shadow: var(--inner-shadow-4)"></div>
+      </article>
+    </section>
+
     <section id="aspect-ratio">
       <header>
         <h2>Aspect Ratios</h2>

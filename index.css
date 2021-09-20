@@ -527,3 +527,20 @@ pre[class*="language-"] {
   grid-template-columns: repeat(9, 2ch);
   font-size: var(--font-size-fluid-2);
 }
+
+.shadow-demos {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--size-5);
+  
+  & > div {
+    background: white;
+    inline-size: var(--size-15);
+    aspect-ratio: var(--aspect-box);
+    border-radius: var(--radii-3);
+
+    @media (--OSdark) {
+      background: var(--surface-2);
+    }
+  }
+}
