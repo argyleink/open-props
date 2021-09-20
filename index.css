@@ -509,15 +509,21 @@ pre[class*="language-"] {
 
   & > div {
     display: grid;
-    grid-template-columns: repeat(9, minmax(2rem, 1fr));
-    gap: var(--size-4) var(--size-fluid-3);
+    grid-template-columns: repeat(9, minmax(3rem, 1fr));
     place-items: center;
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-1);
     color: var(--text-1);
 
     @media (--md-n-below) {
       grid-template-columns: repeat(6, minmax(2rem, 1fr));
-      gap: var(--size-1);
+      font-size: var(--font-size-3);
     }
   }
+}
+
+.font-weights {
+  display: grid;
+  grid-template-columns: repeat(9, 2ch);
+  font-size: var(--font-size-fluid-2);
 }

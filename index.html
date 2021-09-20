@@ -825,8 +825,10 @@ header {
       </article>
 
       <article class="font-sizes">
-        <h4>Font Weights</h4>
-        <pre class="language-css"><code>
+        <div class="block-wrap">
+          <div>
+            <h4>Font Weights</h4>
+            <pre class="language-css"><code>
 --font-weight-1: 100;
 --font-weight-2: 200;
 --font-weight-3: 300;
@@ -836,7 +838,20 @@ header {
 --font-weight-7: 700;
 --font-weight-8: 800;
 --font-weight-9: 900;
-        </code></pre>
+            </code></pre>
+          </div>
+          <div class="font-weights">
+            <span style="font-weight:var(--font-weight-1)">A</span>
+            <span style="font-weight:var(--font-weight-2)">A</span>
+            <span style="font-weight:var(--font-weight-3)">A</span>
+            <span style="font-weight:var(--font-weight-4)">A</span>
+            <span style="font-weight:var(--font-weight-5)">A</span>
+            <span style="font-weight:var(--font-weight-6)">A</span>
+            <span style="font-weight:var(--font-weight-7)">A</span>
+            <span style="font-weight:var(--font-weight-8)">A</span>
+            <span style="font-weight:var(--font-weight-9)">A</span>
+          </div>
+        </div>
       </article>
 
       <article class="font-sizes">
@@ -864,7 +879,10 @@ header {
       </article>
 
       <article class="font-sizes">
-        <h4>Relative Line Height</h4>
+        <header>
+          <h4>Relative Line Height</h4>
+          <p>These line heights tighten as the font size is increased.</p>
+        </header>
         <pre class="language-css"><code>
 --font-relative-lineheight-1: calc(1rem + 1.1ch);
 --font-relative-lineheight-2: calc(1rem + 1.25ch);
