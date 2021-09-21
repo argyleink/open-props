@@ -15,7 +15,7 @@
   --surface-4: var(--gray-4);
 
   @media (--HDcolor) {
-    --link: color(display-p3 0 1 1);
-    --link-visited: color(display-p3 1 0 1);
+    --link: color(display-p3 0 .5 1);
+    --link-visited: color(display-p3 .6 .2 1);
   }
 }
