@@ -2,7 +2,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "ISC",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "open-color": "^1.9.1",
-    "open-props": "^0.0.16",
+    "open-props": "^0.0.17",
     "postcss-easings": "3.x",
     "postcss-preset-env": "6.7.x",
     "vite": "2.x  || >2.0.0-alpha"
