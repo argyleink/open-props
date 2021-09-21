@@ -156,8 +156,6 @@ pre[class*="language-"], code[class*="language-"] {
   }
 }
 
-a { color: var(--brand) }
-
 blockquote {
   border-color: var(--grape-5);
   background-color: var(--surface-2);
