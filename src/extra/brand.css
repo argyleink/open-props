@@ -5,18 +5,4 @@
   accent-color: var(--brand);
 }
 
-::selection    { 
-  background-color: var(--brand);
-  color: color-contrast(var(--brand));
-}
-
 :focus-visible { outline-color: var(--brand); }
-::marker       { color: var(--brand); }
-:is(
-  ::-webkit-calendar-picker-indicator,
-  ::-webkit-clear-button,
-  ::-webkit-inner-spin-button, 
-  ::-webkit-outer-spin-button
-) {
-  color: var(--brand);
-}

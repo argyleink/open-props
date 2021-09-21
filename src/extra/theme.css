@@ -12,5 +12,9 @@
 }
 
 :where(a[href]) {
-  color: var(--brand);
+  color: var(--link);
+  
+  &:visited {
+    color: var(--link-visited);
+  }
 }
