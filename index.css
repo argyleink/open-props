@@ -83,13 +83,24 @@ nav {
       display: none;
     }
   }
+}
 
-  & > a[title="Source on Github"] {
-    & > svg {
-      fill: var(--surface-4);
-      stroke: none;
-    }
+.github-icon {
+  fill: var(--surface-4);
+  stroke: none;
+
+  @nest :hover > & {
+    fill: var(--grape-4);
   }
+}
+
+footer {
+  padding-block: var(--size-10);
+  display: grid;
+  place-content: center;
+  justify-self: stretch;
+  border-top-width: var(--border-size-1);
+  border-color: var(--surface-3);
 }
 
 .hero {
@@ -544,5 +555,20 @@ pre[class*="language-"] {
     @media (--OSdark) {
       background: var(--surface-2);
     }
+  }
+}
+
+.border-demos {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--size-5);
+
+  & > div {
+    display: grid;
+    place-content: center;
+    inline-size: var(--size-15);
+    aspect-ratio: var(--aspect-box);
+    border-color: var(--indigo-5);
+    border-width: var(--border-size-2);
   }
 }
