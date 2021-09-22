@@ -39,7 +39,10 @@
     <section class="block-wrap">
       <header class="hero">
         <p><code class="language-bash">npm i open-props</code></p>
-        <h1>Grab n' go<br>CSS custom props.</h1>
+        <h1>
+          Grab n' go<br>
+          CSS custom props.
+        </h1>
         <p>Easy to remember, <b>free CSS variables</b>.</p>
         <ul class="checkmark-list">
           <li>Subatomic utilities</li>
@@ -1034,7 +1037,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1065,7 +1068,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease In</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1096,7 +1099,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease Out</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1127,7 +1130,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease InOut</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1158,7 +1161,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease Elastic</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1189,7 +1192,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease Squish</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1220,7 +1223,7 @@
       <div>
         <header class="animation-control-header">
           <h5>Ease Steps</h5>
-          <button>
+          <button class="play-button">
             <svg viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
@@ -1244,6 +1247,203 @@
             <div style="animation-timing-function: var(--ease-step-3)">Ease Steps 3</div>
             <div style="animation-timing-function: var(--ease-step-4)">Ease Steps 4</div>
             <div style="animation-timing-function: var(--ease-step-5)">Ease Steps 5</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="animations">
+      <header>
+        <h2>Animations</h2>
+        <p>Premade <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect">keyframe effects</a> for 100's of combinations.</p>
+      </header>
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              --animation-fade-in: fade-in .5s var(--ease-3);
+              --animation-fade-out: fade-out .5s var(--ease-3);
+
+              --animation-slide-out-up: slide-out-up .5s var(--ease-3);
+              --animation-slide-out-down: slide-out-down .5s var(--ease-3);
+              --animation-slide-out-right: slide-out-right .5s var(--ease-3);
+              --animation-slide-out-left: slide-out-left .5s var(--ease-3);
+
+              --animation-slide-in-up: slide-in-up .5s var(--ease-3);
+              --animation-slide-in-down: slide-in-down .5s var(--ease-3);
+              --animation-slide-in-right: slide-in-right .5s var(--ease-3);
+              --animation-slide-in-left: slide-in-left .5s var(--ease-3);
+
+              --animation-spin: spin 2s linear infinite;
+              --animation-ping: ping 5s var(--ease-out-3) infinite;
+              --animation-blink: blink 1s var(--ease-out-3) infinite;
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Keyframe Examples</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              @keyframes fade-in {
+                to { opacity: 1 }
+              }
+
+              @keyframes slide-out-right {
+                to { transform: translateX(100%) }
+              }
+
+              @keyframes slide-in-up {
+                from { transform: translateY(100%) }
+              }
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+            .actionsheet {
+              animation: var(--animation-slide-out-down) forwards;
+
+              &.open {
+                animation: var(--animation-slide-in-up) forwards;  
+              }
+            }
+
+            .alert {
+              animation: var(--animation-blink);
+            }
+
+            .fade-up {
+              opacity: 0;
+              animation: 
+                var(--animation-fade-in) forwards,
+                var(--animation-slide-in-up) forwards;
+              animation-delay: .35s, 0s;
+            }
+          </code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h5>Samples</h5>
+        <div class="animation-demo">
+          <div class="animation-demo-target" data-starting-styles="opacity:0" data-animation="fade-in">
+            <h6>Fade In</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="fade-out">
+            <h6>Fade Out</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-out-up">
+            <h6>Slide Out Up</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-out-down">
+            <h6>Slide Out Down</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-out-right">
+            <h6>Slide Out Right</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-out-left">
+            <h6>Slide Out Left</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-in-up">
+            <h6>Slide In Up</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-in-down">
+            <h6>Slide In Down</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-in-right">
+            <h6>Slide In Right</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="slide-in-left">
+            <h6>Slide In Left</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="spin">
+            <h6>Spin</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="ping">
+            <h6>Ping</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="blink">
+            <h6>Blink</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

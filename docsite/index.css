@@ -113,6 +113,14 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    opacity: 0;
+    animation: 
+      var(--animation-fade-in) forwards,
+      var(--animation-slide-in-up) forwards;
+    animation-delay: 
+      .35s,
+      0s;
+
     @media (--OSdark) {
       background-image: var(--conic-gradient-8);
     }
@@ -592,29 +600,54 @@ pre[class*="language-"] {
   display: flex;
   align-items: center;
   gap: var(--size-5);
+}
 
-  & > button {
-    appearance: none;
-    background: none;
-    padding: 0;
-    aspect-ratio: 1;
-    border-radius: var(--radii-round);
+.play-button {
+  appearance: none;
+  background: none;
+  padding: 0;
+  aspect-ratio: 1;
+  border-radius: var(--radii-round);
 
-    & > svg {
-      fill: currentColor;
-      color: var(--green-3);
+  & > svg {
+    pointer-events: none;
+    fill: currentColor;
+    color: var(--green-3);
 
-      @media (--OSlight) {
-        color: var(--green-6);        
-      }
-    }
-
-    &:hover > svg {
-      color: var(--green-4);
-
-      @media (--OSlight) {
-        color: var(--green-7);        
-      }
+    @media (--OSlight) {
+      color: var(--green-6);        
     }
   }
+
+  &:hover > svg {
+    color: var(--green-4);
+
+    @media (--OSlight) {
+      color: var(--green-7);        
+    }
+  }
+
+  &:active > svg {
+    color: var(--green-5);
+
+    @media (--OSlight) {
+      color: var(--green-8);        
+    }
+  }
+}
+
+.animation-demo {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--size-4);
+  align-items: flex-start;
+}
+
+.animation-demo-target {
+  background-color: var(--surface-2);
+  display: grid;
+  place-items: center;
+  padding-inline: var(--size-5);
+  padding-block: var(--size-3);
+  border-radius: var(--radii-2);
 }

@@ -1,12 +1,20 @@
 :where(html) {
   --animation-fade-in: fade-in .5s var(--ease-3);
   --animation-fade-out: fade-out .5s var(--ease-3);
-  --animation-slide-up: slide-up .5s var(--ease-3);
-  --animation-slide-down: slide-down .5s var(--ease-3);
+
+  --animation-slide-out-up: slide-out-up .5s var(--ease-3);
+  --animation-slide-out-down: slide-out-down .5s var(--ease-3);
+  --animation-slide-out-right: slide-out-right .5s var(--ease-3);
+  --animation-slide-out-left: slide-out-left .5s var(--ease-3);
+
+  --animation-slide-in-up: slide-in-up .5s var(--ease-3);
+  --animation-slide-in-down: slide-in-down .5s var(--ease-3);
+  --animation-slide-in-right: slide-in-right .5s var(--ease-3);
+  --animation-slide-in-left: slide-in-left .5s var(--ease-3);
 
   --animation-spin: spin 2s linear infinite;
-  --animation-ping: ping 5s var(--easeout-3) infinite;
-  --animation-blink: blink 1s var(--easeout-3) infinite;
+  --animation-ping: ping 5s var(--ease-out-3) infinite;
+  --animation-blink: blink 1s var(--ease-out-3) infinite;
 }
 
 @keyframes fade-in {
@@ -17,12 +25,36 @@
   to { opacity: 0 }
 }
 
-@keyframes slide-up {
+@keyframes slide-out-up {
+  to { transform: translateY(-100%) }
+}
+
+@keyframes slide-out-down {
+  to { transform: translateY(100%) }
+}
+
+@keyframes slide-out-left {
+  to { transform: translateX(-100%) }
+}
+
+@keyframes slide-out-right {
+  to { transform: translateX(100%) }
+}
+
+@keyframes slide-in-up {
   from { transform: translateY(100%) }
 }
 
-@keyframes slide-down {
+@keyframes slide-in-down {
   from { transform: translateY(-100%) }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(100%) }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(-100%) }
 }
 
 @keyframes spin {
