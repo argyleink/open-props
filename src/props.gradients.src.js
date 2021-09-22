@@ -219,7 +219,7 @@ const linear = uigradients
   .slice(0, 30)
   .reduce((root, {colors}, i) =>
     root += `
-    --gradient-${i+1}: linear-gradient(${colors.join(',')});`
+    --gradient-${i+1}: linear-gradient(var(--op-gradient-direction),${colors.join(',')});`
   , ``)
 
  // const conic = conicgradients
