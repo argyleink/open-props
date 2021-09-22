@@ -227,11 +227,11 @@ pre[class*="language-"] {
   &:is(:hover,:focus) {
     transform: scale(1.5);
     transition-delay: 0s;
-    transition-timing-function: var(--ease-3);
+    transition-timing-function: var(--ease-elastic-3);
   }
 
   @media (--motionOK) {
-    transition: transform 2s var(--ease-out-5) 3s;
+    transition: transform 2s var(--ease-squish-5) 3s;
 
     &:is(:hover,:focus) {
       transition-duration: .1s;
@@ -399,10 +399,22 @@ pre[class*="language-"] {
     column-gap: var(--size-15);
   }
 
-  & > div:nth-of-type(1) svg { color: var(--grape-5) }
-  & > div:nth-of-type(2) svg { color: var(--orange-5) }
-  & > div:nth-of-type(3) svg { color: var(--indigo-5) }
-  & > div:nth-of-type(4) svg { color: var(--red-5) }
+  & > div:nth-of-type(1) svg { 
+    color: var(--grape-5);
+    border-color: var(--grape-3);
+  }
+  & > div:nth-of-type(2) svg { 
+    color: var(--orange-5);
+    border-color: var(--orange-3);
+  }
+  & > div:nth-of-type(3) svg { 
+    color: var(--indigo-5);
+    border-color: var(--indigo-3);
+  }
+  & > div:nth-of-type(4) svg { 
+    color: var(--red-5);
+    border-color: var(--red-3);
+  }
 
   & svg {
     inline-size: var(--size-12);
