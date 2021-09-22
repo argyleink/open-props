@@ -24,7 +24,7 @@
 }
 
 @media (--motionOK) {
-  :focus {
+  :focus-visible {
     transition: outline-offset .25s var(--ease-2);
     outline-offset: 5px;
   }
