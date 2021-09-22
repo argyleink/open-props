@@ -471,6 +471,10 @@ pre[class*="language-"] {
   align-self: stretch;
   padding-block: var(--size-2);
 
+  &.paused > div {
+    animation-play-state: paused;
+  }
+
   & > div {
     padding-inline: var(--size-4);
     padding-block: var(--size-1);
@@ -569,5 +573,36 @@ pre[class*="language-"] {
     aspect-ratio: var(--aspect-box);
     border-color: var(--indigo-5);
     border-width: var(--border-size-2);
+  }
+}
+
+.animation-control-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-5);
+
+  & > button {
+    appearance: none;
+    background: none;
+    padding: 0;
+    aspect-ratio: 1;
+    border-radius: var(--radii-round);
+
+    & > svg {
+      fill: currentColor;
+      color: var(--green-3);
+
+      @media (--OSlight) {
+        color: var(--green-6);        
+      }
+    }
+
+    &:hover > svg {
+      color: var(--green-4);
+
+      @media (--OSlight) {
+        color: var(--green-7);        
+      }
+    }
   }
 }
