@@ -1,0 +1,49 @@
+{
+  "name": "open-props",
+  "author": "Adam Argyle",
+  "license": "ISC",
+  "version": "0.0.17",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argyleink/open-props"
+  },
+  "keywords": [
+    "css",
+    "utilities",
+    "variables",
+    "custom properties",
+    "gradients"
+  ],
+  "main": "props.css",
+  "style": "props.css",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "bundle": "concurrently npm:lib:*",
+    "lib:all": "postcss src/index.css -o props.css",
+    "lib:animations": "postcss src/props.animations.css -o animations.css",
+    "lib:aspects": "postcss src/props.aspects.css -o aspects.css",
+    "lib:borders": "postcss src/props.borders.css -o borders.css",
+    "lib:colors": "postcss src/props.colors.css -o colors.css",
+    "lib:easing": "postcss src/props.easing.css -o easings.css",
+    "lib:fonts": "postcss src/props.fonts.css -o fonts.css",
+    "lib:gradients": "postcss src/props.gradients.css -o gradients.css",
+    "lib:media": "postcss src/props.media.css -o media.css",
+    "lib:shadows": "postcss src/props.shadows.css -o shadows.css",
+    "lib:sizes": "postcss src/props.sizes.css -o sizes.css",
+    "lib:supports": "postcss src/props.supports.css -o supports.css",
+    "lib:zindex": "postcss src/props.zindex.css -o zindex.css",
+    "lib:reset": "postcss src/extra/reset.css -o reset.css"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "cssnano": "^5.0.8",
+    "open-color": "^1.9.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-easings": "3.x",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "6.7.x"
+  }
+}

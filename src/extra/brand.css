@@ -1,0 +1,8 @@
+@import "theme.css";
+
+:where(html) {
+  scrollbar-color: var(--brand) Canvas;
+  accent-color: var(--brand);
+}
+
+:focus-visible { outline-color: var(--brand); }

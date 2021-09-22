@@ -1,0 +1,20 @@
+@import "../props.media.css";
+@import "theme.light.css";
+@import "theme.dark.css";
+
+:where(html) { 
+  color: var(--text-2);
+  background-color: var(--surface-1);
+}
+
+:where(h1, h2, h3, h4, h5, h6, dt) { 
+  color: var(--text-1);
+}
+
+:where(a[href]) {
+  color: var(--link);
+  
+  &:visited {
+    color: var(--link-visited);
+  }
+}

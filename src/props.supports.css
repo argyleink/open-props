@@ -1,0 +1,13 @@
+@custom-media --safariONLY  (-webkit-hyphens: none);
+@custom-media --firefoxONLY (-moz-appearance: none);
+@custom-media --chromeONLY  (-webkit-tap-highlight-color: black);
+
+:where(html) {
+  --isLTR: 1;
+  --isRTL: -1;
+  
+  &:dir(rtl) {
+    --isLTR: -1;
+    --isRTL: 1;
+  }
+}

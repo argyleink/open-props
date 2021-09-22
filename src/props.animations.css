@@ -1,0 +1,46 @@
+:where(html) {
+  --animation-fade-in: fade-in .5s var(--ease-3);
+  --animation-fade-out: fade-out .5s var(--ease-3);
+  --animation-slide-up: slide-up .5s var(--ease-3);
+  --animation-slide-down: slide-down .5s var(--ease-3);
+
+  --animation-spin: spin 2s linear infinite;
+  --animation-ping: ping 5s var(--easeout-3) infinite;
+  --animation-blink: blink 1s var(--easeout-3) infinite;
+}
+
+@keyframes fade-in {
+  to { opacity: 1 }
+}
+
+@keyframes fade-out {
+  to { opacity: 0 }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%) }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%) }
+}
+
+@keyframes spin {
+  to { transform: rotate(1turn) }
+}
+
+@keyframes ping {
+  90%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
