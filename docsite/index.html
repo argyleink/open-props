@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>CSS "open-props" Project</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="deeppink" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Free CSS variables, like subatomic utilities, ready to tackle any design.">
+    <meta name="color-scheme" content="dark light">
+    <link rel="stylesheet" href="//unpkg.com/prism-themes@1.8.0/themes/prism-material-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="//unpkg.com/prism-themes@1.8.0/themes/prism-nord.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+
+    <nav>
+      <a href="/">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+        </svg>
+        <span>
+          <b>O</b>pen 
+          <b>P</b>rops
+        </span>
+      </a>
+      <a href="#getting-started">Get Started</a>
+      <a href="#" title="Source on Github">
+        <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </nav>
+
+    <section class="block-wrap">
+      <header class="hero">
+        <p><code class="language-bash">npm i open-props</code></p>
+        <h1>Grab n' go<br>CSS custom props.</h1>
+        <p>Easy to remember, <b>free CSS variables</b>.</p>
+        <ul class="checkmark-list">
+          <li>Subatomic utilities</li>
+          <li>Tackles any design</li>
+          <li>Useful anywhere CSS vars can go</li>
+        </ul>
+        <blockquote class="icon-quote">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+          </svg>
+          <span>free light & dark theme reset.css</span>
+        </blockquote>
+        <small>
+          v0.0.17<br>
+          Apache License
+        </small>
+      </header>
+      <div><pre class="language-css"><code>
+@import "open-props";
+@import "open-props/media.css";
+
+.button {
+  padding-inline: var(--size-5);
+  padding-block: var(--size-3);
+
+  color: var(--blue-0);
+  background-color: var(--blue-7);
+  border-radius: var(--border-radius-round);
+  box-shadow: var(--shadow-1);
+  
+  @media (--motionOK) {
+    transition: background .3s var(--easinout-3);
+  }
+
+  @media (--OSdark) {
+    background: var(--blue-1);
+    color: var(--blue-9);
+  }
+}
+        </code></pre></div>
+    </section>
+
+    <section id="about" class="just-stretch">
+      <header class="just-stretch">
+        <h2>About</h2>
+      </header>
+      <dl class="responsive-dl">
+        <div>
+          <dt>
+            <svg  viewBox="0 0 24 24" >
+              <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+              <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+            </svg>
+            Everything's optional
+          </dt>
+          <dd>Grab some of the props, or all of em.</dd>
+        </div>
+        <div>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              <path d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+            </svg>
+            No magic units
+          </dt>
+          <dd>Design consistency without thinking</dd>
+        </div>
+        <div>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+            Easy to customize
+          </dt>
+          <dd>Extend, overwrite, adapt, etc.. no prob.</dd>
+        </div>
+        <div>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            Easy to remember
+          </dt>
+          <dd>Try to keep the API surface area small and legible</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="overview">
+      <header>
+        <h2>Overview</h2>
+        <p>The following filesizes are after <a href="https://github.com/google/brotli">brotli</a> compression.</p>
+      </header>
+
+      <dl class="responsive-dl bundle-sizes">
+        <div>
+          <dt>Library bundles</dt>
+          <dd class="size-chart" style="row-gap: var(--size-3)">
+            <div class="size"><strong>2.9</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props">props.css</a>
+            </div>
+
+            <div class="size"><strong>1</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/reset.css">reset.css</a> <small class="green-badge">optional</small>
+              <br>
+              <small> 
+                <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
+                and 
+                <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css">theme.css</a> included</small>
+            </div>
+          </dd>
+        </div>
+
+        <div>
+          <dt>Prop Packs ™</dt>
+          <dd class="size-chart">
+            <div class="size"><strong>0.23</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/animations.css">animations.css</a>
+            </div>
+
+            <div class="size"><strong>0.1</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/aspects.css">aspects.css</a>
+            </div>
+
+            <div class="size"><strong>0.1</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/borders.css">borders.css</a>
+            </div>
+
+            <div class="size"><strong>0.7</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/colors.css">colors.css</a>
+            </div>
+
+            <div class="size"><strong>0.2</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/easings.css">easings.css</a>
+            </div>
+
+            <div class="size"><strong>0.4</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/fonts.css">fonts.css</a>
+            </div>
+
+            <div class="size"><strong>1</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/gradients.css">gradients.css</a>
+            </div>
+
+            <div class="size"><strong>0.4</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/media.css">media.css</a>
+            </div>
+
+            <div class="size"><strong>0.25</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/shadows.css">shadows.css</a>
+            </div>
+
+            <div class="size"><strong>0.2</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/sizes.css">sizes.css</a>
+            </div>
+
+            <div class="size"><strong>0.1</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/supports.css">supports.css</a>
+            </div>
+
+            <div class="size"><strong>0.05</strong>kB</div>
+            <div class="file">
+              <a href="https://unpkg.com/open-props/zindex.css">zindex.css</a>
+            </div>
+
+            <div class="size"><strong>??</strong></div>
+            <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">svg.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">patterns.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">shapes.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">layouts.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">clips.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">masks.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">lists.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">counters.css <small class="yellow-badge">WIP</small></div>
+            <div class="size"><strong>??</strong></div>
+            <div class="file">utilities.css <small class="yellow-badge">WIP</small></div>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="getting-started">
+      <header>
+        <h2>Getting Started</h2>
+        <p>Modern CSS and <a href="https://postcss.org/">PostCSS</a> versions available.</p>
+      </header>
+      <article class="installation">
+        <header>
+          <h3>Installation</h3>
+          <p>Grab the props with a URL or from NPM.</p>
+        </header>
+
+        <div class="block-wrap">
+          <div class="contain-pre">
+            <div>
+              <h4>NPM</h4>
+              <pre class="language-bash"><code>npm install open-props</code></pre>
+            </div>
+            
+            <h5>CSS</h5>
+            <div>
+              <h6>Bundles</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
+@import "open-props";
+@import "open-props/reset.css";
+                </code></pre>
+
+                <pre class="language-js"><code>
+import 'open-props';
+import 'open-props/reset.css';
+                </code></pre>
+              </div>
+            </div>
+
+            <div>
+              <h6>Individual packs</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
+@import "open-props/sizes.css";
+@import "open-props/colors.css";
+@import "open-props/gradients.css";
+/* etc */
+                </code></pre>
+
+                <pre class="language-js"><code>
+import 'open-props/sizes.css';
+import 'open-props/colors.css';
+import 'open-props/gradients.css';
+/* etc */
+                </code></pre>
+              </div>
+            </div>
+
+            <h5>PostCSS</h5>
+
+            <div class="block-wrap">
+              <div>
+                <h6>Entry points</h6>
+                <pre class="language-css"><code>
+@import "open-props/src/index.css";
+@import "open-props/src/extra/reset.css";
+                </code></pre>
+              </div>
+
+              <div>
+                <h6>Individual packs</h6>
+                <pre class="language-css"><code>
+@import "open-props/src/sizes.css";
+@import "open-props/src/aspects.css";
+@import "open-props/src/easings.css";
+/* etc */
+                </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="contain-pre">
+            <h4>CDN</h4>
+            <blockquote class="icon-quote indigo">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+              <p>No install step required.</p>
+            </blockquote>
+
+            <h5>CSS</h5>
+            <div>
+              <h6>Bundles</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/reset.css";
+                </code></pre>
+
+                <pre class="language-html"><code>
+&#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+&#60;link rel="stylesheet" href="https://unpkg.com/open-props/reset.css"/&#62;
+                </code></pre>
+
+                <pre class="language-js"><code>
+import 'https://unpkg.com/open-props';
+import 'https://unpkg.com/open-props/reset.css';
+                </code></pre>
+              </div>
+            </div>
+
+            <div>
+              <h6>Individual packs</h6>
+              <pre class="language-css"><code>
+@import "https://unpkg.com/open-props/colors.css";
+@import "https://unpkg.com/open-props/easings.css";
+@import "https://unpkg.com/open-props/sizes.css";
+/* etc */
+              </code></pre>
+            </div>
+
+            <h5>PostCSS</h5>
+            <div>
+              <h6>Entry Points</h6>
+              <pre class="language-css"><code>
+@import "https://unpkg.com/open-props/src/index.css";
+@import "https://unpkg.com/open-props/src/extra/reset.css";
+              </code></pre>
+            </div>
+
+            <div>
+              <h6>Individual packs</h6>
+              <pre class="language-css"><code>
+@import "https://unpkg.com/open-props/src/colors.css";
+@import "https://unpkg.com/open-props/src/easings.css";
+@import "https://unpkg.com/open-props/src/sizes.css";
+/* etc */
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- <section>
+      <header>
+        <h2>Naming Convention</h2>
+        <blockquote>
+          <p>Built for predictability and easy options cycling</p>
+        </blockquote>
+      </header>
+      <ol>
+        <li>Colors range from 0 (nearly white) to 9 (nearly black)</li>
+        <li><code class="language-css">var(--size-1)</code>, <code class="language-css">var(--gradient-1)</code> are safe values</li>
+        <li><code class="language-css">var(--size-00)</code>, <code class="language-css">var(--font-leading-00)</code> are allowed unsafe negative values</li>
+        <li><code class="language-css">var(--font-light)</code> and <code class="language-css">@media (--portrait)</code> are examples of exceptions to the number system. to match common industry verbiage.</li>
+      </ol>
+    </section> -->
+
+    <section id="colors">
+      <header>
+        <h2>Colors</h2>
+        <div class="block-wrap">
+          <p>Open Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1): an open-source color scheme. Optimized for UI.</p>
+          <blockquote class="icon-quote">
+            <svg viewBox="0 0 24 24">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            <span>Open devtools, open the color picker, set the swatches to the page's custom properties, and enjoy picking from the set!</span>
+          </blockquote>
+        </div>
+      </header>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--color-gray-{0-9}
+--color-red-{0-9}
+--color-pink-{0-9}
+--color-grape-{0-9}
+--color-violet-{0-9}
+--color-indigo-{0-9}
+--color-blue-{0-9}
+--color-cyan-{0-9}
+--color-teal-{0-9}
+--color-green-{0-9}
+--color-lime-{0-9}
+--color-yellow-{0-9}
+--color-orange-{0-9}
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+button.blue {
+  color: var(--blue-6);
+  background-color: var(--blue-0);
+  border: 1px solid var(--blue-1);
+  text-shadow: 0 1px 0 var(--blue-2);
+
+  &:hover {
+    background-color: var(--blue-1);
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="just-stretch">
+        <div class="open-colors">
+          <h4>Gray</h4>
+          <span class="color-swatch" style="background-color: var(--gray-0)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-1)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-2)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-3)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-4)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-5)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-6)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-7)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-8)"></span>
+          <span class="color-swatch" style="background-color: var(--gray-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Red</h4>
+          <span class="color-swatch" style="background-color: var(--red-0)"></span>
+          <span class="color-swatch" style="background-color: var(--red-1)"></span>
+          <span class="color-swatch" style="background-color: var(--red-2)"></span>
+          <span class="color-swatch" style="background-color: var(--red-3)"></span>
+          <span class="color-swatch" style="background-color: var(--red-4)"></span>
+          <span class="color-swatch" style="background-color: var(--red-5)"></span>
+          <span class="color-swatch" style="background-color: var(--red-6)"></span>
+          <span class="color-swatch" style="background-color: var(--red-7)"></span>
+          <span class="color-swatch" style="background-color: var(--red-8)"></span>
+          <span class="color-swatch" style="background-color: var(--red-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Pink</h4>
+          <span class="color-swatch" style="background-color: var(--pink-0)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-1)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-2)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-3)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-4)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-5)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-6)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-7)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-8)"></span>
+          <span class="color-swatch" style="background-color: var(--pink-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Grape</h4>
+          <span class="color-swatch" style="background-color: var(--grape-0)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-1)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-2)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-3)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-4)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-5)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-6)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-7)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-8)"></span>
+          <span class="color-swatch" style="background-color: var(--grape-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Violet</h4>
+          <span class="color-swatch" style="background-color: var(--violet-0)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-1)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-2)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-3)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-4)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-5)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-6)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-7)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-8)"></span>
+          <span class="color-swatch" style="background-color: var(--violet-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Indigo</h4>
+          <span class="color-swatch" style="background-color: var(--indigo-0)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-1)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-2)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-3)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-4)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-5)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-6)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-7)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-8)"></span>
+          <span class="color-swatch" style="background-color: var(--indigo-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Blue</h4>
+          <span class="color-swatch" style="background-color: var(--blue-0)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-1)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-2)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-3)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-4)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-5)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-6)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-7)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-8)"></span>
+          <span class="color-swatch" style="background-color: var(--blue-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Cyan</h4>
+          <span class="color-swatch" style="background-color: var(--cyan-0)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-1)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-2)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-3)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-4)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-5)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-6)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-7)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-8)"></span>
+          <span class="color-swatch" style="background-color: var(--cyan-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Teal</h4>
+          <span class="color-swatch" style="background-color: var(--teal-0)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-1)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-2)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-3)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-4)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-5)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-6)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-7)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-8)"></span>
+          <span class="color-swatch" style="background-color: var(--teal-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Green</h4>
+          <span class="color-swatch" style="background-color: var(--green-0)"></span>
+          <span class="color-swatch" style="background-color: var(--green-1)"></span>
+          <span class="color-swatch" style="background-color: var(--green-2)"></span>
+          <span class="color-swatch" style="background-color: var(--green-3)"></span>
+          <span class="color-swatch" style="background-color: var(--green-4)"></span>
+          <span class="color-swatch" style="background-color: var(--green-5)"></span>
+          <span class="color-swatch" style="background-color: var(--green-6)"></span>
+          <span class="color-swatch" style="background-color: var(--green-7)"></span>
+          <span class="color-swatch" style="background-color: var(--green-8)"></span>
+          <span class="color-swatch" style="background-color: var(--green-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Lime</h4>
+          <span class="color-swatch" style="background-color: var(--lime-0)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-1)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-2)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-3)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-4)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-5)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-6)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-7)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-8)"></span>
+          <span class="color-swatch" style="background-color: var(--lime-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Yellow</h4>
+          <span class="color-swatch" style="background-color: var(--yellow-0)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-1)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-2)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-3)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-4)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-5)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-6)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-7)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-8)"></span>
+          <span class="color-swatch" style="background-color: var(--yellow-9)"></span>
+        </div>
+        <div class="open-colors">
+          <h4>Orange</h4>
+          <span class="color-swatch" style="background-color: var(--orange-0)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-1)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-2)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-3)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-4)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-5)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-6)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-7)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-8)"></span>
+          <span class="color-swatch" style="background-color: var(--orange-9)"></span>
+        </div>
+      </article>
+    </section>
+
+    <section id="gradients" class="just-stretch">
+      <header>
+        <h2>Gradients</h2>
+        <p>Open Props includes gradients from <a href="https://github.com/ghosh/uiGradients">UIgradients</a>.</p>
+      </header>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--gradient-{0-30}
+--conic-gradient-{0-30}
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+header {
+  background-image: var(--gradient-5);
+
+  @media (--OSdark) {
+    background-image: var(--conic-gradient-15);
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="just-stretch">
+        <h4>Linear Gradients</h4>
+        <div class="ui-gradients">
+          <span class="gradient-swatch" style="background-image: var(--gradient-1)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-2)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-3)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-4)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-5)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-6)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-7)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-8)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-9)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-10)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-11)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-12)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-13)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-14)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-15)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-16)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-17)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-18)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-19)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-20)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-21)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-22)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-23)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-24)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-25)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-26)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-27)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-28)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-29)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-30)"></span>
+        </div>
+      </article>
+
+      <article class="just-stretch">
+        <h4>Conic Gradients</h4>
+        <div class="ui-gradients">
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-1)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-2)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-3)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-4)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-5)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-6)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-7)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-8)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-9)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-10)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-11)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-12)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-13)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-14)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-15)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-16)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-17)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-18)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-19)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-20)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-21)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-22)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-23)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-24)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-25)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-26)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-27)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-28)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-29)"></span>
+          <span class="gradient-swatch" style="background-image: var(--conic-gradient-30)"></span>
+        </div>
+      </article>
+    </section>
+
+    <section id="shadows">
+      <header>
+        <h2>Shadows</h2>
+        <p>Light and dark theme adaptive inner and outer shadows.</p>
+      </header>
+      <div class="block-wrap">
+        <div>
+          
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--shadow-{1-4}
+--inner-shadow-{0-4}
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+.card {
+  box-shadow: var(--shadow-1);
+
+  &:hover {
+    box-shadow: var(--shadow-3);
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="shadow-demos">
+        <div style="box-shadow: var(--shadow-1)"></div>
+        <div style="box-shadow: var(--shadow-2)"></div>
+        <div style="box-shadow: var(--shadow-3)"></div>
+        <div style="box-shadow: var(--shadow-4)"></div>
+        <div style="box-shadow: var(--inner-shadow-0)"></div>
+        <div style="box-shadow: var(--inner-shadow-1)"></div>
+        <div style="box-shadow: var(--inner-shadow-2)"></div>
+        <div style="box-shadow: var(--inner-shadow-3)"></div>
+        <div style="box-shadow: var(--inner-shadow-4)"></div>
+      </article>
+    </section>
+
+    <section id="aspect-ratio">
+      <header>
+        <h2>Aspect Ratios</h2>
+      </header>
+      <div class="block-wrap">
+        <div>
+          
+          <h5>Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--aspect-box: 1;
+--aspect-landscape: 4/3;
+--aspect-portrait: 3/4;
+--aspect-widescreen: 16/9; 
+--aspect-ultrawide: 18/5;
+--golden-ratio: 1.6180/1; 
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+.video-thumbnail {
+  block-size: 480px;
+  aspect-ratio: var(--aspect-widescreen);
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="aspect-demos">
+        <div style="aspect-ratio: var(--aspect-box)">box</div>
+        <div style="aspect-ratio: var(--aspect-landscape)">landscape</div>
+        <div style="aspect-ratio: var(--aspect-portrait)">portrait</div>
+        <div style="aspect-ratio: var(--aspect-widescreen)">widescreen</div>
+        <div style="aspect-ratio: 1.6180/1">golden ratio</div>
+        <div style="aspect-ratio: 18/5">ultrawide</div>
+      </article>
+    </section>
+
+    <section id="typography">
+      <header>
+        <h2>Typography</h2>
+        <p>Liquid and static font sizes, smart line heights, other familiar looking typography variables, ready to go.</p>
+      </header>
+      <div class="block-wrap">
+
+
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--font-size-{00-8}
+--font-size-fluid{0-3}
+--font-weight-{1-9}
+--font-letterspacing-{0-4}
+--font-relative-lineheight-{1-6}
+            </code></pre>
+          </div>
+        </div>
+        
+        <div>
+          <h5>Usage Sample</h5>
+            <pre class="language-css"><code>
+.hero {
+  line-height: var(--font-relative-leading-2);
+  font-size: var(--font-size-fluid-3);
+  font-weight: var(--font-weight-9);
+  font-family: var(--font-sans);
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <article class="font-sizes">
+        <h4>Font Families</h4>
+        <pre class="language-css"><code>
+--font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+--font-serif: ui-serif,serif;
+--font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+        </code></pre>
+        <div class="block-wrap">
+          <div class="font-family-grid">
+            <code class="language-css">--font-sans</code>
+            <div>
+              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+            </div>
+          </div>
+          <div class="font-family-grid">
+            <code class="language-css">--font-serif</code>
+            <div style="font-family: var(--font-serif)">
+              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+            </div>
+          </div>
+          <div class="font-family-grid">
+            <code class="language-css">--font-mono</code>
+            <div style="font-family: var(--font-mono)">
+              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="font-sizes">
+        <div class="block-wrap">
+          <div>
+            <h4>Font Weights</h4>
+            <pre class="language-css"><code>
+--font-weight-1: 100;
+--font-weight-2: 200;
+--font-weight-3: 300;
+--font-weight-4: 400;
+--font-weight-5: 500;
+--font-weight-6: 600;
+--font-weight-7: 700;
+--font-weight-8: 800;
+--font-weight-9: 900;
+            </code></pre>
+          </div>
+          <div class="font-weights">
+            <span style="font-weight:var(--font-weight-1)">A</span>
+            <span style="font-weight:var(--font-weight-2)">A</span>
+            <span style="font-weight:var(--font-weight-3)">A</span>
+            <span style="font-weight:var(--font-weight-4)">A</span>
+            <span style="font-weight:var(--font-weight-5)">A</span>
+            <span style="font-weight:var(--font-weight-6)">A</span>
+            <span style="font-weight:var(--font-weight-7)">A</span>
+            <span style="font-weight:var(--font-weight-8)">A</span>
+            <span style="font-weight:var(--font-weight-9)">A</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Letter Spacing</h4>
+        <pre class="language-css"><code>
+--font-letterspacing-0: -.05em;
+--font-letterspacing-1: .025em;
+--font-letterspacing-2: .025em;
+--font-letterspacing-3: .05em;
+--font-letterspacing-4: .1em;
+        </code></pre>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Line Height</h4>
+        <pre class="language-css"><code>
+--font-lineheight-00: .95;
+--font-lineheight-0: 1.1;
+--font-lineheight-1: 1.25;
+--font-lineheight-2: 1.375;
+--font-lineheight-3: 1.5;
+--font-lineheight-4: 1.75;
+--font-lineheight-5: 2;
+        </code></pre>
+      </article>
+
+      <article class="font-sizes">
+        <header>
+          <h4>Relative Line Height</h4>
+          <p>These line heights tighten as the font size is increased.</p>
+        </header>
+        <pre class="language-css"><code>
+--font-relative-lineheight-1: calc(1rem + 1.1ch);
+--font-relative-lineheight-2: calc(1rem + 1.25ch);
+--font-relative-lineheight-3: calc(1rem + 1.5ch);
+--font-relative-lineheight-4: calc(1rem + 2ch);
+--font-relative-lineheight-5: calc(1rem + 2.5ch);
+--font-relative-lineheight-6: calc(1rem + 3ch);
+        </code></pre>
+      </article>
+      
+      <article class="font-sizes">
+        <h4>Font Sizes</h4>
+        <pre class="language-css"><code>
+--font-size-00: .5rem;
+--font-size-0: .75rem;
+--font-size-1: 1rem;
+--font-size-2: 1.1rem;
+--font-size-3: 1.25rem;
+--font-size-4: 1.5rem;
+--font-size-5: 2rem;
+--font-size-6: 2.5rem;
+--font-size-7: 3rem;
+--font-size-8: 3.5rem;
+        </code></pre>
+        <div class="scroll-x-overflow"><div class="font-size-examples">
+          <code class="language-css">var(--font-size-00)</code>
+          <span style="font-size: var(--font-size-00)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-0)</code>
+          <span style="font-size: var(--font-size-0)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-1)</code>
+          <span style="font-size: var(--font-size-1)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-2)</code>
+          <span style="font-size: var(--font-size-2)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-3)</code>
+          <span style="font-size: var(--font-size-3)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-4)</code>
+          <span style="font-size: var(--font-size-4)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-5)</code>
+          <span style="font-size: var(--font-size-5)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-6)</code>
+          <span style="font-size: var(--font-size-6)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-7)</code>
+          <span style="font-size: var(--font-size-7)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-8)</code>
+          <span style="font-size: var(--font-size-8)">Almost before you knew it, we'd touched ground.</span>
+        </div></div>
+      </article>
+
+      <article class="font-sizes">
+        <h4>Fluid Font Sizes</h4>
+        <pre class="language-css"><code>
+--font-size-fluid-0: clamp(.75rem, 1.5vw, 1rem);
+--font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
+--font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
+--font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
+        </code></pre>
+        <div class="scroll-x-overflow"><div class="font-size-examples">
+          <code class="language-css">var(--font-size-fluid-00)</code>
+          <span style="font-size: var(--font-size-fluid-00)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-fluid-1)</code>
+          <span style="font-size: var(--font-size-fluid-1)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-fluid-2)</code>
+          <span style="font-size: var(--font-size-fluid-2)">Almost before you knew it, we'd touched ground.</span>
+          <code class="language-css">var(--font-size-fluid-3)</code>
+          <span style="font-size: var(--font-size-fluid-3)">Almost before you knew it, we'd touched ground.</span>
+        </div></div>
+      </article>
+    </section>
+
+    <section id="easing">
+      <header>
+        <h2>Easing</h2>
+        <p>5 strengths for the classic <code class="language-css">ease</code>, <code class="language-css">easeout</code>, <code class="language-css">easein</code>, and <code class="language-css">easeinout</code>. Some extra easings too, a space for mock elasticity and physics.</p>
+      </header>
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Overview</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--ease-{1-5}
+--ease-in-{1-5}
+--ease-out-{1-5}
+--ease-inout-{1-5}
+--ease-elastic-{1-5}
+--ease-squish-{1-5}
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+.slight-ease {
+  animation: fade-in 300ms var(--ease-1);
+}
+
+.dramatic-ease {
+  animation: fade-in 1s var(--ease-out-5);
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-1: cubic-bezier(.25, 0, .5, 1);
+--ease-2: cubic-bezier(.25, 0, .4, 1);
+--ease-3: cubic-bezier(.25, 0, .3, 1);
+--ease-4: cubic-bezier(.25, 0, .2, 1);
+--ease-5: cubic-bezier(.25, 0, .1, 1); 
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo ease">
+            <div style="animation-timing-function: var(--ease-1)">Ease 1</div>
+            <div style="animation-timing-function: var(--ease-2)">Ease 2</div>
+            <div style="animation-timing-function: var(--ease-3)">Ease 3</div>
+            <div style="animation-timing-function: var(--ease-4)">Ease 4</div>
+            <div style="animation-timing-function: var(--ease-5)">Ease 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease In</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-in-1: cubic-bezier(.25, 0, 1, 1);
+--ease-in-2: cubic-bezier(.50, 0, 1, 1);
+--ease-in-3: cubic-bezier(.70, 0, 1, 1);
+--ease-in-4: cubic-bezier(.90, 0, 1, 1);
+--ease-in-5: cubic-bezier(1, 0, 1, 1);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo ease">
+            <div style="animation-timing-function: var(--ease-in-1)">Ease In 1</div>
+            <div style="animation-timing-function: var(--ease-in-2)">Ease In 2</div>
+            <div style="animation-timing-function: var(--ease-in-3)">Ease In 3</div>
+            <div style="animation-timing-function: var(--ease-in-4)">Ease In 4</div>
+            <div style="animation-timing-function: var(--ease-in-5)">Ease In 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease Out</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-out-1: cubic-bezier(0, 0, .75, 1);
+--ease-out-2: cubic-bezier(0, 0, .50, 1);
+--ease-out-3: cubic-bezier(0, 0, .3, 1);
+--ease-out-4: cubic-bezier(0, 0, .1, 1);
+--ease-out-5: cubic-bezier(0, 0, 0, 1);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo ease">
+            <div style="animation-timing-function: var(--ease-out-1)">Ease Out 1</div>
+            <div style="animation-timing-function: var(--ease-out-2)">Ease Out 2</div>
+            <div style="animation-timing-function: var(--ease-out-3)">Ease Out 3</div>
+            <div style="animation-timing-function: var(--ease-out-4)">Ease Out 4</div>
+            <div style="animation-timing-function: var(--ease-out-5)">Ease Out 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease InOut</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-inout-1: cubic-bezier(.1, 0, .9, 1);
+--ease-inout-2: cubic-bezier(.3, 0, .7, 1);
+--ease-inout-3: cubic-bezier(.5, 0, .5, 1);
+--ease-inout-4: cubic-bezier(.7, 0, .3, 1);
+--ease-inout-5: cubic-bezier(.9, 0, .1, 1);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo ease">
+            <div style="animation-timing-function: var(--ease-inout-1)">Ease InOut 1</div>
+            <div style="animation-timing-function: var(--ease-inout-2)">Ease InOut 2</div>
+            <div style="animation-timing-function: var(--ease-inout-3)">Ease InOut 3</div>
+            <div style="animation-timing-function: var(--ease-inout-4)">Ease InOut 4</div>
+            <div style="animation-timing-function: var(--ease-inout-5)">Ease InOut 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease Elastic</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-elastic-1: cubic-bezier(.5, .75, .75, 1.25);
+--ease-elastic-2: cubic-bezier(.5, 1, .75, 1.25);
+--ease-elastic-3: cubic-bezier(.5, 1.25, .75, 1.25);
+--ease-elastic-4: cubic-bezier(.5, 1.5, .75, 1.25);
+--ease-elastic-5: cubic-bezier(.5, 1.75, .75, 1.25);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo elastic">
+            <div style="animation-timing-function: var(--ease-elastic-1)">Ease Elastic 1</div>
+            <div style="animation-timing-function: var(--ease-elastic-2)">Ease Elastic 2</div>
+            <div style="animation-timing-function: var(--ease-elastic-3)">Ease Elastic 3</div>
+            <div style="animation-timing-function: var(--ease-elastic-4)">Ease Elastic 4</div>
+            <div style="animation-timing-function: var(--ease-elastic-5)">Ease Elastic 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease Squish</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-squish-1: cubic-bezier(.5, -.1, .1, 1.5);
+--ease-squish-2: cubic-bezier(.5, -.3, .1, 1.5);
+--ease-squish-3: cubic-bezier(.5, -.5, .1, 1.5);
+--ease-squish-4: cubic-bezier(.5, -.7, .1, 1.5);
+--ease-squish-5: cubic-bezier(.5, -.9, .1, 1.5);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo squish">
+            <div style="animation-timing-function: var(--ease-squish-1)">Ease Squish 1</div>
+            <div style="animation-timing-function: var(--ease-squish-2)">Ease Squish 2</div>
+            <div style="animation-timing-function: var(--ease-squish-3)">Ease Squish 3</div>
+            <div style="animation-timing-function: var(--ease-squish-4)">Ease Squish 4</div>
+            <div style="animation-timing-function: var(--ease-squish-5)">Ease Squish 5</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5>Ease Steps</h5>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+--ease-step-1: steps(2);
+--ease-step-2: steps(3);
+--ease-step-3: steps(4);
+--ease-step-4: steps(7);
+--ease-step-5: steps(10);
+              </code></pre>
+            </div>
+          </div>
+          <div class="ease-demo ease">
+            <div style="animation-timing-function: var(--ease-step-1)">Ease Steps 1</div>
+            <div style="animation-timing-function: var(--ease-step-2)">Ease Steps 2</div>
+            <div style="animation-timing-function: var(--ease-step-3)">Ease Steps 3</div>
+            <div style="animation-timing-function: var(--ease-step-4)">Ease Steps 4</div>
+            <div style="animation-timing-function: var(--ease-step-5)">Ease Steps 5</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="sizes">
+      <header>
+        <h2>Sizes</h2>
+        <p>No <code class="language-css">px</code> here, relative units all the way. 0's are unsafe but common negative values, while 1-N are safe.</p>
+      </header>
+      <div>
+        <h5>Vars Overview</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+--size-{000-15}
+--size-fluid-{1-10}
+--size-content-{1-3}
+--size-header-{1-3}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Relative Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+  --size-000: -.5rem;
+  --size-00: -.25rem;
+  --size-1: .25rem;
+  --size-2: .5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 2.5rem;
+  --size-9: 3rem;
+  --size-10: 3.5rem;
+  --size-11: 4rem;
+  --size-12: 5rem;
+  --size-13: 7rem;
+  --size-14: 9rem;
+  --size-15: 10rem;
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+article { 
+  display: grid;
+  gap: var(-size-3);
+}
+
+li { 
+  padding-inline-start: var(--size-2);
+}
+
+.icon {
+  inline-size: var(--size-5);
+  block-size: var(--size-5);
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Fluid Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+  --size-fluid-1: clamp(.5rem, 1vw, 1rem);
+  --size-fluid-2: clamp(1rem, 2vw, 1.5rem);
+  --size-fluid-3: clamp(1.5rem, 3vw, 2rem);
+  --size-fluid-4: clamp(2rem, 4vw, 3rem);
+  --size-fluid-5: clamp(3rem, 5vw, 4rem);
+  --size-fluid-6: clamp(4rem, 6vw, 5rem);
+  --size-fluid-7: clamp(5rem, 7vw, 6rem);
+  --size-fluid-8: clamp(6rem, 8vw, 7rem);
+  --size-fluid-9: clamp(7rem, 9vw, 8rem);
+  --size-fluid-10: clamp(8rem, 10vw, 10rem);
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+body { 
+  padding: var(-size-fluid-3);
+}
+
+hr { 
+  margin-block: var(--size-fluid-5);
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Reading Content Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+  --size-content-1: 20ch;
+  --size-content-2: 45ch;
+  --size-content-3: 60ch;
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+p { 
+  max-inline-size: var(--size-content-3);
+}
+
+aside { 
+  max-inline-size: var(--size-content-2);
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Headline Content Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+  --size-header-1: 20ch;
+  --size-header-2: 25ch;
+  --size-header-3: 45rem;
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+h1 { 
+  max-inline-size: var(--size-headline-2);
+}
+
+small { 
+  max-inline-size: var(--size-headline-1);
+}
+          </code></pre>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="borders">
+      <header>
+        <h2>Borders</h2>
+        <p>Sizes, corner radii, and some blobs</p>
+      </header>
+      <div class="block-wrap">
+        <div>
+          
+          <h5>Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+--border-size-{1-5}
+--radii-{1-5}
+--radii-round
+--radii-blob{1-2}
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+.card {
+  border-radius: var(--radii-3);
+}
+
+.circle {
+  inline-size: var(--size-5);
+  aspect-ratio: var(--aspect-box);
+  border-radius: var(--radii-round);
+}
+          </code></pre>
+        </div>
+      </div>
+      <article class="border-demos">
+        <div style="border-width: var(--border-size-1)">1</div>
+        <div style="border-width: var(--border-size-2)">2</div>
+        <div style="border-width: var(--border-size-3)">3</div>
+        <div style="border-width: var(--border-size-4)">4</div>
+        <div style="border-width: var(--border-size-5)">5</div>
+
+        <div style="border-radius: var(--radii-1)">1</div>
+        <div style="border-radius: var(--radii-2)">2</div>
+        <div style="border-radius: var(--radii-3)">3</div>
+        <div style="border-radius: var(--radii-4)">4</div>
+        <div style="border-radius: var(--radii-5)">5</div>
+        <div style="border-radius: var(--radii-round)">round</div>
+
+        <div style="border-radius: var(--radii-blob-1)">1</div>
+        <div style="border-radius: var(--radii-blob-2)">2</div>
+        <div style="border-radius: var(--radii-blob-3)">3</div>
+        <div style="border-radius: var(--radii-blob-4)">4</div>
+        <div style="border-radius: var(--radii-blob-5)">5</div>
+      </article>
+    </section>
+
+    <footer>
+      <a href="#" title="Source on Github">
+        <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </footer>
+
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>

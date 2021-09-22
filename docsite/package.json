@@ -1,0 +1,35 @@
+{
+  "name": "open-props",
+  "author": "Adam Argyle",
+  "license": "ISC",
+  "version": "0.0.17",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argyleink/open-props"
+  },
+  "keywords": [
+    "css",
+    "utilities",
+    "variables",
+    "custom properties",
+    "gradients"
+  ],
+  "main": "props.min.css",
+  "style": "props.min.css",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "open-color": "^1.9.1",
+    "open-props": "^0.0.17",
+    "postcss-easings": "3.x",
+    "postcss-preset-env": "6.7.x",
+    "vite": "2.x  || >2.0.0-alpha"
+  }
+}
