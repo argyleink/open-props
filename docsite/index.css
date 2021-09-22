@@ -1,5 +1,5 @@
-@import "open-props/src/index.css";
-@import "open-props/src/extra/reset.css";
+@import "../src/index.css";
+@import "../src/extra/reset.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
