@@ -247,29 +247,28 @@ pre[class*="language-"] {
 }
 
 .ui-gradients {
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(var(--size-content-2), 30vw);
   gap: var(--size-2);
+  scroll-snap-type: x mandatory;
+  padding-inline: var(--gap);
+  scroll-padding-inline: var(--gap);
+  overscroll-behavior-inline: contain;
+
+  & > * {
+    scroll-snap-align: start;
+  }
 }
 
 .gradient-swatch {
   border-radius: var(--radii-2);
-  inline-size: 31%;
-  block-size: var(--size-fluid-5);
-
-  @media (--sm-n-above) {
-    inline-size: 18%;
-  }
-
-  @media (--md-n-above) {
-    inline-size: 15%;
-  }
+  aspect-ratio: var(--aspect-landscape);
 }
 
 .scroll-x-overflow {
   overflow-x: auto;
-  max-inline-size: 100vw;
+  max-inline-size: var(--max-inline-body);
 }
 
 .contain-pre {
