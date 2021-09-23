@@ -64,9 +64,12 @@ section {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  background: var(--brand-bg-gradient) fixed;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* todo: why isnt --firefoxONLY working here? */
+  @supports not (-moz-appearance: none) {
+    background: var(--brand-bg-gradient) fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 header {
@@ -140,6 +143,8 @@ footer {
     font-size: var(--font-size-fluid-3);
     --op-gradient-direction: to right;
     background-image: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-attachment: unset;
 
     opacity: 0;
