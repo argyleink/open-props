@@ -1263,10 +1263,10 @@
           <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
-              --animation-fade-{in,out};
-              --animation-slide-out-{up,down,left,right};
-              --animation-slide-in-{up,down,left,right};
-              --animation-shake-{x,y};
+              --animation-fade-{in,out}
+              --animation-slide-out-{up,down,left,right}
+              --animation-slide-in-{up,down,left,right}
+              --animation-shake-{x,y}
 
               --animation-spin: op-spin 2s linear infinite;
               --animation-ping: op-ping 5s var(--ease-out-3) infinite;
@@ -1695,6 +1695,44 @@
         <div style="border-radius: var(--radii-blob-4)">4</div>
         <div style="border-radius: var(--radii-blob-5)">5</div>
       </article>
+    </section>
+
+    <section id="z-index">
+      <header>
+        <h2>Z Index</h2>
+        <p>All the values you could likely need.. unless you're at war with something at which point this props can't save you.</p>
+      </header>
+      <div class="block-wrap">
+        <div>
+          <h5>Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              --layer-{1-5}
+              --layer-important: 2147483647;
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Usage Sample</h5>
+          <pre class="language-css"><code>
+            figure {
+              position: relative;
+
+              & figcaption {
+                position: absolute;
+                z-index: var(--layer-1);
+                inset-inline: 0;
+                inset-block: auto 0;
+              }
+            }
+
+            .desperate-measures {
+              position: fixed;
+              z-index: var(--layer-important);
+            }
+          </code></pre>
+        </div>
+      </div>
     </section>
 
     <footer>
