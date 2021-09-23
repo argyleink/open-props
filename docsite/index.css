@@ -299,12 +299,29 @@ pre[class*="language-"] {
   scroll-padding-inline: var(--gap);
   overscroll-behavior-inline: contain;
 
+  &.grainy > * {
+    background-size: cover;
+    filter: var(--grain-filter-2);
+  }
+
   & > * {
     scroll-snap-align: start;
     display: grid;
-    place-content: center;
-    font-size: var(--font-size-fluid-3);
-    text-shadow: 0 1px 0 hsl(0 0% 0% / 25%);
+    justify-content: flex-start;
+    
+    &::before {
+      font-size: var(--font-size-fluid-1);
+      background: var(--surface-1);
+      color: var(--text-1);
+      box-shadow: var(--shadow-2);
+      text-shadow: 0 1px 0 hsl(0 0% 0% / 25%);
+      inline-size: 3ch;
+      display: grid;
+      place-content: center;
+      margin: var(--size-3);
+      aspect-ratio: var(--aspect-box);
+      border-radius: var(--radii-round);
+    }
   }
 }
 
@@ -826,5 +843,15 @@ input[type="range"] {
 
   &:is(:hover,:active) {
     --thumb-highlight-size: 10px;
+  }
+}
+
+.has-info-icon {
+  display: flex;
+  gap: var(--size-2);
+  align-items: center;
+
+  & svg {
+    inline-size: 1.5ch;
   }
 }

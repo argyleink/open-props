@@ -1,65 +1,59 @@
-/* generated with props.colors.src.js */
+@import 'props.svg.css';
+
 * {
   --op-gradient-direction: to bottom right;
-  --gradient-1: linear-gradient(var(--op-gradient-direction),#091E3A,#2F80ED,#2D9EE0);
-  --gradient-2: linear-gradient(var(--op-gradient-direction),#9400D3,#4B0082);
-  --gradient-3: linear-gradient(var(--op-gradient-direction),#c84e89,#F15F79);
+
+  --gradient-1: linear-gradient(var(--op-gradient-direction),#1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+  --gradient-2: linear-gradient(var(--op-gradient-direction),#48005c, #8300e2, #a269ff);
+  --gradient-3: 
+    radial-gradient(
+      circle at top right, 
+      hsl(180 100% 50%), hsl(180 100% 50% / 0%)
+    ),
+    radial-gradient(
+      circle at bottom left, 
+      hsl(328 100% 54%), hsl(328 100% 54% / 0%)
+    );
   --gradient-4: linear-gradient(var(--op-gradient-direction),#00F5A0,#00D9F5);
-  --gradient-5: linear-gradient(var(--op-gradient-direction),#F7941E,#72C6EF,#00A651);
-  --gradient-6: linear-gradient(var(--op-gradient-direction),#F7941E,#004E8F);
+  --gradient-5: conic-gradient(from -270deg at 75% 110%, fuchsia, floralwhite);
+  --gradient-6: conic-gradient(from -90deg at top left, black, white);
   --gradient-7: linear-gradient(var(--op-gradient-direction),#72C6EF,#004E8F);
-  --gradient-8: linear-gradient(var(--op-gradient-direction),#FD8112,#0085CA);
-  --gradient-9: linear-gradient(var(--op-gradient-direction),#bf5ae0,#a811da);
-  --gradient-10: linear-gradient(var(--op-gradient-direction),#00416A,#E4E5E6);
-  --gradient-11: linear-gradient(var(--op-gradient-direction),#fbed96,#abecd6);
-  --gradient-12: linear-gradient(var(--op-gradient-direction),#FFE000,#799F0C);
-  --gradient-13: linear-gradient(var(--op-gradient-direction),#F7F8F8,#ACBB78);
-  --gradient-14: linear-gradient(var(--op-gradient-direction),#00416A,#799F0C,#FFE000);
-  --gradient-15: linear-gradient(var(--op-gradient-direction),#334d50,#cbcaa5);
-  --gradient-16: linear-gradient(var(--op-gradient-direction),#0052D4,#4364F7,#6FB1FC);
-  --gradient-17: linear-gradient(var(--op-gradient-direction),#5433FF,#20BDFF,#A5FECB);
-  --gradient-18: linear-gradient(var(--op-gradient-direction),#799F0C,#ACBB78);
+  --gradient-8: conic-gradient(from 90deg at 50% 0%, #111, 50%, #222, #111);
+  --gradient-9: conic-gradient(from .5turn at bottom center, lightblue, white);
+  --gradient-10: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+  --gradient-11: conic-gradient(at bottom left, deeppink, cyan);
+  --gradient-12: conic-gradient(from 90deg at 25% -10%, #ff4500, #d3f340, #7bee85, #afeeee, #7bee85);
+  --gradient-13: radial-gradient(circle at 50% 200%, #000142, #3b0083, #b300c3, #ff059f, #ff4661, #ffad86, #fff3c7);
+  --gradient-14: conic-gradient(at top right, lime, cyan);
+  --gradient-15: linear-gradient(var(--op-gradient-direction), #c7d2fe, #fecaca, #fef3c7);
+  --gradient-16: radial-gradient(circle at 50% -250%, #374151, #111827, #000);
+  --gradient-17: conic-gradient(from -90deg at 50% -25%, blue, blueviolet);
+  --gradient-18: conic-gradient(from .5turn at center left, lime, cyan);
   --gradient-19: linear-gradient(var(--op-gradient-direction),#ffe259,#ffa751);
-  --gradient-20: linear-gradient(var(--op-gradient-direction),#00416A,#E4E5E6);
-  --gradient-21: linear-gradient(var(--op-gradient-direction),#FFE000,#799F0C);
+  --gradient-20: conic-gradient(from -135deg at -10% center, #ffa500, #ff7715, #ff522a, #ff3f47, #ff5482, #ff69b4);
+  --gradient-21: conic-gradient(from -90deg at 25% 115%, #ff0000, #ff0066, #ff00cc, #cc00ff, #6600ff, #0000ff, #0000ff, #0000ff, #0000ff);
   --gradient-22: linear-gradient(var(--op-gradient-direction),#acb6e5,#86fde8);
   --gradient-23: linear-gradient(var(--op-gradient-direction),#536976,#292E49);
-  --gradient-24: linear-gradient(var(--op-gradient-direction),#BBD2C5,#536976,#292E49);
-  --gradient-25: linear-gradient(var(--op-gradient-direction),#B79891,#94716B);
+  --gradient-24: conic-gradient(from .5turn at 0% 0%, #00c476, 10%, #82b0ff, 90%, #00c476);
+  --gradient-25: conic-gradient(at 125% 50%, #b78cf7, #ff7c94, #ffcf0d, #ff7c94, #b78cf7);
   --gradient-26: linear-gradient(var(--op-gradient-direction),#9796f0,#fbc7d4);
-  --gradient-27: linear-gradient(var(--op-gradient-direction),#BBD2C5,#536976);
-  --gradient-28: linear-gradient(var(--op-gradient-direction),#076585,#fff);
-  --gradient-29: linear-gradient(var(--op-gradient-direction),#00467F,#A5CC82);
-  --gradient-30: linear-gradient(var(--op-gradient-direction),#000C40,#607D8B);
-
-  --conic-gradient-1: conic-gradient(from 90deg at bottom right, cyan, rebeccapurple);
-  --conic-gradient-2: conic-gradient(from .5turn at bottom center, lightblue, white);
-  --conic-gradient-3: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
-  --conic-gradient-4: conic-gradient(at bottom left, deeppink, cyan);
-  --conic-gradient-5: conic-gradient(from 90deg at 25% -10%, #ff4500, #d3f340, #7bee85, #afeeee, #7bee85);
-  --conic-gradient-6: conic-gradient(from -90deg at top left, black, white);
-  --conic-gradient-7: conic-gradient(at top right, lime, cyan);
-  --conic-gradient-8: conic-gradient(from -.5turn at bottom right, deeppink, cyan, rebeccapurple);
-  --conic-gradient-9: conic-gradient(at top right, slategray, white);
-  --conic-gradient-10: conic-gradient(from .5turn at 50% 110%, white, orange);
-  --conic-gradient-11: conic-gradient(from .5turn at center left, lime, cyan);
-  --conic-gradient-12: conic-gradient(from -90deg at 50% -25%, blue, blueviolet);
-  --conic-gradient-13: conic-gradient(from .5turn at top right, darkseagreen, darkslategray);
-  --conic-gradient-14: conic-gradient(from 90deg at 50% 0%, #111, 50%, #222, #111);
-  --conic-gradient-15: conic-gradient(at top right, lightcyan, lightblue);
-  --conic-gradient-16: conic-gradient(from -135deg at -10% center, #ffa500, #ff7715, #ff522a, #ff3f47, #ff5482, #ff69b4);
-  --conic-gradient-17: conic-gradient(from -90deg at 50% 105%, white, orchid);
-  --conic-gradient-18: conic-gradient(from -90deg at 25% 115%, #ff0000, #ff0066, #ff00cc, #cc00ff, #6600ff, #0000ff, #0000ff, #0000ff, #0000ff);
-  --conic-gradient-19: conic-gradient(from -90deg at bottom center, papayawhip, peachpuff);
-  --conic-gradient-20: conic-gradient(from -270deg at 50% -5%, yellow, yellowgreen);
-  --conic-gradient-21: conic-gradient(from -90deg at 75% -25%, sienna, purple);
-  --conic-gradient-22: conic-gradient(from 90deg at 50% 125%, #20b2aa, #135da5, #0d0895, #4b0082, #4b0082, #0d0895, #135da5, #20b2aa);
-  --conic-gradient-23: conic-gradient(from -270deg at 110% 50%, cadetblue, darkgreen);
-  --conic-gradient-24: conic-gradient(from -270deg at 75% 110%, fuchsia, floralwhite);
-  --conic-gradient-25: conic-gradient(from -270deg at 75% 110%, midnightblue, lawngreen);
-  --conic-gradient-26: conic-gradient(from .5turn at bottom left, deeppink, rebeccapurple);
-  --conic-gradient-27: conic-gradient(from 90deg at 50% 125%, #1f005c, #003298, #005ac6, #007fdc, #00a2d3, #00c4ae, #00e474, #00ff00, #1f005c, #003298, #005ac6, #007fdc, #00a2d3, #00c4ae, #00e474, #00ff00);
-  --conic-gradient-28: conic-gradient(at 0% 0%, snow, white);
-  --conic-gradient-29: conic-gradient(from .5turn at 0% 0%, #00c476, 10%, #82b0ff, 90%, #00c476);
-  --conic-gradient-30: conic-gradient(at 125% 50%, #b78cf7, #ff7c94, #ffcf0d, #ff7c94, #b78cf7);
+  --gradient-27: conic-gradient(from .5turn at bottom left, deeppink, rebeccapurple);
+  --gradient-28: conic-gradient(from -90deg at 50% 105%, white, orchid);
+  --gradient-29: 
+    radial-gradient(
+      circle at top right, 
+      hsl(250 100% 85%), hsl(250 100% 85% / 0%)
+    ),
+    radial-gradient(
+      circle at bottom left, 
+      hsl(220 90% 75%), hsl(220 90% 75% / 0%)
+    );
+  --gradient-30: radial-gradient(
+      circle at top right, 
+      hsl(150 100% 50%), hsl(150 100% 50% / 0%)
+    ),
+    radial-gradient(
+      circle at bottom left, 
+      hsl(150 100% 84%), hsl(150 100% 84% / 0%)
+    );
 }
