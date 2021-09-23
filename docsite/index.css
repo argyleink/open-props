@@ -801,6 +801,7 @@ input[type="range"] {
   inline-size: 100%;
   margin: 1ex 0;
   appearance: none;
+  -webkit-appearance: none;
   background: transparent;
   outline-offset: 5px;
 
@@ -843,6 +844,7 @@ input[type="range"] {
 
   &::-webkit-slider-thumb {
     appearance: none;
+    -webkit-appearance: none;
     cursor: ew-resize;
     border: 3px solid var(--surface-1);
     block-size: var(--thumb-size);
