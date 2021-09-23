@@ -483,6 +483,14 @@ pre[class*="language-"] {
   content:"✅ ";
 }
 
+.bundle-sizes {
+  gap: var(--size-8);
+
+  @media (--lg-n-above) {
+    column-gap: var(--size-15);
+  }
+}
+
 .responsive-dl {
   display: grid;
   grid-template-columns: 1fr 1fr;
