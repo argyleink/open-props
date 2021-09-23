@@ -169,6 +169,8 @@ footer {
 
     @media (--OSlight) {
       border-color: var(--orange-5);
+      background-color: var(--orange-0);
+      color: var(--orange-9);
 
       & > svg {
         stroke: var(--orange-7);
@@ -221,19 +223,30 @@ blockquote {
     border-color: var(--lime-5);
     align-items: center;
 
+    @media (--OSlight) {
+      background-color: var(--lime-0);
+      color: var(--lime-9);
+    }
+
     & > svg {
       inline-size: var(--size-7);
       stroke: var(--lime-3);
 
       @media (--OSlight) {
-        stroke: var(--lime-9);
+        stroke: var(--lime-5);
       }
     }
 
     &.indigo {
       border-color: var(--indigo-5);
+      
+      @media (--OSlight) {
+        background-color: var(--indigo-0);
+        color: var(--indigo-9);
+      }
+
       & > svg {
-        stroke: var(--indigo-3);
+        stroke: var(--indigo-4);
       }
     }
   }
