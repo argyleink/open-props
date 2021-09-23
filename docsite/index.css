@@ -138,7 +138,8 @@ footer {
 
   & > h1 {
     font-size: var(--font-size-fluid-3);
-    background-image: var(--conic-gradient-3);
+    --op-gradient-direction: to right;
+    background-image: var(--gradient-1);
     background-attachment: unset;
 
     opacity: 0;
@@ -150,7 +151,7 @@ footer {
       0s;
 
     @media (--OSdark) {
-      background-image: var(--conic-gradient-8);
+      background-image: var(--gradient-3);
     }
   }
 
