@@ -418,7 +418,7 @@
 
       <div class="block-wrap">
         <div>
-          <h5>Vars Overview</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --color-gray-{0-9}
@@ -634,7 +634,7 @@
 
       <div class="block-wrap">
         <div>
-          <h5>Vars Overview</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --gradient-{0-30}
@@ -737,7 +737,7 @@
       <div class="block-wrap">
         <div>
           
-          <h5>Vars Overview</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --shadow-{1-4}
@@ -819,7 +819,7 @@
 
 
         <div>
-          <h5>Vars Overview</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --font-size-{00-8}
@@ -1008,7 +1008,7 @@
       </header>
       <div class="block-wrap">
         <div>
-          <h5>Vars Overview</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --ease-{1-5}
@@ -1256,29 +1256,24 @@
     <section id="animations">
       <header>
         <h2>Animations</h2>
-        <p>Premade <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect">keyframe effects</a> for 100's of combinations.</p>
+        <p>Premade <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect">keyframe effects</a> for slides and fades allow you to orchestrate your own combinations. Plus, a few nice attention grabbers and indeterminate state animations.</p>
       </header>
       <div class="block-wrap">
         <div>
-          <h5>Vars Overview</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
-              --animation-fade-in: fade-in .5s var(--ease-3);
-              --animation-fade-out: fade-out .5s var(--ease-3);
+              --animation-fade-{in,out};
+              --animation-slide-out-{up,down,left,right};
+              --animation-slide-in-{up,down,left,right};
+              --animation-shake-{x,y};
 
-              --animation-slide-out-up: slide-out-up .5s var(--ease-3);
-              --animation-slide-out-down: slide-out-down .5s var(--ease-3);
-              --animation-slide-out-right: slide-out-right .5s var(--ease-3);
-              --animation-slide-out-left: slide-out-left .5s var(--ease-3);
-
-              --animation-slide-in-up: slide-in-up .5s var(--ease-3);
-              --animation-slide-in-down: slide-in-down .5s var(--ease-3);
-              --animation-slide-in-right: slide-in-right .5s var(--ease-3);
-              --animation-slide-in-left: slide-in-left .5s var(--ease-3);
-
-              --animation-spin: spin 2s linear infinite;
-              --animation-ping: ping 5s var(--ease-out-3) infinite;
-              --animation-blink: blink 1s var(--ease-out-3) infinite;
+              --animation-spin: op-spin 2s linear infinite;
+              --animation-ping: op-ping 5s var(--ease-out-3) infinite;
+              --animation-blink: op-blink 1s var(--ease-out-3) infinite;
+              --animation-float: op-float 3s var(--ease-inout-3) infinite;
+              --animation-bounce: op-bounce 2s var(--ease-squish-2) infinite;
+              --animation-pulse: op-pulse 2s var(--ease-out-3) infinite;
             </code></pre>
           </div>
         </div>
@@ -1286,16 +1281,22 @@
           <h5>Keyframe Examples</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
-              @keyframes fade-in {
+              @keyframes op-fade-in {
                 to { opacity: 1 }
               }
 
-              @keyframes slide-out-right {
+              @keyframes op-slide-out-right {
                 to { transform: translateX(100%) }
               }
 
-              @keyframes slide-in-up {
+              @keyframes op-slide-in-up {
                 from { transform: translateY(100%) }
+              }
+
+              @keyframes op-float {
+                50% {
+                  transform: translateY(-25%);
+                }
               }
             </code></pre>
           </div>
@@ -1445,6 +1446,51 @@
               </svg>
             </button>
           </div>
+
+          <div class="animation-demo-target" data-animation="float">
+            <h6>Float</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="bounce">
+            <h6>Bounce</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="pulse">
+            <h6>Pulse</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="shake-x">
+            <h6>Shake X</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="shake-y">
+            <h6>Shake Y</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -1456,7 +1502,7 @@
         <p>No <code class="language-css">px</code> here, relative units all the way. 0's are unsafe but common negative values, while 1-N are safe.</p>
       </header>
       <div>
-        <h5>Vars Overview</h5>
+        <h5>The Props</h5>
         <div class="var-examples">
           <pre class="language-css"><code>
             --size-{000-15}
