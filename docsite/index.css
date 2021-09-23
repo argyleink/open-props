@@ -3,9 +3,14 @@
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
+  --brand-bg-gradient: linear-gradient(to bottom, var(--grape-4), var(--cyan-4));
 
   @media (--md-n-below) {
     --max-inline-body: calc(100vw - (var(--size-3) * 2));
+  }
+
+  @media (--OSlight) {
+    --brand-bg-gradient: linear-gradient(to bottom, var(--grape-6), var(--cyan-6));
   }
 }
 
@@ -38,6 +43,12 @@ section {
   &:nth-of-type(8n) { border-color: var(--violet-5) }
   &:nth-of-type(9n) { border-color: var(--cyan-5) }
   &:nth-of-type(10n) { border-color: var(--teal-5) }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  background: var(--brand-bg-gradient) fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header {
@@ -110,8 +121,7 @@ footer {
   & > h1 {
     font-size: var(--font-size-fluid-3);
     background-image: var(--conic-gradient-3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-attachment: unset;
 
     opacity: 0;
     animation: 
@@ -373,16 +383,20 @@ pre[class*="language-"] {
 }
 
 .font-demo {
+  flex-grow: 1;
   display: grid;
   gap: var(--size-2);
   align-content: center;
   align-self: stretch;
-  inline-size: var(--size-content-2);
   text-align: center;
 
   & > .sample-text {
     margin-inline: auto;
   }
+}
+
+.letterspacing-demo {
+  inline-size: min(var(--max-inline-body), var(--size-content-2));
 }
 
 .font-size-examples {
@@ -723,7 +737,6 @@ pre[class*="language-"] {
 }
 
 input[type="range"] {
-  --brand-bg-gradient: var(--gradient-2);
   --track-height: .5ex;
   --track-fill: 0%;
   --thumb-size: 3ex;
@@ -757,7 +770,7 @@ input[type="range"] {
       linear-gradient(
         to right, 
         transparent var(--track-fill), 
-        var(--surface-1) 0%
+        var(--surface-3) 0%
       ),
       var(--brand-bg-gradient) fixed;
   }
@@ -770,7 +783,7 @@ input[type="range"] {
       linear-gradient(
         to right, 
         transparent var(--track-fill), 
-        var(--surface-1) 0%
+        var(--surface-3) 0%
       ),
       var(--brand-bg-gradient) fixed;
   }
