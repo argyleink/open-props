@@ -26,6 +26,24 @@ body {
   }
 }
 
+.expand-into-body-margin {
+  margin-inline: calc(var(--size-8) * -1);
+
+  & > .scroll-x-overflow {
+    max-inline-size: 100vw;
+    scroll-padding-inline: var(--size-8);
+  }
+
+  & > .scroll-x-overflow,
+  & > h4 {
+    padding-inline: var(--size-8);
+  }
+
+  @media (--md-n-below) {
+    margin-inline: calc(var(--size-3) * -1);
+  }
+}
+
 section {
   display: grid;
   gap: var(--size-fluid-4);
@@ -322,6 +340,10 @@ pre[class*="language-"] {
       aspect-ratio: var(--aspect-box);
       border-radius: var(--radii-round);
     }
+  }
+
+  @media (--md-n-below) {
+    grid-auto-columns: minmax(var(--size-content-1), 30vw);
   }
 }
 
