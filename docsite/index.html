@@ -889,42 +889,83 @@
               --font-weight-9: 900;
             </code></pre>
           </div>
-          <div class="font-weights">
-            <span style="font-weight:var(--font-weight-1)">A</span>
-            <span style="font-weight:var(--font-weight-2)">A</span>
-            <span style="font-weight:var(--font-weight-3)">A</span>
-            <span style="font-weight:var(--font-weight-4)">A</span>
-            <span style="font-weight:var(--font-weight-5)">A</span>
-            <span style="font-weight:var(--font-weight-6)">A</span>
-            <span style="font-weight:var(--font-weight-7)">A</span>
-            <span style="font-weight:var(--font-weight-8)">A</span>
-            <span style="font-weight:var(--font-weight-9)">A</span>
+          <div class="font-demo">
+            <div class="sample-text" style="font-size: var(--font-size-8)">Aa</div>
+            <input 
+              class="font-slider"
+              name="weight" 
+              data-prop="fontWeight"
+              type="range" 
+              value="4" 
+              min="1" 
+              max="9" 
+              style="--track-fill: 40%"
+            >
           </div>
         </div>
       </article>
 
       <article class="font-sizes">
-        <h4>Letter Spacing</h4>
-        <pre class="language-css"><code>
-          --font-letterspacing-0: -.05em;
-          --font-letterspacing-1: .025em;
-          --font-letterspacing-2: .025em;
-          --font-letterspacing-3: .05em;
-          --font-letterspacing-4: .1em;
-        </code></pre>
+        <div class="block-wrap">
+          <div>
+            <h4>Letter Spacing</h4>
+            <pre class="language-css"><code>
+              --font-letterspacing-0: -.05em;
+              --font-letterspacing-1: .025em;
+              --font-letterspacing-2: .050em;
+              --font-letterspacing-3: .075em;
+              --font-letterspacing-4: .150em;
+              --font-letterspacing-5: .500em;
+              --font-letterspacing-6: .750em;
+              --font-letterspacing-7: 1em;
+            </code></pre>
+          </div>
+          <div class="font-demo">
+            <div class="sample-text">Letter Spacing</div>
+            <input 
+              class="font-slider"
+              name="letterspacing" 
+              data-prop="letter-spacing"
+              type="range" 
+              value="1" 
+              min="0" 
+              max="7" 
+              style="--track-fill: 15%"
+            >
+          </div>
+        </div>
       </article>
 
       <article class="font-sizes">
-        <h4>Line Height</h4>
-        <pre class="language-css"><code>
-          --font-lineheight-00: .95;
-          --font-lineheight-0: 1.1;
-          --font-lineheight-1: 1.25;
-          --font-lineheight-2: 1.375;
-          --font-lineheight-3: 1.5;
-          --font-lineheight-4: 1.75;
-          --font-lineheight-5: 2;
-        </code></pre>
+        <div class="block-wrap">
+          <div>
+            <h4>Line Height</h4>
+            <pre class="language-css"><code>
+              --font-lineheight-00: .95;
+              --font-lineheight-0: 1.1;
+              --font-lineheight-1: 1.25;
+              --font-lineheight-2: 1.375;
+              --font-lineheight-3: 1.5;
+              --font-lineheight-4: 1.75;
+              --font-lineheight-5: 2;
+            </code></pre>
+          </div>
+          <div class="font-demo">
+            <div class="sample-text" style="max-inline-size: var(--size-content-1);">
+              Sample paragraph content to provie a preview for OP's line heights
+            </div>
+            <input 
+              class="font-slider"
+              name="lineheight" 
+              data-prop="lineHeight"
+              type="range" 
+              value="1" 
+              min="0" 
+              max="5" 
+              style="--track-fill: 15%"
+            >
+          </div>
+        </div>
       </article>
 
       <article class="font-sizes">

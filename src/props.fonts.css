@@ -30,9 +30,12 @@
 
   --font-letterspacing-0: -.05em;
   --font-letterspacing-1: .025em;
-  --font-letterspacing-2: .025em;
-  --font-letterspacing-3: .05em;
-  --font-letterspacing-4: .1em;
+  --font-letterspacing-2: .050em;
+  --font-letterspacing-3: .075em;
+  --font-letterspacing-4: .150em;
+  --font-letterspacing-5: .500em;
+  --font-letterspacing-6: .750em;
+  --font-letterspacing-7: 1em;
 
   --font-size-00: .5rem;
   --font-size-0: .75rem;
