@@ -1,9 +1,17 @@
 const postcssPresetEnv  = require('postcss-preset-env')
 const postcssEasings    = require('postcss-easings')
+const postcssImport     = require('postcss-import')
+const cssnano           = require('cssnano')
+
+const lib = process.env.npm_lifecycle_event
+
+const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports'
+// todo: inline MQs for 'lib:all' when it's supported better
 
 module.exports = {
   plugins: [
     postcssEasings(),
+    postcssImport(),
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,
@@ -19,6 +27,9 @@ module.exports = {
         'color-functional-notation': false,
         'custom-media-queries': {preserve:inlineMediaQueries}
       }
+    }),
+    cssnano({
+      preset: 'default'
     }),
   ]
 }
