@@ -336,7 +336,6 @@ pre[class*="language-"] {
   scroll-snap-type: x mandatory;
   padding-inline: var(--gap);
   scroll-padding-inline: var(--gap);
-  overscroll-behavior-inline: contain;
 
   &.grainy > * {
     background-size: cover;
@@ -375,6 +374,7 @@ pre[class*="language-"] {
 
 .scroll-x-overflow {
   overflow-x: auto;
+  overscroll-behavior-inline: contain;
   max-inline-size: var(--max-inline-body);
 }
 
