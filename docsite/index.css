@@ -434,8 +434,14 @@ pre[class*="language-"] {
   gap: var(--size-3);
 
   & > .scroll-x-overflow {
+    max-inline-size: calc(var(--max-inline-body) + var(--size-8));
     margin-inline: calc(var(--size-8) * -1);
     padding-inline: var(--size-8);
+
+    @media (--md-n-below) {
+      margin-inline: calc(var(--size-3) * -1);
+      padding-inline: var(--size-3);
+    }
   }
 
   & pre {
