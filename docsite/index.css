@@ -915,3 +915,15 @@ input[type="range"] {
     inline-size: 1.5ch;
   }
 }
+
+.media-query-chart {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 0 var(--size-6);
+  align-items: center;
+  justify-items: flex-start;
+
+  & > code {
+    justify-self: flex-end;
+  }
+}

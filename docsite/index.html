@@ -1782,7 +1782,7 @@
       </header>
       <div class="block-wrap">
         <div>
-          <h5>Vars Sample</h5>
+          <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --layer-{1-5}
@@ -1807,6 +1807,112 @@
             .desperate-measures {
               position: fixed;
               z-index: var(--layer-important);
+            }
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="media-queries">
+      <header>
+        <h2>Media Queries</h2>
+        <div class="block-wrap">
+          <div>
+            <p>A little ahead of <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">the spec</a> this library offers named media queries with the <code>@custom-media</code> syntax. Available only with <a href="https://github.com/postcss/postcss-custom-media">this CSS plugin</a>, for now 😈</p>
+          </div>
+          <div class="media-query-chart">
+            <strong>xxs</strong> <code class="language-css">240px</code>
+            <strong>xs</strong> <code class="language-css">360px</code>
+            <strong>sm</strong> <code class="language-css">480px</code>
+            <strong>md</strong> <code class="language-css">768px</code>
+            <strong>lg</strong> <code class="language-css">1024px</code>
+            <strong>xl</strong> <code class="language-css">1440px</code>
+            <strong>xxl</strong> <code class="language-css">1920px</code>
+          </div>
+        </div>
+      </header>
+      <div class="block-wrap">
+        <div>
+          <h5>The Props</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              --{xxs,xs,sm,md,lg,xl,xxl}-only
+              --{xxs,xs,sm,md,lg,xl,xxl}-n-above
+              --{xxs,xs,sm,md,lg,xl,xxl}-n-below
+              --{xxs,xs,sm,md,lg}-phone
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Viewport Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              @custom-media --md-only       (480px &#60;= width &#60;= 768px);
+              @custom-media --md-n-above    (width &#62;= 768px);
+              @custom-media --md-n-below    (width &#60;= 768px);
+              @custom-media --md-phone      (--md-only) and (--portrait);
+
+              @custom-media --xxl-only      (1440px &#60;= width &#60;= 1920px);
+              @custom-media --xxl-n-above   (width &#62;= 1920px);
+              @custom-media --xxl-n-below   (width &#60;= 1920px);
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Preference Vars Sample</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              @custom-media --motionOK      (prefers-reduced-motion: no-preference);
+              @custom-media --motionNotOK   (prefers-reduced-motion: reduce);
+              @custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
+              @custom-media --opacityNotOK  (prefers-reduced-transparency: reduce);
+              @custom-media --useDataOK     (prefers-reduced-data: no-preference);
+              @custom-media --useDataNotOK  (prefers-reduced-data: reduce);
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Preference Vars Extended</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              @custom-media --OSdark        (prefers-color-scheme: dark);
+              @custom-media --OSlight       (prefers-color-scheme: light);
+
+              @custom-media --highContrast  (prefers-contrast: high);
+              @custom-media --lowContrast   (prefers-contrast: low);
+
+              @custom-media --portrait      (orientation: portrait);
+              @custom-media --landscape     (orientation: landscape);
+
+              @custom-media --HDcolor       (dynamic-range: high);
+            </code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="block-wrap">
+        <div>
+          <h5>Light / Dark Usage Samples</h5>
+          <pre class="language-css"><code>
+            html {
+              background: white;
+              color: var(--gray-8);
+            }
+
+            @media (--OSdark) {
+              html {
+                background: var(--gray-9);
+                color: var(--gray-1);
+              }
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Reducing Motion Usage Samples</h5>
+          <pre class="language-css"><code>
+            transform: translateX(100%);
+
+            @media (--motionOK) {
+              transition: transform .5s var(--ease-3);
             }
           </code></pre>
         </div>
