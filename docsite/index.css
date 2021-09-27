@@ -156,7 +156,8 @@ footer {
       0s;
 
     @media (--OSdark) {
-      background-image: var(--gradient-3);
+      --op-gradient-direction: to bottom right;
+      background-image: var(--gradient-4);
     }
   }
 
