@@ -629,12 +629,16 @@ pre[class*="language-"] {
   & > div {
     padding-inline: var(--size-4);
     padding-block: var(--size-1);
-    color: var(--gray-9);
+    color: var(--surface-1);
     background: var(--brand-bg-gradient) fixed;
     border-radius: var(--radii-round);
     
     @media (--motionOK) {
       animation: ping-pong 2s ease infinite;
+    }
+
+    @media (--OSlight) {
+      color: white;
     }
   }
 
