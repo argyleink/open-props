@@ -376,6 +376,7 @@ pre[class*="language-"] {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   max-inline-size: var(--max-inline-body);
+  padding-block-end: var(--size-3);
 }
 
 .contain-pre {
