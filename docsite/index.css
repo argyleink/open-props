@@ -434,7 +434,7 @@ pre[class*="language-"] {
   gap: var(--size-3);
 
   & > .scroll-x-overflow {
-    max-inline-size: calc(var(--max-inline-body) + var(--size-8));
+    max-inline-size: calc(var(--max-inline-body) + var(--size-12));
     margin-inline: calc(var(--size-8) * -1);
     padding-inline: var(--size-8);
 
@@ -799,6 +799,10 @@ pre[class*="language-"] {
     block-size: var(--size-10);
     display: grid;
     place-content: center;
+  }
+
+  &.large-sizes  {
+    max-inline-size: var(--max-inline-body);
   }
 }
 
