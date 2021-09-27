@@ -16,8 +16,7 @@ module.exports = {
         'not-pseudo-class': false,
         'focus-visible-pseudo-class': false,
         'focus-within-pseudo-class': false,
-        'color-functional-notation': false,
-        'custom-media-queries': {preserve:inlineMediaQueries}
+        'color-functional-notation': false
       }
     }),
   ]
