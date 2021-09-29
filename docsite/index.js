@@ -14,10 +14,28 @@ document
     })
   })
 
+const toggleIcons = button => {
+  button
+    .querySelectorAll('use')
+    .forEach(icon => {
+      icon.classList.toggle('hidden')
+    })
+}
+
+// play buttons
+document
+  .querySelectorAll('.play-button')
+  .forEach(button => {
+    button.addEventListener('click', e => {
+      toggleIcons(e.currentTarget)
+    })
+  })
+
 // animation controls
 const cleanup = e => {
   setTimeout(()=> {
     e.target.style = ''
+    toggleIcons(e.target.querySelector('button'))
   }, 500)
 }
 

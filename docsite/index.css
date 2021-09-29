@@ -915,3 +915,7 @@ input[type="range"] {
     justify-self: flex-end;
   }
 }
+
+.hidden {
+  display: none;
+}
