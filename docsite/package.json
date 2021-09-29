@@ -28,6 +28,6 @@
   "devDependencies": {
     "open-color": "^1.9.1",
     "postcss-preset-env": "6.7.x",
-    "vite": "2.x  || >2.0.0-alpha"
+    "vite": "2.6.1"
   }
 }
