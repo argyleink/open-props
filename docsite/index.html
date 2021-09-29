@@ -316,6 +316,38 @@
               </div>
             </div>
 
+            <h5>PostCSS JIT Props</h5>
+
+            <blockquote>
+              <p>
+                <b>Ship only what you use!</b> 
+                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a>
+              </p>
+            </blockquote>
+
+            <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
+
+            <div class="block-wrap">
+              <div>
+                <h6>Props from CSS</h6>
+                <pre class="language-js"><code>
+                  require('postcss-jit-props')(
+                    files: [
+                      require('open-props/props.css'),
+                    ]
+                  )
+                </code></pre>
+              </div>
+              <div>
+                <h6>Props as Javascript</h6>
+                <pre class="language-js"><code>
+                  require('postcss-jit-props')(
+                    require('open-props/props.js')
+                  )
+                </code></pre>
+              </div>
+            </div>
+
             <h5>PostCSS</h5>
 
             <div class="block-wrap">
