@@ -219,7 +219,7 @@
 :where(summary) {
   background: var(--surface-3);
   padding: var(--size-2) var(--size-3);
-  margin: calc(var(--size-2) * -1) calc(var(--size-3) * -1) var(--size-2);
+  margin: calc(var(--size-2) * -1) calc(var(--size-3) * -1);
   border-radius: var(--radii-2);
 }
 
@@ -228,12 +228,12 @@
   padding-block: var(--size-2);
   background: var(--surface-2);
   border-radius: var(--radii-2);
-  
-  &:where([open] > summary) {
-    margin-bottom: var(--size-2);
-    border-end-start-radius: 0;
-    border-end-end-radius: 0;
-  }
+}
+
+:where(details[open] > summary) {
+  margin-bottom: var(--size-2);
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 
 :where(fieldset) {
