@@ -6,6 +6,7 @@ import Borders from './props.borders.js'
 import Aspects from './props.aspects.js'
 import Easings from './props.easing.js'
 import Gradients from './props.gradients.js'
+import Shadows from './props.shadows.js'
 
 export const OpenProps = {
   ...Animations,
@@ -16,6 +17,7 @@ export const OpenProps = {
   ...Aspects,
   ...Easings,
   ...Gradients,
+  ...Shadows,
 }
 
 export { 
@@ -27,4 +29,5 @@ export {
   Aspects,
   Easings,
   Gradients,
+  Shadows,
 }
