@@ -1,4 +1,5 @@
 :where(html) {
   --grid-stack: [stack] 1fr / [stack] 1fr;
-  --grid-ram: repeat(auto-fit, minmax(min(100%, 1fr), 1fr));
+  --grid-ram: repeat(auto-fit, minmax(min(0, 100%), 1fr));
+  --grid-holy-grail: auto 1fr auto / auto 1fr auto;
 }
