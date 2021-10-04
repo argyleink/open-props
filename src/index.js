@@ -7,7 +7,7 @@ import Aspects from './props.aspects.js'
 import Easings from './props.easing.js'
 import Gradients from './props.gradients.js'
 
-export default {
+export const OpenProps = {
   ...Animations,
   ...Sizes,
   ...Colors,

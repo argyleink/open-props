@@ -1,4 +1,5 @@
 {
+  "type":"module",
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "ISC",
@@ -14,13 +15,17 @@
     "custom properties",
     "gradients"
   ],
-  "main": "props.css",
+  "main": "npm/open-props.js",
   "style": "props.css",
+  "source": "src/index.js",
+  "module": "./npm/open-props.module.js",
+  "exports": "./npm/open-props.modern.js",
   "browserslist": [
     "defaults"
   ],
   "scripts": {
-    "bundle": "concurrently npm:lib:*",
+    "bundle": "concurrently npm:lib:* && npm:bundle-for-npm",
+    "bundle-for-npm": "microbundle",
     "lib:all": "postcss src/index.css -o props.css",
     "lib:animations": "postcss src/props.animations.css -o animations.css",
     "lib:aspects": "postcss src/props.aspects.css -o aspects.css",
@@ -39,6 +44,7 @@
   "devDependencies": {
     "concurrently": "^6.2.1",
     "cssnano": "^5.0.8",
+    "microbundle": "^0.13.3",
     "open-color": "^1.9.1",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
