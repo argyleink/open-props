@@ -1,9 +1,9 @@
 {
-  "type":"module",
+  "type": "module",
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "ISC",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -17,9 +17,8 @@
   ],
   "style": "props.css",
   "source": "src/index.js",
-  "main": "dist/open-props.js",
+  "main": "dist/open-props.cjs",
   "module": "./dist/open-props.module.js",
-  "exports": "./dist/open-props.modern.js",
   "browserslist": [
     "defaults"
   ],

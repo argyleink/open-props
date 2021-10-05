@@ -8,7 +8,7 @@ import Easings from './props.easing.js'
 import Gradients from './props.gradients.js'
 import Shadows from './props.shadows.js'
 
-export const OpenProps = {
+export default OpenProps = {
   ...Animations,
   ...Sizes,
   ...Colors,
@@ -18,16 +18,4 @@ export const OpenProps = {
   ...Easings,
   ...Gradients,
   ...Shadows,
-}
-
-export { 
-  Animations,
-  Sizes,
-  Colors,
-  Fonts,
-  Borders,
-  Aspects,
-  Easings,
-  Gradients,
-  Shadows,
 }
