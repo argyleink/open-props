@@ -2,6 +2,7 @@ const postcssPresetEnv  = require('postcss-preset-env')
 const postcssEasings    = require('postcss-easings')
 const postcssImport     = require('postcss-import')
 const cssnano           = require('cssnano')
+const combineSelectors  = require('postcss-combine-duplicated-selectors')
 
 const lib = process.env.npm_lifecycle_event
 
@@ -28,6 +29,7 @@ module.exports = {
         'custom-media-queries': {preserve:inlineMediaQueries}
       }
     }),
+    combineSelectors(),
     cssnano({
       preset: 'default'
     }),

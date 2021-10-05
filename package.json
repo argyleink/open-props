@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "ISC",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -45,8 +45,9 @@
     "cssnano": "^5.0.8",
     "microbundle": "^0.13.3",
     "open-color": "^1.9.1",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.9",
     "postcss-cli": "^8.3.1",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-easings": "3.x",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "6.7.x"
