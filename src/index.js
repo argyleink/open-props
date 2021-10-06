@@ -7,6 +7,8 @@ import Aspects from './props.aspects.js'
 import Easings from './props.easing.js'
 import Gradients from './props.gradients.js'
 import Shadows from './props.shadows.js'
+import SVG from './props.svg.js'
+import Zindex from './props.zindex.js'
 
 export default OpenProps = {
   ...Animations,
@@ -16,6 +18,8 @@ export default OpenProps = {
   ...Borders,
   ...Aspects,
   ...Easings,
+  ...SVG,
   ...Gradients,
   ...Shadows,
+  ...Zindex,
 }

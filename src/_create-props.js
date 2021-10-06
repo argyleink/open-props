@@ -9,41 +9,73 @@ import Aspects from './props.aspects.js'
 import Easings from './props.easing.js'
 import Gradients from './props.gradients.js'
 import Shadows from './props.shadows.js'
+import SVG from './props.svg.js'
+import Zindex from './props.zindex.js'
 
 // `node _create-props.js my-prefix``
-const [prefix] = process.argv.slice(2)
+const [,,prefix,useWhere] = process.argv
+
+console.log(prefix, useWhere)
 
 const workload = {
-  // 'props.animations.css': Animations,
-  'props.colors.css': Colors,
-  'props.sizes.css': Sizes,
   'props.fonts.css': Fonts,
-  'props.borders.css': Borders,
-  'props.aspects.css': Aspects,
+  'props.sizes.css': Sizes,
   'props.easing.css': Easings,
-  'props.gradients.css': Gradients,
+  'props.zindex.css': Zindex,
   'props.shadows.css': Shadows,
+  'props.aspects.css': Aspects,
+  'props.colors.css': Colors,
+  'props.svg.css': SVG,
+  'props.gradients.css': Gradients,
+  'props.animations.css': Animations,
+  'props.borders.css': Borders,
 }
 
-const buildFile = ({filename, props}) => {
-  const file = fs.createWriteStream(filename)
+const prefixProp = prop => {
+  return prop
+}
 
+const buildPropsStylesheet = ({filename, props}) => {
+  const file = fs.createWriteStream(filename)
   file.write(':where(html) {\n')
 
-  // todo: map keys and insert prefix
+  let appendedMeta = ''
+  if (filename.includes('shadows'))
+    appendedMeta = `@media (--OSdark) {
+  :where(html) {
+    --shadow-strength: 25%;
+    --shadow-color: 220 40% 2%;
+  }
+}`
 
-  Object.entries(props).forEach(([k,v]) => {
-    // todo: handle when v is an array
-    file.write(`  ${k}: ${v};\n`)
+  Object.entries(props).forEach(([prop, val]) => {
+    if (prefix)
+      prop = `--${prefix}-` + prop.slice(2)
+    
+    if (Array.isArray(val)) {
+      let [animation, keyframes] = val
+      appendedMeta += keyframes
+      val = animation
+    }
+
+    file.write(`  ${prop}: ${val};\n`)
   })
 
   file.write('}\n')
-  file.end()
+  file.end(appendedMeta)
 }
 
-// gen all files
+// gen prop stylesheets
 Object.entries(workload).forEach(([filename, props]) => {
-  buildFile({filename, props})
+  buildPropsStylesheet({filename, props})
 })
 
-// todo: gen index.css from workload
+// gen index.css
+const entry = fs.createWriteStream('index.css')
+entry.write(`@import 'props.media.css';
+@import 'props.supports.css';
+`)
+Object.keys(workload).forEach(filename => {
+  entry.write(`@import '${filename}';\n`)
+})
+entry.end()
