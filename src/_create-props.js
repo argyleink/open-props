@@ -28,7 +28,7 @@ const workload = {
 const buildFile = ({filename, props}) => {
   const file = fs.createWriteStream(filename)
 
-  file.write(':where(html) { \n')
+  file.write(':where(html) {\n')
 
   // todo: map keys and insert prefix
 
