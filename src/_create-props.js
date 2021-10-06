@@ -12,10 +12,8 @@ import Shadows from './props.shadows.js'
 import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
 
-// `node _create-props.js my-prefix``
 const [,,prefix,useWhere] = process.argv
-
-console.log(prefix, useWhere)
+const selector = useWhere === 'true' ? ':where(html)' : 'html'
 
 const workload = {
   'props.fonts.css': Fonts,
@@ -37,12 +35,12 @@ const prefixProp = prop => {
 
 const buildPropsStylesheet = ({filename, props}) => {
   const file = fs.createWriteStream(filename)
-  file.write(':where(html) {\n')
+  file.write(`${selector} {\n`)
 
   let appendedMeta = ''
   if (filename.includes('shadows'))
     appendedMeta = `@media (--OSdark) {
-  :where(html) {
+  ${selector} {
     --shadow-strength: 25%;
     --shadow-color: 220 40% 2%;
   }

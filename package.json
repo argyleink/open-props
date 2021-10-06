@@ -23,7 +23,11 @@
     "defaults"
   ],
   "scripts": {
+    "build": "npm run gen:op",
     "bundle": "concurrently npm:lib:*",
+    "gen:op": "cd src && node _create-props.js '' true",
+    "gen:nowhere": "cd src && node _create-props.js '' false",
+    "gen:prefixed": "cd src && node _create-props.js 'op'",
     "lib:js": "microbundle",
     "lib:all": "postcss src/index.css -o props.css",
     "lib:animations": "postcss src/props.animations.css -o animations.css",
