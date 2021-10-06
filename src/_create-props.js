@@ -20,7 +20,7 @@ const workload = {
   'props.fonts.css': Fonts,
   'props.borders.css': Borders,
   'props.aspects.css': Aspects,
-  'props.easings.css': Easings,
+  'props.easing.css': Easings,
   'props.gradients.css': Gradients,
   'props.shadows.css': Shadows,
 }
