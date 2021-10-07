@@ -3,3 +3,6 @@
 .cache/
 dist/
 node_modules/
+
+./src/styles/props.css
+./src/styles/reset.css

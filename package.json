@@ -45,6 +45,8 @@
     "lib:reset": "postcss src/extra/reset.css -o reset.css"
   },
   "devDependencies": {
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "astro": "^0.20.9",
     "concurrently": "^6.2.1",
     "cssnano": "^5.0.8",
     "microbundle": "^0.13.3",

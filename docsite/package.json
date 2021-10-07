@@ -20,10 +20,10 @@
     "defaults"
   ],
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "copy:lib": "cp ../props.css ./src/styles/props.css && cp ../reset.css ./src/styles/reset.css"
   },
   "devDependencies": {
     "open-color": "^1.9.1",
