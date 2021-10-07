@@ -38,6 +38,7 @@
         </span>
       </a>
       <a href="#getting-started">Get Started</a>
+      <a href="https://codesandbox.io/s/open-props-with-postcss-and-vite-j7tp2?file=/style.css">Try in browser</a>
       <a href="#" title="Source on Github">
         <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
@@ -49,93 +50,106 @@
       <header class="hero">
         <p><code class="language-bash">npm i open-props</code></p>
         <h1>
-          Grab n' go<br>
-          CSS custom props.
+          <div>Grab n' go</div>
+          <div>CSS custom props.</div>
         </h1>
+        <!-- <h1>
+          <div>The back, of the</div>
+          <div>front of the front.</div>
+        </h1> -->
         <p>Easy to remember, <b>free CSS variables</b>.</p>
         <ul class="checkmark-list">
           <li>Subatomic utilities</li>
           <li>Tackles any design</li>
-          <li>Useful anywhere CSS vars can go</li>
+          <li>Useful in CSS and JS</li>
         </ul>
+        <!-- <blockquote class="icon-quote">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+          </svg>
+          <span><a href="#">postcss-jit-props</a> ready</span>
+        </blockquote> -->
         <blockquote class="icon-quote">
           <svg viewBox="0 0 24 24">
             <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
           </svg>
-          <span>free light & dark theme reset.css</span>
+          <span>optional props packed <a href="#">reset.css</a></span>
         </blockquote>
         <small>
-          v0.0.17<br>
+          v0.0.22<br>
           Apache License
         </small>
       </header>
-      <div><pre class="language-css"><code>
-        @import "open-props";
-        @import "open-props/media.css";
+      <div>
+        <pre class="language-css"><code>
+          @import "open-props";            /* All props from NPM */
+          @import "open-props/media.css";  /* Named media queries */
 
-        .button {
-          padding-inline: var(--size-5);
-          padding-block: var(--size-3);
+          .button {
+            font-size: var(--font-size-fluid-1);
+            padding-inline: var(--size-5);
+            padding-block: var(--size-3);
 
-          color: var(--blue-0);
-          background-color: var(--blue-7);
-          border-radius: var(--border-radius-round);
-          box-shadow: var(--shadow-1);
-          
-          @media (--motionOK) {
-            transition: background .3s var(--easinout-3);
+            color: var(--blue-0);
+            background-color: var(--blue-7);
+            border: none;
+            border-radius: var(--radii-round);
+            box-shadow: var(--shadow-2);
+
+            &:hover {
+              transform: scale(1.1);
+            }
+
+            @media (--motionOK) {
+              transition: transform 0.5s var(--ease-squish-3);
+            }
           }
-
-          @media (--OSdark) {
-            background: var(--blue-1);
-            color: var(--blue-9);
-          }
-        }
-        </code></pre></div>
+        </code></pre>
+      </div>
     </section>
 
     <section id="about" class="just-stretch">
       <header class="just-stretch">
-        <h2>About</h2>
+        <h2>Features</h2>
       </header>
       <dl class="responsive-dl">
-        <div>
-          <dt>
-            <svg  viewBox="0 0 24 24" >
-              <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-              <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-            </svg>
-            Everything's optional
-          </dt>
-          <dd>Grab some of the props, or all of em.</dd>
-        </div>
         <div>
           <dt>
             <svg viewBox="0 0 24 24">
               <path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
               <path d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
             </svg>
-            No magic units
+            Design Consistently
           </dt>
-          <dd>Design consistency without thinking</dd>
-        </div>
-        <div>
-          <dt>
-            <svg viewBox="0 0 24 24">
-              <path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-            </svg>
-            Easy to customize
-          </dt>
-          <dd>Extend, overwrite, adapt, etc.. no prob.</dd>
+          <dd>Incidentally orchestrate harmoniously.</dd>
         </div>
         <div>
           <dt>
             <svg viewBox="0 0 24 24">
               <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
-            Easy to remember
+            Predictable Props
           </dt>
-          <dd>Try to keep the API surface area small and legible</dd>
+          <dd>The API surface area is small for a memorable naming pattern.</dd>
+        </div>
+        <div>
+          <dt>
+            <svg  viewBox="0 0 24 24" >
+              <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+              <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+            </svg>
+            Take Whatever
+          </dt>
+          <dd>Grab some of the props, all the em, or just what you use.</dd>
+        </div>
+        <div>
+          <dt>
+            <svg viewBox="0 0 24 24">
+              <path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+            Customizable
+          </dt>
+          <dd>Import the props as JS, there are CLI build flags, or just use these props to back your own props.</dd>
         </div>
       </dl>
     </section>
@@ -143,124 +157,144 @@
     <section id="overview">
       <header>
         <h2>Overview</h2>
-        <p>The following filesizes are after <a href="https://github.com/google/brotli">brotli</a> compression.</p>
+        <p>Jump to props that sound interesting:</p>
+        <ul class="module-list">
+          <li><a href="#animations">Animations</a></li>
+          <li><a href="#easings">Easings</a></li>
+          <li><a href="#gradients">Gradients</a></li>
+          <li><a href="#colors">Colors</a></li>
+          <li><a href="#shadows">Shadows</a></li>
+          <li><a href="#sizes">Sizes</a></li>
+          <li><a href="#fonts">Fonts</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#aspect-ratios">Aspect Ratios</a></li>
+          <li><a href="#z-index">Z-Index's</a></li>
+        </ul>
       </header>
 
-      <dl class="block-wrap bundle-sizes">
-        <div>
-          <dt>Library bundles</dt>
-          <dd class="size-chart" style="row-gap: var(--size-3)">
-            <div class="size"><strong>2.9</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props">props.css</a>
-            </div>
+      <div class="just-for-gap">
+        <header>
+          <h4>File Sizes</h4>
+          <blockquote>
+            <p>The following filesizes are after <a href="https://github.com/google/brotli">brotli</a> compression.</p>
+          </blockquote>
+        </header>
+        <dl class="block-wrap bundle-sizes">
+          <div>
+            <dt>Library bundles</dt>
+            <dd class="size-chart" style="row-gap: var(--size-3)">
+              <div class="size"><strong>2.9</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props">props.css</a>
+              </div>
 
-            <div class="size"><strong>1</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/reset.css">reset.css</a> <small class="green-badge">optional</small>
-              <br>
-              <small> 
-                <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
-                and 
-                <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css">theme.css</a> included</small>
-            </div>
-          </dd>
-        </div>
+              <div class="size"><strong>1</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/reset.css">reset.css</a> <small class="green-badge">optional</small>
+                <br>
+                <small> 
+                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
+                  and 
+                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css">theme.css</a> included</small>
+              </div>
+            </dd>
+          </div>
 
-        <div>
-          <dt>Prop Packs ™</dt>
-          <dd class="size-chart">
-            <div class="size"><strong>0.23</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/animations.css">animations.css</a>
-            </div>
+          <div>
+            <dt>Prop Packs ™</dt>
+            <dd class="size-chart">
+              <div class="size"><strong>0.23</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/animations.css">animations.css</a>
+              </div>
 
-            <div class="size"><strong>0.1</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/aspects.css">aspects.css</a>
-            </div>
+              <div class="size"><strong>0.1</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/aspects.css">aspects.css</a>
+              </div>
 
-            <div class="size"><strong>0.1</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/borders.css">borders.css</a>
-            </div>
+              <div class="size"><strong>0.1</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/borders.css">borders.css</a>
+              </div>
 
-            <div class="size"><strong>0.7</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/colors.css">colors.css</a>
-            </div>
+              <div class="size"><strong>0.7</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/colors.css">colors.css</a>
+              </div>
 
-            <div class="size"><strong>0.2</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/easings.css">easings.css</a>
-            </div>
+              <div class="size"><strong>0.2</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/easings.css">easings.css</a>
+              </div>
 
-            <div class="size"><strong>0.4</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/fonts.css">fonts.css</a>
-            </div>
+              <div class="size"><strong>0.4</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/fonts.css">fonts.css</a>
+              </div>
 
-            <div class="size"><strong>1</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/gradients.css">gradients.css</a>
-            </div>
+              <div class="size"><strong>1</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/gradients.css">gradients.css</a>
+              </div>
 
-            <div class="size"><strong>0.4</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/media.css">media.css</a>
-            </div>
+              <div class="size"><strong>0.4</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/media.css">media.css</a>
+              </div>
 
-            <div class="size"><strong>0.25</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/shadows.css">shadows.css</a>
-            </div>
+              <div class="size"><strong>0.25</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/shadows.css">shadows.css</a>
+              </div>
 
-            <div class="size"><strong>0.2</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/sizes.css">sizes.css</a>
-            </div>
+              <div class="size"><strong>0.2</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/sizes.css">sizes.css</a>
+              </div>
 
-            <div class="size"><strong>0.1</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/supports.css">supports.css</a>
-            </div>
+              <div class="size"><strong>0.1</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/supports.css">supports.css</a>
+              </div>
 
-            <div class="size"><strong>0.05</strong>kB</div>
-            <div class="file">
-              <a href="https://unpkg.com/open-props/zindex.css">zindex.css</a>
-            </div>
-          </dd>
-        </div>
+              <div class="size"><strong>0.05</strong>kB</div>
+              <div class="file">
+                <a href="https://unpkg.com/open-props/zindex.css">zindex.css</a>
+              </div>
+            </dd>
+          </div>
 
-        <div>
-          <dt>Coming Soon?!</dt>
+          <div>
+            <dt>Coming Soon?!</dt>
 
-          <dd class="size-chart">
-            <div class="size"><strong>??</strong></div>
-            <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">svg.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">patterns.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">shapes.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">layouts.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">clips.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">masks.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">variable-fonts.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">lists.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">counters.css <small class="yellow-badge">WIP</small></div>
-            <div class="size"><strong>??</strong></div>
-            <div class="file">utilities.css <small class="yellow-badge">WIP</small></div>
-          </dd>
-        </div>
-      </dl>
+            <dd class="size-chart">
+              <div class="size"><strong>??</strong></div>
+              <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">svg.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">patterns.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">shapes.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">layouts.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">clips.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">masks.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">variable-fonts.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">lists.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">counters.css <small class="yellow-badge">WIP</small></div>
+              <div class="size"><strong>??</strong></div>
+              <div class="file">utilities.css <small class="yellow-badge">WIP</small></div>
+            </dd>
+          </div>
+        </dl>
+      </div>
     </section>
 
     <section id="getting-started">
@@ -276,102 +310,6 @@
 
         <div class="block-wrap">
           <div class="contain-pre">
-            <div>
-              <h4>NPM</h4>
-              <pre class="language-bash"><code>npm install open-props</code></pre>
-            </div>
-            
-            <h5>CSS</h5>
-            <div>
-              <h6>Bundles</h6>
-              <div class="block-wrap">
-                <pre class="language-css"><code>
-                  @import "open-props";
-                  @import "open-props/reset.css";
-                                  </code></pre>
-
-                                  <pre class="language-js"><code>
-                  import 'open-props';
-                  import 'open-props/reset.css';
-                </code></pre>
-              </div>
-            </div>
-
-            <div>
-              <h6>Individual packs</h6>
-              <div class="block-wrap">
-                <pre class="language-css"><code>
-                  @import "open-props/sizes.css";
-                  @import "open-props/colors.css";
-                  @import "open-props/gradients.css";
-                  /* etc */
-                </code></pre>
-
-                <pre class="language-js"><code>
-                  import 'open-props/sizes.css';
-                  import 'open-props/colors.css';
-                  import 'open-props/gradients.css';
-                  /* etc */
-                </code></pre>
-              </div>
-            </div>
-
-            <h5>PostCSS JIT Props</h5>
-
-            <blockquote>
-              <p>
-                <b>Ship only what you use!</b> 
-                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a>
-              </p>
-            </blockquote>
-
-            <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
-
-            <div class="block-wrap">
-              <div>
-                <h6>Props from CSS</h6>
-                <pre class="language-js"><code>
-                  require('postcss-jit-props')(
-                    files: [
-                      require('open-props/props.css'),
-                    ]
-                  )
-                </code></pre>
-              </div>
-              <div>
-                <h6>Props as Javascript</h6>
-                <pre class="language-js"><code>
-                  require('postcss-jit-props')(
-                    require('open-props/props.js')
-                  )
-                </code></pre>
-              </div>
-            </div>
-
-            <h5>PostCSS</h5>
-
-            <div class="block-wrap">
-              <div>
-                <h6>Entry points</h6>
-                <pre class="language-css"><code>
-                  @import "open-props/src/index.css";
-                  @import "open-props/src/extra/reset.css";
-                </code></pre>
-              </div>
-
-              <div>
-                <h6>Individual packs</h6>
-                <pre class="language-css"><code>
-                  @import "open-props/src/props.sizes.css";
-                  @import "open-props/src/props.aspects.css";
-                  @import "open-props/src/props.easings.css";
-                  /* etc */
-                </code></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="contain-pre">
             <h4>CDN</h4>
             <blockquote class="icon-quote indigo">
               <svg viewBox="0 0 24 24">
@@ -385,16 +323,19 @@
               <h6>Bundles</h6>
               <div class="block-wrap">
                 <pre class="language-css"><code>
+                  /* index.css */
                   @import "https://unpkg.com/open-props";
                   @import "https://unpkg.com/open-props/reset.css";
                 </code></pre>
 
                 <pre class="language-html"><code>
+                  &#60;!-- index.html --&#62;
                   &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
                   &#60;link rel="stylesheet" href="https://unpkg.com/open-props/reset.css"/&#62;
                 </code></pre>
 
                 <pre class="language-js"><code>
+                  // index.js
                   import 'https://unpkg.com/open-props';
                   import 'https://unpkg.com/open-props/reset.css';
                 </code></pre>
@@ -404,6 +345,7 @@
             <div>
               <h6>Individual packs</h6>
               <pre class="language-css"><code>
+                /* index.css */
                 @import "https://unpkg.com/open-props/colors.css";
                 @import "https://unpkg.com/open-props/easings.css";
                 @import "https://unpkg.com/open-props/sizes.css";
@@ -415,6 +357,7 @@
             <div>
               <h6>Entry Points</h6>
               <pre class="language-css"><code>
+                /* index.pcss */
                 @import "https://unpkg.com/open-props/src/index.css";
                 @import "https://unpkg.com/open-props/src/extra/reset.css";
               </code></pre>
@@ -423,31 +366,132 @@
             <div>
               <h6>Individual packs</h6>
               <pre class="language-css"><code>
+                /* index.pcss */
                 @import "https://unpkg.com/open-props/src/props.colors.css";
                 @import "https://unpkg.com/open-props/src/props.easings.css";
                 @import "https://unpkg.com/open-props/src/props.sizes.css";
                 /* etc */
               </code></pre>
             </div>
+
+            <h5>PostCSS JIT Props</h5>
+            <blockquote>
+              <p>
+                <b>Ship only what you use!</b> 
+                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a>
+              </p>
+            </blockquote>
+
+            <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
+
+            <div class="block-wrap">
+              <div>
+                <h6>Props as Javascript</h6>
+                <pre class="language-js"><code>
+                  // postcss.config.js
+                  const postcssJitProps = require('postcss-jit-props');
+                  const OpenProps = require('open-props');
+                  
+                  module.exports = {
+                    plugins: [
+                      postcssJitProps(OpenProps),
+                    ]
+                  }
+                </code></pre>
+              </div>
+              <div>
+                <h6>Props from CSS</h6>
+                <pre class="language-js"><code>
+                  // postcss.config.js
+                  const postcssJitProps = require('postcss-jit-props');
+                  const OpenProps = require('open-props');
+                  
+                  module.exports = {
+                    plugins: [
+                      postcssJitProps({
+                        files: [
+                          require('open-props/props.css'),
+                        ]
+                      }),
+                    ]
+                  }
+                </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="contain-pre">
+            <div>
+              <h4>NPM</h4>
+              <pre class="language-bash"><code>npm install open-props</code></pre>
+            </div>
+            
+            <h5>CSS</h5>
+            <div>
+              <h6>Bundles</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
+                  /* index.pcss */
+                  @import "open-props";
+                  @import "open-props/reset.css";
+                </code></pre>
+
+                <pre class="language-js"><code>
+                  // index.js
+                  import 'open-props';
+                  import 'open-props/reset.css';
+                </code></pre>
+              </div>
+            </div>
+
+            <div>
+              <h6>Individual packs</h6>
+              <div class="block-wrap">
+                <pre class="language-css"><code>
+                  /* index.pcss */
+                  @import "open-props/sizes.css";
+                  @import "open-props/colors.css";
+                  @import "open-props/gradients.css";
+                  /* etc */
+                </code></pre>
+
+                <pre class="language-js"><code>
+                  // index.js
+                  import 'open-props/sizes.css';
+                  import 'open-props/colors.css';
+                  import 'open-props/gradients.css';
+                  /* etc */
+                </code></pre>
+              </div>
+            </div>
+
+            <h5>PostCSS</h5>
+
+            <div class="block-wrap">
+              <div>
+                <h6>Entry points</h6>
+                <pre class="language-css"><code>
+                  /* index.pcss */
+                  @import "open-props/src/index.css";
+                  @import "open-props/src/extra/reset.css";
+                </code></pre>
+              </div>
+
+              <div>
+                <h6>Individual packs</h6>
+                <pre class="language-css"><code>
+                  /* index.pcss */
+                  @import "open-props/src/props.sizes.css";
+                  @import "open-props/src/props.aspects.css";
+                  @import "open-props/src/props.easings.css";
+                  /* etc */
+                </code></pre>
+              </div>
+            </div>
           </div>
         </div>
       </article>
     </section>
-
-    <!-- <section>
-      <header>
-        <h2>Naming Convention</h2>
-        <blockquote>
-          <p>Built for predictability and easy options cycling</p>
-        </blockquote>
-      </header>
-      <ol>
-        <li>Colors range from 0 (nearly white) to 9 (nearly black)</li>
-        <li><code class="language-css">var(--size-1)</code>, <code class="language-css">var(--gradient-1)</code> are safe values</li>
-        <li><code class="language-css">var(--size-00)</code>, <code class="language-css">var(--font-leading-00)</code> are allowed unsafe negative values</li>
-        <li><code class="language-css">var(--font-light)</code> and <code class="language-css">@media (--portrait)</code> are examples of exceptions to the number system. to match common industry verbiage.</li>
-      </ol>
-    </section> -->
 
     <section id="colors">
       <header>
