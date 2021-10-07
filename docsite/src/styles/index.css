@@ -1,3 +1,6 @@
+@import "./props.css";
+@import "./media.css";
+@import "./reset.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));

@@ -23,9 +23,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "copy:lib": "cp ../props.css ./src/styles/props.css && cp ../reset.css ./src/styles/reset.css"
+    "copy:lib": "cp ../props.css ./src/styles/props.css && cp ../reset.css ./src/styles/reset.css && cp ../media.css ./src/styles/media.css"
   },
   "devDependencies": {
+    "astro": "^0.20.9",
     "open-color": "^1.9.1",
     "postcss-preset-env": "6.7.x",
     "vite": "2.6.1"
