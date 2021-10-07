@@ -29,10 +29,6 @@ const workload = {
   'props.borders.css': Borders,
 }
 
-const prefixProp = prop => {
-  return prop
-}
-
 const buildPropsStylesheet = ({filename, props}) => {
   const file = fs.createWriteStream(filename)
   file.write(`${selector} {\n`)
