@@ -1960,6 +1960,10 @@
               --{xxs,xs,sm,md,lg,xl,xxl}-n-above
               --{xxs,xs,sm,md,lg,xl,xxl}-n-below
               --{xxs,xs,sm,md,lg}-phone
+
+              --chromeONLY
+              --firefoxONLY
+              --safariONLY
             </code></pre>
           </div>
         </div>
@@ -2008,6 +2012,16 @@
             </code></pre>
           </div>
         </div>
+        <div>
+          <h5>Support Vars</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              @custom-media --safariONLY  (-webkit-hyphens: none);
+              @custom-media --firefoxONLY (-moz-appearance: none);
+              @custom-media --chromeONLY  (-webkit-tap-highlight-color: black);
+            </code></pre>
+          </div>
+        </div>
       </div>
       <div class="block-wrap">
         <div>
@@ -2033,6 +2047,16 @@
 
             @media (--motionOK) {
               transition: transform .5s var(--ease-3);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Targeting a browser</h5>
+          <pre class="language-css"><code>
+            color: hsl(200 50% 50%);
+
+            @media (--safariONLY) {
+              color: color(display-p3 0 .5 1);
             }
           </code></pre>
         </div>
