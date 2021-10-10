@@ -26,6 +26,10 @@ body {
   }
 }
 
+p {
+  text-align: justify;
+}
+
 .expand-into-body-margin {
   margin-inline: calc(var(--size-8) * -1);
 
