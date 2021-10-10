@@ -1,5 +1,5 @@
 /* generated with props.colors.src.js */
-const Colors = {
+export const Gray = {
   '--gray-0': '#f8f9fa',
   '--gray-1': '#f1f3f5',
   '--gray-2': '#e9ecef',
@@ -10,6 +10,9 @@ const Colors = {
   '--gray-7': '#495057',
   '--gray-8': '#343a40',
   '--gray-9': '#212529',
+}
+
+export const Red = {
   '--red-0': '#fff5f5',
   '--red-1': '#ffe3e3',
   '--red-2': '#ffc9c9',
@@ -20,6 +23,9 @@ const Colors = {
   '--red-7': '#f03e3e',
   '--red-8': '#e03131',
   '--red-9': '#c92a2a',
+}
+
+export const Pink = {
   '--pink-0': '#fff0f6',
   '--pink-1': '#ffdeeb',
   '--pink-2': '#fcc2d7',
@@ -30,6 +36,9 @@ const Colors = {
   '--pink-7': '#d6336c',
   '--pink-8': '#c2255c',
   '--pink-9': '#a61e4d',
+}
+
+export const Grape = {
   '--grape-0': '#f8f0fc',
   '--grape-1': '#f3d9fa',
   '--grape-2': '#eebefa',
@@ -40,6 +49,9 @@ const Colors = {
   '--grape-7': '#ae3ec9',
   '--grape-8': '#9c36b5',
   '--grape-9': '#862e9c',
+}
+
+export const Violet = {
   '--violet-0': '#f3f0ff',
   '--violet-1': '#e5dbff',
   '--violet-2': '#d0bfff',
@@ -50,6 +62,9 @@ const Colors = {
   '--violet-7': '#7048e8',
   '--violet-8': '#6741d9',
   '--violet-9': '#5f3dc4',
+}
+
+export const Indigo = {
   '--indigo-0': '#edf2ff',
   '--indigo-1': '#dbe4ff',
   '--indigo-2': '#bac8ff',
@@ -60,6 +75,9 @@ const Colors = {
   '--indigo-7': '#4263eb',
   '--indigo-8': '#3b5bdb',
   '--indigo-9': '#364fc7',
+}
+
+export const Blue = {
   '--blue-0': '#e7f5ff',
   '--blue-1': '#d0ebff',
   '--blue-2': '#a5d8ff',
@@ -70,6 +88,9 @@ const Colors = {
   '--blue-7': '#1c7ed6',
   '--blue-8': '#1971c2',
   '--blue-9': '#1864ab',
+}
+
+export const Cyan = {
   '--cyan-0': '#e3fafc',
   '--cyan-1': '#c5f6fa',
   '--cyan-2': '#99e9f2',
@@ -80,6 +101,9 @@ const Colors = {
   '--cyan-7': '#1098ad',
   '--cyan-8': '#0c8599',
   '--cyan-9': '#0b7285',
+}
+
+export const Teal = {
   '--teal-0': '#e6fcf5',
   '--teal-1': '#c3fae8',
   '--teal-2': '#96f2d7',
@@ -90,6 +114,9 @@ const Colors = {
   '--teal-7': '#0ca678',
   '--teal-8': '#099268',
   '--teal-9': '#087f5b',
+}
+
+export const Green = {
   '--green-0': '#ebfbee',
   '--green-1': '#d3f9d8',
   '--green-2': '#b2f2bb',
@@ -100,6 +127,9 @@ const Colors = {
   '--green-7': '#37b24d',
   '--green-8': '#2f9e44',
   '--green-9': '#2b8a3e',
+}
+
+export const Lime = {
   '--lime-0': '#f4fce3',
   '--lime-1': '#e9fac8',
   '--lime-2': '#d8f5a2',
@@ -110,6 +140,9 @@ const Colors = {
   '--lime-7': '#74b816',
   '--lime-8': '#66a80f',
   '--lime-9': '#5c940d',
+}
+
+export const Yellow = {
   '--yellow-0': '#fff9db',
   '--yellow-1': '#fff3bf',
   '--yellow-2': '#ffec99',
@@ -120,6 +153,9 @@ const Colors = {
   '--yellow-7': '#f59f00',
   '--yellow-8': '#f08c00',
   '--yellow-9': '#e67700',
+}
+
+export const Orange = {
   '--orange-0': '#fff4e6',
   '--orange-1': '#ffe8cc',
   '--orange-2': '#ffd8a8',
@@ -148,5 +184,21 @@ const Colors = {
   --red-base: var(--red-chroma) var(--red-hue);
   --red-mid: lch(50% var(--red-base));
 } */
+
+const Colors = {
+  ...Gray,
+  ...Red,
+  ...Pink,
+  ...Grape,
+  ...Violet,
+  ...Indigo,
+  ...Blue,
+  ...Cyan,
+  ...Teal,
+  ...Green,
+  ...Lime,
+  ...Yellow,
+  ...Orange,
+}
 
 export default Colors

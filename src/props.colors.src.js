@@ -9,13 +9,19 @@ const customizeIncrements = num =>
     ? num.replaceAll('50', '0')
     : num.replaceAll('0', '')
 
+const capitalizeFirstLetter = string =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
 const vars = colors.reduce((root, [color, shades]) => {
   let base = `--${color}-`
+  root += `\n\nconst ${capitalizeFirstLetter(color)} = {`
 
   Object.entries(shades).forEach(([num, hex]) => 
     root += `
-    ${base}${customizeIncrements(num)}: ${hex};`
+  '${base}${customizeIncrements(num)}': '${hex}',`
   )
+
+  root += '\n}'
 
   return root
 }, ``)
