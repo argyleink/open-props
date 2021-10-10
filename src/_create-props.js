@@ -23,7 +23,7 @@ const workload = {
   'props.shadows.css': Shadows,
   'props.aspects.css': Aspects,
   'props.colors.css': Colors,
-  'props.svg.css': SVG,
+  // 'props.svg.css': SVG,
   'props.gradients.css': Gradients,
   'props.animations.css': Animations,
   'props.borders.css': Borders,
