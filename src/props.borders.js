@@ -18,6 +18,13 @@ const Borders = {
   '--radii-blob-3': '37% 63% 56% 44% / 49% 56% 44% 51%',
   '--radii-blob-4': '63% 37% 37% 63% / 43% 37% 63% 57%',
   '--radii-blob-5': '49% 51% 48% 52% / 57% 44% 56% 43%',
+
+  '--radii-conditional-1': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radii-1))',
+  '--radii-conditional-2': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radii-2))',
+  '--radii-conditional-3': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radii-3))',
+  '--radii-conditional-4': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radii-4))',
+  '--radii-conditional-5': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radii-5))',
+  '--radii-conditional-6': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radii-6))',
 }
 
 export default Borders
