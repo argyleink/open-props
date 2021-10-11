@@ -1,4 +1,4 @@
 ## Open Props (WIP)
 > Grab n' go CSS custom properties
 
-Easy to remember, custom property utility values.
+🗨️ Chat on Discord https://discord.gg/AqA4fU886r
