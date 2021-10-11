@@ -957,3 +957,19 @@ input[type="range"] {
 .hidden {
   display: none;
 }
+
+.slide-fade-combo {
+  --animation-slide-down-fade-out: 
+    var(--animation-fade-out) forwards,
+    var(--animation-slide-out-down);
+  --animation-delay: .23s, 0;
+}
+
+.shake-fade-combo {
+  --animation-slide-left-fade-in-shake-y: 
+    var(--animation-shake-y),
+    var(--animation-fade-in),
+    var(--animation-slide-in-left)
+  ;
+  --animation-delay: 0, .23s, 0;
+}

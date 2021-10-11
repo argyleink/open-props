@@ -40,28 +40,30 @@ const cleanup = e => {
 }
 
 document
-  .querySelector('.animation-demo')
-  .addEventListener('click', e => {
-    if (e.target.nodeName !== 'BUTTON') return
+  .querySelectorAll('.animation-demo')
+  .forEach(group => {
+    group.addEventListener('click', e => {
+      if (e.target.nodeName !== 'BUTTON') return
 
-    let sample = e.target.closest('.animation-demo-target')
+      let sample = e.target.closest('.animation-demo-target')
 
-    if (sample.dataset.startingStyles) {
-      sample.style = sample.dataset.startingStyles
+      if (sample.dataset.startingStyles) {
+        sample.style = sample.dataset.startingStyles
 
-      setTimeout(()=> {
+        setTimeout(()=> {
+          sample.style.animation = `var(--animation-${sample.dataset.animation}) forwards`
+          sample.addEventListener('animationend', cleanup, {once:true})
+        }, 300)
+      }
+      else if (sample.style.animation != '') {
+        sample.style.animation = null
+        sample.removeEventListener('animationend', cleanup)
+      }
+      else {
         sample.style.animation = `var(--animation-${sample.dataset.animation}) forwards`
         sample.addEventListener('animationend', cleanup, {once:true})
-      }, 300)
-    }
-    else if (sample.style.animation != '') {
-      sample.style.animation = null
-      sample.removeEventListener('animationend', cleanup)
-    }
-    else {
-      sample.style.animation = `var(--animation-${sample.dataset.animation}) forwards`
-      sample.addEventListener('animationend', cleanup, {once:true})
-    }
+      }
+    })
   })
 
 // slider
