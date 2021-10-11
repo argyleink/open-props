@@ -154,18 +154,18 @@
 :where(:not(pre) > code) {
   padding: var(--size-1) var(--size-2);
   background: var(--surface-2);
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
 }
 
 :where(kbd, var) {
   padding: var(--size-1) var(--size-2);
   border-width: var(--border-size-1);
   border-color: var(--surface-4);
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
 }
 
 :where(mark) {
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
   padding-inline: var(--size-1);
 }
 
@@ -220,14 +220,14 @@
   background: var(--surface-3);
   padding: var(--size-2) var(--size-3);
   margin: calc(var(--size-2) * -1) calc(var(--size-3) * -1);
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
 }
 
 :where(details) {
   padding-inline: var(--size-3);
   padding-block: var(--size-2);
   background: var(--surface-2);
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
 }
 
 :where(details[open] > summary) {
@@ -237,7 +237,7 @@
 }
 
 :where(fieldset) {
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
 }
 
 :where(del) {

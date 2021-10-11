@@ -93,7 +93,7 @@
             color: var(--blue-0);
             background-color: var(--blue-7);
             border: none;
-            border-radius: var(--radii-round);
+            border-radius: var(--radius-round);
             box-shadow: var(--shadow-2);
 
             &:hover {
@@ -1868,7 +1868,7 @@
     <section id="borders">
       <header>
         <h2>Borders</h2>
-        <p>Sizes, corner radii, and some blobs</p>
+        <p>Sizes, corner radius, and some blobs</p>
       </header>
       <div class="block-wrap">
         <div>
@@ -1877,9 +1877,9 @@
           <div class="var-examples">
             <pre class="language-css"><code>
               --border-size-{1-5}
-              --radii-{1-5}
-              --radii-round
-              --radii-blob{1-2}
+              --radius-{1-5}
+              --radius-round
+              --radius-blob{1-2}
             </code></pre>
           </div>
         </div>
@@ -1887,13 +1887,13 @@
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
             .card {
-              border-radius: var(--radii-3);
+              border-radius: var(--radius-3);
             }
 
             .circle {
               inline-size: var(--size-5);
               aspect-ratio: var(--aspect-box);
-              border-radius: var(--radii-round);
+              border-radius: var(--radius-round);
             }
           </code></pre>
         </div>
@@ -1905,18 +1905,18 @@
         <div style="border-width: var(--border-size-4)">4</div>
         <div style="border-width: var(--border-size-5)">5</div>
 
-        <div style="border-radius: var(--radii-1)">1</div>
-        <div style="border-radius: var(--radii-2)">2</div>
-        <div style="border-radius: var(--radii-3)">3</div>
-        <div style="border-radius: var(--radii-4)">4</div>
-        <div style="border-radius: var(--radii-5)">5</div>
-        <div style="border-radius: var(--radii-round)">round</div>
+        <div style="border-radius: var(--radius-1)">1</div>
+        <div style="border-radius: var(--radius-2)">2</div>
+        <div style="border-radius: var(--radius-3)">3</div>
+        <div style="border-radius: var(--radius-4)">4</div>
+        <div style="border-radius: var(--radius-5)">5</div>
+        <div style="border-radius: var(--radius-round)">round</div>
 
-        <div style="border-radius: var(--radii-blob-1)">1</div>
-        <div style="border-radius: var(--radii-blob-2)">2</div>
-        <div style="border-radius: var(--radii-blob-3)">3</div>
-        <div style="border-radius: var(--radii-blob-4)">4</div>
-        <div style="border-radius: var(--radii-blob-5)">5</div>
+        <div style="border-radius: var(--radius-blob-1)">1</div>
+        <div style="border-radius: var(--radius-blob-2)">2</div>
+        <div style="border-radius: var(--radius-blob-3)">3</div>
+        <div style="border-radius: var(--radius-blob-4)">4</div>
+        <div style="border-radius: var(--radius-blob-5)">5</div>
       </article>
     </section>
 

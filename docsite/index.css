@@ -322,7 +322,7 @@ pre[class*="language-"] {
 
 .color-swatch {
   --size: var(--size-5);
-  border-radius: var(--radii-round);
+  border-radius: var(--radius-round);
   box-shadow: var(--inner-shadow-0);
   inline-size: 7%;
   block-size: var(--size);
@@ -396,7 +396,7 @@ pre[class*="language-"] {
       place-content: center;
       margin: var(--size-3);
       aspect-ratio: var(--aspect-box);
-      border-radius: var(--radii-round);
+      border-radius: var(--radius-round);
     }
   }
 
@@ -406,7 +406,7 @@ pre[class*="language-"] {
 }
 
 .gradient-swatch {
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
   aspect-ratio: var(--aspect-landscape);
 }
 
@@ -446,7 +446,7 @@ pre[class*="language-"] {
   border-width: var(--border-size-1);
   border-color: var(--yellow-6);
   color: var(--yellow-2);
-  border-radius: var(--radii-round);
+  border-radius: var(--radius-round);
 
   @media (--OSlight) {
     border-color: var(--orange-2);
@@ -459,7 +459,7 @@ pre[class*="language-"] {
   border-width: var(--border-size-1);
   border-color: var(--lime-6);
   color: var(--lime-2);
-  border-radius: var(--radii-round);
+  border-radius: var(--radius-round);
 
   @media (--OSlight) {
     border-color: var(--green-2);
@@ -596,7 +596,7 @@ pre[class*="language-"] {
   & svg {
     inline-size: var(--size-12);
     border-width: var(--border-size-2);
-    border-radius: var(--radii-round);
+    border-radius: var(--radius-round);
     padding: var(--size-2);
     margin-inline-start: calc(var(--size-1) * -1);
     margin-block-end: var(--size-3);
@@ -669,7 +669,7 @@ pre[class*="language-"] {
     padding-block: var(--size-1);
     color: var(--surface-1);
     background: var(--brand-bg-gradient) fixed;
-    border-radius: var(--radii-round);
+    border-radius: var(--radius-round);
     
     @media (--motionOK) {
       animation: ping-pong 2s ease infinite;
@@ -720,7 +720,7 @@ pre[class*="language-"] {
     background: white;
     inline-size: var(--size-15);
     aspect-ratio: var(--aspect-box);
-    border-radius: var(--radii-3);
+    border-radius: var(--radius-3);
     display: grid;
     place-content: center;
 
@@ -765,7 +765,7 @@ pre[class*="language-"] {
   background: none;
   padding: 0;
   aspect-ratio: 1;
-  border-radius: var(--radii-round);
+  border-radius: var(--radius-round);
 
   & > svg {
     pointer-events: none;
@@ -807,7 +807,7 @@ pre[class*="language-"] {
   place-items: center;
   padding-inline: var(--size-5);
   padding-block: var(--size-3);
-  border-radius: var(--radii-2);
+  border-radius: var(--radius-2);
 }
 
 .sizes-demo {
