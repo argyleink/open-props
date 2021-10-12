@@ -1868,7 +1868,7 @@
     <section id="borders">
       <header>
         <h2>Borders</h2>
-        <p>Sizes, corner radius, and some blobs</p>
+        <p>Sizes, corner radii, circle helper, <a href="https://ishadeed.com/article/conditional-border-radius/">conditional radii</a> and some blobs</p>
       </header>
       <div class="block-wrap">
         <div>
@@ -1877,9 +1877,10 @@
           <div class="var-examples">
             <pre class="language-css"><code>
               --border-size-{1-5}
-              --radius-{1-5}
+              --radius-{1-6}
               --radius-round
               --radius-blob{1-2}
+              --radius-conditional{1-6}
             </code></pre>
           </div>
         </div>
@@ -1887,7 +1888,9 @@
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
             .card {
-              border-radius: var(--radius-3);
+              /* no radius when fullscreen */
+              border-radius: var(--radius-conditional-3);
+              border: var(--border-size-1) solid var(--gray-1);
             }
 
             .circle {
