@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "open-props",
+  "name": "@argyleink/open-props",
   "author": "Adam Argyle",
   "license": "ISC",
   "version": "0.1.0",
