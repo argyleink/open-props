@@ -88,9 +88,25 @@ nav {
   gap: var(--size-4);
   justify-self: stretch;
 
-  & > a[href] {
+  & > a[href]:not(:hover,:focus-visible) {
     color: var(--text-1);
     text-decoration-color: var(--brand);
+  }
+
+  & > a[href]:is(:hover,:focus-visible) {
+    color: var(--indigo-9);
+    text-decoration-color: var(--indigo-2);
+  }
+
+  @media (--OSlight) {
+    & > a[href]:not(:hover,:focus-visible) {
+      text-decoration-color: var(--brand);
+    }
+
+    & > a[href]:is(:hover,:focus-visible) {
+      color: var(--indigo-3);
+      text-decoration-color: var(--indigo-2);
+    }
   }
 
   & > a[href="/"] {
@@ -98,19 +114,9 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: var(--size-2);
-    color: var(--indigo-4);
 
     & > svg {
-      inline-size: 3ch;
-      stroke: var(--indigo-6);
-    }
-
-    @media (--OSlight) {
-      color: var(--orange-8);
-
-      & > svg {
-        stroke: var(--orange-4);
-      }
+      inline-size: var(--size-9);
     }
   }
 
@@ -122,11 +128,19 @@ nav {
 }
 
 .github-icon {
-  fill: var(--surface-4);
+  fill: var(--gray-5);
   stroke: none;
 
   @nest :hover > & {
-    fill: var(--grape-4);
+    fill: var(--gray-2);
+  }
+
+  @media (--OSlight) {
+    fill: var(--gray-7);
+
+    @nest :hover > & {
+      fill: var(--gray-9);
+    }
   }
 }
 
@@ -317,6 +331,42 @@ pre[class*="language-"] {
 
   & > h4::before {
     display: none;
+  }
+}
+
+.op-logo {
+  display: grid;
+  font-weight: var(--font-weight-3);
+  font-size: var(--font-size-2);
+  color: var(--indigo-3);
+  letter-spacing: var(--font-letterspacing-4);
+
+  @media (--OSlight) {
+    color: var(--indigo-7);
+  }
+  
+  & > span {
+    line-height: .9;
+
+    &::first-letter {
+      font-weight: var(--font-weight-9);
+    }
+  }
+}
+
+.op-icon-p {
+  stroke: var(--indigo-6);
+
+  @media (--OSlight) {
+    stroke: var(--indigo-8);
+  }
+}
+
+.op-icon-o {
+  stroke: var(--indigo-4);
+  
+  @media (--OSlight) {
+    stroke: var(--indigo-5);
   }
 }
 

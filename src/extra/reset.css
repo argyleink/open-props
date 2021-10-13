@@ -78,7 +78,11 @@
   margin-block: calc(var(--size-1) * -1);
 
   &:where([href]) {
-    text-decoration-color: var(--text-1);
+    text-decoration-color: var(--indigo-2);
+
+    &:where(:visited) {
+      text-decoration-color: var(--grape-2);
+    }
   }
 
   &:where(:not(:hover)) {
