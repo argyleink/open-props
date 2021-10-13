@@ -1,5 +1,5 @@
 @import "../src/index.css";
-@import "../src/extra/reset.css";
+@import "../src/extra/normalize.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
