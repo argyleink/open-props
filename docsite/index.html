@@ -73,7 +73,7 @@
           <svg viewBox="0 0 24 24">
             <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
           </svg>
-          <span>themed <a href="#">normalize.css</a> using the props</span>
+          <span>themed <a href="#">normalize.css</a></span>
         </blockquote>
         <small>
           v0.0.22<br>
@@ -348,6 +348,7 @@
               <pre class="language-css"><code>
                 /* index.css */
                 @import "https://unpkg.com/open-props/colors.css";
+                @import "https://unpkg.com/open-props/orange.css";
                 @import "https://unpkg.com/open-props/easings.css";
                 @import "https://unpkg.com/open-props/sizes.css";
                 /* etc */
@@ -369,6 +370,7 @@
               <pre class="language-css"><code>
                 /* index.pcss */
                 @import "https://unpkg.com/open-props/src/props.colors.css";
+                @import "https://unpkg.com/open-props/src/props.orange.css";
                 @import "https://unpkg.com/open-props/src/props.easings.css";
                 @import "https://unpkg.com/open-props/src/props.sizes.css";
                 /* etc */
@@ -377,10 +379,8 @@
 
             <h5>PostCSS JIT Props</h5>
             <blockquote>
-              <p>
-                <b>Ship only what you use!</b> 
-                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a>
-              </p>
+              <p>Ship only what you use! 
+                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a></p>
             </blockquote>
 
             <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
@@ -452,6 +452,7 @@
                   /* index.pcss */
                   @import "open-props/sizes.css";
                   @import "open-props/colors.css";
+                  @import "open-props/orange.css";
                   @import "open-props/gradients.css";
                   /* etc */
                 </code></pre>
@@ -460,6 +461,7 @@
                   // index.js
                   import 'open-props/sizes.css';
                   import 'open-props/colors.css';
+                  import 'open-props/orange.css';
                   import 'open-props/gradients.css';
                   /* etc */
                 </code></pre>
@@ -483,6 +485,7 @@
                 <pre class="language-css"><code>
                   /* index.pcss */
                   @import "open-props/src/props.sizes.css";
+                  @import "open-props/src/props.orange.css";
                   @import "open-props/src/props.aspects.css";
                   @import "open-props/src/props.easings.css";
                   /* etc */
@@ -721,7 +724,8 @@
     <section id="gradients" class="just-stretch">
       <header>
         <h2>Gradients</h2>
-        <p>Open Props includes 30 hand tailored gradients. The direction of linear gradients can be controlled with a property.</p>
+        <p>Open Props includes 30 hand tailored gradients. Linear gradient direction can be changed with a custom property mixin.</p>
+        <p>Don't miss the grainy gradient props <a href="https://grainy-gradients.vercel.app">inspired by this</a>.</p>
       </header>
 
       <div class="block-wrap">
@@ -800,14 +804,7 @@
         </code></pre>
       </div>
       <article class="just-stretch expand-into-body-margin">
-        <h4 class="has-info-icon">
-          Grainy Examples
-          <a href="https://grainy-gradients.vercel.app/">
-            <svg viewBox="0 0 24 24">
-              <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </a>
-        </h4>
+        <h4>Grainy Examples</h4>
         <div class="ui-gradients grainy scroll-x-overflow">
           <span class="gradient-swatch" style="background-image: var(--gradient-3), var(--grain)"></span>
           <span class="gradient-swatch" style="background-image: linear-gradient(to top, black, #0000), var(--grain); filter:var(--grain-filter-2)"></span>
