@@ -93,27 +93,15 @@ nav {
     text-decoration-color: var(--brand);
   }
 
-  & > a[href]:is(:hover,:focus-visible) {
-    color: var(--indigo-9);
-    text-decoration-color: var(--indigo-2);
-  }
-
-  @media (--OSlight) {
-    & > a[href]:not(:hover,:focus-visible) {
-      text-decoration-color: var(--brand);
-    }
-
-    & > a[href]:is(:hover,:focus-visible) {
-      color: var(--indigo-3);
-      text-decoration-color: var(--indigo-2);
-    }
-  }
-
   & > a[href="/"] {
     margin-inline-end: auto;
     display: inline-flex;
     align-items: center;
     gap: var(--size-2);
+
+    &:hover {
+      text-decoration: none;
+    }
 
     & > svg {
       inline-size: var(--size-9);
@@ -356,17 +344,21 @@ pre[class*="language-"] {
 
 .op-icon-p {
   stroke: var(--indigo-6);
+  @nest a:hover & { stroke: var(--indigo-4); }
 
   @media (--OSlight) {
     stroke: var(--indigo-8);
+    @nest a:hover & { stroke: var(--indigo-9); }
   }
 }
 
 .op-icon-o {
   stroke: var(--indigo-4);
+  @nest a:hover & { stroke: var(--indigo-3); }
   
   @media (--OSlight) {
     stroke: var(--indigo-5);
+    @nest a:hover & { stroke: var(--indigo-6); }
   }
 }
 
