@@ -6,7 +6,7 @@
   --brand-bg-gradient: linear-gradient(to bottom, var(--grape-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
 
   @media (--md-n-below) {
-    --max-inline-body: calc(100vw - (var(--size-3) * 2));
+    --max-inline-body: calc(100vw - (var(--size-3) * 3));
   }
 
   @media (--OSlight) {
@@ -15,45 +15,35 @@
 }
 
 body {
-  display: grid;
-  place-content: center;
-  justify-items: flex-start;
-  padding-inline: var(--size-8);
   padding-block: var(--size-6);
+  display: grid;
+  justify-items: flex-start;
+  grid-template-columns:
+    var(--size-8) 
+    1fr 
+    var(--size-8) 
+  ;
+
+  & > * {
+    grid-column: 2;
+  }
+
+  & > .place-full {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
 
   @media (--md-n-below) {
-    padding-inline: var(--size-3);
+    grid-template-columns:
+      var(--size-3) 
+      1fr 
+      var(--size-3) 
+    ;
   }
 }
 
-:not(blockquote) p {
+:not(blockquote) > p {
   text-align: justify;
-}
-
-.expand-into-body-margin {
-  margin-inline: calc(var(--size-8) * -1);
-
-  & > .scroll-x-overflow {
-    max-inline-size: 100vw;
-    scroll-padding-inline: var(--size-8);
-
-    @media (--md-n-below) {
-      scroll-padding-inline: var(--size-3);
-    }
-  }
-
-  & > .scroll-x-overflow,
-  & > h4 {
-    padding-inline: var(--size-8);
-
-    @media (--md-n-below) {
-      padding-inline: var(--size-3);
-    }
-  }
-
-  @media (--md-n-below) {
-    margin-inline: calc(var(--size-3) * -1);
-  }
 }
 
 section {
@@ -296,16 +286,13 @@ pre[class*="language-"] {
 }
 
 .module-list {
-  position: sticky;
-  inset-block-start: 0;
-  z-index: var(--layer-1);
   background-color: var(--surface-1);
   margin-block-start: var(--size-8);
-  margin-inline-start: calc(var(--size-2) * 3 * -1);
   padding-block: var(--size-2);
   padding-inline: var(--size-4);
   display: flex;
   flex-flow: row wrap;
+
   align-items: center;
   gap: var(--size-1) var(--size-3);
   border-end-end-radius: var(--radius-3);
@@ -473,6 +460,21 @@ pre[class*="language-"] {
   overscroll-behavior-inline: contain;
   max-inline-size: var(--max-inline-body);
   padding-block-end: var(--size-3);
+
+  max-inline-size: calc(var(--max-inline-body) + calc(var(--size-7) * 2));
+  margin-inline: calc(var(--size-8) * -1);
+  padding-inline: var(--size-8);
+
+  &.ui-gradients {
+    scroll-padding-inline: var(--size-8);
+  }
+
+  @media (--md-n-below) {
+    max-inline-size: calc(var(--max-inline-body) + calc(var(--size-3) * 2));
+    margin-inline: calc(var(--size-3) * -1);
+    padding-inline: var(--size-3);
+    scroll-padding-inline: var(--size-3);
+  }
 }
 
 .contain-pre {
@@ -528,17 +530,6 @@ pre[class*="language-"] {
 .font-sizes {
   display: grid;
   gap: var(--size-3);
-
-  & > .scroll-x-overflow {
-    max-inline-size: calc(var(--max-inline-body) + var(--size-12));
-    margin-inline: calc(var(--size-8) * -1);
-    padding-inline: var(--size-8);
-
-    @media (--md-n-below) {
-      margin-inline: calc(var(--size-3) * -1);
-      padding-inline: var(--size-3);
-    }
-  }
 
   & pre {
     max-inline-size: var(--max-inline-body);
