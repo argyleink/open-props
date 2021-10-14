@@ -458,12 +458,11 @@ pre[class*="language-"] {
 .scroll-x-overflow {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  max-inline-size: var(--max-inline-body);
-  padding-block-end: var(--size-3);
 
   max-inline-size: calc(var(--max-inline-body) + calc(var(--size-7) * 2));
   margin-inline: calc(var(--size-8) * -1);
   padding-inline: var(--size-8);
+  padding-block-end: var(--size-3);
 
   &.ui-gradients {
     scroll-padding-inline: var(--size-8);
@@ -474,6 +473,22 @@ pre[class*="language-"] {
     margin-inline: calc(var(--size-3) * -1);
     padding-inline: var(--size-3);
     scroll-padding-inline: var(--size-3);
+  }
+}
+
+@media (--md-n-below) {
+  :root body pre {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    border-radius: 0;
+
+    max-inline-size: calc(var(--max-inline-body) + calc(var(--size-7) * 2));
+    margin-inline: calc(var(--size-8) * -1);
+
+    @media (--md-n-below) {
+      max-inline-size: calc(var(--max-inline-body) + calc(var(--size-3) * 2));
+      margin-inline: calc(var(--size-3) * -1);
+    }
   }
 }
 

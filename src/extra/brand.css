@@ -1,7 +1,7 @@
 @import "theme.css";
 
 :where(html) {
-  scrollbar-color: var(--brand) Canvas;
+  scrollbar-color: var(--surface-4) var(--surface-1);
   accent-color: var(--brand);
 }
 
