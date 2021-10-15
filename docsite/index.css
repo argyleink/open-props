@@ -435,9 +435,9 @@ pre[class*="language-"] {
     scroll-padding-inline: var(--size-3);
   }
 
-  &.grainy > * {
+  &.noisy > * {
     background-size: cover;
-    filter: var(--grain-filter-2);
+    filter: var(--noise-filter-1);
   }
 
   & > * {

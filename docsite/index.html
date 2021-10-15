@@ -711,7 +711,7 @@
       <header>
         <h2>Gradients</h2>
         <p>Open Props includes 30 hand tailored gradients. Linear gradient direction can be changed with a custom property mixin.</p>
-        <p>Don't miss the grainy gradient props <a href="https://grainy-gradients.vercel.app">inspired by this</a>.</p>
+        <p>Don't miss the noise props inspired by <a href="https://grainy-gradients.vercel.app">grainy-gradients</a>.</p>
       </header>
 
       <div class="block-wrap">
@@ -744,7 +744,7 @@
           </code></pre>
         </div>
       </div>
-      <article class="just-stretch">
+      <article class="just-stretch just-for-gap">
         <h4>Gradients</h4>
         <div class="ui-gradients scroll-x-overflow count-em">
           <span class="gradient-swatch" style="background-image: var(--gradient-1)"></span>
@@ -780,28 +780,43 @@
         </div>
       </article>
       <div>
-        <h5>Grainy Usage Sample</h5>
-        <pre class="language-css"><code>
-          .grainy {
-            background-image: var(--gradient-3), var(--grain);
-            background-size: cover;
-            filter: var(--grain-filter-2);
-          }
-        </code></pre>
+        <h3>Noise</h3>
+        <div class="block-wrap">
+          <div>
+            <div class="var-examples">
+              <pre class="language-css"><code>
+                --noise-{1-5}
+                --noise-filter-{1-5}
+              </code></pre>
+            </div>
+          </div>
+          <div>
+            <pre class="language-css"><code>
+              .noise-noise-noise {
+                /* stack grain with a gradient */
+                background-image: var(--gradient-3), var(--noise-3);
+                /* force colors and noise to collide */
+                filter: var(--noise-filter-3);
+                /* fit noise image to element */
+                background-size: cover;
+              }
+            </code></pre>
+          </div>
+        </div>
       </div>
-      <article class="just-stretch">
-        <h4>Grainy Examples</h4>
-        <div class="ui-gradients grainy scroll-x-overflow">
-          <span class="gradient-swatch" style="background-image: var(--gradient-3), var(--grain)"></span>
-          <span class="gradient-swatch" style="background-image: linear-gradient(to top, black, #0000), var(--grain); filter:var(--grain-filter-2)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-13), var(--grain); filter:var(--grain-filter-2)"></span>
-          <span class="gradient-swatch" style="background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--grain); filter:var(--grain-filter-2)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-20), var(--grain); filter:var(--grain-filter-3)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-7), var(--grain); filter:var(--grain-filter-4)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-23), var(--grain); filter:var(--grain-filter-5)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-25), var(--grain); filter:var(--grain-filter-2)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-29), var(--grain)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-30), var(--grain)"></span>
+      <article class="just-stretch just-for-gap">
+        <h4>Noisy Examples</h4>
+        <div class="ui-gradients noisy scroll-x-overflow">
+          <span class="gradient-swatch" style="background-image: var(--gradient-3), var(--noise-5)"></span>
+          <span class="gradient-swatch" style="background-image: linear-gradient(to top, black, #0000), var(--noise-5); filter:var(--noise-filter-2)"></span>
+          <span class="gradient-swatch" style="background-image: radial-gradient(circle at center center, hsl(330deg 100% 71%), hsl(330deg 100% 0% / 50%)), var(--noise-3)"></span>
+          <span class="gradient-swatch" style="background-image: conic-gradient(at 50% -20%,#281316, #4e3beb33), var(--noise-1); filter:var(--noise-filter-4)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-13), var(--noise-5); filter:var(--noise-filter-1)"></span>
+          <span class="gradient-swatch" style="background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--noise-5); filter:var(--noise-filter-2)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-20), var(--noise-5); filter:var(--noise-filter-3)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2)"></span>
+          <span class="gradient-swatch" style="background-image: var(--gradient-30), var(--noise-3)"></span>
         </div>
       </article>
     </section>
