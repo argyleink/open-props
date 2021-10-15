@@ -300,6 +300,10 @@ pre[class*="language-"] {
   white-space: nowrap;
   gap: var(--size-4);
 
+  & a[href]:not(:hover,:focus-visible) {
+    color: var(--text-1);
+    text-decoration-color: var(--brand);
+  }
   @media (--OSlight) {
     background-image: linear-gradient(to top, hsl(210deg 17% 98% / 98%) 1ch, 75%, hsl(210deg 17% 98% / 0%));
   }
