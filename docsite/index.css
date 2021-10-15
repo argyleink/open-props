@@ -138,6 +138,7 @@ footer {
   justify-self: stretch;
   border-top-width: var(--border-size-1);
   border-color: var(--surface-3);
+  background-color: var(--surface-2);
 }
 
 .hero {
