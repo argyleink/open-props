@@ -7,7 +7,14 @@ const Animations = {
 @keyframes op-fade-out {
   to { opacity: 0 }
 }`],
-
+  "--animation-scale-up": ["op-scale-up .5s var(--ease-3)", `
+@keyframes op-scale-up {
+  to { transform: scale(1.25) }
+}`],
+  "--animation-scale-down": ["op-scale-down .5s var(--ease-3)", `
+@keyframes op-scale-down {
+  to { transform: scale(.75) }
+}`],
   "--animation-slide-out-up": ["op-slide-out-up .5s var(--ease-3)", `
 @keyframes op-slide-out-up {
   to { transform: translateY(-100%) }
