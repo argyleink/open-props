@@ -1,8 +1,14 @@
 @import "theme.css";
 
 :where(html) {
-  scrollbar-color: var(--surface-4) var(--surface-1);
+  --scrollbar-color: var(--gray-7);
+
+  scrollbar-color: var(--scrollbar-color) transparent;
   accent-color: var(--brand);
+
+  @media (--OSlight) {
+    --scrollbar-color: var(--gray-4);
+  }
 }
 
 :focus-visible { outline-color: var(--brand); }
