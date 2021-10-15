@@ -6,7 +6,7 @@
   --brand-bg-gradient: linear-gradient(to bottom, var(--grape-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
 
   @media (--md-n-below) {
-    --max-inline-body: calc(100vw - (var(--size-3) * 3));
+    --max-inline-body: calc(100vw - (var(--size-3) * 2));
   }
 
   @media (--OSlight) {
@@ -16,6 +16,7 @@
 
 body {
   padding-block: var(--size-6);
+  overflow-x: hidden;
   display: grid;
   justify-items: flex-start;
   grid-template-columns:
@@ -418,7 +419,11 @@ pre[class*="language-"] {
   gap: var(--size-2);
   scroll-snap-type: x mandatory;
   padding-inline: var(--gap);
-  scroll-padding-inline: var(--gap);
+
+  scroll-padding-inline: var(--size-8);
+  @media (--md-n-below) {
+    scroll-padding-inline: var(--size-3);
+  }
 
   &.grainy > * {
     background-size: cover;
@@ -459,14 +464,10 @@ pre[class*="language-"] {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 
-  max-inline-size: calc(var(--max-inline-body) + calc(var(--size-7) * 2));
+  max-inline-size: calc(var(--max-inline-body) + calc(var(--size-8) * 2));
   margin-inline: calc(var(--size-8) * -1);
   padding-inline: var(--size-8);
   padding-block-end: var(--size-3);
-
-  &.ui-gradients {
-    scroll-padding-inline: var(--size-8);
-  }
 
   @media (--md-n-below) {
     max-inline-size: calc(var(--max-inline-body) + calc(var(--size-3) * 2));
