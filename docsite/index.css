@@ -287,16 +287,22 @@ pre[class*="language-"] {
 }
 
 .module-list {
-  background-color: var(--surface-1);
-  margin-block-start: var(--size-8);
-  padding-block: var(--size-2);
-  padding-inline: var(--size-4);
-  display: flex;
-  flex-flow: row wrap;
+  position: sticky;
+  bottom: 0;
+  overflow-x: auto;
 
+  background-image: linear-gradient(to top, hsl(210deg 11% 15% / 98%) 1ch, 75%, hsl(210deg 11% 0% / 0%));
+  margin-block-start: var(--size-8);
+  padding-block: var(--size-5) var(--size-2);
+  padding-inline: var(--size-2) var(--size-4);
+  display: flex;
   align-items: center;
-  gap: var(--size-1) var(--size-3);
-  border-end-end-radius: var(--radius-3);
+  white-space: nowrap;
+  gap: var(--size-4);
+
+  @media (--OSlight) {
+    background-image: linear-gradient(to top, hsl(210deg 17% 98% / 98%) 1ch, 75%, hsl(210deg 17% 98% / 0%));
+  }
 
   & > li {
     display: inline-flex;
