@@ -350,6 +350,7 @@ pre[class*="language-"] {
   
   & > span {
     line-height: .9;
+    text-transform: uppercase;
 
     &::first-letter {
       font-weight: var(--font-weight-9);
