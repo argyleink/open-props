@@ -1,5 +1,4 @@
 // theme toggle
-// todo: juggle 2 theme files: nord and material
 // todo: watch mq change event and toggle class for auto tests
 const getColorPreference = () => {
   if (localStorage.getItem('theme-preference'))
@@ -10,16 +9,50 @@ const getColorPreference = () => {
       : 'light'
 }
 
-const setPreference = () =>
+const setPreference = () => {
   document.firstElementChild.setAttribute('data-theme', theme.value)
+  document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value)
+
+  setCodeSnippetStylesheet()
+}
+
+const setCodeSnippetStylesheet = () => {
+  if (theme.value === 'dark') {
+    if (document.head.querySelector('link#lightcode'))
+      document.head.removeChild(document.head.querySelector('link#lightcode'))
+    document.head.appendChild(theme.prismDark)
+  }
+  else {
+    if (document.head.querySelector('link#darkcode'))
+      document.head.removeChild(document.head.querySelector('link#darkcode'))
+    document.head.appendChild(theme.prismLight)  
+  }
+}
+
+const makeLinkStylesheet = (id, href) => {
+  const link = document.createElement('link')
+
+  link.type = 'text/css'
+  link.rel = 'stylesheet'
+  link.href = href
+  link.id = id
+
+  return link
+}
 
 const theme = {
   value: getColorPreference(),
+  prismDark: makeLinkStylesheet('darkcode', '//unpkg.com/prism-themes@1.8.0/themes/prism-nord.css'),
+  prismLight: makeLinkStylesheet('lightcode', '//unpkg.com/prism-themes@1.8.0/themes/prism-material-light.css'),
 }
 
+// set early so no page flashes
 setPreference()
 
 window.onload = () => {
+  // set on load so screen readers can see latest value
+  setPreference()
+
   document.querySelector('#theme-toggle').addEventListener('click', e => {
     theme.value = theme.value === 'light'
       ? 'dark'
