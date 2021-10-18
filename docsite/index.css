@@ -115,19 +115,11 @@ nav {
 }
 
 .github-icon {
-  fill: var(--gray-5);
+  fill: var(--nav-icon);
   stroke: none;
 
   @nest :hover > & {
-    fill: var(--gray-2);
-  }
-
-  @media (--OSlight) {
-    fill: var(--gray-7);
-
-    @nest :hover > & {
-      fill: var(--gray-9);
-    }
+    fill: var(--nav-icon-hover);
   }
 }
 
@@ -183,7 +175,7 @@ footer {
     border-color: var(--grape-4);
 
     & > svg {
-      stroke: var(--grape-2);
+      stroke: var(--grape-5);
     }
 
     @media (--OSlight) {
@@ -1048,4 +1040,109 @@ input[type="range"] {
     var(--animation-fade-out)
   ;
   animation-timing-function: var(--ease-squish-4) !important;
+}
+
+
+/* no way out of this duplication afaik */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --brand: var(--pink-6);
+
+  --link: var(--indigo-7);
+  --link-visited: var(--grape-7);
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+
+  --nav-icon: var(--gray-7);
+  --nav-icon-hover: var(--gray-9);
+
+  @media (--HDcolor) {
+    --link: color(display-p3 0 .5 1);
+    --link-visited: color(display-p3 .6 .2 1);
+  }
+}
+
+@media (--OSdark) {
+  :where(html) {
+    color-scheme: dark;
+
+    --brand: var(--pink-4);
+
+    --link: var(--indigo-3);
+    --link-visited: var(--grape-3);
+
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-2);
+
+    --surface-1: var(--gray-9);
+    --surface-2: var(--gray-8);
+    --surface-3: var(--gray-7);
+    --surface-4: var(--gray-6);
+
+    --nav-icon: var(--gray-5);
+    --nav-icon-hover: var(--gray-2);
+  }
+}
+
+#theme-toggle {
+  background: none;
+
+  & :is(#sun-beams, #sun, #moon > circle) {
+    transition: all .75s var(--ease-squish-3);
+  }
+}
+
+#moon, #sun {
+  fill: var(--nav-icon);
+
+  @nest :hover > svg > & {
+    fill: var(--nav-icon-hover);
+  }
+}
+
+#sun {
+  stroke: none;
+}
+
+#sun-beams {
+  stroke: var(--nav-icon);
+  stroke-width: 2px;
+  transform-origin: center center;
+
+  @nest  :hover > svg > & {
+    stroke: var(--nav-icon-hover);
+  }
+}
+
+[data-theme="light"] {
+  & #moon > circle {
+    cx: 24;
+    cy: 24;
+  }
+
+  & #sun {
+    r: 6;
+  }
+
+  & #sun-beams {
+    transform: rotateZ(.25turn);
+  }
+}
+
+[data-theme="dark"] {
+  & #moon > circle {
+    cx: 18;
+    cy: 8;
+  }
+
+  & #sun-beams {
+    opacity: 0;
+  }
 }
