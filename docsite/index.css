@@ -518,9 +518,11 @@ pre[class*="language-"] {
 
   & .size {
     color: var(--text-2);
+    font-size: var(--font-size-0);
 
     & > strong {
       color: var(--text-1);
+      font-size: var(--font-size-1);
     }
   }
 }
