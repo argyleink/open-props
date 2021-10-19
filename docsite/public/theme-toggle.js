@@ -1,5 +1,4 @@
 // theme toggle
-// todo: watch mq change event and toggle class for auto tests
 const getColorPreference = () => {
   if (localStorage.getItem('theme-preference'))
     return localStorage.getItem('theme-preference')
