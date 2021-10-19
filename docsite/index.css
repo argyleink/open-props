@@ -14,6 +14,10 @@
   }
 }
 
+html {
+  transition: background-color .5s var(--ease-in-2);
+}
+
 body {
   padding-block: var(--size-6);
   overflow-x: hidden;
@@ -1099,7 +1103,7 @@ input[type="range"] {
   background: none;
 
   & :is(#sun-beams, #sun, #moon > circle) {
-    transition: all .75s var(--ease-squish-3);
+    transition: all .5s var(--ease-elastic-4);
   }
 }
 

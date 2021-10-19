@@ -10,6 +10,11 @@ const getColorPreference = () => {
 }
 
 const setPreference = () => {
+  localStorage.setItem('theme-preference', theme.value)
+  reflectPreference()
+}
+
+const reflectPreference = () => {
   document.firstElementChild.setAttribute('data-theme', theme.value)
   document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value)
 
@@ -47,18 +52,24 @@ const theme = {
 }
 
 // set early so no page flashes
-setPreference()
+reflectPreference()
 
 window.onload = () => {
-  // set on load so screen readers can see latest value
-  setPreference()
+  // set on load so screen readers can see latest value on the button
+  reflectPreference()
 
   document.querySelector('#theme-toggle').addEventListener('click', e => {
     theme.value = theme.value === 'light'
       ? 'dark'
       : 'light'
 
-    localStorage.setItem('theme-preference', theme.value)
     setPreference()
   })
 }
+
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', ({matches:isDark}) => {
+    theme.value = isDark ? 'dark' : 'light'
+    setPreference()
+  })
