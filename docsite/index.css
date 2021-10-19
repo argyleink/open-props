@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  padding-block: var(--size-6);
+  padding-block-start: var(--size-fluid-2);
   overflow-x: hidden;
   display: grid;
   justify-items: flex-start;
@@ -176,20 +176,14 @@ footer {
   }
 
   & .icon-quote {
-    border-color: var(--grape-4);
-
-    & > svg {
-      stroke: var(--grape-5);
-    }
+    --_accent-1: var(--grape-5);
+    --_accent-2: var(--grape-4);
 
     @nest [data-theme="light"] & {
-      border-color: var(--orange-5);
-      background-color: var(--orange-0);
-      color: var(--orange-9);
-
-      & > svg {
-        stroke: var(--orange-7);
-      }
+      --_accent-1: var(--orange-7);
+      --_accent-2: var(--orange-5);
+      --_bg: var(--orange-0);
+      --_ink: var(--orange-9);
     }
   }
 
@@ -198,7 +192,7 @@ footer {
   }
 }
 
-:not(pre) > code[class*="language-"] {
+:root :not(pre) > code[class*="language-"] {
   padding: var(--size-1) var(--size-2);
   box-shadow: var(--inner-shadow-0), var(--shadow-1);
   white-space: nowrap;
@@ -232,42 +226,40 @@ code.language-bash::before {
 }
 
 blockquote {
-  border-color: var(--grape-5);
-  background-color: var(--surface-2);
+  --_accent-1: var(--lime-5);
+  --_accent-2: var(--lime-4);
+  --_bg: var(--surface-2);
+  --_ink: var(--text-1);
+
+  color: var(--_ink);
+  border-color: var(--_accent-2);
+  background-color: var(--_bg);
   justify-self: flex-start;
 
   &.icon-quote {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: var(--size-4);
-    border-color: var(--lime-5);
     align-items: center;
     padding-inline-end: var(--size-6);
 
-    @nest [data-theme="light"] & {
-      background-color: var(--lime-0);
-      color: var(--lime-9);
-    }
-
     & > svg {
       inline-size: var(--size-7);
-      stroke: var(--lime-3);
+      stroke: var(--_accent-2);
+    }
 
-      @nest [data-theme="light"] & {
-        stroke: var(--lime-5);
-      }
+    @nest [data-theme="light"] & {
+      --_bg: white;
+      --_ink: var(--lime-8);
     }
 
     &.indigo {
-      border-color: var(--indigo-5);
+      --_accent-1: var(--indigo-5);
+      --_accent-2: var(--indigo-4);
       
       @nest [data-theme="light"] & {
-        background-color: var(--indigo-0);
-        color: var(--indigo-9);
-      }
-
-      & > svg {
-        stroke: var(--indigo-4);
+        --_bg: var(--indigo-0);
+        --_ink: var(--indigo-9);
       }
     }
   }
