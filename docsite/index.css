@@ -9,9 +9,13 @@
     --max-inline-body: calc(100vw - (var(--size-3) * 2));
   }
 
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     --brand-bg-gradient: linear-gradient(to bottom, var(--grape-6), var(--violet-6), var(--indigo-6), var(--cyan-6));
   }
+}
+
+html {
+  transition: background-color .5s var(--ease-in-2);
 }
 
 body {
@@ -115,19 +119,11 @@ nav {
 }
 
 .github-icon {
-  fill: var(--gray-5);
+  fill: var(--nav-icon);
   stroke: none;
 
   @nest :hover > & {
-    fill: var(--gray-2);
-  }
-
-  @media (--OSlight) {
-    fill: var(--gray-7);
-
-    @nest :hover > & {
-      fill: var(--gray-9);
-    }
+    fill: var(--nav-icon-hover);
   }
 }
 
@@ -154,7 +150,7 @@ footer {
     -webkit-text-fill-color: transparent;
     background-attachment: unset;
 
-    @media (--OSdark) {
+    @nest [data-theme="dark"] & {
       --op-gradient-direction: to bottom right;
       background-image: var(--gradient-4);
     }
@@ -183,10 +179,10 @@ footer {
     border-color: var(--grape-4);
 
     & > svg {
-      stroke: var(--grape-2);
+      stroke: var(--grape-5);
     }
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       border-color: var(--orange-5);
       background-color: var(--orange-0);
       color: var(--orange-9);
@@ -214,17 +210,17 @@ pre > code[class*="language-"] {
 }
 
 pre[class*="language-"], code[class*="language-"] {
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     background: white;
   }
-  @media (--OSdark) {
+  @nest [data-theme="dark"] & {
     & *::selection {
       background: black;
     }
   }
 }
 
-@media (--OSlight) {
+@nest [data-theme="light"] {
   pre[class*="language-"], code[class*="language-"] {
     background: white;
   }
@@ -248,7 +244,7 @@ blockquote {
     align-items: center;
     padding-inline-end: var(--size-6);
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       background-color: var(--lime-0);
       color: var(--lime-9);
     }
@@ -257,7 +253,7 @@ blockquote {
       inline-size: var(--size-7);
       stroke: var(--lime-3);
 
-      @media (--OSlight) {
+      @nest [data-theme="light"] & {
         stroke: var(--lime-5);
       }
     }
@@ -265,7 +261,7 @@ blockquote {
     &.indigo {
       border-color: var(--indigo-5);
       
-      @media (--OSlight) {
+      @nest [data-theme="light"] & {
         background-color: var(--indigo-0);
         color: var(--indigo-9);
       }
@@ -282,7 +278,7 @@ pre[class*="language-"] {
   max-inline-size: var(--max-inline-body);
   justify-self: flex-start;
 
-  @media (--OSdark) {
+  @nest [data-theme="dark"] & {
     box-shadow: var(--shadow-3);
   }
 }
@@ -305,7 +301,7 @@ pre[class*="language-"] {
     color: var(--text-1);
     text-decoration-color: var(--brand);
   }
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     background-image: linear-gradient(to top, hsl(210deg 17% 98% / 98%) 1ch, 75%, hsl(210deg 17% 98% / 0%));
   }
 
@@ -344,7 +340,7 @@ pre[class*="language-"] {
   color: var(--indigo-3);
   letter-spacing: var(--font-letterspacing-4);
 
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     color: var(--indigo-7);
   }
   
@@ -362,7 +358,7 @@ pre[class*="language-"] {
   stroke: var(--indigo-6);
   @nest a:hover & { stroke: var(--indigo-4); }
 
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     stroke: var(--indigo-8);
     @nest a:hover & { stroke: var(--indigo-9); }
   }
@@ -372,7 +368,7 @@ pre[class*="language-"] {
   stroke: var(--indigo-4);
   @nest a:hover & { stroke: var(--indigo-3); }
   
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     stroke: var(--indigo-5);
     @nest a:hover & { stroke: var(--indigo-6); }
   }
@@ -536,7 +532,7 @@ pre[class*="language-"] {
   color: var(--yellow-2);
   border-radius: var(--radius-round);
 
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     border-color: var(--orange-2);
     color: var(--orange-6);
   }
@@ -549,7 +545,7 @@ pre[class*="language-"] {
   color: var(--lime-2);
   border-radius: var(--radius-round);
 
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     border-color: var(--green-2);
     color: var(--green-6);
   }
@@ -692,7 +688,7 @@ pre[class*="language-"] {
     margin-block-start: var(--size-5);
     border-bottom: var(--border-size-1) solid var(--violet-5);
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       color: var(--violet-6);
     }
   }
@@ -712,7 +708,7 @@ pre[class*="language-"] {
     display: grid;
     place-content: center;
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       background: white;
     }
   }
@@ -752,7 +748,7 @@ pre[class*="language-"] {
       animation: ping-pong 2s ease infinite;
     }
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       color: white;
     }
   }
@@ -810,7 +806,7 @@ pre[class*="language-"] {
       content: "Inner Shadow " counter(basic);
     }
 
-    @media (--OSdark) {
+    @nest [data-theme="dark"] & {
       background: var(--surface-2);
     }
   }
@@ -849,7 +845,7 @@ pre[class*="language-"] {
     fill: currentColor;
     color: var(--green-3);
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       color: var(--green-6);        
     }
   }
@@ -857,7 +853,7 @@ pre[class*="language-"] {
   &:hover > svg {
     color: var(--green-4);
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       color: var(--green-7);        
     }
   }
@@ -865,7 +861,7 @@ pre[class*="language-"] {
   &:active > svg {
     color: var(--green-5);
 
-    @media (--OSlight) {
+    @nest [data-theme="light"] & {
       color: var(--green-8);        
     }
   }
@@ -937,7 +933,7 @@ input[type="range"] {
     }
   }
 
-  @media (--OSlight) {
+  @nest [data-theme="light"] & {
     --thumb-highlight-color: hsl(0 0% 0% / 20%);
   }
 
@@ -1048,4 +1044,113 @@ input[type="range"] {
     var(--animation-fade-out)
   ;
   animation-timing-function: var(--ease-squish-4) !important;
+}
+
+
+/* no way out of this duplication afaik */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --brand: var(--pink-6);
+
+  --link: var(--indigo-7);
+  --link-visited: var(--grape-7);
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+
+  --nav-icon: var(--gray-7);
+  --nav-icon-hover: var(--gray-9);
+
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+
+  @media (--HDcolor) {
+    --link: color(display-p3 0 .5 1);
+    --link-visited: color(display-p3 .6 .2 1);
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand: var(--pink-4);
+
+  --link: var(--indigo-3);
+  --link-visited: var(--grape-3);
+
+  --text-1: var(--gray-1);
+  --text-2: var(--gray-2);
+
+  --surface-1: var(--gray-9);
+  --surface-2: var(--gray-8);
+  --surface-3: var(--gray-7);
+  --surface-4: var(--gray-6);
+
+  --nav-icon: var(--gray-5);
+  --nav-icon-hover: var(--gray-2);
+
+  --shadow-strength: 25%;
+  --shadow-color: 220 40% 2%;
+}
+
+#theme-toggle {
+  background: none;
+
+  & :is(#sun-beams, #sun, #moon > circle) {
+    transition: all .5s var(--ease-elastic-4);
+  }
+}
+
+#moon, #sun {
+  fill: var(--nav-icon);
+
+  @nest :hover > svg > & {
+    fill: var(--nav-icon-hover);
+  }
+}
+
+#sun {
+  stroke: none;
+}
+
+#sun-beams {
+  stroke: var(--nav-icon);
+  stroke-width: 2px;
+  transform-origin: center center;
+
+  @nest  :hover > svg > & {
+    stroke: var(--nav-icon-hover);
+  }
+}
+
+[data-theme="light"] {
+  & #moon > circle {
+    cx: 24;
+    cy: 24;
+  }
+
+  & #sun {
+    r: 6;
+  }
+
+  & #sun-beams {
+    transform: rotateZ(.25turn);
+  }
+}
+
+[data-theme="dark"] {
+  & #moon > circle {
+    cx: 18;
+    cy: 8;
+  }
+
+  & #sun-beams {
+    opacity: 0;
+  }
 }
