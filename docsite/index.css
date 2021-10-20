@@ -124,13 +124,39 @@ nav {
 }
 
 footer {
-  padding-block: var(--size-10);
+  padding-block: var(--size-12);
   display: grid;
-  place-content: center;
-  justify-self: stretch;
+  grid-template-columns: minmax(min(100%, var(--size-content-3)), 80%);
+  gap: var(--size-8);
+  justify-content: space-around;
   border-top-width: var(--border-size-1);
   border-color: var(--surface-3);
   background-color: var(--surface-2);
+
+  & > a {
+    justify-self: center;
+  }
+
+  & dl {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--size-fluid-6);
+
+    @media (--md-n-below) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    & > div {
+      display: grid;
+      gap: var(--size-2);
+    }
+
+    & dt {
+      font-size: var(--font-size-0);
+      text-transform: uppercase;
+    }
+  }
 }
 
 .hero {
@@ -162,6 +188,8 @@ footer {
       animation-timing-function: 
         var(--ease-3),
         var(--ease-5);
+      animation-duration:
+        .75s, 1s;
 
       &:nth-child(2) {
         animation-delay: 
@@ -862,6 +890,14 @@ pre[class*="language-"] {
   flex-flow: row wrap;
   gap: var(--size-4);
   align-items: flex-start;
+
+  &.of-pairs {
+    gap: var(--size-8) var(--size-4);
+  }
+
+  & .language-css {
+    margin-block: 0;
+  }
 }
 
 .animation-demo-target {
@@ -871,6 +907,22 @@ pre[class*="language-"] {
   padding-inline: var(--size-5);
   padding-block: var(--size-3);
   border-radius: var(--radius-2);
+}
+
+.animation-pair {
+  display: grid;
+  grid-template-columns: auto max-content;
+  gap: var(--size-6) var(--size-3);
+  align-items: flex-start;
+  justify-items: flex-start;
+
+  & .block-wrap {
+    row-gap: var(--size-1);
+  }
+
+  @media (--md-n-below) {
+    grid-template-columns: auto;
+  }
 }
 
 .sizes-demo {
@@ -1024,8 +1076,7 @@ input[type="range"] {
   --animation-slide-left-fade-in-shake-y: 
     var(--animation-shake-y),
     var(--animation-fade-in),
-    var(--animation-slide-in-left)
-  ;
+    var(--animation-slide-in-left);
 }
 
 .push-out-combo {
