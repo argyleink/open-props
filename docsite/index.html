@@ -126,7 +126,7 @@
             border-radius: var(--radius-2);
             padding: var(--size-fluid-3);
             box-shadow: var(--shadow-2);
-            
+
             color: var(--blue-8);
             background-color: var(--blue-0);
             border: var(--border-size-1) solid var(--blue-1);
@@ -399,7 +399,12 @@
     <section id="getting-started">
       <header>
         <h2>Getting Started</h2>
-        <p>Modern CSS and <a href="https://postcss.org/">PostCSS</a> versions available.</p>
+        <p>CSS and <a href="https://postcss.org/">PostCSS</a> available.</p>
+        <ul>
+          <li><a href="#cdn">CDN</a></li>
+          <li><a href="#jitprops">Jit Props</a> <small class="green-badge">PostCSS</small></li>
+          <li><a href="#npm">NPM</a></li>
+        </ul>
       </header>
       <article class="installation">
         <header>
@@ -407,7 +412,7 @@
           <p>Grab the props with a URL or from NPM.</p>
         </header>
 
-        <div class="block-wrap">
+        <div class="block-wrap" id="cdn">
           <div class="contain-pre">
             <h4>CDN</h4>
             <blockquote class="icon-quote indigo">
@@ -475,7 +480,7 @@
               </code></pre>
             </div>
 
-            <h5>PostCSS JIT Props</h5>
+            <h5 id="jitprops">PostCSS JIT Props</h5>
             <blockquote>
               <p>Ship only what you use! 
                 <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a></p>
@@ -519,7 +524,7 @@
             </div>
           </div>
 
-          <div class="contain-pre">
+          <div class="contain-pre" id="npm">
             <div>
               <h4>NPM</h4>
               <pre class="language-bash"><code>npm install open-props</code></pre>
