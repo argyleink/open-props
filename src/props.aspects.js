@@ -1,11 +1,10 @@
 const Aspects = {
-  '--aspect-box': '1',
-  '--aspect-landscape': '4/3',
-  '--aspect-portrait': '3/4',
-  '--aspect-widescreen': '16/9',
-  '--aspect-ultrawide': '18/5',
-  
-  '--golden-ratio': '1.6180/1',
+  '--ratio-box': '1',
+  '--ratio-landscape': '4/3',
+  '--ratio-portrait': '3/4',
+  '--ratio-widescreen': '16/9',
+  '--ratio-ultrawide': '18/5',
+  '--ratio-golden': '1.6180/1',
 }
 
 export default Aspects
