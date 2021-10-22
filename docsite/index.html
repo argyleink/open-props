@@ -399,12 +399,7 @@
     <section id="getting-started">
       <header>
         <h2>Getting Started</h2>
-        <p>CSS and <a href="https://postcss.org/">PostCSS</a> available.</p>
-        <ul>
-          <li><a href="#cdn">CDN</a></li>
-          <li><a href="#jitprops">Jit Props</a> <small class="green-badge">PostCSS</small></li>
-          <li><a href="#npm">NPM</a></li>
-        </ul>
+        <p>CSS and <a href="https://postcss.org/">PostCSS</a> available. Props as Javascript also available.</p>
       </header>
       <article class="installation">
         <header>
@@ -422,164 +417,51 @@
               <p>No install step required.</p>
             </blockquote>
 
-            <h5>CSS</h5>
-            <div>
-              <h6>Bundles</h6>
-              <div class="block-wrap">
+            <details class="started-details">
+              <summary>CSS CDN Import Examples</summary>
+              <div>
+                <h6>Bundles</h6>
+                <div class="block-wrap">
+                  <pre class="language-css"><code>
+                    /* index.css */
+                    @import "https://unpkg.com/open-props";
+                    @import "https://unpkg.com/open-props/normalize.css";
+                  </code></pre>
+
+                  <pre class="language-html"><code>
+                    &#60;!-- index.html --&#62;
+                    &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+                    &#60;link rel="stylesheet" href="https://unpkg.com/open-props/normalize.css"/&#62;
+                  </code></pre>
+
+                  <pre class="language-js"><code>
+                    // index.js
+                    import 'https://unpkg.com/open-props';
+                    import 'https://unpkg.com/open-props/normalize.css';
+                  </code></pre>
+                </div>
+
+                <h6>Individual packs</h6>
                 <pre class="language-css"><code>
                   /* index.css */
-                  @import "https://unpkg.com/open-props";
-                  @import "https://unpkg.com/open-props/normalize.css";
-                </code></pre>
-
-                <pre class="language-html"><code>
-                  &#60;!-- index.html --&#62;
-                  &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
-                  &#60;link rel="stylesheet" href="https://unpkg.com/open-props/normalize.css"/&#62;
-                </code></pre>
-
-                <pre class="language-js"><code>
-                  // index.js
-                  import 'https://unpkg.com/open-props';
-                  import 'https://unpkg.com/open-props/normalize.css';
-                </code></pre>
-              </div>
-            </div>
-
-            <div>
-              <h6>Individual packs</h6>
-              <pre class="language-css"><code>
-                /* index.css */
-                @import "https://unpkg.com/open-props/colors.css";
-                @import "https://unpkg.com/open-props/orange.css";
-                @import "https://unpkg.com/open-props/easings.css";
-                @import "https://unpkg.com/open-props/sizes.css";
-                /* etc */
-              </code></pre>
-            </div>
-
-            <h5>PostCSS</h5>
-            <div>
-              <h6>Entry Points</h6>
-              <pre class="language-css"><code>
-                /* index.pcss */
-                @import "https://unpkg.com/open-props/src/index.css";
-                @import "https://unpkg.com/open-props/src/extra/normalize.css";
-              </code></pre>
-            </div>
-
-            <div>
-              <h6>Individual packs</h6>
-              <pre class="language-css"><code>
-                /* index.pcss */
-                @import "https://unpkg.com/open-props/src/props.colors.css";
-                @import "https://unpkg.com/open-props/src/props.orange.css";
-                @import "https://unpkg.com/open-props/src/props.easings.css";
-                @import "https://unpkg.com/open-props/src/props.sizes.css";
-                /* etc */
-              </code></pre>
-            </div>
-
-            <h5 id="jitprops">PostCSS JIT Props</h5>
-            <blockquote>
-              <p>Ship only what you use! 
-                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a></p>
-            </blockquote>
-
-            <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
-
-            <div class="block-wrap">
-              <div>
-                <h6>Props as Javascript</h6>
-                <pre class="language-js"><code>
-                  // postcss.config.js
-                  const postcssJitProps = require('postcss-jit-props');
-                  const OpenProps = require('open-props');
-                  
-                  module.exports = {
-                    plugins: [
-                      postcssJitProps(OpenProps),
-                    ]
-                  }
-                </code></pre>
-              </div>
-              <div>
-                <h6>Props from CSS</h6>
-                <pre class="language-js"><code>
-                  // postcss.config.js
-                  const postcssJitProps = require('postcss-jit-props');
-                  const OpenProps = require('open-props');
-                  
-                  module.exports = {
-                    plugins: [
-                      postcssJitProps({
-                        files: [
-                          require('open-props/props.css'),
-                        ]
-                      }),
-                    ]
-                  }
-                </code></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="contain-pre" id="npm">
-            <div>
-              <h4>NPM</h4>
-              <pre class="language-bash"><code>npm install open-props</code></pre>
-            </div>
-            
-            <h5>CSS</h5>
-            <div>
-              <h6>Bundles</h6>
-              <div class="block-wrap">
-                <pre class="language-css"><code>
-                  /* index.pcss */
-                  @import "open-props";
-                  @import "open-props/normalize.css";
-                </code></pre>
-
-                <pre class="language-js"><code>
-                  // index.js
-                  import 'open-props';
-                  import 'open-props/normalize.css';
-                </code></pre>
-              </div>
-            </div>
-
-            <div>
-              <h6>Individual packs</h6>
-              <div class="block-wrap">
-                <pre class="language-css"><code>
-                  /* index.pcss */
-                  @import "open-props/sizes.css";
-                  @import "open-props/colors.css";
-                  @import "open-props/orange.css";
-                  @import "open-props/gradients.css";
-                  /* etc */
-                </code></pre>
-
-                <pre class="language-js"><code>
-                  // index.js
-                  import 'open-props/sizes.css';
-                  import 'open-props/colors.css';
-                  import 'open-props/orange.css';
-                  import 'open-props/gradients.css';
+                  @import "https://unpkg.com/open-props/colors.css";
+                  @import "https://unpkg.com/open-props/orange.css";
+                  @import "https://unpkg.com/open-props/easings.css";
+                  @import "https://unpkg.com/open-props/sizes.css";
                   /* etc */
                 </code></pre>
               </div>
-            </div>
+            </details>
 
-            <h5>PostCSS</h5>
+            <details class="started-details">
+              <summary>PostCSS CDN Import Examples</summary>
 
-            <div class="block-wrap">
               <div>
-                <h6>Entry points</h6>
+                <h6>Entry Points</h6>
                 <pre class="language-css"><code>
                   /* index.pcss */
-                  @import "open-props/src/index.css";
-                  @import "open-props/src/extra/normalize.css";
+                  @import "https://unpkg.com/open-props/src/index.css";
+                  @import "https://unpkg.com/open-props/src/extra/normalize.css";
                 </code></pre>
               </div>
 
@@ -587,14 +469,147 @@
                 <h6>Individual packs</h6>
                 <pre class="language-css"><code>
                   /* index.pcss */
-                  @import "open-props/src/props.sizes.css";
-                  @import "open-props/src/props.orange.css";
-                  @import "open-props/src/props.aspects.css";
-                  @import "open-props/src/props.easings.css";
+                  @import "https://unpkg.com/open-props/src/props.colors.css";
+                  @import "https://unpkg.com/open-props/src/props.orange.css";
+                  @import "https://unpkg.com/open-props/src/props.easings.css";
+                  @import "https://unpkg.com/open-props/src/props.sizes.css";
                   /* etc */
                 </code></pre>
               </div>
-            </div>
+            </details>
+
+            <h5 id="jitprops">PostCSS JIT Props</h5>
+            <blockquote>
+              <p>Only ship the props used! 
+                <a href="https://github.com/argyleink/postcss-jit-props">Learn more</a></p>
+            </blockquote>
+
+            <details class="started-details">
+              <summary>PostCSS Plugin Setup Examples</summary>
+
+              <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
+
+              <div class="block-wrap">
+                <div>
+                  <h6>Props as Javascript</h6>
+                  <pre class="language-js"><code>
+                    // postcss.config.js
+                    const postcssJitProps = require('postcss-jit-props');
+                    const OpenProps = require('open-props');
+                    
+                    module.exports = {
+                      plugins: [
+                        postcssJitProps(OpenProps),
+                      ]
+                    }
+                  </code></pre>
+                </div>
+                <div>
+                  <h6>Props from CSS</h6>
+                  <pre class="language-js"><code>
+                    // postcss.config.js
+                    const postcssJitProps = require('postcss-jit-props');
+                    const OpenProps = require('open-props');
+                    
+                    module.exports = {
+                      plugins: [
+                        postcssJitProps({
+                          files: [
+                            require('open-props/props.css'),
+                          ]
+                        }),
+                      ]
+                    }
+                  </code></pre>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="contain-pre" id="npm">
+            <h4>NPM</h4>
+            <pre class="language-bash"><code>npm install open-props</code></pre>
+
+            <details class="started-details">
+              <summary>CSS NPM Import Examples</summary>
+              <div>
+                <h6>Bundles</h6>
+                <div class="block-wrap">
+                  <pre class="language-css"><code>
+                    /* index.pcss */
+                    @import "open-props";
+                    @import "open-props/normalize.css";
+                  </code></pre>
+
+                  <pre class="language-js"><code>
+                    // index.js
+                    import 'open-props';
+                    import 'open-props/normalize.css';
+                  </code></pre>
+                </div>
+              </div>
+
+              <div>
+                <h6>Individual packs</h6>
+                <div class="block-wrap">
+                  <pre class="language-css"><code>
+                    /* index.pcss */
+                    @import "open-props/sizes.css";
+                    @import "open-props/colors.css";
+                    @import "open-props/orange.css";
+                    @import "open-props/gradients.css";
+                    /* etc */
+                  </code></pre>
+
+                  <pre class="language-js"><code>
+                    // index.js
+                    import 'open-props/sizes.css';
+                    import 'open-props/colors.css';
+                    import 'open-props/orange.css';
+                    import 'open-props/gradients.css';
+                    /* etc */
+                  </code></pre>
+                </div>
+              </div>
+            </details>
+            
+            <details class="started-details">
+              <summary>PostCSS NPM Import Examples</summary>
+
+              <div class="block-wrap">
+                <div>
+                  <h6>Entry points</h6>
+                  <pre class="language-css"><code>
+                    /* index.pcss */
+                    @import "open-props/src/index.css";
+                    @import "open-props/src/extra/normalize.css";
+                  </code></pre>
+                </div>
+
+                <div>
+                  <h6>Individual packs</h6>
+                  <pre class="language-css"><code>
+                    /* index.pcss */
+                    @import "open-props/src/props.sizes.css";
+                    @import "open-props/src/props.orange.css";
+                    @import "open-props/src/props.aspects.css";
+                    @import "open-props/src/props.easings.css";
+                    /* etc */
+                  </code></pre>
+                </div>
+              </div>
+            </details>
+
+
+            <blockquote class="icon-quote">
+              <svg viewBox="0 0 24 24">
+                <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p>
+                <b>Need help?</b> <br>
+                Ask a question on <a href="https://discord.gg/AqA4fU886r">Discord!</a>
+              </p>
+            </blockquote>
           </div>
         </div>
       </article>
