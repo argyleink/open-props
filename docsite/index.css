@@ -365,10 +365,22 @@ pre[class*="language-"] {
   }
 
   & h3 {
-    color: var(--text-1);
+    color: var(--gray-9);
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
+
+    @nest [data-theme="light"] & {
+      color: var(--gray-1);
+    }
+  }
+
+  & date {
+    color: var(--gray-8);
+
+    @nest [data-theme="light"] & {
+      color: var(--gray-2);
+    }
   }
 }
 
