@@ -374,6 +374,7 @@ pre[class*="language-"] {
 
 .module-list {
   position: sticky;
+  z-index: var(--layer-1);
   bottom: 0;
   overflow-x: auto;
 
