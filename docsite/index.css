@@ -461,12 +461,12 @@ pre[class*="language-"] {
 }
 
 .op-icon-p {
-  stroke: var(--indigo-6);
-  @nest a:hover & { stroke: var(--indigo-4); }
+  stroke: var(--indigo-2);
+  @nest a:hover & { stroke: var(--indigo-1); }
 
   @nest [data-theme="light"] & {
-    stroke: var(--indigo-8);
-    @nest a:hover & { stroke: var(--indigo-9); }
+    stroke: var(--indigo-9);
+    @nest a:hover & { stroke: var(--indigo-8); }
   }
 }
 
