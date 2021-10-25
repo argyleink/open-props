@@ -911,7 +911,7 @@ pre[class*="language-"] {
       content: "Shadow " counter(basic);
     }
 
-    &:nth-child(n+5)::before {
+    &:nth-child(n+7)::before {
       content: "Inner Shadow " counter(basic);
     }
 
@@ -1227,7 +1227,7 @@ input[type="range"] {
   --nav-icon: var(--gray-5);
   --nav-icon-hover: var(--gray-2);
 
-  --shadow-strength: 25%;
+  --shadow-strength: 10%;
   --shadow-color: 220 40% 2%;
 }
 
