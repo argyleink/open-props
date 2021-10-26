@@ -17,11 +17,11 @@ const Easings = {
   '--ease-out-4': 'cubic-bezier(0, 0, .1, 1)',
   '--ease-out-5': 'cubic-bezier(0, 0, 0, 1)',
 
-  '--ease-inout-1': 'cubic-bezier(.1, 0, .9, 1)',
-  '--ease-inout-2': 'cubic-bezier(.3, 0, .7, 1)',
-  '--ease-inout-3': 'cubic-bezier(.5, 0, .5, 1)',
-  '--ease-inout-4': 'cubic-bezier(.7, 0, .3, 1)',
-  '--ease-inout-5': 'cubic-bezier(.9, 0, .1, 1)',
+  '--ease-in-out-1': 'cubic-bezier(.1, 0, .9, 1)',
+  '--ease-in-out-2': 'cubic-bezier(.3, 0, .7, 1)',
+  '--ease-in-out-3': 'cubic-bezier(.5, 0, .5, 1)',
+  '--ease-in-out-4': 'cubic-bezier(.7, 0, .3, 1)',
+  '--ease-in-out-5': 'cubic-bezier(.9, 0, .1, 1)',
 
   '--ease-elastic-1': 'cubic-bezier(.5, .75, .75, 1.25)',
   '--ease-elastic-2': 'cubic-bezier(.5, 1, .75, 1.25)',
