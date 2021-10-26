@@ -727,6 +727,10 @@ pre[class*="language-"] {
   }
 }
 
+.easing-samples {
+  flex-basis: var(--size-content-3);
+}
+
 .checkmark-list ::marker {
   content:"✅ ";
 }
@@ -847,6 +851,7 @@ pre[class*="language-"] {
   }
 
   & > div {
+    font-weight: var(--font-weight-6);
     padding-inline: var(--size-4);
     padding-block: var(--size-1);
     color: var(--surface-1);
