@@ -162,6 +162,10 @@ footer {
 section.hero {
   gap: var(--size-fluid-3);
 
+  & pre[class*="language-"] {
+    box-shadow: var(--shadow-6);
+  }
+
   @media (--lg-n-above) {
     column-gap: var(--size-15);    
   }
@@ -170,47 +174,6 @@ section.hero {
 .hero > header {
   display: grid;
   gap: var(--size-3);
-
-  & > h1 > div {
-    line-height: var(--font-lineheight-1);
-    font-size: var(--font-size-fluid-3);
-    --op-gradient-direction: to right;
-    background-image: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-attachment: unset;
-
-    @nest [data-theme="dark"] & {
-      --op-gradient-direction: to bottom right;
-      background-image: var(--gradient-4);
-    }
-
-    @media (--motionOK) {
-      opacity: 0;
-      animation: 
-        var(--animation-fade-in) forwards,
-        var(--animation-slide-in-right) forwards;
-      animation-delay: 
-        .75s,
-        .5s;
-      animation-timing-function: 
-        var(--ease-3),
-        var(--ease-5);
-      animation-duration:
-        1.25s, 1.5s;
-
-      &:nth-child(2) {
-        animation: 
-          var(--animation-fade-in) forwards,
-          var(--animation-slide-in-right) forwards;
-        animation-delay: 
-          1s,
-          1s;
-        animation-duration:
-          1.75s, 1.5s;
-      }
-    }
-  }
 
   & .icon-quote {
     --_accent-1: var(--grape-5);
@@ -226,6 +189,39 @@ section.hero {
 
   & small {
     color: var(--gray-6);
+  }
+}
+
+.hero .subhead > h1 {
+  overflow: clip;
+
+  & > div {
+    --op-gradient-direction: to right;
+    background-image: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-attachment: unset;
+
+    @nest [data-theme="dark"] & {
+      --op-gradient-direction: to bottom right;
+      background-image: var(--gradient-4);
+    }
+  }
+
+  @media (--motionOK) {
+    & > div {
+      opacity: 0;
+      animation: 
+        var(--animation-fade-in) forwards,
+        var(--animation-slide-in-up) forwards;
+      animation-timing-function: var(--ease-out-5);
+      animation-delay: .5s;
+    }
+
+    &:last-of-type > div {
+      animation-delay: .75s;
+      animation-timing-function: var(--ease-out-5);
+    }
   }
 }
 
@@ -310,6 +306,7 @@ pre[class*="language-"] {
 
   @nest [data-theme="dark"] & {
     box-shadow: var(--shadow-3);
+    background: var(--surface-2);
   }
 }
 
@@ -331,7 +328,7 @@ pre[class*="language-"] {
   flex-basis: var(--size-content-2);
   border-radius: var(--radius-3);
   overflow: hidden;
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--shadow-4);
   gap: 0;
 }
 
