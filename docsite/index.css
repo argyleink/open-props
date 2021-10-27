@@ -387,9 +387,13 @@ pre[class*="language-"] {
     @nest [data-theme="light"] & {
       color: var(--gray-8);
     }
+
+    & > a {
+      color: inherit;
+    }
   }
 
-  & date {
+  & p {
     color: var(--gray-2);
 
     @nest [data-theme="light"] & {
