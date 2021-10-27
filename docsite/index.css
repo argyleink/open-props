@@ -164,6 +164,11 @@ section.hero {
 
   & pre[class*="language-"] {
     box-shadow: var(--shadow-6);
+    margin: 0;
+
+    &:last-of-type {
+      margin-block: var(--size-5) 0;
+    }
   }
 
   @media (--lg-n-above) {
@@ -173,7 +178,9 @@ section.hero {
 
 .hero > header {
   display: grid;
-  gap: var(--size-3);
+  gap: var(--size-5);
+  grid-template-rows: auto 2fr auto;
+  align-self: stretch;
 
   & .icon-quote {
     --_accent-1: var(--grape-5);
@@ -189,13 +196,15 @@ section.hero {
 
   & small {
     color: var(--gray-6);
+    align-self: flex-end;
   }
 }
 
 .hero .subhead > h1 {
   overflow: clip;
+  font-size: var(--font-size-fluid-3);
 
-  & > div {
+  & > * {
     --op-gradient-direction: to right;
     background-image: var(--gradient-1);
     -webkit-background-clip: text;
@@ -209,7 +218,7 @@ section.hero {
   }
 
   @media (--motionOK) {
-    & > div {
+    & > * {
       opacity: 0;
       animation: 
         var(--animation-fade-in) forwards,
@@ -218,9 +227,17 @@ section.hero {
       animation-delay: .5s;
     }
 
-    &:last-of-type > div {
-      animation-delay: .75s;
+    & > span {
+      display: inline-block;
       animation-timing-function: var(--ease-out-5);
+    }
+
+    &:last-of-type > span:first-child {
+      animation-delay: .6s;
+    }
+
+    &:last-of-type > span:last-child {
+      animation-delay: .7s;
     }
   }
 }
@@ -728,8 +745,17 @@ pre[class*="language-"] {
   flex-basis: var(--size-content-3);
 }
 
-.checkmark-list ::marker {
-  content:"✅ ";
+.checkmark-list {
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-2);
+
+  & > li {
+    padding-inline-start: var(--size-3);
+  }
+
+  & ::marker {
+    content:"✅ ";
+  }
 }
 
 .bundle-sizes {
@@ -737,6 +763,16 @@ pre[class*="language-"] {
 
   @media (--lg-n-above) {
     column-gap: var(--size-15);
+  }
+}
+
+.marketing-features {
+  & dt {
+    font-size: var(--font-size-4);
+  }
+  & dd {
+    font-size: var(--font-size-fluid-1);
+    max-inline-size: var(--size-header-2);
   }
 }
 
@@ -777,7 +813,7 @@ pre[class*="language-"] {
   }
 
   & svg {
-    inline-size: var(--size-12);
+    inline-size: var(--size-fluid-10);
     border-width: var(--border-size-2);
     border-radius: var(--radius-round);
     padding: var(--size-2);
