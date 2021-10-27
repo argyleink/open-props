@@ -48,10 +48,10 @@ const Fonts = {
   '--font-size-7': '3rem',
   '--font-size-8': '3.5rem',
 
-  '--font-size-fluid-0': 'clamp(.75rem, 1.5vw, 1rem)',
-  '--font-size-fluid-1': 'clamp(1rem, 2vw, 1.5rem)',
-  '--font-size-fluid-2': 'clamp(1.5rem, 3vw, 2.5rem)',
-  '--font-size-fluid-3': 'clamp(2rem, 4vw, 3.5rem)',
+  '--font-size-fluid-0': 'clamp(.75rem, 2vw, 1rem)',
+  '--font-size-fluid-1': 'clamp(1rem, 4vw, 1.5rem)',
+  '--font-size-fluid-2': 'clamp(1.5rem, 6vw, 2.5rem)',
+  '--font-size-fluid-3': 'clamp(2rem, 9vw, 3.5rem)',
 }
 
 export default Fonts
