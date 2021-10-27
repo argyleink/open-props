@@ -1287,7 +1287,8 @@ input[type="range"] {
 }
 
 #sun {
-  transition: r .5s var(--ease-elastic-4)
+  transition: transform .5s var(--ease-4);
+  transform-origin: center center;
 }
 
 #sun-beams {
@@ -1305,12 +1306,12 @@ input[type="range"] {
 }
 
 #moon > circle {
-  transition: cx .5s var(--ease-out-3);
+  transition: transform .5s var(--ease-out-3);
 }
 
 [data-theme="light"] {
   & #sun {
-    r: 6;
+    transform: scale(.5);
   }
 
   & #sun-beams {
@@ -1321,7 +1322,7 @@ input[type="range"] {
 
 [data-theme="dark"] {
   & #moon > circle {
-    cx: 18;
+    transform: translateX(-20px);
   }
 
   & #sun-beams {
