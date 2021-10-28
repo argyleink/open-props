@@ -11,6 +11,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
+    "postcss-easings": "^3.0.1",
     "postcss-preset-env": "6.7.x",
     "vite": "2.6.1"
   }
