@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "docsite/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
