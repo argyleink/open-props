@@ -164,7 +164,7 @@ section.hero {
 
   & pre[class*="language-"] {
     box-shadow: var(--shadow-6);
-    margin: 0;
+    margin-block: 0;
 
     &:last-of-type {
       margin-block: var(--size-5) 0;
@@ -202,7 +202,9 @@ section.hero {
 
 .hero .subhead > h1 {
   overflow: clip;
-  font-size: var(--font-size-fluid-3);
+  font-size: var(--font-size-5);
+
+  @media (--xs-n-above) { font-size: var(--font-size-fluid-3) }
 
   & > * {
     --op-gradient-direction: to right;
