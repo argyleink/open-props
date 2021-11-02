@@ -346,15 +346,18 @@ pre[class*="language-"] {
   }
 }
 
-.demo-gallery > figure {
+.demo-gallery > * {
   flex-basis: var(--size-content-2);
+}
+
+.demo-gallery figure {
   border-radius: var(--radius-3);
   overflow: hidden;
   box-shadow: var(--shadow-4);
   gap: 0;
 }
 
-.demo-gallery > figure > figcaption {
+.demo-gallery figure > figcaption {
   display: grid;
   grid: [stack] 1fr / [stack] 1fr;
   position: relative;
