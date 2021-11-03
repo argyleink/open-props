@@ -1,0 +1,40 @@
+let containers = [];
+let linkMap = {};
+let matches = new Set();
+const scrollNavLinkSelector = '#scroll-nav li a';
+
+// Find out what the IDs are for the parent containers
+// <a href="#colors"></a> => <section id="colors"></section>
+for(let link of document.querySelectorAll(scrollNavLinkSelector)) {
+  const containerId = link.href.replace(`${location.origin}/`, '');
+  const container = document.querySelector(containerId);
+  containers = [...containers, container];
+  linkMap[containerId] = document.querySelector(`a[href="${containerId}"]`);
+}
+
+let observer = new IntersectionObserver(entries => {
+  for(let entry of entries) {
+    // Get the id of the container
+    const id = entry.target.id;
+    // Find it's corresponding link
+    const link = linkMap[`#` + id];
+    // Highlight the link of the interesecting container
+    // and remove any existing containers
+    if(entry.isIntersecting) {
+      link.style.color = 'var(--violet-3)';
+      for (let match of matches) {
+        const matchedLink = linkMap[`#${match}`];
+        matchedLink.style.color = 'unset';
+      }
+      matches.add(id);
+    } else {
+      // Delete entries once they no longer intersect
+      matches.delete(id);
+      link.style.color = 'unset';
+    }
+  }
+});
+
+for (let container of containers) {
+  observer.observe(container);      
+}
