@@ -25,6 +25,7 @@ let observer = new IntersectionObserver(entries => {
       for (let match of matches) {
         const matchedLink = linkMap[`#${match}`];
         matchedLink.style.color = 'unset';
+        matches.delete(id);
       }
       matches.add(id);
     } else {
@@ -33,7 +34,10 @@ let observer = new IntersectionObserver(entries => {
       link.style.color = 'unset';
     }
   }
-});
+  // Set a threshold of 10% of the target's visibility to trigger the 
+  // observer's calback. This will trigger the new section faster and
+  // help keep multiple sections higlighted.
+}, { threshold: .1 });
 
 for (let container of containers) {
   observer.observe(container);      
