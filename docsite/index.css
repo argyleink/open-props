@@ -330,6 +330,11 @@ pre[class*="language-"] {
     box-shadow: var(--shadow-3);
     background: var(--surface-2);
   }
+
+  @nest [data-theme="dark"] details & {
+    background: var(--surface-1);
+    max-inline-size: calc(var(--max-inline-body) - (var(--size-3) * 2));
+  }
 }
 
 .adaptive-glass {
@@ -758,15 +763,41 @@ pre[class*="language-"] {
 }
 
 .checkmark-list {
+  align-self: flex-start;
+  display: grid;
+  gap: var(--size-2);
   font-size: var(--font-size-fluid-1);
   font-weight: var(--font-weight-2);
+  padding-inline-start: 0;
 
   & > li {
-    padding-inline-start: var(--size-3);
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    padding-inline-start: 0;
+
+    &:nth-child(1) svg {
+      stroke: var(--cyan-3);
+      @nest [data-theme="light"] & {
+        stroke: var(--grape-8);
+      }
+    }
+    &:nth-child(2) svg {
+      stroke: var(--teal-3);
+      @nest [data-theme="light"] & {
+        stroke: var(--pink-7);
+      }
+    }
+    &:nth-child(3) svg {
+      stroke: var(--green-3);
+      @nest [data-theme="light"] & {
+        stroke: var(--orange-7);
+      }
+    }
   }
 
-  & ::marker {
-    content:"✅ ";
+  & svg {
+    block-size: var(--size-7);
   }
 }
 
