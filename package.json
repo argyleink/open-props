@@ -24,6 +24,7 @@
   ],
   "scripts": {
     "build": "npm run gen:op",
+    "test": "ava test/basic.test.cjs",
     "bundle": "concurrently npm:lib:*",
     "gen:op": "cd src && node _create-props.js '' true",
     "gen:nowhere": "cd src && node _create-props.js '' false",
@@ -58,6 +59,7 @@
     "lib:colors:orange": "postcss src/props.orange.css -o orange.min.css"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
     "concurrently": "^6.2.1",
     "cssnano": "^5.0.8",
     "microbundle": "^0.13.3",
