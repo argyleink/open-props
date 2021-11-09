@@ -11,15 +11,15 @@ import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
 
 export default OpenProps = {
-  ...Animations,
-  ...Sizes,
-  ...Colors,
-  ...Fonts,
-  ...Borders,
-  ...Aspects,
-  ...Easings,
-  ...SVG,
-  ...Gradients,
-  ...Shadows,
-  ...Zindex,
+  Animations,
+  Sizes,
+  Colors,
+  Fonts,
+  Borders,
+  Aspects,
+  Easings,
+  SVG,
+  Gradients,
+  Shadows,
+  Zindex,
 }
