@@ -26,7 +26,7 @@ const highlightProperty = slider => {
 
   slider.connectedProperty = slider.parentElement.parentElement
     .querySelectorAll(`code > .property`)[offset]
-  slider.connectedProperty.style.color = 'white'
+  slider.connectedProperty.style.color = 'var(--text-1)'
 }
 
 sliders.forEach(slider => {
