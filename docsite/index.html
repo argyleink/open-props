@@ -173,7 +173,7 @@
         <a href="https://codepen.io/argyleink/pen/bcf1a87485c903f74d49b6e30740b087?editors=1100">
           <figure>
             <picture>
-              <img width="640" height="320" src="/hero-layout.png" alt="" loading="lazy">
+              <img width="1125" height="586" src="/hero-layout.png" alt="" loading="lazy">
             </picture>
             <figcaption>
               <img src="/hero-layout.png" aria-hidden="true" loading="lazy">
@@ -187,7 +187,7 @@
         <a href="https://codepen.io/argyleink/pen/1f85cd9a709a9fc7b74b8e0cfcd3cf80">
           <figure>
             <picture>
-              <img width="640" height="320" src="/adaptive-buttons.png" alt="" loading="lazy">
+              <img width="1446" height="658" src="/adaptive-buttons.png" alt="" loading="lazy">
             </picture>
             <figcaption>
               <img src="/adaptive-buttons.png" aria-hidden="true" loading="lazy">
@@ -201,7 +201,7 @@
         <a href="https://codepen.io/argyleink/pen/ae6336e4d364280433201365b72eb4cc">
           <figure>
             <picture>
-              <img width="640" height="320" src="/cards.png" alt="" loading="lazy">
+              <img width="1600" height="960" src="/cards.png" alt="" loading="lazy">
             </picture>
             <figcaption>
               <img src="/cards.png" aria-hidden="true" loading="lazy">
@@ -215,13 +215,27 @@
         <a href="https://codepen.io/argyleink/pen/77ceead9f2259eef779329f766b267da">
           <figure>
             <picture>
-              <img width="640" height="320" src="/pagination.png" alt="" loading="lazy">
+              <img width="702" height="287" src="/pagination.png" alt="" loading="lazy">
             </picture>
             <figcaption>
               <img src="/pagination.png" aria-hidden="true" loading="lazy">
               <div class="adaptive-glass">
                 <h3>Pagination Example</h3>
                 <p>Uses 10 props</p>
+              </div>
+            </figcaption>
+          </figure>
+        </a>
+        <a href="https://codepen.io/argyleink/pen/21fe8c43e25876c3756917df0bd7ef36?editors=1100?editors=1100">
+          <figure>
+            <picture>
+              <img width="1096" height="639" src="/color-schemes.png" alt="" loading="lazy">
+            </picture>
+            <figcaption>
+              <img src="/color-schemes.png" aria-hidden="true" loading="lazy">
+              <div class="adaptive-glass">
+                <h3>4 Color Schemes</h3>
+                <p><b>16 props</b></p>
               </div>
             </figcaption>
           </figure>
@@ -853,6 +867,210 @@
           <span class="color-swatch" style="background-color: var(--orange-9)"></span>
         </div>
       </article>
+
+      <header>
+        <h3>1) Color Theming</h3>
+        <p>Low numbers are light and high numbers are dark. See how the Open Props <a href="https://github.com/argyleink/open-props/blob/main/src/extra/normalize.css">normalize.css</a> does <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css">light</a> and <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css">dark</a>. Spoiler, it's just like how it's explained below.</p>
+        <p><b>See it live:</b> <a href="https://codepen.io/argyleink/pen/21fe8c43e25876c3756917df0bd7ef36">auto, light, dark, dim and grape themes</a> demonstrated with Open Props!</p>
+      </header>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Light</h5>
+          <pre class="language-css"><code>
+            html {
+              --brand-light: var(--orange-6);
+
+              --text1-light: var(--gray-8);
+              --text2-light: var(--gray-7);
+
+              --surface1-light: var(--gray-2);
+              --surface2-light: var(--gray-0);
+              --surface3-light: var(--gray-1);
+              --surface4-light: var(--gray-3);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Dark</h5>
+          <pre class="language-css"><code>
+            html {
+              --brand-dark: var(--orange-3);
+
+              --text1-dark: var(--gray-1);
+              --text2-dark: var(--gray-3);
+
+              --surface1-dark: var(--gray-9);
+              --surface2-dark: var(--gray-8);
+              --surface3-dark: var(--gray-7);
+              --surface4-dark: var(--gray-6);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Dim</h5>
+          <pre class="language-css"><code>
+            html {
+              --brand-dim: var(--orange-4);
+
+              --text1-dim: var(--gray-3);
+              --text2-dim: var(--gray-4);
+
+              --surface1-dim: var(--gray-8);
+              --surface2-dim: var(--gray-7);
+              --surface3-dim: var(--gray-6);
+              --surface4-dim: var(--gray-5);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Grape</h5>
+          <pre class="language-css"><code>
+            html {
+              --brand-grape: var(--grape-5);
+
+              --text1-grape: var(--grape-9);
+              --text2-grape: var(--grape-7);
+
+              --surface1-grape: var(--grape-0);
+              --surface2-grape: var(--grape-1);
+              --surface3-grape: var(--grape-2);
+              --surface4-grape: var(--grape-3);
+            }
+          </code></pre>
+        </div>
+      </div>
+
+      <header>
+        <h3>2) Adapting and applying</h3>
+        <p>It's not great for the page or components to reference theme colors directly when building a color scheme, instead use the color scheme variables to back a single alias. This lets the app use 1 custom property, while the theme can swap out the value given new contexts.</p>
+      </header>
+      
+      <div class="block-wrap">
+        <div>
+          <h5>No Preference (Light)</h5>
+          <pre class="language-css"><code>
+            :root {
+              --brand: var(--brand-light);
+
+              --text1: var(--text1-light);
+              --text2: var(--text2-light);
+
+              --surface1: var(--surface1-light);
+              --surface2: var(--surface2-light);
+              --surface3: var(--surface3-light);
+              --surface4: var(--surface4-light);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Prefers Dark</h5>
+          <pre class="language-css"><code>
+            @media (prefers-color-scheme: dark) {
+              :root {
+                --brand: var(--brand-dark);
+
+                --text1: var(--text1-dark);
+                --text2: var(--text2-dark);
+
+                --surface1: var(--surface1-dark);
+                --surface2: var(--surface2-dark);
+                --surface3: var(--surface3-dark);
+                --surface4: var(--surface4-dark);
+              }
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Prefers Dim</h5>
+          <pre class="language-css"><code>
+            @media (prefers-contrast: less) {
+              :root {
+                --brand: var(--brand-dim);
+
+                --text1: var(--text1-dim);
+                --text2: var(--text2-dim);
+
+                --surface1: var(--surface1-dim);
+                --surface2: var(--surface2-dim);
+                --surface3: var(--surface3-dim);
+                --surface4: var(--surface4-dim);
+              }
+            }
+          </code></pre>
+        </div>
+
+        <div>
+          <h5>Prefers Grape</h5>
+          <pre class="language-css"><code>
+            [color-scheme="grape"] {
+              --brand: var(--brand-grape);
+
+              --text1: var(--text1-grape);
+              --text2: var(--text2-grape);
+
+              --surface1: var(--surface1-grape);
+              --surface2: var(--surface2-grape);
+              --surface3: var(--surface3-grape);
+              --surface4: var(--surface4-grape);
+            }
+          </code></pre>
+        </div>
+      </div>
+
+      <header>
+        <h3>3) Using the aliases</h3>
+        <p>Your app is now free to use adaptive custom properties where it seems fit. Your team, or self, need to only think about 1 naming convention. Here are a few examples of how the above color theme system could be used.</p>
+      </header>
+      
+      <div class="block-wrap">
+        <div>
+          <h5>Page Styles Using Themes</h5>
+          <pre class="language-css"><code>
+            html {
+              background-color: var(--surface1);
+              color: var(--text1);
+              accent-color: var(--brand);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Utilities</h5>
+          <pre class="language-css"><code>
+            .surface1 {
+              background-color: var(--surface1);
+              color: var(--text2);
+            }
+
+            .surface2 {
+              background-color: var(--surface2);
+              color: var(--text2);
+            }
+
+            .surface3 {
+              background-color: var(--surface3);
+              color: var(--text1);
+            }
+
+            .surface4 {
+              background-color: var(--surface4);
+              color: var(--text1);
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Typography</h5>
+          <pre class="language-css"><code>
+            h1,h2,h3,h4,p,dt {
+              color: var(--text1);
+            }
+
+            h5,h6,small,dd {
+              color: var(--text2); 
+            }
+          </code></pre>
+        </div>
+      </div>
     </section>
 
     <section id="gradients" class="just-stretch">
