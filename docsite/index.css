@@ -172,7 +172,7 @@ section.hero {
   }
 
   @media (--lg-n-above) {
-    column-gap: var(--size-15);    
+    column-gap: var(--size-12);    
   }
 }
 
@@ -805,7 +805,7 @@ pre[class*="language-"] {
   gap: var(--size-8);
 
   @media (--lg-n-above) {
-    column-gap: var(--size-15);
+    column-gap: var(--size-12);
   }
 }
 
@@ -814,7 +814,7 @@ pre[class*="language-"] {
   text-align: center;
 
   &.responsive-dl {
-    gap: var(--size-14);
+    gap: var(--size-11);
   }
 
   & dt {
@@ -847,7 +847,7 @@ pre[class*="language-"] {
   }
 
   @media (--lg-n-above) {
-    column-gap: var(--size-15);
+    column-gap: var(--size-12);
   }
 
   & > div:nth-of-type(1) svg { 
@@ -868,7 +868,7 @@ pre[class*="language-"] {
   }
 
   & svg {
-    inline-size: var(--size-fluid-10);
+    inline-size: var(--size-fluid-7);
     border-width: var(--border-size-2);
     border-radius: var(--radius-round);
     padding: var(--size-2);
@@ -901,7 +901,7 @@ pre[class*="language-"] {
   gap: var(--size-4);
 
   & > div {
-    block-size: var(--size-15);
+    block-size: var(--size-12);
     max-inline-size: var(--max-inline-body);
     border-width: var(--border-size-3);
     border-color: var(--surface-4);
@@ -993,7 +993,7 @@ pre[class*="language-"] {
   
   & > div {
     background: white;
-    inline-size: var(--size-15);
+    inline-size: var(--size-12);
     aspect-ratio: var(--ratio-box);
     border-radius: var(--radius-3);
     display: grid;
@@ -1022,7 +1022,7 @@ pre[class*="language-"] {
   & > div {
     display: grid;
     place-content: center;
-    inline-size: var(--size-15);
+    inline-size: var(--size-12);
     aspect-ratio: var(--ratio-box);
     border-color: var(--indigo-5);
     border-width: var(--border-size-2);
