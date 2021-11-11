@@ -915,11 +915,16 @@ pre[class*="language-"] {
   }
 }
 
-#about header {
-  margin-block-end: var(--size-8);
+#about {
+  justify-content: center;
 
-  @media (--md-n-below) {
+  & header {
+    margin-block-end: var(--size-8);
+  }
+
+  & :is(header,p) {
     text-align: center;
+    margin-inline: auto;
   }
 }
 
