@@ -1,9 +1,15 @@
-[![Test](https://github.com/argyleink/open-props/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/argyleink/open-props/actions/workflows/tests.yml)
+![Frame 2](https://user-images.githubusercontent.com/1134620/141246730-7df4cf2a-6249-42ca-a01b-494c3ccddabe.png)
 
-## Open Props (WIP)
-> Grab n' go CSS custom properties
+## Open source CSS variables
+`gradients` `animations` `sizes` `easings` `colors` `shadows` `aspect-ratios` `z-indexes`  
 
-👉 &nbsp; [Discord](https://discord.gg/AqA4fU886r) 
+[![Tests](https://github.com/argyleink/open-props/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/argyleink/open-props/actions/workflows/tests.yml)
+
+<br>
+
+### Need help? &nbsp; 👉 &nbsp; [Discord](https://discord.gg/AqA4fU886r) 
+
+<br>
 
 #### CLI
 - `npm run gen:op` - runs through `src/` js files and creates the PostCSS files in `src/`
