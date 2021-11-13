@@ -149,6 +149,7 @@ footer {
 
     & > div {
       display: grid;
+      place-self: center;
       gap: var(--size-2);
     }
 
@@ -773,7 +774,7 @@ pre[class*="language-"] {
   & > li {
     display: flex;
     align-items: center;
-    gap: var(--size-2);
+    gap: var(--size-3);
     padding-inline-start: 0;
 
     &:nth-child(1) svg {
@@ -798,6 +799,7 @@ pre[class*="language-"] {
 
   & svg {
     block-size: var(--size-7);
+    inline-size: auto;
   }
 }
 
@@ -1027,10 +1029,14 @@ pre[class*="language-"] {
   & > div {
     display: grid;
     place-content: center;
-    inline-size: var(--size-12);
+    inline-size: var(--size-fluid-6);
     aspect-ratio: var(--ratio-box);
     border-color: var(--indigo-5);
     border-width: var(--border-size-2);
+
+    @media (--sm-n-above) {
+      inline-size: var(--size-12);
+    }
   }
 }
 
@@ -1120,15 +1126,12 @@ pre[class*="language-"] {
   flex-flow: row wrap;
 
   & > * {
+    flex-shrink: 0;
     background: var(--indigo-6);
     color: var(--indigo-0);
     block-size: var(--size-10);
     display: grid;
     place-content: center;
-  }
-
-  &.large-sizes  {
-    max-inline-size: var(--max-inline-body);
   }
 }
 
