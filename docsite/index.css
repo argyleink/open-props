@@ -764,7 +764,7 @@ pre[class*="language-"] {
   background-image: var(--gradient-30);
 
   @nest [data-theme="light"] & {
-    background-image: var(--gradient-2);    
+    background-image: var(--gradient-18);    
   }
 
   @media (--md-n-above) {
@@ -781,7 +781,6 @@ pre[class*="language-"] {
   }
 
   & h2 {
-    color: white;
     -webkit-text-fill-color: initial;
   }
 }
