@@ -26,7 +26,14 @@ const Gradients = {
   '--gradient-15': 'linear-gradient(var(--op-gradient-direction), #c7d2fe, #fecaca, #fef3c7)',
   '--gradient-16': 'radial-gradient(circle at 50% -250%, #374151, #111827, #000)',
   '--gradient-17': 'conic-gradient(from -90deg at 50% -25%, blue, blueviolet)',
-  '--gradient-18': 'conic-gradient(from .5turn at center left, lime, cyan)',
+  '--gradient-18': `
+    linear-gradient(0deg,   hsla(0   100% 50% / 80%), hsla(0   100% 50% / 0) 75%),
+    linear-gradient(60deg,  hsla(60  100% 50% / 80%), hsla(60  100% 50% / 0) 75%),
+    linear-gradient(120deg, hsla(120 100% 50% / 80%), hsla(120 100% 50% / 0) 75%),
+    linear-gradient(180deg, hsla(180 100% 50% / 80%), hsla(180 100% 50% / 0) 75%),
+    linear-gradient(240deg, hsla(240 100% 50% / 80%), hsla(240 100% 50% / 0) 75%),
+    linear-gradient(300deg, hsla(300 100% 50% / 80%), hsla(300 100% 50% / 0) 75%)
+  `,
   '--gradient-19': 'linear-gradient(var(--op-gradient-direction),#ffe259,#ffa751)',
   '--gradient-20': 'conic-gradient(from -135deg at -10% center, #ffa500, #ff7715, #ff522a, #ff3f47, #ff5482, #ff69b4)',
   '--gradient-21': 'conic-gradient(from -90deg at 25% 115%, #ff0000, #ff0066, #ff00cc, #cc00ff, #6600ff, #0000ff, #0000ff, #0000ff, #0000ff)',
