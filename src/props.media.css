@@ -16,6 +16,11 @@
 
 @custom-media --HDcolor       (dynamic-range: high);
 
+@custom-media --touch         (hover: none) and (pointer: coarse);
+@custom-media --styles        (hover: none) and (pointer: fine);
+@custom-media --pointer       (hover) and (pointer: coarse);
+@custom-media --mouse         (hover) and (pointer: fine);
+
 @custom-media --xxs-only      (0px <= width <= 240px);
 @custom-media --xxs-n-above   (width >= 240px);
 @custom-media --xxs-n-below   (width <= 240px);
