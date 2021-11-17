@@ -2421,20 +2421,58 @@
     </section>
 
     <section id="media-queries">
-      <header>
+      <header class="just-for-gap">
         <h2>Media Queries</h2>
-        <div class="block-wrap">
+        <p>A little ahead of <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">the spec</a> this library offers named media queries with the <code>@custom-media</code> syntax. Available only with <a href="https://github.com/postcss/postcss-custom-media">this CSS plugin</a>, for now 😈</p>
+        <div class="media-query-chart">
           <div>
-            <p>A little ahead of <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">the spec</a> this library offers named media queries with the <code>@custom-media</code> syntax. Available only with <a href="https://github.com/postcss/postcss-custom-media">this CSS plugin</a>, for now 😈</p>
+            <svg height="24" width="24">
+              <path d="m14.31 2 .41 2.48C13.87 4.17 12.96 4 12 4c-.95 0-1.87.17-2.71.47L9.7 2h4.61m.41 17.52L14.31 22H9.7l-.41-2.47c.84.3 1.76.47 2.71.47.96 0 1.87-.17 2.72-.48M16 0H8l-.95 5.73C5.19 7.19 4 9.45 4 12s1.19 4.81 3.05 6.27L8 24h8l.96-5.73C18.81 16.81 20 14.54 20 12s-1.19-4.81-3.04-6.27L16 0zm-4 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+            </svg>
+            <div class="device xxs">xxs</div>
+            <code class="language-css">240px</code>
           </div>
-          <div class="media-query-chart">
-            <strong>xxs</strong> <code class="language-css">240px</code>
-            <strong>xs</strong> <code class="language-css">360px</code>
-            <strong>sm</strong> <code class="language-css">480px</code>
-            <strong>md</strong> <code class="language-css">768px</code>
-            <strong>lg</strong> <code class="language-css">1024px</code>
-            <strong>xl</strong> <code class="language-css">1440px</code>
-            <strong>xxl</strong> <code class="language-css">1920px</code>
+          <div>
+            <svg height="24" width="24">
+              <path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+            </svg>
+            <div class="device xs">xs</div>
+            <code class="language-css">360px</code>
+          </div>
+          <div>
+            <svg height="24" width="24">
+              <path d="M15.5 1h-8A2.5 2.5 0 0 0 5 3.5v17A2.5 2.5 0 0 0 7.5 23h8a2.5 2.5 0 0 0 2.5-2.5v-17A2.5 2.5 0 0 0 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/>
+            </svg>
+            <div class="device sm">sm</div>
+            <code class="language-css">480px</code>
+          </div>
+          <div>
+            <svg height="24" width="24">
+              <path d="M18 0H6C4.34 0 3 1.34 3 3v18c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V3c0-1.66-1.34-3-3-3zm-4 22h-4v-1h4v1zm5.25-3H4.75V3h14.5v16z"/>
+            </svg>
+            <div class="device md">md</div>
+            <code class="language-css">768px</code>
+          </div>
+          <div>
+            <svg height="24" width="24">
+              <path d="M1.01 7 1 17c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM19 7v10H5V7h14z"/>
+            </svg>
+            <div class="device lg">lg</div>
+            <code class="language-css">1024px</code>
+          </div>
+          <div>
+            <svg height="24" width="24">
+              <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+            </svg>
+            <div class="xl">xl</div>
+            <code class="language-css">1440px</code>
+          </div>
+          <div>
+            <svg height="24" width="24">
+              <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+            </svg>
+            <div class="xxl">xxl</div>
+            <code class="language-css">1920px</code>
           </div>
         </div>
       </header>
@@ -2443,6 +2481,9 @@
           <h5>The Props</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
+              --portrait
+              --landscape
+
               --{xxs,xs,sm,md,lg,xl,xxl}-only
               --{xxs,xs,sm,md,lg,xl,xxl}-n-above
               --{xxs,xs,sm,md,lg,xl,xxl}-n-below
@@ -2458,6 +2499,9 @@
           <h5>Viewport Vars Sample</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
+              @custom-media --portrait      (orientation: portrait);
+              @custom-media --landscape     (orientation: landscape);
+
               @custom-media --md-only       (480px &#60;= width &#60;= 768px);
               @custom-media --md-n-above    (width &#62;= 768px);
               @custom-media --md-n-below    (width &#60;= 768px);
@@ -2470,15 +2514,27 @@
           </div>
         </div>
         <div>
-          <h5>Preference Vars Sample</h5>
+          <h5>Capability Vars</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
+              @custom-media --touch    (hover: none) and (pointer: coarse);
+              @custom-media --stylus   (hover: none) and (pointer: fine);
+              @custom-media --pointer  (hover) and (pointer: coarse);
+              @custom-media --mouse    (hover) and (pointer: fine);
+
+              @custom-media --HDcolor  (dynamic-range: high);
+            </code></pre>
+          </div>
+        </div>
+        <div>
+          <h5>Preference Vars</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              @custom-media --OSdark        (prefers-color-scheme: dark);
+              @custom-media --OSlight       (prefers-color-scheme: light);
+
               @custom-media --motionOK      (prefers-reduced-motion: no-preference);
               @custom-media --motionNotOK   (prefers-reduced-motion: reduce);
-              @custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
-              @custom-media --opacityNotOK  (prefers-reduced-transparency: reduce);
-              @custom-media --useDataOK     (prefers-reduced-data: no-preference);
-              @custom-media --useDataNotOK  (prefers-reduced-data: reduce);
             </code></pre>
           </div>
         </div>
@@ -2486,16 +2542,14 @@
           <h5>Preference Vars Extended</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
-              @custom-media --OSdark        (prefers-color-scheme: dark);
-              @custom-media --OSlight       (prefers-color-scheme: light);
-
               @custom-media --highContrast  (prefers-contrast: high);
               @custom-media --lowContrast   (prefers-contrast: low);
 
-              @custom-media --portrait      (orientation: portrait);
-              @custom-media --landscape     (orientation: landscape);
+              @custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
+              @custom-media --opacityNotOK  (prefers-reduced-transparency: reduce);
 
-              @custom-media --HDcolor       (dynamic-range: high);
+              @custom-media --useDataOK     (prefers-reduced-data: no-preference);
+              @custom-media --useDataNotOK  (prefers-reduced-data: reduce);
             </code></pre>
           </div>
         </div>

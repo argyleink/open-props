@@ -150,6 +150,8 @@ footer {
     & > div {
       display: grid;
       place-self: center;
+      place-items: center;
+      flex-basis: var(--size-content-1);
       gap: var(--size-2);
     }
 
@@ -1266,14 +1268,22 @@ input[type="range"] {
 }
 
 .media-query-chart {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  gap: 0 var(--size-6);
-  align-items: center;
-  justify-items: flex-start;
+  display: flex;
+  gap: var(--size-2);
+  flex-flow: row wrap;
+  
+  & > div {
+    place-items: center;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    border: 1px solid var(--surface-2);
+    padding: var(--size-3);
+    gap: var(--size-1);
+  }
 
-  & > code {
-    justify-self: flex-end;
+  & svg {
+    stroke: none;
+    fill: var(--indigo-5);
   }
 }
 
