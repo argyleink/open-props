@@ -1,5 +1,4 @@
 const postcssPresetEnv  = require('postcss-preset-env')
-const postcssEasings    = require('postcss-easings')
 const postcssImport     = require('postcss-import')
 const cssnano           = require('cssnano')
 const combineSelectors  = require('postcss-combine-duplicated-selectors')
@@ -11,7 +10,6 @@ const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports'
 
 module.exports = {
   plugins: [
-    postcssEasings(),
     postcssImport(),
     postcssPresetEnv({
       stage: 0,
