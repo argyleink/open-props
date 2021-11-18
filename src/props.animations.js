@@ -1,4 +1,4 @@
-const Animations = {
+export default {
   "--animation-fade-in": ["op-fade-in .5s var(--ease-3)", `
 @keyframes op-fade-in {
   to { opacity: 1 }
@@ -99,5 +99,3 @@ const Animations = {
   50% { transform: scale(.9,.9) }
 }`],
 }
-
-export default Animations

@@ -1,4 +1,4 @@
-const Aspects = {
+export default {
   '--ratio-box': '1',
   '--ratio-landscape': '4/3',
   '--ratio-portrait': '3/4',
@@ -6,5 +6,3 @@ const Aspects = {
   '--ratio-ultrawide': '18/5',
   '--ratio-golden': '1.6180/1',
 }
-
-export default Aspects

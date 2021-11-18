@@ -1,4 +1,4 @@
-const Borders = {
+export default {
   '--border-size-1': '1px',
   '--border-size-2': '2px',
   '--border-size-3': '5px',
@@ -26,5 +26,3 @@ const Borders = {
   '--radius-conditional-5': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radius-5))',
   '--radius-conditional-6': 'clamp(0px, calc(100vw - 100%) * 1e5, var(--radius-6))',
 }
-
-export default Borders

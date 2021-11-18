@@ -1,4 +1,4 @@
-const Sizes = {
+export default {
   '--size-000': '-.5rem',
   '--size-00': '-.25rem',
   '--size-1': '.25rem',
@@ -36,5 +36,3 @@ const Sizes = {
   '--size-header-2': '25ch',
   '--size-header-3': '45rem',
 }
-
-export default Sizes

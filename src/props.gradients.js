@@ -1,4 +1,4 @@
-const Gradients = {
+export default {
   '--op-gradient-direction': 'to bottom right',
 
   '--gradient-1': 'linear-gradient(var(--op-gradient-direction),#1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b)',
@@ -75,5 +75,3 @@ const Gradients = {
   '--noise-filter-4': 'contrast(200%) brightness(500%)',
   '--noise-filter-5': 'contrast(200%) brightness(1000%)',
 }
-
-export default Gradients

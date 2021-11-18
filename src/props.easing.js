@@ -1,4 +1,4 @@
-const Easings = {
+export default {
   '--ease-1': 'cubic-bezier(.25, 0, .5, 1)',
   '--ease-2': 'cubic-bezier(.25, 0, .4, 1)',
   '--ease-3': 'cubic-bezier(.25, 0, .3, 1)',
@@ -41,5 +41,3 @@ const Easings = {
   '--ease-step-4': 'steps(7)',
   '--ease-step-5': 'steps(10)',
 }
-
-export default Easings

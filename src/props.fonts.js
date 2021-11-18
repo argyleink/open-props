@@ -1,4 +1,4 @@
-const Fonts = {
+export default {
   '--font-sans': 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
   '--font-serif': 'ui-serif,serif',
   '--font-mono': 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
@@ -55,5 +55,3 @@ const Fonts = {
   '--font-size-fluid-2': 'clamp(1.5rem, 6vw, 2.5rem)',
   '--font-size-fluid-3': 'clamp(2rem, 9vw, 3.5rem)',
 }
-
-export default Fonts

@@ -1,4 +1,4 @@
-const Shadows = {
+export default {
   '--shadow-color': '220 3% 15%',
   '--shadow-strength': '1%',
   
@@ -41,5 +41,3 @@ const Shadows = {
   '--inner-shadow-3': 'inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
   '--inner-shadow-4': 'inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
 }
-
-export default Shadows

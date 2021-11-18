@@ -1,4 +1,4 @@
-const Zindex = {
+export default {
   '--layer-1': 1,
   '--layer-2': 2,
   '--layer-3': 3,
@@ -6,5 +6,3 @@ const Zindex = {
   '--layer-5': 5,
   '--layer-important': 2147483647,  
 }
-
-export default Zindex
