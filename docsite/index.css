@@ -763,7 +763,22 @@ pre[class*="language-"] {
 }
 
 .dogfood {
+  position: relative;
   background-image: var(--gradient-30);
+
+  @media (--lg-n-above) {
+    background-image: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset-block: 1%;
+      inset-inline: -15% 0;
+      border-radius: var(--radius-blob-1);
+      background-image: var(--gradient-30);
+    }
+  }
 
   @nest [data-theme="light"] & {
     background-image: var(--gradient-18);    
