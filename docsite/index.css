@@ -336,7 +336,7 @@ pre[class*="language-"] {
 
   @nest [data-theme="dark"] details & {
     background: var(--surface-1);
-    max-inline-size: calc(var(--max-inline-body) - (var(--size-3) * 2));
+    max-inline-size: calc(var(--max-inline-body) + (var(--size-3) * 2));
   }
 }
 
