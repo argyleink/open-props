@@ -852,6 +852,18 @@ pre[class*="language-"] {
   @media (--lg-n-above) {
     column-gap: var(--size-12);
   }
+
+  & .child-ref {
+    display: flex;
+    gap: var(--size-1);
+    align-items: center;
+
+    & > svg {
+      margin-block-start: -.25em;
+      inline-size: 2ch;
+      stroke-width: 2px;
+    }
+  }
 }
 
 .marketing-features {
