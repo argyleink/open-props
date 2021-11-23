@@ -4,4 +4,4 @@ import 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/normalize-wh
 import '/js/easing.js'
 import '/js/animations.js'
 import '/js/slider.js'
-import '/js/nav-scroll.js'
+import '/js/scrollspy.js'

@@ -21,17 +21,17 @@ let observer = new IntersectionObserver(entries => {
     // Highlight the link of the interesecting container
     // and remove any existing containers
     if(entry.isIntersecting) {
-      link.style.color = 'var(--violet-3)';
+      link.classList.add('in-view')
       for (let match of matches) {
         const matchedLink = linkMap[`#${match}`];
-        matchedLink.style.color = 'unset';
+        matchedLink.classList.remove('in-view')
         matches.delete(id);
       }
       matches.add(id);
     } else {
       // Delete entries once they no longer intersect
+      link.classList.remove('in-view')
       matches.delete(id);
-      link.style.color = 'unset';
     }
   }
   // Set a threshold of 10% of the target's visibility to trigger the 

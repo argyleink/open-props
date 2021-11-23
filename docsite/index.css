@@ -437,6 +437,12 @@ pre[class*="language-"] {
     color: var(--text-1);
     text-decoration-color: var(--brand);
   }
+
+  & a.in-view {
+    text-decoration: underline double;
+    text-underline-offset: 4px;
+  }
+
   @nest [data-theme="light"] & {
     padding-block-start: var(--size-3);
     background: var(--surface-1);
