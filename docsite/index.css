@@ -1,5 +1,6 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
+@import "./syntax-highlight.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
@@ -198,7 +199,7 @@ section.hero {
   }
 
   & small {
-    color: var(--gray-6);
+    color: var(--text-2);
     align-self: flex-end;
   }
 }
@@ -250,39 +251,6 @@ section.hero {
   }
 }
 
-:root :not(pre) > code[class*="language-"] {
-  padding: var(--size-1) var(--size-2);
-  box-shadow: var(--inner-shadow-0), var(--shadow-1);
-  white-space: nowrap;
-}
-
-pre > code[class*="language-"] {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-2);
-}
-
-pre[class*="language-"], code[class*="language-"] {
-  @nest [data-theme="light"] & {
-    background: white;
-  }
-  @nest [data-theme="dark"] & {
-    & *::selection {
-      background: black;
-    }
-  }
-}
-
-@nest [data-theme="light"] {
-  & pre[class*="language-"], code[class*="language-"] {
-    background: white;
-  }
-}
-
-code.language-bash::before {
-  content: '$ ';
-  color: var(--cyan-1);
-}
-
 blockquote {
   --_accent-1: var(--lime-5);
   --_accent-2: var(--lime-4);
@@ -331,11 +299,9 @@ pre[class*="language-"] {
 
   @nest [data-theme="dark"] & {
     box-shadow: var(--shadow-3);
-    background: var(--surface-2);
   }
 
   @nest [data-theme="dark"] details & {
-    background: var(--surface-1);
     max-inline-size: calc(var(--max-inline-body) + (var(--size-3) * 2));
   }
 }
@@ -506,8 +472,11 @@ pre[class*="language-"] {
   @nest a:hover & { stroke: var(--indigo-1); }
 
   @nest [data-theme="light"] & {
-    stroke: var(--indigo-9);
-    @nest a:hover & { stroke: var(--indigo-8); }
+    stroke: var(--indigo-7);
+  }
+
+  @nest [data-theme="light"] a:hover & {
+    stroke: var(--indigo-8);
   }
 }
 
@@ -517,7 +486,9 @@ pre[class*="language-"] {
   
   @nest [data-theme="light"] & {
     stroke: var(--indigo-5);
-    @nest a:hover & { stroke: var(--indigo-6); }
+  }
+  @nest [data-theme="light"] a:hover & {
+    stroke: var(--indigo-6);
   }
 }
 
