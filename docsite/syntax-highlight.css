@@ -1,44 +1,18 @@
-pre {
-  --neon-red: #D30302;
-  --neon-pink: #e10361;
-  --neon-purple: #4003e6;
-  --neon-blue: #00a3d5;
-  --neon-green: #02c435;
-  --neon-yellow: #b48505;
-  --neon-white: #fff;
-
-  @nest [data-theme="dark"] & {
-    --neon-red: #D30302;
-    --neon-pink: #e10361;
-    --neon-purple: #4003e6;
-    --neon-blue: #00a3d5;
-    --neon-green: #02c435;
-    --neon-yellow: #b48505;
-    --neon-white: #fff;
-  }
-
-  @media (dynamic-range: high) {
-    :root {
-      --neon-red: color(display-p3 1 0 0);
-      --neon-pink: color(display-p3 1 0 1);
-      --neon-purple: color(display-p3 0 0 1);
-      --neon-blue: color(display-p3 0 1 1);
-      --neon-green: color(display-p3 0 1 0);
-      --neon-yellow: color(display-p3 1 1 0);
-      --neon-white: color(display-p3 1 1 1);
-    }
-  }
-}
-
 :root :not(pre) > code[class*="language-"] {
   padding: var(--size-1) var(--size-2);
   box-shadow: var(--inner-shadow-0), var(--shadow-1);
+  color: var(--text-1);
   white-space: nowrap;
+  text-shadow: none;
 }
 
 code.language-bash::before {
   content: '$ ';
   color: var(--cyan-1);
+
+  @nest [data-theme="light"] & {
+    color: var(--teal-6);
+  }
 }
 
 code[class*="language-"],
@@ -65,81 +39,57 @@ pre[class*="language-"] {
   }
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--gray-5);
-  font-style: italic;
+code.language-css {
+  color: var(--indigo-2);
+  text-shadow: 
+    0 0 2px #0003,
+    0 0 1vw var(--indigo-9),
+    0 0 5vw var(--indigo-9);
+
+  @nest [data-theme="light"] & {
+    color: var(--indigo-9);
+    text-shadow: 
+      0 0 1vw var(--indigo-4),
+      0 0 5vw var(--indigo-4);
+  }
 }
 
-.token.punctuation {
-  color: var(--text-2);
-}
+.token {
+  &:is(.property, .selector, .atrule > *) {
+    color: var(--text-1);
+    text-shadow: 0 1px 0 black;
 
-.namespace {
-  opacity: .7;
-}
+    @nest [data-theme="light"] & {
+      text-shadow: 0 1px 0 var(--gray-3);
+    }
+  }
 
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted,
-.token.number,
-.token.boolean,
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: var(--text-1);
-}
+  &:not(.function) + .punctuation {
+    color: var(--text-2);
+    text-shadow: none;
+  }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted,
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-  color: var(--cyan-4);
-}
+  &:is(.string, .attr-value) {
+    color: var(--teal-2);
+    text-shadow: 
+      0 0 2px #0003,
+      0 0 1vw var(--teal-9),
+      0 0 5vw var(--teal-9);
 
-.token.atrule,
-.token.keyword {
-  color: var(--text-1);
-}
+    @nest [data-theme="light"] & {
+      color: var(--grape-9);
+      text-shadow: 
+        0 0 1vw var(--grape-7),
+        0 0 5vw var(--grape-4);
+    }
+  }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.atrule > .token:first-of-type,
-.token.keyword {
-  color: var(--text-1);
-  text-shadow: 0 0 .5em white;
-
-  /* &::first-letter {
-    color: hsl(120 40% 75%);
-    text-shadow: 0 0 .5em #02c435;
-  } */
-}
-
-.token.function {
-  color: var(--neon-blue);
-  text-shadow: 0 0 .5em #4003e6;
+  &.comment {
+    color: var(--gray-5);
+    font-style: italic;
+    
+    @nest [data-theme="light"] & {
+      text-shadow: 0 1px 0 var(--gray-6);
+    }
+  }
 }

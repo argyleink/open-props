@@ -213,7 +213,7 @@ section.hero {
   & > * {
     --op-gradient-direction: to right;
     background: var(--gradient-1) fixed;
-    background-size: 12ch 7ch;
+    background-size: 12ch 50%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -276,7 +276,7 @@ blockquote {
 
     @nest [data-theme="light"] & {
       --_bg: white;
-      --_ink: var(--lime-8);
+      --_ink: var(--lime-9);
     }
 
     &.indigo {
@@ -301,7 +301,8 @@ pre[class*="language-"] {
     box-shadow: var(--shadow-3);
   }
 
-  @nest [data-theme="dark"] details & {
+  @nest details & {
+    background-color: var(--surface-3);
     max-inline-size: calc(var(--max-inline-body) + (var(--size-3) * 2));
   }
 }
