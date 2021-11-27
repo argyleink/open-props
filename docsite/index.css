@@ -307,6 +307,10 @@ pre[class*="language-"] {
   }
 }
 
+#overview, .dogfood {
+  border-block-end: none;
+}
+
 .adaptive-glass {
   --glass-lightness: 100%;
   background: hsl(0 0% var(--glass-lightness) / 50%);
