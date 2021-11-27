@@ -40,11 +40,10 @@ pre[class*="language-"] {
 }
 
 code.language-css {
-  color: var(--indigo-2);
+  color: var(--indigo-1);
   text-shadow: 
     0 0 25px var(--indigo-7),
-    0 0 25px var(--indigo-7),
-    0 0 25px var(--indigo-7);
+    0 0 25px var(--indigo-5);
 
   @nest [data-theme="light"] & {
     color: var(--indigo-9);
@@ -82,6 +81,7 @@ code.language-css {
   &.comment {
     color: var(--gray-5);
     font-style: italic;
+    text-shadow: none;
     
     @nest [data-theme="light"] & {
       text-shadow: 0 1px 0 var(--gray-6);
