@@ -208,7 +208,9 @@ section.hero {
   overflow: clip;
   font-size: var(--font-size-5);
 
-  @media (--xs-n-above) { font-size: var(--font-size-fluid-3) }
+  @media (--xs-n-above) { font-size: var(--font-size-6) }
+  @media (--sm-n-above) { font-size: var(--font-size-7) }
+  @media (--md-n-above) { font-size: var(--font-size-fluid-3) }
 
   & > * {
     --op-gradient-direction: to right;
