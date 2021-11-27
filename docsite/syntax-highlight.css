@@ -28,11 +28,18 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  padding: var(--size-3);
+  padding-inline: var(--size-4);
+  padding-block: var(--size-3);
   margin: var(--size-2) 0;
   overflow: auto;
   border-radius: var(--radius-conditional-2);
+  border: var(--border-size-1) solid var(--surface-3);
   background: var(--surface-2);
+
+  @media (--lg-n-above) {
+    padding-inline: var(--size-5);
+    padding-block: var(--size-4);
+  }
 
   @nest [data-theme="light"] & {
     background: white;
@@ -48,6 +55,7 @@ code.language-css {
   @nest [data-theme="light"] & {
     color: var(--indigo-9);
     text-shadow: 0 0 15px var(--indigo-7);
+    background: white;
   }
 }
 
@@ -80,11 +88,10 @@ code.language-css {
 
   &.comment {
     color: var(--gray-5);
-    font-style: italic;
     text-shadow: none;
     
     @nest [data-theme="light"] & {
-      text-shadow: 0 1px 0 var(--gray-6);
+      color: var(--gray-6);
     }
   }
 }
