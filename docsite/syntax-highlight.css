@@ -42,15 +42,14 @@ pre[class*="language-"] {
 code.language-css {
   color: var(--indigo-2);
   text-shadow: 
-    0 0 2px #0003,
-    0 0 1vw var(--indigo-9),
-    0 0 5vw var(--indigo-9);
+    0 0 10px var(--indigo-9),
+    0 0 50px var(--indigo-9);
 
   @nest [data-theme="light"] & {
     color: var(--indigo-9);
     text-shadow: 
-      0 0 1vw var(--indigo-4),
-      0 0 5vw var(--indigo-4);
+      0 0 10px var(--indigo-4),
+      0 0 50px var(--indigo-7);
   }
 }
 
@@ -72,15 +71,14 @@ code.language-css {
   &:is(.string, .attr-value) {
     color: var(--teal-2);
     text-shadow: 
-      0 0 2px #0003,
-      0 0 1vw var(--teal-9),
-      0 0 5vw var(--teal-9);
+      0 0 10px var(--teal-9),
+      0 0 50px var(--teal-9);
 
     @nest [data-theme="light"] & {
       color: var(--grape-9);
       text-shadow: 
-        0 0 1vw var(--grape-7),
-        0 0 5vw var(--grape-4);
+        0 0 10px var(--grape-7),
+        0 0 50px var(--grape-4);
     }
   }
 
