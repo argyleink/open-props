@@ -42,43 +42,40 @@ pre[class*="language-"] {
 code.language-css {
   color: var(--indigo-2);
   text-shadow: 
-    0 0 10px var(--indigo-9),
-    0 0 50px var(--indigo-9);
+    0 0 25px var(--indigo-7),
+    0 0 25px var(--indigo-7),
+    0 0 25px var(--indigo-7);
 
   @nest [data-theme="light"] & {
     color: var(--indigo-9);
-    text-shadow: 
-      0 0 10px var(--indigo-4),
-      0 0 50px var(--indigo-7);
+    text-shadow: 0 0 15px var(--indigo-7);
   }
 }
 
 .token {
-  &:is(.property, .selector, .atrule > *) {
+  &:is(.property, .atrule > *) {
     color: var(--text-1);
-    text-shadow: 0 1px 0 black;
+    text-shadow: 0 1px 0 var(--surface-1);
 
     @nest [data-theme="light"] & {
       text-shadow: 0 1px 0 var(--gray-3);
     }
   }
 
-  &:not(.function) + .punctuation {
+  &:is(.punctuation, .selector) {
     color: var(--text-2);
     text-shadow: none;
   }
 
   &:is(.string, .attr-value) {
-    color: var(--teal-2);
+    color: var(--teal-0);
     text-shadow: 
-      0 0 10px var(--teal-9),
-      0 0 50px var(--teal-9);
+      0 0 25px var(--teal-5),
+      0 0 25px var(--teal-5);
 
     @nest [data-theme="light"] & {
       color: var(--grape-9);
-      text-shadow: 
-        0 0 10px var(--grape-7),
-        0 0 50px var(--grape-4);
+      text-shadow: 0 0 15px var(--grape-9);
     }
   }
 
