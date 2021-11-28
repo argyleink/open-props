@@ -73,7 +73,7 @@ code.language-css {
     }
   }
 
-  &:is(.punctuation, .selector) {
+  &.selector {
     color: var(--text-2);
     text-shadow: none;
   }
@@ -94,7 +94,7 @@ code.language-css {
     }
   }
 
-  &.comment {
+  &:is(.comment, .punctuation) {
     color: var(--gray-5);
     text-shadow: none;
     
