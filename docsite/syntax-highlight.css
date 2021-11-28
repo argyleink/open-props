@@ -103,3 +103,23 @@ code.language-css {
     }
   }
 }
+
+pre[data-line] {
+  position: relative;
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+  background: hsl(0 0% 100% / 15%);
+
+  @nest [data-theme="light"] & {
+    background: hsl(0 0% 0% / 10%);    
+  }
+}
