@@ -57,6 +57,10 @@ code.language-css {
     text-shadow: 0 0 15px var(--indigo-7);
     background: white;
   }
+
+  @media (--HDcolor) {
+    text-shadow: 0 0 15px color(display-p3 0 0 1);
+  }
 }
 
 .token {
@@ -83,6 +87,10 @@ code.language-css {
     @nest [data-theme="light"] & {
       color: var(--grape-9);
       text-shadow: 0 0 15px var(--grape-9);
+    }
+
+    @media (--HDcolor) {
+      text-shadow: 0 0 15px color(display-p3 0 1 0);
     }
   }
 
