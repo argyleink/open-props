@@ -1032,6 +1032,10 @@ pre[class*="language-"] {
   }
 }
 
+#colors details h3 {
+  margin-block-start: var(--size-6);
+}
+
 .shadow-demos {
   display: flex;
   flex-flow: row wrap;
