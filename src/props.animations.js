@@ -84,7 +84,7 @@ export default {
     opacity: .5
   }
 }`],
-  "--animation-float": ["op-float 3s var(--ease-inout-3) infinite", `
+  "--animation-float": ["op-float 3s var(--ease-in-out-3) infinite", `
 @keyframes op-float {
   50% { transform: translateY(-25%) }
 }`],

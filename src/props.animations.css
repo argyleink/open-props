@@ -16,7 +16,7 @@
   --animation-spin: op-spin 2s linear infinite;
   --animation-ping: op-ping 5s var(--ease-out-3) infinite;
   --animation-blink: op-blink 1s var(--ease-out-3) infinite;
-  --animation-float: op-float 3s var(--ease-inout-3) infinite;
+  --animation-float: op-float 3s var(--ease-in-out-3) infinite;
   --animation-bounce: op-bounce 2s var(--ease-squish-2) infinite;
   --animation-pulse: op-pulse 2s var(--ease-out-3) infinite;
 }
