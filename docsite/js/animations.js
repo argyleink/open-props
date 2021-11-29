@@ -1,3 +1,5 @@
+import {toggleIcons} from './easing.js'
+
 const cleanup = e => {
   setTimeout(()=> {
     e.target.style = ''

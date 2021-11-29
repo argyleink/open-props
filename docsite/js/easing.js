@@ -10,7 +10,7 @@ document
     })
   })
 
-const toggleIcons = button => {
+export const toggleIcons = button => {
   button
     .querySelectorAll('use')
     .forEach(icon => {
