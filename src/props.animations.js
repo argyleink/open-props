@@ -1,7 +1,7 @@
 export default {
   "--animation-fade-in": ["fade-in .5s var(--ease-3)", `
 @keyframes fade-in {
-  from { opacity: 0 }
+  to { opacity: 1 }
 }`],
   "--animation-fade-out": ["fade-out .5s var(--ease-3)", `
 @keyframes fade-out {
