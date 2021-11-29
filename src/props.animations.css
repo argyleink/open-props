@@ -1,86 +1,86 @@
 :where(html) {
-  --animation-fade-in: op-fade-in .5s var(--ease-3);
-  --animation-fade-out: op-fade-out .5s var(--ease-3);
-  --animation-scale-up: op-scale-up .5s var(--ease-3);
-  --animation-scale-down: op-scale-down .5s var(--ease-3);
-  --animation-slide-out-up: op-slide-out-up .5s var(--ease-3);
-  --animation-slide-out-down: op-slide-out-down .5s var(--ease-3);
-  --animation-slide-out-right: op-slide-out-right .5s var(--ease-3);
-  --animation-slide-out-left: op-slide-out-left .5s var(--ease-3);
-  --animation-slide-in-up: op-slide-in-up .5s var(--ease-3);
-  --animation-slide-in-down: op-slide-in-down .5s var(--ease-3);
-  --animation-slide-in-right: op-slide-in-right .5s var(--ease-3);
-  --animation-slide-in-left: op-slide-in-left .5s var(--ease-3);
-  --animation-shake-x: op-shake-x .75s var(--ease-out-5);
-  --animation-shake-y: op-shake-y .75s var(--ease-out-5);
-  --animation-spin: op-spin 2s linear infinite;
-  --animation-ping: op-ping 5s var(--ease-out-3) infinite;
-  --animation-blink: op-blink 1s var(--ease-out-3) infinite;
-  --animation-float: op-float 3s var(--ease-in-out-3) infinite;
-  --animation-bounce: op-bounce 2s var(--ease-squish-2) infinite;
-  --animation-pulse: op-pulse 2s var(--ease-out-3) infinite;
+  --animation-fade-in: fade-in .5s var(--ease-3);
+  --animation-fade-out: fade-out .5s var(--ease-3);
+  --animation-scale-up: scale-up .5s var(--ease-3);
+  --animation-scale-down: scale-down .5s var(--ease-3);
+  --animation-slide-out-up: slide-out-up .5s var(--ease-3);
+  --animation-slide-out-down: slide-out-down .5s var(--ease-3);
+  --animation-slide-out-right: slide-out-right .5s var(--ease-3);
+  --animation-slide-out-left: slide-out-left .5s var(--ease-3);
+  --animation-slide-in-up: slide-in-up .5s var(--ease-3);
+  --animation-slide-in-down: slide-in-down .5s var(--ease-3);
+  --animation-slide-in-right: slide-in-right .5s var(--ease-3);
+  --animation-slide-in-left: slide-in-left .5s var(--ease-3);
+  --animation-shake-x: shake-x .75s var(--ease-out-5);
+  --animation-shake-y: shake-y .75s var(--ease-out-5);
+  --animation-spin: spin 2s linear infinite;
+  --animation-ping: ping 5s var(--ease-out-3) infinite;
+  --animation-blink: blink 1s var(--ease-out-3) infinite;
+  --animation-float: float 3s var(--ease-in-out-3) infinite;
+  --animation-bounce: bounce 2s var(--ease-squish-2) infinite;
+  --animation-pulse: pulse 2s var(--ease-out-3) infinite;
 }
 
-@keyframes op-fade-in {
-  to { opacity: 1 }
+@keyframes fade-in {
+  from { opacity: 0 }
 }
-@keyframes op-fade-out {
+@keyframes fade-out {
   to { opacity: 0 }
 }
-@keyframes op-scale-up {
+@keyframes scale-up {
   to { transform: scale(1.25) }
 }
-@keyframes op-scale-down {
+@keyframes scale-down {
   to { transform: scale(.75) }
 }
-@keyframes op-slide-out-up {
+@keyframes slide-out-up {
   to { transform: translateY(-100%) }
 }
-@keyframes op-slide-out-down {
+@keyframes slide-out-down {
   to { transform: translateY(100%) }
 }
-@keyframes op-slide-out-right {
+@keyframes slide-out-right {
   to { transform: translateX(100%) }
 }
-@keyframes op-slide-out-left {
+@keyframes slide-out-left {
   to { transform: translateX(-100%) }
 }
-@keyframes op-slide-in-up {
+@keyframes slide-in-up {
   from { transform: translateY(100%) }
 }
-@keyframes op-slide-in-down {
+@keyframes slide-in-down {
   from { transform: translateY(-100%) }
 }
-@keyframes op-slide-in-right {
+@keyframes slide-in-right {
   from { transform: translateX(-100%) }
 }
-@keyframes op-slide-in-left {
+@keyframes slide-in-left {
   from { transform: translateX(100%) }
 }
-@keyframes op-shake-x {
+@keyframes shake-x {
   0%, 100% { transform: translateX(0%) }
   20% { transform: translateX(-5%) }
   40% { transform: translateX(5%) }
   60% { transform: translateX(-5%) }
   80% { transform: translateX(5%) }
 }
-@keyframes op-shake-y {
+@keyframes shake-y {
   0%, 100% { transform: translateY(0%) }
   20% { transform: translateY(-5%) }
   40% { transform: translateY(5%) }
   60% { transform: translateY(-5%) }
   80% { transform: translateY(5%) }
 }
-@keyframes op-spin {
+@keyframes spin {
   to { transform: rotate(1turn) }
 }
-@keyframes op-ping {
+@keyframes ping {
   90%, 100% {
     transform: scale(2);
     opacity: 0;
   }
 }
-@keyframes op-blink {
+@keyframes blink {
   0%, 100% {
     opacity: 1
   }
@@ -88,14 +88,14 @@
     opacity: .5
   }
 }
-@keyframes op-float {
+@keyframes float {
   50% { transform: translateY(-25%) }
 }
-@keyframes op-bounce {
+@keyframes bounce {
   25% { transform: translateY(-20%) }
   40% { transform: translateY(-3%) }
   0%, 60%,100% { transform: translateY(0) }
 }
-@keyframes op-pulse {
+@keyframes pulse {
   50% { transform: scale(.9,.9) }
 }
