@@ -17,8 +17,13 @@
   ],
   "style": "open-props.min.css",
   "source": "src/index.js",
-  "main": "open-props.min.css",
-  "module": "./dist/open-props.module.js",
+  "main": "dist/open-props.cjs",
+  "module": "dist/open-props.module.js",
+  "exports": {
+    "import": "dist/open-props.module.js",
+    "require": "dist/open-props.cjs",
+    "default": "open-props.min.css"
+  },
   "browserslist": [
     "defaults"
   ],
@@ -29,7 +34,7 @@
     "gen:op": "cd src && node _create-props.js '' true",
     "gen:nowhere": "cd src && node _create-props.js '' false",
     "gen:prefixed": "cd src && node _create-props.js 'op'",
-    "lib:js": "microbundle",
+    "lib:js": "microbundle --no-sourcemap",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css",
     "lib:animations": "postcss src/props.animations.css -o animations.min.css",
