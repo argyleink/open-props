@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -20,15 +20,17 @@
   "main": "open-props.min.css",
   "module": "dist/open-props.module.js",
   "exports": {
-    "import": "./dist/open-props.module.js",
-    "require": "./dist/open-props.cjs",
+    ".": {
+      "import": "./dist/open-props.module.js",
+      "require": "./dist/open-props.cjs",
+      "default": "./dist/open-props.cjs"
+    },
     "./style": {
-      "default": "./normalize.min.css"
+      "default": "./open-props.min.css"
     },
     "./normalize": {
       "default": "./normalize.min.css"
-    },
-    "default": "./dist/open-props.cjs"
+    }
   },
   "browserslist": [
     "defaults"
