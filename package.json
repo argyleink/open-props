@@ -20,11 +20,15 @@
   "main": "open-props.min.css",
   "module": "dist/open-props.module.js",
   "exports": {
-    "import": "dist/open-props.module.js",
-    "require": "dist/open-props.cjs",
-    "normalize": "normalize.min.css",
-    "normalize.min.css": "normalize.min.css",
-    "default": "dist/open-props.cjs"
+    "import": "./dist/open-props.module.js",
+    "require": "./dist/open-props.cjs",
+    "./style": {
+      "default": "./normalize.min.css"
+    },
+    "./normalize": {
+      "default": "./normalize.min.css"
+    },
+    "default": "./dist/open-props.cjs"
   },
   "browserslist": [
     "defaults"
