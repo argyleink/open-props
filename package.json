@@ -1,9 +1,9 @@
 {
   "type": "module",
-  "name": "@argyleink/open-props",
+  "name": "open-props",
   "author": "Adam Argyle",
-  "license": "ISC",
-  "version": "0.5.0",
+  "license": "MIT",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
