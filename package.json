@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -17,7 +17,7 @@
   ],
   "style": "open-props.min.css",
   "source": "src/index.js",
-  "main": "dist/open-props.cjs",
+  "main": "open-props.min.css",
   "module": "dist/open-props.module.js",
   "exports": {
     "import": "dist/open-props.module.js",
@@ -34,7 +34,7 @@
     "gen:op": "cd src && node _create-props.js '' true",
     "gen:nowhere": "cd src && node _create-props.js '' false",
     "gen:prefixed": "cd src && node _create-props.js 'op'",
-    "lib:js": "microbundle --no-sourcemap",
+    "lib:js": "json -I -f package.json -e \"this.main='dist/open-props.cjs'\" && microbundle --no-sourcemap && json -I -f package.json -e \"this.main='open-props.min.css'\"",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css",
     "lib:animations": "postcss src/props.animations.css -o animations.min.css",
@@ -67,6 +67,7 @@
     "ava": "^3.15.0",
     "concurrently": "^6.2.1",
     "cssnano": "^5.0.8",
+    "json": "^11.0.0",
     "microbundle": "^0.13.3",
     "open-color": "^1.9.1",
     "postcss": "^8.3.9",
