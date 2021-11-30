@@ -1022,7 +1022,6 @@ pre[class*="language-"] {
     grid-template-columns: repeat(9, minmax(3rem, 1fr));
     place-items: center;
     font-size: var(--font-size-5);
-    font-weight: var(--font-weight-1);
     color: var(--text-1);
 
     @media (--md-n-below) {
