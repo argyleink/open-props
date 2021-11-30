@@ -20,10 +20,10 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" href="/favicon.ico" sizes="any">
 
-    <meta name="twitter:image:src" content="https://open-props.web.app/open-props-social.jpg">
-    <meta name="twitter:image:alt" content="argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design.">
+    <meta name="twitter:image:src" content="https://open-props.style/open-props-social.jpg">
+    <meta name="twitter:image:alt" content="@argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="https://open-props.web.app/open-props-social.jpg">
+    <meta property="og:image" content="https://open-props.style/open-props-social.jpg">
     <meta property="og:image:alt" content="argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.">
 
     <link rel="stylesheet" href="/index.css">
@@ -85,7 +85,7 @@
            </g>
         </svg>
       </button>
-      <a href="#" title="Source on Github">
+      <a href="https://github.com/argyleink/open-props" title="Source on Github">
         <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
         </svg>
@@ -119,8 +119,13 @@
           </li>
         </ul>
         <small>
-          v0.4.0<br>
-          Apache License
+          v1.0.2
+          <span class="license">
+            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
+              <path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"></path>
+            </svg>
+             MIT
+          </span>
         </small>
       </header>
       <div>
@@ -132,10 +137,13 @@
             border-radius: var(--radius-2);
             padding: var(--size-fluid-3);
             box-shadow: var(--shadow-2);
-            border: var(--border-size-1) solid var(--blue-1);
 
             &:hover {
               box-shadow: var(--shadow-3);
+            }
+
+            @media (--motionOK) {
+              animation: var(--animation-fade-in);
             }
           }
         </code></pre>
@@ -1873,7 +1881,7 @@
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
             .loaded {
-              animation: var(--animation-fade-in);
+              animation: var(--animation-fade-in) forwards;
             }
 
             .actionsheet {
@@ -2688,7 +2696,7 @@
         </div>
       </dl>
 
-      <a href="#" title="Source on Github">
+      <a href="https://github.com/argyleink/open-props" title="Source on Github">
         <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
         </svg>

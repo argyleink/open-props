@@ -164,7 +164,7 @@ footer {
 }
 
 section.hero {
-  gap: var(--size-fluid-3);
+  gap: var(--size-fluid-3) var(--size-10);
 
   & pre[class*="language-"] {
     box-shadow: var(--shadow-6);
@@ -1472,4 +1472,14 @@ input[type="range"] {
 
 #npm > pre {
   margin: 0;
+}
+
+.license {
+  display: flex;
+  gap: var(--size-1);
+
+  & > svg {
+    stroke: none;
+    fill: var(--text-1);
+  }
 }
