@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -24,7 +24,7 @@
     "require": "dist/open-props.cjs",
     "normalize": "normalize.min.css",
     "normalize.min.css": "normalize.min.css",
-    "default": "open-props.min.css"
+    "default": "dist/open-props.cjs"
   },
   "browserslist": [
     "defaults"
