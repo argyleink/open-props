@@ -2,7 +2,7 @@
   
 ![Frame 2](https://user-images.githubusercontent.com/1134620/141246730-7df4cf2a-6249-42ca-a01b-494c3ccddabe.png)
 
-## Open Source CSS Variables
+## Open Source CSS Props
 `gradients` `animations` `sizes` `easings` `colors` `shadows` `aspect-ratios` `z-indexes`  
 
 [![Tests](https://github.com/argyleink/open-props/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/argyleink/open-props/actions/workflows/tests.yml)
