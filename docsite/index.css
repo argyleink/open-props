@@ -1180,10 +1180,30 @@ pre[class*="language-"] {
     background: var(--indigo-6);
     color: var(--indigo-0);
     block-size: var(--size-10);
-    font-size: var(--font-size-4);
     display: grid;
     place-content: center;
+    font-size: var(--font-size-2);
+
+    &::before {
+      font-size: var(--font-size-4);
+    }
   }
+}
+
+.content-demo {
+  display: flex;
+  gap: var(--size-2);
+  flex-flow: row wrap;
+
+  & > * {
+    text-align: start;
+  }
+}
+
+.header-demo {
+  display: flex;
+  gap: var(--size-2);
+  flex-flow: row wrap;
 }
 
 .count-em {
