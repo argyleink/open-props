@@ -1483,3 +1483,7 @@ input[type="range"] {
     fill: var(--text-1);
   }
 }
+
+.prevent-justify-item-wrap {
+  white-space: nowrap;
+}
