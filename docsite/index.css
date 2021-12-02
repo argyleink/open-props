@@ -44,10 +44,6 @@ body {
   }
 }
 
-:not(blockquote) > p {
-  text-align: justify;
-}
-
 section {
   display: grid;
   gap: var(--size-fluid-4);
