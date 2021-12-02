@@ -85,7 +85,6 @@ Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]
 // gen index.css
 const entry = fs.createWriteStream('index.css')
 entry.write(`@import 'props.media.css';
-@import 'props.supports.css';
 `)
 Object.keys(mainbundle).forEach(filename => {
   entry.write(`@import '${filename}';\n`)

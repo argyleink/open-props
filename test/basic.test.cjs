@@ -2,7 +2,7 @@ const test = require('ava')
 const OpenProps = require('../dist/open-props.cjs')
 
 test('Should have an all included import', t => {
-  t.is(Object.keys(OpenProps).length, 349)
+  t.is(Object.keys(OpenProps).length, 351)
 })
 
 test('Import should have animations', async t => {
