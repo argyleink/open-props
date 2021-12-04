@@ -45,6 +45,16 @@ const individual_colors = {
   'props.orange.css': OpenColors.Orange,
 }
 
+const jsonbundle = {
+  ...individual_colors,
+  'props.sizes.css': Sizes,
+  'props.easing.css': Easings,
+  'props.zindex.css': Zindex,
+  'props.aspects.css': Aspects,
+  'props.gradients.css': Gradients,
+  'props.borders.css': Borders,
+}
+
 const buildPropsJSON = ({filename,props}) => {
   const type = filename.split('.')[1]
   const file = fs.createWriteStream(`${type}.json`)
@@ -97,6 +107,9 @@ const buildPropsStylesheet = ({filename, props}) => {
 // gen prop variants
 Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props})
+})
+
+Object.entries(jsonbundle).forEach(([filename, props]) => {
   buildPropsJSON({filename, props})
 })
 
