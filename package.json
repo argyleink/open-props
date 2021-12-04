@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -27,7 +27,33 @@
       "default": "./dist/open-props.cjs"
     },
     "./style": "./open-props.min.css",
-    "./normalize": "./normalize.min.css"
+    "./postcss/style": "./src/index.css",
+    "./normalize": "./normalize.min.css",
+    "./postcss/normalize": "./src/extra/normalize.css",
+    "./animations": "./animations.min.css",
+    "./aspects": "./aspects.min.css",
+    "./blue": "./blue.min.css",
+    "./borders": "./borders.min.css",
+    "./colors": "./colors.min.css",
+    "./cyan": "./cyan.min.css",
+    "./easings": "./easing.min.css",
+    "./fonts": "./fonts.min.css",
+    "./gradients": "./gradients.min.css",
+    "./grape": "./grape.min.css",
+    "./gray": "./gray.min.css",
+    "./green": "./green.min.css",
+    "./indigo": "./indigo.min.css",
+    "./lime": "./lime.min.css",
+    "./media": "./media.min.css",
+    "./orange": "./orange.min.css",
+    "./pink": "./pink.min.css",
+    "./red": "./red.min.css",
+    "./shadows": "./shadows.min.css",
+    "./sizes": "./sizes.min.css",
+    "./teal": "./teal.min.css",
+    "./violet": "./violet.min.css",
+    "./yellow": "./yellow.min.css",
+    "./zindex": "./zindex.min.css"
   },
   "browserslist": [
     "defaults"
