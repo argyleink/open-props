@@ -48,14 +48,17 @@ const individual_colors = {
 const buildPropsJSON = ({filename,props}) => {
   const type = filename.split('.')[1]
   const file = fs.createWriteStream(`${type}.json`)
+
   file.write(`{\n`)
   file.write(`  "${type}": {\n`)
 
-  Object.entries(props).forEach(([prop, val]) => {
-    file.write(`    "${prop}": { "value": "${val}" },\n`)
+  const entries = Object.entries(props).map(([prop, val]) => {
+    return `    "${prop}": { "value": "${val}" }`
   })
 
-  file.write('  }\n')
+  file.write(entries.join(',\n'))
+
+  file.write('\n  }\n')
   file.end('}')
 }
 
