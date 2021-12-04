@@ -706,15 +706,15 @@
                 <h6>Bundles</h6>
                 <div class="block-wrap">
                   <pre class="language-css"><code>
-                    /* index.pcss */
+                    /* index.css */
                     @import "open-props";
-                    @import "open-props/normalize.css";
+                    @import "open-props/normalize";
                   </code></pre>
 
                   <pre class="language-js"><code>
                     // index.js
                     import 'open-props';
-                    import 'open-props/normalize.css';
+                    import 'open-props/normalize';
                   </code></pre>
                 </div>
               </div>
@@ -724,19 +724,19 @@
                 <div class="block-wrap">
                   <pre class="language-css"><code>
                     /* index.pcss */
-                    @import "open-props/sizes.css";
-                    @import "open-props/colors.css";
-                    @import "open-props/orange.css";
-                    @import "open-props/gradients.css";
+                    @import "open-props/sizes";
+                    @import "open-props/colors";
+                    @import "open-props/orange";
+                    @import "open-props/gradients";
                     /* etc */
                   </code></pre>
 
                   <pre class="language-js"><code>
                     // index.js
-                    import 'open-props/sizes.css';
-                    import 'open-props/colors.css';
-                    import 'open-props/orange.css';
-                    import 'open-props/gradients.css';
+                    import 'open-props/sizes';
+                    import 'open-props/colors';
+                    import 'open-props/orange';
+                    import 'open-props/gradients';
                     /* etc */
                   </code></pre>
                 </div>
@@ -745,26 +745,13 @@
             
             <details class="started-details">
               <summary>PostCSS</summary>
-
               <div class="block-wrap">
                 <div>
                   <h6>Entry points</h6>
                   <pre class="language-css"><code>
                     /* index.pcss */
-                    @import "open-props/src/index.css";
-                    @import "open-props/src/extra/normalize.css";
-                  </code></pre>
-                </div>
-
-                <div>
-                  <h6>Individual packs</h6>
-                  <pre class="language-css"><code>
-                    /* index.pcss */
-                    @import "open-props/src/props.sizes.css";
-                    @import "open-props/src/props.orange.css";
-                    @import "open-props/src/props.aspects.css";
-                    @import "open-props/src/props.easing.css";
-                    /* etc */
+                    @import "open-props/postcss/style";
+                    @import "open-props/postcss/normalize";
                   </code></pre>
                 </div>
               </div>
