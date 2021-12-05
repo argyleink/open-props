@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -36,7 +36,7 @@
     "./borders": "./borders.min.css",
     "./colors": "./colors.min.css",
     "./cyan": "./cyan.min.css",
-    "./easings": "./easing.min.css",
+    "./easings": "./easings.min.css",
     "./fonts": "./fonts.min.css",
     "./gradients": "./gradients.min.css",
     "./grape": "./grape.min.css",
