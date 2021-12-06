@@ -53,7 +53,8 @@
     "./teal": "./teal.min.css",
     "./violet": "./violet.min.css",
     "./yellow": "./yellow.min.css",
-    "./zindex": "./zindex.min.css"
+    "./zindex": "./zindex.min.css",
+    "./json": "./open-props.tokens.json"
   },
   "browserslist": [
     "defaults"
