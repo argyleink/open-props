@@ -9,5 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: npm ci
+      - run: npm run gen:op
       - run: npm run lib:js
       - run: npm test
