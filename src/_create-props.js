@@ -45,6 +45,26 @@ const individual_colors = {
   'props.orange.css': OpenColors.Orange,
 }
 
+const jsonbundle = {
+  ...Object.values(individual_colors).reduce((colors, color) => {
+    return Object.assign(colors, color)
+  }, {}),
+  ...Sizes,
+  ...Easings,
+  ...Zindex,
+  ...Aspects,
+  ...Gradients,
+  ...Borders,
+}
+const designtokens = Object.entries(jsonbundle).map(([key, token]) => {
+  return [key, {
+    value: token
+  }]
+})
+
+const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
+JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
+
 const buildPropsStylesheet = ({filename, props}) => {
   const file = fs.createWriteStream(filename)
 
@@ -77,7 +97,7 @@ const buildPropsStylesheet = ({filename, props}) => {
   file.end(appendedMeta)
 }
 
-// gen prop stylesheets
+// gen prop variants
 Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props})
 })
