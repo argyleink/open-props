@@ -17,6 +17,7 @@
 
 #### CDN
 - [https://unpkg.com/open-props](https://unpkg.com/open-props)
+- [https://unpkg.com/open-props/open-props.tokens.json](https://unpkg.com/open-props/open-props.tokens.json)
 
 #### CLI
 - `npm run gen:op` - runs through `src/` js files and creates the PostCSS files in `src/`

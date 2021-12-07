@@ -54,7 +54,9 @@
     "./violet": "./violet.min.css",
     "./yellow": "./yellow.min.css",
     "./zindex": "./zindex.min.css",
-    "./json": "./open-props.tokens.json"
+    "./json": "./open-props.tokens.json",
+    "./tokens": "./open-props.tokens.json",
+    "./design-tokens": "./open-props.tokens.json"
   },
   "browserslist": [
     "defaults"
