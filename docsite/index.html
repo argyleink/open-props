@@ -666,50 +666,6 @@
                 </div>
               </div>
             </details>
-
-            <h5 id="jitprops">PostCSS JIT Props</h5>
-            <p>Only ship the props you use. <a href="https://github.com/GoogleChromeLabs/postcss-jit-props">Learn more</a>.</p>
-
-            <details class="started-details">
-              <summary>PostCSS</summary>
-
-              <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
-
-              <div class="block-wrap">
-                <div>
-                  <h6>Props as Javascript</h6>
-                  <pre class="language-js"><code>
-                    // postcss.config.js
-                    const postcssJitProps = require('postcss-jit-props');
-                    const OpenProps = require('open-props');
-                    
-                    module.exports = {
-                      plugins: [
-                        postcssJitProps(OpenProps),
-                      ]
-                    }
-                  </code></pre>
-                </div>
-                <div>
-                  <h6>Props from CSS</h6>
-                  <pre class="language-js"><code>
-                    // postcss.config.js
-                    const postcssJitProps = require('postcss-jit-props');
-                    const OpenProps = require('open-props');
-                    
-                    module.exports = {
-                      plugins: [
-                        postcssJitProps({
-                          files: [
-                            require('open-props/open-props.min.css'),
-                          ]
-                        }),
-                      ]
-                    }
-                  </code></pre>
-                </div>
-              </div>
-            </details>
           </div>
 
           <div class="contain-pre" id="npm">
@@ -782,6 +738,77 @@
                   import 'open-props/tokens'
                   import 'open-props/json'
                   import 'open-props/design-tokens'
+                  </code></pre>
+                </div>
+              </div>
+            </details>
+
+            <h5 id="jitprops">PostCSS JIT Props</h5>
+            <p>Only ship the props you use. <a href="https://github.com/GoogleChromeLabs/postcss-jit-props">Learn more</a>.</p>
+
+            <details class="started-details">
+              <summary>PostCSS</summary>
+
+              <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
+
+              <div class="block-wrap">
+                <div>
+                  <h6>Props as Javascript</h6>
+                  <pre class="language-js"><code>
+                    // postcss.config.js
+                    const postcssJitProps = require('postcss-jit-props');
+                    const OpenProps = require('open-props');
+                    
+                    module.exports = {
+                      plugins: [
+                        postcssJitProps(OpenProps),
+                      ]
+                    }
+                  </code></pre>
+                </div>
+                <div>
+                  <h6>Props from CSS</h6>
+                  <pre class="language-js"><code>
+                    // postcss.config.js
+                    const postcssJitProps = require('postcss-jit-props');
+                    const OpenProps = require('open-props');
+                    
+                    module.exports = {
+                      plugins: [
+                        postcssJitProps({
+                          files: [
+                            require('open-props/open-props.min.css'),
+                          ]
+                        }),
+                      ]
+                    }
+                  </code></pre>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="contain-pre" id="cli">
+            <h4>CLI</h4>
+            <pre class="language-bash"><code>git clone https://github.com/argyleink/open-props.git</code></pre>
+
+            <details class="started-details">
+              <summary>Customize your build</summary>
+              <div class="block-wrap">
+                <div>
+                  <h6>Customize Bundles</h6>
+                  <p></p>
+                  <pre class="language-js"><code>
+                    npm run gen:nowhere               // bundle without `:where()`
+                    npm run gen:prefixed              // each prop prefixed with `op`, like `--op-font-size-1`
+                    node _create-props.js 'my-prefix' // each prop with your own prefix
+                  </code></pre>
+                </div>
+                <div>
+                  <h6>Build Locally</h6>
+                  <pre class="language-js"><code>
+                    npm run gen:op  // runs through `src/` js files and creates the PostCSS files in `src/`
+                    npm run bundle  // creates all the various minified bundles of props
+                    npm run lib:js  // builds the JS modules for NPM
                   </code></pre>
                 </div>
               </div>

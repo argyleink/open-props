@@ -1489,7 +1489,7 @@ input[type="range"] {
   }
 }
 
-#npm > pre {
+#npm > pre, #cli > pre {
   margin: 0;
 }
 
