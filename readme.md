@@ -17,7 +17,9 @@
 
 #### CDN
 - [https://unpkg.com/open-props](https://unpkg.com/open-props)
-- [https://unpkg.com/open-props/open-props.tokens.json](https://unpkg.com/open-props/open-props.tokens.json)
+- [https://unpkg.com/open-props/normalize.min.css](https://unpkg.com/open-props/normalize.min.css) - Normalize (light + dark)
+- [https://unpkg.com/open-props/open-props.tokens.json](https://unpkg.com/open-props/open-props.tokens.json) - Design Tokens
+- [https://unpkg.com/browse/open-props@latest](https://unpkg.com/browse/open-props@latest) - Full CDN list
 
 #### CLI
 - `npm run gen:op` - runs through `src/` js files and creates the PostCSS files in `src/`
