@@ -58,6 +58,44 @@ const jsonbundle = {
 }
 const designtokens = Object.entries(jsonbundle).map(([key, token]) => {
   return [key, {
+    "Majestic magenta": {
+      "value": "#ff00ff",
+      "type": "color"
+    },
+    "Translucent shadow": {
+      "value": "#00000088",
+      "type": "color"
+    },
+    "Primary font": {
+      "value": "Comic Sans MS",
+      "type": "font"
+    },
+    "Body font": {
+      "value": ["Helvetica", "Arial"],
+      "type": "font"
+    },
+    "my types": {
+      "color pair": {
+        "type": "typedef",
+        "value": {
+          "foreground": {
+            "type": "color",
+            "required": true
+          },
+          "background": {
+            "type": "color",
+            "required": true
+          }
+        }
+      }
+    },
+    "broken-token": {
+      "type": "{my types.color pair}",
+      "value": {
+        "foreground": "Comic Sans MS",
+        "background": "#eeeeee"
+      }
+    },
     value: token
   }]
 })
