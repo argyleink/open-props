@@ -1,0 +1,36 @@
+---
+import Nav from '../components/Nav.astro';
+---
+
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Welcome to Astro</title>
+  <style>
+    @import "open-props/normalize";
+    @import "open-props/media";
+    @import "theme.css";
+
+    :root {
+      --max-inline-body: calc(100vw - (var(--size-8) * 2));
+      --brand-bg-gradient: linear-gradient(to bottom, var(--grape-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
+
+      @media (--md-n-below) {
+        --max-inline-body: calc(100vw - (var(--size-3) * 2));
+      }
+
+      @nest [data-theme="light"] & {
+        --brand-bg-gradient: linear-gradient(to bottom, var(--grape-6), var(--violet-6), var(--indigo-6), var(--cyan-6));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <Nav />
+</body>
+
+</html>
