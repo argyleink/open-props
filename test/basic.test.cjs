@@ -22,3 +22,7 @@ test('JSON Import should have colors', async t => {
   t.is(Object.keys(OPtokens).length, 274)
   t.assert(Object.keys(OPtokens).includes('--orange-0'))
 })
+
+test('JSON Import should have types', async t => {
+  t.assert(OPtokens['--gray-0'].type, 'color')
+})
