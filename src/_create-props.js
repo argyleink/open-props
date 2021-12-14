@@ -11,6 +11,8 @@ import Gradients from './props.gradients.js'
 import Shadows from './props.shadows.js'
 import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
+import MaskEdges from './props.masks.edges.js'
+import MaskCornerCuts from './props.masks.corner-cuts.js'
 
 const [,,prefix,useWhere] = process.argv
 const selector = useWhere === 'true' ? ':where(html)' : 'html'
@@ -43,6 +45,8 @@ const individual_colors = {
   'props.lime.css': OpenColors.Lime,
   'props.yellow.css': OpenColors.Yellow,
   'props.orange.css': OpenColors.Orange,
+  'props.masks.edges.css': MaskEdges,
+  'props.masks.corner-cuts.css': MaskCornerCuts,
 }
 
 const jsonbundle = {
