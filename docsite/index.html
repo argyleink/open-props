@@ -1,78 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
     <title>Open Props: sub-atomic styles</title>
-    <meta name="og:title" content="Open Props: sub-atomic styles">
-    <meta name="twitter:title" content="Open Props: sub-atomic styles">
+    <meta name="og:title" content="Open Props: sub-atomic styles" />
+    <meta name="twitter:title" content="Open Props: sub-atomic styles" />
 
-    <meta name="description" content="Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.">
-    <meta name="og:description" content="Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.">
-    <meta name="twitter:description" content="Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.">
+    <meta
+      name="description"
+      content="Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript."
+    />
+    <meta
+      name="og:description"
+      content="Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript."
+    />
+    <meta
+      name="twitter:description"
+      content="Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript."
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="Canvas">
-    <meta name="color-scheme" content="dark light">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="Canvas" />
+    <meta name="color-scheme" content="dark light" />
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
 
-    <meta name="twitter:image:src" content="https://open-props.style/open-props-social.jpg">
-    <meta name="twitter:image:alt" content="@argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="https://open-props.style/open-props-social.jpg">
-    <meta property="og:image:alt" content="argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.">
+    <meta
+      name="twitter:image:src"
+      content="https://open-props.style/open-props-social.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="@argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:image"
+      content="https://open-props.style/open-props-social.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="argyleink/open-props: CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript."
+    />
 
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/index.css" />
     <script src="/theme-toggle.js"></script>
   </head>
   <body>
-
-    <svg style="display:none">
+    <svg style="display: none">
       <symbol id="play-icon">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+          clip-rule="evenodd"
+        />
       </symbol>
       <symbol id="pause-icon">
-        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+        <path
+          fill-rule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z"
+          clip-rule="evenodd"
+        />
       </symbol>
       <symbol id="checkmark-icon">
         <polyline points="9 11 12 14 22 4"></polyline>
-        <path style="opacity:.75;" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+        <path
+          style="opacity: 0.75"
+          d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+        ></path>
       </symbol>
       <symbol id="bent-arrow">
-        <path d="m15 10 5 5-5 5"/>
-        <path d="M4 4v7a4 4 0 0 0 4 4h12"/>
+        <path d="m15 10 5 5-5 5" />
+        <path d="M4 4v7a4 4 0 0 0 4 4h12" />
       </symbol>
     </svg>
 
     <nav>
       <a href="/">
         <svg class="op-icon" viewBox="0 0 200 200">
-          <line class="op-icon-p" x1="66" x2="66" y1="100" y2="175" stroke-width="25"/>
-          <circle class="op-icon-p" cx="100" cy="100" r="35" fill="transparent" stroke-width="25"/>
-          <circle class="op-icon-o" cx="100" cy="100" r="85" fill="transparent" stroke-width="25"/>
+          <line
+            class="op-icon-p"
+            x1="66"
+            x2="66"
+            y1="100"
+            y2="175"
+            stroke-width="25"
+          />
+          <circle
+            class="op-icon-p"
+            cx="100"
+            cy="100"
+            r="35"
+            fill="transparent"
+            stroke-width="25"
+          />
+          <circle
+            class="op-icon-o"
+            cx="100"
+            cy="100"
+            r="85"
+            fill="transparent"
+            stroke-width="25"
+          />
         </svg>
         <span class="op-logo">
-          <span>Open</span> 
+          <span>Open</span>
           <span>Props</span>
         </span>
       </a>
       <a href="#getting-started">Get Started</a>
-      <a class="md-hidden" href="https://stackblitz.com/edit/jit-open-props?file=style.css">
-        Try in browser 
+      <a
+        class="md-hidden"
+        href="https://stackblitz.com/edit/jit-open-props?file=style.css"
+      >
+        Try in browser
         <small class="green-badge">RAD</small>
       </a>
-      <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-live="auto">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        title="Toggles light & dark"
+        aria-live="auto"
+      >
         <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
           <!-- https://feathericons.com/?query=sun -->
           <mask id="moon">
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
             <circle cx="40" cy="8" r="11" fill="black" />
           </mask>
-          <circle id="sun" cx="12" cy="12" r="11" mask="url(#moon)"/>
+          <circle id="sun" cx="12" cy="12" r="11" mask="url(#moon)" />
           <g id="sun-beams">
             <line x1="12" y1="1" x2="12" y2="3" />
             <line x1="12" y1="21" x2="12" y2="23" />
@@ -82,12 +142,18 @@
             <line x1="21" y1="12" x2="23" y2="12" />
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-           </g>
+          </g>
         </svg>
       </button>
-      <a href="https://github.com/argyleink/open-props" title="Source on Github">
+      <a
+        href="https://github.com/argyleink/open-props"
+        title="Source on Github"
+      >
         <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path>
         </svg>
       </a>
     </nav>
@@ -101,19 +167,19 @@
         <ul class="checkmark-list">
           <li>
             <svg viewBox="0 0 24 24">
-              <use href="#checkmark-icon"/>
+              <use href="#checkmark-icon" />
             </svg>
             Expertly crafted web design tokens
           </li>
           <li>
             <svg viewBox="0 0 24 24">
-              <use href="#checkmark-icon"/>
+              <use href="#checkmark-icon" />
             </svg>
             Create consistent components
           </li>
           <li>
             <svg viewBox="0 0 24 24">
-              <use href="#checkmark-icon"/>
+              <use href="#checkmark-icon" />
             </svg>
             Useful in any framework
           </li>
@@ -121,10 +187,19 @@
         <small>
           v1.0.13
           <span class="license">
-            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
-              <path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"></path>
+            <svg
+              aria-hidden="true"
+              height="16"
+              viewBox="0 0 16 16"
+              version="1.1"
+              width="16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"
+              ></path>
             </svg>
-             MIT
+            MIT
           </span>
         </small>
       </header>
@@ -182,10 +257,16 @@
         <a href="https://codepen.io/argyleink/pen/porzeyz">
           <figure>
             <picture>
-              <img width="1125" height="586" src="/hero-layout.png" alt="" loading="lazy">
+              <img
+                width="1125"
+                height="586"
+                src="/hero-layout.png"
+                alt=""
+                loading="lazy"
+              />
             </picture>
             <figcaption>
-              <img src="/hero-layout.png" aria-hidden="true" loading="lazy">
+              <img src="/hero-layout.png" aria-hidden="true" loading="lazy" />
               <div class="adaptive-glass">
                 <h3>Hero Layout</h3>
                 <p><b>18 props</b> + <b>normalize.css</b></p>
@@ -196,10 +277,20 @@
         <a href="https://codepen.io/argyleink/pen/powMQgx">
           <figure>
             <picture>
-              <img width="1446" height="658" src="/adaptive-buttons.png" alt="" loading="lazy">
+              <img
+                width="1446"
+                height="658"
+                src="/adaptive-buttons.png"
+                alt=""
+                loading="lazy"
+              />
             </picture>
             <figcaption>
-              <img src="/adaptive-buttons.png" aria-hidden="true" loading="lazy">
+              <img
+                src="/adaptive-buttons.png"
+                aria-hidden="true"
+                loading="lazy"
+              />
               <div class="adaptive-glass">
                 <h3>Adaptive Buttons</h3>
                 <p><b>10 props</b></p>
@@ -210,10 +301,16 @@
         <a href="https://codepen.io/argyleink/pen/jOLaBgG">
           <figure>
             <picture>
-              <img width="1600" height="960" src="/cards.png" alt="" loading="lazy">
+              <img
+                width="1600"
+                height="960"
+                src="/cards.png"
+                alt=""
+                loading="lazy"
+              />
             </picture>
             <figcaption>
-              <img src="/cards.png" aria-hidden="true" loading="lazy">
+              <img src="/cards.png" aria-hidden="true" loading="lazy" />
               <div class="adaptive-glass">
                 <h3>Adaptive Cards</h3>
                 <p><b>8 props</b> + <b>normalize.css</b></p>
@@ -224,10 +321,16 @@
         <a href="https://codepen.io/argyleink/pen/QWMreXR">
           <figure>
             <picture>
-              <img width="760" height="372" src="/pagination.png" alt="" loading="lazy">
+              <img
+                width="760"
+                height="372"
+                src="/pagination.png"
+                alt=""
+                loading="lazy"
+              />
             </picture>
             <figcaption>
-              <img src="/pagination.png" aria-hidden="true" loading="lazy">
+              <img src="/pagination.png" aria-hidden="true" loading="lazy" />
               <div class="adaptive-glass">
                 <h3>Pagination Example</h3>
                 <p>10 props</p>
@@ -238,10 +341,16 @@
         <a href="https://codepen.io/argyleink/pen/XWaYyWe">
           <figure>
             <picture>
-              <img width="1096" height="639" src="/color-schemes.png" alt="" loading="lazy">
+              <img
+                width="1096"
+                height="639"
+                src="/color-schemes.png"
+                alt=""
+                loading="lazy"
+              />
             </picture>
             <figcaption>
-              <img src="/color-schemes.png" aria-hidden="true" loading="lazy">
+              <img src="/color-schemes.png" aria-hidden="true" loading="lazy" />
               <div class="adaptive-glass">
                 <h3>4 Color Schemes</h3>
                 <p><b>16 props</b></p>
@@ -261,8 +370,12 @@
         <div>
           <dt>
             <svg viewBox="0 0 24 24">
-              <path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-              <path d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+              <path
+                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+              />
+              <path
+                d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+              />
             </svg>
             Design Consistently
           </dt>
@@ -271,7 +384,9 @@
         <div>
           <dt>
             <svg viewBox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              <path
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
             </svg>
             Predictable
           </dt>
@@ -279,7 +394,7 @@
         </div>
         <div>
           <dt>
-            <svg  viewBox="0 0 24 24" >
+            <svg viewBox="0 0 24 24">
               <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
               <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
             </svg>
@@ -290,11 +405,15 @@
         <div>
           <dt>
             <svg viewBox="0 0 24 24">
-              <path d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+              <path
+                d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
+              />
             </svg>
             Customizable
           </dt>
-          <dd>Map the props from JS or customize builds from the command line.</dd>
+          <dd>
+            Map the props from JS or customize builds from the command line.
+          </dd>
         </div>
       </dl>
     </section>
@@ -309,7 +428,10 @@
         <header>
           <h4>File Sizes</h4>
           <blockquote>
-            <p>The following sizes are for the minified files and after <a href="https://github.com/google/brotli">Brotli</a> compression.</p>
+            <p>
+              The following sizes are for the minified files and after
+              <a href="https://github.com/google/brotli">Brotli</a> compression.
+            </p>
           </blockquote>
         </header>
         <dl class="block-wrap bundle-sizes">
@@ -321,7 +443,7 @@
                 <a href="https://unpkg.com/open-props">open-props.min.css</a>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
                   351 props
                 </div>
@@ -329,24 +451,36 @@
 
               <div class="size"><strong>1.3</strong>kB</div>
               <div class="file">
-                <a href="https://unpkg.com/open-props/normalize.min.css">normalize.min.css</a> <small class="green-badge">optional</small>
+                <a href="https://unpkg.com/open-props/normalize.min.css"
+                  >normalize.min.css</a
+                >
+                <small class="green-badge">optional</small>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
-                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
+                  <a
+                    href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css"
+                    >brand.css</a
+                  >
                 </div>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
-                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css">theme.light.css</a>
+                  <a
+                    href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css"
+                    >theme.light.css</a
+                  >
                 </div>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
-                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css">theme.dark.css</a>  
+                  <a
+                    href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css"
+                    >theme.dark.css</a
+                  >
                 </div>
               </div>
             </dd>
@@ -357,62 +491,98 @@
             <dd class="size-chart">
               <div class="size"><strong>0.48</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.animations.css">animations.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.animations.css"
+                  >animations.css</a
+                >
               </div>
 
               <div class="size"><strong>0.1</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.aspects.css">aspects.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.aspects.css"
+                  >aspects.css</a
+                >
               </div>
 
               <div class="size"><strong>0.25</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.borders.css">borders.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.borders.css"
+                  >borders.css</a
+                >
               </div>
 
               <div class="size"><strong>0.7</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.colors.css">colors.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.colors.css"
+                  >colors.css</a
+                >
               </div>
 
               <div class="size"><strong>0.2</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.easing.css">easings.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.easing.css"
+                  >easings.css</a
+                >
               </div>
 
               <div class="size"><strong>0.4</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.fonts.css">fonts.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.fonts.css"
+                  >fonts.css</a
+                >
               </div>
 
               <div class="size"><strong>1.0</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.gradients.css">gradients.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.gradients.css"
+                  >gradients.css</a
+                >
               </div>
 
               <div class="size"><strong>0.38</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.media.css">media.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.media.css"
+                  >media.css</a
+                >
               </div>
 
               <div class="size"><strong>0.26</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.shadows.css">shadows.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.shadows.css"
+                  >shadows.css</a
+                >
               </div>
 
               <div class="size"><strong>0.2</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.sizes.css">sizes.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.sizes.css"
+                  >sizes.css</a
+                >
               </div>
 
               <div class="size"><strong>0.1</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.supports.css">supports.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.supports.css"
+                  >supports.css</a
+                >
               </div>
 
               <div class="size"><strong>0.05</strong>kB</div>
               <div class="file">
-                <a href="https://github.com/argyleink/open-props/blob/main/src/props.zindex.css">zindex.css</a>
+                <a
+                  href="https://github.com/argyleink/open-props/blob/main/src/props.zindex.css"
+                  >zindex.css</a
+                >
               </div>
             </dd>
           </div>
@@ -422,29 +592,53 @@
 
             <dd class="size-chart">
               <div class="size"><strong>??</strong></div>
-              <div class="file">icons.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                icons.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">svg.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                svg.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">patterns.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                patterns.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">at-property.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                at-property.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">shapes.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                shapes.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">layouts.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                layouts.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">clips.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                clips.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">masks.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                masks.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">variable-fonts.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                variable-fonts.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">lists.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                lists.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">counters.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                counters.css <small class="yellow-badge">WIP</small>
+              </div>
               <div class="size"><strong>??</strong></div>
-              <div class="file">utilities.css <small class="yellow-badge">WIP</small></div>
+              <div class="file">
+                utilities.css <small class="yellow-badge">WIP</small>
+              </div>
             </dd>
           </div>
         </dl>
@@ -454,9 +648,8 @@
     <section class="dogfood place-full block-wrap">
       <header>
         <h2>
-          This site 
-          <br>is built 
-          <br>with Open Props.
+          This site
+          <br />is built <br />with Open Props.
         </h2>
       </header>
       <div>
@@ -570,14 +763,20 @@
       <header>
         <h2>Getting Started</h2>
         <div class="block-wrap">
-          <p>Pick from CSS, <a href="https://postcss.org/">PostCSS</a>, JSON, or props as Javascript.</p>
+          <p>
+            Pick from CSS, <a href="https://postcss.org/">PostCSS</a>, JSON, or
+            props as Javascript.
+          </p>
           <blockquote class="icon-quote indigo">
             <svg viewBox="0 0 24 24">
-              <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
             <p>
-              <b>Need help?</b> <br>
-              Ask a question on <a href="https://discord.gg/AqA4fU886r">Discord!</a>
+              <b>Need help?</b> <br />
+              Ask a question on
+              <a href="https://discord.gg/AqA4fU886r">Discord!</a>
             </p>
           </blockquote>
         </div>
@@ -587,7 +786,12 @@
           <div class="contain-pre">
             <header>
               <h4>CDN</h4>
-              <p>No installation required. <a href="https://unpkg.com/browse/open-props@latest/">View all.</a></p>
+              <p>
+                No installation required.
+                <a href="https://unpkg.com/browse/open-props@latest/"
+                  >View all.</a
+                >
+              </p>
             </header>
 
             <details class="started-details">
@@ -657,8 +861,16 @@
                 <div class="block-wrap">
                   <div>
                     <h6>as JSON</h6>
-                    <p>Follows the <a href="https://design-tokens.github.io/community-group/format/">design tokens spec</a>.</p>
-                    <p>Note: Not all props can be represented as a design token.</p>
+                    <p>
+                      Follows the
+                      <a
+                        href="https://design-tokens.github.io/community-group/format/"
+                        >design tokens spec</a
+                      >.
+                    </p>
+                    <p>
+                      Note: Not all props can be represented as a design token.
+                    </p>
                     <pre class="language-js"><code>
                     import "https://unpkg.com/open-props/open-props.tokens.json"
                     </code></pre>
@@ -714,7 +926,7 @@
                 </div>
               </div>
             </details>
-            
+
             <details class="started-details">
               <summary>PostCSS</summary>
               <div class="block-wrap">
@@ -744,12 +956,19 @@
             </details>
 
             <h5 id="jitprops">PostCSS JIT Props</h5>
-            <p>Only ship the props you use. <a href="https://github.com/GoogleChromeLabs/postcss-jit-props">Learn more</a>.</p>
+            <p>
+              Only ship the props you use.
+              <a href="https://github.com/GoogleChromeLabs/postcss-jit-props"
+                >Learn more</a
+              >.
+            </p>
 
             <details class="started-details">
               <summary>PostCSS</summary>
 
-              <pre class="language-bash"><code>npm install postcss-jit-props</code></pre>
+              <pre
+                class="language-bash"
+              ><code>npm install postcss-jit-props</code></pre>
 
               <div class="block-wrap">
                 <div>
@@ -789,7 +1008,9 @@
           </div>
           <div class="contain-pre" id="cli">
             <h4>CLI</h4>
-            <pre class="language-bash"><code>git clone https://github.com/argyleink/open-props.git</code></pre>
+            <pre
+              class="language-bash"
+            ><code>git clone https://github.com/argyleink/open-props.git</code></pre>
 
             <details class="started-details">
               <summary>Customize your build</summary>
@@ -814,6 +1035,54 @@
               </div>
             </details>
           </div>
+          <div class="contain-pre" id="autocomplete">
+            <h4>Autocomplete</h4>
+            <details class="started-details">
+              <summary>VScode Autocomplete</summary>
+              <div class="block-wrap">
+                <div>
+                  <h6>Getting started</h6>
+                  <p>
+                    VScode has an intellisense feature which you can tap into,
+                    by passing the path to the node_modules folder when
+                    open-props is installed
+                  </p>
+                  <p>
+                    In your VScode environment, navigate to the extensions
+                    marketplace, and install this
+                    <a
+                      href="https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar"
+                      target="__blank"
+                      >CSS Var Complete</a
+                    >
+                    extension
+                  </p>
+                  <p>
+                    When the extension is installed, you'll have to add
+                    open-prop's css file path to a
+                    <code>.vscode/settings.json</code>file. Take a look at an
+                    illustration below
+                  </p>
+                  <pre class="language-js"><code> 
+                    // .vscode/settings.json file 
+                    { 
+                      "cssvar.files": [ 
+                        "./node_modules/open-props/open-props.min.css", 
+                        // if you have an alternative path to where your styles are located 
+                        // you can add it in this array of files 
+                        "assets/styles/variables.css" 
+                      ],
+
+                      // you can also add support for autocomplete in other file extensions 
+                      "cssvar.extensions": [
+                        "css", "html", "jsx", "tsx"
+                      ]
+                    } 
+                  </code></pre>
+                </div>
+              </div>
+            </details>
+          </div>
         </div>
       </article>
     </section>
@@ -822,12 +1091,22 @@
       <header>
         <h2>Colors</h2>
         <div class="block-wrap">
-          <p>Open Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1), an open-source color scheme optimized for UI development.</p>
+          <p>
+            Open Props includes
+            <a href="https://yeun.github.io/open-color/">Open Color</a> (Version
+            1.9.1), an open-source color scheme optimized for UI development.
+          </p>
           <blockquote class="icon-quote">
             <svg viewBox="0 0 24 24">
-              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              <path
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
             </svg>
-            <span>Open the color picker in your browser dev tools, set the swatches to the page's custom properties, and enjoy picking from the set!</span>
+            <span
+              >Open the color picker in your browser dev tools, set the swatches
+              to the page's custom properties, and enjoy picking from the
+              set!</span
+            >
           </blockquote>
         </div>
       </header>
@@ -886,172 +1165,562 @@
       <article class="just-stretch">
         <div class="open-colors count-em">
           <h4>Gray</h4>
-          <span class="color-swatch" style="background-color: var(--gray-0)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-1)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-2)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-3)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-4)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-5)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-6)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-7)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-8)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--gray-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Red</h4>
-          <span class="color-swatch" style="background-color: var(--red-0)"></span>
-          <span class="color-swatch" style="background-color: var(--red-1)"></span>
-          <span class="color-swatch" style="background-color: var(--red-2)"></span>
-          <span class="color-swatch" style="background-color: var(--red-3)"></span>
-          <span class="color-swatch" style="background-color: var(--red-4)"></span>
-          <span class="color-swatch" style="background-color: var(--red-5)"></span>
-          <span class="color-swatch" style="background-color: var(--red-6)"></span>
-          <span class="color-swatch" style="background-color: var(--red-7)"></span>
-          <span class="color-swatch" style="background-color: var(--red-8)"></span>
-          <span class="color-swatch" style="background-color: var(--red-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--red-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Pink</h4>
-          <span class="color-swatch" style="background-color: var(--pink-0)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-1)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-2)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-3)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-4)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-5)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-6)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-7)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-8)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--pink-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Grape</h4>
-          <span class="color-swatch" style="background-color: var(--grape-0)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-1)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-2)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-3)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-4)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-5)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-6)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-7)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-8)"></span>
-          <span class="color-swatch" style="background-color: var(--grape-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--grape-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Violet</h4>
-          <span class="color-swatch" style="background-color: var(--violet-0)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-1)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-2)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-3)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-4)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-5)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-6)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-7)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-8)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--violet-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Indigo</h4>
-          <span class="color-swatch" style="background-color: var(--indigo-0)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-1)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-2)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-3)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-4)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-5)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-6)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-7)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-8)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--indigo-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Blue</h4>
-          <span class="color-swatch" style="background-color: var(--blue-0)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-1)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-2)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-3)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-4)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-5)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-6)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-7)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-8)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--blue-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Cyan</h4>
-          <span class="color-swatch" style="background-color: var(--cyan-0)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-1)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-2)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-3)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-4)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-5)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-6)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-7)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-8)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--cyan-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Teal</h4>
-          <span class="color-swatch" style="background-color: var(--teal-0)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-1)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-2)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-3)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-4)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-5)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-6)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-7)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-8)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--teal-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Green</h4>
-          <span class="color-swatch" style="background-color: var(--green-0)"></span>
-          <span class="color-swatch" style="background-color: var(--green-1)"></span>
-          <span class="color-swatch" style="background-color: var(--green-2)"></span>
-          <span class="color-swatch" style="background-color: var(--green-3)"></span>
-          <span class="color-swatch" style="background-color: var(--green-4)"></span>
-          <span class="color-swatch" style="background-color: var(--green-5)"></span>
-          <span class="color-swatch" style="background-color: var(--green-6)"></span>
-          <span class="color-swatch" style="background-color: var(--green-7)"></span>
-          <span class="color-swatch" style="background-color: var(--green-8)"></span>
-          <span class="color-swatch" style="background-color: var(--green-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--green-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Lime</h4>
-          <span class="color-swatch" style="background-color: var(--lime-0)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-1)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-2)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-3)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-4)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-5)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-6)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-7)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-8)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--lime-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Yellow</h4>
-          <span class="color-swatch" style="background-color: var(--yellow-0)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-1)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-2)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-3)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-4)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-5)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-6)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-7)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-8)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--yellow-9)"
+          ></span>
         </div>
         <div class="open-colors count-em">
           <h4>Orange</h4>
-          <span class="color-swatch" style="background-color: var(--orange-0)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-1)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-2)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-3)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-4)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-5)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-6)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-7)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-8)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-9)"></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-0)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-1)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-2)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-3)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-4)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-5)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-6)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-7)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-8)"
+          ></span>
+          <span
+            class="color-swatch"
+            style="background-color: var(--orange-9)"
+          ></span>
         </div>
       </article>
 
@@ -1061,8 +1730,33 @@
         <div class="just-for-gap">
           <header>
             <h3>1) Color theming</h3>
-            <p>Low numbers are light and high numbers are dark. See how the Open Props <a href="https://github.com/argyleink/open-props/blob/main/src/extra/normalize.css">normalize.css</a> implements <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css">light</a> and <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css">dark</a> modes.</p>
-            <p><b>See it live:</b> <a href="https://codepen.io/argyleink/pen/21fe8c43e25876c3756917df0bd7ef36">auto, light, dark, dim and grape themes</a> demonstrated with Open Props!</p>
+            <p>
+              Low numbers are light and high numbers are dark. See how the Open
+              Props
+              <a
+                href="https://github.com/argyleink/open-props/blob/main/src/extra/normalize.css"
+                >normalize.css</a
+              >
+              implements
+              <a
+                href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css"
+                >light</a
+              >
+              and
+              <a
+                href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css"
+                >dark</a
+              >
+              modes.
+            </p>
+            <p>
+              <b>See it live:</b>
+              <a
+                href="https://codepen.io/argyleink/pen/21fe8c43e25876c3756917df0bd7ef36"
+                >auto, light, dark, dim and grape themes</a
+              >
+              demonstrated with Open Props!
+            </p>
           </header>
 
           <div class="block-wrap">
@@ -1134,9 +1828,16 @@
 
           <header>
             <h3>2) Creating adaptive color schemes</h3>
-            <p>It's not ideal for components to reference individual light or dark theme colors. Instead, you should prefer to use these individual variables to build a set of theme-agnostic aliases. This allows you to reference a custom property without worrying about its underlying value, which will dynamically adapt to the current context's theme.</p>
+            <p>
+              It's not ideal for components to reference individual light or
+              dark theme colors. Instead, you should prefer to use these
+              individual variables to build a set of theme-agnostic aliases.
+              This allows you to reference a custom property without worrying
+              about its underlying value, which will dynamically adapt to the
+              current context's theme.
+            </p>
           </header>
-          
+
           <div class="block-wrap">
             <div>
               <h5>No Preference (Light)</h5>
@@ -1211,9 +1912,14 @@
 
           <header>
             <h3>3) Using the aliases</h3>
-            <p>Your app is now free to use adaptive custom properties! Now, your team only needs to remember a single naming convention rather than wrestling with individual theming variables. Here are a few examples of how the above color theme system could be used.</p>
+            <p>
+              Your app is now free to use adaptive custom properties! Now, your
+              team only needs to remember a single naming convention rather than
+              wrestling with individual theming variables. Here are a few
+              examples of how the above color theme system could be used.
+            </p>
           </header>
-          
+
           <div class="block-wrap">
             <div>
               <h5>Page Styles Using Themes</h5>
@@ -1269,8 +1975,14 @@
     <section id="gradients" class="just-stretch">
       <header>
         <h2>Gradients</h2>
-        <p>Open Props includes 30 handcrafted gradients. Linear gradient direction can be changed with a custom property mixin.</p>
-        <p>Don't miss the noise props inspired by <a href="https://grainy-gradients.vercel.app">grainy-gradients</a>.</p>
+        <p>
+          Open Props includes 30 handcrafted gradients. Linear gradient
+          direction can be changed with a custom property mixin.
+        </p>
+        <p>
+          Don't miss the noise props inspired by
+          <a href="https://grainy-gradients.vercel.app">grainy-gradients</a>.
+        </p>
       </header>
 
       <div class="block-wrap">
@@ -1310,36 +2022,126 @@
       <article class="just-stretch just-for-gap">
         <h4>Gradients</h4>
         <div class="ui-gradients scroll-x-overflow count-em">
-          <span class="gradient-swatch" style="background-image: var(--gradient-1)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-2)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-3)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-4)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-5)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-6)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-7)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-8)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-9)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-10)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-11)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-12)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-13)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-14)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-15)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-16)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-17)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-18)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-19)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-20)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-21)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-22)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-23)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-24)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-25)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-26)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-27)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-28)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-29)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-30)"></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-1)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-2)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-3)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-4)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-5)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-6)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-7)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-8)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-9)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-10)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-11)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-12)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-13)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-14)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-15)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-16)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-17)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-18)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-19)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-20)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-21)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-22)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-23)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-24)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-25)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-26)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-27)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-28)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-29)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-30)"
+          ></span>
         </div>
       </article>
       <div>
@@ -1370,16 +2172,78 @@
       <article class="just-stretch just-for-gap">
         <h4>Noisy Examples</h4>
         <div class="ui-gradients noisy scroll-x-overflow">
-          <span class="gradient-swatch" style="background-image: var(--gradient-3), var(--noise-5)"></span>
-          <span class="gradient-swatch" style="background-image: linear-gradient(to top, black, #0000), var(--noise-5); filter:var(--noise-filter-2)"></span>
-          <span class="gradient-swatch" style="background-image: radial-gradient(circle at center center, hsl(330deg 100% 71%), hsl(330deg 100% 0% / 50%)), var(--noise-3)"></span>
-          <span class="gradient-swatch" style="background-image: conic-gradient(at 50% -20%,#281316, #4e3beb33), var(--noise-1); filter:var(--noise-filter-4)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-13), var(--noise-5); filter:var(--noise-filter-1)"></span>
-          <span class="gradient-swatch" style="background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--noise-5); filter:var(--noise-filter-2)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-20), var(--noise-5); filter:var(--noise-filter-3)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2)"></span>
-          <span class="gradient-swatch" style="background-image: var(--gradient-30), var(--noise-3)"></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-3), var(--noise-5)"
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: linear-gradient(to top, black, #0000),
+                var(--noise-5);
+              filter: var(--noise-filter-2);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: radial-gradient(
+                  circle at center center,
+                  hsl(330deg 100% 71%),
+                  hsl(330deg 100% 0% / 50%)
+                ),
+                var(--noise-3);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: conic-gradient(at 50% -20%, #281316, #4e3beb33),
+                var(--noise-1);
+              filter: var(--noise-filter-4);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: var(--gradient-13), var(--noise-5);
+              filter: var(--noise-filter-1);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-color: black;
+              background-image: linear-gradient(to top, white, #fff0),
+                var(--noise-5);
+              filter: var(--noise-filter-2);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: var(--gradient-20), var(--noise-5);
+              filter: var(--noise-filter-3);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: var(--gradient-23), var(--noise-5);
+              filter: var(--noise-filter-5);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="
+              background-image: var(--gradient-25), var(--noise-5);
+              filter: var(--noise-filter-2);
+            "
+          ></span>
+          <span
+            class="gradient-swatch"
+            style="background-image: var(--gradient-30), var(--noise-3)"
+          ></span>
         </div>
       </article>
     </section>
@@ -1419,7 +2283,9 @@
         <div style="box-shadow: var(--shadow-4)"></div>
         <div style="box-shadow: var(--shadow-5)"></div>
         <div style="box-shadow: var(--shadow-6)"></div>
-        <div style="box-shadow: var(--inner-shadow-0); counter-reset: basic -1;"></div>
+        <div
+          style="box-shadow: var(--inner-shadow-0); counter-reset: basic -1"
+        ></div>
         <div style="box-shadow: var(--inner-shadow-1)"></div>
         <div style="box-shadow: var(--inner-shadow-2)"></div>
         <div style="box-shadow: var(--inner-shadow-3)"></div>
@@ -1460,7 +2326,7 @@
         <div style="aspect-ratio: var(--ratio-landscape)">landscape</div>
         <div style="aspect-ratio: var(--ratio-portrait)">portrait</div>
         <div style="aspect-ratio: var(--ratio-widescreen)">widescreen</div>
-        <div style="aspect-ratio: 1.6180/1">golden ratio</div>
+        <div style="aspect-ratio: 1.618/1">golden ratio</div>
         <div style="aspect-ratio: 18/5">ultrawide</div>
       </article>
     </section>
@@ -1468,7 +2334,10 @@
     <section id="typography">
       <header>
         <h2>Typography</h2>
-        <p>Variable and static font sizes, smart line heights, and other familiar typography variables, all ready to go.</p>
+        <p>
+          Variable and static font sizes, smart line heights, and other familiar
+          typography variables, all ready to go.
+        </p>
       </header>
       <div class="block-wrap">
         <div>
@@ -1484,10 +2353,10 @@
             </code></pre>
           </div>
         </div>
-        
+
         <div>
           <h5>Usage Sample</h5>
-            <pre class="language-css"><code>
+          <pre class="language-css"><code>
               .hero {
                 line-height: var(--font-lineheight-1);
                 font-size: var(--font-size-fluid-3);
@@ -1509,19 +2378,70 @@
           <div class="font-family-grid">
             <code class="language-css">--font-sans</code>
             <div>
-              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+              <span>A</span><span>B</span><span>C</span><span>D</span
+              ><span>E</span><span>F</span><span>G</span><span>H</span
+              ><span>I</span><span>J</span><span>K</span><span>L</span
+              ><span>M</span><span>N</span><span>O</span><span>P</span
+              ><span>Q</span><span>R</span><span>S</span><span>T</span
+              ><span>U</span><span>V</span><span>W</span><span>X</span
+              ><span>Y</span><span>Z</span><span>a</span><span>b</span
+              ><span>c</span><span>d</span><span>e</span><span>f</span
+              ><span>g</span><span>h</span><span>i</span><span>j</span
+              ><span>k</span><span>l</span><span>m</span><span>n</span
+              ><span>o</span><span>p</span><span>q</span><span>r</span
+              ><span>s</span><span>t</span><span>u</span><span>v</span
+              ><span>w</span><span>x</span><span>y</span><span>z</span
+              ><span>1</span><span>2</span><span>3</span><span>4</span
+              ><span>5</span><span>6</span><span>7</span><span>8</span
+              ><span>9</span><span>0</span><span>+</span><span>=</span
+              ><span>!</span><span>@</span><span>#</span><span>%</span
+              ><span>$</span><span>%</span><span>^</span><span>&amp;</span>
             </div>
           </div>
           <div class="font-family-grid">
             <code class="language-css">--font-serif</code>
             <div style="font-family: var(--font-serif)">
-              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+              <span>A</span><span>B</span><span>C</span><span>D</span
+              ><span>E</span><span>F</span><span>G</span><span>H</span
+              ><span>I</span><span>J</span><span>K</span><span>L</span
+              ><span>M</span><span>N</span><span>O</span><span>P</span
+              ><span>Q</span><span>R</span><span>S</span><span>T</span
+              ><span>U</span><span>V</span><span>W</span><span>X</span
+              ><span>Y</span><span>Z</span><span>a</span><span>b</span
+              ><span>c</span><span>d</span><span>e</span><span>f</span
+              ><span>g</span><span>h</span><span>i</span><span>j</span
+              ><span>k</span><span>l</span><span>m</span><span>n</span
+              ><span>o</span><span>p</span><span>q</span><span>r</span
+              ><span>s</span><span>t</span><span>u</span><span>v</span
+              ><span>w</span><span>x</span><span>y</span><span>z</span
+              ><span>1</span><span>2</span><span>3</span><span>4</span
+              ><span>5</span><span>6</span><span>7</span><span>8</span
+              ><span>9</span><span>0</span><span>+</span><span>=</span
+              ><span>!</span><span>@</span><span>#</span><span>%</span
+              ><span>$</span><span>%</span><span>^</span><span>&amp;</span>
             </div>
           </div>
           <div class="font-family-grid">
             <code class="language-css">--font-mono</code>
             <div style="font-family: var(--font-mono)">
-              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+              <span>A</span><span>B</span><span>C</span><span>D</span
+              ><span>E</span><span>F</span><span>G</span><span>H</span
+              ><span>I</span><span>J</span><span>K</span><span>L</span
+              ><span>M</span><span>N</span><span>O</span><span>P</span
+              ><span>Q</span><span>R</span><span>S</span><span>T</span
+              ><span>U</span><span>V</span><span>W</span><span>X</span
+              ><span>Y</span><span>Z</span><span>a</span><span>b</span
+              ><span>c</span><span>d</span><span>e</span><span>f</span
+              ><span>g</span><span>h</span><span>i</span><span>j</span
+              ><span>k</span><span>l</span><span>m</span><span>n</span
+              ><span>o</span><span>p</span><span>q</span><span>r</span
+              ><span>s</span><span>t</span><span>u</span><span>v</span
+              ><span>w</span><span>x</span><span>y</span><span>z</span
+              ><span>1</span><span>2</span><span>3</span><span>4</span
+              ><span>5</span><span>6</span><span>7</span><span>8</span
+              ><span>9</span><span>0</span><span>+</span><span>=</span
+              ><span>!</span><span>@</span><span>#</span><span>%</span
+              ><span>$</span><span>%</span><span>^</span><span>&amp;</span>
             </div>
           </div>
         </div>
@@ -1544,17 +2464,19 @@
             </code></pre>
           </div>
           <div class="font-demo">
-            <div class="sample-text" style="font-size: var(--font-size-8)">Aa</div>
-            <input 
+            <div class="sample-text" style="font-size: var(--font-size-8)">
+              Aa
+            </div>
+            <input
               class="font-slider"
-              name="weight" 
+              name="weight"
               data-prop="fontWeight"
-              type="range" 
-              value="4" 
-              min="1" 
-              max="9" 
+              type="range"
+              value="4"
+              min="1"
+              max="9"
               style="--track-fill: 35%"
-            >
+            />
           </div>
         </div>
       </article>
@@ -1576,16 +2498,16 @@
           </div>
           <div class="font-demo">
             <div class="sample-text letterspacing-demo">Letter Spacing</div>
-            <input 
+            <input
               class="font-slider"
-              name="letterspacing" 
+              name="letterspacing"
               data-prop="letter-spacing"
-              type="range" 
-              value="1" 
-              min="0" 
-              max="7" 
+              type="range"
+              value="1"
+              min="0"
+              max="7"
               style="--track-fill: 15%"
-            >
+            />
           </div>
         </div>
       </article>
@@ -1605,19 +2527,23 @@
             </code></pre>
           </div>
           <div class="font-demo">
-            <div class="sample-text" style="max-inline-size: var(--size-content-1);">
-              Sample paragraph content to provide a preview for OP's line heights
-            </div>
-            <input 
-              class="font-slider"
-              name="lineheight" 
-              data-prop="lineHeight"
-              type="range" 
-              value="1" 
-              min="-1" 
-              max="5" 
-              style="--track-fill: 33%"
+            <div
+              class="sample-text"
+              style="max-inline-size: var(--size-content-1)"
             >
+              Sample paragraph content to provide a preview for OP's line
+              heights
+            </div>
+            <input
+              class="font-slider"
+              name="lineheight"
+              data-prop="lineHeight"
+              type="range"
+              value="1"
+              min="-1"
+              max="5"
+              style="--track-fill: 33%"
+            />
           </div>
         </div>
       </article>
@@ -1638,7 +2564,7 @@
           --font-relative-lineheight-6: calc(1rem + 3ch);
         </code></pre>
       </article> -->
-      
+
       <article class="font-sizes">
         <h4>Font Sizes</h4>
         <pre class="language-css"><code>
@@ -1653,28 +2579,50 @@
           --font-size-7: 3rem;
           --font-size-8: 3.5rem;
         </code></pre>
-        <div class="scroll-x-overflow"><div class="font-size-examples">
-          <code class="language-css">var(--font-size-00)</code>
-          <span style="font-size: var(--font-size-00)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-0)</code>
-          <span style="font-size: var(--font-size-0)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-1)</code>
-          <span style="font-size: var(--font-size-1)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-2)</code>
-          <span style="font-size: var(--font-size-2)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-3)</code>
-          <span style="font-size: var(--font-size-3)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-4)</code>
-          <span style="font-size: var(--font-size-4)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-5)</code>
-          <span style="font-size: var(--font-size-5)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-6)</code>
-          <span style="font-size: var(--font-size-6)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-7)</code>
-          <span style="font-size: var(--font-size-7)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-8)</code>
-          <span style="font-size: var(--font-size-8)">Almost before you knew it, we'd touched ground.</span>
-        </div></div>
+        <div class="scroll-x-overflow">
+          <div class="font-size-examples">
+            <code class="language-css">var(--font-size-00)</code>
+            <span style="font-size: var(--font-size-00)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-0)</code>
+            <span style="font-size: var(--font-size-0)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-1)</code>
+            <span style="font-size: var(--font-size-1)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-2)</code>
+            <span style="font-size: var(--font-size-2)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-3)</code>
+            <span style="font-size: var(--font-size-3)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-4)</code>
+            <span style="font-size: var(--font-size-4)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-5)</code>
+            <span style="font-size: var(--font-size-5)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-6)</code>
+            <span style="font-size: var(--font-size-6)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-7)</code>
+            <span style="font-size: var(--font-size-7)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-8)</code>
+            <span style="font-size: var(--font-size-8)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+          </div>
+        </div>
       </article>
 
       <article class="font-sizes">
@@ -1685,23 +2633,39 @@
           --font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
           --font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
         </code></pre>
-        <div class="scroll-x-overflow"><div class="font-size-examples">
-          <code class="language-css">var(--font-size-fluid-00)</code>
-          <span style="font-size: var(--font-size-fluid-00)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-fluid-1)</code>
-          <span style="font-size: var(--font-size-fluid-1)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-fluid-2)</code>
-          <span style="font-size: var(--font-size-fluid-2)">Almost before you knew it, we'd touched ground.</span>
-          <code class="language-css">var(--font-size-fluid-3)</code>
-          <span style="font-size: var(--font-size-fluid-3)">Almost before you knew it, we'd touched ground.</span>
-        </div></div>
+        <div class="scroll-x-overflow">
+          <div class="font-size-examples">
+            <code class="language-css">var(--font-size-fluid-00)</code>
+            <span style="font-size: var(--font-size-fluid-00)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-fluid-1)</code>
+            <span style="font-size: var(--font-size-fluid-1)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-fluid-2)</code>
+            <span style="font-size: var(--font-size-fluid-2)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+            <code class="language-css">var(--font-size-fluid-3)</code>
+            <span style="font-size: var(--font-size-fluid-3)"
+              >Almost before you knew it, we'd touched ground.</span
+            >
+          </div>
+        </div>
       </article>
     </section>
 
     <section id="easing">
       <header>
         <h2>Easing</h2>
-        <p>Five strengths for the classic <code class="language-css">ease</code>, <code class="language-css">ease-out</code>, <code class="language-css">ease-in</code>, and <code class="language-css">ease-in-out</code> timing functions. Plus some extra easings for mock elasticity and physics!</p>
+        <p>
+          Five strengths for the classic <code class="language-css">ease</code>,
+          <code class="language-css">ease-out</code>,
+          <code class="language-css">ease-in</code>, and
+          <code class="language-css">ease-in-out</code> timing functions. Plus
+          some extra easings for mock elasticity and physics!
+        </p>
       </header>
       <div class="block-wrap">
         <div>
@@ -1738,8 +2702,8 @@
             <h5>Ease</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
@@ -1757,17 +2721,27 @@
             <h5>Ease In</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-in-1)">ease-in-1</div>
-            <div style="animation-timing-function: var(--ease-in-2)">ease-in-2</div>
-            <div style="animation-timing-function: var(--ease-in-3)">ease-in-3</div>
-            <div style="animation-timing-function: var(--ease-in-4)">ease-in-4</div>
-            <div style="animation-timing-function: var(--ease-in-5)">ease-in-5</div>
+            <div style="animation-timing-function: var(--ease-in-1)">
+              ease-in-1
+            </div>
+            <div style="animation-timing-function: var(--ease-in-2)">
+              ease-in-2
+            </div>
+            <div style="animation-timing-function: var(--ease-in-3)">
+              ease-in-3
+            </div>
+            <div style="animation-timing-function: var(--ease-in-4)">
+              ease-in-4
+            </div>
+            <div style="animation-timing-function: var(--ease-in-5)">
+              ease-in-5
+            </div>
           </div>
         </div>
 
@@ -1776,17 +2750,27 @@
             <h5>Ease Out</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-out-1)">ease-out-1</div>
-            <div style="animation-timing-function: var(--ease-out-2)">ease-out-2</div>
-            <div style="animation-timing-function: var(--ease-out-3)">ease-out-3</div>
-            <div style="animation-timing-function: var(--ease-out-4)">ease-out-4</div>
-            <div style="animation-timing-function: var(--ease-out-5)">ease-out-5</div>
+            <div style="animation-timing-function: var(--ease-out-1)">
+              ease-out-1
+            </div>
+            <div style="animation-timing-function: var(--ease-out-2)">
+              ease-out-2
+            </div>
+            <div style="animation-timing-function: var(--ease-out-3)">
+              ease-out-3
+            </div>
+            <div style="animation-timing-function: var(--ease-out-4)">
+              ease-out-4
+            </div>
+            <div style="animation-timing-function: var(--ease-out-5)">
+              ease-out-5
+            </div>
           </div>
         </div>
 
@@ -1795,17 +2779,27 @@
             <h5>Ease In Out</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-in-out-1)">ease-in-out-1</div>
-            <div style="animation-timing-function: var(--ease-in-out-2)">ease-in-out-2</div>
-            <div style="animation-timing-function: var(--ease-in-out-3)">ease-in-out-3</div>
-            <div style="animation-timing-function: var(--ease-in-out-4)">ease-in-out-4</div>
-            <div style="animation-timing-function: var(--ease-in-out-5)">ease-in-out-5</div>
+            <div style="animation-timing-function: var(--ease-in-out-1)">
+              ease-in-out-1
+            </div>
+            <div style="animation-timing-function: var(--ease-in-out-2)">
+              ease-in-out-2
+            </div>
+            <div style="animation-timing-function: var(--ease-in-out-3)">
+              ease-in-out-3
+            </div>
+            <div style="animation-timing-function: var(--ease-in-out-4)">
+              ease-in-out-4
+            </div>
+            <div style="animation-timing-function: var(--ease-in-out-5)">
+              ease-in-out-5
+            </div>
           </div>
         </div>
 
@@ -1814,17 +2808,27 @@
             <h5>Ease Elastic</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-elastic-1)">ease-elastic-1</div>
-            <div style="animation-timing-function: var(--ease-elastic-2)">ease-elastic-2</div>
-            <div style="animation-timing-function: var(--ease-elastic-3)">ease-elastic-3</div>
-            <div style="animation-timing-function: var(--ease-elastic-4)">ease-elastic-4</div>
-            <div style="animation-timing-function: var(--ease-elastic-5)">ease-elastic-5</div>
+            <div style="animation-timing-function: var(--ease-elastic-1)">
+              ease-elastic-1
+            </div>
+            <div style="animation-timing-function: var(--ease-elastic-2)">
+              ease-elastic-2
+            </div>
+            <div style="animation-timing-function: var(--ease-elastic-3)">
+              ease-elastic-3
+            </div>
+            <div style="animation-timing-function: var(--ease-elastic-4)">
+              ease-elastic-4
+            </div>
+            <div style="animation-timing-function: var(--ease-elastic-5)">
+              ease-elastic-5
+            </div>
           </div>
         </div>
 
@@ -1833,17 +2837,27 @@
             <h5>Ease Squish</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-squish-1)">ease-squish-1</div>
-            <div style="animation-timing-function: var(--ease-squish-2)">ease-squish-2</div>
-            <div style="animation-timing-function: var(--ease-squish-3)">ease-squish-3</div>
-            <div style="animation-timing-function: var(--ease-squish-4)">ease-squish-4</div>
-            <div style="animation-timing-function: var(--ease-squish-5)">ease-squish-5</div>
+            <div style="animation-timing-function: var(--ease-squish-1)">
+              ease-squish-1
+            </div>
+            <div style="animation-timing-function: var(--ease-squish-2)">
+              ease-squish-2
+            </div>
+            <div style="animation-timing-function: var(--ease-squish-3)">
+              ease-squish-3
+            </div>
+            <div style="animation-timing-function: var(--ease-squish-4)">
+              ease-squish-4
+            </div>
+            <div style="animation-timing-function: var(--ease-squish-5)">
+              ease-squish-5
+            </div>
           </div>
         </div>
 
@@ -1852,27 +2866,44 @@
             <h5>Ease Steps</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-step-1)">ease-step-1</div>
-            <div style="animation-timing-function: var(--ease-step-2)">ease-step-2</div>
-            <div style="animation-timing-function: var(--ease-step-3)">ease-step-3</div>
-            <div style="animation-timing-function: var(--ease-step-4)">ease-step-4</div>
-            <div style="animation-timing-function: var(--ease-step-5)">ease-step-5</div>
+            <div style="animation-timing-function: var(--ease-step-1)">
+              ease-step-1
+            </div>
+            <div style="animation-timing-function: var(--ease-step-2)">
+              ease-step-2
+            </div>
+            <div style="animation-timing-function: var(--ease-step-3)">
+              ease-step-3
+            </div>
+            <div style="animation-timing-function: var(--ease-step-4)">
+              ease-step-4
+            </div>
+            <div style="animation-timing-function: var(--ease-step-5)">
+              ease-step-5
+            </div>
           </div>
         </div>
       </div>
-
     </section>
 
     <section id="animations">
       <header>
         <h2>Animations</h2>
-        <p>Premade <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect">keyframe effects</a> allow you to orchestrate your own animations. Plus, a few nice attention-grabbers and indeterminate state animations.</p>
+        <p>
+          Premade
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect"
+            >keyframe effects</a
+          >
+          allow you to orchestrate your own animations. Plus, a few nice
+          attention-grabbers and indeterminate state animations.
+        </p>
       </header>
       <div class="block-wrap">
         <div>
@@ -1940,15 +2971,19 @@
         </div>
       </div>
 
-      <div class='just-for-gap'>
+      <div class="just-for-gap">
         <h5>Samples</h5>
         <div class="animation-demo">
-          <div class="animation-demo-target" data-starting-styles="opacity:0" data-animation="fade-in">
+          <div
+            class="animation-demo-target"
+            data-starting-styles="opacity:0"
+            data-animation="fade-in"
+          >
             <h6>Fade In</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -1957,8 +2992,8 @@
             <h6>Fade Out</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -1967,8 +3002,8 @@
             <h6>Scale Up</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -1977,8 +3012,8 @@
             <h6>Scale Down</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -1987,8 +3022,8 @@
             <h6>Slide Out Up</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -1997,8 +3032,8 @@
             <h6>Slide Out Down</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2007,8 +3042,8 @@
             <h6>Slide Out Right</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2017,8 +3052,8 @@
             <h6>Slide Out Left</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2027,8 +3062,8 @@
             <h6>Slide In Up</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2037,8 +3072,8 @@
             <h6>Slide In Down</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2047,8 +3082,8 @@
             <h6>Slide In Right</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2057,8 +3092,8 @@
             <h6>Slide In Left</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2067,8 +3102,8 @@
             <h6>Spin</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2077,8 +3112,8 @@
             <h6>Ping</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2087,8 +3122,8 @@
             <h6>Blink</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2097,8 +3132,8 @@
             <h6>Float</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2107,8 +3142,8 @@
             <h6>Bounce</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2117,8 +3152,8 @@
             <h6>Pulse</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2127,8 +3162,8 @@
             <h6>Shake X</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
@@ -2137,24 +3172,27 @@
             <h6>Shake Y</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
-                <use href="#play-icon"/>
-                <use href="#pause-icon" class="hidden"/>
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
               </svg>
             </button>
           </div>
         </div>
       </div>
 
-      <div class='just-for-gap'>
+      <div class="just-for-gap">
         <h3>Combine 'em!</h3>
         <div class="animation-demo of-pairs">
           <div class="animation-pair">
-            <div class="animation-demo-target slide-fade-combo" data-animation="slide-down-fade-out">
+            <div
+              class="animation-demo-target slide-fade-combo"
+              data-animation="slide-down-fade-out"
+            >
               <h6>Slide Fade</h6>
               <button class="play-button">
                 <svg viewBox="0 0 20 20">
-                  <use href="#play-icon"/>
-                  <use href="#pause-icon" class="hidden"/>
+                  <use href="#play-icon" />
+                  <use href="#pause-icon" class="hidden" />
                 </svg>
               </button>
             </div>
@@ -2173,12 +3211,15 @@
 
           <div class="animation-pair">
             <!-- data-starting-styles="opacity:0" -->
-            <div class="animation-demo-target shake-fade-combo" data-animation="slide-left-fade-in-shake-y">
+            <div
+              class="animation-demo-target shake-fade-combo"
+              data-animation="slide-left-fade-in-shake-y"
+            >
               <h6>Shake In</h6>
               <button class="play-button">
                 <svg viewBox="0 0 20 20">
-                  <use href="#play-icon"/>
-                  <use href="#pause-icon" class="hidden"/>
+                  <use href="#play-icon" />
+                  <use href="#pause-icon" class="hidden" />
                 </svg>
               </button>
             </div>
@@ -2195,12 +3236,15 @@
           </div>
 
           <div class="animation-pair">
-            <div class="animation-demo-target push-out-combo" data-animation="push-out">
+            <div
+              class="animation-demo-target push-out-combo"
+              data-animation="push-out"
+            >
               <h6>Push Out</h6>
               <button class="play-button">
                 <svg viewBox="0 0 20 20">
-                  <use href="#play-icon"/>
-                  <use href="#pause-icon" class="hidden"/>
+                  <use href="#play-icon" />
+                  <use href="#pause-icon" class="hidden" />
                 </svg>
               </button>
             </div>
@@ -2217,13 +3261,16 @@
           </div>
         </div>
       </div>
-
     </section>
 
     <section id="sizes">
       <header>
         <h2>Sizes</h2>
-        <p>No <code class="language-css">px</code> here, relative units all the way. <code>0</code>s are unsafe but common negative values, while 1-N are safe.</p>
+        <p>
+          No <code class="language-css">px</code> here, relative units all the
+          way. <code>0</code>s are unsafe but common negative values, while 1-N
+          are safe.
+        </p>
       </header>
       <div>
         <h5>The Props</h5>
@@ -2372,9 +3419,19 @@
           <span style="inline-size: var(--size-content-3)"></span>
         </div>
         <div class="content-demo scroll-x-overflow">
-          <p style="inline-size: var(--size-content-1)">Carrot cake gummi bears sweet caramels cotton candy topping.</p>
-          <p style="inline-size: var(--size-content-2)">Carrot cake gummi bears sweet caramels cotton candy topping. Jelly candy apple pie gingerbread tootsie roll chupa chups.</p>
-          <p style="inline-size: var(--size-content-3)">Carrot cake gummi bears sweet caramels cotton candy topping. Jelly candy apple pie gingerbread tootsie roll chupa chups. Gummi bears lollipop apple pie pudding tart cake jelly. Soufflé lollipop jelly-o chocolate bar icing bonbon.</p>
+          <p style="inline-size: var(--size-content-1)">
+            Carrot cake gummi bears sweet caramels cotton candy topping.
+          </p>
+          <p style="inline-size: var(--size-content-2)">
+            Carrot cake gummi bears sweet caramels cotton candy topping. Jelly
+            candy apple pie gingerbread tootsie roll chupa chups.
+          </p>
+          <p style="inline-size: var(--size-content-3)">
+            Carrot cake gummi bears sweet caramels cotton candy topping. Jelly
+            candy apple pie gingerbread tootsie roll chupa chups. Gummi bears
+            lollipop apple pie pudding tart cake jelly. Soufflé lollipop jelly-o
+            chocolate bar icing bonbon.
+          </p>
         </div>
       </div>
 
@@ -2407,22 +3464,32 @@
           <span style="inline-size: var(--size-header-3)"></span>
         </div>
         <div class="header-demo scroll-x-overflow">
-          <h5 style="inline-size: var(--size-header-1)">Carrot cake gummi bears sweet caramel candy.</h5>
-          <h5 style="inline-size: var(--size-header-2)">Carrot cake gummi bears sweet caramels cotton candy topping.</h5>
-          <h5 style="inline-size: var(--size-header-3)">Carrot cake gummi bears sweet caramels cotton candy topping. Jelly candy apple pie gingerbread tootsie roll chupa chups.</h5>
+          <h5 style="inline-size: var(--size-header-1)">
+            Carrot cake gummi bears sweet caramel candy.
+          </h5>
+          <h5 style="inline-size: var(--size-header-2)">
+            Carrot cake gummi bears sweet caramels cotton candy topping.
+          </h5>
+          <h5 style="inline-size: var(--size-header-3)">
+            Carrot cake gummi bears sweet caramels cotton candy topping. Jelly
+            candy apple pie gingerbread tootsie roll chupa chups.
+          </h5>
         </div>
       </div>
-
     </section>
 
     <section id="borders">
       <header>
         <h2>Borders</h2>
-        <p>Sizes, corner radii, a circle helper, <a href="https://ishadeed.com/article/conditional-border-radius/">conditional radii</a>, and some blobs.</p>
+        <p>
+          Sizes, corner radii, a circle helper,
+          <a href="https://ishadeed.com/article/conditional-border-radius/"
+            >conditional radii</a
+          >, and some blobs.
+        </p>
       </header>
       <div class="block-wrap">
         <div>
-          
           <h5>Vars Sample</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
@@ -2528,53 +3595,77 @@
     <section id="media-queries">
       <header class="just-for-gap">
         <h2>Media Queries</h2>
-        <p>Currently one step ahead of <a href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media">the CSS spec</a>, Open Props offers named media queries with the <code>@custom-media</code> syntax. Available only with <a href="https://github.com/postcss/postcss-custom-media">this PostCSS plugin</a>, for now 😈</p>
+        <p>
+          Currently one step ahead of
+          <a
+            href="https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media"
+            >the CSS spec</a
+          >, Open Props offers named media queries with the
+          <code>@custom-media</code> syntax. Available only with
+          <a href="https://github.com/postcss/postcss-custom-media"
+            >this PostCSS plugin</a
+          >, for now 😈
+        </p>
         <div class="media-query-chart">
           <div>
             <svg height="24" width="24">
-              <path d="m14.31 2 .41 2.48C13.87 4.17 12.96 4 12 4c-.95 0-1.87.17-2.71.47L9.7 2h4.61m.41 17.52L14.31 22H9.7l-.41-2.47c.84.3 1.76.47 2.71.47.96 0 1.87-.17 2.72-.48M16 0H8l-.95 5.73C5.19 7.19 4 9.45 4 12s1.19 4.81 3.05 6.27L8 24h8l.96-5.73C18.81 16.81 20 14.54 20 12s-1.19-4.81-3.04-6.27L16 0zm-4 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+              <path
+                d="m14.31 2 .41 2.48C13.87 4.17 12.96 4 12 4c-.95 0-1.87.17-2.71.47L9.7 2h4.61m.41 17.52L14.31 22H9.7l-.41-2.47c.84.3 1.76.47 2.71.47.96 0 1.87-.17 2.72-.48M16 0H8l-.95 5.73C5.19 7.19 4 9.45 4 12s1.19 4.81 3.05 6.27L8 24h8l.96-5.73C18.81 16.81 20 14.54 20 12s-1.19-4.81-3.04-6.27L16 0zm-4 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+              />
             </svg>
             <div class="device xxs">xxs</div>
             <code class="language-css">240px</code>
           </div>
           <div>
             <svg height="24" width="24">
-              <path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+              <path
+                d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+              />
             </svg>
             <div class="device xs">xs</div>
             <code class="language-css">360px</code>
           </div>
           <div>
             <svg height="24" width="24">
-              <path d="M15.5 1h-8A2.5 2.5 0 0 0 5 3.5v17A2.5 2.5 0 0 0 7.5 23h8a2.5 2.5 0 0 0 2.5-2.5v-17A2.5 2.5 0 0 0 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/>
+              <path
+                d="M15.5 1h-8A2.5 2.5 0 0 0 5 3.5v17A2.5 2.5 0 0 0 7.5 23h8a2.5 2.5 0 0 0 2.5-2.5v-17A2.5 2.5 0 0 0 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"
+              />
             </svg>
             <div class="device sm">sm</div>
             <code class="language-css">480px</code>
           </div>
           <div>
             <svg height="24" width="24">
-              <path d="M18 0H6C4.34 0 3 1.34 3 3v18c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V3c0-1.66-1.34-3-3-3zm-4 22h-4v-1h4v1zm5.25-3H4.75V3h14.5v16z"/>
+              <path
+                d="M18 0H6C4.34 0 3 1.34 3 3v18c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V3c0-1.66-1.34-3-3-3zm-4 22h-4v-1h4v1zm5.25-3H4.75V3h14.5v16z"
+              />
             </svg>
             <div class="device md">md</div>
             <code class="language-css">768px</code>
           </div>
           <div>
             <svg height="24" width="24">
-              <path d="M1.01 7 1 17c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM19 7v10H5V7h14z"/>
+              <path
+                d="M1.01 7 1 17c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM19 7v10H5V7h14z"
+              />
             </svg>
             <div class="device lg">lg</div>
             <code class="language-css">1024px</code>
           </div>
           <div>
             <svg height="24" width="24">
-              <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+              <path
+                d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"
+              />
             </svg>
             <div class="xl">xl</div>
             <code class="language-css">1440px</code>
           </div>
           <div>
             <svg height="24" width="24">
-              <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+              <path
+                d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"
+              />
             </svg>
             <div class="xxl">xxl</div>
             <code class="language-css">1920px</code>
@@ -2731,7 +3822,11 @@
         <div>
           <dt>Tooling</dt>
           <dd><a href="https://postcss.org/">PostCSS</a></dd>
-          <dd class="prevent-justify-item-wrap"><a href="https://github.com/GoogleChromeLabs/postcss-jit-props">JIT Props</a></dd>
+          <dd class="prevent-justify-item-wrap">
+            <a href="https://github.com/GoogleChromeLabs/postcss-jit-props"
+              >JIT Props</a
+            >
+          </dd>
           <dd><a href="https://www.npmjs.com/package/open-props">NPM</a></dd>
         </div>
 
@@ -2743,9 +3838,15 @@
         </div>
       </dl>
 
-      <a href="https://github.com/argyleink/open-props" title="Source on Github">
+      <a
+        href="https://github.com/argyleink/open-props"
+        title="Source on Github"
+      >
         <svg class="github-icon" width="24" height="24" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path>
         </svg>
       </a>
     </footer>
