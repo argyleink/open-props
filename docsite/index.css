@@ -215,7 +215,7 @@ section.hero {
   & > * {
     --op-gradient-direction: to right;
     background: var(--gradient-1) fixed;
-    background-size: 12ch 50%;
+    background-size: 13ch 50%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
