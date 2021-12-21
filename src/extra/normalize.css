@@ -66,7 +66,7 @@
   text-underline-offset: 1px;
 }
 
-:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]) {
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
   cursor: pointer;
   touch-action: manipulation;
 }
