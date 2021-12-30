@@ -443,7 +443,7 @@ pre[class*="language-"] {
 
   & > h4 {
     counter-reset: basic -1;
-    font-size: var(--fontsize-fluid-1);
+    font-size: var(--font-size-fluid-1);
     font-weight: var(--font-weight-5);
     width: var(--size-10);
   }
