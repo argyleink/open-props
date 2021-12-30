@@ -438,7 +438,8 @@ pre[class*="language-"] {
 .open-colors {
   display: flex;
   align-items: center;
-  gap: var(--size-2);
+  gap: var(--size-3);
+  padding-block: var(--size-2);
 
   & > h4 {
     counter-reset: basic -1;
@@ -527,7 +528,8 @@ pre[class*="language-"] {
   }
 
   &:is(:hover,:focus) {
-    transform: scale(1.5);
+    cursor: pointer;
+    transform: scale(1.15);
     transition-delay: 0s;
     transition-timing-function: var(--ease-elastic-3);
 
@@ -546,9 +548,7 @@ pre[class*="language-"] {
 
   @media (--md-n-below) {
     --size: var(--size-3);
-  }
-  @media (--xs-n-below) {
-    --size: var(--size-2);
+    inline-size: var(--size-6);
   }
 }
 
@@ -1036,6 +1036,9 @@ pre[class*="language-"] {
       font-size: var(--font-size-3);
     }
   }
+}
+#colors {
+  width: 100%;
 }
 
 #colors details h3 {
