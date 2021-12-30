@@ -93,13 +93,15 @@ const buildPropsStylesheet = ({filename, props}) => {
   file.write(`${selector} {\n`)
 
   Object.entries(props).forEach(([prop, val]) => {
+    if (prop.includes('-@'))
+      return
+
     if (prefix)
       prop = `--${prefix}-` + prop.slice(2)
     
-    if (Array.isArray(val)) {
-      let [animation, keyframes] = val
+    if (prop.includes('animation')) {
+      let keyframes = props[`${prop}-@`]
       appendedMeta += keyframes
-      val = animation
     }
 
     file.write(`  ${prop}: ${val};\n`)
