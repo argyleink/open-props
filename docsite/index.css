@@ -109,7 +109,7 @@ nav {
   }
 
   & > a[href="#getting-started"] {
-    @media (--xs-n-below) {
+    @media (--sm-n-below) {
       display: none;
     }
   }
@@ -1496,7 +1496,7 @@ input[type="range"] {
 }
 
 #npm > pre, #cli > pre {
-  margin: 0;
+  margin-block: 0;
 }
 
 .license {
