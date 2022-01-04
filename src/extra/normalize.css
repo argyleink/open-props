@@ -36,7 +36,7 @@
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  line-height: var(--font-relative-lineheight-2);
+  line-height: var(--font-lineheight-1);
   font-weight: var(--font-weight-9);
 }
 
