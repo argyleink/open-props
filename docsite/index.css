@@ -1481,6 +1481,12 @@ input[type="range"] {
   & > pre:first-of-type {
     margin-top: var(--size-7);
   }
+  & > ol {
+    display: grid;
+    padding-inline: 0;
+    margin: var(--size-5);
+    gap: var(--size-3);
+  }
 
   &[open] {
     @media (--md-n-below) {
