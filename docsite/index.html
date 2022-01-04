@@ -1041,45 +1041,44 @@
               <summary>VScode Autocomplete</summary>
               <div class="block-wrap">
                 <div>
-                  <ol>
-                    <li>
-                      VScode has an intellisense feature which you can tap into,
-                      by passing the path to the node_modules folder when
-                      open-props is installed
-                    </li>
-                    <li>
-                      In your VScode environment, navigate to the extensions
-                      marketplace, and install this
-                      <a
-                        href="https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar"
-                        target="__blank"
-                        >CSS Var Complete</a
-                      >
-                      extension
-                    </li>
-                    <li>
-                      When the extension is installed, you'll have to add
-                      open-prop's css file path to a
-                      <code>.vscode/settings.json</code>file. Take a look at an
-                      illustration below
-                    </li>
-                    <pre class="language-js"><code> 
-                      // .vscode/settings.json file 
-                      { 
-                        "cssvar.files": [ 
-                          "./node_modules/open-props/open-props.min.css", 
-                          // if you have an alternative path to where your styles are located 
-                          // you can add it in this array of files 
-                          "assets/styles/variables.css" 
-                        ],
-  
-                        // you can also add support for autocomplete in other file extensions 
-                        "cssvar.extensions": [
-                          "css", "html", "jsx", "tsx"
-                        ]
-                      } 
-                    </code></pre>
-                  </ol>
+                  <h6>Getting started</h6>
+                  <p>
+                    VScode has an intellisense feature which you can tap into,
+                    by passing the path to the node_modules folder when
+                    open-props is installed
+                  </p>
+                  <p>
+                    In your VScode environment, navigate to the extensions
+                    marketplace, and install this
+                    <a
+                      href="https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar"
+                      target="__blank"
+                      >CSS Var Complete</a
+                    >
+                    extension
+                  </p>
+                  <p>
+                    When the extension is installed, you'll have to add
+                    open-prop's css file path to a
+                    <code>.vscode/settings.json</code>file. Take a look at an
+                    illustration below
+                  </p>
+                  <pre class="language-js"><code> 
+                    // .vscode/settings.json file 
+                    { 
+                      "cssvar.files": [ 
+                        "./node_modules/open-props/open-props.min.css", 
+                        // if you have an alternative path to where your styles are located 
+                        // you can add it in this array of files 
+                        "assets/styles/variables.css" 
+                      ],
+
+                      // you can also add support for autocomplete in other file extensions 
+                      "cssvar.extensions": [
+                        "css", "html", "jsx", "tsx"
+                      ]
+                    } 
+                  </code></pre>
                 </div>
               </div>
             </details>
