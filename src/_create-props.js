@@ -116,6 +116,11 @@ Object.entries(jsonbundle).map(([key, token]) => {
 const FigmaTokens = fs.createWriteStream('../open-props.figma-tokens.json')
 FigmaTokens.end(JSON.stringify(figmatokens, null, 2))
 
+const figmatokensSYNC = { 'open-props': { ...figmatokens } }
+
+const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.json')
+FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
+
 const buildPropsStylesheet = ({filename, props}) => {
   const file = fs.createWriteStream(filename)
 
