@@ -1058,7 +1058,7 @@ pre[class*="language-"] {
     }
   }
   
-  &:nth-child(2) > div::before {
+  &:nth-of-type(2) > div::before {
     content: "Inner Shadow " counter(basic);
   }
 }
