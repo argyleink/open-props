@@ -1057,9 +1057,13 @@ pre[class*="language-"] {
       background: var(--surface-2);
     }
   }
-  
-  &:nth-of-type(2) > div::before {
-    content: "Inner Shadow " counter(basic);
+
+  &:nth-of-type(2) {
+    counter-reset: basic -1;
+
+    & > div::before {
+      content: "Inner Shadow " counter(basic);
+    }
   }
 }
 
