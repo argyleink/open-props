@@ -4,6 +4,8 @@
 
 ## Open Source CSS Variables
 `gradients` `animations` `sizes` `easings` `colors` `shadows` `aspect-ratios` `z-indexes`  
+  
+`colors` `gradients` `shadows` `aspect-ratios` `typography` `easing` `animations` `sizes` `borders` `z-indexes` `media-queries`  
 
 [![Tests](https://github.com/argyleink/open-props/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/argyleink/open-props/actions/workflows/tests.yml)
   
