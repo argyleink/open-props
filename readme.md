@@ -3,7 +3,6 @@
 ![Frame 2](https://user-images.githubusercontent.com/1134620/141246730-7df4cf2a-6249-42ca-a01b-494c3ccddabe.png)
 
 ## Open Source CSS Variables
-`gradients` `animations` `sizes` `easings` `colors` `shadows` `aspect-ratios` `z-indexes`  
   
 `colors` `gradients` `shadows` `aspect-ratios` `typography` `easing` `animations` `sizes` `borders` `z-indexes` `media-queries`  
 
