@@ -34,5 +34,5 @@ export default {
 
   '--size-header-1': '20ch',
   '--size-header-2': '25ch',
-  '--size-header-3': '45rem',
+  '--size-header-3': '35ch',
 }
