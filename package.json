@@ -64,6 +64,7 @@
   "scripts": {
     "build": "npm run gen:op",
     "test": "ava test/basic.test.cjs",
+    "package": "node parcel.js",
     "bundle": "concurrently npm:lib:*",
     "bundle:pre-edit": "json -I -f package.json -e \"this.unpkg=''\"",
     "bundle:post-edit": "json -I -f package.json -e \"this.unpkg='open-props.min.css'\"",
@@ -100,6 +101,7 @@
     "lib:colors:orange": "postcss src/props.orange.css -o orange.min.css"
   },
   "devDependencies": {
+    "@parcel/css": "^1.0.3",
     "ava": "^3.15.0",
     "concurrently": "^6.2.1",
     "cssnano": "^5.0.8",
