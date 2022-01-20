@@ -27,6 +27,8 @@
 @media (--motionOK) {
   :focus-visible {
     transition: outline-offset .25s var(--ease-2);
+  }
+  :where(:not(:active)):focus-visible {
     outline-offset: 5px;
   }
 }
