@@ -11,5 +11,3 @@
     --scrollbar-color: var(--gray-4);
   }
 }
-
-:focus-visible { outline-color: var(--brand); }
