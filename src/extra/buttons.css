@@ -43,6 +43,10 @@
   border-radius: var(--radius-2);
   padding-block: .75ch;
   padding-inline: 1.75ch;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
   
   transition: border-color .5s var(--ease-3) 3s;
 
