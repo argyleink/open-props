@@ -33,6 +33,10 @@
   }
 }
 
+:where(:not(:active)):focus-visible {
+  outline-offset: 5px;
+}
+
 :where(body) { 
   min-block-size: 100%;
   scrollbar-gutter: stable both-edges;
