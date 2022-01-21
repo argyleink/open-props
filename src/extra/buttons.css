@@ -3,6 +3,7 @@
 :where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"]) {
   --_accent:/* your color */;
   --_text:/* your text color */;
+  --_size:/* your size */;
   
   --_bg-light: white;
   --_bg-dark: var(--surface-3);
@@ -22,6 +23,7 @@
   --_icon-size: 2ch;
   --_icon-color: var(--_accent, var(--link));
   
+  font-size: var(--_size);
   background: var(--_bg);
   color: var(--_text);
   border: var(--border-size-2) solid var(--_border);
