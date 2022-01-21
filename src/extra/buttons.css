@@ -35,6 +35,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   place-self: start;
   gap: var(--size-2);
   
