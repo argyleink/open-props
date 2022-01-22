@@ -1,6 +1,7 @@
 @import "../props.media.css";
 
-:where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"]) {
+:where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"]),
+:where(input[type="file"])::-webkit-file-upload-button {
   --_accent:/* your color */;
   --_text:/* your text color */;
   --_size:/* your size */;
@@ -38,7 +39,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  place-self: start;
+  place-self: flex-start;
   gap: var(--size-2);
   
   font-weight: var(--font-weight-7);
@@ -52,6 +53,20 @@
   
   transition: border-color .5s var(--ease-3) 3s;
 
+  @media (--OSdark) {
+    --_highlight: var(--_highlight-dark);
+    --_bg: var(--_bg-dark);
+    --_ink-shadow: var(--_ink-shadow-dark);
+  }
+
+  @media (--motionOK) {
+    transition: 
+      border-color .5s var(--ease-3) 3s,
+      box-shadow 145ms var(--ease-4);
+  }
+}
+
+:where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"]) {
   /* disabled */
   &[disabled] {
     --_bg: none;
@@ -80,18 +95,6 @@
     stroke: var(--_icon-color);
     stroke-width: var(--border-size-2);
   }
-
-  @media (--OSdark) {
-    --_highlight: var(--_highlight-dark);
-    --_bg: var(--_bg-dark);
-    --_ink-shadow: var(--_ink-shadow-dark);
-  }
-
-  @media (--motionOK) {
-    transition: 
-      border-color .5s var(--ease-3) 3s,
-      box-shadow 145ms var(--ease-4);
-  }
 }
 
 /* adaptive indigo text */
@@ -119,14 +122,21 @@
   --_border: currentColor;
 }
 
-/* @media (hover: none) {
-  :where([type="submit"], [type="reset"], form button:not([type])):active:not([disabled]) {
-    --_border: currentColor;
-    transition-delay: 0s;
-    transition-duration: .1s;
-  }
-} */
+/* file input */
+:where(input[type="file"]) {
+  padding: 0;
+  align-self: flex-start;
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--surface-2); 
+  box-shadow: var(--inner-shadow-4);
+  color: var(--text-2);
+}
 
+:where(input[type="file"])::-webkit-file-upload-button {
+  margin-inline-end: var(--size-4);
+}
+
+/* special dark theme styles */
 @media (--OSdark) {
   :where([type="submit"]),
   :where(form button:not([type="button"])),
