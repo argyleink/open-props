@@ -125,6 +125,7 @@
 /* file input */
 :where(input[type="file"]) {
   padding: 0;
+  cursor: initial;
   align-self: flex-start;
   border-radius: var(--radius-2);
   border: var(--border-size-1) solid var(--surface-2); 
@@ -134,6 +135,7 @@
 
 :where(input[type="file"])::-webkit-file-upload-button {
   margin-inline-end: var(--size-4);
+  cursor: pointer;
 }
 
 /* special dark theme styles */
