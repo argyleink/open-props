@@ -1517,3 +1517,10 @@ input[type="range"] {
 .prevent-justify-item-wrap {
   white-space: nowrap;
 }
+
+.btn-solid {
+  --_bg: var(--blue-6);
+  --_border: var(--blue-5);
+  --_text: var(--blue-0);
+  --_ink-shadow: 0 1px 0 var(--blue-8);
+}
