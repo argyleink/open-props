@@ -2,3 +2,6 @@
 dist/
 .cache/
 node_modules/
+
+# Don't accidentally check in built files
+*.min.css

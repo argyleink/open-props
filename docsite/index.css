@@ -1,6 +1,7 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
 @import "./syntax-highlight.css";
+@import "../src/extra/buttons.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
