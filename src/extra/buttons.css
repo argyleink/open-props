@@ -93,6 +93,9 @@
     filter: drop-shadow(var(--_ink-shadow));
     block-size: var(--_icon-size);
     inline-size: var(--_icon-size);
+  }
+
+  & > :where(svg > *) {
     stroke: var(--_icon-color);
     stroke-width: var(--border-size-2);
   }
@@ -134,7 +137,8 @@
   color: var(--text-2);
 }
 
-:where(input[type="file"])::-webkit-file-upload-button {
+:where(input[type="file"])::-webkit-file-upload-button,
+:where(input[type="file"])::file-selector-button {
   margin-inline-end: var(--size-4);
   cursor: pointer;
 }
