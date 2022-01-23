@@ -110,7 +110,7 @@ export default {
 @keyframes bounce {
   25% { transform: translateY(-20%) }
   40% { transform: translateY(-3%) }
-  0%, 60%,100% { transform: translateY(0) }
+  0%, 60%, 100% { transform: translateY(0) }
 }`,
   "--animation-pulse": "pulse 2s var(--ease-out-3) infinite", 
   "--animation-pulse-@": `
