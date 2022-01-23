@@ -1,10 +1,11 @@
 @import "../props.media.css";
 
 :where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"]),
-:where(input[type="file"])::-webkit-file-upload-button {
-  --_accent:/* your color */;
-  --_text:/* your text color */;
-  --_size:/* your size */;
+:where(input[type="file"])::-webkit-file-upload-button,
+:where(input[type="file"])::file-selector-button {
+  --_accent: initial /* your color */;
+  --_text: initial /* your text color */;
+  --_size: initial /* your size */;
   
   --_bg-light: white;
   --_bg-dark: var(--surface-3);
