@@ -139,7 +139,7 @@
 
 :where(input[type="file"])::-webkit-file-upload-button,
 :where(input[type="file"])::file-selector-button {
-  margin-inline-end: var(--size-4);
+  margin-inline-end: 1.75ch;
   cursor: pointer;
 }
 
