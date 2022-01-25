@@ -45,7 +45,7 @@ const individual_colors = {
   'props.orange.css': OpenColors.Orange,
 }
 
-const jsonbundle = {
+const jsonbundle = Object.entries({
   ...Object.values(individual_colors).reduce((colors, color) => {
     return Object.assign(colors, color)
   }, {}),
@@ -55,10 +55,19 @@ const jsonbundle = {
   ...Aspects,
   ...Gradients,
   ...Borders,
-}
-const designtokens = Object.entries(jsonbundle)
-.filter(([key]) => key !== '*')
-.map(([key, token]) => {
+}).reduce((bundle_entries, [key, val]) => {
+  if (key === '*') {
+    Object.entries(val).forEach(token => {
+      bundle_entries.unshift(token)
+    })
+  }
+  else 
+    bundle_entries.unshift([key,val])
+
+  return bundle_entries
+}, [])
+
+const designtokens = jsonbundle.map(([key, token]) => {
   let meta = {}
 
   let isLength = key.includes('size')
@@ -81,9 +90,7 @@ JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
 const figmatokens = {};
 
-Object.entries(jsonbundle)
-.filter(([key]) => key !== '*')
-.map(([key, token]) => {
+jsonbundle.map(([key, token]) => {
   let meta = {}
 
   let isLength = key.includes('size') && !key.includes('border-size')
