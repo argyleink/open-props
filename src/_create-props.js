@@ -56,7 +56,9 @@ const jsonbundle = {
   ...Gradients,
   ...Borders,
 }
-const designtokens = Object.entries(jsonbundle).map(([key, token]) => {
+const designtokens = Object.entries(jsonbundle)
+.filter(([key]) => key !== '*')
+.map(([key, token]) => {
   let meta = {}
 
   let isLength = key.includes('size')
@@ -79,7 +81,9 @@ JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
 const figmatokens = {};
 
-Object.entries(jsonbundle).map(([key, token]) => {
+Object.entries(jsonbundle)
+.filter(([key]) => key !== '*')
+.map(([key, token]) => {
   let meta = {}
 
   let isLength = key.includes('size') && !key.includes('border-size')
@@ -125,20 +129,23 @@ const buildPropsStylesheet = ({filename, props}) => {
   const file = fs.createWriteStream(filename)
 
   let appendedMeta = ''
-  if (filename.includes('shadows')) {
+
+  if (filename.includes('shadows'))
     file.write(`@import 'props.media.css';\n\n`)
-    appendedMeta = `@media (--OSdark) {
-  ${selector} {
-    --shadow-strength: 25%;
-    --shadow-color: 220 40% 2%;
-  }
-}`
-  }
+
   file.write(`${selector} {\n`)
 
   Object.entries(props).forEach(([prop, val]) => {
     if (prop.includes('-@'))
       return
+
+    if (prop === '*') {
+      appendedMeta += Object.entries(val).reduce((list, [mixin, cssval]) => {
+        return list += `\n  ${mixin}: ${cssval};`
+      }, '\n* {')
+      appendedMeta += '\n}\n'
+      return
+    }
 
     if (prefix)
       prop = `--${prefix}-` + prop.slice(2)
@@ -150,6 +157,16 @@ const buildPropsStylesheet = ({filename, props}) => {
 
     file.write(`  ${prop}: ${val};\n`)
   })
+
+  if (filename.includes('shadows')) {
+    appendedMeta += `
+@media (--OSdark) {
+  * {
+    --shadow-strength: 25%;
+    --shadow-color: 220 40% 2%;
+  }
+}`
+  }
 
   file.write('}\n')
   file.end(appendedMeta)
