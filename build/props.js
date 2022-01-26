@@ -12,6 +12,11 @@ import Shadows from '../src/props.shadows.js'
 import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 
+import {buildPropsStylesheet} from './to-stylesheet.js'
+import {toJSON} from './to-json.js'
+import {toTokens} from './to-tokens.js'
+import {toFigmaTokens} from './to-figmatokens.js'
+
 const [,,prefix,useWhere] = process.argv
 const selector = useWhere === 'true' ? ':where(html)' : 'html'
 
@@ -45,143 +50,35 @@ const individual_colors = {
   'props.orange.css': OpenColors.Orange,
 }
 
-const jsonbundle = Object.entries({
-  ...Object.values(individual_colors).reduce((colors, color) => {
-    return Object.assign(colors, color)
-  }, {}),
+// gen design tokens
+const jsonbundle = toJSON({
+  ...Object.values(individual_colors)
+      .reduce((colors, color) => 
+        Object.assign(colors, color), {}),
   ...Sizes,
   ...Easings,
   ...Zindex,
   ...Aspects,
   ...Gradients,
   ...Borders,
-}).reduce((bundle_entries, [key, val]) => {
-  if (key === '*') {
-    Object.entries(val).forEach(token => {
-      bundle_entries.unshift(token)
-    })
-  }
-  else 
-    bundle_entries.unshift([key,val])
-
-  return bundle_entries
-}, [])
-
-const designtokens = jsonbundle.map(([key, token]) => {
-  let meta = {}
-
-  let isLength = key.includes('size')
-  let isEasing = key.includes('ease')
-  let colors = ['gray','red','pink','grape','violet','indigo','blue','cyan','teal','green','lime','yellow','orange']
-  let isColor = colors.some(color => key.includes(color))
-
-  if      (isLength) meta.type = 'dimension'
-  else if (isEasing) meta.type = 'cubic-bezier'
-  else if (isColor)  meta.type = 'color'
-
-  return [key, {
-    value: token,
-    ...meta,
-  }]
 })
 
+const designtokens = toTokens(jsonbundle)
 const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
 JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
-const figmatokens = {};
-
-jsonbundle.map(([key, token]) => {
-  let meta = {}
-
-  let isLength = key.includes('size') && !key.includes('border-size')
-  let isBorder = key.includes('border-size')
-  let isRadius = key.includes('radius')
-  let isShadow = key.includes('shadow')
-  let colors = ['gray','red','pink','grape','violet','indigo','blue','cyan','teal','green','lime','yellow','orange']
-  let isColor = colors.some(color => key.includes(color))
-  
-  if      (isLength) meta.type = 'sizing'
-  else if (isBorder) meta.type = 'borderWidth'
-  else if (isRadius) meta.type = 'borderRadius'
-  else if (isShadow) meta.type = 'boxShadow'
-  else if (isColor)  meta.type = 'color'
-  else               meta.type = 'other'
-
-  if (!(meta.type in figmatokens)) figmatokens[meta.type] = {}
-  
-  if (isColor) {
-    let color = /--(.+?)-/.exec(key)[1]
-    if (!(color in figmatokens[meta.type])) figmatokens[meta.type][color] = {}
-    figmatokens[meta.type][color][key] = {
-      value: token,
-      ...meta,
-    }
-  } else {
-    figmatokens[meta.type][key] = {
-      value: token,
-      ...meta,
-    }
-  }
-})
-
+// gen figma tokens
+const figmatokens = toFigmaTokens(jsonbundle)
 const FigmaTokens = fs.createWriteStream('../open-props.figma-tokens.json')
 FigmaTokens.end(JSON.stringify(figmatokens, null, 2))
 
 const figmatokensSYNC = { 'open-props': { ...figmatokens } }
-
 const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.json')
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
 
-const buildPropsStylesheet = ({filename, props}) => {
-  const file = fs.createWriteStream("../src/" + filename)
-
-  let appendedMeta = ''
-
-  if (filename.includes('shadows'))
-    file.write(`@import 'props.media.css';\n\n`)
-
-  file.write(`${selector} {\n`)
-
-  Object.entries(props).forEach(([prop, val]) => {
-    if (prop.includes('-@'))
-      return
-
-    if (prop === '*') {
-      appendedMeta += Object.entries(val).reduce((list, [mixin, cssval]) => {
-        return list += `\n  ${mixin}: ${cssval};`
-      }, '\n* {')
-      appendedMeta += '\n}\n'
-      return
-    }
-
-    if (prefix)
-      prop = `--${prefix}-` + prop.slice(2)
-    
-    if (prop.includes('animation')) {
-      let keyframes = props[`${prop}-@`]
-      appendedMeta += keyframes
-    }
-
-    file.write(`  ${prop}: ${val};\n`)
-  })
-
-  if (filename.includes('shadows')) {
-    appendedMeta += `
-@media (--OSdark) {
-  * {
-    --shadow-strength: 25%;
-    --shadow-color: 220 40% 2%;
-  }
-}`
-  }
-
-  file.write('}\n')
-  file.end(appendedMeta)
-}
-
 // gen prop variants
 Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]) => {
-  buildPropsStylesheet({filename, props})
+  buildPropsStylesheet({filename, props}, {selector, prefix})
 })
 
 // gen index.css
