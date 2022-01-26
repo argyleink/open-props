@@ -1,16 +1,16 @@
 import fs from 'fs'
 
-import Animations from './props.animations.js'
-import Sizes from './props.sizes.js'
-import * as OpenColors from './props.colors.js'
-import Fonts from './props.fonts.js'
-import Borders from './props.borders.js'
-import Aspects from './props.aspects.js'
-import Easings from './props.easing.js'
-import Gradients from './props.gradients.js'
-import Shadows from './props.shadows.js'
-import SVG from './props.svg.js'
-import Zindex from './props.zindex.js'
+import Animations from '../src/props.animations.js'
+import Sizes from '../src/props.sizes.js'
+import * as OpenColors from '../src/props.colors.js'
+import Fonts from '../src/props.fonts.js'
+import Borders from '../src/props.borders.js'
+import Aspects from '../src/props.aspects.js'
+import Easings from '../src/props.easing.js'
+import Gradients from '../src/props.gradients.js'
+import Shadows from '../src/props.shadows.js'
+import SVG from '../src/props.svg.js'
+import Zindex from '../src/props.zindex.js'
 
 const [,,prefix,useWhere] = process.argv
 const selector = useWhere === 'true' ? ':where(html)' : 'html'
@@ -133,7 +133,7 @@ const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.js
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
 
 const buildPropsStylesheet = ({filename, props}) => {
-  const file = fs.createWriteStream(filename)
+  const file = fs.createWriteStream("../src/" + filename)
 
   let appendedMeta = ''
 
@@ -185,7 +185,7 @@ Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]
 })
 
 // gen index.css
-const entry = fs.createWriteStream('index.css')
+const entry = fs.createWriteStream('../src/index.css')
 entry.write(`@import 'props.media.css';
 `)
 Object.keys(mainbundle).forEach(filename => {
