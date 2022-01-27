@@ -3,7 +3,7 @@ const OpenProps = require('../dist/open-props.cjs')
 const OPtokens = require('../open-props.tokens.json')
 
 test('Should have an all included import', t => {
-  t.is(Object.keys(OpenProps).length, 371)
+  t.is(Object.keys(OpenProps).length, 378)
 })
 
 test('Import should have animations', async t => {
@@ -20,7 +20,7 @@ test('Import should have colors', async t => {
 })
 
 test('JSON Import should have colors', async t => {
-  t.is(Object.keys(OPtokens).length, 274)
+  t.is(Object.keys(OPtokens).length, 281)
   t.assert(Object.keys(OPtokens).includes('--orange-0'))
 })
 

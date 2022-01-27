@@ -107,7 +107,8 @@
   block-size: auto;
 }
 
-:where(input, button, textarea, select) {
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
   font: inherit;
   font-size: inherit;
   color: inherit;
