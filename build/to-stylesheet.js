@@ -14,14 +14,6 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
     if (prop.includes('-@'))
       return
 
-    if (prop === '*') {
-      appendedMeta += Object.entries(val).reduce((list, [mixin, cssval]) => {
-        return list += `\n  ${mixin}: ${cssval};`
-      }, '\n* {')
-      appendedMeta += '\n}\n'
-      return
-    }
-
     if (prefix)
       prop = `--${prefix}-` + prop.slice(2)
     
@@ -36,7 +28,7 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
   if (filename.includes('shadows')) {
     appendedMeta += `
 @media (--OSdark) {
-  * {
+  :where(html) {
     --shadow-strength: 25%;
     --shadow-color: 220 40% 2%;
   }

@@ -1,7 +1,5 @@
 export default {
-  '*': {
-    '--op-gradient-direction': 'to bottom right',  
-  },
+  '--op-gradient-direction': 'to bottom right',  
   
   '--gradient-1': 'linear-gradient(var(--op-gradient-direction),#1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b)',
   '--gradient-2': 'linear-gradient(var(--op-gradient-direction),#48005c, #8300e2, #a269ff)',

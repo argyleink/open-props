@@ -1,5 +1,3 @@
-import {flattenMixins} from '../build/utils.js'
-
 import Animations from './props.animations.js'
 import Sizes from './props.sizes.js'
 import Colors from './props.colors.js'
@@ -21,7 +19,7 @@ export default OpenProps = {
   ...Aspects,
   ...Easings,
   ...SVG,
-  ...flattenMixins(Gradients),
-  ...flattenMixins(Shadows),
+  ...Gradients,
+  ...Shadows,
   ...Zindex,
 }

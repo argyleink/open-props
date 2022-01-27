@@ -213,14 +213,12 @@ section.hero {
   @media (--md-n-above) { font-size: var(--font-size-fluid-3) }
 
   & > * {
-    --op-gradient-direction: to right;
     background: var(--gradient-1) fixed;
     background-size: 13ch 50%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @nest [data-theme="dark"] & {
-      --op-gradient-direction: to bottom right;
       background: var(--gradient-4) fixed;
       background-size: 12ch 7ch;
       -webkit-background-clip: text;
