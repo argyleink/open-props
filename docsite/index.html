@@ -654,13 +654,22 @@
             <details class="started-details" id="design-tokens">
               <summary>Design Tokens</summary>
               <div>
+                <br>
+                <p>Not all props can be represented as a design token.</p>
                 <div class="block-wrap">
-                  <div>
-                    <h6>as JSON</h6>
-                    <p>Follows the <a href="https://design-tokens.github.io/community-group/format/">design tokens spec</a>.</p>
-                    <p>Note: Not all props can be represented as a design token.</p>
+                  <div class="just-for-sm-gap">
+                    <h6>JSON</h6>
+                    <p>Follows the <a href="https://design-tokens.github.io/community-group/format/">(draft) Design Tokens Spec</a></p>
                     <pre class="language-js"><code>
-                    import "https://unpkg.com/open-props/open-props.tokens.json"
+                    https://unpkg.com/open-props/open-props.tokens.json
+                    </code></pre>
+                  </div>
+                  <div class="just-for-sm-gap">
+                    <h6>Figma Tokens</h6>
+                    <p>Community created <a href="https://github.com/hchiam/figma-tokens-sync-example">setup instructions</a>.</p>
+                    <pre class="language-js"><code>
+                    https://unpkg.com/open-props/open-props.figma-tokens.json
+                    https://unpkg.com/open-props/open-props.figma-tokens.sync.json
                     </code></pre>
                   </div>
                 </div>

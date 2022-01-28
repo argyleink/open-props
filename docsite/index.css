@@ -429,6 +429,11 @@ pre[class*="language-"] {
   gap: var(--size-4);
 }
 
+.just-for-sm-gap {
+  display: grid;
+  gap: var(--size-2);
+}
+
 .just-stretch {
   justify-self: stretch;
 }
