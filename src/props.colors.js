@@ -1,4 +1,4 @@
-/* generated with props.colors.src.js */
+/* generated mostly with props.colors.src.js */
 export const Gray = {
   '--gray-0': '#f8f9fa',
   '--gray-1': '#f1f3f5',

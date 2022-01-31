@@ -3,6 +3,7 @@ import fs from 'fs'
 import Animations from '../src/props.animations.js'
 import Sizes from '../src/props.sizes.js'
 import * as OpenColors from '../src/props.colors.js'
+import * as ColorChannels from '../src/props.color-channels.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
@@ -36,18 +37,31 @@ const mainbundle = {
 
 const individual_colors = {
   'props.gray.css': OpenColors.Gray,
+  'props.gray-hsl.css': ColorChannels.Gray,
   'props.red.css': OpenColors.Red,
+  'props.red-hsl.css': ColorChannels.Red,
   'props.pink.css': OpenColors.Pink,
+  'props.pink-hsl.css': ColorChannels.Pink,
   'props.grape.css': OpenColors.Grape,
+  'props.grape-hsl.css': ColorChannels.Grape,
   'props.violet.css': OpenColors.Violet,
+  'props.violet-hsl.css': ColorChannels.Violet,
   'props.indigo.css': OpenColors.Indigo,
+  'props.indigo-hsl.css': ColorChannels.Indigo,
   'props.blue.css': OpenColors.Blue,
+  'props.blue-hsl.css': ColorChannels.Blue,
   'props.cyan.css': OpenColors.Cyan,
+  'props.cyan-hsl.css': ColorChannels.Cyan,
   'props.teal.css': OpenColors.Teal,
+  'props.teal-hsl.css': ColorChannels.Teal,
   'props.green.css': OpenColors.Green,
+  'props.green-hsl.css': ColorChannels.Green,
   'props.lime.css': OpenColors.Lime,
+  'props.lime-hsl.css': ColorChannels.Lime,
   'props.yellow.css': OpenColors.Yellow,
+  'props.yellow-hsl.css': ColorChannels.Yellow,
   'props.orange.css': OpenColors.Orange,
+  'props.orange-hsl.css': ColorChannels.Orange,
 }
 
 // gen design tokens

@@ -25,11 +25,11 @@ const capitalizeFirstLetter = string =>
 
 const groupedObject = colors.reduce((root, [color, shades]) => {
   let base = `--${color}-`
-  root += `\n\nconst ${capitalizeFirstLetter(color)} = {`
+  root += `\n\nexport const ${capitalizeFirstLetter(color)} = {`
 
   Object.entries(shades).forEach(([num, hex]) => 
     root += `
-  '${base}${customizeIncrements(num)}': '${hex}',`
+  ${base}${customizeIncrements(num)}-hsl: '${hexTOhsl(hex)}',`
   )
 
   root += '\n}'
@@ -59,5 +59,6 @@ const vars = colors.reduce((root, [color, shades]) => {
   return root
 }, ``)
 
+console.log(groupedObject)
 // console.log(vars)
-console.log(channels)
+// console.log(channels)
