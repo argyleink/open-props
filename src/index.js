@@ -1,7 +1,7 @@
 import Animations from './props.animations.js'
 import Sizes from './props.sizes.js'
 import Colors from './props.colors.js'
-import ColorChannels from './props.colors-channels.js'
+import ColorsHSL from './props.colors-hsl.js'
 import Fonts from './props.fonts.js'
 import Borders from './props.borders.js'
 import Aspects from './props.aspects.js'
@@ -15,7 +15,7 @@ export default OpenProps = {
   ...Animations,
   ...Sizes,
   ...Colors,
-  ...ColorChannels,
+  ...ColorsHSL,
   ...Fonts,
   ...Borders,
   ...Aspects,
