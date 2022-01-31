@@ -403,6 +403,11 @@
                 <a href="https://github.com/argyleink/open-props/blob/main/src/props.colors.css">colors.css</a>
               </div>
 
+              <div class="size"><strong>0.7</strong>kB</div>
+              <div class="file">
+                <a href="https://github.com/argyleink/open-props/blob/main/src/props.colors-hsl.css">colors-hsl.css</a>
+              </div>
+
               <div class="size"><strong>0.2</strong>kB</div>
               <div class="file">
                 <a href="https://github.com/argyleink/open-props/blob/main/src/props.easing.css">easings.css</a>
@@ -646,9 +651,16 @@
                 <pre class="language-css"><code>
                   /* index.css */
                   @import "https://unpkg.com/open-props/colors.min.css";
-                  @import "https://unpkg.com/open-props/orange.min.css";
+                  @import "https://unpkg.com/open-props/colors-hsl.min.css";
+
+                  @import "https://unpkg.com/open-props/indigo.min.css";
+                  @import "https://unpkg.com/open-props/indigo-hsl.min.css";
+
                   @import "https://unpkg.com/open-props/easings.min.css";
+                  @import "https://unpkg.com/open-props/animations.min.css";
+
                   @import "https://unpkg.com/open-props/sizes.min.css";
+                  @import "https://unpkg.com/open-props/gradients.min.css";
                   /* etc */
                 </code></pre>
               </div>
@@ -670,10 +682,17 @@
                 <h6>Individual packs</h6>
                 <pre class="language-css"><code>
                   /* index.pcss */
-                  @import "https://unpkg.com/open-props/src/props.colors.css";
-                  @import "https://unpkg.com/open-props/src/props.orange.css";
-                  @import "https://unpkg.com/open-props/src/props.easing.css";
-                  @import "https://unpkg.com/open-props/src/props.sizes.css";
+                  @import "https://unpkg.com/open-props/src/colors.min.css";
+                  @import "https://unpkg.com/open-props/src/colors-hsl.min.css";
+
+                  @import "https://unpkg.com/open-props/src/indigo.min.css";
+                  @import "https://unpkg.com/open-props/src/indigo-hsl.min.css";
+
+                  @import "https://unpkg.com/open-props/src/easings.min.css";
+                  @import "https://unpkg.com/open-props/src/animations.min.css";
+
+                  @import "https://unpkg.com/open-props/src/sizes.min.css";
+                  @import "https://unpkg.com/open-props/src/gradients.min.css";
                   /* etc */
                 </code></pre>
               </div>
@@ -733,18 +752,32 @@
                 <div class="block-wrap">
                   <pre class="language-css"><code>
                     /* index.pcss */
-                    @import "open-props/sizes";
                     @import "open-props/colors";
-                    @import "open-props/orange";
+                    @import "open-props/colors-hsl";
+
+                    @import "open-props/indigo";
+                    @import "open-props/indigo-hsl";
+
+                    @import "open-props/easings";
+                    @import "open-props/animations";
+
+                    @import "open-props/sizes";
                     @import "open-props/gradients";
                     /* etc */
                   </code></pre>
 
                   <pre class="language-js"><code>
                     // index.js
-                    import 'open-props/sizes';
                     import 'open-props/colors';
-                    import 'open-props/orange';
+                    import 'open-props/colors-hsl';
+
+                    import 'open-props/indigo';
+                    import 'open-props/indigo-hsl';
+
+                    import 'open-props/easings';
+                    import 'open-props/animations';
+
+                    import 'open-props/sizes';
                     import 'open-props/gradients';
                     /* etc */
                   </code></pre>
@@ -965,6 +998,18 @@
                 --text-1: var(--gray-1);
                 --text-2: var(--gray-2);
               }
+            }
+          </code></pre>
+        </div>
+        <div>
+          <h5>Modify Opacity Example</h5>
+          <pre class="language-css"><code>
+            /* additional import required */
+            /* @import "open-props/gray-hsl"; */
+            @import "open-props/colors-hsl";
+
+            .backdrop {
+              background-color: hsl(var(--gray-9) / 30%);
             }
           </code></pre>
         </div>
