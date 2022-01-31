@@ -3,7 +3,7 @@ import fs from 'fs'
 import Animations from '../src/props.animations.js'
 import Sizes from '../src/props.sizes.js'
 import * as OpenColors from '../src/props.colors.js'
-import * as ColorChannels from '../src/props.color-channels.js'
+import * as ColorsHSL from '../src/props.color-hsl.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
@@ -37,31 +37,31 @@ const mainbundle = {
 
 const individual_colors = {
   'props.gray.css': OpenColors.Gray,
-  'props.gray-hsl.css': ColorChannels.Gray,
+  'props.gray-hsl.css': ColorsHSL.Gray,
   'props.red.css': OpenColors.Red,
-  'props.red-hsl.css': ColorChannels.Red,
+  'props.red-hsl.css': ColorsHSL.Red,
   'props.pink.css': OpenColors.Pink,
-  'props.pink-hsl.css': ColorChannels.Pink,
+  'props.pink-hsl.css': ColorsHSL.Pink,
   'props.grape.css': OpenColors.Grape,
-  'props.grape-hsl.css': ColorChannels.Grape,
+  'props.grape-hsl.css': ColorsHSL.Grape,
   'props.violet.css': OpenColors.Violet,
-  'props.violet-hsl.css': ColorChannels.Violet,
+  'props.violet-hsl.css': ColorsHSL.Violet,
   'props.indigo.css': OpenColors.Indigo,
-  'props.indigo-hsl.css': ColorChannels.Indigo,
+  'props.indigo-hsl.css': ColorsHSL.Indigo,
   'props.blue.css': OpenColors.Blue,
-  'props.blue-hsl.css': ColorChannels.Blue,
+  'props.blue-hsl.css': ColorsHSL.Blue,
   'props.cyan.css': OpenColors.Cyan,
-  'props.cyan-hsl.css': ColorChannels.Cyan,
+  'props.cyan-hsl.css': ColorsHSL.Cyan,
   'props.teal.css': OpenColors.Teal,
-  'props.teal-hsl.css': ColorChannels.Teal,
+  'props.teal-hsl.css': ColorsHSL.Teal,
   'props.green.css': OpenColors.Green,
-  'props.green-hsl.css': ColorChannels.Green,
+  'props.green-hsl.css': ColorsHSL.Green,
   'props.lime.css': OpenColors.Lime,
-  'props.lime-hsl.css': ColorChannels.Lime,
+  'props.lime-hsl.css': ColorsHSL.Lime,
   'props.yellow.css': OpenColors.Yellow,
-  'props.yellow-hsl.css': ColorChannels.Yellow,
+  'props.yellow-hsl.css': ColorsHSL.Yellow,
   'props.orange.css': OpenColors.Orange,
-  'props.orange-hsl.css': ColorChannels.Orange,
+  'props.orange-hsl.css': ColorsHSL.Orange,
 }
 
 // gen design tokens
@@ -94,6 +94,13 @@ FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
 Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props}, {selector, prefix})
 })
+
+// gen color hsl main file
+buildPropsStylesheet({
+  filename: 'props.colors-hsl.css', 
+  props: ColorsHSL.default}, 
+  {selector, prefix}
+)
 
 // gen index.css
 const entry = fs.createWriteStream('../src/index.css')

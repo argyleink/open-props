@@ -168,7 +168,7 @@ export const Orange = {
   '--orange-9-hsl': '17 87% 45%',
 }
 
-const ColorChannels = {
+const ColorsHSL = {
   ...Gray,
   ...Red,
   ...Pink,
@@ -184,4 +184,4 @@ const ColorChannels = {
   ...Orange,
 }
 
-export default ColorChannels
+export default ColorsHSL
