@@ -1215,7 +1215,7 @@ pre[class*="language-"] {
 }
 
 .count-em {
-  counter-reset: basic;
+  counter-set: basic;
 
   & > *::before {
     counter-increment: basic;
