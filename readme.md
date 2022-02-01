@@ -19,7 +19,7 @@
 
 #### CDN ([browse](https://unpkg.com/browse/open-props@latest/))
 - [https://unpkg.com/open-props](https://unpkg.com/open-props)
-- [https://unpkg.com/open-props/normalize.min.css](https://unpkg.com/open-props/normalize.min.css) - Normalize (light + dark) ([dehttps://codepen.io/argyleink/pen/KKvRORE(url))
+- [https://unpkg.com/open-props/normalize.min.css](https://unpkg.com/open-props/normalize.min.css) - Normalize (light + dark) [demo](https://codepen.io/argyleink/pen/KKvRORE)
 - [https://unpkg.com/open-props/open-props.tokens.json](https://unpkg.com/open-props/open-props.tokens.json) - Design Tokens
 - [https://unpkg.com/open-props/open-props.figma-tokens.sync.json](https://unpkg.com/open-props/open-props.figma-tokens.sync.json) - Figma Design Tokens
 
