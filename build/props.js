@@ -3,6 +3,7 @@ import fs from 'fs'
 import Animations from '../src/props.animations.js'
 import Sizes from '../src/props.sizes.js'
 import * as OpenColors from '../src/props.colors.js'
+import * as ColorsHSL from '../src/props.colors-hsl.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
@@ -50,6 +51,22 @@ const individual_colors = {
   'props.orange.css': OpenColors.Orange,
 }
 
+const individual_colors_hsl = {
+  'props.gray-hsl.css': ColorsHSL.Gray,
+  'props.red-hsl.css': ColorsHSL.Red,
+  'props.pink-hsl.css': ColorsHSL.Pink,
+  'props.grape-hsl.css': ColorsHSL.Grape,
+  'props.violet-hsl.css': ColorsHSL.Violet,
+  'props.indigo-hsl.css': ColorsHSL.Indigo,
+  'props.blue-hsl.css': ColorsHSL.Blue,
+  'props.cyan-hsl.css': ColorsHSL.Cyan,
+  'props.teal-hsl.css': ColorsHSL.Teal,
+  'props.green-hsl.css': ColorsHSL.Green,
+  'props.lime-hsl.css': ColorsHSL.Lime,
+  'props.yellow-hsl.css': ColorsHSL.Yellow,
+  'props.orange-hsl.css': ColorsHSL.Orange,
+}
+
 // gen design tokens
 const jsonbundle = toJSON({
   ...Object.values(individual_colors)
@@ -77,9 +94,16 @@ const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.js
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
 
 // gen prop variants
-Object.entries({...mainbundle, ...individual_colors}).forEach(([filename, props]) => {
+Object.entries({...mainbundle, ...individual_colors, ...individual_colors_hsl}).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props}, {selector, prefix})
 })
+
+// gen color hsl main file
+buildPropsStylesheet({
+  filename: 'props.colors-hsl.css', 
+  props: ColorsHSL.default}, 
+  {selector, prefix}
+)
 
 // gen index.css
 const entry = fs.createWriteStream('../src/index.css')

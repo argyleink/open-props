@@ -1,5 +1,7 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
+@import "../src/props.gray-hsl.css";
+
 @import "./syntax-highlight.css";
 
 :root {
@@ -395,7 +397,7 @@ pre[class*="language-"] {
   bottom: 0;
   overflow-x: auto;
 
-  background-image: linear-gradient(to top, hsl(210deg 11% 15% / 98%) 1ch, 75%, hsl(210deg 11% 0% / 0%));
+  background-image: linear-gradient(to top, hsl(var(--gray-9-hsl) / 98%) 1ch, 75%, hsl(var(--gray-9-hsl) / 0%));
   margin-block-start: var(--size-8);
   padding-block: var(--size-5) var(--size-2);
   padding-inline: var(--size-2) var(--size-4);
