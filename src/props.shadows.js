@@ -47,8 +47,8 @@ export default Shadows
 export const StaticShadows = Object.fromEntries(
   Object.entries(Shadows)
     .map(([key,value]) => {
-      value = value.replaceAll('var(--shadow-color)', Shadows['--shadow-color'])
-      value = value.replaceAll('var(--shadow-strength)', Shadows['--shadow-strength'])
+      value = value.replace(/var(--shadow-color)/g, Shadows['--shadow-color'])
+      value = value.replace(/var(--shadow-strength)/g, Shadows['--shadow-strength'])
       return [key, value]
     })
     .filter(([key]) =>
