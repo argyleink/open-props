@@ -9,7 +9,7 @@
 
 [![Tests](https://github.com/argyleink/open-props/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/argyleink/open-props/actions/workflows/tests.yml)
 [![npm version](http://img.shields.io/npm/v/open-props.svg)](https://npmjs.org/package/open-props)
-![jsDelivrCDN](https://data.jsdelivr.com/v1/package/npm/open-props/badge)
+![Discord](https://badgen.net/discord/members/AqA4fU886r)
   
 <br>
 
