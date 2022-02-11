@@ -996,6 +996,7 @@ pre[class*="language-"] {
     color: var(--surface-1);
     background: var(--brand-bg-gradient) fixed;
     border-radius: var(--radius-round);
+    position: relative;
     
     @media (--motionOK) {
       animation: ping-pong 2s ease infinite;
@@ -1013,8 +1014,8 @@ pre[class*="language-"] {
 }
 
 @keyframes ping-pong {
-  40%,50% { transform: translateX(100%); }
-  0%, 90% { transform: translateX(0%); }
+  40%,50% { left: calc(min(var(--size-content-2),var(--max-inline-body)) / 2); }
+  0%, 90% { left: 0; }
 }
 
 .font-family-grid {
