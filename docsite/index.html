@@ -791,7 +791,7 @@
                   </code></pre>
 
                   <pre class="language-js"><code>
-                    // index.js
+                    // index.js loading CSS files
                     import 'open-props/style';
                     import 'open-props/normalize';
                   </code></pre>
@@ -848,6 +848,35 @@
                   </code></pre>
                   <br>
                   <p>The PostCSS normalize <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css#L1">comes with</a> the Custom Media props</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="started-details">
+              <summary>JavaScript</summary>
+              <div style="margin-block-start: var(--size-5)">
+                <a href="https://github.com/argyleink/open-props/blob/main/package.json#L30-L41">All JavaScript imports</a>
+              </div>
+              <div class="block-wrap">
+                <div>
+                  <h6>Bundles</h6>
+                  <pre class="language-js"><code>
+                    // index.js loading JS object
+                    import OpenProps from 'open-props/src';
+                    import Colors from 'open-props/src/colors';
+                  </code></pre>
+                </div>
+
+                <div>
+                  <h6>Entry points</h6>
+                  <pre class="language-js"><code>
+                    // import just 1 color set object
+                    import {indigo} from 'open-props/src/colors';
+                    // import shadows without prop deps
+                    import {StaticShadows} from 'open-props/src/shadows';
+                    // import the gradients
+                    import Gradients from 'open-props/src/colors';
+                  </code></pre>
                 </div>
               </div>
             </details>
