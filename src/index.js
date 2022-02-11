@@ -11,7 +11,7 @@ import {StaticShadows} from './props.shadows.js'
 import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
 
-export default OpenProps = {
+export default {
   ...Animations,
   ...Sizes,
   ...Colors,
