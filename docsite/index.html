@@ -862,18 +862,27 @@
                   <h6>Bundles</h6>
                   <pre class="language-js"><code>
                     // index.js loading JS object
-                    import OpenProps from 'open-props/src';
+                    import OpenProps from 'open-props'; // module
+                    import OpenProps from 'open-props/src'; // unbundled ES module
                     import Colors from 'open-props/src/colors';
+
+                    // object notation access is special to OpenProps 
+                    console.info(OpenProps.size1);
+                    console.info(OpenProps['--size-1']);
+
+                    console.info(Colors['--indigo-5']);
                   </code></pre>
                 </div>
 
                 <div>
-                  <h6>Entry points</h6>
+                  <h6>Individual imports</h6>
                   <pre class="language-js"><code>
                     // import just 1 color set object
                     import {indigo} from 'open-props/src/colors';
+
                     // import shadows without prop deps
                     import {StaticShadows} from 'open-props/src/shadows';
+
                     // import the gradients
                     import Gradients from 'open-props/src/colors';
                   </code></pre>
