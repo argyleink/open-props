@@ -35,6 +35,23 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 }`
   }
 
+  if (filename.includes('animations')) {
+    appendedMeta += `
+@media (--motionOK) {
+  :where(html) {
+    --scale-duration: .5s;
+    --slide-duration: .5s;
+    --shake-duration: .75s;
+    --spin-duration: 2s;
+    --ping-duration: 5s;
+    --blink-duration: 1s;
+    --float-duration: 3s;
+    --bounce-duration: 2s;
+    --pulse-duration: 2s;
+  }
+}`
+  }
+
   file.write('}\n')
   file.end(appendedMeta)
 }
