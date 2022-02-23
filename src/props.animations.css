@@ -3,22 +3,22 @@
   --animation-fade-out: fade-out .5s var(--ease-3);
   --animation-scale-up: scale-up var(--scale-duration, 1ms) var(--ease-3);
   --animation-scale-down: scale-down var(--scale-duration, 1ms) var(--ease-3);
-  --animation-slide-out-up: slide-out-up var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-out-down: slide-out-down var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-out-right: slide-out-right var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-out-left: slide-out-left var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-in-up: slide-in-up var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-in-down: slide-in-down var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-in-right: slide-in-right var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-slide-in-left: slide-in-left var(--slide-duration, 2s) var(--slide-easing, steps(3));
-  --animation-shake-x: shake-x var(--shake-duration, 3s) var(--shake-easing, steps(2));
-  --animation-shake-y: shake-y var(--shake-duration, 3s) var(--shake-easing, steps(2));
-  --animation-spin: spin 2s var(--spin-easing, steps(4)) infinite;
-  --animation-ping: ping var(--ping-duration, 4s) var(--ping-easing, steps(4)) infinite;
+  --animation-slide-out-up: slide-out-up var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-out-down: slide-out-down var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-out-right: slide-out-right var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-out-left: slide-out-left var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-in-up: slide-in-up var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-in-down: slide-in-down var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-in-right: slide-in-right var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-slide-in-left: slide-in-left var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
+  --animation-shake-x: shake-x var(--shake-duration, 3s) var(--shake-easing, steps(1));
+  --animation-shake-y: shake-y var(--shake-duration, 3s) var(--shake-easing, steps(1));
+  --animation-spin: spin 2s var(--spin-easing, steps(4, jump-start)) infinite;
+  --animation-ping: ping var(--ping-duration, 4s) var(--ping-easing, steps(4, jump-start)) infinite;
   --animation-blink: blink var(--blink-duration, 2s) var(--ease-out-3) infinite;
-  --animation-float: float 3s var(--float-ease, steps(2)) infinite;
+  --animation-float: float 3s var(--float-ease, steps(2, jump-start)) infinite;
   --animation-bounce: bounce var(--bounce-duration, 4s) var(--bounce-ease, steps(2)) infinite;
-  --animation-pulse: pulse 2s var(--pulse-ease, steps(2)) infinite;
+  --animation-pulse: pulse 2s var(--pulse-ease, steps(2, jump-start)) infinite;
 }
 
 @keyframes fade-in {
