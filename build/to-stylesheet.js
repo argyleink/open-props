@@ -14,7 +14,7 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
     if (prop.includes('-@'))
       return
 
-    if (prefix)
+    if (prefix && prefix !== "''")
       prop = `--${prefix}-` + prop.slice(2)
     
     if (prop.includes('animation')) {
