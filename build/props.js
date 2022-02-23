@@ -18,13 +18,7 @@ import {toJSON} from './to-json.js'
 import {toTokens} from './to-tokens.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
-let prefix = process.argv[2];
-const useWhere = process.argv[3]
-
-// On windows devices the prefixs is "''" if not set
-if(prefix === "''") {
-  prefix = undefined;
-}
+const [,,prefix='',useWhere] = process.argv
 
 const selector = useWhere === 'true' ? ':where(html)' : 'html'
 
