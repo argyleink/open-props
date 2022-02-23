@@ -216,7 +216,7 @@ section.hero {
 
   & > * {
     background: var(--gradient-1) fixed;
-    background-size: 13ch 50%;
+    background-size: 12ch 7ch;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
