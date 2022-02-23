@@ -19,7 +19,6 @@ import {toTokens} from './to-tokens.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
 const [,,prefix,useWhere] = process.argv
-
 const selector = useWhere === 'true' ? ':where(html)' : 'html'
 
 const mainbundle = {
