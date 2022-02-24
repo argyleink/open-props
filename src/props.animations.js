@@ -9,12 +9,12 @@ export default {
 @keyframes fade-out {
   to { opacity: 0 }
 }`,
-  "--animation-scale-up": "scale-up var(--scale-duration, 1ms) var(--ease-3)", 
+  "--animation-scale-up": "scale-up var(--scale-duration, 1s) var(--scale-easing, steps(1, jump-start))", 
   "--animation-scale-up-@": `
 @keyframes scale-up {
   to { transform: scale(1.25) }
 }`,
-  "--animation-scale-down": "scale-down var(--scale-duration, 1ms) var(--ease-3)", 
+  "--animation-scale-down": "scale-down var(--scale-duration, 1s) var(--scale-easing, steps(1, jump-start))", 
   "--animation-scale-down-@": `
 @keyframes scale-down {
   to { transform: scale(.75) }
