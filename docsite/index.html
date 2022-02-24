@@ -2386,8 +2386,14 @@
                   animation: 
                     var(--animation-fade-out) forwards,
                     var(--animation-slide-out-down);
-                  animation-timing-function: var(--ease-squish-3);
                   animation-duration: 1s;
+
+                  /* change slide timing to squish */
+                  @media (--motionOK) {
+                    animation-timing-function: 
+                      var(--ease-3), 
+                      var(--ease-squish-3);
+                  }
                 }
               </code></pre>
             </div>
@@ -2432,7 +2438,13 @@
                   animation: 
                     var(--animation-scale-down),
                     var(--animation-fade-out);
-                  animation-timing-function: var(--ease-squish-4);
+
+                  /* change scale timing to squish */
+                  @media (--motionOK) {
+                    animation-timing-function: 
+                      var(--ease-squish-4), 
+                      var(--ease-3);
+                  }
                 }
               </code></pre>
             </div>

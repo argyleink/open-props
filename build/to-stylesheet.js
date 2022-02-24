@@ -40,6 +40,7 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 @media (--motionOK) {
   :where(html) {
     --scale-duration: .5s;
+    --scale-easing: var(--ease-3);
     --slide-duration: .5s;
     --slide-easing: var(--ease-3);
     --shake-duration: .75s;

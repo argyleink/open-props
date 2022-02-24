@@ -1,8 +1,8 @@
 :where(html) {
   --animation-fade-in: fade-in .5s var(--ease-3);
   --animation-fade-out: fade-out .5s var(--ease-3);
-  --animation-scale-up: scale-up var(--scale-duration, 1ms) var(--ease-3);
-  --animation-scale-down: scale-down var(--scale-duration, 1ms) var(--ease-3);
+  --animation-scale-up: scale-up var(--scale-duration, 1s) var(--scale-easing, steps(1, jump-start));
+  --animation-scale-down: scale-down var(--scale-duration, 1s) var(--scale-easing, steps(1, jump-start));
   --animation-slide-out-up: slide-out-up var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
   --animation-slide-out-down: slide-out-down var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
   --animation-slide-out-right: slide-out-right var(--slide-duration, 2s) var(--slide-easing, steps(3, jump-both));
@@ -102,6 +102,7 @@
 @media (--motionOK) {
   :where(html) {
     --scale-duration: .5s;
+    --scale-easing: var(--ease-3);
     --slide-duration: .5s;
     --slide-easing: var(--ease-3);
     --shake-duration: .75s;
