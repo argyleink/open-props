@@ -116,7 +116,7 @@
 
   @media (--OSdark) {
     --_text: var(--red-2);
-    --_border: var(--surface-2);
+    --_border: var(--surface-3);
   }
 }
 
