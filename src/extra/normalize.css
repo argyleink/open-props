@@ -3,13 +3,13 @@
 *, ::before, ::after { box-sizing: border-box; }
 
 * {
-  background-origin: border-box;
-  background-repeat: no-repeat;
   margin: 0;
 
-  &:where(:not(fieldset)) {
+  &:where(:not(fieldset, progress, meter)) {
     border-width: 0;
     border-style: solid;
+    background-origin: border-box;
+    background-repeat: no-repeat;
   }
 }
 
