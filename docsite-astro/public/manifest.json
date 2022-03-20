@@ -1,0 +1,17 @@
+{
+  "short_name": "OpenProps",
+  "name": "Open Props CSS",
+  "description": "Supercharged CSS variables",
+  "scope": "/",
+  "start_url": "/?source=pwa",
+  "background_color": "#3B5BDB",
+  "theme_color": "#5C7CFA",
+  "display": "standalone",
+  "icons": [
+    { "src": "/favicon.ico", "type": "image/x-icon", "sizes": "32x32" },
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+    { "src": "/icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

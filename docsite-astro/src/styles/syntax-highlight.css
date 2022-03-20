@@ -1,0 +1,105 @@
+:root :not(pre) > code[class*="language-"] {
+  padding: var(--size-1) var(--size-2);
+  box-shadow: var(--inner-shadow-0), var(--shadow-1);
+  color: var(--text-1);
+  white-space: nowrap;
+  text-shadow: none;
+}
+
+code.language-bash::before {
+  content: '$ ';
+  color: var(--cyan-1);
+
+  @nest [data-theme="light"] & {
+    color: var(--teal-6);
+  }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-align: start;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding-inline: var(--size-4);
+  padding-block: var(--size-3);
+  margin: var(--size-2) 0;
+  overflow: auto;
+  border-radius: var(--radius-conditional-2);
+  border: var(--border-size-1) solid var(--surface-3);
+  background: var(--surface-2);
+
+  @media (--lg-n-above) {
+    padding-inline: var(--size-5);
+    padding-block: var(--size-4);
+  }
+
+  @nest [data-theme="light"] & {
+    background: white;
+  }
+}
+
+code.language-css {
+  color: var(--indigo-1);
+  text-shadow: 
+    0 0 10px var(--indigo-5),
+    0 0 25px var(--indigo-7);
+
+  @nest [data-theme="light"] & {
+    color: var(--indigo-9);
+    text-shadow: 0 0 15px var(--indigo-7);
+    background: white;
+  }
+
+  @media (--HDcolor) {
+    text-shadow: 0 0 15px color(display-p3 0 0 1);
+  }
+}
+
+.token {
+  &:is(.property, .atrule > *) {
+    color: var(--text-1);
+    text-shadow: 0 1px 0 var(--surface-1);
+
+    @nest [data-theme="light"] & {
+      text-shadow: 0 1px 0 var(--gray-3);
+    }
+  }
+
+  &.selector {
+    color: var(--text-2);
+    text-shadow: none;
+  }
+
+  &:is(.string, .attr-value) {
+    color: var(--teal-0);
+    text-shadow: 
+      0 0 10px var(--teal-5),
+      0 0 25px var(--teal-7);
+
+    @nest [data-theme="light"] & {
+      color: var(--grape-9);
+      text-shadow: 0 0 15px var(--grape-9);
+    }
+
+    @media (--HDcolor) {
+      text-shadow: 0 0 15px color(display-p3 0 1 0);
+    }
+  }
+
+  &:is(.comment, .punctuation) {
+    color: var(--gray-5);
+    text-shadow: none;
+    
+    @nest [data-theme="light"] & {
+      color: var(--gray-6);
+    }
+  }
+}
