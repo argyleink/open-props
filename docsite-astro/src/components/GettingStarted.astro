@@ -1,0 +1,382 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="getting-started">
+  <header>
+    <h2>Getting Started</h2>
+    <div class="block-wrap">
+      <p>Pick from CSS, <a href="https://postcss.org/">PostCSS</a>, JSON, or props as Javascript.</p>
+      <blockquote class="icon-quote indigo">
+        <svg viewBox="0 0 32 32">
+          <path fill="#7289da" d="M26.963 0c1.875 0 3.387 1.516 3.476 3.3v28.7l-3.569-3.031-1.96-1.784-2.139-1.864 0.893 2.94h-18.717c-1.869 0-3.387-1.42-3.387-3.301v-21.653c0-1.784 1.52-3.303 3.393-3.303h22zM18.805 7.577h-0.040l-0.269 0.267c2.764 0.8 4.101 2.049 4.101 2.049-1.781-0.891-3.387-1.336-4.992-1.516-1.16-0.18-2.32-0.085-3.3 0h-0.267c-0.627 0-1.96 0.267-3.747 0.98-0.623 0.271-0.98 0.448-0.98 0.448s1.336-1.336 4.28-2.049l-0.18-0.18c0 0-2.229-0.085-4.636 1.693 0 0-2.407 4.192-2.407 9.36 0 0 1.333 2.32 4.991 2.408 0 0 0.533-0.711 1.073-1.336-2.053-0.624-2.853-1.872-2.853-1.872s0.179 0.088 0.447 0.267h0.080c0.040 0 0.059 0.020 0.080 0.040v0.008c0.021 0.021 0.040 0.040 0.080 0.040 0.44 0.181 0.88 0.36 1.24 0.533 0.621 0.269 1.42 0.537 2.4 0.715 1.24 0.18 2.661 0.267 4.28 0 0.8-0.18 1.6-0.356 2.4-0.713 0.52-0.267 1.16-0.533 1.863-0.983 0 0-0.8 1.248-2.94 1.872 0.44 0.621 1.060 1.333 1.060 1.333 3.659-0.080 5.080-2.4 5.16-2.301 0-5.16-2.42-9.36-2.42-9.36-2.18-1.619-4.22-1.68-4.58-1.68zM19.029 13.461c0.937 0 1.693 0.8 1.693 1.78 0 0.987-0.76 1.787-1.693 1.787s-1.693-0.8-1.693-1.779c0.003-0.987 0.764-1.784 1.693-1.788zM12.972 13.461c0.933 0 1.688 0.8 1.688 1.78 0 0.987-0.76 1.787-1.693 1.787s-1.693-0.8-1.693-1.779c0-0.987 0.76-1.784 1.699-1.788z"></path>
+        </svg>
+        <p>
+          <b>Need help?</b> <br>
+          Ask a question on <a href="https://discord.gg/AqA4fU886r">Discord</a>
+        </p>
+      </blockquote>
+    </div>
+  </header>
+  <article class="installation">
+    <div class="block-wrap" id="cdn">
+      <div class="contain-pre">
+        <header>
+          <h4>CDN</h4>
+          <p>No installation required. <a href="https://unpkg.com/browse/open-props@latest/">View all.</a></p>
+        </header>
+
+        <details class="started-details">
+          <summary>CSS</summary>
+          <div>
+            <h6>Bundles</h6>
+            <div class="block-wrap">
+              <Prism lang='css' code={`
+                /* index.css */
+                @import "https://unpkg.com/open-props";
+                @import "https://unpkg.com/open-props/normalize.min.css";
+              `} />
+
+              <Prism lang='html' code={`
+                &#60;!-- index.html --&#62;
+                &#60;link rel="stylesheet" href="https://unpkg.com/open-props"/&#62;
+                &#60;link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css"/&#62;
+              `} />
+
+              <Prism lang='js' code={`
+                // index.js
+                import 'https://unpkg.com/open-props';
+                import 'https://unpkg.com/open-props/normalize.min.css';
+              `} />
+            </div>
+
+            <h6>Individual packs</h6>
+            <Prism lang='css' code={`
+              /* index.css */
+              @import "https://unpkg.com/open-props/colors.min.css";
+              @import "https://unpkg.com/open-props/colors-hsl.min.css";
+
+              @import "https://unpkg.com/open-props/indigo.min.css";
+              @import "https://unpkg.com/open-props/indigo-hsl.min.css";
+
+              @import "https://unpkg.com/open-props/easings.min.css";
+              @import "https://unpkg.com/open-props/animations.min.css";
+
+              @import "https://unpkg.com/open-props/sizes.min.css";
+              @import "https://unpkg.com/open-props/gradients.min.css";
+              /* etc */
+            `} />
+          </div>
+        </details>
+
+        <details class="started-details">
+          <summary>PostCSS</summary>
+
+          <div>
+            <h6>Entry Points</h6>
+            <Prism lang='css' code={`
+              /* index.pcss */
+              @import "https://unpkg.com/open-props/src/index.css";
+              @import "https://unpkg.com/open-props/src/extra/normalize.css";
+            `} />
+          </div>
+
+          <div>
+            <h6>Individual packs</h6>
+            <Prism lang='css' code={`
+              /* index.pcss */
+              @import "https://unpkg.com/open-props/src/props.colors.css";
+              @import "https://unpkg.com/open-props/src/props.colors-hsl.css";
+
+              @import "https://unpkg.com/open-props/src/props.indigo.css";
+              @import "https://unpkg.com/open-props/src/props.indigo-hsl.css";
+
+              @import "https://unpkg.com/open-props/src/props.easings.css";
+              @import "https://unpkg.com/open-props/src/props.animations.css";
+
+              @import "https://unpkg.com/open-props/src/props.sizes.css";
+              @import "https://unpkg.com/open-props/src/props.gradients.css";
+              /* etc */
+            `} />
+          </div>
+        </details>
+
+        <details class="started-details" id="design-tokens">
+          <summary>Design Tokens</summary>
+          <div>
+            <br>
+            <p>Not all props can be represented as a design token.</p>
+            <div class="block-wrap">
+              <div class="just-for-sm-gap">
+                <h6>JSON</h6>
+                <p>Follows the <a href="https://design-tokens.github.io/community-group/format/">(draft) Design Tokens Spec</a></p>
+                <Prism lang='js' code={`
+                https://unpkg.com/open-props/open-props.tokens.json
+                `} />
+              </div>
+              <div class="just-for-sm-gap">
+                <h6>Figma Tokens</h6>
+                <p>Community created <a href="https://github.com/hchiam/figma-tokens-sync-example">setup instructions</a>.</p>
+                <Prism lang='js' code={`
+                https://unpkg.com/open-props/open-props.figma-tokens.json
+                https://unpkg.com/open-props/open-props.figma-tokens.sync.json
+                `} />
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="contain-pre" id="npm">
+        <h4>NPM</h4>
+        <Prism lang='bash' code={`npm install open-props`} />
+
+        <details class="started-details">
+          <summary>CSS</summary>
+          <div>
+            <br>
+            <p><a href="https://stackblitz.com/edit/jit-open-props?file=style.css">Try in browser!</a></p>
+            <h6>Bundles</h6>
+            <div class="block-wrap">
+              <Prism lang='css' code={`
+                /* index.css */
+                @import "open-props/style";
+                @import "open-props/normalize";
+              `} />
+
+              <Prism lang='js' code={`
+                // index.js loading CSS files
+                import 'open-props/style';
+                import 'open-props/normalize';
+              `} />
+            </div>
+          </div>
+
+          <div>
+            <h6>Individual packs</h6>
+            <div class="block-wrap">
+              <Prism lang='css' code={`
+                /* index.pcss */
+                @import "open-props/colors";
+                @import "open-props/colors-hsl";
+
+                @import "open-props/indigo";
+                @import "open-props/indigo-hsl";
+
+                @import "open-props/easings";
+                @import "open-props/animations";
+
+                @import "open-props/sizes";
+                @import "open-props/gradients";
+                /* etc */
+              `} />
+
+              <Prism lang='js' code={`
+                // index.js
+                import 'open-props/colors';
+                import 'open-props/colors-hsl';
+
+                import 'open-props/indigo';
+                import 'open-props/indigo-hsl';
+
+                import 'open-props/easings';
+                import 'open-props/animations';
+
+                import 'open-props/sizes';
+                import 'open-props/gradients';
+                /* etc */
+              `} />
+            </div>
+          </div>
+        </details>
+        
+        <details class="started-details">
+          <summary>PostCSS</summary>
+          <div class="block-wrap">
+            <div>
+              <h6>Entry points</h6>
+              <Prism lang='css' code={`
+                /* index.pcss */
+                @import "open-props/postcss/style";
+                @import "open-props/postcss/normalize";
+              `} />
+              <br>
+              <p>The PostCSS normalize <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css#L1">comes with</a> the Custom Media props</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="started-details">
+          <summary>JavaScript</summary>
+          <div style="margin-block-start: var(--size-5)">
+            <a href="https://github.com/argyleink/open-props/blob/main/package.json#L30-L41">All JavaScript imports</a>
+          </div>
+          <div class="block-wrap">
+            <div>
+              <h6>Bundles</h6>
+              <Prism lang='js' code={`
+                // index.js loading JS object
+                import OpenProps from 'open-props'; // module
+                import OpenProps from 'open-props/src'; // unbundled ES module
+                import Colors from 'open-props/src/colors';
+
+                // object notation access is special to OpenProps 
+                console.info(OpenProps.size1);
+                console.info(OpenProps['--size-1']);
+
+                console.info(Colors['--indigo-5']);
+              `} />
+            </div>
+
+            <div>
+              <h6>Individual imports</h6>
+              <Prism lang='js' code={`
+                // import just 1 color set object
+                import {indigo} from 'open-props/src/colors';
+
+                // import shadows without prop deps
+                import {StaticShadows} from 'open-props/src/shadows';
+
+                // import the gradients
+                import Gradients from 'open-props/src/gradients';
+              `} />
+            </div>
+          </div>
+        </details>
+
+        <details class="started-details">
+          <summary>Design Tokens</summary>
+          <div>
+            <div class="block-wrap">
+              <Prism lang='js' code={`
+              /* 3 ways to import */
+              import 'open-props/tokens'
+              import 'open-props/json'
+              import 'open-props/design-tokens'
+              `} />
+            </div>
+          </div>
+        </details>
+
+        <h5 id="jitprops">PostCSS JIT Props</h5>
+        <p>Only ship the props you use. <a href="https://github.com/GoogleChromeLabs/postcss-jit-props">Learn more</a>.</p>
+
+        <details class="started-details">
+          <summary>PostCSS</summary>
+
+          <Prism lang='bash' code={`npm install postcss-jit-props`} />
+
+          <br>
+          <p>Stop importing Open Props in your CSS (if you were).</p>
+          <p><b>This plugin adds them to your stylesheet as you use them 🙂</b></p>
+
+          <div class="block-wrap">
+            <div>
+              <h6>Props as Javascript</h6>
+              <Prism lang='js' code={`
+                // postcss.config.js
+                const postcssJitProps = require('postcss-jit-props');
+                const OpenProps = require('open-props');
+                
+                module.exports = {
+                  plugins: [
+                    postcssJitProps(OpenProps),
+                  ]
+                }
+              `} />
+            </div>
+            <div>
+              <h6>Props from CSS</h6>
+              <Prism lang='js' code={`
+                // postcss.config.js
+                const postcssJitProps = require('postcss-jit-props');
+                const OpenProps = require('open-props');
+                
+                module.exports = {
+                  plugins: [
+                    postcssJitProps({
+                      files: [
+                        require('open-props/open-props.min.css'),
+                      ]
+                    }),
+                  ]
+                }
+              `} />
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="contain-pre" id="cli">
+        <h4>CLI</h4>
+        <Prism lang='bash' code={`git clone https://github.com/argyleink/open-props.git`} />
+
+        <details class="started-details">
+          <summary>Customize your build</summary>
+          <div class="block-wrap">
+            <div>
+              <h6>Customize Bundles</h6>
+              <p></p>
+              <Prism lang='js' code={`
+                npm run gen:nowhere               // bundle without ':where()'
+                npm run gen:prefixed              // each prop prefixed with 'op', like '--op-font-size-1'
+                node _create-props.js 'my-prefix' // each prop with your own prefix
+              `} />
+            </div>
+            <div>
+              <h6>Build Locally</h6>
+              <Prism lang='js' code={`
+                npm run gen:op  // runs through 'src/' js files and creates the PostCSS files in 'src/'
+                npm run bundle  // creates all the various minified bundles of props
+                npm run lib:js  // builds the JS modules for NPM
+              `} />
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="contain-pre" id="autocomplete">
+      <h4>Autocomplete</h4>
+      <details class="started-details">
+        <summary>VScode</summary>
+        <ol>
+          <li>
+            VScode has an intellisense feature which you can tap into,
+            by passing the path to the node_modules folder when
+            open-props is installed
+          </li>
+          <li>
+            In your VScode environment, navigate to the extensions
+            marketplace, and install this
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar"
+              target="__blank"
+              >CSS Var Complete</a
+            >
+            extension
+          </li>
+          <li>
+            When the extension is installed, you'll have to add
+            open-prop's css file path to a
+            <code>.vscode/settings.json</code>file. Take a look at an
+            illustration below
+          </li>
+          <Prism lang='js' code={` 
+            // .vscode/settings.json file 
+            { 
+              "cssvar.files": [ 
+                "./node_modules/open-props/open-props.min.css", 
+                // if you have an alternative path to where your styles are located 
+                // you can add it in this array of files 
+                "assets/styles/variables.css" 
+              ],
+
+              // you can also add support for autocomplete in other file extensions 
+              "cssvar.extensions": [
+                "css", "html", "jsx", "tsx"
+              ]
+            } 
+          `} />
+        </ol>
+      </details>
+    </div>
+  </article>
+</section>
