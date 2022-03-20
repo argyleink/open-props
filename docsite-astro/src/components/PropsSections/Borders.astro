@@ -1,0 +1,74 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="borders">
+  <header>
+  <h2>Borders</h2>
+  <p>Sizes, corner radii, a circle helper, <a href="https://ishadeed.com/article/conditional-border-radius/">conditional radii</a>, and some blobs.</p>
+  </header>
+  <div class="block-wrap">
+  <div>
+    
+    <h5>Vars Sample</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --border-size-{1-5}
+      --radius-{1-6}
+      --radius-round
+      --radius-blob-{1-5}
+      --radius-conditional-{1-6}
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    .card {
+      /* no radius when fullscreen */
+      border-radius: var(--radius-conditional-3);
+      border: var(--border-size-1) solid var(--gray-1);
+    }
+
+    .circle {
+      inline-size: var(--size-5);
+      aspect-ratio: var(--ratio-square);
+      border-radius: var(--radius-round);
+    }
+    `} />
+  </div>
+  </div>
+
+  <div class="just-for-gap">
+  <h3>Border Size</h3>
+  <article class="border-demos">
+    <div style="border-width: var(--border-size-1)">1</div>
+    <div style="border-width: var(--border-size-2)">2</div>
+    <div style="border-width: var(--border-size-3)">3</div>
+    <div style="border-width: var(--border-size-4)">4</div>
+    <div style="border-width: var(--border-size-5)">5</div>
+  </article>
+  </div>
+
+  <div class="just-for-gap">
+  <h3>Border Radius</h3>
+  <article class="border-demos">
+    <div style="border-radius: var(--radius-1)">1</div>
+    <div style="border-radius: var(--radius-2)">2</div>
+    <div style="border-radius: var(--radius-3)">3</div>
+    <div style="border-radius: var(--radius-4)">4</div>
+    <div style="border-radius: var(--radius-5)">5</div>
+    <div style="border-radius: var(--radius-round)">round</div>
+  </article>
+  </div>
+
+  <div class="just-for-gap">
+  <h3>Blobs</h3>
+  <article class="border-demos blobbys">
+    <div style="border-radius: var(--radius-blob-1)">1</div>
+    <div style="border-radius: var(--radius-blob-2)">2</div>
+    <div style="border-radius: var(--radius-blob-3)">3</div>
+    <div style="border-radius: var(--radius-blob-4)">4</div>
+    <div style="border-radius: var(--radius-blob-5)">5</div>
+  </article>
+  </div>
+</section>

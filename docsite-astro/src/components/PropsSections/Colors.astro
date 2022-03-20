@@ -1,0 +1,462 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="colors">
+  <header>
+    <h2>Colors</h2>
+    <div class="block-wrap">
+      <p>Open Props includes <a href="https://yeun.github.io/open-color/">Open Color</a> (Version 1.9.1), an open-source color scheme optimized for UI development.</p>
+      <blockquote class="icon-quote">
+        <svg viewBox="0 0 24 24">
+          <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+        <span>Open the color picker in your browser dev tools, set the swatches to the page's custom properties, and enjoy picking from the set!</span>
+      </blockquote>
+    </div>
+  </header>
+
+  <div class="block-wrap">
+    <div>
+      <h5>The Props</h5>
+      <div class="var-examples">
+        <Prism lang='css' code={`
+          --gray-{0-9}
+          --red-{0-9}
+          --pink-{0-9}
+          --grape-{0-9}
+          --violet-{0-9}
+          --indigo-{0-9}
+          --blue-{0-9}
+          --cyan-{0-9}
+          --teal-{0-9}
+          --green-{0-9}
+          --lime-{0-9}
+          --yellow-{0-9}
+          --orange-{0-9}
+        `}/>
+      </div>
+    </div>
+    <div>
+      <h5>Button Sample</h5>
+      <Prism lang='css' code={`
+        button.blue {
+          color: var(--blue-6);
+          background-color: var(--blue-0);
+          border: 1px solid var(--blue-1);
+          text-shadow: 0 1px 0 var(--blue-2);
+
+          &:hover {
+            background-color: var(--blue-1);
+          }
+        }
+      `}/>
+    </div>
+    <div>
+      <h5>Light & Dark Example</h5>
+      <Prism lang='css' code={`
+        html {
+          --text-1: var(--gray-9);
+          --text-2: var(--gray-7);
+
+          @media (--OSdark) {
+            --text-1: var(--gray-1);
+            --text-2: var(--gray-2);
+          }
+        }
+      `}/>
+    </div>
+    <div>
+      <h5>Modify Opacity Example</h5>
+      <Prism lang='css' code={`
+        /* additional import required */
+        /* @import "open-props/gray-hsl"; */
+        @import "open-props/colors-hsl";
+
+        .backdrop {
+          background-color: hsl(var(--gray-9-hsl) / 30%);
+        }
+      `}/>
+    </div>
+  </div>
+  <article class="just-stretch">
+    <div class="open-colors count-em">
+      <h4>Gray</h4>
+      <span class="color-swatch" style="background-color: var(--gray-0)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-1)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-2)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-3)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-4)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-5)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-6)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-7)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-8)"></span>
+      <span class="color-swatch" style="background-color: var(--gray-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Red</h4>
+      <span class="color-swatch" style="background-color: var(--red-0)"></span>
+      <span class="color-swatch" style="background-color: var(--red-1)"></span>
+      <span class="color-swatch" style="background-color: var(--red-2)"></span>
+      <span class="color-swatch" style="background-color: var(--red-3)"></span>
+      <span class="color-swatch" style="background-color: var(--red-4)"></span>
+      <span class="color-swatch" style="background-color: var(--red-5)"></span>
+      <span class="color-swatch" style="background-color: var(--red-6)"></span>
+      <span class="color-swatch" style="background-color: var(--red-7)"></span>
+      <span class="color-swatch" style="background-color: var(--red-8)"></span>
+      <span class="color-swatch" style="background-color: var(--red-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Pink</h4>
+      <span class="color-swatch" style="background-color: var(--pink-0)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-1)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-2)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-3)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-4)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-5)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-6)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-7)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-8)"></span>
+      <span class="color-swatch" style="background-color: var(--pink-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Grape</h4>
+      <span class="color-swatch" style="background-color: var(--grape-0)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-1)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-2)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-3)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-4)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-5)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-6)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-7)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-8)"></span>
+      <span class="color-swatch" style="background-color: var(--grape-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Violet</h4>
+      <span class="color-swatch" style="background-color: var(--violet-0)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-1)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-2)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-3)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-4)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-5)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-6)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-7)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-8)"></span>
+      <span class="color-swatch" style="background-color: var(--violet-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Indigo</h4>
+      <span class="color-swatch" style="background-color: var(--indigo-0)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-1)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-2)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-3)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-4)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-5)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-6)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-7)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-8)"></span>
+      <span class="color-swatch" style="background-color: var(--indigo-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Blue</h4>
+      <span class="color-swatch" style="background-color: var(--blue-0)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-1)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-2)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-3)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-4)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-5)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-6)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-7)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-8)"></span>
+      <span class="color-swatch" style="background-color: var(--blue-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Cyan</h4>
+      <span class="color-swatch" style="background-color: var(--cyan-0)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-1)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-2)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-3)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-4)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-5)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-6)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-7)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-8)"></span>
+      <span class="color-swatch" style="background-color: var(--cyan-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Teal</h4>
+      <span class="color-swatch" style="background-color: var(--teal-0)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-1)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-2)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-3)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-4)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-5)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-6)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-7)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-8)"></span>
+      <span class="color-swatch" style="background-color: var(--teal-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Green</h4>
+      <span class="color-swatch" style="background-color: var(--green-0)"></span>
+      <span class="color-swatch" style="background-color: var(--green-1)"></span>
+      <span class="color-swatch" style="background-color: var(--green-2)"></span>
+      <span class="color-swatch" style="background-color: var(--green-3)"></span>
+      <span class="color-swatch" style="background-color: var(--green-4)"></span>
+      <span class="color-swatch" style="background-color: var(--green-5)"></span>
+      <span class="color-swatch" style="background-color: var(--green-6)"></span>
+      <span class="color-swatch" style="background-color: var(--green-7)"></span>
+      <span class="color-swatch" style="background-color: var(--green-8)"></span>
+      <span class="color-swatch" style="background-color: var(--green-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Lime</h4>
+      <span class="color-swatch" style="background-color: var(--lime-0)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-1)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-2)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-3)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-4)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-5)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-6)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-7)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-8)"></span>
+      <span class="color-swatch" style="background-color: var(--lime-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Yellow</h4>
+      <span class="color-swatch" style="background-color: var(--yellow-0)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-1)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-2)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-3)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-4)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-5)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-6)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-7)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-8)"></span>
+      <span class="color-swatch" style="background-color: var(--yellow-9)"></span>
+    </div>
+    <div class="open-colors count-em">
+      <h4>Orange</h4>
+      <span class="color-swatch" style="background-color: var(--orange-0)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-1)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-2)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-3)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-4)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-5)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-6)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-7)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-8)"></span>
+      <span class="color-swatch" style="background-color: var(--orange-9)"></span>
+    </div>
+  </article>
+
+  <details>
+    <summary>Color Theming 101</summary>
+
+    <div class="just-for-gap">
+      <header>
+        <h3>1) Color theming</h3>
+        <p>Low numbers are light and high numbers are dark. See how the Open Props <a href="https://github.com/argyleink/open-props/blob/main/src/extra/normalize.css">normalize.css</a> implements <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css">light</a> and <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css">dark</a> modes.</p>
+        <p><b>See it live:</b> <a href="https://codepen.io/argyleink/pen/21fe8c43e25876c3756917df0bd7ef36">auto, light, dark, dim and grape themes</a> demonstrated with Open Props!</p>
+      </header>
+
+      <div class="block-wrap">
+        <div>
+          <h5>Light</h5>
+          <Prism lang='css' code={`
+            html {
+              --brand-light: var(--orange-6);
+
+              --text1-light: var(--gray-8);
+              --text2-light: var(--gray-7);
+
+              --surface1-light: var(--gray-2);
+              --surface2-light: var(--gray-0);
+              --surface3-light: var(--gray-1);
+              --surface4-light: var(--gray-3);
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Dark</h5>
+          <Prism lang='css' code={`
+            html {
+              --brand-dark: var(--orange-3);
+
+              --text1-dark: var(--gray-1);
+              --text2-dark: var(--gray-3);
+
+              --surface1-dark: var(--gray-9);
+              --surface2-dark: var(--gray-8);
+              --surface3-dark: var(--gray-7);
+              --surface4-dark: var(--gray-6);
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Dim</h5>
+          <Prism lang='css' code={`
+            html {
+              --brand-dim: var(--orange-4);
+
+              --text1-dim: var(--gray-3);
+              --text2-dim: var(--gray-4);
+
+              --surface1-dim: var(--gray-8);
+              --surface2-dim: var(--gray-7);
+              --surface3-dim: var(--gray-6);
+              --surface4-dim: var(--gray-5);
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Grape</h5>
+          <Prism lang='css' code={`
+            html {
+              --brand-grape: var(--grape-5);
+
+              --text1-grape: var(--grape-9);
+              --text2-grape: var(--grape-7);
+
+              --surface1-grape: var(--grape-0);
+              --surface2-grape: var(--grape-1);
+              --surface3-grape: var(--grape-2);
+              --surface4-grape: var(--grape-3);
+            }
+          `}/>
+        </div>
+      </div>
+
+      <header>
+        <h3>2) Creating adaptive color schemes</h3>
+        <p>It's not ideal for components to reference individual light or dark theme colors. Instead, you should prefer to use these individual variables to build a set of theme-agnostic aliases. This allows you to reference a custom property without worrying about its underlying value, which will dynamically adapt to the current context's theme.</p>
+      </header>
+      
+      <div class="block-wrap">
+        <div>
+          <h5>No Preference (Light)</h5>
+          <Prism lang='css' code={`
+            :root {
+              --brand: var(--brand-light);
+
+              --text1: var(--text1-light);
+              --text2: var(--text2-light);
+
+              --surface1: var(--surface1-light);
+              --surface2: var(--surface2-light);
+              --surface3: var(--surface3-light);
+              --surface4: var(--surface4-light);
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Prefers Dark</h5>
+          <Prism lang='css' code={`
+            @media (prefers-color-scheme: dark) {
+              :root {
+                --brand: var(--brand-dark);
+
+                --text1: var(--text1-dark);
+                --text2: var(--text2-dark);
+
+                --surface1: var(--surface1-dark);
+                --surface2: var(--surface2-dark);
+                --surface3: var(--surface3-dark);
+                --surface4: var(--surface4-dark);
+              }
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Prefers Dim</h5>
+          <Prism lang='css' code={`
+            @media (prefers-contrast: less) {
+              :root {
+                --brand: var(--brand-dim);
+
+                --text1: var(--text1-dim);
+                --text2: var(--text2-dim);
+
+                --surface1: var(--surface1-dim);
+                --surface2: var(--surface2-dim);
+                --surface3: var(--surface3-dim);
+                --surface4: var(--surface4-dim);
+              }
+            }
+          `}/>
+        </div>
+
+        <div>
+          <h5>Prefers Grape</h5>
+          <Prism lang='css' code={`
+            [color-scheme="grape"] {
+              --brand: var(--brand-grape);
+
+              --text1: var(--text1-grape);
+              --text2: var(--text2-grape);
+
+              --surface1: var(--surface1-grape);
+              --surface2: var(--surface2-grape);
+              --surface3: var(--surface3-grape);
+              --surface4: var(--surface4-grape);
+            }
+          `}/>
+        </div>
+      </div>
+
+      <header>
+        <h3>3) Using the aliases</h3>
+        <p>Your app is now free to use adaptive custom properties! Now, your team only needs to remember a single naming convention rather than wrestling with individual theming variables. Here are a few examples of how the above color theme system could be used.</p>
+      </header>
+      
+      <div class="block-wrap">
+        <div>
+          <h5>Page Styles Using Themes</h5>
+          <Prism lang='css' code={`
+            html {
+              background-color: var(--surface1);
+              color: var(--text1);
+              accent-color: var(--brand);
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Utilities</h5>
+          <Prism lang='css' code={`
+            .surface1 {
+              background-color: var(--surface1);
+              color: var(--text2);
+            }
+
+            .surface2 {
+              background-color: var(--surface2);
+              color: var(--text2);
+            }
+
+            .surface3 {
+              background-color: var(--surface3);
+              color: var(--text1);
+            }
+
+            .surface4 {
+              background-color: var(--surface4);
+              color: var(--text1);
+            }
+          `}/>
+        </div>
+        <div>
+          <h5>Typography</h5>
+          <Prism lang='css' code={`
+            h1,h2,h3,h4,p,dt {
+              color: var(--text1);
+            }
+
+            h5,h6,small,dd {
+              color: var(--text2); 
+            }
+          `}/>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>

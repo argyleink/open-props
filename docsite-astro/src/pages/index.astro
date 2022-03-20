@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro'
+import SvgSymbols from '../components/SvgSymbols.astro'
 import Nav from "../components/Nav.astro"
 import Hero from '../components/Hero.astro';
 import Gallery from '../components/Gallery.astro';
@@ -8,9 +9,24 @@ import Overview from '../components/Overview.astro';
 import DogFood from "../components/DogFood.astro";
 import GettingStarted from "../components/GettingStarted.astro";
 import Footer from "../components/Footer.astro";
+import ScrollNav from "../components/ScrollNav.astro";
+
+import Colors from "../components/PropsSections/Colors.astro";
+import Gradients from "../components/PropsSections/Gradients.astro";
+import Shadows from "../components/PropsSections/Shadows.astro";
+import AspectRatio from "../components/PropsSections/AspectRatio.astro";
+import Typography from "../components/PropsSections/Typography.astro";
+import Easing from "../components/PropsSections/Easing.astro";
+import Animations from "../components/PropsSections/Animations.astro";
+import Sizes from "../components/PropsSections/Sizes.astro";
+import Borders from "../components/PropsSections/Borders.astro";
+import MediaQueries from "../components/PropsSections/MediaQueries.astro";
+import Zindex from "../components/PropsSections/Zindex.astro";
 ---
 
 <PageLayout>
+
+  <SvgSymbols />
   <Nav/>
   <Hero/>
   <Gallery />
@@ -18,5 +34,22 @@ import Footer from "../components/Footer.astro";
   <Overview />
   <DogFood />
   <GettingStarted />
+
+  <!-- Props Documentation sections -->
+  <Colors />
+  <Gradients />
+  <Shadows />
+  <AspectRatio/>
+  <Typography/>
+  <Easing />
+  <Animations />
+  <Sizes />
+  <Borders />
+  <MediaQueries />
+  <Zindex />
+ 
+
+
+  <ScrollNav />
   <Footer />
 </PageLayout>

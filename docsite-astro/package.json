@@ -1,7 +1,9 @@
 {
-  "name": "@example/minimal",
-  "version": "0.0.1",
-  "private": true,
+  "name": "open-props",
+  "author": "Adam Argyle",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -1,0 +1,40 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="z-index">
+  <header>
+  <h2>Z Index</h2>
+  <p>All the z-index values you could possibly need!</p>
+  </header>
+  <div class="block-wrap">
+  <div>
+    <h5>The Props</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --layer-{1-5}
+      --layer-important: 2147483647;
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    figure {
+      position: relative;
+
+      & figcaption {
+      position: absolute;
+      z-index: var(--layer-1);
+      inset-inline: 0;
+      inset-block: auto 0;
+      }
+    }
+
+    .desperate-measures {
+      position: fixed;
+      z-index: var(--layer-important);
+    }
+    `} />
+  </div>
+  </div>
+</section>

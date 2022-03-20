@@ -1,0 +1,235 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="typography">
+  <header>
+  <h2>Typography</h2>
+  <p>Variable and static font sizes, smart line heights, and other familiar typography variables, all ready to go.</p>
+  </header>
+  <div class="block-wrap">
+  <div>
+    <h5>The Props</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --font-size-{00-8}
+      --font-size-fluid-{0-3}
+      --font-weight-{1-9}
+      --font-letterspacing-{0-7}
+      --font-lineheight-{00-5}
+      <!-- --font-relative-lineheight-{00-6} -->
+    `} />
+    </div>
+  </div>
+  
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+      .hero {
+      line-height: var(--font-lineheight-1);
+      font-size: var(--font-size-fluid-3);
+      font-weight: var(--font-weight-9);
+      font-family: var(--font-sans);
+      }
+    `} />
+  </div>
+  </div>
+
+  <article class="font-sizes">
+  <h4>Font Families</h4>
+  <Prism lang='css' code={`
+    --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    --font-serif: ui-serif, serif;
+    --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+  `} />
+  <div class="block-wrap">
+    <div class="font-family-grid">
+    <code class="language-css">--font-sans</code>
+    <div>
+      <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+    </div>
+    </div>
+    <div class="font-family-grid">
+    <code class="language-css">--font-serif</code>
+    <div style="font-family: var(--font-serif)">
+      <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+    </div>
+    </div>
+    <div class="font-family-grid">
+    <code class="language-css">--font-mono</code>
+    <div style="font-family: var(--font-mono)">
+      <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+    </div>
+    </div>
+  </div>
+  </article>
+
+  <article class="font-sizes">
+  <div class="block-wrap">
+    <div>
+    <h4>Font Weights</h4>
+    <Prism lang='css' code={`
+      --font-weight-1: 100;
+      --font-weight-2: 200;
+      --font-weight-3: 300;
+      --font-weight-4: 400;
+      --font-weight-5: 500;
+      --font-weight-6: 600;
+      --font-weight-7: 700;
+      --font-weight-8: 800;
+      --font-weight-9: 900;
+    `} />
+    </div>
+    <div class="font-demo">
+    <div class="sample-text" style="font-size: var(--font-size-8)">Aa</div>
+    <input 
+      class="font-slider"
+      name="weight" 
+      data-prop="fontWeight"
+      type="range" 
+      value="4" 
+      min="1" 
+      max="9" 
+      style="--track-fill: 35%"
+    >
+    </div>
+  </div>
+  </article>
+
+  <article class="font-sizes">
+  <div class="block-wrap">
+    <div>
+    <h4>Letter Spacing</h4>
+    <Prism lang='css' code={`
+      --font-letterspacing-0: -.05em;
+      --font-letterspacing-1: .025em;
+      --font-letterspacing-2: .050em;
+      --font-letterspacing-3: .075em;
+      --font-letterspacing-4: .150em;
+      --font-letterspacing-5: .500em;
+      --font-letterspacing-6: .750em;
+      --font-letterspacing-7: 1em;
+    `} />
+    </div>
+    <div class="font-demo">
+    <div class="sample-text letterspacing-demo">Letter Spacing</div>
+    <input 
+      class="font-slider"
+      name="letterspacing" 
+      data-prop="letter-spacing"
+      type="range" 
+      value="1" 
+      min="0" 
+      max="7" 
+      style="--track-fill: 15%"
+    >
+    </div>
+  </div>
+  </article>
+
+  <article class="font-sizes">
+  <div class="block-wrap">
+    <div>
+    <h4>Line Height</h4>
+    <Prism lang='css' code={`
+      --font-lineheight-00: .95;
+      --font-lineheight-0: 1.1;
+      --font-lineheight-1: 1.25;
+      --font-lineheight-2: 1.375;
+      --font-lineheight-3: 1.5;
+      --font-lineheight-4: 1.75;
+      --font-lineheight-5: 2;
+    `} />
+    </div>
+    <div class="font-demo">
+    <div class="sample-text" style="max-inline-size: var(--size-content-1);">
+      Sample paragraph content to provide a preview for OP's line heights
+    </div>
+    <input 
+      class="font-slider"
+      name="lineheight" 
+      data-prop="lineHeight"
+      type="range" 
+      value="1" 
+      min="-1" 
+      max="5" 
+      style="--track-fill: 33%"
+    >
+    </div>
+  </div>
+  </article>
+
+  <!-- <article class="font-sizes">
+  <header>
+    <h4>Relative Line Height</h4>
+    <p>These line heights tighten as the font size is increased.</p>
+  </header>
+  <Prism lang='css' code={`
+    --font-relative-lineheight-00: calc(1rem + .5ch);
+    --font-relative-lineheight-0: calc(1rem + .75ch);
+    --font-relative-lineheight-1: calc(1rem + 1ch);
+    --font-relative-lineheight-2: calc(1rem + 1.25ch);
+    --font-relative-lineheight-3: calc(1rem + 1.5ch);
+    --font-relative-lineheight-4: calc(1rem + 2ch);
+    --font-relative-lineheight-5: calc(1rem + 2.5ch);
+    --font-relative-lineheight-6: calc(1rem + 3ch);
+  `} />
+  </article> -->
+  
+  <article class="font-sizes">
+  <h4>Font Sizes</h4>
+  <Prism lang='css' code={`
+    --font-size-00: .5rem;
+    --font-size-0: .75rem;
+    --font-size-1: 1rem;
+    --font-size-2: 1.1rem;
+    --font-size-3: 1.25rem;
+    --font-size-4: 1.5rem;
+    --font-size-5: 2rem;
+    --font-size-6: 2.5rem;
+    --font-size-7: 3rem;
+    --font-size-8: 3.5rem;
+  `} />
+  <div class="scroll-x-overflow"><div class="font-size-examples">
+    <code class="language-css">var(--font-size-00)</code>
+    <span style="font-size: var(--font-size-00)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-0)</code>
+    <span style="font-size: var(--font-size-0)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-1)</code>
+    <span style="font-size: var(--font-size-1)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-2)</code>
+    <span style="font-size: var(--font-size-2)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-3)</code>
+    <span style="font-size: var(--font-size-3)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-4)</code>
+    <span style="font-size: var(--font-size-4)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-5)</code>
+    <span style="font-size: var(--font-size-5)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-6)</code>
+    <span style="font-size: var(--font-size-6)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-7)</code>
+    <span style="font-size: var(--font-size-7)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-8)</code>
+    <span style="font-size: var(--font-size-8)">Almost before you knew it, we'd touched ground.</span>
+  </div></div>
+  </article>
+
+  <article class="font-sizes">
+  <h4>Fluid Font Sizes</h4>
+  <Prism lang='css' code={`
+    --font-size-fluid-0: clamp(.75rem, 1.5vw, 1rem);
+    --font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
+    --font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
+    --font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
+  `} />
+  <div class="scroll-x-overflow"><div class="font-size-examples">
+    <code class="language-css">var(--font-size-fluid-00)</code>
+    <span style="font-size: var(--font-size-fluid-00)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-fluid-1)</code>
+    <span style="font-size: var(--font-size-fluid-1)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-fluid-2)</code>
+    <span style="font-size: var(--font-size-fluid-2)">Almost before you knew it, we'd touched ground.</span>
+    <code class="language-css">var(--font-size-fluid-3)</code>
+    <span style="font-size: var(--font-size-fluid-3)">Almost before you knew it, we'd touched ground.</span>
+  </div></div>
+  </article>
+</section>

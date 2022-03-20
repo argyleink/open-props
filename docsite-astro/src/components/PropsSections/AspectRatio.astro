@@ -1,0 +1,40 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="aspect-ratio">
+  <header>
+  <h2>Aspect Ratios</h2>
+  </header>
+  <div class="block-wrap">
+  <div>
+    <h5>Vars Sample</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --ratio-square: 1;
+      --ratio-landscape: 4/3;
+      --ratio-portrait: 3/4;
+      --ratio-widescreen: 16/9; 
+      --ratio-ultrawide: 18/5;
+      --ratio-golden: 1.6180/1; 
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    .video-thumbnail {
+      block-size: 480px;
+      aspect-ratio: var(--ratio-widescreen);
+    }
+    `} />
+  </div>
+  </div>
+  <article class="aspect-demos">
+  <div style="aspect-ratio: var(--ratio-square)">box</div>
+  <div style="aspect-ratio: var(--ratio-landscape)">landscape</div>
+  <div style="aspect-ratio: var(--ratio-portrait)">portrait</div>
+  <div style="aspect-ratio: var(--ratio-widescreen)">widescreen</div>
+  <div style="aspect-ratio: 1.6180/1">golden ratio</div>
+  <div style="aspect-ratio: 18/5">ultrawide</div>
+  </article>
+</section>

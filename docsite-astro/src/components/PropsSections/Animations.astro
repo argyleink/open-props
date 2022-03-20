@@ -1,0 +1,353 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="animations">
+  <header>
+  <h2>Animations</h2>
+  <p>Premade <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect">keyframe effects</a> allow you to orchestrate your own animations. Plus, a few nice attention-grabbers and indeterminate state animations.</p>
+  </header>
+  <div class="block-wrap">
+  <div>
+    <h5>The Props</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --animation-fade-{in,out}
+      --animation-shake-{x,y}
+
+      --animation-slide-out-{up,down,left,right}
+      --animation-slide-in-{up,down,left,right}
+
+      --animation-spin
+      --animation-ping
+      --animation-blink
+      --animation-float
+      --animation-bounce
+      --animation-pulse
+    `} />
+    </div>
+  </div>
+  <!-- <div>
+    <h5>Keyframe Effect Examples</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      @keyframes op-fade-in {
+      to { opacity: 1 }
+      }
+
+      @keyframes op-slide-out-right {
+      to { transform: translateX(100%) }
+      }
+
+      @keyframes op-slide-in-up {
+      from { transform: translateY(100%) }
+      }
+
+      @keyframes op-float {
+      50% {
+        transform: translateY(-25%);
+      }
+      }
+    `} />
+    </div>
+  </div> -->
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    .loaded {
+      animation: var(--animation-fade-in) forwards;
+    }
+
+    .actionsheet {
+      animation: var(--animation-slide-out-down) forwards;
+
+      &.open {
+      animation: var(--animation-slide-in-up) forwards;  
+      }
+    }
+
+    .alert {
+      animation: var(--animation-blink);
+    }
+    `} />
+  </div>
+  </div>
+
+  <div class='just-for-gap'>
+  <h5>Samples</h5>
+  <div class="animation-demo">
+    <div class="animation-demo-target" data-starting-styles="opacity:0" data-animation="fade-in">
+    <h6>Fade In</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="fade-out">
+    <h6>Fade Out</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="scale-up">
+    <h6>Scale Up</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="scale-down">
+    <h6>Scale Down</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-out-up">
+    <h6>Slide Out Up</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-out-down">
+    <h6>Slide Out Down</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-out-right">
+    <h6>Slide Out Right</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-out-left">
+    <h6>Slide Out Left</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-in-up">
+    <h6>Slide In Up</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-in-down">
+    <h6>Slide In Down</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-in-right">
+    <h6>Slide In Right</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="slide-in-left">
+    <h6>Slide In Left</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="spin">
+    <h6>Spin</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="ping">
+    <h6>Ping</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="blink">
+    <h6>Blink</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="float">
+    <h6>Float</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="bounce">
+    <h6>Bounce</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="pulse">
+    <h6>Pulse</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="shake-x">
+    <h6>Shake X</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="animation-demo-target" data-animation="shake-y">
+    <h6>Shake Y</h6>
+    <button class="play-button">
+      <svg viewBox="0 0 20 20">
+      <use href="#play-icon"/>
+      <use href="#pause-icon" class="hidden"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+  </div>
+
+  <div class='just-for-gap'>
+  <h3>Combine 'em!</h3>
+  <div class="animation-demo of-pairs">
+    <div class="animation-pair">
+    <div class="animation-demo-target slide-fade-combo" data-animation="slide-down-fade-out">
+      <h6>Slide Fade</h6>
+      <button class="play-button">
+      <svg viewBox="0 0 20 20">
+        <use href="#play-icon"/>
+        <use href="#pause-icon" class="hidden"/>
+      </svg>
+      </button>
+    </div>
+    <div>
+      <Prism lang='css' code={`
+      .slide-fade {
+        animation: 
+        var(--animation-fade-out) forwards,
+        var(--animation-slide-out-down);
+        animation-timing-function: var(--ease-squish-3);
+        animation-duration: 1s;
+      }
+      `} />
+    </div>
+    </div>
+
+    <div class="animation-pair">
+    <!-- data-starting-styles="opacity:0" -->
+    <div class="animation-demo-target shake-fade-combo" data-animation="slide-left-fade-in-shake-y">
+      <h6>Shake In</h6>
+      <button class="play-button">
+      <svg viewBox="0 0 20 20">
+        <use href="#play-icon"/>
+        <use href="#pause-icon" class="hidden"/>
+      </svg>
+      </button>
+    </div>
+    <div>
+      <Prism lang='css' code={`
+      .shake-in {
+        animation: 
+        var(--animation-shake-y),
+        var(--animation-fade-in),
+        var(--animation-slide-in-left);
+      }
+      `} />
+    </div>
+    </div>
+
+    <div class="animation-pair">
+    <div class="animation-demo-target push-out-combo" data-animation="push-out">
+      <h6>Push Out</h6>
+      <button class="play-button">
+      <svg viewBox="0 0 20 20">
+        <use href="#play-icon"/>
+        <use href="#pause-icon" class="hidden"/>
+      </svg>
+      </button>
+    </div>
+    <div>
+      <Prism lang='css' code={`
+      .push-out {
+        animation: 
+        var(--animation-scale-down),
+        var(--animation-fade-out);
+        animation-timing-function: var(--ease-squish-4);
+      }
+      `} />
+    </div>
+    </div>
+  </div>
+  </div>
+
+</section>

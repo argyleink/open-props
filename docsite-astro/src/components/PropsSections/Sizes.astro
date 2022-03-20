@@ -1,0 +1,197 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="sizes">
+  <header>
+  <h2>Sizes</h2>
+  <p>No <code class="language-css">px</code> here, relative units all the way. <code>0</code>s are unsafe but common negative values, while 1-N are safe.</p>
+  </header>
+  <div>
+  <h5>The Props</h5>
+  <div class="var-examples">
+    <Prism lang='css' code={`
+    --size-{000-15}
+    --size-fluid-{1-10}
+    --size-content-{1-3}
+    --size-header-{1-3}
+    `} />
+  </div>
+  </div>
+
+  <div class="block-wrap">
+  <div>
+    <h5>Relative Sizes</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --size-000: -.5rem;
+      --size-00: -.25rem;
+      --size-1: .25rem;
+      --size-2: .5rem;
+      --size-3: 1rem;
+      --size-4: 1.25rem;
+      --size-5: 1.5rem;
+      --size-6: 1.75rem;
+      --size-7: 2rem;
+      --size-8: 3rem;
+      --size-9: 4rem;
+      --size-10: 5rem;
+      --size-11: 7.5rem;
+      --size-12: 10rem;
+      --size-13: 15rem;
+      --size-14: 20rem;
+      --size-15: 30rem;
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    article { 
+      display: grid;
+      gap: var(--size-3);
+    }
+
+    li { 
+      padding-inline-start: var(--size-2);
+    }
+
+    .icon {
+      inline-size: var(--size-5);
+      block-size: var(--size-5);
+    }
+    `} />
+  </div>
+  <div class="sizes-demo count-em scroll-x-overflow">
+    <span style="inline-size: var(--size-1)"></span>
+    <span style="inline-size: var(--size-2)"></span>
+    <span style="inline-size: var(--size-3)"></span>
+    <span style="inline-size: var(--size-4)"></span>
+    <span style="inline-size: var(--size-5)"></span>
+    <span style="inline-size: var(--size-6)"></span>
+    <span style="inline-size: var(--size-7)"></span>
+    <span style="inline-size: var(--size-8)"></span>
+    <span style="inline-size: var(--size-9)"></span>
+    <span style="inline-size: var(--size-10)"></span>
+    <span style="inline-size: var(--size-11)"></span>
+    <span style="inline-size: var(--size-12)"></span>
+    <span style="inline-size: var(--size-13)"></span>
+    <span style="inline-size: var(--size-14)"></span>
+    <span style="inline-size: var(--size-15)"></span>
+  </div>
+  </div>
+
+  <div class="block-wrap">
+  <div>
+    <h5>Fluid Sizes</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --size-fluid-1: clamp(.5rem, 1vw, 1rem);
+      --size-fluid-2: clamp(1rem, 2vw, 1.5rem);
+      --size-fluid-3: clamp(1.5rem, 3vw, 2rem);
+      --size-fluid-4: clamp(2rem, 4vw, 3rem);
+      --size-fluid-5: clamp(4rem, 5vw, 5rem);
+      --size-fluid-6: clamp(5rem, 7vw, 7.5rem);
+      --size-fluid-7: clamp(7.5rem, 10vw, 10rem);
+      --size-fluid-8: clamp(10rem, 20vw, 15rem);
+      --size-fluid-9: clamp(15rem, 30vw, 20rem);
+      --size-fluid-10: clamp(20rem, 40vw, 30rem);
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    body { 
+      padding: var(--size-fluid-3);
+    }
+
+    hr { 
+      margin-block: var(--size-fluid-5);
+    }
+    `} />
+  </div>
+  <div class="sizes-demo count-em scroll-x-overflow">
+    <span style="inline-size: var(--size-fluid-1)"></span>
+    <span style="inline-size: var(--size-fluid-2)"></span>
+    <span style="inline-size: var(--size-fluid-3)"></span>
+    <span style="inline-size: var(--size-fluid-4)"></span>
+    <span style="inline-size: var(--size-fluid-5)"></span>
+    <span style="inline-size: var(--size-fluid-6)"></span>
+    <span style="inline-size: var(--size-fluid-7)"></span>
+    <span style="inline-size: var(--size-fluid-8)"></span>
+    <span style="inline-size: var(--size-fluid-9)"></span>
+    <span style="inline-size: var(--size-fluid-10)"></span>
+  </div>
+  </div>
+
+  <div class="block-wrap">
+  <div>
+    <h5>Reading Content Sizes</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --size-content-1: 20ch;
+      --size-content-2: 45ch;
+      --size-content-3: 60ch;
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    p { 
+      max-inline-size: var(--size-content-3);
+    }
+
+    aside { 
+      max-inline-size: var(--size-content-2);
+    }
+    `} />
+  </div>
+  <div class="large-sizes sizes-demo count-em scroll-x-overflow">
+    <span style="inline-size: var(--size-content-1)"></span>
+    <span style="inline-size: var(--size-content-2)"></span>
+    <span style="inline-size: var(--size-content-3)"></span>
+  </div>
+  <div class="content-demo scroll-x-overflow">
+    <p style="inline-size: var(--size-content-1)">Carrot cake gummi bears sweet caramels cotton candy topping.</p>
+    <p style="inline-size: var(--size-content-2)">Carrot cake gummi bears sweet caramels cotton candy topping. Jelly candy apple pie gingerbread tootsie roll chupa chups.</p>
+    <p style="inline-size: var(--size-content-3)">Carrot cake gummi bears sweet caramels cotton candy topping. Jelly candy apple pie gingerbread tootsie roll chupa chups. Gummi bears lollipop apple pie pudding tart cake jelly. Soufflé lollipop jelly-o chocolate bar icing bonbon.</p>
+  </div>
+  </div>
+
+  <div class="block-wrap">
+  <div>
+    <h5>Headline Content Sizes</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --size-header-1: 20ch;
+      --size-header-2: 25ch;
+      --size-header-3: 35ch;
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Usage Sample</h5>
+    <Prism lang='css' code={`
+    h1 { 
+      max-inline-size: var(--size-header-2);
+    }
+
+    small { 
+      max-inline-size: var(--size-header-1);
+    }
+    `} />
+  </div>
+  <div class="large-sizes sizes-demo count-em scroll-x-overflow">
+    <span style="inline-size: var(--size-header-1)"></span>
+    <span style="inline-size: var(--size-header-2)"></span>
+    <span style="inline-size: var(--size-header-3)"></span>
+  </div>
+  <div class="header-demo scroll-x-overflow">
+    <h5 style="inline-size: var(--size-header-1)">Carrot cake gummi bears sweet caramel candy.</h5>
+    <h5 style="inline-size: var(--size-header-2)">Carrot cake gummi bears sweet caramels cotton candy topping.</h5>
+    <h5 style="inline-size: var(--size-header-3)">Carrot cake gummi bears sweet caramels cotton candy topping. Jelly candy apple pie gingerbread tootsie roll chupa chups.</h5>
+  </div>
+  </div>
+
+</section>

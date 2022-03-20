@@ -1,0 +1,47 @@
+---
+import Prism from 'astro/components/Prism.astro'
+---
+<section id="shadows">
+  <header>
+  <h2>Shadows</h2>
+  <p>Inner and outer shadows that adapt to light and dark modes.</p>
+  </header>
+  <div class="block-wrap">
+  <div>
+    <h5>The Props</h5>
+    <div class="var-examples">
+    <Prism lang='css' code={`
+      --shadow-{1-6}
+      --inner-shadow-{0-4}
+    `} />
+    </div>
+  </div>
+  <div>
+    <h5>Card Sample</h5>
+    <Prism lang='css' code={`
+    .card {
+      box-shadow: var(--shadow-1);
+
+      &:hover {
+      box-shadow: var(--shadow-3);
+      }
+    }
+    `} />
+  </div>
+  </div>
+  <article class="shadow-demos count-em">
+  <div style="box-shadow: var(--shadow-1)"></div>
+  <div style="box-shadow: var(--shadow-2)"></div>
+  <div style="box-shadow: var(--shadow-3)"></div>
+  <div style="box-shadow: var(--shadow-4)"></div>
+  <div style="box-shadow: var(--shadow-5)"></div>
+  <div style="box-shadow: var(--shadow-6)"></div>
+  </article>
+  <article class="shadow-demos count-em">
+  <div style="box-shadow: var(--inner-shadow-0)"></div>
+  <div style="box-shadow: var(--inner-shadow-1)"></div>
+  <div style="box-shadow: var(--inner-shadow-2)"></div>
+  <div style="box-shadow: var(--inner-shadow-3)"></div>
+  <div style="box-shadow: var(--inner-shadow-4)"></div>
+  </article>
+</section>
