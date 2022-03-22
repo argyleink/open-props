@@ -3,13 +3,13 @@
 *, ::before, ::after { box-sizing: border-box; }
 
 * {
-  background-origin: border-box;
-  background-repeat: no-repeat;
   margin: 0;
 
-  &:where(:not(fieldset)) {
+  &:where(:not(fieldset, progress, meter)) {
     border-width: 0;
     border-style: solid;
+    background-origin: border-box;
+    background-repeat: no-repeat;
   }
 }
 
@@ -17,6 +17,7 @@
   block-size: 100%;
   font-family: var(--font-sans);
   line-height: var(--font-lineheight-3);
+  -webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 
   @media (--motionOK) {
     scroll-behavior: smooth;
@@ -25,9 +26,15 @@
 
 @media (--motionOK) {
   :focus-visible {
-    transition: outline-offset .25s var(--ease-2);
-    outline-offset: 5px;
+    transition: outline-offset 145ms var(--ease-2);
   }
+  :where(:not(:active)):focus-visible {
+    transition-duration: .25s;
+  }
+}
+
+:where(:not(:active)):focus-visible {
+  outline-offset: 5px;
 }
 
 :where(body) { 
@@ -36,7 +43,7 @@
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  line-height: var(--font-relative-lineheight-2);
+  line-height: var(--font-lineheight-1);
   font-weight: var(--font-weight-9);
 }
 
@@ -66,7 +73,7 @@
   text-underline-offset: 1px;
 }
 
-:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]) {
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -90,15 +97,8 @@
   }
 }
 
-:where(button) {
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-}
-
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
   display: block;
-  vertical-align: middle;
 }
 
 :where(img, svg, video) {
@@ -106,7 +106,8 @@
   block-size: auto;
 }
 
-:where(input, button, textarea, select) {
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
   font: inherit;
   font-size: inherit;
   color: inherit;

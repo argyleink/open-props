@@ -1,4 +1,4 @@
-export default {
+const Shadows = {
   '--shadow-color': '220 3% 15%',
   '--shadow-strength': '1%',
   
@@ -41,3 +41,17 @@ export default {
   '--inner-shadow-3': 'inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
   '--inner-shadow-4': 'inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
 }
+
+export default Shadows
+
+export const StaticShadows = Object.fromEntries(
+  Object.entries(Shadows)
+    .map(([key,value]) => {
+      value = value.replace(/var(--shadow-color)/g, Shadows['--shadow-color'])
+      value = value.replace(/var(--shadow-strength)/g, Shadows['--shadow-strength'])
+      return [key, value]
+    })
+    .filter(([key]) =>
+      !['--shadow-color', '--shadow-strength'].includes(key)
+    )
+)

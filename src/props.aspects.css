@@ -1,5 +1,5 @@
 :where(html) {
-  --ratio-box: 1;
+  --ratio-square: 1;
   --ratio-landscape: 4/3;
   --ratio-portrait: 3/4;
   --ratio-widescreen: 16/9;

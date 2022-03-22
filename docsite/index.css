@@ -1,5 +1,7 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
+@import "../src/props.gray-hsl.css";
+
 @import "./syntax-highlight.css";
 
 :root {
@@ -22,7 +24,7 @@ body {
   justify-items: flex-start;
   grid-template-columns:
     var(--size-8) 
-    1fr 
+    calc(100% - 2 * var(--size-8)) 
     var(--size-8) 
   ;
 
@@ -38,7 +40,7 @@ body {
   @media (--md-n-below) {
     grid-template-columns:
       var(--size-3) 
-      1fr 
+      calc(100% - 2 * var(--size-3))  
       var(--size-3) 
     ;
   }
@@ -109,7 +111,7 @@ nav {
   }
 
   & > a[href="#getting-started"] {
-    @media (--xs-n-below) {
+    @media (--sm-n-below) {
       display: none;
     }
   }
@@ -213,14 +215,12 @@ section.hero {
   @media (--md-n-above) { font-size: var(--font-size-fluid-3) }
 
   & > * {
-    --op-gradient-direction: to right;
     background: var(--gradient-1) fixed;
-    background-size: 12ch 50%;
+    background-size: 12ch 7ch;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @nest [data-theme="dark"] & {
-      --op-gradient-direction: to bottom right;
       background: var(--gradient-4) fixed;
       background-size: 12ch 7ch;
       -webkit-background-clip: text;
@@ -397,7 +397,7 @@ pre[class*="language-"] {
   bottom: 0;
   overflow-x: auto;
 
-  background-image: linear-gradient(to top, hsl(210deg 11% 15% / 98%) 1ch, 75%, hsl(210deg 11% 0% / 0%));
+  background-image: linear-gradient(to top, hsl(var(--gray-9-hsl) / 98%) 1ch, 75%, hsl(var(--gray-9-hsl) / 0%));
   margin-block-start: var(--size-8);
   padding-block: var(--size-5) var(--size-2);
   padding-inline: var(--size-2) var(--size-4);
@@ -429,6 +429,11 @@ pre[class*="language-"] {
 .just-for-gap {
   display: grid;
   gap: var(--size-4);
+}
+
+.just-for-sm-gap {
+  display: grid;
+  gap: var(--size-2);
 }
 
 .just-stretch {
@@ -578,7 +583,7 @@ pre[class*="language-"] {
       display: grid;
       place-content: center;
       margin: var(--size-3);
-      aspect-ratio: var(--ratio-box);
+      aspect-ratio: var(--ratio-square);
       border-radius: var(--radius-round);
     }
   }
@@ -991,6 +996,7 @@ pre[class*="language-"] {
     color: var(--surface-1);
     background: var(--brand-bg-gradient) fixed;
     border-radius: var(--radius-round);
+    position: relative;
     
     @media (--motionOK) {
       animation: ping-pong 2s ease infinite;
@@ -1008,8 +1014,8 @@ pre[class*="language-"] {
 }
 
 @keyframes ping-pong {
-  40%,50% { transform: translateX(100%); }
-  0%, 90% { transform: translateX(0%); }
+  40%,50% { left: calc(min(var(--size-content-2),var(--max-inline-body)) / 2); }
+  0%, 90% { left: 0; }
 }
 
 .font-family-grid {
@@ -1043,7 +1049,7 @@ pre[class*="language-"] {
   & > div {
     background: white;
     inline-size: var(--size-12);
-    aspect-ratio: var(--ratio-box);
+    aspect-ratio: var(--ratio-square);
     border-radius: var(--radius-3);
     display: grid;
     place-content: center;
@@ -1053,12 +1059,16 @@ pre[class*="language-"] {
       content: "Shadow " counter(basic);
     }
 
-    &:nth-child(n+7)::before {
-      content: "Inner Shadow " counter(basic);
-    }
-
     @nest [data-theme="dark"] & {
       background: var(--surface-2);
+    }
+  }
+
+  &:nth-of-type(2) {
+    counter-reset: basic -1;
+
+    & > div::before {
+      content: "Inner Shadow " counter(basic);
     }
   }
 }
@@ -1072,7 +1082,7 @@ pre[class*="language-"] {
     display: grid;
     place-content: center;
     inline-size: var(--size-fluid-6);
-    aspect-ratio: var(--ratio-box);
+    aspect-ratio: var(--ratio-square);
     border-color: var(--indigo-5);
     border-width: var(--border-size-2);
     font-size: var(--font-size-4);
@@ -1206,7 +1216,12 @@ pre[class*="language-"] {
 }
 
 .count-em {
+
+  &::before {
+  content: '';
   counter-reset: basic;
+  position: absolute;
+}
 
   & > *::before {
     counter-increment: basic;
@@ -1481,6 +1496,12 @@ input[type="range"] {
   & > pre:first-of-type {
     margin-top: var(--size-7);
   }
+  & > ol {
+    display: grid;
+    padding-inline: 0;
+    margin: var(--size-5);
+    gap: var(--size-3);
+  }
 
   &[open] {
     @media (--md-n-below) {
@@ -1490,7 +1511,7 @@ input[type="range"] {
 }
 
 #npm > pre, #cli > pre {
-  margin: 0;
+  margin-block: 0;
 }
 
 .license {
@@ -1505,4 +1526,8 @@ input[type="range"] {
 
 .prevent-justify-item-wrap {
   white-space: nowrap;
+}
+
+#typography{
+  width: 100%;
 }
