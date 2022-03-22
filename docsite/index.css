@@ -40,7 +40,7 @@ body {
   @media (--md-n-below) {
     grid-template-columns:
       var(--size-3) 
-      1fr 
+      calc(100% - 2 * var(--size-3))  
       var(--size-3) 
     ;
   }
