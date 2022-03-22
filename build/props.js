@@ -12,6 +12,8 @@ import Gradients from '../src/props.gradients.js'
 import Shadows from '../src/props.shadows.js'
 import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
+import MaskEdges from '../src/props.masks.edges.js'
+import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toJSON} from './to-json.js'
@@ -68,6 +70,11 @@ const individual_colors_hsl = {
   'props.orange-hsl.css': ColorsHSL.Orange,
 }
 
+const individuals = {
+  'props.masks.edges.css': MaskEdges,
+  'props.masks.corner-cuts.css': MaskCornerCuts,
+}
+
 // gen design tokens
 const jsonbundle = toJSON({
   ...Object.values(individual_colors)
@@ -95,7 +102,12 @@ const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.js
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
 
 // gen prop variants
-Object.entries({...mainbundle, ...individual_colors, ...individual_colors_hsl}).forEach(([filename, props]) => {
+Object.entries({
+  ...mainbundle, 
+  ...individual_colors, 
+  ...individual_colors_hsl,
+  ...individuals,
+}).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props}, {selector, prefix})
 })
 
