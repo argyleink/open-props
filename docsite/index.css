@@ -24,7 +24,7 @@ body {
   justify-items: flex-start;
   grid-template-columns:
     var(--size-8) 
-    1fr 
+    calc(100% - 2 * var(--size-8)) 
     var(--size-8) 
   ;
 
@@ -1526,4 +1526,8 @@ input[type="range"] {
 
 .prevent-justify-item-wrap {
   white-space: nowrap;
+}
+
+#typography{
+  width: 100%;
 }
