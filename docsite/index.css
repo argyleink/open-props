@@ -24,7 +24,7 @@ body {
   justify-items: flex-start;
   grid-template-columns:
     var(--size-8) 
-    1fr 
+    calc(100% - 2 * var(--size-8)) 
     var(--size-8) 
   ;
 
@@ -40,7 +40,7 @@ body {
   @media (--md-n-below) {
     grid-template-columns:
       var(--size-3) 
-      1fr 
+      calc(100% - 2 * var(--size-3))  
       var(--size-3) 
     ;
   }
@@ -1526,4 +1526,8 @@ input[type="range"] {
 
 .prevent-justify-item-wrap {
   white-space: nowrap;
+}
+
+#typography{
+  width: 100%;
 }
