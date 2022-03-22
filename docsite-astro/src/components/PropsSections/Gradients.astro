@@ -1,5 +1,5 @@
 ---
-import Prism from 'astro/components/Prism.astro'
+import Prism from '../Utility/Prism.astro'
 ---
 <section id="gradients" class="just-stretch">
   <header>
@@ -89,12 +89,12 @@ import Prism from 'astro/components/Prism.astro'
     <div>
     <Prism lang='css' code={`
       .noise-noise-noise {
-      /* stack grain with a gradient */
-      background-image: var(--gradient-3), var(--noise-3);
-      /* force colors and noise to collide */
-      filter: var(--noise-filter-3);
-      /* fit noise image to element */
-      background-size: cover;
+        /* stack grain with a gradient */
+        background-image: var(--gradient-3), var(--noise-3);
+        /* force colors and noise to collide */
+        filter: var(--noise-filter-3);
+        /* fit noise image to element */
+        background-size: cover;
       }
     `}/>
     </div>

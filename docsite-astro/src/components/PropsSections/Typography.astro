@@ -1,5 +1,5 @@
 ---
-import Prism from 'astro/components/Prism.astro'
+import Prism from '../Utility/Prism.astro'
 ---
 <section id="typography">
   <header>
@@ -25,10 +25,10 @@ import Prism from 'astro/components/Prism.astro'
     <h5>Usage Sample</h5>
     <Prism lang='css' code={`
       .hero {
-      line-height: var(--font-lineheight-1);
-      font-size: var(--font-size-fluid-3);
-      font-weight: var(--font-weight-9);
-      font-family: var(--font-sans);
+        line-height: var(--font-lineheight-1);
+        font-size: var(--font-size-fluid-3);
+        font-weight: var(--font-weight-9);
+        font-family: var(--font-sans);
       }
     `} />
   </div>
