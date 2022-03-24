@@ -1,3 +1,41 @@
+<style global>
+
+  .module-list {
+    position: sticky;
+    z-index: var(--layer-1);
+    bottom: 0;
+    overflow-x: auto;
+
+    background-image: linear-gradient(to top, hsl(var(--gray-9-hsl) / 98%) 1ch, 75%, hsl(var(--gray-9-hsl) / 0%));
+    margin-block-start: var(--size-8);
+    padding-block: var(--size-5) var(--size-2);
+    padding-inline: var(--size-2) var(--size-4);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: var(--size-4);
+
+    & a[href]:not(:hover,:focus-visible) {
+      color: var(--text-1);
+      text-decoration-color: var(--brand);
+    }
+
+    & a.in-view {
+      text-decoration: underline double;
+      text-underline-offset: 4px;
+    }
+
+    @nest [data-theme="light"] & {
+      padding-block-start: var(--size-3);
+      background: var(--surface-1);
+    }
+
+    & > li {
+      display: inline-flex;
+    }
+  }
+
+</style>
 <ul id="scroll-nav" class="module-list place-full">
   <li><a href="#colors">Colors</a></li>
   <li><a href="#gradients">Gradients</a></li>

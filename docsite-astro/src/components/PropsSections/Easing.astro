@@ -1,6 +1,52 @@
 ---
 import Prism from '../Utility/Prism.astro'
 ---
+<style global>
+
+  .easing-samples {
+    flex-basis: var(--size-content-3);
+  }
+
+  .ease-demo {
+    inline-size: min(var(--size-content-2), var(--max-inline-body));
+    display: grid;
+    grid-template-columns: 50%;
+    grid-auto-flow: row;
+    gap: var(--size-1);
+    align-items: flex-start;
+    text-align: center;
+    align-self: stretch;
+    padding-block: var(--size-2);
+
+    &.paused > div {
+      animation-play-state: paused;
+    }
+
+    & > div {
+      font-weight: var(--font-weight-6);
+      padding-inline: var(--size-4);
+      padding-block: var(--size-1);
+      color: var(--surface-1);
+      background: var(--brand-bg-gradient) fixed;
+      border-radius: var(--radius-round);
+      position: relative;
+      
+      @media (--motionOK) {
+        animation: ping-pong 2s ease infinite;
+      }
+
+      @nest [data-theme="light"] & {
+        color: white;
+      }
+    }
+
+    /* prevent transforms causing overflow-x */
+    &:is(.squish, .elastic) {
+      padding-inline-end: var(--size-6);
+    }
+  }
+
+</style>
 <section id="easing">
   <header>
   <h2>Easing</h2>

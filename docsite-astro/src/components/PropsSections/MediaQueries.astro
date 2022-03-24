@@ -1,6 +1,29 @@
 ---
 import Prism from '../Utility/Prism.astro'
 ---
+<style global>
+
+  .media-query-chart {
+    display: flex;
+    gap: var(--size-2);
+    flex-flow: row wrap;
+    
+    & > div {
+      place-items: center;
+      display: inline-flex;
+      flex-flow: column nowrap;
+      border: 1px solid var(--surface-2);
+      padding: var(--size-3);
+      gap: var(--size-1);
+    }
+
+    & svg {
+      stroke: none;
+      fill: var(--indigo-5);
+    }
+  }
+
+</style>
 <section id="media-queries">
   <header class="just-for-gap">
   <h2>Media Queries</h2>

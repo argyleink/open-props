@@ -1,3 +1,41 @@
+<style global>
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--size-4);
+    justify-self: stretch;
+
+    & > a[href]:not(:hover,:focus-visible) {
+      color: var(--text-1);
+      text-decoration-color: var(--brand);
+    }
+
+    & > a[href="/"] {
+      margin-inline-end: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--size-2);
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      & > svg {
+        inline-size: var(--size-9);
+      }
+    }
+
+    & > a[href="#getting-started"] {
+      @media (--sm-n-below) {
+        display: none;
+      }
+    }
+  }
+
+
+</style>
 <nav>
   <a href="/">
     <svg class="op-icon" viewBox="0 0 200 200">

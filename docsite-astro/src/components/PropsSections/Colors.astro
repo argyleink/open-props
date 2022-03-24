@@ -1,6 +1,120 @@
 ---
 import Prism from '../Utility/Prism.astro'
 ---
+<style global>
+
+  .color-swatch {
+    --size: var(--size-5);
+    border-radius: var(--radius-round);
+    box-shadow: var(--inner-shadow-0);
+    inline-size: 7%;
+    block-size: var(--size);
+    display: grid;
+    place-content: center;
+    color: black;
+    text-shadow: 0 0 1px hsl(0 0% 0% / 40%);
+
+    &::before {
+      opacity: 0;
+      transition: opacity .4s var(--ease-out-3);
+    }
+
+    &:nth-child(n+8)::before {
+      color: white;
+    }
+
+    &:is(:hover,:focus) {
+      transform: scale(1.5);
+      transition-delay: 0s;
+      transition-timing-function: var(--ease-elastic-3);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    @media (--motionOK) {
+      transition: transform 2s var(--ease-squish-5) 3s;
+
+      &:is(:hover,:focus) {
+        transition-duration: .1s;
+      }
+    }
+
+    @media (--md-n-below) {
+      --size: var(--size-3);
+    }
+    @media (--xs-n-below) {
+      --size: var(--size-2);
+    }
+  }
+
+  .ui-gradients {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(var(--size-content-2), 30vw);
+    gap: var(--size-2);
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--gap);
+    scroll-padding-inline: var(--size-8);
+
+    @media (--md-n-below) {
+      scroll-padding-inline: var(--size-3);
+    }
+
+    &.noisy > * {
+      background-size: cover;
+      filter: var(--noise-filter-1);
+    }
+
+    & > * {
+      scroll-snap-align: start;
+      display: grid;
+      justify-content: flex-start;
+      
+      &::before {
+        font-size: var(--font-size-fluid-1);
+        background: var(--surface-1);
+        color: var(--text-1);
+        box-shadow: var(--shadow-2);
+        text-shadow: 0 1px 0 hsl(0 0% 0% / 25%);
+        inline-size: 3ch;
+        display: grid;
+        place-content: center;
+        margin: var(--size-3);
+        aspect-ratio: var(--ratio-square);
+        border-radius: var(--radius-round);
+      }
+    }
+
+    @media (--md-n-below) {
+      grid-auto-columns: minmax(var(--size-content-1), 30vw);
+    }
+  }
+
+  .gradient-swatch {
+    border-radius: var(--radius-2);
+    aspect-ratio: var(--ratio-landscape);
+  }
+
+  #colors details h3 {
+    margin-block-start: var(--size-6);
+  }
+
+  .open-colors {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    & > h4 {
+      counter-reset: basic -1;
+    }
+
+    & > h4::before {
+      display: none;
+    }
+  }
+
+</style>
 <section id="colors">
   <header>
     <h2>Colors</h2>

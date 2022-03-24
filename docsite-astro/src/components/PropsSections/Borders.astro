@@ -1,6 +1,35 @@
 ---
 import Prism from '../Utility/Prism.astro'
 ---
+<style global>
+
+  .border-demos {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--size-5);
+
+    & > div {
+      display: grid;
+      place-content: center;
+      inline-size: var(--size-fluid-6);
+      aspect-ratio: var(--ratio-square);
+      border-color: var(--indigo-5);
+      border-width: var(--border-size-2);
+      font-size: var(--font-size-4);
+
+      @media (--sm-n-above) {
+        inline-size: var(--size-12);
+      }
+    }
+
+    &.blobbys > div {
+      border: none;
+      background: var(--brand-bg-gradient) fixed;
+      color: var(--surface-1);
+    }
+  }
+
+</style>
 <section id="borders">
   <header>
   <h2>Borders</h2>

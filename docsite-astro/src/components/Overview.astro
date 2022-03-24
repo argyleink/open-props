@@ -1,3 +1,42 @@
+<style global>
+
+  .bundle-sizes {
+    gap: var(--size-8);
+
+    @media (--lg-n-above) {
+      column-gap: var(--size-12);
+    }
+
+    & .child-ref {
+      display: flex;
+      gap: var(--size-1);
+      align-items: center;
+
+      & > svg {
+        margin-block-start: -.25em;
+        inline-size: 2ch;
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  .size-chart {
+    display: grid;
+    grid-template-columns: 5ch 1fr;
+    gap: 0 var(--size-3);
+
+    & .size {
+      color: var(--text-2);
+      font-size: var(--font-size-0);
+
+      & > strong {
+        color: var(--text-1);
+        font-size: var(--font-size-1);
+      }
+    }
+  }
+
+</style>
 <section id="overview">
   <header>
     <h2>Overview</h2>

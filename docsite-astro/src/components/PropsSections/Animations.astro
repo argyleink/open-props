@@ -1,6 +1,79 @@
 ---
 import Prism from '../Utility/Prism.astro';
 ---
+<style global>
+
+  .animation-control-header {
+    display: flex;
+    align-items: center;
+    gap: var(--size-5);
+  }
+
+  .animation-demo {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--size-4);
+    align-items: flex-start;
+
+    &.of-pairs {
+      gap: var(--size-8) var(--size-4);
+    }
+
+    & .language-css {
+      margin-block: 0;
+    }
+  }
+
+  .animation-demo-target {
+    background-color: var(--surface-2);
+    display: grid;
+    place-items: center;
+    padding-inline: var(--size-5);
+    padding-block: var(--size-3);
+    border-radius: var(--radius-2);
+  }
+
+  .animation-pair {
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: var(--size-6) var(--size-3);
+    align-items: flex-start;
+    justify-items: flex-start;
+
+    & .block-wrap {
+      row-gap: var(--size-1);
+    }
+
+    @media (--md-n-below) {
+      grid-template-columns: auto;
+    }
+  }
+
+  .slide-fade-combo {
+    --animation-slide-down-fade-out: 
+      var(--animation-fade-out) forwards,
+      var(--animation-slide-out-down);
+    /* important required because JS is writing props into inline styles */
+    animation-timing-function: var(--ease-squish-3) !important;
+    animation-duration: 1s !important;
+  }
+
+  .shake-fade-combo {
+    --animation-slide-left-fade-in-shake-y: 
+      var(--animation-shake-y),
+      var(--animation-fade-in),
+      var(--animation-slide-in-left);
+  }
+
+  .push-out-combo {
+    --animation-push-out: 
+      var(--animation-scale-down),
+      var(--animation-fade-out)
+    ;
+    animation-timing-function: var(--ease-squish-4) !important;
+  }
+
+</style>
 <section id="animations">
   <header>
   <h2>Animations</h2>

@@ -1,6 +1,45 @@
 ---
 import Prism from './Utility/Prism.astro'
 ---
+<style global>
+
+  .started-details {
+    border-radius: var(--radius-conditional-2);
+
+    & h6:not(:first-child),
+    & > div:not(:first-child) h6,
+    & > pre:first-of-type {
+      margin-top: var(--size-7);
+    }
+    & > ol {
+      display: grid;
+      padding-inline: 0;
+      margin: var(--size-5);
+      gap: var(--size-3);
+    }
+
+    &[open] {
+      @media (--md-n-below) {
+        margin-inline: calc(var(--size-3) * -1);
+      }
+    }
+  }
+
+  .installation {
+    display: grid;
+    gap: var(--size-5);
+
+    & h5 {
+      margin-block-start: var(--size-5);
+      border-bottom: var(--border-size-1) solid var(--violet-5);
+
+      @nest [data-theme="light"] & {
+        color: var(--violet-6);
+      }
+    }
+  }
+
+</style>
 <section id="getting-started">
   <header>
     <h2>Getting Started</h2>

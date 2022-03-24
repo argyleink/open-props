@@ -1,3 +1,41 @@
+<style global>
+
+  #about {
+    justify-content: center;
+
+    & header {
+      margin-block-end: var(--size-8);
+    }
+
+    & :is(header,p) {
+      text-align: center;
+      margin-inline: auto;
+    }
+  }
+  .marketing-features {
+    justify-items: center;
+    text-align: center;
+
+    &.responsive-dl {
+      gap: var(--size-11);
+    }
+
+    & dt {
+      font-size: var(--font-size-4);
+    }
+
+    & dd {
+      font-size: var(--font-size-fluid-1);
+      max-inline-size: var(--size-header-2);
+    }
+
+    & dt > svg {
+      margin-inline: auto;
+    }
+  }
+
+
+</style>
 <section id="about" class="just-stretch">
   <header class="just-stretch">
     <h2>Why Use Open Props?</h2>

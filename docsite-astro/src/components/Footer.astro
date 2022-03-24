@@ -1,3 +1,45 @@
+<style global>
+
+  footer {
+    padding-block: var(--size-12);
+    display: grid;
+    grid-template-columns: minmax(min(100%, var(--size-content-3)), 80%);
+    gap: var(--size-8);
+    justify-content: space-around;
+    border-top-width: var(--border-size-1);
+    border-color: var(--surface-3);
+    background-color: var(--surface-2);
+
+    & > a {
+      justify-self: center;
+    }
+
+    & dl {
+      display: flex;
+      justify-content: space-around;
+      gap: var(--size-fluid-6);
+
+      @media (--md-n-below) {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      & > div {
+        display: grid;
+        place-self: center;
+        place-items: center;
+        flex-basis: var(--size-content-1);
+        gap: var(--size-2);
+      }
+
+      & dt {
+        font-size: var(--font-size-0);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+</style>
 <footer class="place-full">
   <dl>
   <div>
