@@ -2,8 +2,9 @@
 
 *, ::before, ::after { box-sizing: border-box; }
 
-* {
+:where(:not(dialog)) {
   margin: 0;
+}
 
   &:where(:not(fieldset, progress, meter)) {
     border-width: 0;
