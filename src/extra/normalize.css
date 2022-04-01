@@ -119,7 +119,12 @@
   padding-block: var(--size-1);
 }
 
-:where(select) {
+:where(textarea, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+  background-color: hsl(210deg 11% 10%);
+  border-radius: var(--radius-2);
+}
+
+:where(select, textarea) {
   padding-inline: var(--size-2);
   padding-block: var(--size-1);
 }
