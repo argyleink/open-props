@@ -258,3 +258,8 @@
 :where(abbr) {
   text-decoration-color: var(--blue-5);
 }
+:where(menu) {
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--size-3);
+}
