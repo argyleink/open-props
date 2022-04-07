@@ -14,25 +14,39 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
     if (prop.includes('-@'))
       return
 
-    if (prefix && prefix !== "''")
-      prop = `--${prefix}-` + prop.slice(2)
-    
     if (prop.includes('animation')) {
       let keyframes = props[`${prop}-@`]
       appendedMeta += keyframes
     }
 
+    if (prefix && prefix !== "''") {
+      prop = `--${prefix}-` + prop.slice(2)
+      if (typeof(val) == "string" &&  val.includes("var(--"))
+        val = val.replace(/var\(--/g, `var(--${prefix}-`)
+    }
+    
     file.write(`  ${prop}: ${val};\n`)
   })
 
   if (filename.includes('shadows')) {
-    appendedMeta += `
+    if (prefix && prefix !== "''") {
+      appendedMeta += `
+@media (--OSdark) {
+  :where(html) {
+    --${prefix}-shadow-strength: 25%;
+    --${prefix}-shadow-color: 220 40% 2%;
+  }
+}`
+    }
+    else {
+      appendedMeta += `
 @media (--OSdark) {
   :where(html) {
     --shadow-strength: 25%;
     --shadow-color: 220 40% 2%;
   }
 }`
+    }
   }
 
   file.write('}\n')

@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -97,7 +97,7 @@
     "bundle:post-edit": "json -I -f package.json -e \"this.unpkg='open-props.min.css'\"",
     "gen:op": "cd build && node props.js '' true",
     "gen:nowhere": "cd build && node props.js '' false",
-    "gen:prefixed": "cd build && node props.js 'op'",
+    "gen:prefixed": "cd build && node props.js 'op' true",
     "lib:js": "npm run bundle:pre-edit && microbundle --no-sourcemap && npm run bundle:post-edit",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css",
