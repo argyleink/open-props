@@ -1530,4 +1530,8 @@ input[type="range"] {
 
 #typography{
   width: 100%;
+
+  & pre {
+    position: relative;
+  }
 }

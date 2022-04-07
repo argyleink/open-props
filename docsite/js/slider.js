@@ -17,7 +17,7 @@ const rangeToPercent = slider => {
 
 const highlightProperty = slider => {
   if (slider.connectedProperty)
-    slider.connectedProperty.style.color = null
+    slider.connectedProperty.classList.remove('slider-target')
     
   let offset = parseInt(slider.value)
 
@@ -26,7 +26,7 @@ const highlightProperty = slider => {
 
   slider.connectedProperty = slider.parentElement.parentElement
     .querySelectorAll(`code > .property`)[offset]
-  slider.connectedProperty.style.color = 'var(--text-1)'
+  slider.connectedProperty.classList.add('slider-target')
 }
 
 sliders.forEach(slider => {
