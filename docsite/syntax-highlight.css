@@ -102,4 +102,18 @@ code.language-css {
       color: var(--gray-6);
     }
   }
+
+  &.slider-target {
+    color: initial;
+
+    &::before {
+      content: '→';
+      opacity: 0;
+      position: absolute;
+      inset-inline-start: calc(var(--size-4) / 2 - .5ch);
+      animation: 
+        var(--animation-slide-in-right) forwards,
+        var(--animation-fade-in) forwards;
+    }
+  }
 }
