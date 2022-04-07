@@ -49,6 +49,29 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
     }
   }
 
+  if (filename.includes('animations')) {
+    appendedMeta += `
+@media (--motionOK) {
+  :where(html) {
+    --scale-duration: .5s;
+    --scale-easing: var(--ease-3);
+    --slide-duration: .5s;
+    --slide-easing: var(--ease-3);
+    --shake-duration: .75s;
+    --shake-easing: var(--ease-out-5);
+    --spin-easing: linear;
+    --ping-duration: 5s;
+    --ping-easing: var(--ease-out-3);
+    --blink-duration: 1s;
+    --float-ease: var(--ease-out-3);
+    --bounce-duration: 2s;
+    --bounce-ease: var(--ease-squish-2);
+    --pulse-duration: 2s;
+    --pulse-ease: var(--ease-out-3);
+  }
+}`
+  }
+
   file.write('}\n')
   file.end(appendedMeta)
 }

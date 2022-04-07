@@ -1352,9 +1352,13 @@ input[type="range"] {
   --animation-slide-down-fade-out: 
     var(--animation-fade-out) forwards,
     var(--animation-slide-out-down);
+
   /* important required because JS is writing props into inline styles */
-  animation-timing-function: var(--ease-squish-3) !important;
   animation-duration: 1s !important;
+
+  @media (--motionOK) {
+    animation-timing-function: var(--ease-3), var(--ease-squish-3) !important;
+  }
 }
 
 .shake-fade-combo {
@@ -1369,7 +1373,10 @@ input[type="range"] {
     var(--animation-scale-down),
     var(--animation-fade-out)
   ;
-  animation-timing-function: var(--ease-squish-4) !important;
+
+  @media (--motionOK) {
+    animation-timing-function: var(--ease-squish-4), var(--ease-3) !important;
+  }
 }
 
 
