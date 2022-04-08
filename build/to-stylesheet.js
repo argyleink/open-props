@@ -5,8 +5,29 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 
   let appendedMeta = ''
 
-  if (filename.includes('shadows'))
+  if (filename.includes('shadows')) {
     file.write(`@import 'props.media.css';\n\n`)
+    let dark_propsMeta = ``
+    let dark_props = Object.entries(props)
+      .filter(([prop, val]) =>
+        prop.includes('-@media:dark'))
+
+    dark_props.forEach(([prop, val], index) => {
+      let v = props[prop]
+      let extract = prop.slice(2, prop.length-('-@media:dark'.length))
+      let p = prefix && prefix !== "''"
+        ? `--${prefix}-` + extract
+        : `--${extract}`
+      
+      dark_propsMeta += `    ${p}: ${val};${index !== dark_props.length-1 ? '\n' : ''}`
+    })
+    appendedMeta += `
+@media (--OSdark) {
+  ${selector} {
+${dark_propsMeta}
+  }
+}`
+  }
 
   file.write(`${selector} {\n`)
 
@@ -27,27 +48,6 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
     
     file.write(`  ${prop}: ${val};\n`)
   })
-
-  if (filename.includes('shadows')) {
-    if (prefix && prefix !== "''") {
-      appendedMeta += `
-@media (--OSdark) {
-  :where(html) {
-    --${prefix}-shadow-strength: 25%;
-    --${prefix}-shadow-color: 220 40% 2%;
-  }
-}`
-    }
-    else {
-      appendedMeta += `
-@media (--OSdark) {
-  :where(html) {
-    --shadow-strength: 25%;
-    --shadow-color: 220 40% 2%;
-  }
-}`
-    }
-  }
 
   file.write('}\n')
   file.end(appendedMeta)
