@@ -14,7 +14,6 @@ import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
-import {toJSON} from './to-json.js'
 import {toTokens} from './to-tokens.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
@@ -69,17 +68,15 @@ const individual_colors_hsl = {
 }
 
 // gen design tokens
-const jsonbundle = toJSON({
-  ...Object.values(individual_colors)
-      .reduce((colors, color) => 
-        Object.assign(colors, color), {}),
+const jsonbundle = Object.entries({
+  ...Object.assign({}, ...Object.values(individual_colors)),
   ...Sizes,
   ...Easings,
   ...Zindex,
   ...Aspects,
   ...Gradients,
   ...Borders,
-})
+}).reverse()
 
 const designtokens = toTokens(jsonbundle)
 const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
