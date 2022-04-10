@@ -1,0 +1,10 @@
+{
+  "include": ["./src/*.js"],
+  "exclude": ["node_modules", "./src/index.js"],
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./types"
+  }
+}
