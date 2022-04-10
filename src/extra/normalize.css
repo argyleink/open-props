@@ -114,7 +114,7 @@
   letter-spacing: inherit;
 }
 
-:where(input) {
+:where(input, textarea) {
   padding-inline: var(--size-2);
   padding-block: var(--size-1);
 }
@@ -126,11 +126,6 @@
   @media (--OSdark) {
     background-color: hsl(210deg 11% 10%);
   }
-}
-
-:where(select, textarea) {
-  padding-inline: var(--size-2);
-  padding-block: var(--size-1);
 }
 
 :where(textarea) { resize: block }
