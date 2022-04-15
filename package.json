@@ -20,10 +20,12 @@
   "main": "dist/open-props.cjs",
   "unpkg": "open-props.min.css",
   "module": "dist/open-props.module.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/open-props.module.js",
       "require": "./dist/open-props.cjs",
+      "types": "./dist/types/index.d.ts",
       "default": "./dist/open-props.cjs"
     },
     "./src": "./src/index.js",
@@ -153,6 +155,7 @@
     "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x"
+    "postcss-preset-env": "6.7.x",
+    "type-fest": "^2.12.2"
   }
 }

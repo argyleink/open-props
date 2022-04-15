@@ -11,20 +11,22 @@ import Shadows from './props.shadows.js'
 import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
 
-const camelize = text => {
-  text = text.replace(/[-]+(.)?/g, (_, c) => c 
-    ? c.toUpperCase() 
-    : '')
+const camelCase = (text) => {
+  text = text.replace(/[-]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''))
   return text.substr(0, 1).toLowerCase() + text.substr(1)
 }
 
-const mapToObjectNotation = props => {
-  for (var prop in props)
-    props[camelize(prop)] = props[prop]
+/**
+ * @template T
+ * @param {T} props
+ * @returns {import("type-fest").CamelCasedPropertiesDeep<T>}
+ */
+const keysToCamelCase = (props) => {
+  for (var prop in props) props[camelCase(prop)] = props[prop]
   return props
 }
 
-const OpenProps = mapToObjectNotation({
+const OpenProps = keysToCamelCase({
   ...Animations,
   ...Sizes,
   ...Colors,
