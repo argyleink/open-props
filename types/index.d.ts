@@ -1,3 +1,7 @@
+// note: do not auto-generate this file!
+
+import { DashDashKebabToCamelCase } from '../types/dashDashKebabToCamelCase'
+
 import propsAnimations from '../types/props.animations'
 import propsSizes from '../types/props.sizes'
 import propsColors from '../types/props.colors'
@@ -11,9 +15,7 @@ import propsShadows from '../types/props.shadows'
 import propsSVG from '../types/props.svg'
 import propsZindex from '../types/props.zindex'
 
-export default OpenProps;
-
-declare var OpenProps: 
+type OpenPropsKebabCase =
   typeof propsAnimations &
   typeof propsSizes &
   typeof propsColors &
@@ -25,4 +27,10 @@ declare var OpenProps:
   typeof propsGradients &
   typeof propsShadows &
   typeof propsSVG &
-  typeof propsZindex;
+  typeof propsZindex
+
+type OpenPropsCamelCase = {[K in keyof OpenPropsKebabCase as DashDashKebabToCamelCase<K>]: OpenPropsKebabCase[K]}
+
+declare var OpenProps: OpenPropsCamelCase & OpenPropsKebabCase
+
+export default OpenProps
