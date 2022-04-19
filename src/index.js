@@ -15,7 +15,7 @@ const camelize = text => {
   text = text.replace(/[-]+(.)?/g, (_, c) => c 
     ? c.toUpperCase() 
     : '')
-  text = text.replace(/@$/, 'At')
+  text = text.replace(/@$/, 'At') // can't end JS prop with '@'
   return text.substr(0, 1).toLowerCase() + text.substr(1)
 }
 
