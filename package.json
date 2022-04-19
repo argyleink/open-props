@@ -98,7 +98,7 @@
     "gen:op": "cd build && node props.js '' true",
     "gen:nowhere": "cd build && node props.js '' false",
     "gen:prefixed": "cd build && node props.js 'op' true",
-    "gen:types": "rm -rf types/*.d.ts && cp src/index.d.ts types && cp src/dashDashKebabToCamelCase.d.ts types && npx -p typescript tsc",
+    "gen:types": "tsc",
     "lib:js": "npm run bundle:pre-edit && microbundle --no-sourcemap && npm run bundle:post-edit",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css",
@@ -154,6 +154,7 @@
     "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x"
+    "postcss-preset-env": "6.7.x",
+    "typescript": "^4.6.3"
   }
 }
