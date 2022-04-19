@@ -98,6 +98,7 @@
     "gen:op": "cd build && node props.js '' true",
     "gen:nowhere": "cd build && node props.js '' false",
     "gen:prefixed": "cd build && node props.js 'op' true",
+    "gen:types": "rm -rf types/*.d.ts && cp src/index.d.ts types && cp src/dashDashKebabToCamelCase.d.ts types && npx -p typescript tsc",
     "lib:js": "npm run bundle:pre-edit && microbundle --no-sourcemap && npm run bundle:post-edit",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css",

@@ -1,0 +1,26 @@
+declare var _default: {
+    '--border-size-1': string;
+    '--border-size-2': string;
+    '--border-size-3': string;
+    '--border-size-4': string;
+    '--border-size-5': string;
+    '--radius-1': string;
+    '--radius-2': string;
+    '--radius-3': string;
+    '--radius-4': string;
+    '--radius-5': string;
+    '--radius-6': string;
+    '--radius-round': string;
+    '--radius-blob-1': string;
+    '--radius-blob-2': string;
+    '--radius-blob-3': string;
+    '--radius-blob-4': string;
+    '--radius-blob-5': string;
+    '--radius-conditional-1': string;
+    '--radius-conditional-2': string;
+    '--radius-conditional-3': string;
+    '--radius-conditional-4': string;
+    '--radius-conditional-5': string;
+    '--radius-conditional-6': string;
+};
+export default _default;
