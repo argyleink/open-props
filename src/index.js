@@ -21,7 +21,7 @@ const camelize = text => {
 /**
  * @template T
  * @param {T} props
- * @returns {import("type-fest").CamelCasedPropertiesDeep<T>}
+ * @returns {T & import("type-fest").CamelCasedPropertiesDeep<T>}
  */
 const keysToCamelCase = (props) => {
   for (var prop in props)
