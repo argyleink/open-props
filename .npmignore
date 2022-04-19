@@ -1,4 +1,6 @@
 .firebaserc
 .github
+firebase.json
+postcss.config.js
 docsite/
 test/
