@@ -39,7 +39,6 @@
 
 :where(body) { 
   min-block-size: 100%;
-  scrollbar-gutter: stable both-edges;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
