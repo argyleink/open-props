@@ -153,6 +153,6 @@
     "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x"
+    "postcss-preset-env": "^7.6.0"
   }
 }

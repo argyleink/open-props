@@ -14,17 +14,16 @@ module.exports = {
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,
+      enableClientSidePolyfills: false,
       features: {
-        'logical-properties-and-values': false, 
-        'prefers-color-scheme-query': false, 
-        'gap-properties': false,
-        'custom-properties': false,
-        'place-properties': false,
-        'not-pseudo-class': false,
-        'focus-visible-pseudo-class': false,
-        'focus-within-pseudo-class': false,
+        'cascade-layers': false,
         'color-functional-notation': false,
-        'custom-media-queries': {preserve:inlineMediaQueries}
+        'custom-media-queries': {preserve:inlineMediaQueries},
+        'custom-properties': false,
+        'gap-properties': false,
+        'logical-properties-and-values': false, 
+        'not-pseudo-class': false,
+        'place-properties': false,
       }
     }),
     combineSelectors(),
