@@ -144,7 +144,7 @@
     "lib:colors:orange-hsl": "parcel-css --bundle --custom-media --nesting --minify -t 'last 2 versions' src/props.orange-hsl.css -o orange-hsl.min.css"
   },
   "devDependencies": {
-    "@parcel/css-cli": "^1.3.1",
+    "@parcel/css-cli": "^1.9.0",
     "ava": "^3.15.0",
     "concurrently": "^6.2.1",
     "json": "^11.0.0",
