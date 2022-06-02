@@ -145,7 +145,7 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "concurrently": "^6.2.1",
-    "cssnano": "^5.0.8",
+    "cssnano": "^5.1.10",
     "json": "^11.0.0",
     "microbundle": "^0.13.3",
     "open-color": "^1.9.1",
