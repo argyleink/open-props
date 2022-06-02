@@ -2,8 +2,6 @@
   :where(html) {
     color-scheme: dark;
 
-    --brand: var(--pink-4);
-
     --link: var(--indigo-3);
     --link-visited: var(--grape-3);
 

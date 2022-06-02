@@ -1,8 +1,6 @@
 :where(html) {
   color-scheme: light;
 
-  --brand: var(--pink-6);
-
   --link: var(--indigo-7);
   --link-visited: var(--grape-7);
 
@@ -15,7 +13,9 @@
   --surface-4: var(--gray-4);
 
   @media (--HDcolor) {
-    --link: color(display-p3 0 .5 1);
-    --link-visited: color(display-p3 .6 .2 1);
+    @supports (color(display-p3 0 .5 1)) {
+      --link: color(display-p3 0 .5 1);
+      --link-visited: color(display-p3 .6 .2 1);
+    }
   }
 }

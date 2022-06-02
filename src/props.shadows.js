@@ -1,6 +1,9 @@
 const Shadows = {
   '--shadow-color': '220 3% 15%',
   '--shadow-strength': '1%',
+
+  '--shadow-color-@media:dark': '220 40% 2%',
+  '--shadow-strength-@media:dark': '25%',
   
   '--shadow-1': '0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
   '--shadow-2': `

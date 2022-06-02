@@ -4,8 +4,8 @@
   --scrollbar-color: var(--gray-7);
 
   scrollbar-color: var(--scrollbar-color) transparent;
-  accent-color: var(--brand);
-  caret-color: var(--brand);
+  accent-color: var(--link);
+  caret-color: var(--link);
 
   @media (--OSlight) {
     --scrollbar-color: var(--gray-4);
