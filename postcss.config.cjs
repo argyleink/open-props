@@ -17,6 +17,7 @@ module.exports = {
       enableClientSidePolyfills: false,
       features: {
         'cascade-layers': false,
+        'clamp': false,
         'color-functional-notation': false,
         'custom-media-queries': {preserve:inlineMediaQueries},
         'custom-properties': false,
