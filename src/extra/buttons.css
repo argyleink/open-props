@@ -127,6 +127,7 @@
 
 /* file input */
 :where(input[type="file"]) {
+  max-inline-size: 100%;
   padding: 0;
   cursor: initial;
   align-self: flex-start;

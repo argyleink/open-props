@@ -1,2 +1,5 @@
+.firebaserc
+.github
+firebase.json
 docsite/
 test/
