@@ -1,4 +1,5 @@
 const test = require('ava')
+const fs = require('fs')
 const OpenProps = require('../dist/open-props.cjs')
 const OPtokens = require('../open-props.tokens.json')
 
@@ -29,4 +30,9 @@ test('JSON Import should have colors', async t => {
 
 test('JSON Import should have types', async t => {
   t.assert(OPtokens['--gray-0'].type, 'color')
+})
+
+test('Should produce shadow :host props', async t => {
+  t.assert(fs.existsSync('./open-props.shadow.min.css'))
+  t.assert(fs.existsSync('./easings.shadow.min.css'))
 })
