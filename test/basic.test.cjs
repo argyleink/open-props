@@ -33,6 +33,7 @@ test('JSON Import should have types', async t => {
 })
 
 test('Should produce shadow :host props', async t => {
-  t.assert(fs.existsSync('./open-props.shadow.min.css'))
-  t.assert(fs.existsSync('./easings.shadow.min.css'))
+  t.assert(fs.existsSync('./src/shadow.index.css'))
+  t.assert(fs.existsSync('./src/shadow.props.easing.css'))
+  t.assert(fs.existsSync('./src/shadow.props.shadows.css'))
 })
