@@ -140,7 +140,7 @@
     "bundle:post-edit": "json -I -f package.json -e \"this.unpkg='open-props.min.css'\"",
     "gen:op": "cd build && node props.js '' true",
     "gen:nowhere": "cd build && node props.js '' false",
-    "gen:shadowdom": "cd build && node props.js '' true ':host' 'shadow'",
+    "gen:shadowdom": "cd build && node props.js '' false ':host' 'shadow'",
     "gen:prefixed": "cd build && node props.js 'op' true",
     "lib:js": "npm run bundle:pre-edit && microbundle --no-sourcemap && npm run bundle:post-edit",
     "lib:all": "postcss src/index.css -o open-props.min.css",
