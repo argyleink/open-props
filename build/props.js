@@ -110,6 +110,6 @@ const entry = fs.createWriteStream(`../src/${pfx}index.css`)
 entry.write(`@import 'props.media.css';
 `)
 Object.keys(mainbundle).forEach(filename => {
-  entry.write(`@import '${pfx}${filename}';\n`)
+  entry.write(`@import '${filename}';\n`)
 })
 entry.end()
