@@ -354,38 +354,39 @@
                   351 props
                 </div>
               </div>
-
+            </dd>
+            <dt>Extras</dt>
+            <dd class="size-chart" style="row-gap: var(--size-3)">
               <div class="size"><strong>1.3</strong>kB</div>
               <div class="file">
-                <a href="https://unpkg.com/open-props/normalize.min.css">normalize.min.css</a> <a href="https://codepen.io/argyleink/pen/KKvRORE"><small class="green-badge">demo</small></a>
+                <a href="https://unpkg.com/open-props/normalize.min.css">normalize.min.css</a> <a
+                  href="https://codepen.io/argyleink/pen/KKvRORE"><small class="green-badge">demo</small></a>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
                   <a href="https://github.com/argyleink/open-props/blob/main/src/extra/brand.css">brand.css</a>
                 </div>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
                   <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.css">theme.css</a>
                 </div>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
                   <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.light.css">theme.light.css</a>
                 </div>
                 <div class="child-ref">
                   <svg viewBox="0 0 24 24">
-                    <use href="#bent-arrow"/>
+                    <use href="#bent-arrow" />
                   </svg>
-                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css">theme.dark.css</a>  
+                  <a href="https://github.com/argyleink/open-props/blob/main/src/extra/theme.dark.css">theme.dark.css</a>
                 </div>
               </div>
-            </dd>
-            <dt>Extras</dt>
-            <dd class="size-chart" style="row-gap: var(--size-3)">
+
               <div class="size"><strong>0.81</strong>kB</div>
               <div class="file">
                 <a href="https://unpkg.com/open-props/buttons.min.css">buttons.min.css</a> <a href="https://codepen.io/argyleink/pen/gOXbvjj"><small class="green-badge">demo</small></a>
@@ -693,6 +694,7 @@
                   @import "https://unpkg.com/open-props/animations.min.css";
                   @import "https://unpkg.com/open-props/sizes.min.css";
                   @import "https://unpkg.com/open-props/gradients.min.css";
+                  /* see PropPacks for the full list */
                 </code></pre>
               </div>
 
@@ -713,6 +715,7 @@
                   &#60;link rel="stylesheet" href="https://unpkg.com/open-props/animations.min.css"/&#62;
                   &#60;link rel="stylesheet" href="https://unpkg.com/open-props/sizes.min.css"/&#62;
                   &#60;link rel="stylesheet" href="https://unpkg.com/open-props/gradients.min.css"/&#62;
+                  &#60;!-- see PropPacks for the full list --&#62;
                 </code></pre>
               </div>
 
@@ -733,6 +736,7 @@
                   import 'https://unpkg.com/open-props/animations.min.css';
                   import 'https://unpkg.com/open-props/sizes.min.css';
                   import 'https://unpkg.com/open-props/gradients.min.css';
+                  // see PropPacks for the full list
                 </code></pre>
               </div>
             </details>
@@ -757,6 +761,7 @@
                   @import "https://unpkg.com/open-props/src/animations.min.css";
                   @import "https://unpkg.com/open-props/src/sizes.min.css";
                   @import "https://unpkg.com/open-props/src/gradients.min.css";
+                  /* see PropPacks for the full list */
                 </code></pre>
               </div>
             </details>
@@ -785,6 +790,46 @@
                 </div>
               </div>
             </details>
+
+            <details class="started-details">
+              <summary>Web Components</summary>
+
+              <div>
+                <h6>CSS import examples</h6>
+                <p>These props are scoped to <b>:host</b> for use in shadow DOM.</p>
+                <pre class="language-css"><code>
+                  /* the props */
+                  @import "https://unpkg.com/open-props/index.css";
+
+                  /* individual imports */
+                  @import "https://unpkg.com/open-props/indigo.min.css";
+                  @import "https://unpkg.com/open-props/indigo-hsl.min.css";
+                  @import "https://unpkg.com/open-props/easings.min.css";
+                  @import "https://unpkg.com/open-props/animations.min.css";
+                  @import "https://unpkg.com/open-props/sizes.min.css";
+                  @import "https://unpkg.com/open-props/gradients.min.css";
+                  /* see PropPacks for the full list */
+                </code></pre>
+              </div>
+
+              <div>
+                <h6>NPM import examples</h6>
+                <pre class="language-css"><code>
+                  /* the props */
+                  @import "open-props/shadow/style";
+                  @import "open-props/open-props.shadow.min.css";
+
+                  /* individual imports */
+                  @import "open-props/shadow/indigo";
+                  @import "open-props/shadow/indigo-hsl";
+                  @import "open-props/shadow/easings";
+                  @import "open-props/shadow/animations";
+                  @import "open-props/shadow/sizes";
+                  @import "open-props/shadow/gradients";
+                  /* see PropPacks for the full list */
+                </code></pre>
+              </div>
+            </details>
           </div>
 
           <div class="contain-pre" id="npm">
@@ -810,6 +855,7 @@
                     @import "open-props/animations";
                     @import "open-props/sizes";
                     @import "open-props/gradients";
+                    /* see PropPacks for the full list */
                   </code></pre>
                 </div>
               </div>
@@ -831,6 +877,7 @@
                     @import "open-props/animations.min.css";
                     @import "open-props/sizes.min.css";
                     @import "open-props/gradients.min.css";
+                    /* see PropPacks for the full list */
                   </code></pre>
                 </div>
               </div>
@@ -855,6 +902,7 @@
                   @import "open-props/postcss/animations";
                   @import "open-props/postcss/sizes";
                   @import "open-props/postcss/gradients";
+                  /* see PropPacks for the full list */
                 </code></pre>
               </div>
 
@@ -874,6 +922,7 @@
                   @import "open-props/postcss/animations.min.css";
                   @import "open-props/postcss/sizes.min.css";
                   @import "open-props/postcss/gradients.min.css";
+                  /* see PropPacks for the full list */
                 </code></pre>
               </div>
             </details>
@@ -911,6 +960,7 @@
 
                     // import the gradients
                     import Gradients from 'open-props/src/gradients';
+                    // see PropPacks for the full list
                   </code></pre>
                 </div>
               </div>
