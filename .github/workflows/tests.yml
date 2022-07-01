@@ -10,5 +10,5 @@ jobs:
       - uses: actions/setup-node@v2
       - run: npm ci
       - run: npm run build
-      - run: npm run lib:js
+      - run: npm run module:js
       - run: npm test
