@@ -37,7 +37,11 @@
   outline-offset: 5px;
 }
 
-:where(body) { 
+:where(input[type='text']:not([disabled]):focus) {
+  outline: none;
+}
+
+:where(body) {
   min-block-size: 100%;
 }
 
@@ -46,13 +50,13 @@
   font-weight: var(--font-weight-9);
 }
 
-:where(h1) { 
-  font-size: var(--font-size-8); 
-  max-inline-size: var(--size-header-1); 
+:where(h1) {
+  font-size: var(--font-size-8);
+  max-inline-size: var(--size-header-1);
 }
 
-:where(h2) { 
-  font-size: var(--font-size-6); 
+:where(h2) {
+  font-size: var(--font-size-6);
   max-inline-size: var(--size-header-2);
 }
 
@@ -158,10 +162,10 @@
 :where(code, kbd, samp, pre) { font-family: var(--font-mono) }
 :where(:not(pre) > code, kbd) { white-space: nowrap }
 
-:where(pre) { 
+:where(pre) {
   white-space: pre;
   min-inline-size: 0;
-  max-inline-size: max-content; 
+  max-inline-size: max-content;
 }
 
 :where(:not(pre) > code) {
@@ -192,8 +196,8 @@
   margin-block-start: var(--size-5);
 }
 
-:where(small) { 
-  font-size: max(.5em, var(--font-size-0)); 
+:where(small) {
+  font-size: max(.5em, var(--font-size-0));
   max-inline-size: var(--size-content-1);
 }
 
