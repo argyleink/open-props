@@ -1,4 +1,3 @@
-@import "../props.supports.css";
 @import "brand.css";
 
 *, ::before, ::after { box-sizing: border-box; }
@@ -72,7 +71,7 @@
 :where(a, u, ins, abbr) {
   text-underline-offset: 1px;
 
-  @media (--firefoxONLY) {
+  @media (-moz-appearance: none) {
     text-underline-offset: 2px;
   }
 }
