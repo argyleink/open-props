@@ -71,7 +71,7 @@
 :where(a, u, ins, abbr) {
   text-underline-offset: 1px;
 
-  @media (-moz-appearance: none) {
+  @supports (-moz-appearance: none) {
     text-underline-offset: 2px;
   }
 }
