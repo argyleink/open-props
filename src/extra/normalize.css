@@ -37,11 +37,22 @@
   outline-offset: 5px;
 }
 
-:where(input[type='text']:not([disabled]):focus) {
+:where(a, button, input, textarea, summary) {
+  --outline-size: max(5px, 1px);
+  --outline-style: solid;
+  --outline-color: var(--blue-5);
+}
+
+:where(a, button, input, textarea, summary):focus-visible {
+  outline: var(--outline-size) var(--outline-style) var(--outline-color);
+  outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+:where(a, button, input, textarea, summary):focus:not(:focus-visible) {
   outline: none;
 }
 
-:where(body) {
+:where(body) { 
   min-block-size: 100%;
 }
 
@@ -50,13 +61,13 @@
   font-weight: var(--font-weight-9);
 }
 
-:where(h1) {
-  font-size: var(--font-size-8);
-  max-inline-size: var(--size-header-1);
+:where(h1) { 
+  font-size: var(--font-size-8); 
+  max-inline-size: var(--size-header-1); 
 }
 
-:where(h2) {
-  font-size: var(--font-size-6);
+:where(h2) { 
+  font-size: var(--font-size-6); 
   max-inline-size: var(--size-header-2);
 }
 
@@ -162,10 +173,10 @@
 :where(code, kbd, samp, pre) { font-family: var(--font-mono) }
 :where(:not(pre) > code, kbd) { white-space: nowrap }
 
-:where(pre) {
+:where(pre) { 
   white-space: pre;
   min-inline-size: 0;
-  max-inline-size: max-content;
+  max-inline-size: max-content; 
 }
 
 :where(:not(pre) > code) {
@@ -196,8 +207,8 @@
   margin-block-start: var(--size-5);
 }
 
-:where(small) {
-  font-size: max(.5em, var(--font-size-0));
+:where(small) { 
+  font-size: max(.5em, var(--font-size-0)); 
   max-inline-size: var(--size-content-1);
 }
 
