@@ -40,7 +40,12 @@
 :where(a, button, input, textarea, summary) {
   --outline-size: max(5px, 1px);
   --outline-style: solid;
-  --outline-color: var(--blue-5);
+  --outline-color: currentColor;
+}
+
+:where(a, button, input, textarea, summary):focus {
+  outline: var(--outline-size) var(--outline-style) var(--outline-color);
+  outline-offset: var(--outline-offset, var(--outline-size));
 }
 
 :where(a, button, input, textarea, summary):focus-visible {
