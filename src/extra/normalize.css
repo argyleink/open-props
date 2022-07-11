@@ -70,6 +70,10 @@
 
 :where(a, u, ins, abbr) {
   text-underline-offset: 1px;
+
+  @supports (-moz-appearance: none) {
+    text-underline-offset: 2px;
+  }
 }
 
 :where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
