@@ -1,0 +1,172 @@
+<style global>
+
+  .demo-gallery > * {
+    flex-basis: var(--size-content-2);
+  }
+
+  .demo-gallery figure {
+    border-radius: var(--radius-3);
+    overflow: hidden;
+    box-shadow: var(--shadow-4);
+    gap: 0;
+  }
+
+  .demo-gallery figure > figcaption {
+    display: grid;
+    grid: [stack] 1fr / [stack] 1fr;
+    position: relative;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    
+    & > * {
+      grid-area: stack;
+    }
+    
+    & > img {
+      position: absolute;
+      inset: 0;
+      transform: scaleY(-1);
+    }
+    
+    & > div {
+      z-index: 1;
+      padding-inline: var(--size-3);
+      padding-block: var(--size-3) var(--size-4);
+      display: grid;
+      gap: var(--size-1);
+      
+      @nest [data-theme="dark"] & {
+        text-shadow: 0 1px 0 hsl(0 0% 0% / 20%);
+      }
+    }
+
+    & h3 {
+      color: var(--gray-1);
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+
+      @nest [data-theme="light"] & {
+        color: var(--gray-8);
+      }
+
+      & > a {
+        color: inherit;
+      }
+    }
+
+    & p {
+      color: var(--gray-2);
+
+      @nest [data-theme="light"] & {
+        color: var(--gray-7);
+      }
+    }
+  }
+
+</style>
+<section id="gallery">
+  <header>
+    <h2>Built with Open Props</h2>
+  </header>
+  <div class="demo-gallery block-wrap">
+    <a href="https://codepen.io/argyleink/pen/porzeyz">
+      <figure>
+        <picture>
+          <img width="1125" height="586" src="/hero-layout.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/hero-layout.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>Hero Layout</h3>
+            <p><b>18 props</b> + <b>normalize.css</b></p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="https://codepen.io/argyleink/pen/powMQgx">
+      <figure>
+        <picture>
+          <img width="1446" height="658" src="/adaptive-buttons.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/adaptive-buttons.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>Adaptive Buttons</h3>
+            <p><b>10 props</b></p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="https://codepen.io/argyleink/pen/jOLaBgG">
+      <figure>
+        <picture>
+          <img width="1600" height="960" src="/cards.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/cards.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>Adaptive Cards</h3>
+            <p><b>8 props</b> + <b>normalize.css</b></p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="https://codepen.io/argyleink/pen/QWMreXR">
+      <figure>
+        <picture>
+          <img width="760" height="372" src="/pagination.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/pagination.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>Pagination Example</h3>
+            <p>10 props</p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="https://codepen.io/argyleink/pen/XWaYyWe">
+      <figure>
+        <picture>
+          <img width="1096" height="639" src="/color-schemes.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/color-schemes.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>4 Color Schemes</h3>
+            <p><b>16 props</b></p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="https://codepen.io/argyleink/pen/ZEXQovz">
+      <figure>
+        <picture>
+          <img width="672" height="448" src="/pop-animation.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/pop-animation.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>Make it pop</h3>
+            <p><b>Example loads only the animations and easings for a springy scale-in animation</b></p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="https://codepen.io/argyleink/pen/KKvRORE">
+      <figure>
+        <picture>
+          <img width="967" height="585" src="/normalize-codepen.png" alt="" loading="lazy">
+        </picture>
+        <figcaption>
+          <img src="/normalize-codepen.png" aria-hidden="true" loading="lazy">
+          <div class="adaptive-glass">
+            <h3>Normalize Preview</h3>
+            <p><b>Light + dark HTML5 minimal styles</b></p>
+          </div>
+        </figcaption>
+      </figure>
+    </a>
+  </div>
+</section>

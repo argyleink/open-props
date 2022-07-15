@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      line, circle:first-of-type { stroke: #eee }
+      circle:last-of-type { stroke: #ccc }
+    }
+  </style>
+  <line x1="65" x2="65" y1="100" y2="175" stroke="#3B5BDB" stroke-width="25"/>
+  <circle cx="100" cy="100" r="35" stroke="#3B5BDB" fill="transparent" stroke-width="25"/>
+  <circle cx="100" cy="100" r="85" stroke="#5C7CFA" fill="transparent" stroke-width="25"/>
+</svg>

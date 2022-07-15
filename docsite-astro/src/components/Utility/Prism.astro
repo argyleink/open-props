@@ -1,0 +1,14 @@
+---
+import Prism from 'prismjs';
+import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js';
+
+const { code, lang} = Astro.props;
+const grammar = Prism.languages[lang];
+const nw = Prism.plugins.NormalizeWhitespace;
+let html = nw.normalize(code) ;
+if (grammar) {
+	html = Prism.highlight(html, grammar, lang);
+}
+---
+
+<pre class={"language-" + lang}><code class={"language-" + lang}><Fragment set:html={html} /></code></pre>

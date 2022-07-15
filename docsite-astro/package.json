@@ -1,0 +1,20 @@
+{
+  "name": "open-props",
+  "author": "Adam Argyle",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^1.0.0-beta.41"
+  },
+  "dependencies": {
+    "postcss-preset-env": "^7.4.3",
+    "prismjs": "^1.27.0"
+  }
+}
