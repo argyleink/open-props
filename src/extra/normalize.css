@@ -25,15 +25,15 @@
 }
 
 @media (--motionOK) {
-  :focus-visible {
+  :where(:focus-visible) {
     transition: outline-offset 145ms var(--ease-2);
   }
-  :where(:not(:active)):focus-visible {
+  :where(:not(:active):focus-visible) {
     transition-duration: .25s;
   }
 }
 
-:where(:not(:active)):focus-visible {
+:where(:not(:active):focus-visible) {
   outline-offset: 5px;
 }
 
