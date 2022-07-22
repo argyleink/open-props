@@ -297,3 +297,7 @@
   display: flex;
   gap: var(--size-3);
 }
+
+:where(sup) {
+  font-size: .5em;
+}
