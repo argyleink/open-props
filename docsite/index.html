@@ -1074,7 +1074,7 @@
             <ol>
               <li>
                 VScode has an intellisense feature which you can tap into,
-                by passing the path to the node_modules folder when
+                by passing the path to the <code>node_modules</code> folder when
                 open-props is installed
               </li>
               <li>
@@ -1083,8 +1083,9 @@
                 <a
                   href="https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar"
                   target="__blank"
-                  >CSS Var Complete</a
                 >
+                  CSS Var Complete
+                </a>
                 extension
               </li>
               <li>
@@ -1093,22 +1094,34 @@
                 <code>.vscode/settings.json</code>file. Take a look at an
                 illustration below
               </li>
-              <pre class="language-js"><code> 
-                // .vscode/settings.json file 
-                { 
-                  "cssvar.files": [ 
-                    "./node_modules/open-props/open-props.min.css", 
-                    // if you have an alternative path to where your styles are located 
-                    // you can add it in this array of files 
-                    "assets/styles/variables.css" 
+              <pre class="language-js"><code>
+                // .vscode/settings.json file
+                {
+                  "cssvar.files": [
+                    "./node_modules/open-props/open-props.min.css",
+                    // if you have an alternative path to where your styles are located
+                    // you can add it in this array of files
+                    "assets/styles/variables.css"
                   ],
 
-                  // you can also add support for autocomplete in other file extensions 
+                  // Do not ignore node_modules css files, which is ignored by default
+                  "cssvar.ignore": [],
+
+                  // add support for autocomplete in JS or JS like files
                   "cssvar.extensions": [
                     "css", "html", "jsx", "tsx"
                   ]
-                } 
+                }
               </code></pre>
+              <li>
+                Check details on settings and it's defaults&nbsp;
+                <a
+                  href="https://github.com/willofindie/vscode-cssvar#supported-configs"
+                  target="__blank"
+                >
+                  in the repo
+                </a>
+              </li>
             </ol>
           </details>
         </div>
