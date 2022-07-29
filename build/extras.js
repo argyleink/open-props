@@ -7,6 +7,4 @@ readFile('./normalize.min.css', 'utf-8', (err, contents) => {
   writeFile('./normalize.shadow.min.css', replaced, 'utf-8', err => {
     console.log(err)
   })
-
-  process.exit(1)
 })
