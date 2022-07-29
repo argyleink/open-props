@@ -83,6 +83,7 @@
     "./yellow-hsl": "./yellow-hsl.min.css",
     "./zindex": "./zindex.min.css",
     "./shadow/style": "./open-props.shadow.min.css",
+    "./shadow/normalize": "./normalize.shadow.min.css",
     "./shadow/animations": "./animations.shadow.min.css",
     "./shadow/aspects": "./aspects.shadow.min.css",
     "./shadow/blue": "./blue.shadow.min.css",
