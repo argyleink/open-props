@@ -140,7 +140,7 @@
     "gen:prefixed": "cd build && node props.js 'op' true",
     "module:js": "npm run bundle:pre-edit && microbundle --no-sourcemap && npm run bundle:post-edit",
     "lib:all": "postcss src/index.css -o open-props.min.css",
-    "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css",
+    "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css && node ./build/extras.js",
     "lib:buttons": "postcss src/extra/buttons.css -o buttons.min.css",
     "lib:animations": "postcss src/props.animations.css -o animations.min.css",
     "lib:aspects": "postcss src/props.aspects.css -o aspects.min.css",
