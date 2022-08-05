@@ -37,3 +37,8 @@ test('Should produce shadow :host props', async t => {
   t.assert(fs.existsSync('./src/shadow.props.easing.css'))
   t.assert(fs.existsSync('./src/shadow.props.shadows.css'))
 })
+
+test('Should produce optional mask props', async t => {
+  t.assert(fs.existsSync('./masks.edges.min.css'))
+  t.assert(fs.existsSync('./masks.corner-cuts.min.css'))
+})
