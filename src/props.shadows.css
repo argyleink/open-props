@@ -44,7 +44,7 @@
 
 @media (--OSdark) {
   :where(html) {
-    --shadow-strength: 25%;
     --shadow-color: 220 40% 2%;
+    --shadow-strength: 25%;
   }
 }

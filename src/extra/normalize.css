@@ -2,15 +2,15 @@
 
 *, ::before, ::after { box-sizing: border-box; }
 
-* {
+:where(:not(dialog)) {
   margin: 0;
+}
 
-  &:where(:not(fieldset, progress, meter)) {
-    border-width: 0;
-    border-style: solid;
-    background-origin: border-box;
-    background-repeat: no-repeat;
-  }
+:where(:not(fieldset, progress, meter)) {
+  border-width: 0;
+  border-style: solid;
+  background-origin: border-box;
+  background-repeat: no-repeat;
 }
 
 :where(html) {
@@ -25,21 +25,20 @@
 }
 
 @media (--motionOK) {
-  :focus-visible {
+  :where(:focus-visible) {
     transition: outline-offset 145ms var(--ease-2);
   }
-  :where(:not(:active)):focus-visible {
+  :where(:not(:active):focus-visible) {
     transition-duration: .25s;
   }
 }
 
-:where(:not(:active)):focus-visible {
+:where(:not(:active):focus-visible) {
   outline-offset: 5px;
 }
 
 :where(body) { 
   min-block-size: 100%;
-  scrollbar-gutter: stable both-edges;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -71,11 +70,16 @@
 
 :where(a, u, ins, abbr) {
   text-underline-offset: 1px;
+
+  @supports (-moz-appearance: none) {
+    text-underline-offset: 2px;
+  }
 }
 
 :where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
   cursor: pointer;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :where(a) {
@@ -114,14 +118,23 @@
   letter-spacing: inherit;
 }
 
-:where(input) {
+:where(input, textarea) {
   padding-inline: var(--size-2);
   padding-block: var(--size-1);
 }
 
 :where(select) {
-  padding-inline: var(--size-2);
-  padding-block: var(--size-1);
+  padding-inline: 1.25ch 0;
+  padding-block: .75ch;
+}
+
+:where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+  background-color: var(--surface-2);
+  border-radius: var(--radius-2);
+
+  @media (--OSdark) {
+    background-color: hsl(210deg 11% 10%);
+  }
 }
 
 :where(textarea) { resize: block }
@@ -243,6 +256,7 @@
 
 :where(fieldset) {
   border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--surface-4);
 }
 
 :where(del) {
@@ -257,4 +271,33 @@
 
 :where(abbr) {
   text-decoration-color: var(--blue-5);
+}
+
+:where(dialog) {
+  background-color: var(--surface-1);
+  color: inherit;
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-6);
+
+  @media (--OSdark) {
+    background-color: var(--surface-2);
+  }
+
+  &::backdrop {
+    backdrop-filter: blur(25px);
+  }
+}
+
+:where(html:has(dialog[open])) {
+  overflow: hidden;
+}
+
+:where(menu) {
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--size-3);
+}
+
+:where(sup) {
+  font-size: .5em;
 }

@@ -92,7 +92,7 @@ nav {
 
   & > a[href]:not(:hover,:focus-visible) {
     color: var(--text-1);
-    text-decoration-color: var(--brand);
+    text-decoration-color: var(--link);
   }
 
   & > a[href="/"] {
@@ -408,7 +408,7 @@ pre[class*="language-"] {
 
   & a[href]:not(:hover,:focus-visible) {
     color: var(--text-1);
-    text-decoration-color: var(--brand);
+    text-decoration-color: var(--link);
   }
 
   & a.in-view {
@@ -1530,4 +1530,8 @@ input[type="range"] {
 
 #typography{
   width: 100%;
+
+  & pre {
+    position: relative;
+  }
 }

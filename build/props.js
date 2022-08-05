@@ -16,58 +16,59 @@ import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
-import {toJSON} from './to-json.js'
 import {toTokens} from './to-tokens.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
-const [,,prefix='',useWhere] = process.argv
+const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
 
-const selector = useWhere === 'true' ? ':where(html)' : 'html'
+const subject = customSubject === '' ? 'html' : customSubject
+const selector = useWhere === 'true' ? `:where(${subject})` : subject
+const pfx = filePrefix ? filePrefix + '.' : ''
 
 const mainbundle = {
-  'props.fonts.css': Fonts,
-  'props.sizes.css': Sizes,
-  'props.easing.css': Easings,
-  'props.zindex.css': Zindex,
-  'props.shadows.css': Shadows,
-  'props.aspects.css': Aspects,
-  'props.colors.css': OpenColors.default,
-  // 'props.svg.css': SVG,
-  'props.gradients.css': Gradients,
-  'props.animations.css': Animations,
-  'props.borders.css': Borders,
+  [`${pfx}props.fonts.css`]: Fonts,
+  [`${pfx}props.sizes.css`]: Sizes,
+  [`${pfx}props.easing.css`]: Easings,
+  [`${pfx}props.zindex.css`]: Zindex,
+  [`${pfx}props.shadows.css`]: Shadows,
+  [`${pfx}props.aspects.css`]: Aspects,
+  [`${pfx}props.colors.css`]: OpenColors.default,
+  // [`${pfx}props.svg.css`]: SVG,
+  [`${pfx}props.gradients.css`]: Gradients,
+  [`${pfx}props.animations.css`]: Animations,
+  [`${pfx}props.borders.css`]: Borders,
 }
 
 const individual_colors = {
-  'props.gray.css': OpenColors.Gray,
-  'props.red.css': OpenColors.Red,
-  'props.pink.css': OpenColors.Pink,
-  'props.grape.css': OpenColors.Grape,
-  'props.violet.css': OpenColors.Violet,
-  'props.indigo.css': OpenColors.Indigo,
-  'props.blue.css': OpenColors.Blue,
-  'props.cyan.css': OpenColors.Cyan,
-  'props.teal.css': OpenColors.Teal,
-  'props.green.css': OpenColors.Green,
-  'props.lime.css': OpenColors.Lime,
-  'props.yellow.css': OpenColors.Yellow,
-  'props.orange.css': OpenColors.Orange,
+  [`${pfx}props.gray.css`]: OpenColors.Gray,
+  [`${pfx}props.red.css`]: OpenColors.Red,
+  [`${pfx}props.pink.css`]: OpenColors.Pink,
+  [`${pfx}props.grape.css`]: OpenColors.Grape,
+  [`${pfx}props.violet.css`]: OpenColors.Violet,
+  [`${pfx}props.indigo.css`]: OpenColors.Indigo,
+  [`${pfx}props.blue.css`]: OpenColors.Blue,
+  [`${pfx}props.cyan.css`]: OpenColors.Cyan,
+  [`${pfx}props.teal.css`]: OpenColors.Teal,
+  [`${pfx}props.green.css`]: OpenColors.Green,
+  [`${pfx}props.lime.css`]: OpenColors.Lime,
+  [`${pfx}props.yellow.css`]: OpenColors.Yellow,
+  [`${pfx}props.orange.css`]: OpenColors.Orange,
 }
 
 const individual_colors_hsl = {
-  'props.gray-hsl.css': ColorsHSL.Gray,
-  'props.red-hsl.css': ColorsHSL.Red,
-  'props.pink-hsl.css': ColorsHSL.Pink,
-  'props.grape-hsl.css': ColorsHSL.Grape,
-  'props.violet-hsl.css': ColorsHSL.Violet,
-  'props.indigo-hsl.css': ColorsHSL.Indigo,
-  'props.blue-hsl.css': ColorsHSL.Blue,
-  'props.cyan-hsl.css': ColorsHSL.Cyan,
-  'props.teal-hsl.css': ColorsHSL.Teal,
-  'props.green-hsl.css': ColorsHSL.Green,
-  'props.lime-hsl.css': ColorsHSL.Lime,
-  'props.yellow-hsl.css': ColorsHSL.Yellow,
-  'props.orange-hsl.css': ColorsHSL.Orange,
+  [`${pfx}props.gray-hsl.css`]: ColorsHSL.Gray,
+  [`${pfx}props.red-hsl.css`]: ColorsHSL.Red,
+  [`${pfx}props.pink-hsl.css`]: ColorsHSL.Pink,
+  [`${pfx}props.grape-hsl.css`]: ColorsHSL.Grape,
+  [`${pfx}props.violet-hsl.css`]: ColorsHSL.Violet,
+  [`${pfx}props.indigo-hsl.css`]: ColorsHSL.Indigo,
+  [`${pfx}props.blue-hsl.css`]: ColorsHSL.Blue,
+  [`${pfx}props.cyan-hsl.css`]: ColorsHSL.Cyan,
+  [`${pfx}props.teal-hsl.css`]: ColorsHSL.Teal,
+  [`${pfx}props.green-hsl.css`]: ColorsHSL.Green,
+  [`${pfx}props.lime-hsl.css`]: ColorsHSL.Lime,
+  [`${pfx}props.yellow-hsl.css`]: ColorsHSL.Yellow,
+  [`${pfx}props.orange-hsl.css`]: ColorsHSL.Orange,
 }
 
 const individuals = {
@@ -76,17 +77,15 @@ const individuals = {
 }
 
 // gen design tokens
-const jsonbundle = toJSON({
-  ...Object.values(individual_colors)
-      .reduce((colors, color) => 
-        Object.assign(colors, color), {}),
+const jsonbundle = Object.entries({
+  ...Object.assign({}, ...Object.values(individual_colors)),
   ...Sizes,
   ...Easings,
   ...Zindex,
   ...Aspects,
   ...Gradients,
   ...Borders,
-})
+}).reverse()
 
 const designtokens = toTokens(jsonbundle)
 const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
@@ -113,13 +112,13 @@ Object.entries({
 
 // gen color hsl main file
 buildPropsStylesheet({
-  filename: 'props.colors-hsl.css', 
+  filename: pfx + 'props.colors-hsl.css', 
   props: ColorsHSL.default}, 
   {selector, prefix}
 )
 
 // gen index.css
-const entry = fs.createWriteStream('../src/index.css')
+const entry = fs.createWriteStream(`../src/${pfx}index.css`)
 entry.write(`@import 'props.media.css';
 `)
 Object.keys(mainbundle).forEach(filename => {
