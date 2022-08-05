@@ -66,6 +66,8 @@
     "./indigo-hsl": "./indigo-hsl.min.css",
     "./lime": "./lime.min.css",
     "./lime-hsl": "./lime-hsl.min.css",
+    "./masks/edges": "./masks.edges.min.css",
+    "./masks/corner-cuts": "./masks.corner-cuts.min.css",
     "./media": "./media.min.css",
     "./orange": "./orange.min.css",
     "./orange-hsl": "./orange-hsl.min.css",
