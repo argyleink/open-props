@@ -3056,11 +3056,15 @@
           <div class="var-examples">
             <pre class="language-css"><code>
               /* masked corners */
+              @import "https://unpkg.com/open-props/masks.corner-cuts.min.css";
+
               --mask-corner-cut-circles-{1-3}
               --mask-corner-cut-squares-{1-3}
               --mask-corner-cut-angles-{1-3}
 
               /* masked edges */
+              @import "https://unpkg.com/open-props/masks.edges.min.css";
+
               --mask-edge-scoop-{top,right,bottom,left,vertical,horizontal}
               --mask-edge-scalloped-{edges,top,right,bottom,left,vertical,horizontal}
               --mask-edge-drip-{top,right,bottom,left,vertical,horizontal}
@@ -3069,7 +3073,7 @@
           </div>
         </div>
         <div>
-          <h5>Usage Sample</h5>
+          <h5>NPM Usage Sample</h5>
           <pre class="language-css"><code>
             @import "open-props/masks/edges";
             @import "open-props/masks/corner-cuts";
