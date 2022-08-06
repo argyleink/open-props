@@ -1,3 +1,4 @@
+// big thanks to Temani Afif: https://twitter.com/ChallengesCss
 // https://github.com/argyleink/open-props/discussions/71
 export default {
   '--mask-edge-scoop-bottom': `

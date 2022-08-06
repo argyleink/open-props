@@ -1,3 +1,4 @@
+// big thanks to Temani Afif: https://twitter.com/ChallengesCss
 export default {
   '--mask-corner-cut-circles-1': 'radial-gradient(circle 1rem,#0000 99%,#000) 10000% 10000% / 99.5% 99.5%',
   '--mask-corner-cut-circles-2': 'radial-gradient(circle 2rem,#0000 99%,#000) 10000% 10000% / 99.5% 99.5%',
