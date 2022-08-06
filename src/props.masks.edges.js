@@ -40,7 +40,7 @@ export default {
   `,
   '--mask-edge-scalloped-vertical': `
     linear-gradient(#000 0 0) center / 100% calc(100% - 2 * 20px) no-repeat,
-    radial-gradient(circle farthest-side,#000 97%,#0000) 0 / calc(1.9 * 20px) calc(2 * 20px) repeat space
+    radial-gradient(circle farthest-side,#000 97%,#0000) center / calc(1.9 * 20px) calc(2 * 20px) repeat space
   `,
   '--mask-edge-scalloped-left': `
     linear-gradient(#000 0 0) right / calc(100% - 20px) 100% no-repeat,
