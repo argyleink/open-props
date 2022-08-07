@@ -3047,7 +3047,17 @@
     <section id="masks">
       <header>
         <h2>Masks</h2>
-        <p>Rad edges and corner-cuts ready to go. A huge shout out to <a href="https://twitter.com/ChallengesCss">Temani Afif</a> and <a href="https://github.com/argyleink/open-props/discussions/71">their amazing mask work</a>. Be sure to check out their <a href="https://css-generators.com/">CSS Generators</a> too.</p>
+        <div class="block-wrap">
+          <p>Rad edges and corner-cuts ready to go. A huge shout out to <a href="https://twitter.com/ChallengesCss">Temani Afif</a> and <a href="https://github.com/argyleink/open-props/discussions/71">their amazing mask work</a>. Be sure to check out their <a href="https://css-generators.com/">CSS Generators</a> too.</p>
+
+          <blockquote class="icon-quote indigo">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            <span>Not part of the main bundle. Must be individually imported.</span>
+          </blockquote>
+        </div>
       </header>
       <div class="block-wrap">
         <div>
@@ -3055,15 +3065,9 @@
           <h5>Vars Sample</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
-              /* masked corners */
-              @import "https://unpkg.com/open-props/masks.corner-cuts.min.css";
-
               --mask-corner-cut-circles-{1-3}
               --mask-corner-cut-squares-{1-3}
               --mask-corner-cut-angles-{1-3}
-
-              /* masked edges */
-              @import "https://unpkg.com/open-props/masks.edges.min.css";
 
               --mask-edge-scoop-{top,right,bottom,left,vertical,horizontal}
               --mask-edge-scalloped-{edges,top,right,bottom,left,vertical,horizontal}
@@ -3073,7 +3077,7 @@
           </div>
         </div>
         <div>
-          <h5>NPM Usage Sample</h5>
+          <h5>NPM Imported Usage Sample</h5>
           <pre class="language-css"><code>
             @import "open-props/masks/edges";
             @import "open-props/masks/corner-cuts";
@@ -3090,7 +3094,12 @@
       </div>
     
       <div class="just-for-gap">
-        <h3>Mask Edges</h3>
+        <header>
+          <h3>Mask Edges</h3>
+          <pre class="language-css"><code>
+            @import "https://unpkg.com/open-props/masks.edges.min.css";
+          </code></pre>
+        </header>
 
         <h5>Scoops</h5>
         <article class="border-demos mask-demos">
@@ -3135,7 +3144,12 @@
       </div>
     
       <div class="just-for-gap">
-        <h3>Mask Corner Cuts</h3>
+        <header>
+          <h3>Mask Corner Cuts</h3>
+          <pre class="language-css"><code>
+            @import "https://unpkg.com/open-props/masks.corner-cuts.min.css";
+          </code></pre>
+        </header>
 
         <h5>Circles</h5>
         <article class="border-demos mask-demos">
