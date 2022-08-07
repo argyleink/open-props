@@ -292,6 +292,10 @@ blockquote {
         --_ink: var(--indigo-9);
       }
     }
+
+    &.jagged {
+      -webkit-mask: var(--mask-edge-zig-zag-right);
+    }
   }
 }
 
@@ -1105,6 +1109,7 @@ pre[class*="language-"] {
   & > div {
     border-width: 0px;
     background: var(--brand-bg-gradient) fixed;
+    text-shadow: 0 1px 0 #000a;
   }
 }
 

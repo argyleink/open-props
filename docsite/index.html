@@ -3048,9 +3048,9 @@
       <header>
         <h2>Masks</h2>
         <div class="block-wrap">
-          <p>Rad edges and corner-cuts ready to go. A huge shout out to <a href="https://twitter.com/ChallengesCss">Temani Afif</a> and <a href="https://github.com/argyleink/open-props/discussions/71">their amazing mask work</a>. Be sure to check out their <a href="https://css-generators.com/">CSS Generators</a> too.</p>
+          <p>Rad edges and corner-cuts ready to go. A huge shout out to <a href="https://twitter.com/ChallengesCss">Temani Afif</a> and <a href="https://github.com/argyleink/open-props/discussions/71">their amazing mask work</a>. Be sure to check out their <a href="https://css-generators.com/">CSS Generators</a> too; customize the size and distribution of these masks.</p>
 
-          <blockquote class="icon-quote indigo">
+          <blockquote class="icon-quote jagged">
             <svg viewBox="0 0 24 24">
               <path
                 d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -3060,22 +3060,6 @@
         </div>
       </header>
       <div class="block-wrap">
-        <div>
-    
-          <h5>Vars Sample</h5>
-          <div class="var-examples">
-            <pre class="language-css"><code>
-              --mask-corner-cut-circles-{1-3}
-              --mask-corner-cut-squares-{1-3}
-              --mask-corner-cut-angles-{1-3}
-
-              --mask-edge-scoop-{top,right,bottom,left,vertical,horizontal}
-              --mask-edge-scalloped-{edges,top,right,bottom,left,vertical,horizontal}
-              --mask-edge-drip-{top,right,bottom,left,vertical,horizontal}
-              --mask-edge-zig-zag-{top,right,bottom,left,vertical,horizontal}
-            </code></pre>
-          </div>
-        </div>
         <div>
           <h5>NPM Imported Usage Sample</h5>
           <pre class="language-css"><code>
@@ -3097,6 +3081,12 @@
         <header>
           <h3>Mask Edges</h3>
           <pre class="language-css"><code>
+            /* NPM */
+            @import "open-props/masks/edges";
+            @import "open-props/src/props.masks.edges.css";
+            @import "open-props/masks.edges.min.css";
+
+            /* CDN */
             @import "https://unpkg.com/open-props/masks.edges.min.css";
           </code></pre>
         </header>
@@ -3110,6 +3100,15 @@
           <div style="-webkit-mask: var(--mask-edge-scoop-vertical)">Vertical</div>
           <div style="-webkit-mask: var(--mask-edge-scoop-horizontal)">Horizontal</div>
         </article>
+        <pre class="language-css"><code>
+          --mask-edge-scoop-{top,right,bottom,left,vertical,horizontal}
+
+          .mask-usage {
+            -webkit-mask: var(--mask-edge-scoop-top);
+          }
+        </code></pre>
+
+        <br>
 
         <h5>Scalloped</h5>
         <article class="border-demos mask-demos">
@@ -3121,6 +3120,15 @@
           <div style="-webkit-mask: var(--mask-edge-scalloped-horizontal)">Horizontal</div>
           <div style="-webkit-mask: var(--mask-edge-scalloped)">All</div>
         </article>
+        <pre class="language-css"><code>
+          --mask-edge-scalloped-{edges,top,right,bottom,left,vertical,horizontal}
+
+          .mask-usage {
+            -webkit-mask: var(--mask-edge-scalloped-edges);
+          }
+        </code></pre>
+
+        <br>
 
         <h5>Drips</h5>
         <article class="border-demos mask-demos">
@@ -3131,8 +3139,17 @@
           <div style="-webkit-mask: var(--mask-edge-drip-vertical)">Vertical</div>
           <div style="-webkit-mask: var(--mask-edge-drip-horizontal)">Horizontal</div>
         </article>
+        <pre class="language-css"><code>
+          --mask-edge-drip-{top,right,bottom,left,vertical,horizontal}
 
-        <h5>Zig-Zag</h5>
+          .mask-usage {
+            -webkit-mask: var(--mask-edge-drip-bottom);
+          }
+        </code></pre>
+
+        <br>
+
+        <h5>Zig-Zag</h5>          
         <article class="border-demos mask-demos">
           <div style="-webkit-mask: var(--mask-edge-zig-zag-top)">Top</div>
           <div style="-webkit-mask: var(--mask-edge-zig-zag-right)">Right</div>
@@ -3141,36 +3158,78 @@
           <div style="-webkit-mask: var(--mask-edge-zig-zag-vertical)">Vertical</div>
           <div style="-webkit-mask: var(--mask-edge-zig-zag-horizontal)">Horizontal</div>
         </article>
+        <pre class="language-css"><code>
+          --mask-edge-zig-zag-{top,right,bottom,left,vertical,horizontal}
+
+          .mask-usage {
+            -webkit-mask: var(--mask-edge-zig-zag-bottom);
+          }
+        </code></pre>
       </div>
     
       <div class="just-for-gap">
         <header>
           <h3>Mask Corner Cuts</h3>
           <pre class="language-css"><code>
+            /* NPM */
+            @import "open-props/masks/corner-cuts";
+            @import "open-props/src/props.masks.corner-cuts.css";
+            @import "open-props/masks.corner-cuts.min.css";
+
+            /* CDN */
             @import "https://unpkg.com/open-props/masks.corner-cuts.min.css";
           </code></pre>
         </header>
 
         <h5>Circles</h5>
-        <article class="border-demos mask-demos">
-          <div style="-webkit-mask: var(--mask-corner-cut-circles-1)">1</div>
-          <div style="-webkit-mask: var(--mask-corner-cut-circles-2)">2</div>
-          <div style="-webkit-mask: var(--mask-corner-cut-circles-3)">3</div>
-        </article>
+        <div class="block-wrap">
+          <article class="border-demos mask-demos">
+            <div style="-webkit-mask: var(--mask-corner-cut-circles-1)">1</div>
+            <div style="-webkit-mask: var(--mask-corner-cut-circles-2)">2</div>
+            <div style="-webkit-mask: var(--mask-corner-cut-circles-3)">3</div>
+          </article>
+          <pre class="language-css"><code>
+            --mask-corner-cut-circles-{1,2,3}
+  
+            .mask-usage {
+              -webkit-mask: var(--mask-corner-cut-circles-2);
+            }
+          </code></pre>
+        </div>
+
+        <br>
 
         <h5>Squares</h5>
-        <article class="border-demos mask-demos">
-          <div style="-webkit-mask: var(--mask-corner-cut-squares-1)">1</div>
-          <div style="-webkit-mask: var(--mask-corner-cut-squares-2)">2</div>
-          <div style="-webkit-mask: var(--mask-corner-cut-squares-3)">3</div>
-        </article>
+        <div class="block-wrap">
+          <article class="border-demos mask-demos">
+            <div style="-webkit-mask: var(--mask-corner-cut-squares-1)">1</div>
+            <div style="-webkit-mask: var(--mask-corner-cut-squares-2)">2</div>
+            <div style="-webkit-mask: var(--mask-corner-cut-squares-3)">3</div>
+          </article>
+          <pre class="language-css"><code>
+            --mask-corner-cut-squares-{1,2,3}
+  
+            .mask-usage {
+              -webkit-mask: var(--mask-corner-cut-squares-2);
+            }
+          </code></pre>
+        </div>
 
         <h5>Angles</h5>
-        <article class="border-demos mask-demos">
-          <div style="-webkit-mask: var(--mask-corner-cut-angles-1)">1</div>
-          <div style="-webkit-mask: var(--mask-corner-cut-angles-2)">2</div>
-          <div style="-webkit-mask: var(--mask-corner-cut-angles-3)">3</div>
-        </article>
+        <div class="block-wrap">
+          <article class="border-demos mask-demos">
+            <div style="-webkit-mask: var(--mask-corner-cut-angles-1)">1</div>
+            <div style="-webkit-mask: var(--mask-corner-cut-angles-2)">2</div>
+            <div style="-webkit-mask: var(--mask-corner-cut-angles-3)">3</div>
+          </article>
+          <pre class="language-css"><code>
+            --mask-corner-cut-angles-{1,2,3}
+  
+            .mask-usage {
+              -webkit-mask: var(--mask-corner-cut-angles-2);
+            }
+          </code></pre>
+        </div>
       </div>
     </section>
 
