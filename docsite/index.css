@@ -1107,6 +1107,7 @@ pre[class*="language-"] {
 
 .mask-demos {
   & > div {
+    min-inline-size: var(--size-fluid-8);
     border-width: 0px;
     background: var(--brand-bg-gradient) fixed;
     text-shadow: 0 1px 0 #000a;
