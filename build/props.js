@@ -71,10 +71,10 @@ const individual_colors_hsl = {
   [`${pfx}props.orange-hsl.css`]: ColorsHSL.Orange,
 }
 
-const individuals = {
-  'props.masks.edges.css': MaskEdges,
-  'props.masks.corner-cuts.css': MaskCornerCuts,
-}
+// const individuals = {
+//   'props.masks.edges.css': MaskEdges,
+//   'props.masks.corner-cuts.css': MaskCornerCuts,
+// }
 
 // gen design tokens
 const jsonbundle = Object.entries({
@@ -105,7 +105,7 @@ Object.entries({
   ...mainbundle, 
   ...individual_colors, 
   ...individual_colors_hsl,
-  ...individuals,
+  // ...individuals,
 }).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props}, {selector, prefix})
 })
