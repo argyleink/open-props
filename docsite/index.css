@@ -1,6 +1,8 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
 @import "../src/props.gray-hsl.css";
+@import "../src/props.masks.edges.css";
+@import "../src/props.masks.corner-cuts.css";
 
 @import "./syntax-highlight.css";
 
@@ -289,6 +291,10 @@ blockquote {
         --_bg: var(--indigo-0);
         --_ink: var(--indigo-9);
       }
+    }
+
+    &.jagged {
+      -webkit-mask: var(--mask-edge-zig-zag-right);
     }
   }
 }
@@ -1096,6 +1102,15 @@ pre[class*="language-"] {
     border: none;
     background: var(--brand-bg-gradient) fixed;
     color: var(--surface-1);
+  }
+}
+
+.mask-demos {
+  & > div {
+    min-inline-size: var(--size-fluid-8);
+    border-width: 0px;
+    background: var(--brand-bg-gradient) fixed;
+    text-shadow: 0 1px 0 #000a;
   }
 }
 

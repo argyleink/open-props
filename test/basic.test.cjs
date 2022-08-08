@@ -4,7 +4,7 @@ const OpenProps = require('../dist/open-props.cjs')
 const OPtokens = require('../open-props.tokens.json')
 
 test('Should have an all included import', t => {
-  t.is(Object.keys(OpenProps).length, 1018)
+  t.is(Object.keys(OpenProps).length, 1086)
 })
 
 test('Import should have animations', async t => {
@@ -32,8 +32,17 @@ test('JSON Import should have types', async t => {
   t.assert(OPtokens['--gray-0'].type, 'color')
 })
 
+test('Should produce a props bundle', async t => {
+  t.assert(fs.existsSync('./open-props.min.css'))
+})
+
 test('Should produce shadow :host props', async t => {
-  t.assert(fs.existsSync('./src/shadow.index.css'))
-  t.assert(fs.existsSync('./src/shadow.props.easing.css'))
-  t.assert(fs.existsSync('./src/shadow.props.shadows.css'))
+  t.assert(fs.existsSync('./open-props.shadow.min.css'))
+  t.assert(fs.existsSync('./easings.shadow.min.css'))
+  t.assert(fs.existsSync('./shadows.shadow.min.css'))
+})
+
+test('Should produce optional mask props', async t => {
+  t.assert(fs.existsSync('./masks.edges.min.css'))
+  t.assert(fs.existsSync('./masks.corner-cuts.min.css'))
 })
