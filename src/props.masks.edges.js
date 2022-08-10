@@ -12,28 +12,28 @@ export default {
     linear-gradient(#000 0 0) 50%/calc(100% - 20px) calc(100% - 20px) no-repeat
   `,
   '--mask-edge-scalloped-bottom': `
-    linear-gradient(#000 0 0) top / 100% calc(100% - 20px) no-repeat,
-    radial-gradient(circle farthest-side at top,#000 97%,#0000) bottom/calc(1.9 * 20px) 20px repeat-x
+    linear-gradient(to top,#0000 20px,#000 0),
+    radial-gradient(20px at top,#000 97%,#0000) bottom / calc(1.9 * 20px) 20px
   `,
   '--mask-edge-scalloped-top': `
-    linear-gradient(#000 0 0) bottom/100% calc(100% - 20px) no-repeat,
-    radial-gradient(circle farthest-side at bottom,#000 97%,#0000) top / calc(1.9 * 20px) 20px repeat-x
+    linear-gradient(to bottom,#0000 20px,#000 0),
+    radial-gradient(20px at bottom,#000 97%,#0000) top / calc(1.9 * 20px) 20px
   `,
   '--mask-edge-scalloped-vertical': `
-    linear-gradient(#000 0 0) 50% / 100% calc(100% - 2 * 20px) no-repeat,
-    radial-gradient(circle farthest-side,#000 97%,#0000) 50% / calc(1.9 * 20px) calc(2 * 20px) repeat space
+    linear-gradient(0deg,#0000 calc(2 * 20px),#000 0) 0 20px,
+    radial-gradient(20px,#000 97%,#0000) 50% / calc(1.9 * 20px) calc(2 * 20px) repeat space
   `,
   '--mask-edge-scalloped-left': `
-    linear-gradient(#000 0 0) right / calc(100% - 20px) 100% no-repeat,
-    radial-gradient(circle farthest-side at right,#000 97%,#0000) left / 20px calc(1.9 * 20px) repeat-y
+    linear-gradient(to right,#0000 20px,#000 0),
+    radial-gradient(20px at right,#000 97%,#0000) left / 20px calc(1.9 * 20px)
   `,
   '--mask-edge-scalloped-right': `
-    linear-gradient(#000 0 0) left / calc(100% - 20px) 100% no-repeat,
-    radial-gradient(circle farthest-side at left,#000 97%,#0000) right / 20px calc(1.9 * 20px) repeat-y
+    linear-gradient(to left,#0000 20px,#000 0),
+    radial-gradient(20px at left,#000 97%,#0000) right / 20px calc(1.9 * 20px)
   `,
   '--mask-edge-scalloped-horizontal': `
-    linear-gradient(#000 0 0) 50% / calc(100% - 2 * 20px) 100% no-repeat,
-    radial-gradient(circle farthest-side,#000 97%,#0000) 50% / calc(2 * 20px) calc(1.9 * 20px) space repeat
+    linear-gradient(-90deg,#0000 calc(2 * 20px),#000 0) 20px,
+    radial-gradient(20px,#000 97%,#0000) 50% / calc(2 * 20px) calc(1.9 * 20px) space repeat
   `,
   '--mask-edge-drip-bottom': `
     radial-gradient(20px at bottom,#0000 97%,#000) 50% calc(100% - 20px) / calc(2 * 20px) 100% repeat-x,
