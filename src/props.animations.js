@@ -4,10 +4,24 @@ export default {
 @keyframes fade-in {
   to { opacity: 1 }
 }`,
+  "--animation-fade-in-bloom": "fade-in-bloom 2s var(--ease-3)",
+  "--animation-fade-in-bloom-@": `
+@keyframes fade-in-bloom {
+  0% { opacity: 0; filter: brightness(1) blur(20px) }
+ 10% { opacity: 1; filter: brightness(2) blur(10px) }
+100% { opacity: 1; filter: brightness(1) blur(0) }
+}`,
   "--animation-fade-out": "fade-out .5s var(--ease-3)",
   "--animation-fade-out-@": `
 @keyframes fade-out {
   to { opacity: 0 }
+}`,
+  "--animation-fade-out-bloom": "fade-out-bloom 2s var(--ease-3)",
+  "--animation-fade-out-bloom-@": `
+@keyframes fade-out-bloom {
+100% { opacity: 0; filter: brightness(1) blur(20px) }
+ 10% { opacity: 1; filter: brightness(2) blur(10px) }
+  0% { opacity: 1; filter: brightness(1) blur(0) }
 }`,
   "--animation-scale-up": "scale-up .5s var(--ease-3)", 
   "--animation-scale-up-@": `
