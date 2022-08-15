@@ -1550,3 +1550,14 @@ input[type="range"] {
     position: relative;
   }
 }
+
+.learn-with-jason {
+  display: grid;
+  gap: var(--size-3);
+
+  & > iframe {
+    max-inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--ratio-widescreen);
+  }
+}
