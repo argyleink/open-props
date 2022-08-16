@@ -1,3 +1,5 @@
+@import 'props.media.css';
+
 :where(html) {
   --animation-fade-in: fade-in .5s var(--ease-3);
   --animation-fade-in-bloom: fade-in-bloom 2s var(--ease-3);
@@ -110,4 +112,18 @@
 }
 @keyframes pulse {
   50% { transform: scale(.9,.9) }
+}
+@media (--OSdark) {
+  @keyframes fade-in-bloom {
+    0% { opacity: 0; filter: brightness(1) blur(20px) }
+   10% { opacity: 1; filter: brightness(0.5) blur(10px) }
+  100% { opacity: 1; filter: brightness(1) blur(0) }
+  };
+}
+@media (--OSdark) {
+  @keyframes fade-out-bloom {
+  100% { opacity: 0; filter: brightness(1) blur(20px) }
+   10% { opacity: 1; filter: brightness(0.5) blur(10px) }
+    0% { opacity: 1; filter: brightness(1) blur(0) }
+  };
 }
