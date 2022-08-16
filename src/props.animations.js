@@ -11,6 +11,12 @@ export default {
  10% { opacity: 1; filter: brightness(2) blur(10px) }
 100% { opacity: 1; filter: brightness(1) blur(0) }
 }`,
+  "--animation-fade-in-bloom-@media:dark": `
+@keyframes fade-in-bloom {
+  0% { opacity: 0; filter: brightness(1) blur(20px) }
+ 10% { opacity: 1; filter: brightness(0.5) blur(10px) }
+100% { opacity: 1; filter: brightness(1) blur(0) }
+}`,
   "--animation-fade-out": "fade-out .5s var(--ease-3)",
   "--animation-fade-out-@": `
 @keyframes fade-out {
@@ -21,6 +27,12 @@ export default {
 @keyframes fade-out-bloom {
 100% { opacity: 0; filter: brightness(1) blur(20px) }
  10% { opacity: 1; filter: brightness(2) blur(10px) }
+  0% { opacity: 1; filter: brightness(1) blur(0) }
+}`,
+  "--animation-fade-out-bloom-@media:dark": `
+@keyframes fade-out-bloom {
+100% { opacity: 0; filter: brightness(1) blur(20px) }
+ 10% { opacity: 1; filter: brightness(0.5) blur(10px) }
   0% { opacity: 1; filter: brightness(1) blur(0) }
 }`,
   "--animation-scale-up": "scale-up .5s var(--ease-3)", 
