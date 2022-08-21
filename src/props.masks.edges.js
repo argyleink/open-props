@@ -3,10 +3,10 @@
 export default {
   '--mask-edge-scoop-bottom': 'radial-gradient(20px at 50% 100%,#0000 97%,#000) 50% / calc(1.9 * 20px) 100%',
   '--mask-edge-scoop-top': 'radial-gradient(20px at 50% 0,#0000 97%,#000) 50% / calc(1.9 * 20px) 100%',
-  '--mask-edge-scoop-vertical': 'radial-gradient(20px at 50% 20px,#0000 97%,#000) 50% calc(50% - 20px)/ calc(1.9 * 20px) 100%',
+  '--mask-edge-scoop-vertical': 'radial-gradient(20px at 50% 20px,#0000 97%,#000) 50% -20px/ calc(1.9 * 20px) 100%',
   '--mask-edge-scoop-left': 'radial-gradient(20px at 0 50%,#0000 97%,#000) 50%/ 100% calc(1.9 * 20px)',
   '--mask-edge-scoop-right': 'radial-gradient(20px at 100% 50%,#0000 97%,#000) 50%/ 100% calc(1.9 * 20px)',
-  '--mask-edge-scoop-horizontal': 'radial-gradient(20px at 20px 50%,#0000 97%,#000) calc(50% - 20px)/ 100% calc(1.9 * 20px)',
+  '--mask-edge-scoop-horizontal': 'radial-gradient(20px at 20px 50%,#0000 97%,#000) -20px/ 100% calc(1.9 * 20px)',
   '--mask-edge-scalloped': `
     radial-gradient(farthest-side,#000 97%,#0000) 0 0 / 20px 20px round,
     linear-gradient(#000 0 0) 50%/calc(100% - 20px) calc(100% - 20px) no-repeat
