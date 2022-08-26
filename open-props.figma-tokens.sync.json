@@ -1155,6 +1155,86 @@
           "type": "color"
         }
       }
+    },
+    "fontFamilies": {
+      "irish-grover": {
+        "value": "Irish Grover",
+        "type": "fontFamilies"
+      }
+    },
+    "lineHeights": {
+      "0": {
+        "value": "120%",
+        "type": "lineHeights"
+      }
+    },
+    "fontWeights": {
+      "irish-grover-0": {
+        "value": "Regular",
+        "type": "fontWeights"
+      }
+    },
+    "fontSize": {
+      "0": {
+        "value": "48",
+        "type": "fontSizes"
+      }
+    },
+    "letterSpacing": {
+      "0": {
+        "value": "0%",
+        "type": "letterSpacing"
+      }
+    },
+    "paragraphSpacing": {
+      "0": {
+        "value": "0",
+        "type": "paragraphSpacing"
+      }
+    },
+    "Heading 1": {
+      "value": {
+        "fontFamily": "{fontFamilies.irish-grover}",
+        "fontWeight": "{fontWeights.irish-grover-0}",
+        "lineHeight": "{lineHeights.0}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography"
+    },
+    "Heading 2": {
+      "value": {
+        "fontFamily": "{fontFamilies.irish-grover}",
+        "fontWeight": "{fontWeights.irish-grover-0}",
+        "lineHeight": "{lineHeights.0}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography"
+    },
+    "textCase": {
+      "none": {
+        "value": "none",
+        "type": "textCase"
+      }
+    },
+    "textDecoration": {
+      "none": {
+        "value": "none",
+        "type": "textDecoration"
+      }
     }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "open-props"
+    ]
   }
 }
