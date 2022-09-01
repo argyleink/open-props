@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "astro": "^1.1.3"
+  },
+  "devDependencies": {
+    "postcss-preset-env": "^7.8.0"
   }
 }
