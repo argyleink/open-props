@@ -1,0 +1,81 @@
+.demoGallery {
+  composes: block-wrap from global;
+}
+
+.demoGallery > * {
+  flex-basis: var(--size-content-2);
+}
+
+.demoGallery figure {
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  box-shadow: var(--shadow-4);
+  gap: 0;
+}
+
+.demoGallery figure > figcaption {
+  display: grid;
+  grid: [stack] 1fr / [stack] 1fr;
+  position: relative;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  
+  & > * {
+    grid-area: stack;
+  }
+  
+  & > img {
+    position: absolute;
+    inset: 0;
+    transform: scaleY(-1);
+  }
+  
+  & > div {
+    z-index: 1;
+    padding-inline: var(--size-3);
+    padding-block: var(--size-3) var(--size-4);
+    display: grid;
+    gap: var(--size-1);
+    
+    @nest [data-theme="dark"] & {
+      text-shadow: 0 1px 0 hsl(0 0% 0% / 20%);
+    }
+  }
+
+  & h3 {
+    color: var(--gray-1);
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+
+    @nest [data-theme="light"] & {
+      color: var(--gray-8);
+    }
+
+    & > a {
+      color: inherit;
+    }
+  }
+
+  & p {
+    color: var(--gray-2);
+
+    @nest [data-theme="light"] & {
+      color: var(--gray-7);
+    }
+  }
+}
+
+.adaptiveGlass {
+  --glass-lightness: 100%;
+  background: hsl(0 0% var(--glass-lightness) / 50%);
+  backdrop-filter: blur(40px);
+  
+  @nest [data-theme="dark"] & {
+    --glass-lightness: 0%;
+  }
+  
+  @supports not (backdrop-filter: blur(1px)) {
+    background: hsl(0 0% var(--glass-lightness) / 90%);
+  }
+}
