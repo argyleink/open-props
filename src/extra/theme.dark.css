@@ -1,3 +1,5 @@
+@import "../props.media.css";
+
 @media (--OSdark) {
   :where(html) {
     color-scheme: dark;
