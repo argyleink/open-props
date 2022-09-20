@@ -42,8 +42,9 @@
     "./style": "./open-props.min.css",
     "./postcss/style": "./src/index.css",
     "./normalize": "./normalize.min.css",
-    "./buttons": "./buttons.min.css",
     "./postcss/normalize": "./src/extra/normalize.css",
+    "./buttons": "./buttons.min.css",
+    "./postcss/buttons": "./src/extra/buttons.css",
     "./animations": "./animations.min.css",
     "./aspects": "./aspects.min.css",
     "./blue": "./blue.min.css",
@@ -126,7 +127,12 @@
     "./shadow/zindex": "./zindex.shadow.min.css",
     "./json": "./open-props.tokens.json",
     "./tokens": "./open-props.tokens.json",
-    "./design-tokens": "./open-props.tokens.json"
+    "./design-tokens": "./open-props.tokens.json",
+    "./postcss/brand": "./src/extra/brand.css",
+    "./postcss/theme": "./src/extra/theme.css",
+    "./postcss/theme-dark": "./src/extra/theme-dark.css",
+    "./postcss/theme-light": "./src/extra/theme-light.css",
+    "./utilities": "./src/extra/utilities.css"
   },
   "browserslist": [
     "defaults"
