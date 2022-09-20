@@ -1392,8 +1392,6 @@ input[type="range"] {
 [data-theme="light"] {
   color-scheme: light;
 
-  --brand: var(--pink-6);
-
   --link: var(--indigo-7);
   --link-visited: var(--grape-7);
 
@@ -1419,8 +1417,6 @@ input[type="range"] {
 
 [data-theme="dark"] {
   color-scheme: dark;
-
-  --brand: var(--pink-4);
 
   --link: var(--indigo-3);
   --link-visited: var(--grape-3);
