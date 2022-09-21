@@ -1,3 +1,5 @@
+@import "../props.media.css";
+
 :where(html) {
   color-scheme: light;
 
@@ -11,6 +13,8 @@
   --surface-2: var(--gray-2);
   --surface-3: var(--gray-3);
   --surface-4: var(--gray-4);
+
+  --scrollthumb-color: var(--gray-7);
 
   @media (--HDcolor) {
     @supports (color(display-p3 0 .5 1)) {
