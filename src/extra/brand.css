@@ -10,4 +10,8 @@
   @media (--OSlight) {
     --scrollthumb-color: var(--gray-7);
   }
+
+  [data-theme=light] {
+    --scrollthumb-color: var(--gray-7);
+  }
 }

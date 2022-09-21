@@ -6,42 +6,42 @@
   --_accent: initial /* your color */;
   --_text: initial /* your text color */;
   --_size: initial /* your size */;
-  
+
   --_bg-light: white;
   --_bg-dark: var(--surface-3);
   --_bg: var(--_bg-light);
-  
+
   --_border: var(--surface-3);
-  
+
   --_highlight-size: 0;
   --_highlight-light: hsl(210 10% 71% / 25%);
   --_highlight-dark: hsl(210 10% 5% / 25%);
   --_highlight: var(--_highlight-light);
-  
+
   --_ink-shadow-light: 0 1px 0 var(--gray-3);
   --_ink-shadow-dark: 0 1px 0 var(--surface-1);
   --_ink-shadow: var(--_ink-shadow-light);
-  
+
   --_icon-size: 2ch;
   --_icon-color: var(--_accent, var(--link));
-  
+
   font-size: var(--_size);
   background: var(--_bg);
   color: var(--_text);
   border: var(--border-size-2) solid var(--_border);
-  box-shadow: 
+  box-shadow:
     var(--shadow-2),
     0 1px var(--surface-3),
     0 0 0 var(--_highlight-size) var(--_highlight)
   ;
   text-shadow: var(--_ink-shadow);
-  
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: var(--size-2);
-  
+
   font-weight: var(--font-weight-7);
   border-radius: var(--radius-2);
   padding-block: .75ch;
@@ -50,7 +50,7 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  
+
   transition: border-color .5s var(--ease-3) 3s;
 
   @media (--OSdark) {
@@ -59,8 +59,14 @@
     --_ink-shadow: var(--_ink-shadow-dark);
   }
 
+  [data-theme=dark] {
+    --_highlight: var(--_highlight-dark);
+    --_bg: var(--_bg-dark);
+    --_ink-shadow: var(--_ink-shadow-dark);
+  }
+
   @media (--motionOK) {
-    transition: 
+    transition:
       border-color .5s var(--ease-3) 3s,
       box-shadow 145ms var(--ease-4);
   }
@@ -75,6 +81,10 @@
     box-shadow: var(--shadow-1);
 
     @media (--OSdark) {
+      --_text: var(--gray-5);
+    }
+
+    [data-theme=dark] {
       --_text: var(--gray-5);
     }
   }
@@ -103,7 +113,7 @@
 /* adaptive indigo text */
 :where([type="submit"], form button:not([type],[disabled])) {
   --_text: var(--_accent, var(--link));
-} 
+}
 
 /* red reset */
 :where([type="reset"]) {
@@ -115,6 +125,11 @@
   }
 
   @media (--OSdark) {
+    --_text: var(--red-2);
+    --_border: var(--surface-3);
+  }
+
+  [data-theme=dark] {
     --_text: var(--red-2);
     --_border: var(--surface-3);
   }
@@ -132,7 +147,7 @@
   cursor: initial;
   align-self: flex-start;
   border-radius: var(--radius-2);
-  border: var(--border-size-1) solid var(--surface-2); 
+  border: var(--border-size-1) solid var(--surface-2);
   box-shadow: var(--inner-shadow-4);
   color: var(--text-2);
 }
@@ -147,7 +162,16 @@
 @media (--OSdark) {
   :where([type="submit"]),
   :where(form button:not([type="button"])),
-  :where([type="reset"]), 
+  :where([type="reset"]),
+  :where([disabled]) {
+    --_bg: var(--surface-1);
+  }
+}
+
+[data-theme=dark] {
+  :where([type="submit"]),
+  :where(form button:not([type="button"])),
+  :where([type="reset"]),
   :where([disabled]) {
     --_bg: var(--surface-1);
   }
