@@ -59,6 +59,12 @@
     --_ink-shadow: var(--_ink-shadow-dark);
   }
 
+  [data-theme=dark] {
+    --_highlight: var(--_highlight-dark);
+    --_bg: var(--_bg-dark);
+    --_ink-shadow: var(--_ink-shadow-dark);
+  }
+
   @media (--motionOK) {
     transition: 
       border-color .5s var(--ease-3) 3s,
@@ -75,6 +81,10 @@
     box-shadow: var(--shadow-1);
 
     @media (--OSdark) {
+      --_text: var(--gray-5);
+    }
+
+    [data-theme=dark] {
       --_text: var(--gray-5);
     }
   }
@@ -118,6 +128,11 @@
     --_text: var(--red-2);
     --_border: var(--surface-3);
   }
+
+  [data-theme=dark] {
+    --_text: var(--red-2);
+    --_border: var(--surface-3);
+  }
 }
 
 /* submit, form > button, reset matching hover border color */
@@ -152,3 +167,11 @@
     --_bg: var(--surface-1);
   }
 }
+
+[data-theme=dark] {
+  :where([type="submit"]),
+  :where(form button:not([type="button"])),
+  :where([type="reset"]),
+  :where([disabled]) {
+    --_bg: var(--surface-1);
+  }

@@ -48,3 +48,10 @@
     --shadow-strength: 25%;
   }
 }
+
+[data-theme=dark] {
+  :where(html) {
+    --shadow-color: 220 40% 2%;
+    --shadow-strength: 25%;
+  }
+}

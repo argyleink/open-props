@@ -19,3 +19,25 @@
     }
   }
 }
+
+[data-theme=light] {
+  color-scheme: light;
+
+  --link: var(--indigo-7);
+  --link-visited: var(--grape-7);
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+
+  @media (--HDcolor) {
+    @supports (color(display-p3 0 .5 1)) {
+      --link: color(display-p3 0 .5 1);
+      --link-visited: color(display-p3 .6 .2 1);
+    }
+  }
+}

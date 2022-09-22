@@ -135,6 +135,10 @@
   @media (--OSdark) {
     background-color: hsl(210deg 11% 10%);
   }
+
+  @nest [data-theme=dark] {
+    background-color: hsl(210deg 11% 10%);
+  }
 }
 
 :where(textarea) { resize: block }
@@ -280,6 +284,10 @@
   box-shadow: var(--shadow-6);
 
   @media (--OSdark) {
+    background-color: var(--surface-2);
+  }
+
+  @nest [data-theme=dark] & {
     background-color: var(--surface-2);
   }
 

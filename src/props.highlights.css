@@ -11,4 +11,8 @@
   @media (--OSdark) {
     --highlight-color: hsl(0 0% 100% / 20%);
   }
+
+  [data-theme=dark] {
+    --highlight-color: hsl(0 0% 100% / 20%);
+  }
 }
