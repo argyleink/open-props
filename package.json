@@ -229,12 +229,14 @@
     "shadow:colors:yellow": "postcss src/shadow.props.yellow.css -o yellow.shadow.min.css",
     "shadow:colors:yellow-hsl": "postcss src/shadow.props.yellow-hsl.css -o yellow-hsl.shadow.min.css",
     "shadow:colors:orange": "postcss src/shadow.props.orange.css -o orange.shadow.min.css",
-    "shadow:colors:orange-hsl": "postcss src/shadow.props.orange-hsl.css -o orange-hsl.shadow.min.css"
+    "shadow:colors:orange-hsl": "postcss src/shadow.props.orange-hsl.css -o orange-hsl.shadow.min.css",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "ava": "^3.15.0",
     "concurrently": "^7.2.2",
     "cssnano": "^5.1.10",
+    "husky": "^8.0.0",
     "json": "^11.0.0",
     "microbundle": "^0.13.3",
     "open-color": "^1.9.1",
@@ -242,6 +244,8 @@
     "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x"
+    "postcss-preset-env": "6.7.x",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3"
   }
 }
