@@ -1,28 +1,24 @@
 // easing controls
 document
-  .querySelectorAll('.animation-control-header > button')
-  .forEach(button => {
-    button.addEventListener('click', e => {
+  .querySelectorAll(".animation-control-header > button")
+  .forEach((button) => {
+    button.addEventListener("click", (e) => {
       e.currentTarget
-        .closest('div')
-        .querySelector('.ease-demo')
-        .classList.toggle('paused')
-    })
-  })
+        .closest("div")
+        .querySelector(".ease-demo")
+        .classList.toggle("paused");
+    });
+  });
 
-export const toggleIcons = button => {
-  button
-    .querySelectorAll('use')
-    .forEach(icon => {
-      icon.classList.toggle('hidden')
-    })
-}
+export const toggleIcons = (button) => {
+  button.querySelectorAll("use").forEach((icon) => {
+    icon.classList.toggle("hidden");
+  });
+};
 
 // play buttons
-document
-  .querySelectorAll('.play-button')
-  .forEach(button => {
-    button.addEventListener('click', e => {
-      toggleIcons(e.currentTarget)
-    })
-  })
+document.querySelectorAll(".play-button").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    toggleIcons(e.currentTarget);
+  });
+});

@@ -7,7 +7,7 @@
 }
 
 code.language-bash::before {
-  content: '$ ';
+  content: "$ ";
   color: var(--cyan-1);
 
   @nest [data-theme="light"] & {
@@ -48,9 +48,7 @@ pre[class*="language-"] {
 
 code.language-css {
   color: var(--indigo-1);
-  text-shadow: 
-    0 0 10px var(--indigo-5),
-    0 0 25px var(--indigo-7);
+  text-shadow: 0 0 10px var(--indigo-5), 0 0 25px var(--indigo-7);
 
   @nest [data-theme="light"] & {
     color: var(--indigo-9);
@@ -80,9 +78,7 @@ code.language-css {
 
   &:is(.string, .attr-value) {
     color: var(--teal-0);
-    text-shadow: 
-      0 0 10px var(--teal-5),
-      0 0 25px var(--teal-7);
+    text-shadow: 0 0 10px var(--teal-5), 0 0 25px var(--teal-7);
 
     @nest [data-theme="light"] & {
       color: var(--grape-9);
@@ -97,7 +93,7 @@ code.language-css {
   &:is(.comment, .punctuation) {
     color: var(--gray-5);
     text-shadow: none;
-    
+
     @nest [data-theme="light"] & {
       color: var(--gray-6);
     }
@@ -107,12 +103,11 @@ code.language-css {
     color: initial;
 
     &::before {
-      content: '→';
+      content: "→";
       opacity: 0;
       position: absolute;
-      inset-inline-start: calc(var(--size-4) / 2 - .5ch);
-      animation: 
-        var(--animation-slide-in-right) forwards,
+      inset-inline-start: calc(var(--size-4) / 2 - 0.5ch);
+      animation: var(--animation-slide-in-right) forwards,
         var(--animation-fade-in) forwards;
     }
   }
