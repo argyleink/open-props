@@ -29,6 +29,9 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
   ${selector} {
 ${dark_propsMeta}
   }
+}
+[data-theme="dark"] ${selector} {
+  ${dark_propsMeta}
 }`
   }
 
