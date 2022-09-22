@@ -136,7 +136,7 @@
     background-color: hsl(210deg 11% 10%);
   }
 
-  @nest [data-theme=dark] & {
+  @nest [data-theme="dark"] & {
     background-color: hsl(210deg 11% 10%);
   }
 }
@@ -287,7 +287,7 @@
     background-color: var(--surface-2);
   }
 
-  @nest [data-theme=dark] & {
+  @nest [data-theme="dark"] & {
     background-color: var(--surface-2);
   }
 

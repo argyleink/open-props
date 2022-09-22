@@ -15,7 +15,7 @@
   }
 }
 
-[data-theme=dark] {
+[data-theme="dark"] {
   color-scheme: dark;
 
     --link: var(--indigo-3);
