@@ -59,7 +59,7 @@
     --_ink-shadow: var(--_ink-shadow-dark);
   }
 
-  [data-theme=dark] {
+  @nest [data-theme=dark] & {
     --_highlight: var(--_highlight-dark);
     --_bg: var(--_bg-dark);
     --_ink-shadow: var(--_ink-shadow-dark);
@@ -169,9 +169,10 @@
 }
 
 [data-theme=dark] {
-  :where([type="submit"]),
-  :where(form button:not([type="button"])),
-  :where([type="reset"]),
-  :where([disabled]) {
+  & :where([type="submit"]),
+  & :where(form button:not([type="button"])),
+  & :where([type="reset"]),
+  & :where([disabled]) {
     --_bg: var(--surface-1);
   }
+}
