@@ -13,4 +13,6 @@
   --surface-4: var(--gray-6);
 
   --scrollthumb-color: var(--gray-6);
+  --shadow-strength: 10%;
+  --shadow-color: 220 40% 2%;
 }

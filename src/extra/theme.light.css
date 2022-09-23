@@ -15,6 +15,8 @@
   --surface-4: var(--gray-4);
 
   --scrollthumb-color: var(--gray-7);
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
 
   @media (--HDcolor) {
     @supports (color(display-p3 0 .5 1)) {
