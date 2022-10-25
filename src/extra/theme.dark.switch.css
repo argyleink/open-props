@@ -1,6 +1,6 @@
 @import "../props.media.css";
 
-[data-theme="dark"] {
+:where([data-theme="dark"]) {
   color-scheme: dark;
 
   --link: var(--indigo-3);
@@ -18,33 +18,33 @@
   --shadow-strength: 10%;
   --shadow-color: 220 40% 2%;
 
-  & dialog {
+  & :where(dialog) {
     background-color: var(--surface-2);
   }
 
-  & button {
+  & :where(button) {
     --_highlight: var(--_highlight-dark);
     --_bg: var(--_bg-dark);
     --_ink-shadow: var(--_ink-shadow-dark);
 
-    &[type="reset"] {
+    &:where([type="reset"]) {
       --_text: var(--red-2);
       --_border: var(--surface-3);
     }
   }
 
-  & :is(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])[disabled] {
+  & :where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])[disabled] {
     --_text: var(--gray-5);
   }
 
-  & :is(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+  & :where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
     background-color: hsl(210deg 11% 10%);
   }
 
-  & [type="submit"],
-  & form button:not([type="button"]),
-  & [type="reset"], 
-  & [disabled] {
+  & :where([type="submit"]),
+  & :where(form button:not([type="button"])),
+  & :where([type="reset"]), 
+  & :where([disabled]) {
     --_bg: var(--surface-1);
   }
 }

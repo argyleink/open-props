@@ -25,26 +25,26 @@
     }
   }
 
-  & dialog {
+  & :where(dialog) {
     background-color: var(--surface-1);
   }
 
-  & button {
+  & :where(button) {
     --_highlight: var(--_highlight-light);
     --_bg: var(--_bg-light);
     --_ink-shadow: var(--_ink-shadow-light);
 
-    &[type="reset"] {
+    &:where([type="reset"]) {
       --_text: var(--red-6);
       --_border: var(--red-3);
     }
   }
 
-  & :is(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])[disabled] {
+  & :where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])[disabled] {
     --_text: var(--gray-6);
   }
 
-  & :is(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+  & :where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
     background-color: var(--surface-2);
   }
 }
