@@ -1,6 +1,10 @@
 @import "../props.media.css";
 
-[data-theme="light"] {
+:where(
+  [data-theme="light"],
+  .light,
+  .light-theme
+) {
   color-scheme: light;
 
   --link: var(--indigo-7);

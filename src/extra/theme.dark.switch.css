@@ -1,6 +1,10 @@
 @import "../props.media.css";
 
-:where([data-theme="dark"]) {
+:where(
+  [data-theme="dark"],
+  .dark,
+  .dark-theme
+) {
   color-scheme: dark;
 
   --link: var(--indigo-3);
