@@ -1,24 +1,21 @@
 @import "../props.media.css";
 @import "theme.light.css";
-@import "theme.dark.css";
 
-:where(html) { 
-  color: var(--text-2);
-  background-color: var(--surface-1);
-}
+@media (--OSdark) {
+  :where(html) {
+    color-scheme: dark;
 
-:where(h1, h2, h3, h4, h5, h6, dt) { 
-  color: var(--text-1);
-}
+    --link: var(--indigo-3);
+    --link-visited: var(--grape-3);
 
-:where(a[href]) {
-  color: var(--link);
-  
-  &:visited {
-    color: var(--link-visited);
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-4);
+
+    --surface-1: var(--gray-9);
+    --surface-2: var(--gray-8);
+    --surface-3: var(--gray-7);
+    --surface-4: var(--gray-6);
+
+    --scrollthumb-color: var(--gray-6);
   }
-}
-
-:focus-visible { 
-  outline-color: var(--link); 
 }

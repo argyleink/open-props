@@ -1,6 +1,10 @@
 @import "../props.media.css";
 
-:where(html) {
+:where(
+  [data-theme="light"],
+  .light,
+  .light-theme
+) {
   color-scheme: light;
 
   --link: var(--indigo-7);
@@ -15,6 +19,8 @@
   --surface-4: var(--gray-4);
 
   --scrollthumb-color: var(--gray-7);
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
 
   @media (--HDcolor) {
     @supports (color(display-p3 0 0 0)) {
@@ -32,7 +38,7 @@
     --_bg: var(--_bg-light);
     --_ink-shadow: var(--_ink-shadow-light);
 
-    & :where([type="reset"]) {
+    &:where([type="reset"]) {
       --_text: var(--red-6);
       --_border: var(--red-3);
     }

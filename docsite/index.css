@@ -1,5 +1,7 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
+@import "../src/extra/theme.light.switch.css";
+@import "../src/extra/theme.dark.switch.css";
 @import "../src/props.gray-hsl.css";
 @import "../src/props.masks.edges.css";
 @import "../src/props.masks.corner-cuts.css";
@@ -1390,54 +1392,13 @@ input[type="range"] {
 
 /* no way out of this duplication afaik */
 [data-theme="light"] {
-  color-scheme: light;
-
-  --brand: var(--pink-6);
-
-  --link: var(--indigo-7);
-  --link-visited: var(--grape-7);
-
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
-
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
-
   --nav-icon: var(--gray-7);
   --nav-icon-hover: var(--gray-9);
-
-  --shadow-color: 220 3% 15%;
-  --shadow-strength: 1%;
-
-  @media (--HDcolor) {
-    --link: color(display-p3 0 .5 1);
-    --link-visited: color(display-p3 .6 .2 1);
-  }
 }
 
 [data-theme="dark"] {
-  color-scheme: dark;
-
-  --brand: var(--pink-4);
-
-  --link: var(--indigo-3);
-  --link-visited: var(--grape-3);
-
-  --text-1: var(--gray-1);
-  --text-2: var(--gray-2);
-
-  --surface-1: var(--gray-9);
-  --surface-2: var(--gray-8);
-  --surface-3: var(--gray-7);
-  --surface-4: var(--gray-6);
-
   --nav-icon: var(--gray-5);
   --nav-icon-hover: var(--gray-2);
-
-  --shadow-strength: 10%;
-  --shadow-color: 220 40% 2%;
 }
 
 .theme-toggle {

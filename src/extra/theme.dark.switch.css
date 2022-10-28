@@ -1,4 +1,10 @@
-:where(html) {
+@import "../props.media.css";
+
+:where(
+  [data-theme="dark"],
+  .dark,
+  .dark-theme
+) {
   color-scheme: dark;
 
   --link: var(--indigo-3);
@@ -13,6 +19,8 @@
   --surface-4: var(--gray-6);
 
   --scrollthumb-color: var(--gray-6);
+  --shadow-strength: 10%;
+  --shadow-color: 220 40% 2%;
 
   & :where(dialog) {
     background-color: var(--surface-2);
