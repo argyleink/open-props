@@ -1,0 +1,23 @@
+---
+import ColorSwatch from '../ColorSwatch/ColorSwatch.astro';
+import styles from './ColorSection.module.css';
+const { color, end } = Astro.props;
+const colorLower = color.toLowerCase();
+const endNumber = parseInt(end, 10);
+let swatches = [];
+let count = 0;
+while(count < endNumber) {
+  swatches = [
+    ...swatches,
+    { color: `--${colorLower}-${count}` }
+  ];
+  count = count + 1;
+}
+---
+
+<div class={styles.openColors}>
+  <h4>{color}</h4>
+  {swatches.map(swatch => 
+    <ColorSwatch color={swatch.color} />
+  )}
+</div>

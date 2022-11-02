@@ -1,0 +1,9 @@
+---
+import styles from './ColorSwatch.module.css';
+const { color } = Astro.props;
+---
+
+<span 
+  class={styles.colorSwatch}
+  style={`background-color: var(${color})`}>
+</span>

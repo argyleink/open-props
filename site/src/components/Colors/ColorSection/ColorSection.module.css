@@ -1,0 +1,14 @@
+.openColors {
+  composes: count-em from global;
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+
+  & > h4 {
+    counter-reset: basic -1;
+  }
+
+  & > h4::before {
+    display: none;
+  }
+}
