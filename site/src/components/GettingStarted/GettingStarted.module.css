@@ -1,0 +1,24 @@
+.installation {
+  display: grid;
+  gap: var(--size-5);
+
+  & h5 {
+    margin-block-start: var(--size-5);
+    border-bottom: var(--border-size-1) solid var(--violet-5);
+
+    @nest [data-theme="light"] & {
+      color: var(--violet-6);
+    }
+  }
+}
+
+.learnWithJason {
+  display: grid;
+  gap: var(--size-3);
+
+  & > iframe {
+    max-inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--ratio-widescreen);
+  }
+}
