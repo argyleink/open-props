@@ -456,7 +456,7 @@ pre[class*="language-"] {
   }
 }
 
-.dogfood {
+/* .dogfood {
   position: relative;
   background-image: var(--gradient-30);
 
@@ -494,7 +494,7 @@ pre[class*="language-"] {
   & h2 {
     -webkit-text-fill-color: initial;
   }
-}
+} */
 
 .easing-samples {
   flex-basis: var(--size-content-3);
