@@ -1,5 +1,5 @@
 ---
-import { Prism } from '@astrojs/prism';
+import Prism from '../Prism.astro';
 import ColorSection from './ColorSection/ColorSection.astro';
 ---
 
@@ -21,19 +21,21 @@ import ColorSection from './ColorSection/ColorSection.astro';
     <div>
       <h5>The Props</h5>
       <div class="var-examples">
-        <Prism lang="css" code={`--gray-{0-9}
---red-{0-9}
---pink-{0-9}
---grape-{0-9}
---violet-{0-9}
---indigo-{0-9}
---blue-{0-9}
---cyan-{0-9}
---teal-{0-9}
---green-{0-9}
---lime-{0-9}
---yellow-{0-9}
---orange-{0-9}`} />
+        <Prism lang="css" code={`
+/** A scale of {0-9} */
+--gray-5;
+--red-5;
+--pink-5;
+--grape-5;
+--violet-5;
+--indigo-5;
+--blue-5;
+--cyan-5;
+--teal-5;
+--green-5;
+--lime-5;
+--yellow-5;
+--orange-5;`} />
       </div>
     </div>
     <div>
@@ -52,13 +54,13 @@ background-color: var(--blue-1);
     <div>
       <h5>Light & Dark Example</h5>
       <Prism lang="css" code={`html {
---text-1: var(--gray-9);
---text-2: var(--gray-7);
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
 
-@media (--OSdark) {
---text-1: var(--gray-1);
---text-2: var(--gray-2);
-}
+  @media (--OSdark) {
+  --text-1: var(--gray-1);
+  --text-2: var(--gray-2);
+  }
 }`} />
     </div>
     <div>
@@ -68,7 +70,7 @@ background-color: var(--blue-1);
 @import "open-props/colors-hsl";
 
 .backdrop {
-background-color: hsl(var(--gray-9-hsl) / 30%);
+  background-color: hsl(var(--gray-9-hsl) / 30%);
 }`} />
     </div>
   </div>
