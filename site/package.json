@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "js-beautify": "^1.14.7",
+    "postcss-custom-media": "^8.0.2",
     "postcss-preset-env": "^7.8.0"
   }
 }
