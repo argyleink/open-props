@@ -1,0 +1,44 @@
+.fontSizes {
+  display: grid;
+  gap: var(--size-3);
+
+  & pre {
+    max-inline-size: var(--max-inline-body);
+  }
+}
+
+.fontDemo {
+  flex-grow: 1;
+  display: grid;
+  gap: var(--size-2);
+  align-content: center;
+  align-self: stretch;
+  text-align: center;
+
+  & > :global(.sample-text) {
+    margin-inline: auto;
+  }
+}
+
+.letterspacingDemo {
+  composes: sample-text from global;
+  inline-size: min(var(--max-inline-body), var(--size-content-2));
+}
+
+.fontSizeExamples {
+  inline-size: max-content;
+  display: grid;
+  gap: var(--size-2);
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  justify-items: flex-start;
+
+  @media (--md-n-below) {
+    grid-template-columns: 1fr;
+    gap: var(--size-1);
+
+    & > code:not(:first-of-type) {
+      margin-block-start: var(--size-3);
+    }
+  }
+}

@@ -1,10 +1,14 @@
 ---
 import { Prism } from '@astrojs/prism';
-const { code, lang } = Astro.props;
+let { code, lang, format } = Astro.props;
 // Note: This is a CJS module
 import formatter from 'js-beautify';
 const beautify = formatter.css;
-const formattedCode = beautify(code, { indent_size: 2 })
+let formattedCode = code;
+format = format != null ? format : true;
+if(format) {
+  formattedCode = beautify(code, { indent_size: 2 })
+}
 ---
 
 <Prism lang={lang} code={formattedCode} />
