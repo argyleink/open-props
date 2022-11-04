@@ -1,0 +1,87 @@
+---
+import styles from './Gradients.module.css';
+import Prism from '../Prism.astro';
+import GradientSection from './GradientSection.astro';
+---
+
+<section id="gradients" class="just-stretch">
+  <header>
+    <h2>Gradients</h2>
+    <p>Open Props includes 30 handcrafted gradients. Linear gradient direction can be changed with a custom property mixin.</p>
+    <p>Don't miss the noise props inspired by <a href="https://grainy-gradients.vercel.app">grainy-gradients</a>.</p>
+  </header>
+
+  <div class="block-wrap">
+    <div>
+      <h5>The Props</h5>
+      <div class="var-examples">
+        <Prism lang="css" code={`
+/* A scale of 1-30 */
+--gradient-1;`} />
+      </div>
+    </div>
+    <div>
+      <h5>Hero Header Sample</h5>
+      <Prism lang="css" code={`header {
+background-image: var(--gradient-5);
+
+@media (--OSdark) {
+background-image: var(--gradient-15);
+}
+}`} />
+    </div>
+    <div>
+      <h5>Gradient Text Sample</h5>
+      <Prism lang="css" code={`.gradient-text {
+background: var(--gradient-1);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}`} />
+    </div>
+  </div>
+  <article class="just-stretch just-for-gap">
+    <h4>Gradients</h4>
+    <div class={styles.normalGradients}>
+      <GradientSection end={30} />
+    </div>
+  </article>
+  <div>
+    <h3>Noise</h3>
+    <div class="block-wrap">
+      <div>
+        <div class="var-examples">
+          <Prism lang="css" code={`
+/** A scale from 1-5 */
+--noise-1;
+--noise-filter-1;`} />
+        </div>
+      </div>
+      <div>
+        <Prism lang="css" code={`.noise-noise-noise {
+/* stack grain with a gradient */
+background-image: var(--gradient-3), var(--noise-3);
+/* force colors and noise to collide */
+filter: var(--noise-filter-3);
+/* fit noise image to element */
+background-size: cover;
+}`} />
+      </div>
+    </div>
+  </div>
+  <article class="just-stretch just-for-gap">
+    <h4>Noisy Examples</h4>
+    <div class={styles.noisyGradients}>
+      <span class={styles.gradientSwatch} style="background-image: var(--gradient-3), var(--noise-5)"></span>
+      <span class={styles.gradientSwatch} style="background-image: linear-gradient(to top, black, #0000), var(--noise-5); filter:var(--noise-filter-2)"></span>
+      <span class={styles.gradientSwatch} style="background-image: radial-gradient(circle at center center, hsl(330deg 100% 71%), hsl(330deg 100% 0% / 50%)), var(--noise-3)"></span>
+      <span class={styles.gradientSwatch} style="background-image: conic-gradient(at 50% -20%,#281316, #4e3beb33), var(--noise-1); filter:var(--noise-filter-4)"></span>
+      <span class={styles.gradientSwatch} style="background-image: var(--gradient-13), var(--noise-5); filter:var(--noise-filter-1)"></span>
+      <span class={styles.gradientSwatch} style="background-color: black; background-image: linear-gradient(to top, white, #fff0), var(--noise-5); filter:var(--noise-filter-2)"></span>
+      <span class={styles.gradientSwatch} style="background-image: var(--gradient-20), var(--noise-5); filter:var(--noise-filter-3)"></span>
+      <span class={styles.gradientSwatch} style="background-image: var(--gradient-23), var(--noise-5); filter:var(--noise-filter-5)"></span>
+      <span class={styles.gradientSwatch} style="background-image: var(--gradient-25), var(--noise-5); filter:var(--noise-filter-2)"></span>
+      <span class={styles.gradientSwatch} style="background-image: var(--gradient-30), var(--noise-3)"></span>
+    </div>
+  </article>
+</section>
+

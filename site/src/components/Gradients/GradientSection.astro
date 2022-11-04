@@ -1,0 +1,21 @@
+---
+import styles from './Gradients.module.css';
+const { end } = Astro.props;
+const endNumber = parseInt(end, 10);
+let swatches = [];
+let count = 1;
+while(count < endNumber) {
+  swatches = [
+    ...swatches,
+    { gradient: `--gradient-${count}` }
+  ];
+  count = count + 1;
+}
+---
+
+{swatches.map(swatch => 
+  <span 
+    class={styles.gradientSwatch} 
+    style={`background-image: var(${swatch.gradient})`}>
+  </span>
+)}
