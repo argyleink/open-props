@@ -352,26 +352,6 @@ pre[class*="language-"] {
   flex-basis: var(--size-content-3);
 }
 
-.aspect-demos {
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--size-4);
-
-  & > div {
-    block-size: var(--size-12);
-    max-inline-size: var(--max-inline-body);
-    border-width: var(--border-size-3);
-    border-color: var(--surface-4);
-    box-shadow: var(--shadow-3);
-    display: grid;
-    place-content: center;
-
-    @nest [data-theme="light"] & {
-      background: white;
-    }
-  }
-}
-
 #about {
   justify-content: center;
 
