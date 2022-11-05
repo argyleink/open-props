@@ -2,6 +2,14 @@
 @import "brand.css";
 @import "normalize.src.css";
 
+:where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+  background-color: hsl(210deg 11% 10%);
+}
+
+:where(dialog) {
+  background-color: var(--surface-2);
+}
+
 :where(html) {
   --shadow-strength: 10%;
   --shadow-color: 220 40% 2%;

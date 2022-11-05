@@ -23,7 +23,7 @@
   --shadow-strength: 1%;
 
   @media (--HDcolor) {
-    @supports (color(display-p3 0 0 0)) {
+    @supports (color: color(display-p3 0 0 0)) {
       --link: color(display-p3 .1 .4 1);
       --link-visited: color(display-p3 .6 .2 1);
     }
