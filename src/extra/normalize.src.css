@@ -189,6 +189,15 @@
 :where(p) { max-inline-size: var(--size-content-3) }
 :where(dt, summary) { font-weight: var(--font-weight-7) }
 
+:where(ul) {
+  list-style: circle;
+
+  & > :where(li:hover),
+  & > :where(li:focus-within) {
+    list-style: disc;
+  }
+}
+
 :where(dt:not(:first-of-type)) {
   margin-block-start: var(--size-5);
 }
