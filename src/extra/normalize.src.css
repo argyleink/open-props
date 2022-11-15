@@ -141,16 +141,6 @@
 }
 
 :where(svg) {
-  stroke: none;
-  fill: currentColor;
-
-  &:where(:not([fill])) {
-    stroke: currentColor;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
   &:where(:not([width])) {
     inline-size: var(--size-10);
   }
