@@ -8,7 +8,7 @@ export const toFigmaTokens = props => {
     let isBorder = key.includes('border-size')
     let isRadius = key.includes('radius')
     let isShadow = key.includes('shadow')
-    let colors = ['gray','red','pink','grape','violet','indigo','blue','cyan','teal','green','lime','yellow','orange']
+    let colors = ['gray','red','pink','purple','violet','indigo','blue','cyan','teal','green','lime','yellow','orange','choco','brown','sand','camo','jungle']
     let isColor = colors.some(color => key.includes(color))
     
     if      (isLength) meta.type = 'sizing'

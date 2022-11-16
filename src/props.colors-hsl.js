@@ -1,15 +1,18 @@
 /* generated mostly with props.colors.src.js */
 export const Gray = {
-  '--gray-0-hsl': '210 17% 98%',
-  '--gray-1-hsl': '210 17% 95%',
-  '--gray-2-hsl': '210 16% 93%',
-  '--gray-3-hsl': '210 14% 89%',
-  '--gray-4-hsl': '210 14% 83%',
-  '--gray-5-hsl': '210 11% 71%',
-  '--gray-6-hsl': '210 7% 56%',
-  '--gray-7-hsl': '210 9% 31%',
-  '--gray-8-hsl': '210 10% 23%',
-  '--gray-9-hsl': '210 11% 15%',
+  '--gray-0-hsl': '200 27% 98%',
+  '--gray-1-hsl': '210 18% 96%',
+  '--gray-2-hsl': '210 11% 93%',
+  '--gray-3-hsl': '192 9% 89%',
+  '--gray-4-hsl': '197 8% 83%',
+  '--gray-5-hsl': '202 5% 71%',
+  '--gray-6-hsl': '200 3% 60%',
+  '--gray-7-hsl': '180 2% 50%',
+  '--gray-8-hsl': '160 1% 41%',
+  '--gray-9-hsl': '90 1% 31%',
+  '--gray-10-hsl': '60 3% 22%',
+  '--gray-11-hsl': '60 6% 14%',
+  '--gray-12-hsl': '60 6% 7%',
 }
 
 export const Red = {
@@ -23,6 +26,9 @@ export const Red = {
   '--red-7-hsl': '0 86% 59%',
   '--red-8-hsl': '0 74% 54%',
   '--red-9-hsl': '0 65% 48%',
+  '--red-10-hsl': '0 65% 42%',
+  '--red-11-hsl': '0 65% 36%',
+  '--red-12-hsl': '0 66% 30%',
 }
 
 export const Pink = {
@@ -36,19 +42,25 @@ export const Pink = {
   '--pink-7-hsl': '339 67% 52%',
   '--pink-8-hsl': '339 68% 45%',
   '--pink-9-hsl': '339 69% 38%',
+  '--pink-10-hsl': '339 70% 32%',
+  '--pink-11-hsl': '339 69% 27%',
+  '--pink-12-hsl': '339 70% 21%',
 }
 
-export const Grape = {
-  '--grape-0-hsl': '280 67% 96%',
-  '--grape-1-hsl': '287 77% 92%',
-  '--grape-2-hsl': '288 86% 86%',
-  '--grape-3-hsl': '289 85% 78%',
-  '--grape-4-hsl': '288 83% 71%',
-  '--grape-5-hsl': '288 75% 64%',
-  '--grape-6-hsl': '288 67% 58%',
-  '--grape-7-hsl': '288 56% 52%',
-  '--grape-8-hsl': '288 54% 46%',
-  '--grape-9-hsl': '288 54% 40%',
+export const Purple = {
+  '--purple-0-hsl': '280 67% 96%',
+  '--purple-1-hsl': '287 77% 92%',
+  '--purple-2-hsl': '288 86% 86%',
+  '--purple-3-hsl': '289 85% 78%',
+  '--purple-4-hsl': '288 83% 71%',
+  '--purple-5-hsl': '288 75% 64%',
+  '--purple-6-hsl': '288 67% 58%',
+  '--purple-7-hsl': '288 56% 52%',
+  '--purple-8-hsl': '288 54% 46%',
+  '--purple-9-hsl': '288 54% 40%',
+  '--purple-10-hsl': '288 55% 33%',
+  '--purple-11-hsl': '288 56% 26%',
+  '--purple-12-hsl': '288 55% 20%',
 }
 
 export const Violet = {
@@ -62,6 +74,9 @@ export const Violet = {
   '--violet-7-hsl': '255 78% 60%',
   '--violet-8-hsl': '255 67% 55%',
   '--violet-9-hsl': '255 53% 50%',
+  '--violet-10-hsl': '255 53% 44%',
+  '--violet-11-hsl': '255 53% 37%',
+  '--violet-12-hsl': '255 53% 31%',
 }
 
 export const Indigo = {
@@ -75,6 +90,9 @@ export const Indigo = {
   '--indigo-7-hsl': '228 81% 59%',
   '--indigo-8-hsl': '228 69% 55%',
   '--indigo-9-hsl': '230 57% 50%',
+  '--indigo-10-hsl': '230 57% 43%',
+  '--indigo-11-hsl': '230 57% 37%',
+  '--indigo-12-hsl': '230 57% 30%',
 }
 
 export const Blue = {
@@ -88,6 +106,9 @@ export const Blue = {
   '--blue-7-hsl': '208 77% 47%',
   '--blue-8-hsl': '209 77% 43%',
   '--blue-9-hsl': '209 75% 38%',
+  '--blue-10-hsl': '209 76% 32%',
+  '--blue-11-hsl': '209 75% 27%',
+  '--blue-12-hsl': '209 76% 21%',
 }
 
 export const Cyan = {
@@ -101,6 +122,9 @@ export const Cyan = {
   '--cyan-7-hsl': '188 83% 37%',
   '--cyan-8-hsl': '189 85% 32%',
   '--cyan-9-hsl': '189 85% 28%',
+  '--cyan-10-hsl': '189 84% 23%',
+  '--cyan-11-hsl': '190 84% 17%',
+  '--cyan-12-hsl': '189 84% 12%',
 }
 
 export const Teal = {
@@ -114,6 +138,9 @@ export const Teal = {
   '--teal-7-hsl': '162 87% 35%',
   '--teal-8-hsl': '162 88% 30%',
   '--teal-9-hsl': '162 88% 26%',
+  '--teal-10-hsl': '162 89% 21%',
+  '--teal-11-hsl': '162 88% 16%',
+  '--teal-12-hsl': '163 89% 11%',
 }
 
 export const Green = {
@@ -127,6 +154,9 @@ export const Green = {
   '--green-7-hsl': '131 53% 46%',
   '--green-8-hsl': '131 54% 40%',
   '--green-9-hsl': '132 52% 35%',
+  '--green-10-hsl': '132 52% 29%',
+  '--green-11-hsl': '132 53% 22%',
+  '--green-12-hsl': '131 53% 16%',
 }
 
 export const Lime = {
@@ -140,6 +170,9 @@ export const Lime = {
   '--lime-7-hsl': '85 79% 40%',
   '--lime-8-hsl': '86 84% 36%',
   '--lime-9-hsl': '85 84% 32%',
+  '--lime-10-hsl': '85 83% 26%',
+  '--lime-11-hsl': '85 83% 21%',
+  '--lime-12-hsl': '85 84% 15%',
 }
 
 export const Yellow = {
@@ -153,6 +186,9 @@ export const Yellow = {
   '--yellow-7-hsl': '39 100% 48%',
   '--yellow-8-hsl': '35 100% 47%',
   '--yellow-9-hsl': '31 100% 45%',
+  '--yellow-10-hsl': '31 100% 35%',
+  '--yellow-11-hsl': '31 100% 25%',
+  '--yellow-12-hsl': '31 100% 20%',
 }
 
 export const Orange = {
@@ -166,13 +202,96 @@ export const Orange = {
   '--orange-7-hsl': '24 94% 50%',
   '--orange-8-hsl': '21 90% 48%',
   '--orange-9-hsl': '17 87% 45%',
+  '--orange-10-hsl': '17 87% 40%',
+  '--orange-11-hsl': '17 87% 32%',
+  '--orange-12-hsl': '17 87% 27%',
+}
+
+export const Choco = {
+  '--choco-0-hsl': '48 100% 93%',
+  '--choco-1-hsl': '35 91% 86%',
+  '--choco-2-hsl': '30 85% 79%',
+  '--choco-3-hsl': '27 80% 72%',
+  '--choco-4-hsl': '25 75% 65%',
+  '--choco-5-hsl': '25 71% 57%',
+  '--choco-6-hsl': '25 70% 49%',
+  '--choco-7-hsl': '25 75% 42%',
+  '--choco-8-hsl': '25 75% 37%',
+  '--choco-9-hsl': '25 76% 31%',
+  '--choco-10-hsl': '25 71% 26%',
+  '--choco-11-hsl': '25 66% 21%',
+  '--choco-12-hsl': '25 65% 15%',
+}
+
+export const Brown = {
+  '--brown-0-hsl': '36 60% 95%',
+  '--brown-1-hsl': '32 44% 87%',
+  '--brown-2-hsl': '28 40% 80%',
+  '--brown-3-hsl': '28 38% 72%',
+  '--brown-4-hsl': '27 36% 65%',
+  '--brown-5-hsl': '28 34% 57%',
+  '--brown-6-hsl': '28 32% 50%',
+  '--brown-7-hsl': '28 35% 43%',
+  '--brown-8-hsl': '28 38% 37%',
+  '--brown-9-hsl': '27 42% 31%',
+  '--brown-10-hsl': '25 48% 25%',
+  '--brown-11-hsl': '23 58% 19%',
+  '--brown-12-hsl': '22 57% 16%',
+}
+
+export const Sand = {
+  '--sand-0-hsl': '200 27% 98%',
+  '--sand-1-hsl': '48 17% 88%',
+  '--sand-2-hsl': '45 22% 79%',
+  '--sand-3-hsl': '44 22% 69%',
+  '--sand-4-hsl': '44 17% 62%',
+  '--sand-5-hsl': '44 14% 54%',
+  '--sand-6-hsl': '42 14% 46%',
+  '--sand-7-hsl': '43 16% 39%',
+  '--sand-8-hsl': '41 15% 32%',
+  '--sand-9-hsl': '43 14% 26%',
+  '--sand-10-hsl': '44 11% 20%',
+  '--sand-11-hsl': '60 6% 14%',
+  '--sand-12-hsl': '60 6% 7%',
+}
+
+export const Camo = {
+  '--camo-0-hsl': '66 71% 95%',
+  '--camo-1-hsl': '64 69% 77%',
+  '--camo-2-hsl': '65 69% 59%',
+  '--camo-3-hsl': '65 61% 51%',
+  '--camo-4-hsl': '63 61% 46%',
+  '--camo-5-hsl': '60 62% 41%',
+  '--camo-6-hsl': '59 65% 36%',
+  '--camo-7-hsl': '56 67% 33%',
+  '--camo-8-hsl': '54 70% 29%',
+  '--camo-9-hsl': '54 69% 25%',
+  '--camo-10-hsl': '53 69% 22%',
+  '--camo-11-hsl': '53 69% 18%',
+  '--camo-12-hsl': '52 69% 13%',
+}
+
+export const Jungle = {
+  '--jungle-0-hsl': '74 98% 84%',
+  '--jungle-1-hsl': '74 79% 78%',
+  '--jungle-2-hsl': '74 68% 71%',
+  '--jungle-3-hsl': '75 62% 65%',
+  '--jungle-4-hsl': '74 56% 59%',
+  '--jungle-5-hsl': '74 53% 53%',
+  '--jungle-6-hsl': '74 55% 47%',
+  '--jungle-7-hsl': '74 66% 42%',
+  '--jungle-8-hsl': '74 79% 36%',
+  '--jungle-9-hsl': '73 90% 32%',
+  '--jungle-10-hsl': '73 91% 26%',
+  '--jungle-11-hsl': '73 91% 21%',
+  '--jungle-12-hsl': '73 90% 16%',
 }
 
 const ColorsHSL = {
   ...Gray,
   ...Red,
   ...Pink,
-  ...Grape,
+  ...Purple,
   ...Violet,
   ...Indigo,
   ...Blue,
@@ -182,6 +301,11 @@ const ColorsHSL = {
   ...Lime,
   ...Yellow,
   ...Orange,
+  ...Choco,
+  ...Brown,
+  ...Sand,
+  ...Camo,
+  ...Jungle,
 }
 
 export default ColorsHSL
