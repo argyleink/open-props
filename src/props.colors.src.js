@@ -1,14 +1,27 @@
-const openColor = (await import('https://cdn.skypack.dev/open-color/open-color.js')).default
-const Color = (await import('https://colorjs.io/dist/color.esm.js')).default
+// Load `colar`
+const colarURL =
+  'https://raw.githubusercontent.com/fchristant/colar/master/colar/colar.json'
+const colar = await (await fetch(colarURL)).json()
 
-const colors = Object
-  .entries(openColor.theme.colors)
-  .filter(group => typeof group[1] === 'object')
+// Transform to required structure
+const colors = Object.entries(
+  colar.reduce((root, { name, color }) => {
+    let [hueName, luminosityStep] = name.split('-')
 
-const customizeIncrements = num =>
-  num === '50'
-    ? num.replaceAll('50', '0')
-    : num.replaceAll('0', '')
+    hueName = hueName.toLowerCase()
+    luminosityStep = parseInt(luminosityStep)
+
+    const hue = root?.[hueName] ?? {}
+
+    return {
+      ...root,
+      [hueName]: { ...hue, [luminosityStep]: color.toLowerCase() },
+    }
+  }, {})
+)
+
+
+const Color = (await import('colorjs.io')).default
 
 const hexTOhsl = hex =>
   new Color(hex).to('hsl')
@@ -29,7 +42,7 @@ const groupedObject = colors.reduce((root, [color, shades]) => {
 
   Object.entries(shades).forEach(([num, hex]) => 
     root += `
-  ${base}${customizeIncrements(num)}-hsl: '${hexTOhsl(hex)}',`
+  '${base}${num}-hsl': '${hexTOhsl(hex)}',`
   )
 
   root += '\n}'
@@ -42,7 +55,7 @@ const channels = colors.reduce((root, [color, shades]) => {
 
   Object.entries(shades).forEach(([num, hex]) => 
     root += `
-    ${base}${customizeIncrements(num)}-hsl: '${hexTOhsl(hex)}',`
+    '${base}${num}-hsl': '${hexTOhsl(hex)}',`
   )
 
   return root
@@ -53,7 +66,7 @@ const vars = colors.reduce((root, [color, shades]) => {
 
   Object.entries(shades).forEach(([num, hex]) => 
     root += `
-    ${base}${customizeIncrements(num)}: ${hex};`
+    '${base}${num}': ${hex};`
   )
 
   return root

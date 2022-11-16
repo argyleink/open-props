@@ -2,7 +2,7 @@ import fs from 'fs'
 
 import Animations from '../src/props.animations.js'
 import Sizes from '../src/props.sizes.js'
-import * as OpenColors from '../src/props.colors.js'
+import * as Colors from '../src/props.colors.js'
 import * as ColorsHSL from '../src/props.colors-hsl.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
@@ -32,44 +32,26 @@ const mainbundle = {
   [`${pfx}props.zindex.css`]: Zindex,
   [`${pfx}props.shadows.css`]: Shadows,
   [`${pfx}props.aspects.css`]: Aspects,
-  [`${pfx}props.colors.css`]: OpenColors.default,
+  [`${pfx}props.colors.css`]: Colors.default,
   // [`${pfx}props.svg.css`]: SVG,
   [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,
   [`${pfx}props.borders.css`]: Borders,
 }
 
-const individual_colors = {
-  [`${pfx}props.gray.css`]: OpenColors.Gray,
-  [`${pfx}props.red.css`]: OpenColors.Red,
-  [`${pfx}props.pink.css`]: OpenColors.Pink,
-  [`${pfx}props.grape.css`]: OpenColors.Grape,
-  [`${pfx}props.violet.css`]: OpenColors.Violet,
-  [`${pfx}props.indigo.css`]: OpenColors.Indigo,
-  [`${pfx}props.blue.css`]: OpenColors.Blue,
-  [`${pfx}props.cyan.css`]: OpenColors.Cyan,
-  [`${pfx}props.teal.css`]: OpenColors.Teal,
-  [`${pfx}props.green.css`]: OpenColors.Green,
-  [`${pfx}props.lime.css`]: OpenColors.Lime,
-  [`${pfx}props.yellow.css`]: OpenColors.Yellow,
-  [`${pfx}props.orange.css`]: OpenColors.Orange,
-}
+const individual_colors = Object.keys(Colors)
+  .filter(exportName => exportName !== "default")
+  .reduce((root, hueName) => ({
+    ...root,
+    [`${pfx}props.${hueName.toLowerCase()}.css`]: Colors[hueName]
+  }), {})
 
-const individual_colors_hsl = {
-  [`${pfx}props.gray-hsl.css`]: ColorsHSL.Gray,
-  [`${pfx}props.red-hsl.css`]: ColorsHSL.Red,
-  [`${pfx}props.pink-hsl.css`]: ColorsHSL.Pink,
-  [`${pfx}props.grape-hsl.css`]: ColorsHSL.Grape,
-  [`${pfx}props.violet-hsl.css`]: ColorsHSL.Violet,
-  [`${pfx}props.indigo-hsl.css`]: ColorsHSL.Indigo,
-  [`${pfx}props.blue-hsl.css`]: ColorsHSL.Blue,
-  [`${pfx}props.cyan-hsl.css`]: ColorsHSL.Cyan,
-  [`${pfx}props.teal-hsl.css`]: ColorsHSL.Teal,
-  [`${pfx}props.green-hsl.css`]: ColorsHSL.Green,
-  [`${pfx}props.lime-hsl.css`]: ColorsHSL.Lime,
-  [`${pfx}props.yellow-hsl.css`]: ColorsHSL.Yellow,
-  [`${pfx}props.orange-hsl.css`]: ColorsHSL.Orange,
-}
+const individual_colors_hsl = Object.keys(ColorsHSL)
+  .filter(exportName => exportName !== "default")
+  .reduce((root, hueName) => ({
+    ...root,
+    [`${pfx}props.${hueName.toLowerCase()}-hsl.css`]: ColorsHSL[hueName]
+  }), {})
 
 // const individuals = {
 //   'props.masks.edges.css': MaskEdges,
