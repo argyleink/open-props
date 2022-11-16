@@ -92,7 +92,7 @@
     text-decoration-color: var(--indigo-2);
 
     &:where(:visited) {
-      text-decoration-color: var(--grape-2);
+      text-decoration-color: var(--purple-2);
     }
   }
 
