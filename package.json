@@ -294,6 +294,7 @@
     "cssnano": "^5.1.10",
     "json": "^11.0.0",
     "microbundle": "^0.13.3",
+    "open-color": "^1.9.1",
     "postcss": "^8.3.9",
     "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
