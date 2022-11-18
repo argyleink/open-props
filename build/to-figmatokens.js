@@ -1,3 +1,5 @@
+import * as Colors from '../src/props.colors.js'
+
 export const toFigmaTokens = props => {
   const figmatokens = {}
 
@@ -8,7 +10,9 @@ export const toFigmaTokens = props => {
     let isBorder = key.includes('border-size')
     let isRadius = key.includes('radius')
     let isShadow = key.includes('shadow')
-    let colors = ['gray','red','pink','purple','violet','indigo','blue','cyan','teal','green','lime','yellow','orange','choco','brown','sand','camo','jungle']
+    let colors = Object.keys(Colors)
+      .filter(exportName => exportName !== "default")
+      .map(hueName => hueName.toLowerCase())
     let isColor = colors.some(color => key.includes(color))
     
     if      (isLength) meta.type = 'sizing'

@@ -1,18 +1,34 @@
 /* generated mostly with props.colors.src.js */
 export const Gray = {
-  '--gray-0-hsl': '200 27% 98%',
-  '--gray-1-hsl': '210 18% 96%',
-  '--gray-2-hsl': '210 11% 93%',
-  '--gray-3-hsl': '192 9% 89%',
-  '--gray-4-hsl': '197 8% 83%',
-  '--gray-5-hsl': '202 5% 71%',
-  '--gray-6-hsl': '200 3% 60%',
-  '--gray-7-hsl': '180 2% 50%',
-  '--gray-8-hsl': '160 1% 41%',
-  '--gray-9-hsl': '90 1% 31%',
-  '--gray-10-hsl': '60 3% 22%',
-  '--gray-11-hsl': '60 6% 14%',
-  '--gray-12-hsl': '60 6% 7%',
+  '--gray-0-hsl': '210 17% 98%',
+  '--gray-1-hsl': '210 17% 95%',
+  '--gray-2-hsl': '210 16% 93%',
+  '--gray-3-hsl': '210 14% 89%',
+  '--gray-4-hsl': '210 14% 83%',
+  '--gray-5-hsl': '210 11% 71%',
+  '--gray-6-hsl': '210 7% 56%',
+  '--gray-7-hsl': '210 9% 31%',
+  '--gray-8-hsl': '210 10% 23%',
+  '--gray-9-hsl': '210 11% 15%',
+  '--gray-10-hsl': '214 14% 10%',
+  '--gray-11-hsl': '216 16% 6%',
+  '--gray-12-hsl': '210 40% 2%',
+}
+
+export const Stone = {
+  '--stone-0-hsl': '200 27% 98%',
+  '--stone-1-hsl': '210 18% 96%',
+  '--stone-2-hsl': '210 11% 93%',
+  '--stone-3-hsl': '192 9% 89%',
+  '--stone-4-hsl': '197 8% 83%',
+  '--stone-5-hsl': '202 5% 71%',
+  '--stone-6-hsl': '200 3% 60%',
+  '--stone-7-hsl': '180 2% 50%',
+  '--stone-8-hsl': '160 1% 41%',
+  '--stone-9-hsl': '90 1% 31%',
+  '--stone-10-hsl': '60 3% 22%',
+  '--stone-11-hsl': '60 6% 14%',
+  '--stone-12-hsl': '60 6% 7%',
 }
 
 export const Red = {
@@ -289,6 +305,7 @@ export const Jungle = {
 
 const ColorsHSL = {
   ...Gray,
+  ...Stone,
   ...Red,
   ...Pink,
   ...Purple,
