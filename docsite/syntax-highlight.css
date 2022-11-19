@@ -85,8 +85,8 @@ code.language-css {
       0 0 25px var(--teal-7);
 
     @nest [data-theme="light"] & {
-      color: var(--grape-9);
-      text-shadow: 0 0 15px var(--grape-9);
+      color: var(--purple-9);
+      text-shadow: 0 0 15px var(--purple-9);
     }
 
     @media (--HDcolor) {
