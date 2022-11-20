@@ -10,14 +10,14 @@
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
-  --brand-bg-gradient: linear-gradient(to bottom, var(--grape-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
+  --brand-bg-gradient: linear-gradient(to bottom, var(--purple-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
 
   @media (--md-n-below) {
     --max-inline-body: calc(100vw - (var(--size-3) * 2));
   }
 
   @nest [data-theme="light"] & {
-    --brand-bg-gradient: linear-gradient(to bottom, var(--grape-6), var(--violet-6), var(--indigo-6), var(--cyan-6));
+    --brand-bg-gradient: linear-gradient(to bottom, var(--purple-6), var(--violet-6), var(--indigo-6), var(--cyan-6));
   }
 }
 
@@ -64,7 +64,7 @@ section {
   &:nth-of-type(1n) { border-color: var(--orange-5) }
   &:nth-of-type(2n) { border-color: var(--red-5) }
   &:nth-of-type(3n) { border-color: var(--pink-5) }
-  &:nth-of-type(4n) { border-color: var(--grape-5) }
+  &:nth-of-type(4n) { border-color: var(--purple-5) }
   &:nth-of-type(5n) { border-color: var(--indigo-5) }
   &:nth-of-type(6n) { border-color: var(--blue-5) }
   &:nth-of-type(7n) { border-color: var(--green-5) }
@@ -193,8 +193,8 @@ section.hero {
   align-self: stretch;
 
   & .icon-quote {
-    --_accent-1: var(--grape-5);
-    --_accent-2: var(--grape-4);
+    --_accent-1: var(--purple-5);
+    --_accent-2: var(--purple-4);
 
     @nest [data-theme="light"] & {
       --_accent-1: var(--orange-7);
@@ -516,7 +516,7 @@ pre[class*="language-"] {
   --size: var(--size-5);
   border-radius: var(--radius-round);
   box-shadow: var(--inner-shadow-0);
-  inline-size: 7%;
+  inline-size: 6.7%;
   block-size: var(--size);
   display: grid;
   place-content: center;
@@ -820,7 +820,7 @@ pre[class*="language-"] {
     &:nth-child(1) svg {
       stroke: var(--cyan-3);
       @nest [data-theme="light"] & {
-        stroke: var(--grape-8);
+        stroke: var(--purple-8);
       }
     }
     &:nth-child(2) svg {
@@ -905,8 +905,8 @@ pre[class*="language-"] {
   }
 
   & > div:nth-of-type(1) svg { 
-    color: var(--grape-5);
-    border-color: var(--grape-3);
+    color: var(--purple-5);
+    border-color: var(--purple-3);
   }
   & > div:nth-of-type(2) svg { 
     color: var(--orange-5);
