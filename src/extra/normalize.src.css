@@ -118,6 +118,11 @@
   letter-spacing: inherit;
 }
 
+::placeholder {
+  color: var(--gray-7);
+  opacity: .75;
+}
+
 :where(input:not([type="range"]), textarea) {
   padding-inline: var(--size-2);
   padding-block: var(--size-1);
