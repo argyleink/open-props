@@ -15,4 +15,8 @@
     --shadow-strength: 10%;
     --shadow-color: 220 40% 2%;
   }
+
+  ::placeholder {
+    color: var(--gray-6);
+  }
 }

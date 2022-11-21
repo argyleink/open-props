@@ -1,4 +1,5 @@
 @import "../props.media.css";
+@import "../props.gray-hsl.css";
 
 :where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"]),
 :where(input[type="file"])::-webkit-file-upload-button,
@@ -14,8 +15,8 @@
   --_border: var(--surface-3);
   
   --_highlight-size: 0;
-  --_highlight-light: hsl(210 10% 71% / 25%);
-  --_highlight-dark: hsl(210 10% 5% / 25%);
+  --_highlight-light: hsl(var(--gray-5-hsl) / 25%);
+  --_highlight-dark: hsl(var(--gray-12-hsl) / 25%);
   --_highlight: var(--_highlight-light);
   
   --_ink-shadow-light: 0 1px 0 var(--gray-3);

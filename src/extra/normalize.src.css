@@ -92,7 +92,7 @@
     text-decoration-color: var(--indigo-2);
 
     &:where(:visited) {
-      text-decoration-color: var(--grape-2);
+      text-decoration-color: var(--purple-2);
     }
   }
 
@@ -116,6 +116,11 @@
   font-size: inherit;
   color: inherit;
   letter-spacing: inherit;
+}
+
+::placeholder {
+  color: var(--gray-7);
+  opacity: .75;
 }
 
 :where(input:not([type="range"]), textarea) {
