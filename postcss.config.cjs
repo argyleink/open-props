@@ -25,6 +25,7 @@ module.exports = {
         'logical-properties-and-values': false, 
         'not-pseudo-class': false,
         'place-properties': false,
+        'double-position-gradients': false,
       }
     }),
     combineSelectors(),

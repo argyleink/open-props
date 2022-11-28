@@ -1,19 +1,23 @@
 @import "../src/index.css";
 @import "../src/extra/normalize.css";
+@import "../src/extra/theme.light.switch.css";
+@import "../src/extra/theme.dark.switch.css";
 @import "../src/props.gray-hsl.css";
+@import "../src/props.masks.edges.css";
+@import "../src/props.masks.corner-cuts.css";
 
 @import "./syntax-highlight.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
-  --brand-bg-gradient: linear-gradient(to bottom, var(--grape-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
+  --brand-bg-gradient: linear-gradient(to bottom, var(--purple-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
 
   @media (--md-n-below) {
     --max-inline-body: calc(100vw - (var(--size-3) * 2));
   }
 
   @nest [data-theme="light"] & {
-    --brand-bg-gradient: linear-gradient(to bottom, var(--grape-6), var(--violet-6), var(--indigo-6), var(--cyan-6));
+    --brand-bg-gradient: linear-gradient(to bottom, var(--purple-6), var(--violet-6), var(--indigo-6), var(--cyan-6));
   }
 }
 
@@ -60,7 +64,7 @@ section {
   &:nth-of-type(1n) { border-color: var(--orange-5) }
   &:nth-of-type(2n) { border-color: var(--red-5) }
   &:nth-of-type(3n) { border-color: var(--pink-5) }
-  &:nth-of-type(4n) { border-color: var(--grape-5) }
+  &:nth-of-type(4n) { border-color: var(--purple-5) }
   &:nth-of-type(5n) { border-color: var(--indigo-5) }
   &:nth-of-type(6n) { border-color: var(--blue-5) }
   &:nth-of-type(7n) { border-color: var(--green-5) }
@@ -189,8 +193,8 @@ section.hero {
   align-self: stretch;
 
   & .icon-quote {
-    --_accent-1: var(--grape-5);
-    --_accent-2: var(--grape-4);
+    --_accent-1: var(--purple-5);
+    --_accent-2: var(--purple-4);
 
     @nest [data-theme="light"] & {
       --_accent-1: var(--orange-7);
@@ -289,6 +293,10 @@ blockquote {
         --_bg: var(--indigo-0);
         --_ink: var(--indigo-9);
       }
+    }
+
+    &.jagged {
+      -webkit-mask: var(--mask-edge-zig-zag-right);
     }
   }
 }
@@ -508,7 +516,7 @@ pre[class*="language-"] {
   --size: var(--size-5);
   border-radius: var(--radius-round);
   box-shadow: var(--inner-shadow-0);
-  inline-size: 7%;
+  inline-size: 6.7%;
   block-size: var(--size);
   display: grid;
   place-content: center;
@@ -812,7 +820,7 @@ pre[class*="language-"] {
     &:nth-child(1) svg {
       stroke: var(--cyan-3);
       @nest [data-theme="light"] & {
-        stroke: var(--grape-8);
+        stroke: var(--purple-8);
       }
     }
     &:nth-child(2) svg {
@@ -897,8 +905,8 @@ pre[class*="language-"] {
   }
 
   & > div:nth-of-type(1) svg { 
-    color: var(--grape-5);
-    border-color: var(--grape-3);
+    color: var(--purple-5);
+    border-color: var(--purple-3);
   }
   & > div:nth-of-type(2) svg { 
     color: var(--orange-5);
@@ -1096,6 +1104,15 @@ pre[class*="language-"] {
     border: none;
     background: var(--brand-bg-gradient) fixed;
     color: var(--surface-1);
+  }
+}
+
+.mask-demos {
+  & > div {
+    min-inline-size: var(--size-fluid-8);
+    border-width: 0px;
+    background: var(--brand-bg-gradient) fixed;
+    text-shadow: 0 1px 0 #000a;
   }
 }
 
@@ -1375,54 +1392,13 @@ input[type="range"] {
 
 /* no way out of this duplication afaik */
 [data-theme="light"] {
-  color-scheme: light;
-
-  --brand: var(--pink-6);
-
-  --link: var(--indigo-7);
-  --link-visited: var(--grape-7);
-
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
-
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
-
   --nav-icon: var(--gray-7);
   --nav-icon-hover: var(--gray-9);
-
-  --shadow-color: 220 3% 15%;
-  --shadow-strength: 1%;
-
-  @media (--HDcolor) {
-    --link: color(display-p3 0 .5 1);
-    --link-visited: color(display-p3 .6 .2 1);
-  }
 }
 
 [data-theme="dark"] {
-  color-scheme: dark;
-
-  --brand: var(--pink-4);
-
-  --link: var(--indigo-3);
-  --link-visited: var(--grape-3);
-
-  --text-1: var(--gray-1);
-  --text-2: var(--gray-2);
-
-  --surface-1: var(--gray-9);
-  --surface-2: var(--gray-8);
-  --surface-3: var(--gray-7);
-  --surface-4: var(--gray-6);
-
   --nav-icon: var(--gray-5);
   --nav-icon-hover: var(--gray-2);
-
-  --shadow-strength: 10%;
-  --shadow-color: 220 40% 2%;
 }
 
 .theme-toggle {
@@ -1533,5 +1509,16 @@ input[type="range"] {
 
   & pre {
     position: relative;
+  }
+}
+
+.learn-with-jason {
+  display: grid;
+  gap: var(--size-3);
+
+  & > iframe {
+    max-inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--ratio-widescreen);
   }
 }
