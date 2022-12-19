@@ -39,6 +39,8 @@
     "./src/sizes": "./src/props.sizes.js",
     "./src/svg": "./src/props.svg.js",
     "./src/zindex": "./src/props.zindex.js",
+    "./src/masks.edges": "./src/props.masks.edges.js",
+    "./src/masks.corner-cuts": "./src/props.masks.corner-cuts.js",
     "./style": "./open-props.min.css",
     "./postcss/style": "./src/index.css",
     "./normalize": "./normalize.min.css",
@@ -167,7 +169,8 @@
     "./postcss/theme": "./src/extra/theme.css",
     "./postcss/theme-dark": "./src/extra/theme-dark.css",
     "./postcss/theme-light": "./src/extra/theme-light.css",
-    "./utilities": "./src/extra/utilities.css"
+    "./utilities": "./src/extra/utilities.css",
+    "./*": "./*"
   },
   "browserslist": [
     "defaults"
