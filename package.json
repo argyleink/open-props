@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -35,6 +35,7 @@
     "./src/easing": "./src/props.easing.js",
     "./src/fonts": "./src/props.fonts.js",
     "./src/gradients": "./src/props.gradients.js",
+    "./src/media": "./src/props.media.js",
     "./src/shadows": "./src/props.shadows.js",
     "./src/sizes": "./src/props.sizes.js",
     "./src/svg": "./src/props.svg.js",
@@ -86,7 +87,6 @@
     "./masks/edges": "./masks.edges.min.css",
     "./masks/corner-cuts": "./masks.corner-cuts.min.css",
     "./media": "./media.min.css",
-    "./esm/media": "./src/props.media.js",
     "./orange": "./orange.min.css",
     "./orange-hsl": "./orange-hsl.min.css",
     "./pink": "./pink.min.css",
