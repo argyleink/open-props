@@ -133,7 +133,7 @@
   padding-block: .75ch;
 }
 
-:where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+:where(textarea, select, input:not([type="button"],[type="submit"],[type="reset"])) {
   background-color: var(--surface-2);
   border-radius: var(--radius-2);
 }
