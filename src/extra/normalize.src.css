@@ -145,10 +145,8 @@
   inline-size: var(--size-3);
 }
 
-:where(svg) {
-  &:where(:not([width])) {
-    inline-size: var(--size-10);
-  }
+:where(svg:not([width])) {
+  inline-size: var(--size-10);
 }
 
 :where(code, kbd, samp, pre) { font-family: var(--font-mono) }
