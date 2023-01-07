@@ -41,7 +41,7 @@
     --_text: var(--gray-5);
   }
 
-  & :where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+  & :where(textarea, select, input:not([type="button"],[type="submit"],[type="reset"])) {
     background-color: hsl(210deg 11% 10%);
   }
 
