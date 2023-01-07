@@ -38,7 +38,7 @@
     }
   }
 
-  & :where(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])[disabled] {
+  & :where(button,input:is([type="button"],[type="submit"],[type="reset"]))[disabled] {
     --_text: var(--gray-6);
   }
 
