@@ -1156,6 +1156,51 @@
               </li>
             </ol>
           </details>
+          <details class="started-details">
+            <summary>Sublime Text</summary>
+            <ol>
+              <li>
+                There are number of ways with which the autocomplete engine of Sublime Text can be extended. 
+                You can decide to use the <a href="https://www.sublimetext.com/docs/completions.html#completion-files" target="_blank">completion files</a>, 
+                <a href="https://www.sublimetext.com/docs/completions.html#snippets" target="_blank">snippets</a> or 
+                <a href="https://www.sublimetext.com/docs/completions.html#plugins" target="_blank">plugins</a> 
+              </li>
+              <li>
+                An approach that is less strenous is the "completion file" approach. 
+                Here, all you'd be required to do is point the `scope` keyword in the .sublime-completions file to the open-props classes in the node_modules folder like so:
+              </li>
+              <pre class="language-js"><code>
+                // .sublime-completions file
+                {
+                  "scope": "./node_modules/open-props/open-props.min.css",
+                  "completions": [
+                    // here you'll add the classes you want autocomplete for.
+                  ]
+              }
+              </code></pre>
+              <li>You can also add an alternative path to your variables, if you have one &mdash; in the completions file, like so:</li>
+              <pre class="language-js"><code>
+                // .sublime-completions file
+                {
+                  "scope": "path/to/your/variables",
+              }
+              </code></pre>
+              <li>Another approach for enabling autocomplete would be to open the settings json file of Sublime Text via 
+                <b>Preferences > Settings</b>, then you'll modify the file to include the snippet below &mdash; replacing "source" with the path to your variables.
+              </li>
+              <pre class="language-js"><code>
+                "auto-complete-selector": "source, text"
+              </code></pre>
+              <li>
+                You can learn more about the completion process in Sublime Text
+                <a
+                  href="https://github.com/willofindie/vscode-cssvar#supported-configs"
+                  target="__blank"
+                > here.
+                </a>
+              </li>
+            </ol>
+          </details>
         </div>
       </article>
     </section>
