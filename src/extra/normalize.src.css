@@ -133,7 +133,7 @@
   padding-block: .75ch;
 }
 
-:where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+:where(textarea, select, input:not([type="button"],[type="submit"],[type="reset"])) {
   background-color: var(--surface-2);
   border-radius: var(--radius-2);
 }
@@ -145,10 +145,8 @@
   inline-size: var(--size-3);
 }
 
-:where(svg) {
-  &:where(:not([width])) {
-    inline-size: var(--size-10);
-  }
+:where(svg:not([width])) {
+  inline-size: var(--size-10);
 }
 
 :where(code, kbd, samp, pre) { font-family: var(--font-mono) }

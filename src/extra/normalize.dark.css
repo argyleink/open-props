@@ -2,7 +2,7 @@
 @import "brand.css";
 @import "normalize.src.css";
 
-:where(textarea, select, input:not(button,button[type],input[type="button"],input[type="submit"],input[type="reset"])) {
+:where(textarea, select, input:not([type="button"],[type="submit"],[type="reset"])) {
   background-color: var(--gray-10);
 }
 
