@@ -1,4 +1,4 @@
-import * as Colors from '../src/props.colors.js'
+import * as Colors from '../src/props.colors'
 
 export const toFigmaTokens = props => {
   const figmatokens = {}
