@@ -2,3 +2,4 @@
 dist/
 .cache/
 node_modules/
+open-props.*.json
