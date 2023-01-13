@@ -16,10 +16,11 @@
     "gradients"
   ],
   "style": "open-props.min.css",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "main": "dist/open-props.cjs",
   "unpkg": "open-props.min.css",
   "module": "dist/open-props.module.js",
+  "types": "dist/open-props.d.ts",
   "exports": {
     ".": {
       "import": "./dist/open-props.module.js",

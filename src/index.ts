@@ -13,14 +13,14 @@ import Zindex from './props.zindex.js'
 import MaskEdges from './props.masks.edges.js'
 import MaskCornerCuts from './props.masks.corner-cuts.js'
 
-const camelize = text => {
+const camelize = (text: string) => {
   text = text.replace(/[-]+(.)?/g, (_, c) => c 
     ? c.toUpperCase() 
     : '')
   return text.substr(0, 1).toLowerCase() + text.substr(1)
 }
 
-const mapToObjectNotation = props => {
+const mapToObjectNotation = <T>(props: T) => {
   for (var prop in props)
     props[camelize(prop)] = props[prop]
   return props
@@ -43,4 +43,19 @@ const OpenProps = mapToObjectNotation({
   ...MaskCornerCuts,
 })
 
-export default OpenProps
+export default OpenProps as OpenPropsModule
+
+// --------------
+// Fancy TS stuff
+
+// adds camelized keys to the object
+type OpenPropsModule = typeof OpenProps & {
+  [Key in keyof typeof OpenProps as KebabToCamel<Key>]: typeof OpenProps[Key];
+}
+
+// --foo-bar -> FooBar
+type KebabToCamel<Key extends string> = Key extends `--${infer Rest}`
+	? KebabToCamel<Rest>
+	: Key extends `${infer FirstPart}-${infer FirstLetter}${infer LastPart}`
+	? `${FirstPart}${Uppercase<FirstLetter>}${KebabToCamel<LastPart>}`
+	: Key;
