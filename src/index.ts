@@ -50,12 +50,12 @@ export default OpenProps as OpenPropsModule
 
 // adds camelized keys to the object
 type OpenPropsModule = typeof OpenProps & {
-  [Key in keyof typeof OpenProps as KebabToCamel<Key>]: typeof OpenProps[Key];
+  [Key in keyof typeof OpenProps as KebabCssVarsToCamel<Key>]: typeof OpenProps[Key];
 }
 
-// --foo-bar -> FooBar
-type KebabToCamel<Key extends string> = Key extends `--${infer Rest}`
-	? KebabToCamel<Rest>
+// --foo-bar -> fooBar
+type KebabCssVarsToCamel<Key extends string> = Key extends `--${infer Rest}`
+	? KebabCssVarsToCamel<Rest>
 	: Key extends `${infer FirstPart}-${infer FirstLetter}${infer LastPart}`
-	? `${FirstPart}${Uppercase<FirstLetter>}${KebabToCamel<LastPart>}`
+	? `${FirstPart}${Uppercase<FirstLetter>}${KebabCssVarsToCamel<LastPart>}`
 	: Key;
