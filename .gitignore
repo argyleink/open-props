@@ -3,3 +3,6 @@ dist/
 .cache/
 node_modules/
 open-props.*.json
+src/*.d.ts
+src/*.js
+!src/*.src.js
