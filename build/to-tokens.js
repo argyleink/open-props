@@ -1,4 +1,4 @@
-import * as Colors from '../src/props.colors'
+import * as Colors from '../src/props.colors.js'
 
 export const toTokens = props => 
   props.map(([key, token]) => {
