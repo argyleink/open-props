@@ -6,3 +6,5 @@ open-props.*.json
 src/*.d.ts
 src/*.js
 !src/*.src.js
+*.min.css
+shadow.*.css
