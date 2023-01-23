@@ -20,7 +20,7 @@ const mapTypes = collection =>
     .map(([key, val]) => 
       [key, typeof val]))
 
-export const toTypes = (ts_types = false) => {
+export const toTypes = () => {
   return mapToObjectNotation({
     ...mapTypes(Animations),
     ...mapTypes(Sizes),
@@ -36,5 +36,31 @@ export const toTypes = (ts_types = false) => {
     ...mapTypes(Zindex),
     ...mapTypes(MaskEdges),
     ...mapTypes(MaskCornerCuts),
+  })
+}
+
+export const preparedTypes = () => {
+  return [
+    {filename: 'animations', props: Animations},
+    {filename: 'sizes', props: Sizes},
+    {filename: 'colors', props: Colors},
+    {filename: 'colors-hsl', props: ColorsHSL},
+    {filename: 'fonts', props: Fonts},
+    {filename: 'borders', props: Borders},
+    {filename: 'aspects', props: Aspects},
+    {filename: 'easings', props: Easings},
+    {filename: 'svg', props: SVG},
+    {filename: 'gradients', props: Gradients},
+    {filename: 'shadows', props: Shadows},
+    {filename: 'zindex', props: Zindex},
+    {filename: 'masks-edges', props: MaskEdges},
+    {filename: 'masks-corner-cuts', props: MaskCornerCuts},
+  ].map(({filename, props}) => {
+    const json = mapToObjectNotation(mapTypes(props))
+    
+    return {
+      filename,
+      json,
+    }
   })
 }
