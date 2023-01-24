@@ -106,7 +106,7 @@ const TSD = fs.createWriteStream('../dist/open-props.d.ts')
 TSD.end(`declare const OpenProps: ${JSON.stringify(toTypes(), null, 2).replaceAll(',',';')};\nexport default OpenProps;`)
 
 preparedTypes().forEach(({filename, json}) => {
-  let bundle = fs.createWriteStream('../dist/props.'+filename+'.d.ts');
+  let bundle = fs.createWriteStream('../src/props.'+filename+'.d.ts');
   bundle.end(`declare const _default: ${JSON.stringify(json, null, 2).replaceAll(',',';')};\nexport default _default;`)
 })
 
