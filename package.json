@@ -20,8 +20,10 @@
   "main": "dist/open-props.cjs",
   "unpkg": "open-props.min.css",
   "module": "dist/open-props.module.js",
+  "types": "dist/open-props.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/open-props.d.ts",
       "import": "./dist/open-props.module.js",
       "require": "./dist/open-props.cjs",
       "default": "./dist/open-props.cjs"
@@ -178,14 +180,11 @@
   "scripts": {
     "build": "concurrently npm:gen:op npm:gen:shadowdom",
     "test": "ava test/basic.test.cjs",
-    "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25 && npm run module:js",
-    "bundle:pre-edit": "json -I -f package.json -e \"this.unpkg=''\"",
-    "bundle:post-edit": "json -I -f package.json -e \"this.unpkg='open-props.min.css'\"",
+    "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25",
     "gen:op": "cd build && node props.js \"\" true",
     "gen:nowhere": "cd build && node props \"\" false",
     "gen:shadowdom": "cd build && node props \"\" false \":host\" \"shadow\"",
     "gen:prefixed": "cd build && node props.js \"op\" true",
-    "module:js": "npm run bundle:pre-edit && microbundle --no-sourcemap && npm run bundle:post-edit",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css && node ./build/extras.js",
     "lib:normalize:light": "postcss src/extra/normalize.light.css -o normalize.light.min.css",
@@ -305,7 +304,6 @@
     "concurrently": "^7.2.2",
     "cssnano": "^5.1.10",
     "json": "^11.0.0",
-    "microbundle": "^0.13.3",
     "open-color": "^1.9.1",
     "postcss": "^8.3.9",
     "postcss-cli": "^8.3.1",

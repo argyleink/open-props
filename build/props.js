@@ -17,6 +17,8 @@ import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
+import {toObject} from './to-object.js'
+import {toTypes, preparedTypes} from './to-types.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
 const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
@@ -81,6 +83,32 @@ FigmaTokens.end(JSON.stringify(figmatokens, null, 2))
 const figmatokensSYNC = { 'open-props': { ...figmatokens } }
 const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.json')
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
+
+if (!fs.existsSync('../dist'))
+  fs.mkdirSync('../dist')
+
+const JS = fs.createWriteStream('../dist/open-props.js')
+JS.end(`var OpenProps = ${JSON.stringify(toObject(), null, 2)}`)
+
+const ES = fs.createWriteStream('../dist/open-props.module.js')
+ES.end(`export default ${JSON.stringify(toObject(), null, 2)}`)
+
+const CJS = fs.createWriteStream('../dist/open-props.cjs')
+CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
+
+// const UMD = fs.createWriteStream('../dist/open-props.umd.js')
+// UMD.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
+
+const TS = fs.createWriteStream('../src/open-props.ts')
+TS.end(`export default ${JSON.stringify(toObject(), null, 2)}`)
+
+const TSD = fs.createWriteStream('../dist/open-props.d.ts')
+TSD.end(`declare const OpenProps: ${JSON.stringify(toTypes(), null, 2).replaceAll(',',';')};\nexport default OpenProps;`)
+
+preparedTypes().forEach(({filename, json}) => {
+  let bundle = fs.createWriteStream('../src/props.'+filename+'.d.ts');
+  bundle.end(`declare const _default: ${JSON.stringify(json, null, 2).replaceAll(',',';')};\nexport default _default;`)
+})
 
 // gen prop variants
 Object.entries({
