@@ -20,10 +20,10 @@
   "main": "dist/open-props.cjs",
   "unpkg": "open-props.min.css",
   "module": "dist/open-props.module.js",
-  "types": "dist/open-props.d.ts",
+  "types": "dist/open-props.module.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/open-props.d.ts",
+      "types": "./dist/open-props.module.d.ts",
       "import": "./dist/open-props.module.js",
       "require": "./dist/open-props.cjs",
       "default": "./dist/open-props.cjs"
@@ -178,13 +178,14 @@
     "defaults"
   ],
   "scripts": {
-    "build": "concurrently npm:gen:op npm:gen:shadowdom",
+    "build": "concurrently npm:gen:op npm:gen:shadowdom && npm run gen:types",
     "test": "ava test/basic.test.cjs",
     "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25",
     "gen:op": "cd build && node props.js \"\" true",
     "gen:nowhere": "cd build && node props \"\" false",
     "gen:shadowdom": "cd build && node props \"\" false \":host\" \"shadow\"",
     "gen:prefixed": "cd build && node props.js \"op\" true",
+    "gen:types": "tsc -p tsconfig.json",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css && node ./build/extras.js",
     "lib:normalize:light": "postcss src/extra/normalize.light.css -o normalize.light.min.css",
@@ -309,6 +310,7 @@
     "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x"
+    "postcss-preset-env": "6.7.x",
+    "typescript": "^4.9.4"
   }
 }

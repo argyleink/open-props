@@ -54,6 +54,6 @@ test('Should produce optional mask props', async t => {
 })
 
 test('Should produce typings files', async t => {
-  t.assert(fs.existsSync('./dist/open-props.d.ts'))
+  t.assert(fs.existsSync('./dist/open-props.module.d.ts'))
   t.assert(fs.existsSync('./src/props.sizes.d.ts'))
 })

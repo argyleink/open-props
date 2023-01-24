@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "NodeNext",
+		"skipLibCheck": true
+	},
+	"include": ["dist/open-props.module.js", "src/props.*.js"],
+	"exclude": ["node_modules", "src/*.src.js"]
+}
