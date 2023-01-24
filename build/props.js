@@ -99,7 +99,7 @@ CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
 // const UMD = fs.createWriteStream('../dist/open-props.umd.js')
 // UMD.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
 
-const TS = fs.createWriteStream('../dist/open-props.ts')
+const TS = fs.createWriteStream('../src/open-props.ts')
 TS.end(`export default ${JSON.stringify(toObject(), null, 2)}`)
 
 const TSD = fs.createWriteStream('../dist/open-props.d.ts')
