@@ -51,6 +51,7 @@ test('Should produce normalize files', async t => {
 test('Should produce optional mask props', async t => {
   t.assert(fs.existsSync('./masks.edges.min.css'))
   t.assert(fs.existsSync('./masks.corner-cuts.min.css'))
+})
 
 test('Should produce typings files', async t => {
   t.assert(fs.existsSync('./dist/open-props.d.ts'))
