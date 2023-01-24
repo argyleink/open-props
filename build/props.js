@@ -18,7 +18,6 @@ import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
 import {toObject} from './to-object.js'
-import {toTypes, preparedTypes} from './to-types.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
 const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
@@ -99,16 +98,6 @@ CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
 // const UMD = fs.createWriteStream('../dist/open-props.umd.js')
 // UMD.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
 
-const TS = fs.createWriteStream('../src/open-props.ts')
-TS.end(`export default ${JSON.stringify(toObject(), null, 2)}`)
-
-const TSD = fs.createWriteStream('../dist/open-props.d.ts')
-TSD.end(`declare const OpenProps: ${JSON.stringify(toTypes(), null, 2).replaceAll(',',';')};\nexport default OpenProps;`)
-
-preparedTypes().forEach(({filename, json}) => {
-  let bundle = fs.createWriteStream('../src/props.'+filename+'.d.ts');
-  bundle.end(`declare const _default: ${JSON.stringify(json, null, 2).replaceAll(',',';')};\nexport default _default;`)
-})
 
 // gen prop variants
 Object.entries({
