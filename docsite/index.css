@@ -1381,6 +1381,13 @@ input[type="range"] {
     var(--animation-slide-in-left);
 }
 
+.reduced-shake-fade-combo {
+  --animation-slide-left-fade-in-shake-y-reduced: 
+    var(--animation-shake-y-reduced),
+    var(--animation-fade-in),
+    var(--animation-slide-in-left-reduced);
+}
+
 .push-out-combo {
   --animation-push-out: 
     var(--animation-scale-down),
