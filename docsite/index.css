@@ -1381,11 +1381,11 @@ input[type="range"] {
     var(--animation-slide-in-left);
 }
 
-.reduced-shake-fade-combo {
-  --animation-slide-left-fade-in-shake-y-reduced: 
-    var(--animation-shake-y-reduced),
+.less-shake-fade-combo {
+  --animation-slide-left-fade-in-shake-y-less: 
+    var(--animation-shake-y-less),
     var(--animation-fade-in),
-    var(--animation-slide-in-left-reduced);
+    var(--animation-slide-in-left-less);
 }
 
 .push-out-combo {
