@@ -156,12 +156,14 @@
   white-space: pre;
   min-inline-size: 0;
   max-inline-size: max-content; 
+  writing-mode: lr;
 }
 
 :where(:not(pre) > code) {
   padding: var(--size-1) var(--size-2);
   background: var(--surface-2);
   border-radius: var(--radius-2);
+  writing-mode: lr;
 }
 
 :where(kbd, var) {
