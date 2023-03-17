@@ -156,7 +156,7 @@ footer {
 
     & > div {
       display: grid;
-      place-self: center;
+      place-self: start center;
       place-items: center;
       flex-basis: var(--size-content-1);
       gap: var(--size-2);
