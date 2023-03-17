@@ -169,6 +169,10 @@ footer {
   }
 }
 
+footer dl > div {
+  place-self: start center;
+}
+
 section.hero {
   gap: var(--size-fluid-3) var(--size-10);
 
