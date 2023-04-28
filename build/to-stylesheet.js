@@ -53,18 +53,37 @@ ${dark_propsMeta}
   })
 
   if (filename.includes('animations')) {
-    let dark_props = Object.entries(props)
-      .filter(([prop, val]) =>
-        prop.includes('-@media:dark'))
 
-    dark_props.forEach(([prop, val], index) => {
-      let hasDarkKeyframe = prop.endsWith('-@media:dark') && val.trim().startsWith('@keyframe')
-      if (hasDarkKeyframe) {
-        appendedMeta += `
-@media (--OSdark) {
-  ${val.trim().replace(/\n/g, '\n  ')};
-}`
+    const [
+      dark_props,
+      reduced_props,
+    ] = Object.entries(props).reduce((acc, prop) => {
+      const [key, val] = prop;
+
+      if (val.trim().startsWith('@keyframe')) {
+        const _val = val.trim().replace(/\n/g, '\n  ');
+        key.endsWith('-@media:dark') && acc[0].push([key, _val]);
+        key.endsWith('-@media:reduced') && acc[1].push([key, _val]);
       }
+
+      return acc;
+    }, [[], []])
+
+
+    dark_props.forEach(([_, val]) => {
+      appendedMeta += `
+@media (--OSdark) {
+  ${val};
+}
+      `
+    })
+
+    reduced_props.forEach(([_, val]) => {
+      appendedMeta += `
+@media (--motionNotOK) {
+  ${val};
+}
+      `
     })
   }
 
