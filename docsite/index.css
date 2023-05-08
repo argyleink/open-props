@@ -220,13 +220,13 @@ section.hero {
 
   & > * {
     background: var(--gradient-1) fixed;
-    background-size: 12ch 7ch;
+    background-size: var(--size-relative-13) var(--size-relative-11);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @nest [data-theme="dark"] & {
       background: var(--gradient-4) fixed;
-      background-size: 12ch 7ch;
+      background-size: var(--size-relative-13) var(--size-relative-11);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -1214,6 +1214,12 @@ pre[class*="language-"] {
       font-size: var(--font-size-4);
     }
   }
+}
+
+.relative-sizes-demo {
+  display: flex;
+  gap: var(--size-2);
+  flex-flow: column wrap;
 }
 
 .content-demo {
