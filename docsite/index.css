@@ -587,7 +587,7 @@ pre[class*="language-"] {
       color: var(--text-1);
       box-shadow: var(--shadow-2);
       text-shadow: 0 1px 0 hsl(0 0% 0% / 25%);
-      inline-size: 3ch;
+      inline-size: var(--size-relative-8);
       display: grid;
       place-content: center;
       margin: var(--size-3);
@@ -857,7 +857,7 @@ pre[class*="language-"] {
 
     & > svg {
       margin-block-start: -.25em;
-      inline-size: 2ch;
+      inline-size: var(--size-relative-7);
       stroke-width: 2px;
     }
   }
