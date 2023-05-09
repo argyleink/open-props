@@ -78,13 +78,20 @@ ${dark_propsMeta}
       `
     })
 
-    reduced_props.forEach(([_, val]) => {
+    if (reduced_props.length) {
       appendedMeta += `
-@media (--motionNotOK) {
-  ${val};
-}
-      `
-    })
+@media (--motionNotOK) {`
+
+      reduced_props.forEach(([_, val]) => {
+        appendedMeta += `
+  ${val}
+        `
+      })
+
+      appendedMeta += `
+}`
+    }
+  }
   }
 
   file.write('}\n')
