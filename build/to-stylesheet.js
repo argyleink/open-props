@@ -92,7 +92,6 @@ ${dark_propsMeta}
 }`
     }
   }
-  }
 
   file.write('}\n')
   file.end(appendedMeta)
