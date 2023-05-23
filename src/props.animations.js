@@ -45,7 +45,7 @@ export default {
 @keyframes scale-up {
   to { transform: scale(1.25) }
 }`,
-  "--animation-scale-up-@media:reduced": `
+"--animation-scale-up-@media:reduced": `
 @keyframes scale-up {
   0% { opacity: 1; }
   50% { opacity: 0; transform: scale(1); }
