@@ -1,9 +1,9 @@
-import {toggleIcons} from './easing.js'
+import {showPlayIcon} from './easing.js'
 
 const cleanup = e => {
   setTimeout(()=> {
     e.target.style = ''
-    toggleIcons(e.target.querySelector('button'))
+    showPlayIcon(e.target.querySelector('button'))
   }, 500)
 }
 

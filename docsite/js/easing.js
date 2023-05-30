@@ -18,6 +18,18 @@ export const toggleIcons = button => {
     })
 }
 
+export const showPlayIcon = button => {
+  button
+    .querySelectorAll('use')
+    .forEach(icon => {
+      if (icon.getAttribute('href') === '#play-icon') {
+        icon.classList.remove('hidden')
+      } else {
+        icon.classList.add('hidden');
+      }
+    })
+}
+
 // play buttons
 document
   .querySelectorAll('.play-button')
