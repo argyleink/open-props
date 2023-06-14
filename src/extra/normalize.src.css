@@ -132,7 +132,7 @@
 }
 
 :where(select) {
-  padding-inline: 1.25ch 0;
+  padding-inline: var(--size-relative-4) 0;
   padding-block: .75ch;
 }
 

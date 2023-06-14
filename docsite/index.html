@@ -2794,13 +2794,14 @@
             --size-fluid-{1-10}
             --size-content-{1-3}
             --size-header-{1-3}
+            --size-relative-{000-15}
           </code></pre>
         </div>
       </div>
 
       <div class="block-wrap">
         <div>
-          <h5>Relative Sizes</h5>
+          <h5>Document Relative Sizes</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --size-000: -.5rem;
@@ -2974,6 +2975,62 @@
         </div>
       </div>
 
+      <div class="block-wrap">
+        <div>
+          <h5>Relative Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              --size-relative-000: -.5ch;
+              --size-relative-00: -.25ch;
+              --size-relative-1: .25ch;
+              --size-relative-2: .5ch;
+              --size-relative-3: 1ch;
+              --size-relative-4: 1.25ch;
+              --size-relative-5: 1.5ch;
+              --size-relative-6: 1.75ch;
+              --size-relative-7: 2ch;
+              --size-relative-8: 3ch;
+              --size-relative-9: 4ch;
+              --size-relative-10: 5ch;
+              --size-relative-11: 7.5ch;
+              --size-relative-12: 10ch;
+              --size-relative-13: 15ch;
+              --size-relative-14: 20ch;
+              --size-relative-15: 30ch;
+            </code></pre>
+          </div>
+        </div>
+        <div class="relative-sizes-demo">
+          <label>
+            Pick a different base font size: 
+            <select>
+              <optgroup label="Base Font Size">
+                <option value="5">--font-size-5</option>
+                <option value="6">--font-size-6</option>
+                <option value="7">--font-size-7</option>
+                <option value="8">--font-size-8</option>
+              </optgroup>
+            </select>
+          </label>
+          <div class="sizes-demo count-em scroll-x-overflow">
+            <div style="inline-size: var(--size-relative-1)"></div>
+            <div style="inline-size: var(--size-relative-2)"></div>
+            <div style="inline-size: var(--size-relative-3)"></div>
+            <div style="inline-size: var(--size-relative-4)"></div>
+            <div style="inline-size: var(--size-relative-5)"></div>
+            <div style="inline-size: var(--size-relative-6)"></div>
+            <div style="inline-size: var(--size-relative-7)"></div>
+            <div style="inline-size: var(--size-relative-8)"></div>
+            <div style="inline-size: var(--size-relative-9)"></div>
+            <div style="inline-size: var(--size-relative-10)"></div>
+            <div style="inline-size: var(--size-relative-11)"></div>
+            <div style="inline-size: var(--size-relative-12)"></div>
+            <div style="inline-size: var(--size-relative-13)"></div>
+            <div style="inline-size: var(--size-relative-14)"></div>
+            <div style="inline-size: var(--size-relative-15)"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="borders">

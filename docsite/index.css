@@ -220,13 +220,13 @@ section.hero {
 
   & > * {
     background: var(--gradient-1) fixed;
-    background-size: 12ch 7ch;
+    background-size: var(--size-relative-13) var(--size-relative-11);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @nest [data-theme="dark"] & {
       background: var(--gradient-4) fixed;
-      background-size: 12ch 7ch;
+      background-size: var(--size-relative-13) var(--size-relative-11);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -587,7 +587,7 @@ pre[class*="language-"] {
       color: var(--text-1);
       box-shadow: var(--shadow-2);
       text-shadow: 0 1px 0 hsl(0 0% 0% / 25%);
-      inline-size: 3ch;
+      inline-size: var(--size-relative-8);
       display: grid;
       place-content: center;
       margin: var(--size-3);
@@ -857,7 +857,7 @@ pre[class*="language-"] {
 
     & > svg {
       margin-block-start: -.25em;
-      inline-size: 2ch;
+      inline-size: var(--size-relative-7);
       stroke-width: 2px;
     }
   }
@@ -1214,6 +1214,12 @@ pre[class*="language-"] {
       font-size: var(--font-size-4);
     }
   }
+}
+
+.relative-sizes-demo {
+  display: flex;
+  gap: var(--size-2);
+  flex-flow: column wrap;
 }
 
 .content-demo {
