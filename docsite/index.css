@@ -1216,6 +1216,11 @@ pre[class*="language-"] {
   }
 }
 
+.match-h5 > * {
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-9);
+}
+
 .relative-sizes-demo {
   display: flex;
   gap: var(--size-2);
