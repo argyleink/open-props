@@ -44,6 +44,7 @@
 :where(h1, h2, h3, h4, h5, h6) {
   line-height: var(--font-lineheight-1);
   font-weight: var(--font-weight-9);
+  text-wrap: balance;
 }
 
 :where(h1) { 
@@ -184,7 +185,7 @@
 :where(ol, ul) { padding-inline-start: var(--size-8) }
 :where(li) { padding-inline-start: var(--size-2) }
 :where(li, dd, figcaption) { max-inline-size: var(--size-content-2) }
-:where(p) { max-inline-size: var(--size-content-3) }
+:where(p) { max-inline-size: var(--size-content-3); text-wrap: pretty; }
 :where(dt, summary) { font-weight: var(--font-weight-7) }
 
 :where(dt:not(:first-of-type)) {
