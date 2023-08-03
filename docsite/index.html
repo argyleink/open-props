@@ -119,7 +119,7 @@
           </li>
         </ul>
         <small>
-          v1.5.8
+          v1.5.10
           <span class="license">
             <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16">
               <path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"></path>
@@ -2796,13 +2796,14 @@
             --size-fluid-{1-10}
             --size-content-{1-3}
             --size-header-{1-3}
+            --size-relative-{000-15}
           </code></pre>
         </div>
       </div>
 
       <div class="block-wrap">
         <div>
-          <h5>Relative Sizes</h5>
+          <h5>Document Relative Sizes</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
               --size-000: -.5rem;
@@ -2964,7 +2965,7 @@
             }
           </code></pre>
         </div>
-        <div class="large-sizes sizes-demo count-em scroll-x-overflow">
+        <div class="large-sizes match-h5 sizes-demo count-em scroll-x-overflow">
           <span style="inline-size: var(--size-header-1)"></span>
           <span style="inline-size: var(--size-header-2)"></span>
           <span style="inline-size: var(--size-header-3)"></span>
@@ -2976,6 +2977,62 @@
         </div>
       </div>
 
+      <div class="block-wrap">
+        <div>
+          <h5>Relative Sizes</h5>
+          <div class="var-examples">
+            <pre class="language-css"><code>
+              --size-relative-000: -.5ch;
+              --size-relative-00: -.25ch;
+              --size-relative-1: .25ch;
+              --size-relative-2: .5ch;
+              --size-relative-3: 1ch;
+              --size-relative-4: 1.25ch;
+              --size-relative-5: 1.5ch;
+              --size-relative-6: 1.75ch;
+              --size-relative-7: 2ch;
+              --size-relative-8: 3ch;
+              --size-relative-9: 4ch;
+              --size-relative-10: 5ch;
+              --size-relative-11: 7.5ch;
+              --size-relative-12: 10ch;
+              --size-relative-13: 15ch;
+              --size-relative-14: 20ch;
+              --size-relative-15: 30ch;
+            </code></pre>
+          </div>
+        </div>
+        <div class="relative-sizes-demo">
+          <label>
+            Pick a different base font size: 
+            <select>
+              <optgroup label="Base Font Size">
+                <option value="5">--font-size-5</option>
+                <option value="6">--font-size-6</option>
+                <option value="7">--font-size-7</option>
+                <option value="8">--font-size-8</option>
+              </optgroup>
+            </select>
+          </label>
+          <div class="sizes-demo count-em scroll-x-overflow">
+            <div style="inline-size: var(--size-relative-1)"></div>
+            <div style="inline-size: var(--size-relative-2)"></div>
+            <div style="inline-size: var(--size-relative-3)"></div>
+            <div style="inline-size: var(--size-relative-4)"></div>
+            <div style="inline-size: var(--size-relative-5)"></div>
+            <div style="inline-size: var(--size-relative-6)"></div>
+            <div style="inline-size: var(--size-relative-7)"></div>
+            <div style="inline-size: var(--size-relative-8)"></div>
+            <div style="inline-size: var(--size-relative-9)"></div>
+            <div style="inline-size: var(--size-relative-10)"></div>
+            <div style="inline-size: var(--size-relative-11)"></div>
+            <div style="inline-size: var(--size-relative-12)"></div>
+            <div style="inline-size: var(--size-relative-13)"></div>
+            <div style="inline-size: var(--size-relative-14)"></div>
+            <div style="inline-size: var(--size-relative-15)"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="borders">
@@ -3215,8 +3272,8 @@
           <h5>Preference Vars Extended</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
-              @custom-media --highContrast  (prefers-contrast: high);
-              @custom-media --lowContrast   (prefers-contrast: low);
+              @custom-media --highContrast  (prefers-contrast: more);
+              @custom-media --lowContrast   (prefers-contrast: less);
 
               @custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
               @custom-media --opacityNotOK  (prefers-reduced-transparency: reduce);
