@@ -44,6 +44,7 @@
 :where(h1, h2, h3, h4, h5, h6) {
   line-height: var(--font-lineheight-1);
   font-weight: var(--font-weight-9);
+  text-wrap: balance;
 }
 
 :where(h1) { 
@@ -76,8 +77,11 @@
   }
 }
 
-:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+:where(a[href], area, button, input:not([type="text"], [type="email"], [type="number"], [type="password"], [type=""], [type="tel"], [type="url"]), label[for], select, summary, [tabindex]:not([tabindex*="-"])) {
   cursor: pointer;
+}
+
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -129,7 +133,7 @@
 }
 
 :where(select) {
-  padding-inline: 1.25ch 0;
+  padding-inline: var(--size-relative-4) 0;
   padding-block: .75ch;
 }
 
@@ -181,7 +185,7 @@
 :where(ol, ul) { padding-inline-start: var(--size-8) }
 :where(li) { padding-inline-start: var(--size-2) }
 :where(li, dd, figcaption) { max-inline-size: var(--size-content-2) }
-:where(p) { max-inline-size: var(--size-content-3) }
+:where(p) { max-inline-size: var(--size-content-3); text-wrap: pretty; }
 :where(dt, summary) { font-weight: var(--font-weight-7) }
 
 :where(dt:not(:first-of-type)) {
