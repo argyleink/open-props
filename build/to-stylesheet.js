@@ -1,5 +1,20 @@
 import fs from 'fs'
 
+/**
+ * Wraps a set of definitions inside of a media query 
+ * @param {*} queryValue The media value to query for
+ * @param {*} definitions The definitions that need to be wrapped
+ * @returns Media query string
+ */
+const wrapInQuery = (queryValue, definitions) => {
+  return definitions ? `
+@media (${queryValue}) {
+  ${definitions.reduce((acc, [_, val], i) => (
+    `${acc} ${i ? `\n` : ''} ${val}`
+  ), '')}
+}` : '';
+}
+
 export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
   const file = fs.createWriteStream("../src/" + filename)
 
@@ -67,30 +82,10 @@ ${dark_propsMeta}
       }
 
       return acc;
-    }, [[], []])
+    }, [[], []]);
 
-
-    dark_props.forEach(([_, val]) => {
-      appendedMeta += `
-@media (--OSdark) {
-  ${val};
-}
-      `
-    })
-
-    if (reduced_props.length) {
-      appendedMeta += `
-@media (--motionNotOK) {`
-
-      reduced_props.forEach(([_, val]) => {
-        appendedMeta += `
-  ${val}
-        `
-      })
-
-      appendedMeta += `
-}`
-    }
+    appendedMeta += wrapInQuery('--OSdark', dark_props)
+    appendedMeta += wrapInQuery('--motionNotOK', reduced_props)
   }
 
   file.write('}\n')
