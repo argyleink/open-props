@@ -4,7 +4,7 @@ const OpenProps = require('../dist/open-props.cjs')
 const OPtokens = require('../open-props.tokens.json')
 
 test('Should have an all included import', t => {
-  t.is(Object.keys(OpenProps).length, 1600)
+  t.is(Object.keys(OpenProps).length, 1610)
 })
 
 test('Import should have animations', async t => {
