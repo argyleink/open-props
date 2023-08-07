@@ -15,5 +15,5 @@
   --color-13: oklch(20% .09 var(--color-hue, 0));
   --color-14: oklch(14% .07 var(--color-hue, 0));
   --color-15: oklch(11% .05 var(--color-hue, 0));
-  --color-bright: oklch(65% .3 var(--color-hue));
+  --color-bright: oklch(65% .3 var(--color-hue, 0));
 }
