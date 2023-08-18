@@ -11,12 +11,12 @@ export const toTokens = props =>
       .map(hueName => hueName.toLowerCase())
     let isColor = colors.some(color => key.includes(color))
 
-    if      (isLength) meta.type = 'dimension'
-    else if (isEasing) meta.type = 'cubic-bezier'
-    else if (isColor)  meta.type = 'color'
+    if      (isLength) meta.$type = 'dimension'
+    else if (isEasing) meta.$type = 'cubic-bezier'
+    else if (isColor)  meta.$type = 'color'
 
     return [key, {
-      value: token,
+      $value: token,
       ...meta,
     }]
   })
