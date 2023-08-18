@@ -39,26 +39,17 @@ const Shadows = {
     0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
     0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%))`,
 
-  "--inner-shadow-0": `
-    inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
-    inset 0 1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    inset 0 -1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 22%))`,
+  "--inner-shadow-0":
+    "inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
+
   "--inner-shadow-1": `
-    inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
-    inset 0 1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    inset 0 -1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 22%))`,
+    inset 0 -.5px 0 0 #fff1`,
   "--inner-shadow-2": `
-    inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
-    inset 0 1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    inset 0 -1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 22%))`,
+    inset 0 -.5px 0 0 #fff1`,
   "--inner-shadow-3": `
-    inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
-    inset 0 1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    inset 0 -1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 22%))`,
+    inset 0 -.5px 0 0 #fff1`,
   "--inner-shadow-4": `
-    inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)),
-    inset 0 1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    inset 0 -1px 0px 0px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 22%))`,
+    inset 0 -.5px 0 0 #fff1`,
 };
 
 export default Shadows;
