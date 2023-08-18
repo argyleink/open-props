@@ -29,7 +29,7 @@ test('JSON Import should have colors', async t => {
 })
 
 test('JSON Import should have types', async t => {
-  t.assert(OPtokens['--gray-0'].type, 'color')
+  t.assert(OPtokens['--gray-0'].$type, 'color')
 })
 
 test('Should produce a props bundle', async t => {
