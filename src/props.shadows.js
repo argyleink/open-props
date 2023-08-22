@@ -43,13 +43,13 @@ const Shadows = {
     "inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
 
   "--inner-shadow-1": `
-    inset 0 -.5px 0 0 #fff1`,
+    inset 0 -.5px 0 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))`,
   "--inner-shadow-2": `
-    inset 0 -.5px 0 0 #fff1`,
+    inset 0 -.5px 0 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))`,
   "--inner-shadow-3": `
-    inset 0 -.5px 0 0 #fff1`,
+    inset 0 -.5px 0 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))`,
   "--inner-shadow-4": `
-    inset 0 -.5px 0 0 #fff1`,
+    inset 0 -.5px 0 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))`,
 };
 
 export default Shadows;
