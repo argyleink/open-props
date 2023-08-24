@@ -41,7 +41,6 @@ const Shadows = {
 
   "--inner-shadow-0":
     "inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
-
   "--inner-shadow-1": `
     inset 0 -.5px 0 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))`,
   "--inner-shadow-2": `
