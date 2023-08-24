@@ -27,7 +27,7 @@
     background-color: var(--surface-1);
   }
 
-  & :where(button) {
+  & :where(button,.btn) {
     --_highlight: var(--_highlight-light);
     --_bg: var(--_bg-light);
     --_ink-shadow: var(--_ink-shadow-light);
@@ -38,7 +38,7 @@
     }
   }
 
-  & :where(button,input:is([type="button"],[type="submit"],[type="reset"]))[disabled] {
+  & :where(button,.btn,input:is([type="button"],[type="submit"],[type="reset"]))[disabled] {
     --_text: var(--gray-6);
   }
 
