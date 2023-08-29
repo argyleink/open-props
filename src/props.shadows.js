@@ -4,6 +4,8 @@ const Shadows = {
 
   '--shadow-color-@media:dark': '220 40% 2%',
   '--shadow-strength-@media:dark': '25%',
+
+  '--inner-shadow-highlight': 'inset 0 -.5px 0 0 #fff2, inset 0 .5px 0 0 #0007',
   
   '--shadow-1': '0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
   '--shadow-2': `
@@ -39,10 +41,10 @@ const Shadows = {
     0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%))`,
 
   '--inner-shadow-0': 'inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
-  '--inner-shadow-1': 'inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
-  '--inner-shadow-2': 'inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
-  '--inner-shadow-3': 'inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
-  '--inner-shadow-4': 'inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
+  '--inner-shadow-1': 'inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)), var(--inner-shadow-highlight)',
+  '--inner-shadow-2': 'inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)), var(--inner-shadow-highlight)',
+  '--inner-shadow-3': 'inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)), var(--inner-shadow-highlight)',
+  '--inner-shadow-4': 'inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%)), var(--inner-shadow-highlight)',
 }
 
 export default Shadows
