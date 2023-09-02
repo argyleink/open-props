@@ -296,7 +296,7 @@
 :where(table) {
   width: fit-content;
   border: 1px solid var(--surface-2);
-  background: var(--surface-2);
+  background: var(--surface-1);
   border-radius: var(--radius-3);
 
   --nice-inner-radius: calc(var(--radius-3) - 2px);
@@ -336,7 +336,6 @@
 }
 
 :where(td) {
-  background: var(--surface-1);
   max-inline-size: var(--size-content-2);
   text-wrap: pretty;
 }
@@ -348,6 +347,11 @@
 
 :where(thead) {
   border-collapse: collapse;
+  background: var(--surface-2);
+}
+
+:where(tfoot) {
+  background: var(--surface-2);
 }
 
 :where(table tr:hover td),
