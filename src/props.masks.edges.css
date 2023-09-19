@@ -1,13 +1,13 @@
 :where(html) {
   --mask-edge-scoop-bottom: radial-gradient(20px at 50% 100%,#0000 97%,#000) 50% / calc(1.9 * 20px) 100%;
   --mask-edge-scoop-top: radial-gradient(20px at 50% 0,#0000 97%,#000) 50% / calc(1.9 * 20px) 100%;
-  --mask-edge-scoop-vertical: radial-gradient(20px at 50% 20px,#0000 97%,#000) 50% -20px / calc(1.9 * 20px) 100%;
+  --mask-edge-scoop-vertical: radial-gradient(20px at 50% 20px,#0000 97%,#000) 50% -20px/ calc(1.9 * 20px) 100%;
   --mask-edge-scoop-left: radial-gradient(20px at 0 50%,#0000 97%,#000) 50%/ 100% calc(1.9 * 20px);
-  --mask-edge-scoop-right: radial-gradient(20px at 100% 50%,#0000 97%,#000) 50% / 100% calc(1.9 * 20px);
-  --mask-edge-scoop-horizontal: radial-gradient(20px at 20px 50%,#0000 97%,#000) -20px / 100% calc(1.9 * 20px);
+  --mask-edge-scoop-right: radial-gradient(20px at 100% 50%,#0000 97%,#000) 50%/ 100% calc(1.9 * 20px);
+  --mask-edge-scoop-horizontal: radial-gradient(20px at 20px 50%,#0000 97%,#000) -20px/ 100% calc(1.9 * 20px);
   --mask-edge-scalloped: 
     radial-gradient(farthest-side,#000 97%,#0000) 0 0 / 20px 20px round,
-    linear-gradient(#000 0 0) 50% / calc(100% - 20px) calc(100% - 20px) no-repeat
+    linear-gradient(#000 0 0) 50%/calc(100% - 20px) calc(100% - 20px) no-repeat
   ;
   --mask-edge-scalloped-bottom: 
     linear-gradient(to top,#0000 20px,#000 0),
@@ -67,8 +67,10 @@
   --mask-edge-zig-zag-right: conic-gradient(from -135deg at right,#0000,#000 1deg 90deg,#0000 91deg) 50% / 100% calc(2 * 20px);
   --mask-edge-zig-zag-horizontal: 
     conic-gradient(from   45deg at left ,#0000,#000 1deg 90deg,#0000 91deg) left  / 51% calc(2 * 20px) repeat-y,
-    conic-gradient(from -135deg at right,#0000,#000 1deg 90deg,#0000 91deg) right / 51% calc(2 * 20px) repeat-y;
+    conic-gradient(from -135deg at right,#0000,#000 1deg 90deg,#0000 91deg) right / 51% calc(2 * 20px) repeat-y
+  ;
   --mask-edge-zig-zag-vertical: 
     conic-gradient(from 135deg at top   ,#0000,#000 1deg 90deg,#0000 91deg) top    / calc(2 * 20px) 51% repeat-x,
-    conic-gradient(from -45deg at bottom,#0000,#000 1deg 90deg,#0000 91deg) bottom / calc(2 * 20px) 51% repeat-x;
+    conic-gradient(from -45deg at bottom,#0000,#000 1deg 90deg,#0000 91deg) bottom / calc(2 * 20px) 51% repeat-x
+  ;
 }
