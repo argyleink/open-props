@@ -1,7 +1,7 @@
 const postcssPresetEnv  = require('postcss-preset-env')
 const postcssImport     = require('postcss-import')
 const cssnano           = require('cssnano')
-const combineSelectors  = require('postcss-combine-duplicated-selectors')
+const combineSelectors = require('./build/postcss-combine-selectors.cjs')
 
 const lib = process.env.npm_lifecycle_event
 
@@ -11,6 +11,7 @@ const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports'
 module.exports = {
   plugins: [
     postcssImport(),
+    combineSelectors(),
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,
@@ -28,7 +29,6 @@ module.exports = {
         'double-position-gradients': false,
       }
     }),
-    combineSelectors(),
     cssnano({
       preset: 'default'
     }),
