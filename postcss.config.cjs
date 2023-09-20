@@ -11,7 +11,6 @@ const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports'
 module.exports = {
   plugins: [
     postcssImport(),
-    combineSelectors(),
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,
@@ -29,6 +28,7 @@ module.exports = {
         'double-position-gradients': false,
       }
     }),
+    combineSelectors(),
     cssnano({
       preset: 'default'
     }),
