@@ -346,6 +346,10 @@
   padding: var(--size-2);
 }
 
+:where(:is(td,th):not([align])) {
+	text-align: center;
+}
+
 :where(thead) {
   border-collapse: collapse;
 }
