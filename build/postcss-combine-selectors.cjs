@@ -1,7 +1,7 @@
 const creator = () => {
   return {
     postcssPlugin: 'postcss-combine-selectors',
-    Once(root) {
+    OnceExit(root) {
       const rulesToCombine = new Map()
       
       root.walkRules(rule => {
