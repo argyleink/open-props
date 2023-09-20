@@ -346,8 +346,7 @@
   padding: var(--size-2);
 }
 
-td:where([align="center"]),
-th:where([align="center"]) {
+:where(:is(td,th):not([align])) {
 	text-align: center;
 }
 
