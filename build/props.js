@@ -2,8 +2,11 @@ import fs from 'fs'
 
 import Animations from '../src/props.animations.js'
 import Sizes from '../src/props.sizes.js'
-import * as OpenColors from '../src/props.colors.js'
+import * as Colors from '../src/props.colors.js'
 import * as ColorsHSL from '../src/props.colors-hsl.js'
+import ColorsOKLCH from '../src/props.colors-oklch.js'
+import ColorsOKLCHgray from '../src/props.gray-oklch.js'
+import ColorHues from '../src/props.colors-oklch-hues.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
@@ -12,59 +15,51 @@ import Gradients from '../src/props.gradients.js'
 import Shadows from '../src/props.shadows.js'
 import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
+import MaskEdges from '../src/props.masks.edges.js'
+import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
+import {toObject} from './to-object.js'
 import {toFigmaTokens} from './to-figmatokens.js'
 
-const [,,prefix='',useWhere] = process.argv
+const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
 
-const selector = useWhere === 'true' ? ':where(html)' : 'html'
+const subject = customSubject === '' ? 'html' : customSubject
+const selector = useWhere === 'true' ? `:where(${subject})` : subject
+const pfx = filePrefix ? filePrefix + '.' : ''
 
 const mainbundle = {
-  'props.fonts.css': Fonts,
-  'props.sizes.css': Sizes,
-  'props.easing.css': Easings,
-  'props.zindex.css': Zindex,
-  'props.shadows.css': Shadows,
-  'props.aspects.css': Aspects,
-  'props.colors.css': OpenColors.default,
-  // 'props.svg.css': SVG,
-  'props.gradients.css': Gradients,
-  'props.animations.css': Animations,
-  'props.borders.css': Borders,
+  [`${pfx}props.fonts.css`]: Fonts,
+  [`${pfx}props.sizes.css`]: Sizes,
+  [`${pfx}props.easing.css`]: Easings,
+  [`${pfx}props.zindex.css`]: Zindex,
+  [`${pfx}props.shadows.css`]: Shadows,
+  [`${pfx}props.aspects.css`]: Aspects,
+  [`${pfx}props.colors.css`]: Colors.default,
+  // [`${pfx}props.svg.css`]: SVG,
+  [`${pfx}props.gradients.css`]: Gradients,
+  [`${pfx}props.animations.css`]: Animations,
+  [`${pfx}props.borders.css`]: Borders,
 }
 
-const individual_colors = {
-  'props.gray.css': OpenColors.Gray,
-  'props.red.css': OpenColors.Red,
-  'props.pink.css': OpenColors.Pink,
-  'props.grape.css': OpenColors.Grape,
-  'props.violet.css': OpenColors.Violet,
-  'props.indigo.css': OpenColors.Indigo,
-  'props.blue.css': OpenColors.Blue,
-  'props.cyan.css': OpenColors.Cyan,
-  'props.teal.css': OpenColors.Teal,
-  'props.green.css': OpenColors.Green,
-  'props.lime.css': OpenColors.Lime,
-  'props.yellow.css': OpenColors.Yellow,
-  'props.orange.css': OpenColors.Orange,
-}
+const individual_colors = Object.keys(Colors)
+  .filter(exportName => exportName !== "default")
+  .reduce((root, hueName) => ({
+    ...root,
+    [`${pfx}props.${hueName.toLowerCase()}.css`]: Colors[hueName]
+  }), {})
 
-const individual_colors_hsl = {
-  'props.gray-hsl.css': ColorsHSL.Gray,
-  'props.red-hsl.css': ColorsHSL.Red,
-  'props.pink-hsl.css': ColorsHSL.Pink,
-  'props.grape-hsl.css': ColorsHSL.Grape,
-  'props.violet-hsl.css': ColorsHSL.Violet,
-  'props.indigo-hsl.css': ColorsHSL.Indigo,
-  'props.blue-hsl.css': ColorsHSL.Blue,
-  'props.cyan-hsl.css': ColorsHSL.Cyan,
-  'props.teal-hsl.css': ColorsHSL.Teal,
-  'props.green-hsl.css': ColorsHSL.Green,
-  'props.lime-hsl.css': ColorsHSL.Lime,
-  'props.yellow-hsl.css': ColorsHSL.Yellow,
-  'props.orange-hsl.css': ColorsHSL.Orange,
+const individual_colors_hsl = Object.keys(ColorsHSL)
+  .filter(exportName => exportName !== "default")
+  .reduce((root, hueName) => ({
+    ...root,
+    [`${pfx}props.${hueName.toLowerCase()}-hsl.css`]: ColorsHSL[hueName]
+  }), {})
+
+const individuals = {
+  'props.masks.edges.css': MaskEdges,
+  'props.masks.corner-cuts.css': MaskCornerCuts,
 }
 
 // gen design tokens
@@ -91,20 +86,64 @@ const figmatokensSYNC = { 'open-props': { ...figmatokens } }
 const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.json')
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
 
+if (!fs.existsSync('../dist'))
+  fs.mkdirSync('../dist')
+
+const JS = fs.createWriteStream('../dist/open-props.js')
+JS.end(`var OpenProps = ${JSON.stringify(toObject(), null, 2)}`)
+
+const ES = fs.createWriteStream('../dist/open-props.module.js')
+ES.end(`export default ${JSON.stringify(toObject(), null, 2)}`)
+
+const CJS = fs.createWriteStream('../dist/open-props.cjs')
+CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
+
+// const UMD = fs.createWriteStream('../dist/open-props.umd.js')
+// UMD.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
+
+
 // gen prop variants
-Object.entries({...mainbundle, ...individual_colors, ...individual_colors_hsl}).forEach(([filename, props]) => {
+Object.entries({
+  ...mainbundle, 
+  ...individual_colors, 
+  ...individual_colors_hsl,
+  ...individuals,
+}).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props}, {selector, prefix})
 })
 
 // gen color hsl main file
 buildPropsStylesheet({
-  filename: 'props.colors-hsl.css', 
+  filename: pfx + 'props.colors-hsl.css', 
   props: ColorsHSL.default}, 
   {selector, prefix}
 )
 
+// gen color oklch files
+buildPropsStylesheet({
+  filename: pfx + 'props.colors-oklch.css', 
+  props: ColorsOKLCH}, 
+  {
+    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    prefix
+  }
+)
+buildPropsStylesheet({
+  filename: pfx + 'props.gray-oklch.css', 
+  props: ColorsOKLCHgray}, 
+  {
+    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    prefix
+  }
+)
+buildPropsStylesheet({
+  filename: pfx + 'props.colors-oklch-hues.css', 
+  props: ColorHues}, 
+  {selector, prefix}
+)
+
 // gen index.css
-const entry = fs.createWriteStream('../src/index.css')
+const entry = fs.createWriteStream(`../src/${pfx}index.css`)
 entry.write(`@import 'props.media.css';
 `)
 Object.keys(mainbundle).forEach(filename => {

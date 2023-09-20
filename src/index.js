@@ -10,6 +10,8 @@ import Gradients from './props.gradients.js'
 import Shadows from './props.shadows.js'
 import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
+import MaskEdges from './props.masks.edges.js'
+import MaskCornerCuts from './props.masks.corner-cuts.js'
 
 const camelize = text => {
   text = text.replace(/[-]+(.)?/g, (_, c) => c 
@@ -37,6 +39,8 @@ const OpenProps = mapToObjectNotation({
   ...Gradients,
   ...Shadows,
   ...Zindex,
+  ...MaskEdges,
+  ...MaskCornerCuts,
 })
 
 export default OpenProps

@@ -24,7 +24,8 @@ module.exports = {
         'focus-visible-pseudo-class': false,
         'focus-within-pseudo-class': false,
         'color-functional-notation': false,
-        'custom-media-queries': {preserve:inlineMediaQueries}
+        'custom-media-queries': {preserve:inlineMediaQueries},
+        'double-position-gradients': false,
       }
     }),
     combineSelectors(),

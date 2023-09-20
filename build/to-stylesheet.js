@@ -5,8 +5,11 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 
   let appendedMeta = ''
 
-  if (filename.includes('shadows')) {
+  if (filename.includes('shadows') || filename.includes('animations')) {
     file.write(`@import 'props.media.css';\n\n`)
+  }
+
+  if (filename.includes('shadows')) {
     let dark_propsMeta = ``
     let dark_props = Object.entries(props)
       .filter(([prop, val]) =>
@@ -18,7 +21,7 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
       let p = prefix && prefix !== "''"
         ? `--${prefix}-` + extract
         : `--${extract}`
-      
+
       dark_propsMeta += `    ${p}: ${val};${index !== dark_props.length-1 ? '\n' : ''}`
     })
     appendedMeta += `
@@ -48,6 +51,22 @@ ${dark_propsMeta}
     
     file.write(`  ${prop}: ${val};\n`)
   })
+
+  if (filename.includes('animations')) {
+    let dark_props = Object.entries(props)
+      .filter(([prop, val]) =>
+        prop.includes('-@media:dark'))
+
+    dark_props.forEach(([prop, val], index) => {
+      let hasDarkKeyframe = prop.endsWith('-@media:dark') && val.trim().startsWith('@keyframe')
+      if (hasDarkKeyframe) {
+        appendedMeta += `
+@media (--OSdark) {
+  ${val.trim().replace(/\n/g, '\n  ')};
+}`
+      }
+    })
+  }
 
   file.write('}\n')
   file.end(appendedMeta)

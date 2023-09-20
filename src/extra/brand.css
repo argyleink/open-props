@@ -1,13 +1,25 @@
-@import "theme.css";
-
 :where(html) {
-  --scrollbar-color: var(--gray-7);
+  /* --brand: your-brand-color-here; */
+  
+  scrollbar-color: var(--scrollthumb-color) transparent;
+  accent-color: var(--brand, var(--link));
+  caret-color: var(--brand, var(--link));
+  color: var(--text-2);
+  background-color: var(--surface-1);
+}
 
-  scrollbar-color: var(--scrollbar-color) transparent;
-  accent-color: var(--link);
-  caret-color: var(--link);
+:where(h1, h2, h3, h4, h5, h6, dt) { 
+  color: var(--text-1);
+}
 
-  @media (--OSlight) {
-    --scrollbar-color: var(--gray-4);
+:where(a[href]) {
+  color: var(--brand, var(--link));
+  
+  &:visited {
+    color: var(--link-visited);
   }
+}
+
+:focus-visible { 
+  outline-color: var(--brand, var(--link)); 
 }

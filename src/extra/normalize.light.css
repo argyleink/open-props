@@ -1,0 +1,8 @@
+@import "theme.light.css";
+@import "brand.css";
+@import "normalize.src.css";
+
+:where(html) {
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+}
