@@ -22,6 +22,7 @@ import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
 import {toObject} from './to-object.js'
 import {toFigmaTokens} from './to-figmatokens.js'
+import {toAtProperty} from './to-at-property.js'
 
 const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
 
@@ -85,6 +86,16 @@ FigmaTokens.end(JSON.stringify(figmatokens, null, 2))
 const figmatokensSYNC = { 'open-props': { ...figmatokens } }
 const FigmaTokensSync = fs.createWriteStream('../open-props.figma-tokens.sync.json')
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2))
+
+// gen @property module
+const atTokens = toAtProperty(Object.entries({
+  ...Object.assign({}, ...Object.values(individual_colors)),
+  // ...Easings,
+  ...Zindex,
+  ...Aspects,
+}))
+const atProperty = fs.createWriteStream('../open-props.typed.js')
+atProperty.end(JSON.stringify(atTokens)+'.forEach(CSS.registerProperty)', null, 2)
 
 if (!fs.existsSync('../dist'))
   fs.mkdirSync('../dist')
