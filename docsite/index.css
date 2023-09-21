@@ -27,13 +27,14 @@ body {
   display: grid;
   justify-items: flex-start;
   grid-template-columns:
-    var(--size-8) 
+    var(--size-3) 
+    var(--size-content-1) 
     calc(100% - 2 * var(--size-8)) 
     var(--size-8) 
   ;
 
   & > * {
-    grid-column: 2;
+    grid-column: 3;
   }
 
   & > .place-full {
@@ -47,6 +48,10 @@ body {
       calc(100% - 2 * var(--size-3))  
       var(--size-3) 
     ;
+
+    & > * {
+      grid-column: 2;
+    }
   }
 }
 
@@ -88,6 +93,7 @@ header {
 }
 
 nav {
+  grid-column: 2 / span 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -400,19 +406,20 @@ pre[class*="language-"] {
 }
 
 .module-list {
+  grid-column: 2;
+  grid-row: 2;
   position: sticky;
   z-index: var(--layer-1);
-  bottom: 0;
-  overflow-x: auto;
+  top: 0;
+  overflow-y: auto;
 
-  background-image: linear-gradient(to top, hsl(var(--gray-9-hsl) / 98%) 1ch, 75%, hsl(var(--gray-9-hsl) / 0%));
+  background-image: linear-gradient(to right, hsl(var(--gray-9-hsl) / 98%) 1ch, 75%, hsl(var(--gray-9-hsl) / 0%));
   margin-block-start: var(--size-8);
-  padding-block: var(--size-5) var(--size-2);
-  padding-inline: var(--size-2) var(--size-4);
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  gap: var(--size-4);
+  padding-block: var(--size-4) var(--size-2);
+  padding-inline: 0;
+  display: grid;
+  align-content: start;
+  gap: var(--size-3);
 
   & a[href]:not(:hover,:focus-visible) {
     color: var(--text-1);
