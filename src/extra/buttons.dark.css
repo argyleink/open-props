@@ -1,7 +1,7 @@
 @import "../props.media.css";
 @import "../props.gray-hsl.css";
 
-:where(button,input:is([type="button"],[type="submit"],[type="reset"])),
+:where(.btn,button,input:is([type="button"],[type="submit"],[type="reset"])),
 :where(input[type="file"])::-webkit-file-upload-button,
 :where(input[type="file"])::file-selector-button {
   --_accent: initial /* your color */;
@@ -14,7 +14,7 @@
   --_highlight: hsl(var(--gray-12-hsl) / 25%);
   --_ink-shadow: 0 1px 0 var(--surface-1);
   
-  --_icon-size: 2ch;
+  --_icon-size: var(--size-relative-7);
   --_icon-color: var(--_accent, var(--link));
   
   font-size: var(--_size);
@@ -37,7 +37,7 @@
   font-weight: var(--font-weight-7);
   border-radius: var(--radius-2);
   padding-block: .75ch;
-  padding-inline: 1.75ch;
+  padding-inline: var(--size-relative-6);
 
   user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -53,7 +53,7 @@
   }
 }
 
-:where(button,input:is([type="button"],[type="submit"],[type="reset"])) {
+:where(.btn,button,input:is([type="button"],[type="submit"],[type="reset"])) {
   /* disabled */
   &[disabled] {
     --_bg: none;
@@ -117,7 +117,7 @@
 
 :where(input[type="file"])::-webkit-file-upload-button,
 :where(input[type="file"])::file-selector-button {
-  margin-inline-end: 1.75ch;
+  margin-inline-end: var(--size-relative-6);
   cursor: pointer;
 }
 

@@ -4,6 +4,9 @@ import Animations from '../src/props.animations.js'
 import Sizes from '../src/props.sizes.js'
 import * as Colors from '../src/props.colors.js'
 import * as ColorsHSL from '../src/props.colors-hsl.js'
+import ColorsOKLCH from '../src/props.colors-oklch.js'
+import ColorsOKLCHgray from '../src/props.gray-oklch.js'
+import ColorHues from '../src/props.colors-oklch-hues.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
@@ -54,10 +57,10 @@ const individual_colors_hsl = Object.keys(ColorsHSL)
     [`${pfx}props.${hueName.toLowerCase()}-hsl.css`]: ColorsHSL[hueName]
   }), {})
 
-// const individuals = {
-//   'props.masks.edges.css': MaskEdges,
-//   'props.masks.corner-cuts.css': MaskCornerCuts,
-// }
+const individuals = {
+  'props.masks.edges.css': MaskEdges,
+  'props.masks.corner-cuts.css': MaskCornerCuts,
+}
 
 // gen design tokens
 const jsonbundle = Object.entries({
@@ -104,7 +107,7 @@ Object.entries({
   ...mainbundle, 
   ...individual_colors, 
   ...individual_colors_hsl,
-  // ...individuals,
+  ...individuals,
 }).forEach(([filename, props]) => {
   buildPropsStylesheet({filename, props}, {selector, prefix})
 })
@@ -113,6 +116,29 @@ Object.entries({
 buildPropsStylesheet({
   filename: pfx + 'props.colors-hsl.css', 
   props: ColorsHSL.default}, 
+  {selector, prefix}
+)
+
+// gen color oklch files
+buildPropsStylesheet({
+  filename: pfx + 'props.colors-oklch.css', 
+  props: ColorsOKLCH}, 
+  {
+    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    prefix
+  }
+)
+buildPropsStylesheet({
+  filename: pfx + 'props.gray-oklch.css', 
+  props: ColorsOKLCHgray}, 
+  {
+    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    prefix
+  }
+)
+buildPropsStylesheet({
+  filename: pfx + 'props.colors-oklch-hues.css', 
+  props: ColorHues}, 
   {selector, prefix}
 )
 

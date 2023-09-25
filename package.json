@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.5.5",
+  "version": "1.5.16",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -73,6 +73,8 @@
     "./choco-hsl": "./choco-hsl.min.css",
     "./colors": "./colors.min.css",
     "./colors-hsl": "./colors-hsl.min.css",
+    "./colors-hd": "./colors-oklch.min.css",
+    "./oklch-hues": "./oklch-hues.min.css",
     "./cyan": "./cyan.min.css",
     "./cyan-hsl": "./cyan-hsl.min.css",
     "./easings": "./easings.min.css",
@@ -80,6 +82,7 @@
     "./gradients": "./gradients.min.css",
     "./gray": "./gray.min.css",
     "./gray-hsl": "./gray-hsl.min.css",
+    "./gray-hd": "./gray-oklch.min.css",
     "./green": "./green.min.css",
     "./green-hsl": "./green-hsl.min.css",
     "./indigo": "./indigo.min.css",
@@ -209,9 +212,12 @@
     "lib:masks:edges": "postcss src/props.masks.edges.css -o masks.edges.min.css",
     "lib:masks:cornercuts": "postcss src/props.masks.corner-cuts.css -o masks.corner-cuts.min.css",
     "lib:colors": "postcss src/props.colors.css -o colors.min.css",
+    "lib:colors:oklch-hues": "postcss src/props.colors-oklch-hues.css -o oklch-hues.min.css",
     "lib:colors-hsl": "postcss src/props.colors-hsl.css -o colors-hsl.min.css",
+    "lib:colors-oklch": "postcss src/props.colors-oklch.css -o colors-oklch.min.css",
     "lib:colors:gray": "postcss src/props.gray.css -o gray.min.css",
     "lib:colors:gray-hsl": "postcss src/props.gray-hsl.css -o gray-hsl.min.css",
+    "lib:colors:gray-oklch": "postcss src/props.gray-oklch.css -o gray-oklch.min.css",
     "lib:colors:stone": "postcss src/props.stone.css -o stone.min.css",
     "lib:colors:stone-hsl": "postcss src/props.stone-hsl.css -o stone-hsl.min.css",
     "lib:colors:red": "postcss src/props.red.css -o red.min.css",
@@ -259,8 +265,11 @@
     "shadow:sizes": "postcss src/shadow.props.sizes.css -o sizes.shadow.min.css",
     "shadow:zindex": "postcss src/shadow.props.zindex.css -o zindex.shadow.min.css",
     "shadow:colors": "postcss src/shadow.props.colors.css -o colors.shadow.min.css",
+    "shadow:colors:oklch-hues": "postcss src/shadow.props.colors-oklch-hues.css -o oklch-hues.shadow.min.css",
     "shadow:colors-hsl": "postcss src/shadow.props.colors-hsl.css -o colors-hsl.shadow.min.css",
+    "shadow:colors-oklch": "postcss src/shadow.props.colors-oklch.css -o colors-oklch.shadow.min.css",
     "shadow:colors:gray": "postcss src/shadow.props.gray.css -o gray.shadow.min.css",
+    "shadow:colors:hd-gray": "postcss src/shadow.props.gray-oklch.css -o gray-oklch.shadow.min.css",
     "shadow:colors:gray-hsl": "postcss src/shadow.props.gray-hsl.css -o gray-hsl.shadow.min.css",
     "shadow:colors:stone": "postcss src/shadow.props.stone.css -o stone.shadow.min.css",
     "shadow:colors:stone-hsl": "postcss src/shadow.props.stone-hsl.css -o stone-hsl.shadow.min.css",
@@ -311,8 +320,5 @@
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^9.1.4",
     "typescript": "^4.9.4"
-  },
-  "volta": {
-    "node": "18.18.0"
   }
 }

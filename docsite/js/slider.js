@@ -5,9 +5,9 @@ const rangeToPercent = slider => {
   let val = slider.value
   let max = slider.max
 
-  if (slider.min === '-1' && (val === "-1" || val === "0"))
+  if (slider.min === '-1' && (val === '-1' || val === '0'))
     percent = (val+1) / max * 100
-  else if (slider.min === '-1' && val === "1")
+  else if (slider.min === '-1' && val === '1')
     percent = val / (max-2) * 100
   else
     percent = val / max * 100
