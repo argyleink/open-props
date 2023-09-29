@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -77,6 +77,7 @@
     "./oklch-hues": "./oklch-hues.min.css",
     "./cyan": "./cyan.min.css",
     "./cyan-hsl": "./cyan-hsl.min.css",
+    "./durations": "./durations.min.css",
     "./easings": "./easings.min.css",
     "./fonts": "./fonts.min.css",
     "./gradients": "./gradients.min.css",
@@ -201,6 +202,7 @@
     "lib:animations": "postcss src/props.animations.css -o animations.min.css",
     "lib:aspects": "postcss src/props.aspects.css -o aspects.min.css",
     "lib:borders": "postcss src/props.borders.css -o borders.min.css",
+    "lib:durations": "postcss src/extra/durations.css -o durations.min.css",
     "lib:easing": "postcss src/props.easing.css -o easings.min.css",
     "lib:fonts": "postcss src/props.fonts.css -o fonts.min.css",
     "lib:gradients": "postcss src/props.gradients.css -o gradients.min.css",
