@@ -47,6 +47,18 @@ export default {
   '--ease-step-4': 'steps(7)',
   '--ease-step-5': 'steps(10)',
 
+  '--ease-elastic-1': 'var(--ease-elastic-out-1)',
+  '--ease-elastic-2': 'var(--ease-elastic-out-2)',
+  '--ease-elastic-3': 'var(--ease-elastic-out-3)',
+  '--ease-elastic-4': 'var(--ease-elastic-out-4)',
+  '--ease-elastic-5': 'var(--ease-elastic-out-5)',
+
+  '--ease-squish-1': 'var(--elastic-in-out-1)',
+  '--ease-squish-2': 'var(--elastic-in-out-2)',
+  '--ease-squish-3': 'var(--elastic-in-out-3)',
+  '--ease-squish-4': 'var(--elastic-in-out-4)',
+  '--ease-squish-5': 'var(--elastic-in-out-5)',
+
   '--ease-spring-1': `linear(
     0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%,
     0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%,

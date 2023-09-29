@@ -2254,9 +2254,13 @@
               --ease-in-out-{1-5}
               --ease-elastic-out-{1-5}
               --ease-elastic-in-{1-5}
-              --ease-elastic-in-out{1-5}
+              --ease-elastic-in-out-{1-5} 
               --ease-spring-{1-5}
               --ease-step-{1-5}
+
+              /* will be removed in v2 */
+              --ease-elastic-{1-5}        /* deprecated; equal to elastic-out  */
+              --ease-squish-{1-5}         /* deprecated; equal to elastic-in-out  */
             </code></pre>
           </div>
         </div>
@@ -2387,7 +2391,7 @@
             <div style="animation-timing-function: var(--ease-elastic-in-4)">ease-elastic-in-4</div>
             <div style="animation-timing-function: var(--ease-elastic-in-5)">ease-elastic-in-5</div>
           </div>
-        </div>å
+        </div>
 
         <div class="block-wrap">
           <header class="animation-control-header">
