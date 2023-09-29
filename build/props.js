@@ -145,6 +145,7 @@ buildPropsStylesheet({
 // gen index.css
 const entry = fs.createWriteStream(`../src/${pfx}index.css`)
 entry.write(`@import 'props.media.css';
+@import 'props.supports.css';
 `)
 Object.keys(mainbundle).forEach(filename => {
   entry.write(`@import '${filename}';\n`)
