@@ -175,6 +175,7 @@
     "./postcss/theme-dark": "./src/extra/theme-dark.css",
     "./postcss/theme-light": "./src/extra/theme-light.css",
     "./utilities": "./src/extra/utilities.css",
+    "./preset-unocss": "./src/presets/unocss/index.js",
     "./*": "./*"
   },
   "browserslist": [
@@ -189,6 +190,7 @@
     "gen:shadowdom": "cd build && node props \"\" false \":host\" \"shadow\"",
     "gen:prefixed": "cd build && node props.js \"op\" true",
     "gen:types": "tsc -p tsconfig.json",
+    "gen:unocss": "tsc -p src/presets/unocss/tsconfig.json",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css && node ./build/extras.js",
     "lib:normalize:light": "postcss src/extra/normalize.light.css -o normalize.light.min.css",
