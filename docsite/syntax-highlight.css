@@ -10,7 +10,7 @@ code.language-bash::before {
   content: '$ ';
   color: var(--cyan-1);
 
-  @nest [data-theme="light"] & {
+  [data-theme="light"] & {
     color: var(--teal-6);
   }
 }
@@ -41,7 +41,7 @@ pre[class*="language-"] {
     padding-block: var(--size-4);
   }
 
-  @nest [data-theme="light"] & {
+  [data-theme="light"] & {
     background: white;
   }
 }
@@ -52,7 +52,7 @@ code.language-css {
     0 0 10px var(--indigo-5),
     0 0 25px var(--indigo-7);
 
-  @nest [data-theme="light"] & {
+  [data-theme="light"] & {
     color: var(--indigo-9);
     text-shadow: 0 0 15px var(--indigo-7);
     background: white;
@@ -68,7 +68,7 @@ code.language-css {
     color: var(--text-1);
     text-shadow: 0 1px 0 var(--surface-1);
 
-    @nest [data-theme="light"] & {
+    [data-theme="light"] & {
       text-shadow: 0 1px 0 var(--gray-3);
     }
   }
@@ -84,7 +84,7 @@ code.language-css {
       0 0 10px var(--teal-5),
       0 0 25px var(--teal-7);
 
-    @nest [data-theme="light"] & {
+    [data-theme="light"] & {
       color: var(--purple-9);
       text-shadow: 0 0 15px var(--purple-9);
     }
@@ -98,7 +98,7 @@ code.language-css {
     color: var(--gray-5);
     text-shadow: none;
     
-    @nest [data-theme="light"] & {
+    [data-theme="light"] & {
       color: var(--gray-6);
     }
   }
