@@ -1,5 +1,4 @@
 @import 'props.media.css';
-
 @import 'props.supports.css';
 
 :where(html) {
