@@ -1,5 +1,7 @@
 @import 'props.media.css';
 
+@import 'props.supports.css';
+
 :where(html) {
   --animation-fade-in: fade-in .5s var(--ease-3);
   --animation-fade-in-bloom: fade-in-bloom 2s var(--ease-3);
@@ -9,12 +11,16 @@
   --animation-scale-down: scale-down .5s var(--ease-3);
   --animation-slide-out-up: slide-out-up .5s var(--ease-3);
   --animation-slide-out-down: slide-out-down .5s var(--ease-3);
-  --animation-slide-out-right: slide-out-right .5s var(--ease-3);
-  --animation-slide-out-left: slide-out-left .5s var(--ease-3);
+  --animation-slide-out-end: slide-out-end .5s var(--ease-3);
+  --animation-slide-out-right: var(--animation-slide-out-end);
+  --animation-slide-out-start: slide-out-start .5s var(--ease-3);
+  --animation-slide-out-left: var(--animation-slide-out-start);
   --animation-slide-in-up: slide-in-up .5s var(--ease-3);
   --animation-slide-in-down: slide-in-down .5s var(--ease-3);
-  --animation-slide-in-right: slide-in-right .5s var(--ease-3);
-  --animation-slide-in-left: slide-in-left .5s var(--ease-3);
+  --animation-slide-in-end: slide-in-end .5s var(--ease-3);
+  --animation-slide-in-right: var(--animation-slide-in-end);
+  --animation-slide-in-start: slide-in-start .5s var(--ease-3);
+  --animation-slide-in-left: var(--animation-slide-in-start);
   --animation-shake-x: shake-x .75s var(--ease-out-5);
   --animation-shake-y: shake-y .75s var(--ease-out-5);
   --animation-spin: spin 2s linear infinite;
@@ -53,11 +59,11 @@
 @keyframes slide-out-down {
   to { transform: translateY(100%) }
 }
-@keyframes slide-out-right {
-  to { transform: translateX(100%) }
+@keyframes slide-out-end {
+  to { transform: translateX(calc(100% * var(--isLTR))) }
 }
-@keyframes slide-out-left {
-  to { transform: translateX(-100%) }
+@keyframes slide-out-start {
+  to { transform: translateX(calc(-100% * var(--isLTR))) }
 }
 @keyframes slide-in-up {
   from { transform: translateY(100%) }
@@ -65,11 +71,11 @@
 @keyframes slide-in-down {
   from { transform: translateY(-100%) }
 }
-@keyframes slide-in-right {
-  from { transform: translateX(-100%) }
+@keyframes slide-in-end {
+  from { transform: translateX(calc(-100% * var(--isLTR))) }
 }
-@keyframes slide-in-left {
-  from { transform: translateX(100%) }
+@keyframes slide-in-start {
+  from { transform: translateX(calc(100% * var(--isLTR))) }
 }
 @keyframes shake-x {
   0%, 100% { transform: translateX(0%) }

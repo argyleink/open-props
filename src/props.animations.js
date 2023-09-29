@@ -55,16 +55,18 @@ export default {
 @keyframes slide-out-down {
   to { transform: translateY(100%) }
 }`,
-  "--animation-slide-out-right": "slide-out-right .5s var(--ease-3)", 
-  "--animation-slide-out-right-@": `
-@keyframes slide-out-right {
-  to { transform: translateX(100%) }
+"--animation-slide-out-end": "slide-out-end .5s var(--ease-3)", 
+"--animation-slide-out-end-@": `
+@keyframes slide-out-end {
+  to { transform: translateX(calc(100% * var(--isLTR))) }
 }`,
-  "--animation-slide-out-left": "slide-out-left .5s var(--ease-3)", 
-  "--animation-slide-out-left-@": `
-@keyframes slide-out-left {
-  to { transform: translateX(-100%) }
+  "--animation-slide-out-right": "var(--animation-slide-out-end)",
+  "--animation-slide-out-start": "slide-out-start .5s var(--ease-3)", 
+  "--animation-slide-out-start-@": `
+@keyframes slide-out-start {
+  to { transform: translateX(calc(-100% * var(--isLTR))) }
 }`,
+  "--animation-slide-out-left": "var(--animation-slide-out-start)",  
   "--animation-slide-in-up": "slide-in-up .5s var(--ease-3)", 
   "--animation-slide-in-up-@": `
 @keyframes slide-in-up {
@@ -75,16 +77,18 @@ export default {
 @keyframes slide-in-down {
   from { transform: translateY(-100%) }
 }`,
-  "--animation-slide-in-right": "slide-in-right .5s var(--ease-3)", 
-  "--animation-slide-in-right-@": `
-@keyframes slide-in-right {
-  from { transform: translateX(-100%) }
+  "--animation-slide-in-end": "slide-in-end .5s var(--ease-3)", 
+  "--animation-slide-in-end-@": `
+@keyframes slide-in-end {
+  from { transform: translateX(calc(-100% * var(--isLTR))) }
 }`,
-  "--animation-slide-in-left": "slide-in-left .5s var(--ease-3)", 
-  "--animation-slide-in-left-@": `
-@keyframes slide-in-left {
-  from { transform: translateX(100%) }
+  "--animation-slide-in-right": "var(--animation-slide-in-end)",
+  "--animation-slide-in-start": "slide-in-start .5s var(--ease-3)", 
+  "--animation-slide-in-start-@": `
+@keyframes slide-in-start {
+  from { transform: translateX(calc(100% * var(--isLTR))) }
 }`,
+  "--animation-slide-in-left": "var(--animation-slide-in-start)",
   "--animation-shake-x": "shake-x .75s var(--ease-out-5)", 
   "--animation-shake-x-@": `
 @keyframes shake-x {
