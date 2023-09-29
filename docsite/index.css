@@ -535,7 +535,7 @@ pre[class*="language-"] {
   &:is(:hover,:focus) {
     transform: scale(1.5);
     transition-delay: 0s;
-    transition-timing-function: var(--ease-elastic-3);
+    transition-timing-function: var(--out-3);
 
     &::before {
       opacity: 1;
@@ -1436,7 +1436,7 @@ input[type="range"] {
   stroke-width: 2px;
   transform-origin: center center;
   transition: 
-    transform .5s var(--ease-elastic-4),
+    transform .5s var(--ease-elastic-out-4),
     opacity var(--_opacity-dur) var(--ease-3);
 
   @nest :hover > svg > & {

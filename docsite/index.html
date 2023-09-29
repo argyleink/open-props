@@ -2252,8 +2252,9 @@
               --ease-in-{1-5}
               --ease-out-{1-5}
               --ease-in-out-{1-5}
-              --ease-elastic-{1-5}
-              --ease-squish-{1-5}
+              --ease-elastic-out-{1-5}
+              --ease-elastic-in-{1-5}
+              --ease-elastic-in-out{1-5}
               --ease-spring-{1-5}
               --ease-step-{1-5}
             </code></pre>
@@ -2352,7 +2353,7 @@
 
         <div class="block-wrap">
           <header class="animation-control-header">
-            <h5>Ease Elastic</h5>
+            <h5>Ease Elastic Out</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
@@ -2361,17 +2362,17 @@
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-elastic-1)">ease-elastic-1</div>
-            <div style="animation-timing-function: var(--ease-elastic-2)">ease-elastic-2</div>
-            <div style="animation-timing-function: var(--ease-elastic-3)">ease-elastic-3</div>
-            <div style="animation-timing-function: var(--ease-elastic-4)">ease-elastic-4</div>
-            <div style="animation-timing-function: var(--ease-elastic-5)">ease-elastic-5</div>
+            <div style="animation-timing-function: var(--ease-elastic-out-1)">ease-elastic-out-1</div>
+            <div style="animation-timing-function: var(--ease-elastic-out-2)">ease-elastic-out-2</div>
+            <div style="animation-timing-function: var(--ease-elastic-out-3)">ease-elastic-out-3</div>
+            <div style="animation-timing-function: var(--ease-elastic-out-4)">ease-elastic-out-4</div>
+            <div style="animation-timing-function: var(--ease-elastic-out-5)">ease-elastic-out-5</div>
           </div>
         </div>
 
         <div class="block-wrap">
           <header class="animation-control-header">
-            <h5>Ease Squish</h5>
+            <h5>Ease Elastic In</h5>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
@@ -2380,11 +2381,30 @@
             </button>
           </header>
           <div class="ease-demo paused">
-            <div style="animation-timing-function: var(--ease-squish-1)">ease-squish-1</div>
-            <div style="animation-timing-function: var(--ease-squish-2)">ease-squish-2</div>
-            <div style="animation-timing-function: var(--ease-squish-3)">ease-squish-3</div>
-            <div style="animation-timing-function: var(--ease-squish-4)">ease-squish-4</div>
-            <div style="animation-timing-function: var(--ease-squish-5)">ease-squish-5</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-1)">ease-elastic-in-1</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-2)">ease-elastic-in-2</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-3)">ease-elastic-in-3</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-4)">ease-elastic-in-4</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-5)">ease-elastic-in-5</div>
+          </div>
+        </div>å
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Ease Elastic In Out</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-elastic-in-out-1)">ease-elastic-in-out-1</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-out-2)">ease-elastic-in-out-2</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-out-3)">ease-elastic-in-out-3</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-out-4)">ease-elastic-in-out-4</div>
+            <div style="animation-timing-function: var(--ease-elastic-in-out-5)">ease-elastic-in-out-5</div>
           </div>
         </div>
 
@@ -2745,7 +2765,7 @@
                   animation: 
                     var(--animation-fade-out) forwards,
                     var(--animation-slide-out-down);
-                  animation-timing-function: var(--ease-squish-3);
+                  animation-timing-function: var(--ease-elastic-in-out-3);
                   animation-duration: 1s;
                 }
               </code></pre>
@@ -2791,7 +2811,7 @@
                   animation: 
                     var(--animation-scale-down),
                     var(--animation-fade-out);
-                  animation-timing-function: var(--ease-squish-4);
+                  animation-timing-function: var(--ease-elastic-in-out-4);
                 }
               </code></pre>
             </div>
