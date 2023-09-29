@@ -535,7 +535,7 @@ pre[class*="language-"] {
   &:is(:hover,:focus) {
     transform: scale(1.5);
     transition-delay: 0s;
-    transition-timing-function: var(--out-3);
+    transition-timing-function: var(--ease-elastic-out-3);
 
     &::before {
       opacity: 1;
