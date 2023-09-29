@@ -6,8 +6,8 @@ export const openPropsPreset = {
   rules: [
     [
       /^op-color-(.*)$/,
-      ([, c], { theme }) => {
-        const normalizedVariable = `--${c}`;
+      ([, token], { theme }) => {
+        const normalizedVariable = `--${token}`;
         if (theme["colors"][normalizedVariable]) {
           return { color: theme["colors"][normalizedVariable] };
         }
@@ -15,8 +15,8 @@ export const openPropsPreset = {
     ],
     [
       /^op-font-(.*)$/,
-      ([, c], { theme }) => {
-        const normalizedVariable = `--font-${c}`;
+      ([, token], { theme }) => {
+        const normalizedVariable = `--font-${token}`;
         if (theme["fontFamily"][normalizedVariable]) {
           return { "font-family": theme["fontFamily"][normalizedVariable] };
         }
