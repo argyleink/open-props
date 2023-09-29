@@ -52,7 +52,7 @@
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   
-  transition: border-color .5s var(--ease-3) 3s;
+  transition: border-color .5s var(--ease-3);
 
   @media (--OSdark) {
     --_highlight: var(--_highlight-dark);
@@ -62,7 +62,7 @@
 
   @media (--motionOK) {
     transition:
-      border-color .5s var(--ease-3) 3s,
+      border-color .5s var(--ease-3),
       box-shadow 145ms var(--ease-4),
       outline-offset 145ms var(--ease-4);
   }
@@ -84,7 +84,6 @@
   /* pressing */
   &:where(:not(:active):hover) {
     --_highlight-size: var(--size-2);
-    transition-delay: 0s;
     transition-duration: .25s;
   }
 

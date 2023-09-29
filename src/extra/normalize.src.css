@@ -161,6 +161,7 @@
   min-inline-size: 0;
   max-inline-size: max-content; 
   writing-mode: lr;
+  direction: ltr;
 }
 
 :where(:not(pre) > code) {
@@ -210,6 +211,7 @@
 
   & > :where(figcaption) {
     font-size: var(--font-size-1);
+    text-wrap: balance;
   }
 }
 
