@@ -5,11 +5,10 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 
   let appendedMeta = ''
 
-  if (filename.includes('shadows') || filename.includes('animations')) {
+  if (filename.includes('shadows')) {
     file.write(`@import 'props.media.css';\n\n`)
-  }
-
-  if(filename.includes('animations')) {
+  } else if(filename.includes('animations')) {
+    file.write(`@import 'props.media.css';\n`)
     file.write(`@import 'props.supports.css';\n\n`)
   }
 
