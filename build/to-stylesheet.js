@@ -1,5 +1,20 @@
 import fs from 'fs'
 
+/**
+ * Wraps a set of definitions inside of a media query 
+ * @param {*} queryValue The media value to query for
+ * @param {*} definitions The definitions that need to be wrapped
+ * @returns Media query string
+ */
+const wrapInQuery = (queryValue, definitions) => {
+  return definitions ? `
+@media (${queryValue}) {
+  ${definitions.reduce((acc, [_, val], i) => (
+    `${acc} ${i ? `\n` : ''} ${val}`
+  ), '')}
+}` : '';
+}
+
 export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
   const file = fs.createWriteStream("../src/" + filename)
 
@@ -53,19 +68,24 @@ ${dark_propsMeta}
   })
 
   if (filename.includes('animations')) {
-    let dark_props = Object.entries(props)
-      .filter(([prop, val]) =>
-        prop.includes('-@media:dark'))
 
-    dark_props.forEach(([prop, val], index) => {
-      let hasDarkKeyframe = prop.endsWith('-@media:dark') && val.trim().startsWith('@keyframe')
-      if (hasDarkKeyframe) {
-        appendedMeta += `
-@media (--OSdark) {
-  ${val.trim().replace(/\n/g, '\n  ')};
-}`
+    const [
+      dark_props,
+      reduced_props,
+    ] = Object.entries(props).reduce((acc, prop) => {
+      const [key, val] = prop;
+
+      if (val.trim().startsWith('@keyframe')) {
+        const _val = val.trim().replace(/\n/g, '\n  ');
+        key.endsWith('-@media:dark') && acc[0].push([key, _val]);
+        key.endsWith('-@media:reduced') && acc[1].push([key, _val]);
       }
-    })
+
+      return acc;
+    }, [[], []]);
+
+    appendedMeta += wrapInQuery('--OSdark', dark_props)
+    appendedMeta += wrapInQuery('--motionNotOK', reduced_props)
   }
 
   file.write('}\n')
