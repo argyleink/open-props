@@ -62,7 +62,7 @@ ${dark_propsMeta}
       if (hasDarkKeyframe) {
         appendedMeta += `
 @media (--OSdark) {
-  ${val.trim().replace(/\n/g, '\n  ')};
+  ${val.trim().replace(/\n/g, '\n  ')}
 }`
       }
     })
