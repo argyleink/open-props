@@ -133,7 +133,6 @@
   cursor: initial;
   align-self: flex-start;
   border-radius: var(--radius-2);
-  border: var(--border-size-1) solid var(--surface-2); 
   box-shadow: var(--inner-shadow-4);
   color: var(--text-2);
 }
