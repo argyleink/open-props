@@ -57,3 +57,54 @@ test('Should produce typings files', async t => {
   t.assert(fs.existsSync('./dist/open-props.module.d.ts'))
   t.assert(fs.existsSync('./src/props.sizes.d.ts'))
 })
+
+test('References should be valid', async t => {
+  const formatter = new Intl.ListFormat();
+  const defined = new Set();
+  const referenced = new Set();
+  const referencedBy = new Map();
+
+  for (const [prop, value] of Object.entries(OpenProps)) {
+    // Add all defined variables to the defined set
+    defined.add(prop)
+
+    if (typeof value !== 'string') {
+      continue;
+    }
+
+    // Find all references to other variables: var(...)
+    const matches = value.matchAll(/var\(([^)]+)\)/g);
+
+    if (!matches) {
+      continue;
+    }
+
+    // Add all references to the referenced set
+    // Map all references to the prop that references them
+    for (const matchArray of matches) {
+      const reference = matchArray[1];
+
+      referenced.add(reference);
+
+      if (!prop.startsWith('--')) {
+        continue;
+      }
+
+      if (!referencedBy.has(reference)) {
+        referencedBy.set(reference, new Set());
+      }
+
+      referencedBy.get(reference).add(prop);
+    }
+  }
+
+  // Check that all referenced variables are defined
+  for (const reference of referenced) {
+    const referencing = formatter.format(Array.from(referencedBy.get(reference)));
+
+    t.assert(
+      defined.has(reference), 
+      `Variable with name ${reference} was referenced by variable ${referencing}, but is not defined`
+    );
+  }
+})
