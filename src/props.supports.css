@@ -8,8 +8,15 @@
 :where(html) {
   --isLTR: 1;
   --isRTL: -1;
-  
+
   &:dir(rtl) {
+      /* PostCSS compiles this to [dir="rtl"] :where(html) for older browsers, which doesn't work */
+    --isLTR: -1;
+    --isRTL: 1;
+  }
+
+  &[dir="rtl"] {
+    /* Force the dir attribute selector to attach to :where(html) */
     --isLTR: -1;
     --isRTL: 1;
   }

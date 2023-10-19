@@ -5,8 +5,11 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 
   let appendedMeta = ''
 
-  if (filename.includes('shadows') || filename.includes('animations')) {
+  if (filename.includes('shadows')) {
     file.write(`@import 'props.media.css';\n\n`)
+  } else if(filename.includes('animations')) {
+    file.write(`@import 'props.media.css';\n`)
+    file.write(`@import 'props.supports.css';\n\n`)
   }
 
   if (filename.includes('shadows')) {
@@ -40,7 +43,9 @@ ${dark_propsMeta}
 
     if (prop.includes('animation')) {
       let keyframes = props[`${prop}-@`]
-      appendedMeta += keyframes
+      if(keyframes != undefined) {
+        appendedMeta += keyframes
+      }
     }
 
     if (prefix && prefix !== "''") {

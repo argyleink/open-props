@@ -2472,8 +2472,8 @@
               --animation-fade-{in,out}-bloom
               --animation-shake-{x,y}
 
-              --animation-slide-out-{up,down,left,right}
-              --animation-slide-in-{up,down,left,right}
+              --animation-slide-out-{up,down,start,end}
+              --animation-slide-in-{up,down,start,end}
 
               --animation-spin
               --animation-ping
@@ -2492,7 +2492,7 @@
                 to { opacity: 1 }
               }
 
-              @keyframes op-slide-out-right {
+              @keyframes op-slide-out-end {
                 to { transform: translateX(100%) }
               }
 
@@ -2613,8 +2613,8 @@
             </button>
           </div>
 
-          <div class="animation-demo-target" data-animation="slide-out-right">
-            <h6>Slide Out Right</h6>
+          <div class="animation-demo-target" data-animation="slide-out-end">
+            <h6>Slide Out End</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
@@ -2623,8 +2623,8 @@
             </button>
           </div>
 
-          <div class="animation-demo-target" data-animation="slide-out-left">
-            <h6>Slide Out Left</h6>
+          <div class="animation-demo-target" data-animation="slide-out-start">
+            <h6>Slide Out Start</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
@@ -2653,8 +2653,8 @@
             </button>
           </div>
 
-          <div class="animation-demo-target" data-animation="slide-in-right">
-            <h6>Slide In Right</h6>
+          <div class="animation-demo-target" data-animation="slide-in-end">
+            <h6>Slide In End</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
@@ -2663,8 +2663,8 @@
             </button>
           </div>
 
-          <div class="animation-demo-target" data-animation="slide-in-left">
-            <h6>Slide In Left</h6>
+          <div class="animation-demo-target" data-animation="slide-in-start">
+            <h6>Slide In Start</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
@@ -2783,7 +2783,7 @@
 
           <div class="animation-pair">
             <!-- data-starting-styles="opacity:0" -->
-            <div class="animation-demo-target shake-fade-combo" data-animation="slide-left-fade-in-shake-y">
+            <div class="animation-demo-target shake-fade-combo" data-animation="slide-start-fade-in-shake-y">
               <h6>Shake In</h6>
               <button class="play-button">
                 <svg viewBox="0 0 20 20">
@@ -2798,7 +2798,7 @@
                   animation: 
                     var(--animation-shake-y),
                     var(--animation-fade-in),
-                    var(--animation-slide-in-left);
+                    var(--animation-slide-in-start);
                 }
               </code></pre>
             </div>
