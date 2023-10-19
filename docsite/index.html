@@ -2257,10 +2257,14 @@
               --ease-in-{1-5}
               --ease-out-{1-5}
               --ease-in-out-{1-5}
+
               --ease-elastic-out-{1-5}
               --ease-elastic-in-{1-5}
               --ease-elastic-in-out-{1-5} 
+
               --ease-spring-{1-5}
+              --ease-bounce-{1-5}
+
               --ease-step-{1-5}
 
               /* will be removed in v2 */
@@ -2278,6 +2282,10 @@
 
             .dramatic-ease {
               animation: fade-in 1s var(--ease-5);
+            }
+
+            .bouncy {
+              animation: slide-in-up 3s var(--ease-bounce-2);
             }
           </code></pre>
         </div>
@@ -2433,6 +2441,25 @@
             <div style="animation-timing-function: var(--ease-spring-3)">ease-spring-3</div>
             <div style="animation-timing-function: var(--ease-spring-4)">ease-spring-4</div>
             <div style="animation-timing-function: var(--ease-spring-5)">ease-spring-5</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Ease Bounce</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon" />
+                <use href="#pause-icon" class="hidden" />
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-bounce-1)">ease-bounce-1</div>
+            <div style="animation-timing-function: var(--ease-bounce-2)">ease-bounce-2</div>
+            <div style="animation-timing-function: var(--ease-bounce-3)">ease-bounce-3</div>
+            <div style="animation-timing-function: var(--ease-bounce-4)">ease-bounce-4</div>
+            <div style="animation-timing-function: var(--ease-bounce-5)">ease-bounce-5</div>
           </div>
         </div>
 
