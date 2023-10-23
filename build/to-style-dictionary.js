@@ -21,6 +21,37 @@ const getTypeKey = (metaType) => {
   return metaType
 };
 
+const countOccurrences = (str, letter) => (str.match(new RegExp(letter, 'g')) || []).length;
+
+const cssVarUsageRegex = /var\(--([a-zA-Z0-9-]+)\)/g
+
+/* https://www.30secondsofcode.org/js/s/replace-last-occurrence/ */
+const replaceLast = (str, pattern, replacement) => {
+  const match =
+    typeof pattern === 'string'
+      ? pattern
+      : (str.match(new RegExp(pattern.source, 'g')) || []).slice(-1)[0]
+  if (!match) return str
+  const last = str.lastIndexOf(match)
+  return last !== -1
+    ? `${str.slice(0, last)}${replacement}${str.slice(last + match.length)}`
+    : str
+};
+
+const cssVarToTokenReference = (input) => {
+  if (input.toString().indexOf("var") !== -1) {
+
+    return input.replace(cssVarUsageRegex, (match, variableName) => {
+      if (countOccurrences(variableName, '-') > 1) {
+        const varParts = replaceLast(variableName, '-', '.');
+        return `{${varParts}.value}`;
+      }
+      return `{${variableName.replace("-", ".")}.value}`;
+    });
+  }
+  return input;
+};
+
 const createTokenObject = ({
   baseObj,
   mainKey,
@@ -102,7 +133,7 @@ export const toStyleDictionary = props => {
       metaType: meta.type,
       dictionarykey: dictionarykey,
       index: index,
-      token: token
+      token: cssVarToTokenReference(token)
     })
   })
 
