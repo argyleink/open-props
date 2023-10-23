@@ -79,9 +79,9 @@ const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
 JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
 // gen style-dictionary tokens
-const styledictionary = toStyleDictionary(designtokens)
-const JSONStyleDictionaryTokens = fs.createWriteStream('../open-props.style-dictionary-tokens.json')
-JSONStyleDictionaryTokens.end(JSON.stringify(styledictionary, null, 2))
+const styledictionarytokens = toStyleDictionary(jsonbundle)
+const StyleDictionaryTokens = fs.createWriteStream('../open-props.style-dictionary-tokens.json')
+StyleDictionaryTokens.end(JSON.stringify(styledictionarytokens, null, 2))
 
 // gen figma tokens
 const figmatokens = toFigmaTokens(jsonbundle)
