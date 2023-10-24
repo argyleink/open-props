@@ -60,42 +60,45 @@ const createTokenObject = ({
   index,
   token
 }) => {
-  // Determine if the main key should be handled separately
-  const shouldHandleMainKey = mainKey !== dictionarykey
-  // Determine the type key based on metaType
-  const typeKey = getTypeKey(metaType)
+  const typeKey = getTypeKey(metaType);
+  const targetObj = baseObj[typeKey] = baseObj[typeKey] || {};
 
-  // Initialize the typeKey in the baseObj if it doesn't exist
-  baseObj[typeKey] = baseObj[typeKey] || {}
-  // Define the target object
-  const targetObj = baseObj[typeKey]
-
-  if(typeKey === "size" || typeKey === "radius") {
-    if(shouldHandleMainKey){
-      // Handle main key separately
-      targetObj[dictionarykey] = targetObj[dictionarykey] || {}
-      targetObj[dictionarykey][index] = {
-        value: token,
-        type: metaType
-      }
-    } else {
-      // Handle main key directly
-      targetObj[index] = {
-        value: token,
-        type: metaType
-      }
-    }
+  if (typeKey === "size" || typeKey === "radius") {
+    const shouldReplace = mainKey !== dictionarykey
+    handleKey(targetObj, dictionarykey, index, token, metaType, shouldReplace);
+  } else if (typeKey !== "other") {
+    handleKey(targetObj, dictionarykey, index, token, metaType, true);
   } else {
-    // Handle all other types
-    targetObj[dictionarykey] = targetObj[dictionarykey] || {}
-    targetObj[dictionarykey][index] = {
-      value: token,
-      type: metaType
-    }
+    handleOtherTypes(targetObj, dictionarykey, index, token, metaType);
   }
 
-  return baseObj
-};
+  return baseObj;
+}
+
+// Handle cases where meta.type != "other"
+function handleKey(targetObj, dictionarykey, index, token, metaType, shouldReplace) {
+  if (shouldReplace) {
+    targetObj[dictionarykey] = targetObj[dictionarykey] || {};
+    targetObj[dictionarykey][index] = { value: token, type: metaType };
+  } else {
+    targetObj[index] = { value: token, type: metaType };
+  }
+}
+
+// Handle cases where meta.type = "other"
+function handleOtherTypes(targetObj, dictionarykey, index, token, metaType) {
+  const keyParts = dictionarykey.split("-");
+  if (keyParts.length > 1) {
+    const groupName = keyParts[0];
+    targetObj[groupName] = targetObj[groupName] || {};
+    targetObj[groupName][index] = { value: token, type: metaType };
+
+    const rest = keyParts.slice(1);
+    const subKey = rest.join("-");
+    targetObj[groupName][subKey] = targetObj[groupName][subKey] || {};
+    targetObj[groupName][subKey][index] = { value: token, type: metaType };
+  }
+}
 
 export const toStyleDictionary = props => {
   const styledictionarytokens = {}
