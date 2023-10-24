@@ -101,44 +101,39 @@ function handleOtherTypes(targetObj, dictionarykey, index, token, metaType) {
 }
 
 export const toStyleDictionary = props => {
-  const styledictionarytokens = {}
-
   const colors = Object.keys(Colors)
-        .filter(exportName => exportName !== "default")
-        .map(hueName => hueName.toLowerCase())
+    .filter(exportName => exportName !== "default")
+    .map(hueName => hueName.toLowerCase())
 
-  props.forEach(([key, token]) => {
-    const meta = {}
+  return props.reduce((styledictionarytokens, [key, token]) => {
+    const meta = {};
+    const isLength = key.includes('size') && !key.includes('border-size');
+    const isBorder = key.includes('border-size');
+    const isRadius = key.includes('radius');
+    const isShadow = key.includes('shadow');
+    const isColor = colors.some(color => key.includes(color));
 
-    const isLength = key.includes('size') && !key.includes('border-size')
-    const isBorder = key.includes('border-size')
-    const isRadius = key.includes('radius')
-    const isShadow = key.includes('shadow')
-    const isColor = colors.some(color => key.includes(color))
+    if (isLength) meta.type = 'size';
+    else if (isBorder) meta.type = 'border-width';
+    else if (isRadius) meta.type = 'border-radius';
+    else if (isShadow) meta.type = 'box-shadow';
+    else if (isColor) meta.type = 'color';
+    else meta.type = 'other';
 
-    if      (isLength) meta.type = 'size'
-    else if (isBorder) meta.type = 'border-width'
-    else if (isRadius) meta.type = 'border-radius'
-    else if (isShadow) meta.type = 'box-shadow'
-    else if (isColor)  meta.type = 'color'
-    else               meta.type = 'other'
+    const keyWithoutPrefix = key.replace('--', '');
+    const keyParts = keyWithoutPrefix.split('-');
+    const mainKey = keyParts.length > 1 ? keyParts.slice(0, -1).join('-') : keyParts[0];
+    const index = keyParts.length > 1 ? keyParts[keyParts.length - 1] : 0;
 
-    const keyWithoutPrefix = key.replace('--', '')
-    const keyParts = keyWithoutPrefix.split('-')
-    const mainKey = keyParts.length > 1 ? keyParts.slice(0, -1).join('-') : keyParts[0]
-    const index = keyParts.length > 1 ? keyParts[keyParts.length - 1] : 0
+    const dictionarykey = mapToDictionaryKey(mainKey);
 
-    const dictionarykey = mapToDictionaryKey(mainKey)
-
-    createTokenObject({
+    return createTokenObject({
       baseObj: styledictionarytokens,
-      mainKey: mainKey,
+      mainKey,
       metaType: meta.type,
-      dictionarykey: dictionarykey,
-      index: index,
-      token: cssVarToTokenReference(token)
-    })
-  })
-
-  return styledictionarytokens
+      dictionarykey,
+      index,
+      token: cssVarToTokenReference(token),
+    });
+  }, {});
 }
