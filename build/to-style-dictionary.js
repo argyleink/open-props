@@ -1,5 +1,6 @@
 import * as Colors from '../src/props.colors.js'
 
+// Mapping of CSS variable names to dictionary keys
 const dictionaryMap = {
   "size-relative":       "relative",
   "size-fluid":          "fluid",
@@ -10,8 +11,10 @@ const dictionaryMap = {
   "radius-blob":         "blob"
 }
 
+// Map a value to a dictionary key using the dictionaryMap
 const mapToDictionaryKey = (value) => dictionaryMap[value] || value
 
+// Determine the type key based on the metaType
 const getTypeKey = (metaType) => {
   if (metaType === "size" || metaType === "border-radius") {
     return metaType === "size" ? "size" : "radius"
@@ -21,10 +24,13 @@ const getTypeKey = (metaType) => {
   return metaType
 }
 
+// Count the occurrences of a character in a string
 const countOccurrences = (str, letter) => (str.match(new RegExp(letter, 'g')) || []).length
 
+// Regular expression to match CSS variable usages
 const cssVarUsageRegex = /var\(--([a-zA-Z0-9-]+)\)/g
 
+// Replace the last occurrence of a pattern with a replacement
 /* https://www.30secondsofcode.org/js/s/replace-last-occurrence/ */
 const replaceLast = (str, pattern, replacement) => {
   const match =
@@ -38,19 +44,31 @@ const replaceLast = (str, pattern, replacement) => {
     : str
 }
 
-const cssVarToTokenReference = (input) => {
-  if (input.toString().indexOf("var") !== -1) {
-    return input.replace(cssVarUsageRegex, (match, variableName) => {
-      if (countOccurrences(variableName, '-') > 1) {
-        const varParts = replaceLast(variableName, '-', '.')
-        return `{${varParts}.value}`
-      }
-      return `{${variableName.replace("-", ".")}.value}`
-    })
-  }
-  return input
-}
+// Helper function to convert CSS variable name to token reference
+const tokenizeCSSVar = (variableName, metaType) => {
+  const tokenName   = replaceLast(variableName, '-', '.')
+  const hyphenCount = countOccurrences(variableName, '-')
 
+  if (hyphenCount > 2 && metaType === "other") {
+    const [firstPart, ...restParts] = tokenName.split('-')
+    return `{${metaType}.${firstPart}.${restParts.join('-')}.value}`
+  }
+
+  return `{${tokenName}.value}`
+};
+
+// Convert CSS variable usages to token references
+const cssVarToToken = (input, metaType) => {
+  if (!input.toString().includes("var")) {
+    return input
+  }
+
+  return input.replace(cssVarUsageRegex, (match, variableName) => {
+    return tokenizeCSSVar(variableName, metaType)
+  })
+};
+
+// Create a token object based on metaType and dictionary key
 const createTokenObject = ({
   baseObj,
   mainKey,
@@ -101,6 +119,7 @@ function handleOtherTypes(targetObj, dictionarykey, index, token, metaType) {
   }
 }
 
+// Generate a style dictionary
 export const toStyleDictionary = props => {
   const colors = Object.keys(Colors)
     .filter(exportName => exportName !== "default")
@@ -135,7 +154,7 @@ export const toStyleDictionary = props => {
       metaType: meta.type,
       dictionarykey,
       index,
-      token: cssVarToTokenReference(token)
+      token: cssVarToToken(token, meta.type)
     })
   }, {})
 }
