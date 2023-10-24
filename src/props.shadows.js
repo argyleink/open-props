@@ -5,7 +5,8 @@ const Shadows = {
   '--shadow-color-@media:dark': '220 40% 2%',
   '--shadow-strength-@media:dark': '25%',
 
-  '--inner-shadow-highlight': 'inset 0 -.5px 0 0 #fff2, inset 0 .5px 0 0 #0007',
+  '--inner-shadow-highlight': 'inset 0 -.5px 0 0 #fff, inset 0 .5px 0 0 #0001',
+  '--inner-shadow-highlight-@media:dark': 'inset 0 -.5px 0 0 #fff1, inset 0 .5px 0 0 #0007',
   
   '--shadow-1': '0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))',
   '--shadow-2': `
