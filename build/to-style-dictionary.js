@@ -8,9 +8,9 @@ const dictionaryMap = {
   "border-size":         "size",
   "radius-conditional":  "conditional",
   "radius-blob":         "blob"
-};
+}
 
-const mapToDictionaryKey = (value) => dictionaryMap[value] || value;
+const mapToDictionaryKey = (value) => dictionaryMap[value] || value
 
 const getTypeKey = (metaType) => {
   if (metaType === "size" || metaType === "border-radius") {
@@ -19,9 +19,9 @@ const getTypeKey = (metaType) => {
     return "border"
   }
   return metaType
-};
+}
 
-const countOccurrences = (str, letter) => (str.match(new RegExp(letter, 'g')) || []).length;
+const countOccurrences = (str, letter) => (str.match(new RegExp(letter, 'g')) || []).length
 
 const cssVarUsageRegex = /var\(--([a-zA-Z0-9-]+)\)/g
 
@@ -36,21 +36,20 @@ const replaceLast = (str, pattern, replacement) => {
   return last !== -1
     ? `${str.slice(0, last)}${replacement}${str.slice(last + match.length)}`
     : str
-};
+}
 
 const cssVarToTokenReference = (input) => {
   if (input.toString().indexOf("var") !== -1) {
-
     return input.replace(cssVarUsageRegex, (match, variableName) => {
       if (countOccurrences(variableName, '-') > 1) {
-        const varParts = replaceLast(variableName, '-', '.');
-        return `{${varParts}.value}`;
+        const varParts = replaceLast(variableName, '-', '.')
+        return `{${varParts}.value}`
       }
-      return `{${variableName.replace("-", ".")}.value}`;
-    });
+      return `{${variableName.replace("-", ".")}.value}`
+    })
   }
-  return input;
-};
+  return input
+}
 
 const createTokenObject = ({
   baseObj,
@@ -60,43 +59,45 @@ const createTokenObject = ({
   index,
   token
 }) => {
-  const typeKey = getTypeKey(metaType);
-  const targetObj = baseObj[typeKey] = baseObj[typeKey] || {};
+  const typeKey   = getTypeKey(metaType)
+  const targetObj = baseObj[typeKey] = baseObj[typeKey] || {}
 
   if (typeKey === "size" || typeKey === "radius") {
     const shouldReplace = mainKey !== dictionarykey
-    handleKey(targetObj, dictionarykey, index, token, metaType, shouldReplace);
+    handleKey(targetObj, dictionarykey, index, token, metaType, shouldReplace)
   } else if (typeKey !== "other") {
-    handleKey(targetObj, dictionarykey, index, token, metaType, true);
+    handleKey(targetObj, dictionarykey, index, token, metaType, true)
   } else {
-    handleOtherTypes(targetObj, dictionarykey, index, token, metaType);
+    handleOtherTypes(targetObj, dictionarykey, index, token, metaType)
   }
 
-  return baseObj;
+  return baseObj
 }
 
 // Handle cases where meta.type != "other"
 function handleKey(targetObj, dictionarykey, index, token, metaType, shouldReplace) {
   if (shouldReplace) {
-    targetObj[dictionarykey] = targetObj[dictionarykey] || {};
-    targetObj[dictionarykey][index] = { value: token, type: metaType };
+    targetObj[dictionarykey]        = targetObj[dictionarykey] || {}
+    targetObj[dictionarykey][index] = { value: token, type: metaType }
   } else {
-    targetObj[index] = { value: token, type: metaType };
+    targetObj[index] = { value: token, type: metaType }
   }
 }
 
 // Handle cases where meta.type = "other"
 function handleOtherTypes(targetObj, dictionarykey, index, token, metaType) {
-  const keyParts = dictionarykey.split("-");
-  if (keyParts.length > 1) {
-    const groupName = keyParts[0];
-    targetObj[groupName] = targetObj[groupName] || {};
-    targetObj[groupName][index] = { value: token, type: metaType };
+  const keyParts = dictionarykey.split("-")
 
-    const rest = keyParts.slice(1);
-    const subKey = rest.join("-");
-    targetObj[groupName][subKey] = targetObj[groupName][subKey] || {};
-    targetObj[groupName][subKey][index] = { value: token, type: metaType };
+  if (keyParts.length > 1) {
+    const groupName             = keyParts[0]
+    targetObj[groupName]        = targetObj[groupName] || {}
+    targetObj[groupName][index] = { value: token, type: metaType }
+
+    const rest   = keyParts.slice(1)
+    const subKey = rest.join("-")
+
+    targetObj[groupName][subKey]        = targetObj[groupName][subKey] || {}
+    targetObj[groupName][subKey][index] = { value: token, type: metaType }
   }
 }
 
@@ -106,26 +107,27 @@ export const toStyleDictionary = props => {
     .map(hueName => hueName.toLowerCase())
 
   return props.reduce((styledictionarytokens, [key, token]) => {
-    const meta = {};
-    const isLength = key.includes('size') && !key.includes('border-size');
-    const isBorder = key.includes('border-size');
-    const isRadius = key.includes('radius');
-    const isShadow = key.includes('shadow');
-    const isColor = colors.some(color => key.includes(color));
+    const meta = {}
 
-    if (isLength) meta.type = 'size';
-    else if (isBorder) meta.type = 'border-width';
-    else if (isRadius) meta.type = 'border-radius';
-    else if (isShadow) meta.type = 'box-shadow';
-    else if (isColor) meta.type = 'color';
-    else meta.type = 'other';
+    const isLength = key.includes('size') && !key.includes('border-size')
+    const isBorder = key.includes('border-size')
+    const isRadius = key.includes('radius')
+    const isShadow = key.includes('shadow')
+    const isColor  = colors.some(color => key.includes(color))
 
-    const keyWithoutPrefix = key.replace('--', '');
-    const keyParts = keyWithoutPrefix.split('-');
-    const mainKey = keyParts.length > 1 ? keyParts.slice(0, -1).join('-') : keyParts[0];
-    const index = keyParts.length > 1 ? keyParts[keyParts.length - 1] : 0;
+    if      (isLength) meta.type = 'size'
+    else if (isBorder) meta.type = 'border-width'
+    else if (isRadius) meta.type = 'border-radius'
+    else if (isShadow) meta.type = 'box-shadow'
+    else if (isColor)  meta.type  = 'color'
+    else               meta.type = 'other'
 
-    const dictionarykey = mapToDictionaryKey(mainKey);
+    const keyWithoutPrefix = key.replace('--', '')
+    const keyParts         = keyWithoutPrefix.split('-')
+    const mainKey          = keyParts.length > 1 ? keyParts.slice(0, -1).join('-') : keyParts[0]
+    const index            = keyParts.length > 1 ? keyParts[keyParts.length - 1] : 0
+
+    const dictionarykey = mapToDictionaryKey(mainKey)
 
     return createTokenObject({
       baseObj: styledictionarytokens,
@@ -133,7 +135,7 @@ export const toStyleDictionary = props => {
       metaType: meta.type,
       dictionarykey,
       index,
-      token: cssVarToTokenReference(token),
-    });
-  }, {});
+      token: cssVarToTokenReference(token)
+    })
+  }, {})
 }
