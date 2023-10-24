@@ -22,6 +22,7 @@ import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
 import {toObject} from './to-object.js'
 import {toFigmaTokens} from './to-figmatokens.js'
+import {toStyleDictionary} from './to-style-dictionary.js'
 
 const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
 
@@ -76,6 +77,11 @@ const jsonbundle = Object.entries({
 const designtokens = toTokens(jsonbundle)
 const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
 JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
+
+// gen style-dictionary tokens
+const styledictionarytokens = toStyleDictionary(jsonbundle)
+const StyleDictionaryTokens = fs.createWriteStream('../open-props.style-dictionary-tokens.json')
+StyleDictionaryTokens.end(JSON.stringify(styledictionarytokens, null, 2))
 
 // gen figma tokens
 const figmatokens = toFigmaTokens(jsonbundle)

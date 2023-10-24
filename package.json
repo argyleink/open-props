@@ -171,6 +171,7 @@
     "./json": "./open-props.tokens.json",
     "./tokens": "./open-props.tokens.json",
     "./design-tokens": "./open-props.tokens.json",
+    "./style-dictionary-tokens": "./open-props.style-dictionary-tokens.json",
     "./postcss/brand": "./src/extra/brand.css",
     "./postcss/theme": "./src/extra/theme.css",
     "./postcss/theme-dark": "./src/extra/theme-dark.css",
