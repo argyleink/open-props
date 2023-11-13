@@ -59,8 +59,8 @@ const individual_colors_hsl = Object.keys(ColorsHSL)
   }), {})
 
 const individuals = {
-  'props.masks.edges.css': MaskEdges,
-  'props.masks.corner-cuts.css': MaskCornerCuts,
+  [`${pfx}props.masks.edges.css`]: MaskEdges,
+  [`${pfx}props.masks.corner-cuts.css`]: MaskCornerCuts,
 }
 
 // gen design tokens
