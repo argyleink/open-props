@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.6.11",
+  "version": "2.0.0-beta.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -322,6 +322,7 @@
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "6.7.x",
+    "prettier": "^3.1.0",
     "typescript": "^4.9.4"
   }
 }

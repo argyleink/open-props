@@ -1,0 +1,9 @@
+:where(html) {
+	--isLTR: 1;
+	--isRTL: -1;
+
+	&:dir(rtl) {
+		--isLTR: -1;
+		--isRTL: 1;
+	}
+}

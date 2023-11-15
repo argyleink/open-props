@@ -1,0 +1,171 @@
+:where(.rounded) {
+	--_rounded: initial;
+	border-radius: var(--_rounded, var(--radius-2));
+}
+
+/* :where(.rounded-match) {
+  --_rounded: 0;
+  overflow: clip;
+  overflow-clip-margin: content-box;
+} */
+
+:where(.padding) {
+	--_padding: initial;
+	--_padding-inline: initial;
+	--_padding-block: initial;
+
+	padding-inline: var(--_padding-inline, var(--_padding, var(--size-3)));
+	padding-block: var(--_padding-block, var(--_padding, var(--size-3)));
+}
+
+:where(.margin) {
+	--_margin: initial;
+	--_margin-inline: initial;
+	--_margin-block: initial;
+
+	margin-inline: var(--_margin-inline, var(--_margin, var(--size-3)));
+	margin-block: var(--_margin-block, var(--_margin, var(--size-3)));
+}
+
+:where(.flex) {
+	--_gap: initial;
+	display: flex;
+	align-items: center;
+	gap: var(--_gap, var(--size-3));
+}
+
+:where(.flex-wrap) {
+	--_gap: initial;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--_gap, var(--size-3));
+}
+
+:where(.flex-center) {
+	--_gap: initial;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	place-content: center;
+	gap: var(--_gap, var(--size-3));
+}
+
+:where(.grid) {
+	--_gap: initial;
+	display: grid;
+	align-content: start;
+	gap: var(--_gap, var(--size-3));
+}
+
+:where(.surface) {
+	--_surface: initial;
+	background: var(--_surface, var(--surface-3));
+
+	& :where(.surface) {
+		--_surface: var(--surface-2);
+
+		& :where(.surface) {
+			--_surface: var(--surface-1);
+		}
+	}
+}
+
+:where(.well) {
+	--_well: initial;
+	background: var(--_well, var(--well-1));
+
+	& :where(.well) {
+		--_well: var(--well-2);
+	}
+}
+
+:where(.shadow) {
+	--_shadow: initial;
+	box-shadow: var(--_shadow, var(--shadow-3));
+}
+
+:where(.border) {
+	--_border-size: initial;
+	--_border-style: initial;
+	--_border-color: initial;
+
+	border: var(--_border-size, var(--border-size-1)) var(--_border-style, solid)
+		var(--_border-color, var(--surface-2));
+
+	/* todo: exceptions for combinations with .surface */
+	&:where(.surface) {
+		--_border-color: var(--surface-3);
+	}
+}
+
+:where(.content) {
+	--_content: initial;
+	max-inline-size: var(--_content, var(--size-content-2));
+}
+
+:where(.scroll) {
+	--_scroll: initial;
+	--_scroll-x: initial;
+	--_scroll-y: initial;
+
+	overflow: var(--_scroll-x, var(--_scroll, auto))
+		var(--_scroll-y, var(--_scroll, auto));
+}
+
+:where(.snaps) {
+	--_snaps: initial;
+	scroll-snap-type: var(--_snaps, both) mandatory;
+}
+
+:where(.snap) {
+	--_snap: initial;
+	scroll-snap-align: var(--_snap, center);
+}
+
+:where(.snap-stop) {
+	scroll-snap-stop: always;
+}
+
+:where(.truncate) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+:where(.bold) {
+	--_bold: initial;
+	font-weight: var(--_bold, var(--font-weight-700, bold));
+}
+
+:where(.visually-hidden, .sr-only) {
+	inline-size: 0;
+	block-size: 0;
+	overflow: hidden;
+}
+
+:where(.subtext) {
+	color: var(--text-2);
+}
+
+:where(.text-xs) {
+	font-size: var(--font-size-0);
+}
+
+:where(.text-sm) {
+	font-size: var(--font-size-1);
+}
+
+:where(.text-md) {
+	font-size: var(--font-size-3);
+}
+
+:where(.text-lg) {
+	font-size: var(--font-size-5);
+}
+
+:where(.round) {
+	aspect-ratio: 1;
+	border-radius: var(--radius-round);
+	overflow: clip;
+}
