@@ -1,0 +1,31 @@
+:where(:root) {
+	--icon-error: url(https://api.iconify.design/ic:baseline-error.svg?color=%23ff6b6b);
+	--icon-search: url(https://api.iconify.design/ic:search.svg?color=%2300000077);
+	--icon-email: url(https://api.iconify.design/ic:email.svg?color=%2300000077);
+	--icon-url: url(https://api.iconify.design/ic:link.svg?color=%2300000077);
+	--icon-user: url(https://api.iconify.design/ic:person.svg?color=%2300000077);
+	--icon-user-editing: url(https://api.iconify.design/ic:person-outline.svg?color=%2300000077);
+	--icon-tel: url(https://api.iconify.design/ic:phone.svg?color=%2300000077);
+	--icon-tel-editing: url(https://api.iconify.design/ic:phone-in-talk.svg?color=%2300000077);
+	--icon-password: url(https://api.iconify.design/ic:baseline-lock.svg?color=%2300000077);
+	--icon-password-editing: url(https://api.iconify.design/ic:baseline-lock-open.svg?color=%2300000077);
+	--icon-no-edit: url(https://api.iconify.design/ic:baseline-edit-off.svg?color=%2300000077);
+	--icon-arrow-down: url(https://api.iconify.design/ic:keyboard-arrow-down.svg?color=%2300000077);
+	--icon-arrow-up: url(https://api.iconify.design/ic:keyboard-arrow-up.svg?color=%2300000077);
+
+	@media (prefers-color-scheme: dark) {
+		--icon-error: url(https://api.iconify.design/ic:baseline-error.svg?color=%23ff6b6b);
+		--icon-search: url(https://api.iconify.design/ic:search.svg?color=%23ffffff77);
+		--icon-email: url(https://api.iconify.design/ic:email.svg?color=%23ffffff77);
+		--icon-url: url(https://api.iconify.design/ic:link.svg?color=%23ffffff77);
+		--icon-user: url(https://api.iconify.design/ic:person.svg?color=%23ffffff77);
+		--icon-user-editing: url(https://api.iconify.design/ic:person-outline.svg?color=%23ffffff77);
+		--icon-tel: url(https://api.iconify.design/ic:phone.svg?color=%23ffffff77);
+		--icon-tel-editing: url(https://api.iconify.design/ic:phone-in-talk.svg?color=%23ffffff77);
+		--icon-password: url(https://api.iconify.design/ic:baseline-lock.svg?color=%23ffffff77);
+		--icon-password-editing: url(https://api.iconify.design/ic:baseline-lock-open.svg?color=%23ffffff77);
+		--icon-no-edit: url(https://api.iconify.design/ic:baseline-edit-off.svg?color=%23ffffff77);
+		--icon-arrow-down: url(https://api.iconify.design/ic:keyboard-arrow-down.svg?color=%23ffffff77);
+		--icon-arrow-up: url(https://api.iconify.design/ic:keyboard-arrow-up.svg?color=%23ffffff77);
+	}
+}
