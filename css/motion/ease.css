@@ -1,0 +1,7 @@
+:where(:root) {
+	--ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+	--ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+	--ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+	--ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+	--ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+}

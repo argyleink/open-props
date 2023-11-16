@@ -12,13 +12,20 @@
 	--_text: initial /* your text color */;
 	--_size: initial /* your size */;
 
-	--_bg: white;
+	--_bg-light: white;
+	--_bg-dark: var(--surface-3);
+	--_bg: var(--_bg-light);
+
 	--_border: var(--surface-3);
 
 	--_highlight-size: 0;
-	--_highlight: hsl(var(--gray-5-hsl) / 25%);
+	--_highlight-light: hsl(var(--gray-5-hsl) / 25%);
+	--_highlight-dark: hsl(var(--gray-12-hsl) / 25%);
+	--_highlight: var(--_highlight-light);
 
-	--_ink-shadow: 0 1px 0 var(--gray-3);
+	--_ink-shadow-light: 0 1px 0 var(--gray-3);
+	--_ink-shadow-dark: 0 1px 0 var(--surface-1);
+	--_ink-shadow: var(--_ink-shadow-light);
 
 	--_icon-size: var(--size-relative-7);
 	--_icon-color: var(--_accent, var(--link));
@@ -48,11 +55,17 @@
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 
-	transition: border-color 0.5s var(--ease-3) 3s;
+	transition: border-color 0.5s var(--ease-3);
+
+	@media (--OSdark) {
+		--_highlight: var(--_highlight-dark);
+		--_bg: var(--_bg-dark);
+		--_ink-shadow: var(--_ink-shadow-dark);
+	}
 
 	@media (--motionOK) {
 		transition:
-			border-color 0.5s var(--ease-3) 3s,
+			border-color 0.5s var(--ease-3),
 			box-shadow 145ms var(--ease-4),
 			outline-offset 145ms var(--ease-4);
 	}
@@ -69,12 +82,15 @@
 		--_text: var(--gray-6);
 		cursor: not-allowed;
 		box-shadow: var(--shadow-1);
+
+		@media (--OSdark) {
+			--_text: var(--gray-5);
+		}
 	}
 
 	/* pressing */
 	&:where(:not(:active):hover) {
 		--_highlight-size: var(--size-2);
-		transition-delay: 0s;
 		transition-duration: 0.25s;
 	}
 
@@ -105,6 +121,11 @@
 	&:focus-visible {
 		outline-color: var(--red-6);
 	}
+
+	@media (--OSdark) {
+		--_text: var(--red-2);
+		--_border: var(--surface-3);
+	}
 }
 
 /* submit, form > button, reset matching hover border color */
@@ -131,4 +152,14 @@
 :where(input[type='file'])::file-selector-button {
 	margin-inline-end: var(--size-relative-6);
 	cursor: pointer;
+}
+
+/* special dark theme styles */
+@media (--OSdark) {
+	:where([type='submit']),
+	:where(form button:not([type='button'])),
+	:where([type='reset']),
+	:where([disabled]) {
+		--_bg: var(--surface-1);
+	}
 }

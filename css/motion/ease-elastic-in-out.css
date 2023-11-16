@@ -1,0 +1,7 @@
+:where(:root) {
+	--ease-elastic-in-out-1: cubic-bezier(0.5, -0.1, 0.1, 1.5);
+	--ease-elastic-in-out-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+	--ease-elastic-in-out-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+	--ease-elastic-in-out-4: cubic-bezier(0.5, -0.7, 0.1, 1.5);
+	--ease-elastic-in-out-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
+}

@@ -40,14 +40,18 @@
 		"defaults"
 	],
 	"lightning": {
-		"process": "--bundle --custom-media -t 'last 2 versions'",
 		"minify": "--bundle --custom-media --minify -t 'last 2 versions'"
 	},
 	"scripts": {
 		"test": "ava test/basic.test.cjs",
 		"build": "concurrently npm:lib:* -m 25",
-		"lib:all": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/index.css -o open-props.min.css",
-		"lib:normalize": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/normalize/index.css -o normalize.min.css"
+		"lib:main": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/index.css -o open-props.min.css",
+		"lib:normalize": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/normalize/index.css -o normalize.min.css",
+		"lib:buttons": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/buttons/index.css -o buttons.min.css",
+		"lib:forms": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/forms/index.css -o forms.min.css",
+		"lib:animate": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/animate/index.css -o animate.min.css",
+		"lib:animations": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/motion/animations.css -o animations.min.css",
+		"lib:easings": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/motion/easings.css -o easings.min.css"
 	},
 	"devDependencies": {
 		"ava": "^5.3.1",

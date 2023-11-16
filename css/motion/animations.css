@@ -1,3 +1,5 @@
+@import '../media-queries.css';
+
 :where(:root) {
 	--animation-fade-in: fade-in 0.5s var(--ease-3);
 	--animation-fade-in-bloom: fade-in-bloom 2s var(--ease-3);

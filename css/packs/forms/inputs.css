@@ -1,6 +1,3 @@
-@import '../props.media.css';
-@import 'icons.css';
-
 @keyframes drop-zone {
 	from {
 		box-shadow: 0 0 0 0 var(--link);

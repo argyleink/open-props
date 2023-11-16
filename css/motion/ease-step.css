@@ -1,0 +1,7 @@
+:where(:root) {
+	--ease-step-1: steps(2);
+	--ease-step-2: steps(3);
+	--ease-step-3: steps(4);
+	--ease-step-4: steps(7);
+	--ease-step-5: steps(10);
+}
