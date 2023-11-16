@@ -9,6 +9,6 @@
 		"moduleResolution": "NodeNext",
 		"skipLibCheck": true
 	},
-	"include": ["dist/open-props.module.js", "src/props.*.js"],
-	"exclude": ["node_modules", "src/*.src.js"]
+	"include": ["js/*.js"],
+	"exclude": ["node_modules", "css", "docs", "test"]
 }
