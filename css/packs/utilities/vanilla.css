@@ -1,0 +1,129 @@
+:where(.rounded) {
+	--_rounded: initial;
+	border-radius: var(--_rounded, 10px);
+}
+
+:where(.padding) {
+	--_padding: initial;
+	--_padding-inline: initial;
+	--_padding-block: initial;
+
+	padding-inline: var(--_padding-inline, var(--_padding, 1rem));
+	padding-block: var(--_padding-block, var(--_padding, 1rem));
+}
+
+:where(.margin) {
+	--_margin: initial;
+	--_margin-inline: initial;
+	--_margin-block: initial;
+
+	margin-inline: var(--_margin-inline, var(--_margin, 1rem));
+	margin-block: var(--_margin-block, var(--_margin, 1rem));
+}
+
+:where(.flex) {
+	--_gap: initial;
+	display: flex;
+	align-items: center;
+	gap: var(--_gap, 1rem);
+}
+
+:where(.flex-wrap) {
+	--_gap: initial;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--_gap, 1rem);
+}
+
+:where(.flex-center) {
+	--_gap: initial;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	place-content: center;
+	gap: var(--_gap, 1rem);
+}
+
+:where(.grid) {
+	--_gap: initial;
+	display: grid;
+	align-content: start;
+	gap: var(--_gap, 1rem);
+}
+
+:where(.border) {
+	--_border-size: initial;
+	--_border-style: initial;
+	--_border-color: initial;
+
+	border: var(--_border-size, 1px) var(--_border-style, solid)
+		var(--_border-color, #0005);
+}
+
+:where(.content) {
+	--_content: initial;
+	max-inline-size: var(--_content, 50ch);
+}
+
+:where(.scroll) {
+	--_scroll: initial;
+	--_scroll-x: initial;
+	--_scroll-y: initial;
+
+	overflow: var(--_scroll-x, var(--_scroll, auto))
+		var(--_scroll-y, var(--_scroll, auto));
+}
+
+:where(.snaps) {
+	--_snaps: initial;
+	scroll-snap-type: var(--_snaps, both) mandatory;
+}
+
+:where(.snap) {
+	--_snap: initial;
+	scroll-snap-align: var(--_snap, center);
+}
+
+:where(.snap-stop) {
+	scroll-snap-stop: always;
+}
+
+:where(.truncate) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+:where(.bold) {
+	--_bold: initial;
+	font-weight: var(--_bold, bold);
+}
+
+:where(.visually-hidden, .sr-only) {
+	inline-size: 0;
+	block-size: 0;
+	overflow: hidden;
+}
+
+:where(.text-xs) {
+	font-size: 0.8rem;
+}
+
+:where(.text-sm) {
+	font-size: 0.9rem;
+}
+
+:where(.text-md) {
+	font-size: 1.25rem;
+}
+
+:where(.text-lg) {
+	font-size: 3rem;
+}
+
+:where(.round) {
+	aspect-ratio: 1;
+	border-radius: 1e4px;
+	overflow: clip;
+}
