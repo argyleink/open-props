@@ -37,7 +37,7 @@
   outline-offset: 5px;
 }
 
-:where(body) { 
+:where(body) {
   min-block-size: 100%;
 }
 
@@ -47,13 +47,13 @@
   text-wrap: balance;
 }
 
-:where(h1) { 
-  font-size: var(--font-size-8); 
-  max-inline-size: var(--size-header-1); 
+:where(h1) {
+  font-size: var(--font-size-8);
+  max-inline-size: var(--size-header-1);
 }
 
-:where(h2) { 
-  font-size: var(--font-size-6); 
+:where(h2) {
+  font-size: var(--font-size-6);
   max-inline-size: var(--size-header-2);
 }
 
@@ -91,6 +91,7 @@
   margin-inline: calc(var(--size-1) * -1);
   padding-block: var(--size-1);
   margin-block: calc(var(--size-1) * -1);
+  max-inline-size: fit-content;
 
   &:where([href]) {
     text-decoration-color: var(--indigo-2);
@@ -156,10 +157,10 @@
 :where(code, kbd, samp, pre) { font-family: var(--font-mono) }
 :where(:not(pre) > code, kbd) { white-space: nowrap }
 
-:where(pre) { 
+:where(pre) {
   white-space: pre;
   min-inline-size: 0;
-  max-inline-size: max-content; 
+  max-inline-size: max-content;
   writing-mode: lr;
   direction: ltr;
 }
@@ -193,8 +194,8 @@
   margin-block-start: var(--size-5);
 }
 
-:where(small) { 
-  font-size: max(.5em, var(--font-size-0)); 
+:where(small) {
+  font-size: max(.5em, var(--font-size-0));
   max-inline-size: var(--size-content-1);
 }
 
@@ -359,7 +360,7 @@
 :where(table tr:hover td),
 :where(tbody tr:nth-child(even):hover td) {
   background-color: var(--gray-10);
-  
+
   @media (prefers-color-scheme: light) {
     background-color: white;
   }
