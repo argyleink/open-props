@@ -1,8 +1,8 @@
 export default {
-  '--ratio-square': '1',
-  '--ratio-landscape': '4/3',
-  '--ratio-portrait': '3/4',
-  '--ratio-widescreen': '16/9',
-  '--ratio-ultrawide': '18/5',
-  '--ratio-golden': '1.6180/1',
+	square: '1',
+	landscape: '4/3',
+	portrait: '3/4',
+	widescreen: '16/9',
+	ultrawide: '18/5',
+	golden: '1.6180/1',
 }

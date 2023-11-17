@@ -1,8 +1,1 @@
-export default {
-  '--layer-1': 1,
-  '--layer-2': 2,
-  '--layer-3': 3,
-  '--layer-4': 4,
-  '--layer-5': 5,
-  '--layer-important': 2147483647,  
-}
+export default [1, 2, 3, 4, 5, 2147483647]
