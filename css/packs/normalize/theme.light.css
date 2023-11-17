@@ -1,16 +1,21 @@
 :where(:root) {
 	color-scheme: light;
 
+	--palette-hue: 270;
+	--palette-hue-rotate-by: -5;
+	--palette-chroma: 0.1;
+
 	--link: var(--indigo-7);
 	--link-visited: var(--purple-7);
 
-	--text-1: var(--gray-12);
-	--text-2: var(--gray-7);
-
-	--surface-1: var(--gray-0);
-	--surface-2: var(--gray-2);
-	--surface-3: var(--gray-3);
-	--surface-4: var(--gray-4);
+	--surface-1: white;
+	--surface-2: var(--color-1);
+	--surface-3: var(--color-3);
+	--surface-document: var(--color-4);
+	--well-1: var(--color-5);
+	--well-2: var(--color-6);
+	--text-1: var(--color-16);
+	--text-2: var(--color-12);
 
 	--scrollthumb-color: var(--gray-7);
 

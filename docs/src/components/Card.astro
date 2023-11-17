@@ -1,0 +1,26 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<li class="LinkCard flex surface padding shadow">
+	<a href={href} class="grid rounded">
+		<h2 class="text-md">
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<p>
+			{body}
+		</p>
+	</a>
+</li>
+<style>
+	.LinkCard {
+		list-style: none;
+	}
+</style>
