@@ -13,6 +13,7 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="src/layouts/base.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -20,13 +21,3 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
-	@layer design, base, components, utilities, overrides;
-
-	@import url(../../../css/index.css) layer(design.system);
-	@import url(../../../css/color/palette.oklch.css) layer(design.system);
-	@import url(../../../normalize.min.css) layer(base);
-	@import url(../../../css/packs/utilities/index.css) layer(utilities);
-	@import url(../../../css/packs/forms/index.css) layer(components);
-	@import url(../../../css/packs/buttons/index.css) layer(components);
-</style>

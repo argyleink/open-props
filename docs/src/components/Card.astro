@@ -8,8 +8,8 @@ interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="LinkCard flex surface padding shadow">
-	<a href={href} class="grid rounded">
+<li class="LinkCard flex surface padding shadow rounded">
+	<a href={href} class="grid">
 		<h2 class="text-md">
 			{title}
 			<span>&rarr;</span>
@@ -17,6 +17,7 @@ const { href, title, body } = Astro.props;
 		<p>
 			{body}
 		</p>
+		<button>Go</button>
 	</a>
 </li>
 <style>

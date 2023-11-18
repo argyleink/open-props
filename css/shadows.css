@@ -1,17 +1,18 @@
-:where(:root) {
-	/* todo: integrate with colors.oklch.css */
-	--shadow-color: 220 3% 15%;
+:where(*) {
 	--shadow-strength: 1%;
+	--shadow-saturation: 3%;
+	--shadow-hue: var(--shadow-tint, var(--palette-hue));
+	--shadow-color: var(--shadow-hue) var(--shadow-saturation) 15%;
 	--inner-shadow-highlight: inset 0 -0.5px 0 0 #fff, inset 0 0.5px 0 0 #0001;
 
 	@media (--OSdark) {
-		--shadow-color: 220 40% 2%;
 		--shadow-strength: 25%;
+		--shadow-saturation: 40%;
+		--shadow-hue: var(--shadow-tint, var(--palette-hue));
+		--shadow-color: var(--shadow-hue) var(--shadow-saturation) 15%;
 		--inner-shadow-highlight: inset 0 -0.5px 0 0 #fff1, inset 0 0.5px 0 0 #0007;
 	}
-}
 
-:where(*) {
 	--shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) /
 				calc(var(--shadow-strength) + 9%));
 	--shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) /

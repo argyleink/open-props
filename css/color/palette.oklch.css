@@ -1,7 +1,7 @@
 :where(:root) {
-	--palette-hue: 0; /* <angle */
+	--palette-hue: 250; /* <angle */
 	--palette-hue-rotate-by: 0; /* +- deg : warm or cool the palette */
-	--palette-chroma: 1; /* 0-1 : lower to mute and pastel, over 2 at own risk */
+	--palette-chroma: 0.15; /* 0-1 : lower to mute and pastel, over 2 at own risk */
 }
 
 :where(*) {

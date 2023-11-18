@@ -1,5 +1,4 @@
 @import '../../media-queries.css';
-@import '../../color/gray.hsl.css';
 
 :where(
 		.btn,
