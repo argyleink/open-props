@@ -1,4 +1,4 @@
-:where(*) {
+* {
 	--shadow-strength: 1%;
 	--shadow-saturation: 3%;
 	--shadow-hue: var(--shadow-tint, var(--palette-hue));

@@ -1,7 +1,0 @@
-@layer design, base, components, utilities, overrides;
-
-@import url(../../../open-props.min.css) layer(design.system);
-@import url(../../../normalize.min.css) layer(base);
-@import url(../../../utilities.min.css) layer(utilities);
-@import url(../../../forms.min.css) layer(components);
-@import url(../../../buttons.min.css) layer(components);

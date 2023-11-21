@@ -4,7 +4,7 @@
 	--palette-chroma: 0.15; /* 0-1 : lower to mute and pastel, over 2 at own risk */
 }
 
-:where(*) {
+* {
 	--color-1: oklch(
 		98% calc(0.03 * var(--palette-chroma, 1))
 			calc(var(--palette-hue) + (0 * var(--palette-hue-rotate-by)))

@@ -1,8 +1,3 @@
 {
-	"extends": "astro/tsconfigs/base",
-	"compilerOptions": {
-		"paths": {
-			"@open-props/*": ["../../../"]
-		}
-	}
+  "extends": "astro/tsconfigs/base"
 }
