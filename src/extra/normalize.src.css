@@ -91,7 +91,6 @@
   margin-inline: calc(var(--size-1) * -1);
   padding-block: var(--size-1);
   margin-block: calc(var(--size-1) * -1);
-  max-inline-size: fit-content;
 
   &:where([href]) {
     text-decoration-color: var(--indigo-2);
