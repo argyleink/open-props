@@ -1,5 +1,5 @@
 export default [
-	{ label: 'Playground', link: '#' },
+	{ label: 'Playground', link: '/playground/' },
 	{
 		label: 'Examples',
 		collapsed: true,
@@ -12,8 +12,9 @@ export default [
 				label: 'Get Started',
 				link: '/guides/get-started/',
 			},
+			{ label: 'Customizing', link: '/guides/customizing/' },
 			{
-				label: 'Setup',
+				label: 'Tooling',
 				collapsed: true,
 				items: [
 					{ label: 'Editor', link: '/guides/editor/' },
@@ -22,12 +23,12 @@ export default [
 					{ label: 'CDN', link: '/guides/cdn/' },
 				],
 			},
-			{ label: 'Customizing', link: '/guides/customizing/' },
 		],
 	},
 	{
 		label: 'Shop Props',
-		autogenerate: { directory: 'props', collapsed: true },
+		collapsed: true,
+		autogenerate: { directory: 'props' },
 	},
 	{
 		label: 'Prop Packs',
