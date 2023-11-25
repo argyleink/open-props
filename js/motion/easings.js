@@ -1,4 +1,5 @@
 export const Ease = [
+	,
 	'cubic-bezier(.25, 0, .5, 1)',
 	'cubic-bezier(.25, 0, .4, 1)',
 	'cubic-bezier(.25, 0, .3, 1)',
@@ -7,6 +8,7 @@ export const Ease = [
 ]
 
 export const EaseIn = [
+	,
 	'cubic-bezier(.25, 0, 1, 1)',
 	'cubic-bezier(.50, 0, 1, 1)',
 	'cubic-bezier(.70, 0, 1, 1)',
@@ -15,6 +17,7 @@ export const EaseIn = [
 ]
 
 export const EaseOut = [
+	,
 	'cubic-bezier(0, 0, .75, 1)',
 	'cubic-bezier(0, 0, .50, 1)',
 	'cubic-bezier(0, 0, .3, 1)',
@@ -23,6 +26,7 @@ export const EaseOut = [
 ]
 
 export const EaseInOut = [
+	,
 	'cubic-bezier(.1, 0, .9, 1)',
 	'cubic-bezier(.3, 0, .7, 1)',
 	'cubic-bezier(.5, 0, .5, 1)',
@@ -31,6 +35,7 @@ export const EaseInOut = [
 ]
 
 export const ElasticOut = [
+	,
 	'cubic-bezier(.5, .75, .75, 1.25)',
 	'cubic-bezier(.5, 1, .75, 1.25)',
 	'cubic-bezier(.5, 1.25, .75, 1.25)',
@@ -39,6 +44,7 @@ export const ElasticOut = [
 ]
 
 export const ElasticIn = [
+	,
 	'cubic-bezier(.5, -0.25, .75, 1)',
 	'cubic-bezier(.5, -0.50, .75, 1)',
 	'cubic-bezier(.5, -0.75, .75, 1)',
@@ -47,6 +53,7 @@ export const ElasticIn = [
 ]
 
 export const ElasticInOut = [
+	,
 	'cubic-bezier(.5, -.1, .1, 1.5)',
 	'cubic-bezier(.5, -.3, .1, 1.5)',
 	'cubic-bezier(.5, -.5, .1, 1.5)',
@@ -55,6 +62,7 @@ export const ElasticInOut = [
 ]
 
 export const Steps = [
+	,
 	'steps(2)',
 	'steps(3)',
 	'steps(4)',
@@ -63,6 +71,7 @@ export const Steps = [
 ]
 
 export const Spring = [
+	,
 	`linear(
     0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%,
     0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%,
@@ -94,6 +103,7 @@ export const Spring = [
 ]
 
 export const Bounce = [
+	,
 	`linear(
     0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141, 0.191, 0.25, 0.316, 0.391 36.8%,
     0.563, 0.766, 1 58.8%, 0.946, 0.908 69.1%, 0.895, 0.885, 0.879, 0.878, 0.879,
