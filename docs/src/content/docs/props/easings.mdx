@@ -4,6 +4,17 @@ description: A reference page in my new Starlight docs site.
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components'
+import Easings from '@components/easings.svelte'
+
+### Intro
+
+Custom animation easing is a great way to customize the motion ethos in a design system. 
+These easing props are one of the best augmentation packages for **existing** design systems, 
+bringing motion tokens to systems that haven't gotten there yet.
+
+:::tip
+Each easing set offers **5 strengths**. 
+:::
 
 ### Usage
 
@@ -51,13 +62,11 @@ Get the props into your project via [NPM](https://www.npmjs.com/package/open-pro
 
 ## The Props
 
-:::tip
-Each easing offers **5 strengths**. 
-:::
-
 The lower the number, the weaker the effect. 
 
 ### `ease`
+
+<Easings ease="ease" client:visible />
 
 <Tabs>
 	<TabItem label="CSS">
@@ -87,6 +96,8 @@ The lower the number, the weaker the effect.
 
 ### `ease-in`
 
+<Easings ease="ease-in" client:visible />
+
 <Tabs>
 	<TabItem label="CSS">
 		```css
@@ -114,6 +125,8 @@ The lower the number, the weaker the effect.
 </Tabs>
 
 ### `ease-out`
+
+<Easings ease="ease-out" client:visible />
 
 <Tabs>
 	<TabItem label="CSS">
@@ -143,6 +156,8 @@ The lower the number, the weaker the effect.
 
 ### `ease-in-out`
 
+<Easings ease="ease-in-out" client:visible />
+
 <Tabs>
 	<TabItem label="CSS">
 		```css
@@ -170,6 +185,8 @@ The lower the number, the weaker the effect.
 </Tabs>
 
 ### `ease-elastic-in`
+
+<Easings ease="ease-elastic-in" client:visible />
 
 <Tabs>
 	<TabItem label="CSS">
@@ -199,6 +216,8 @@ The lower the number, the weaker the effect.
 
 ### `ease-elastic-out`
 
+<Easings ease="ease-elastic-out" client:visible />
+
 <Tabs>
 	<TabItem label="CSS">
 		```css
@@ -226,6 +245,8 @@ The lower the number, the weaker the effect.
 </Tabs>
 
 ### `ease-elastic-in-out`
+
+<Easings ease="ease-elastic-in-out" client:visible />
 
 <Tabs>
 	<TabItem label="CSS">
@@ -255,6 +276,8 @@ The lower the number, the weaker the effect.
 
 ### `ease-step`
 
+<Easings ease="ease-step" client:visible />
+
 <Tabs>
 	<TabItem label="CSS">
 		```css
@@ -282,6 +305,8 @@ The lower the number, the weaker the effect.
 </Tabs>
 
 ### `ease-spring`
+
+<Easings ease="ease-spring" client:visible />
 
 <Tabs>
 	<TabItem label="CSS">
@@ -333,6 +358,8 @@ The lower the number, the weaker the effect.
 </Tabs>
 
 ### `ease-bounce`
+
+<Easings ease="ease-bounce" duration="3s" client:visible />
 
 <Tabs>
 	<TabItem label="CSS">
