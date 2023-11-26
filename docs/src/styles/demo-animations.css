@@ -1,23 +1,27 @@
 @keyframes change-side {
+	0%,
 	90%,
 	100% {
 		translate: 0 0;
+		rotate: 0turn;
 	}
 	40%,
 	50% {
 		translate: 300px 0;
-		rotate: 0.5turn;
+		rotate: var(--_change-rotation, 0.5turn);
 	}
 }
 
 @keyframes change-scale {
+	0%,
 	90%,
 	100% {
 		scale: 1;
+		rotate: 0turn;
 	}
 	40%,
 	50% {
 		scale: 0.01;
-		rotate: 0.5turn;
+		rotate: var(--_change-rotation, 0.5turn);
 	}
 }

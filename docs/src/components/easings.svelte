@@ -3,6 +3,7 @@
 	export let playstate = 'paused';
 	export let duration = '2s';
 	export let strength = 3;
+	export let rotation = '0.5turn';
 
 	let durations = ['1s', '2s', '3s'];
 	let strengths = [1,2,3,4,5];
@@ -44,6 +45,7 @@
 			--_playstate: ${playstate};
 			--_duration: ${duration};
 			--_animation: ${animation};
+			--_change-rotation: ${rotation};
 		`}></div>
 	</div>
 </div>
