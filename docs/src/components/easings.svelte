@@ -80,7 +80,7 @@
 		align-items: stretch;
 
 		& > select {
-			background: none;
+			background: inherit;
 			border: none;
 			margin: 0;
 		}
@@ -92,7 +92,7 @@
 			padding-block: var(--size-2);
 			padding-inline: var(--size-4);
 			text-transform: capitalize;
-			min-inline-size: 13ch;
+			min-inline-size: 14ch;
 			display: inline-flex;
 			align-items: center;
 			justify-content: space-between;
