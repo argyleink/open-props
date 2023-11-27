@@ -17,9 +17,23 @@
 	}
 </script>
 
-<div class="easing-demo">
+<div class="card easing-demo">
 	<div class="controls">
-		<button class="play" title="Playstate toggle button" on:click={toggle}>{playstate}</button>
+		<button class="play" title="Toggle playstate" on:click={toggle}>
+			{playstate}
+			<svg viewBox="0 0 24 24" style={`
+				--_icon-fill: ${playstate === 'running' ? 'currentColor' : 'none'};
+			`}>
+				<path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+			</svg>
+		</button>
+		<select bind:value={strength}>
+			{#each strengths as str}
+				<option value={str}>
+					--{ease}-{str}
+				</option>
+			{/each}
+		</select>
 		<select bind:value={animation}>
 			<option value="change-side">Translate</option>
 			<option value="change-scale">Scale</option>
@@ -31,13 +45,6 @@
 				</option>
 			{/each}
 		</select>
-		<select bind:value={strength}>
-			{#each strengths as str}
-				<option value={str}>
-					--{ease}-{str}
-				</option>
-			{/each}
-		</select>
 	</div>
 	<div class="runway">
 		<div class="ball" style={`
@@ -46,16 +53,25 @@
 			--_duration: ${duration};
 			--_animation: ${animation};
 			--_change-rotation: ${rotation};
-		`}></div>
+		`}>
+			<svg viewBox="0 0 24 24" stroke-width="1.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0M12 3v9" />
+			</svg>
+		</div>
 	</div>
 </div>
 
 <style>
 	.easing-demo {
 		display: grid;
-		place-content: start;
-		gap: var(--size-5);
-		margin-block-start: var(--size-5);
+		margin-block-start: 0;
+
+		--sl-card-border: var(--sl-color-purple);
+    --sl-card-bg: var(--sl-color-purple-low);
+    border: 1px solid var(--sl-color-gray-5);
+    background-color: var(--sl-color-black);
+    padding: clamp(1rem,calc(0.125rem + 3vw),2.5rem);
+    gap: clamp(0.5rem,calc(0.125rem + 1vw),1rem);
 	}
 
 	.controls {
@@ -64,21 +80,41 @@
 		align-items: stretch;
 
 		& > select {
-			margin: 0;
-			padding-inline: var(--size-2);
+			background: none;
+			border: none;
 		}
 
 		& > .play {
-			min-inline-size: 10ch;
+			background: var(--sl-color-bg-nav);
+			border: 1px solid var(--sl-color-gray-5);
+			border-radius: var(--radius-2);
+			padding-inline: var(--size-3);
+			text-transform: capitalize;
+			min-inline-size: 12ch;
+			display: inline-flex;
+			align-items: center;
+			justify-content: space-between;
+			
+			& > svg {
+				block-size: 2ex;
+				fill: var(--_icon-fill);
+				stroke: currentColor;
+			}
 		}
 	}
 
 	.ball {
 		aspect-ratio: var(--ratio-square);
 		inline-size: calc(var(--size-content-1) / 3);
-		background: var(--sl-color-text-accent);
+		
 		animation: var(--_animation, change-side) var(--_duration, 3s) var(--_easing, linear) infinite;
 		animation-play-state: var(--_playstate, paused);
+
+		& > svg > path {
+			fill: none;
+			stroke: var(--sl-color-text-accent);
+			stroke: color(display-p3 1 0 1);
+		}
 	}
 
 	.runway {

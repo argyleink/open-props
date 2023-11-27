@@ -7,7 +7,7 @@
 	}
 	40%,
 	50% {
-		translate: 300px 0;
+		translate: min(65vw, 300px) 0;
 		rotate: var(--_change-rotation, 0.5turn);
 	}
 }
