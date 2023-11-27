@@ -82,21 +82,23 @@
 		& > select {
 			background: none;
 			border: none;
+			margin: 0;
 		}
 
 		& > .play {
 			background: var(--sl-color-bg-nav);
 			border: 1px solid var(--sl-color-gray-5);
 			border-radius: var(--radius-2);
-			padding-inline: var(--size-3);
+			padding-block: var(--size-2);
+			padding-inline: var(--size-4);
 			text-transform: capitalize;
-			min-inline-size: 12ch;
+			min-inline-size: 13ch;
 			display: inline-flex;
 			align-items: center;
 			justify-content: space-between;
 			
 			& > svg {
-				block-size: 2ex;
+				block-size: 2.5ex;
 				fill: var(--_icon-fill);
 				stroke: currentColor;
 			}
