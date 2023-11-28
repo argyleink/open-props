@@ -3,7 +3,7 @@ title: Easings
 description: A reference page in my new Starlight docs site.
 ---
 
-import { Tabs, TabItem, Icon } from '@astrojs/starlight/components';
+import { Tabs, TabItem, Icon, LinkCard } from '@astrojs/starlight/components';
 import Easings from '@components/easings.svelte'
 
 ### Intro
@@ -414,3 +414,11 @@ The lower the number, the weaker the effect.
 </Tabs>
 
 <Easings ease="ease-bounce" rotation="0" duration="3s" client:visible />
+
+----
+
+<LinkCard
+  title="Need help?"
+  description="Join us in Discord and ask a question, help could be a few minutes away."
+  href="https://discord.gg/AqA4fU886r"
+/>
