@@ -85,7 +85,7 @@
 		align-items: stretch;
 
 		& > select {
-			background: inherit;
+			background: var(--sl-color-black);
 			border: none;
 			margin: 0;
 			text-transform: capitalize;
