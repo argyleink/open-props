@@ -6,8 +6,6 @@ description: A reference page in my new Starlight docs site.
 import { Tabs, TabItem, Icon, LinkCard } from '@astrojs/starlight/components';
 import Easings from '@components/easings.svelte'
 
-### Intro
-
 Custom animation easing is a great way to customize the motion ethos in a design system. 
 These easing props are one of the best augmentation packages for **existing** design systems, 
 bringing motion tokens to systems that haven't gotten there yet.
@@ -22,16 +20,26 @@ A preview of what it looks like to use Open Props within a project.
 
 <Icon name="star" color="goldenrod" size="2rem" />
 
-```css ins="var(--ease-spring-3)"
+```css ins="var(--ease-spring-3)" ins="var(--ease-out-5)"
 // component.css
 .card {
 	animation: twist 1s var(--ease-spring-3) infinite;
+}
+
+.slide-fade {
+  animation:
+    var(--animation-fade-out) forwards,
+    var(--animation-slide-out-down);
+  animation-timing-function: var(--ease-out-5);
+  animation-duration: 1s;
 }
 ```
 
 ```js ins="Spring[3]"
 // component.js
-element.style.animationTimingFunction = Spring[3]
+import {Spring} from 'open-props/easings.js';
+
+element.style.animationTimingFunction = Spring[3];
 ```
 
 ### Importing
