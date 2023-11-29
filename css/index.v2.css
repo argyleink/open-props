@@ -6,6 +6,5 @@
 @import 'borders.css';
 @import 'shadows.css';
 @import 'motion/easings.css';
-@import 'motion/animations.css';
-@import 'color/index.hex.css';
+@import 'color/palette.oklch.css';
 @import 'color/gradients.css';

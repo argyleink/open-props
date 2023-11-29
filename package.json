@@ -43,7 +43,9 @@
 		"test": "ava test/basic.test.cjs",
 		"build": "concurrently npm:lib:* -m 25",
 		"lib:main": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/index.css -o open-props.min.css",
+		"lib:main:v2": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/index.v2.css -o open-props.v2.css",
 		"lib:normalize": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/normalize/index.css -o normalize.min.css",
+		"lib:normalize:v2": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/normalize/index.v2.css -o normalize.v2.css",
 		"lib:buttons": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/buttons/index.css -o buttons.min.css",
 		"lib:forms": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/forms/index.css -o forms.min.css",
 		"lib:animate": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/packs/animate/index.css -o animate.min.css",
@@ -52,7 +54,9 @@
 		"lib:animations": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/motion/animations.css -o animations.min.css",
 		"lib:easings": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/motion/easings.css -o easings.min.css",
 		"lib:color:palette:oklch": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/color/palette.oklch.css -o palette.min.css",
-		"lib:color:hues:oklch": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/color/hues.oklch.css -o hues.oklch.min.css"
+		"lib:color:hues:oklch": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/color/hues.oklch.css -o hues.oklch.min.css",
+		"lib:color:hex": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/color/index.hex.css -o hex.min.css",
+		"lib:color:hsl": "lightningcss --bundle --custom-media --minify -t 'last 2 versions' css/color/index.hsl.css -o hsl.min.css"
 	},
 	"devDependencies": {
 		"ava": "^5.3.1",
