@@ -1,0 +1,12 @@
+:where(:root) {
+	--font-size-00: 0.5rem;
+	--font-size-0: 0.75rem;
+	--font-size-1: 1rem;
+	--font-size-2: 1.1rem;
+	--font-size-3: 1.25rem;
+	--font-size-4: 1.5rem;
+	--font-size-5: 2rem;
+	--font-size-6: 2.5rem;
+	--font-size-7: 3rem;
+	--font-size-8: 3.5rem;
+}

@@ -1,0 +1,5 @@
+:where(:root) {
+	--size-content-1: 20ch;
+	--size-content-2: 45ch;
+	--size-content-3: 60ch;
+}

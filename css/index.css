@@ -1,6 +1,6 @@
 @import 'media-queries.css';
-@import 'fonts.css';
-@import 'sizes.css';
+@import 'font/index.css';
+@import 'sizes/index.css';
 @import 'aspect-ratios.css';
 @import 'z-index.css';
 @import 'borders.css';

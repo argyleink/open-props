@@ -1,0 +1,9 @@
+:where(:root) {
+	--font-lineheight-00: 0.95;
+	--font-lineheight-0: 1.1;
+	--font-lineheight-1: 1.25;
+	--font-lineheight-2: 1.375;
+	--font-lineheight-3: 1.5;
+	--font-lineheight-4: 1.75;
+	--font-lineheight-5: 2;
+}

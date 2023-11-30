@@ -1,4 +1,4 @@
-:where(html) {
+:where(:root) {
 	--minute: 60s;
 	--hour: calc(60 * var(--minute));
 	--day: calc(24 * var(--hour));

@@ -1,0 +1,10 @@
+:where(:root) {
+	--font-letterspacing-0: -0.05em;
+	--font-letterspacing-1: 0.025em;
+	--font-letterspacing-2: 0.05em;
+	--font-letterspacing-3: 0.075em;
+	--font-letterspacing-4: 0.15em;
+	--font-letterspacing-5: 0.5em;
+	--font-letterspacing-6: 0.75em;
+	--font-letterspacing-7: 1em;
+}
