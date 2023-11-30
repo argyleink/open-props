@@ -1,9 +1,8 @@
 /* Dark mode colors. */
-:root {
+/* :root {
 	--sl-color-accent-low: #131e4f;
 	--sl-color-accent: oklch(var(--palette-hue) 0.3 75%);
 	--sl-color-accent-high: #b3c7ff;
-	/* --sl-color-text-accent: oklch(var(--palette-hue) 0.3 75%); */
 
 	--sl-color-white: #ffffff;
 	--sl-color-gray-1: var(--color-2);
@@ -17,9 +16,9 @@
 
 	--sl-color-bg: var(--color-14);
 	--sl-color-bg-nav: var(--color-12);
-}
+} */
 /* Light mode colors. */
-:root[data-theme='light'] {
+/* :root[data-theme='light'] {
 	--sl-color-accent-low: #c7d6ff;
 	--sl-color-accent: oklch(var(--palette-hue) 0.3 85%);
 	--sl-color-accent-high: #182775;
@@ -54,4 +53,8 @@
 	--sl-shadow-sm: var(--shadow-1);
 	--sl-shadow-md: var(--shadow-2);
 	--sl-shadow-lg: var(--shadow-5);
+} */
+
+.tighten .expressive-code {
+	margin-top: 0.5rem;
 }

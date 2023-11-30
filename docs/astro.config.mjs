@@ -16,7 +16,7 @@ export default defineConfig({
 			customCss: [
 				'../css/index.v2.css',
 				'./src/styles/demo-animations.css',
-				// './src/styles/starlight.overrides.css',
+				'./src/styles/starlight.overrides.css',
 			],
 			social: {
 				github: 'https://github.com/argyleink/open-props',

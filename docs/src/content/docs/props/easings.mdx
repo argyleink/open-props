@@ -23,23 +23,33 @@ A preview of what it looks like to use Open Props within a project.
 ```css ins="var(--ease-spring-3)" ins="var(--ease-out-5)"
 // component.css
 .card {
-	animation: twist 1s var(--ease-spring-3) infinite;
+	animation: fade-out .5 var(--ease-out-5) infinite;
 }
 
-.slide-fade-out {
-  animation:
-    var(--animation-fade-out) forwards,
-    var(--animation-slide-out-down);
-  animation-timing-function: var(--ease-out-5);
-  animation-duration: 1s;
+.button {
+  transition: transform .5s var(--ease-spring-3);
 }
 ```
 
-```js ins="Spring[3]"
+```js ins="Spring[3]" ins="EaseOut[5]"
 // component.js
-import {Spring} from 'open-props/easings.js';
+import {Spring, EaseOut} from 'open-props/easings.js';
 
-element.style.animationTimingFunction = Spring[3];
+card.style.animation = `fade-out .5s ${EaseOut[5]} infinite`;
+button.style.transitionTimingFunction = Spring[3];
+
+await Promise.all([
+	box1.animate([{ transform: 'scale(0)'}], {
+		duration: 500,
+		delay:0,
+		easing: Spring[3]
+	}).finished,
+	box2.animate([{ transform: 'scale(0)'}], {
+		duration: 500,
+		delay:100,
+		easing: Spring[3]
+	}).finished,
+])
 ```
 
 ### Importing
@@ -48,25 +58,49 @@ Get the props into your project via [NPM](https://www.npmjs.com/package/open-pro
 
 <Tabs>
 	<TabItem label="CSS">
-		```css
-		/* NPM */
-		@import 'open-props/easings.css';      
-
-		/* CDN */
-		@import 'https://unpkg.com/open-props/easings.css';
-		```
+		<div class="tighten">
+			**NPM**
+			```css
+			@import 'open-props/easings.css';      
+			```
+		</div>
+		<div class="tighten">
+			**CDN**
+			```css
+			@import 'https://unpkg.com/open-props/easings.css'; 
+			```
+		</div>
   </TabItem>
   <TabItem label="JS">
-		```js
-		 // NPM
-		import Easings from 'open-props/easings.js';
-
-		// CDN
-		import Easings from 'https://unpkg.com/open-props/easings.js';
-
-		// Choose specific subset
-		import {Ease, EaseIn, Spring, Bounce} from 'open-props/easings.js';
-		```
+		<div class="tighten">
+			**NPM**
+			```js
+			import Easings from 'open-props/easings.js';
+			```
+		</div>
+		<div class="tighten">
+			**CDN**
+			```js
+			import Easings from 'https://unpkg.com/open-props/easings.js';
+			```
+		</div>
+		<div class="tighten">
+			**Exports**
+			```js
+			export default {
+				Ease,
+				EaseIn,
+				EaseOut,
+				EaseInOut,
+				ElasticIn,
+				ElasticOut,
+				ElasticInOut,
+				Steps,
+				Spring,
+				Bounce,
+			}
+			```
+		</div>
 	</TabItem>
 </Tabs>
 
