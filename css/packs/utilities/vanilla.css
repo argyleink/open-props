@@ -122,8 +122,12 @@
 	font-size: 3rem;
 }
 
+:where(.square) {
+	aspect-ratio: 1;
+}
+
 :where(.round) {
 	aspect-ratio: 1;
-	border-radius: 1e4px;
+	border-radius: 1e9px;
 	overflow: clip;
 }

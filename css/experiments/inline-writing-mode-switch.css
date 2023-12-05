@@ -1,4 +1,4 @@
-:where(html) {
+:where(:root) {
 	--isLTR: 1;
 	--isRTL: -1;
 

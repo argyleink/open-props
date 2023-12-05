@@ -1,4 +1,4 @@
-:where(html) {
+:where(:root) {
 	--grid-cell: [stack] 1fr / [stack] 1fr;
 	--grid-cell-name: stack;
 

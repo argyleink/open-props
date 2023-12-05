@@ -1,8 +1,10 @@
-:where(html) {
+:where(:root) {
 	--layer-1: 1;
 	--layer-2: 2;
 	--layer-3: 3;
 	--layer-4: 4;
 	--layer-5: 5;
+	--layer-bottom: var(--layer-1);
+	--layer-top: var(--layer-5);
 	--layer-important: 2147483647;
 }

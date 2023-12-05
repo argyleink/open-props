@@ -1,0 +1,30 @@
+:where(:root) {
+	--neon-red: #ff5161;
+	--neon-red-glow: #d30302;
+	--neon-pink: #ff53cd;
+	--neon-pink-glow: #e10361;
+	--neon-purple: #9461fd;
+	--neon-purple-glow: #4003e6;
+	--neon-blue: #2dd9fe;
+	--neon-blue-glow: #00a3d5;
+	--neon-green: #00fe9b;
+	--neon-green-glow: #02c435;
+	--neon-yellow: #ffdb4e;
+	--neon-yellow-glow: #b48505;
+	--neon-white: #fefefe;
+	--neon-white-glow: #ffffff;
+}
+
+@supports (background: color(display-p3 1 1 1)) {
+	@media (dynamic-range: high) {
+		:where(:root) {
+			--neon-red: color(display-p3 1 0 0);
+			--neon-pink: color(display-p3 1 0 1);
+			--neon-purple: color(display-p3 0 0 1);
+			--neon-blue: color(display-p3 0 1 1);
+			--neon-green: color(display-p3 0 1 0);
+			--neon-yellow: color(display-p3 1 1 0);
+			--neon-white: color(display-p3 1 1 1);
+		}
+	}
+}

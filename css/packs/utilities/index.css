@@ -3,11 +3,10 @@
 	border-radius: var(--_rounded, var(--radius-2));
 }
 
-/* :where(.rounded-match) {
-  --_rounded: 0;
-  overflow: clip;
-  overflow-clip-margin: content-box;
-} */
+:where(.rounded-match) {
+	overflow: clip;
+	overflow-clip-margin: content-box;
+}
 
 :where(.padding) {
 	--_padding: initial;
@@ -162,6 +161,10 @@
 
 :where(.text-lg) {
 	font-size: var(--font-size-5);
+}
+
+:where(.square) {
+	aspect-ratio: 1;
 }
 
 :where(.round) {

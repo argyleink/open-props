@@ -13,3 +13,8 @@ export const NoiseFilters = [
 	'contrast(200%) brightness(500%)',
 	'contrast(200%) brightness(1000%)',
 ]
+
+export default {
+	Noises,
+	NoiseFilters,
+}
