@@ -14,7 +14,7 @@ export default defineConfig({
 			},
 			// site: 'https://open-props.style',
 			customCss: [
-				'../css/index.v2.css',
+				'../css/index.css',
 				'./src/styles/demo-animations.css',
 				'./src/styles/starlight.overrides.css',
 			],

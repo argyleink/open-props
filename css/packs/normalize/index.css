@@ -23,6 +23,6 @@
 	}
 
 	::placeholder {
-		color: var(--gray-6);
+		color: var(--color-6);
 	}
 }

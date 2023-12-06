@@ -2,3 +2,5 @@
 .cache/
 node_modules/
 /*.css
+!open-props.min.css
+!normalize.min.css

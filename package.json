@@ -3,7 +3,7 @@
 	"name": "open-props",
 	"author": "Adam Argyle",
 	"license": "MIT",
-	"version": "2.0.0-beta.0",
+	"version": "2.0.0-beta.1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/argyleink/open-props"
@@ -42,10 +42,8 @@
 	"scripts": {
 		"test": "ava test/basic.test.cjs",
 		"build": "concurrently npm:lib:* -m 25",
-		"lib:main": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/index.css -o open-props.min.css",
-		"lib:main:v2": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/index.v2.css -o index.css",
-		"lib:normalize": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/packs/normalize/index.css -o normalize.min.css",
-		"lib:normalize:v2": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/packs/normalize/index.v2.css -o normalize.css",
+		"lib:main": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/index.css -o index.css",
+		"lib:normalize": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/packs/normalize/index.css -o normalize.css",
 		"lib:buttons": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/packs/buttons/index.css -o buttons.css",
 		"lib:forms": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/packs/forms/index.css -o forms.css",
 		"lib:animate": "lightningcss --bundle --custom-media --minify -t 'last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions' css/packs/animate/index.css -o animate.css",
