@@ -14,7 +14,7 @@
 @custom-media --portrait      (orientation: portrait);
 @custom-media --landscape     (orientation: landscape);
 
-@custom-media --HDcolor       (dynamic-range: high);
+@custom-media --HDcolor       (dynamic-range: high) or (color-gamut: p3);
 
 @custom-media --touch         (hover: none) and (pointer: coarse);
 @custom-media --stylus        (hover: none) and (pointer: fine);
