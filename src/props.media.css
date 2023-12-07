@@ -11,6 +11,8 @@
 @custom-media --highContrast  (prefers-contrast: more);
 @custom-media --lowContrast   (prefers-contrast: less);
 
+@custom-media --forcedColors  (forced-colors: active);
+
 @custom-media --portrait      (orientation: portrait);
 @custom-media --landscape     (orientation: landscape);
 
