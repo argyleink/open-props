@@ -18,15 +18,15 @@
 	--_border: var(--surface-3);
 
 	--_highlight-size: 0;
-	--_highlight-light: hsl(var(--gray-5-hsl) / 25%);
-	--_highlight-dark: hsl(var(--gray-12-hsl) / 25%);
+	--_highlight-light: oklch(70% 100% var(--palette-hue) / 25%);
+	--_highlight-dark: oklch(70% 50% var(--palette-hue) / 25%);
 	--_highlight: var(--_highlight-light);
 
-	--_ink-shadow-light: 0 1px 0 var(--gray-3);
+	--_ink-shadow-light: 0 1px 0 var(--color-3);
 	--_ink-shadow-dark: 0 1px 0 var(--surface-1);
 	--_ink-shadow: var(--_ink-shadow-light);
 
-	--_icon-size: var(--size-relative-7);
+	--_icon-size: var(--size-relative-7, 2ch);
 	--_icon-color: var(--_accent, var(--link));
 
 	font-size: var(--_size);
@@ -47,8 +47,8 @@
 
 	font-weight: var(--font-weight-7);
 	border-radius: var(--radius-2);
-	padding-block: 0.75ch;
-	padding-inline: var(--size-relative-6);
+	padding-block: 1ex;
+	padding-inline: 2ex;
 
 	user-select: none;
 	-webkit-tap-highlight-color: transparent;
@@ -65,8 +65,8 @@
 	@media (--motionOK) {
 		transition:
 			border-color 0.5s var(--ease-3),
-			box-shadow 145ms var(--ease-4),
-			outline-offset 145ms var(--ease-4);
+			box-shadow 145ms var(--ease-spring-3, var(--ease-4)),
+			outline-offset 145ms var(--ease-spring-3, var(--ease-4));
 	}
 }
 
@@ -78,12 +78,12 @@
 	/* disabled */
 	&[disabled] {
 		--_bg: none;
-		--_text: var(--gray-6);
+		--_text: var(--color-6);
 		cursor: not-allowed;
 		box-shadow: var(--shadow-1);
 
 		@media (--OSdark) {
-			--_text: var(--gray-5);
+			--_text: var(--color-5);
 		}
 	}
 
@@ -114,15 +114,15 @@
 
 /* red reset */
 :where([type='reset']) {
-	--_text: var(--red-6);
-	--_border: var(--red-3);
+	--_text: var(--red-6, #fa5252);
+	--_border: var(--red-3, #ffa8a8);
 
 	&:focus-visible {
-		outline-color: var(--red-6);
+		outline-color: var(--red-6, #fa5252);
 	}
 
 	@media (--OSdark) {
-		--_text: var(--red-2);
+		--_text: var(--red-2, #ffc9c9);
 		--_border: var(--surface-3);
 	}
 }
@@ -149,7 +149,7 @@
 
 :where(input[type='file'])::-webkit-file-upload-button,
 :where(input[type='file'])::file-selector-button {
-	margin-inline-end: var(--size-relative-6);
+	margin-inline-end: 2ex;
 	cursor: pointer;
 }
 
