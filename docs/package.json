@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
-    "@astrojs/starlight": "^0.13.0",
-    "@astrojs/svelte": "^4.0.4",
-    "astro": "^3.2.3",
-    "sharp": "^0.32.5",
+    "@astrojs/starlight": "^0.15.0",
+    "@astrojs/svelte": "^5.0.0",
+    "astro": "^4.0.2",
+    "sharp": "^0.33.0",
     "typescript": "^5.3.2"
   }
 }
