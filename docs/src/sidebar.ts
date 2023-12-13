@@ -3,6 +3,7 @@ export default [
 	{
 		label: 'Examples',
 		collapsed: true,
+		badge: { text: '5', variant: 'tip' },
 		autogenerate: { directory: 'examples' },
 	},
 	{
@@ -12,6 +13,7 @@ export default [
 				label: 'Get Started',
 				link: '/guides/get-started/',
 			},
+			{ label: 'Color', link: '/color/' },
 			{ label: 'Customizing', link: '/guides/customizing/' },
 			{
 				label: 'Tooling',
