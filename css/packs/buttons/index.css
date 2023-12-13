@@ -15,7 +15,7 @@
 	--_bg-dark: var(--surface-3);
 	--_bg: var(--_bg-light);
 
-	--_border: var(--surface-3);
+	--_border: var(--surface-2);
 
 	--_highlight-size: 0;
 	--_highlight-light: oklch(70% 100% var(--palette-hue) / 25%);

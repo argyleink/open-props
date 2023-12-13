@@ -29,6 +29,10 @@
 @media (--motionOK) {
 	:where(:focus-visible) {
 		transition: outline-offset 145ms var(--ease-2);
+
+		@supports (transition-timing-function: linear(0, 1)) {
+			transition-timing-function: var(--ease-spring-3);
+		}
 	}
 	:where(:not(:active):focus-visible) {
 		transition-duration: 0.25s;
@@ -122,11 +126,6 @@
 }
 
 :where(a) {
-	padding-inline: var(--size-1);
-	margin-inline: calc(var(--size-1) * -1);
-	padding-block: var(--size-1);
-	margin-block: calc(var(--size-1) * -1);
-
 	&:where([href]) {
 		text-decoration-color: var(--indigo-2);
 

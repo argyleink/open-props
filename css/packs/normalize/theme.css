@@ -4,8 +4,8 @@
 	:where(:root) {
 		color-scheme: dark;
 
-		--link: var(--indigo-3);
-		--link-visited: var(--purple-3);
+		--link: oklch(90% 80% var(--palette-hue));
+		--link-visited: oklch(90% 80% calc(var(--palette-hue) * 1.2));
 
 		--surface-1: var(--color-11);
 		--surface-2: var(--color-12);
@@ -16,6 +16,6 @@
 		--text-1: var(--color-1);
 		--text-2: var(--color-5);
 
-		--scrollthumb-color: var(--color-10);
+		--scrollthumb-color: var(--text-2);
 	}
 }

@@ -8,3 +8,25 @@
 		--highlight-color: hsl(0 0% 100% / 20%);
 	}
 }
+
+/* .bouncy-focus {
+	--_focus-size: 0;
+	--_focus-duration: 0.2s;
+	--_focus-ease: var(--ease-out-5);
+
+	box-shadow: 0 0 0 var(--_focus-size) Highlight;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: box-shadow var(--_focus-duration) var(--_focus-ease);
+	}
+
+	&:not(:active):is(:focus-visible, :hover) {
+		--_focus-size: 1rem;
+		--_focus-duration: 0.5s;
+		--_focus-ease: var(--ease-elastic-out-3);
+
+		@supports (transition-timing-function: linear(0, 1)) {
+			--_focus-ease: var(--ease-spring-3);
+		}
+	}
+} */
