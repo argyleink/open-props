@@ -1,169 +1,155 @@
 <script>
+// import Color from 'https://colorjs.io/dist/color.js'
 
+let hue = 358
+let hueRotateBy = -5
+let chroma = .9
+
+let shuffle
+
+function randomizeColors() {
+  shuffle.animate([
+    { transform: 'rotate(1turn)' }
+  ], {
+    duration: 1000,
+    easing: CSS.supports('animation-timing-function: linear(0, 1)')
+      ? `linear(
+          0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017,
+          1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%,
+          1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%,
+          0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1
+        )`
+      : `ease`,
+  })
+    
+  hue = Math.round(Math.random() * 360)
+  hueRotateBy = Math.round(Math.random() * 6 * (Math.random() > .5 ? 1 : -1))
+  chroma = Math.random().toFixed(2)
+
+	// determineContrast()
+}
+
+function determineContrast() {
+  document.querySelectorAll('.box').forEach(node => {
+    const bg = new Color(node.computedStyleMap().get('background-color').toString())
+    const [p, span] = node.children
+    
+    const c2 = new Color(p.computedStyleMap().get('color').toString())
+    const c3 = new Color(span.computedStyleMap().get('color').toString())
+    
+    const [primary,secondary] = node.previousElementSibling.children
+    
+    primary.textContent = 'AA ' + bg.contrast(c2, 'wcag21').toFixed(1)
+    secondary.textContent = 'AA ' + bg.contrast(c3, 'wcag21').toFixed(1)
+  })
+}
 </script>
 
-<header class="palettes">
-  <section>
-    <p>Hue</p>
-    <div class="swatch max"><b><code>var(--color-max)</code></b></div>
-  </section>
-  <section>
-    <div class="title-with-control">
-      <p>Options</p>
-      <button id="shuffle" title="You can also press spacebar!">
-        <svg viewBox="0 0 24 24" width="17" height="24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-        </svg>
-      </button>
-    </div>
-    <div class="controls">
-      <div>
-        <label for="paletteHue">Hue</label>
-        <input id="paletteHue" type="range" min="0" max="360" value="358">
-        <output id="paletteHueValue">0</output>
-      </div>
-      <div>
-        <label for="paletteHueRotate">Hue Rotation</label>
-        <input id="paletteHueRotate" type="range" min="-30" max="30" value="-5">
-        <output id="paletteHueRotateValue">0</output>
-      </div>
-      <div>
-        <label for="paletteChroma">Chroma</label>
-        <input id="paletteChroma" type="range" min="0" max="2" step="0.01" value="0.9">
-        <output id="paletteChromaValue">1</output> 
-      </div>
-    </div>
-  </section>
-  <!-- <section>
-    <p>Page</p>
-    <fieldset id="bg" class="form-group">
-      <legend>Page Background</legend>
-      <label>
-        <input type="radio" name="page-background" value="var(--color-16)" checked>
-        Palette Darkest
-      </label>
-      <label>
-        <input type="radio" name="page-background" value="var(--color-1)">
-        Palette Lightest
-      </label>
-      <label>
-        <input type="radio" name="page-background" value="white">
-        White
-      </label>
-      <label>
-        <input type="radio" name="page-background" value="black">
-        Black
-      </label>
-    </fieldset>
-  </section>
-  <section>
-    <p>Presets</p>
-    <div class="preset-group">
-      <button id="openprops">Open Props</button>
-    </div>
-  </section> -->
-</header>
+<div class="svelte-palettes" style="
+	--palette-hue: {hue};
+	--palette-hue-rotate-by: {hueRotateBy};
+	--palette-chroma: {chroma};
+">
+	<button class="shuffle" title="You can also press spacebar!" bind:this={shuffle} on:click={randomizeColors}>
+		<svg viewBox="0 0 24 24" width="17" height="24">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+		</svg>
+	</button>
 
-<article class="swatchset" id="swatchset">
-  <div class="swatch"><b><code>var(--color-1)</code></b></div>
-  <div class="swatch"><b><code>var(--color-2)</code></b></div>
-  <div class="swatch"><b><code>var(--color-3)</code></b></div>
-  <div class="swatch"><b><code>var(--color-4)</code></b></div>
-  <div class="swatch"><b><code>var(--color-5)</code></b></div>
-  <div class="swatch"><b><code>var(--color-6)</code></b></div>
-  <div class="swatch"><b><code>var(--color-7)</code></b></div>
-  <div class="swatch"><b><code>var(--color-8)</code></b></div>
-  <div class="swatch"><b><code>var(--color-9)</code></b></div>
-  <div class="swatch"><b><code>var(--color-10)</code></b></div>
-  <div class="swatch"><b><code>var(--color-11)</code></b></div>
-  <div class="swatch"><b><code>var(--color-12)</code></b></div>
-  <div class="swatch"><b><code>var(--color-13)</code></b></div>
-  <div class="swatch"><b><code>var(--color-14)</code></b></div>
-  <div class="swatch"><b><code>var(--color-15)</code></b></div>
-  <div class="swatch"><b><code>var(--color-16)</code></b></div>
-</article>
+	<article class="swatchset" id="swatchset">
+		<div class="swatch"><b><code>var(--color-1)</code></b></div>
+		<div class="swatch"><b><code>var(--color-2)</code></b></div>
+		<div class="swatch"><b><code>var(--color-3)</code></b></div>
+		<div class="swatch"><b><code>var(--color-4)</code></b></div>
+		<div class="swatch"><b><code>var(--color-5)</code></b></div>
+		<div class="swatch"><b><code>var(--color-6)</code></b></div>
+		<div class="swatch"><b><code>var(--color-7)</code></b></div>
+		<div class="swatch"><b><code>var(--color-8)</code></b></div>
+		<div class="swatch"><b><code>var(--color-9)</code></b></div>
+		<div class="swatch"><b><code>var(--color-10)</code></b></div>
+		<div class="swatch"><b><code>var(--color-11)</code></b></div>
+		<div class="swatch"><b><code>var(--color-12)</code></b></div>
+		<div class="swatch"><b><code>var(--color-13)</code></b></div>
+		<div class="swatch"><b><code>var(--color-14)</code></b></div>
+		<div class="swatch"><b><code>var(--color-15)</code></b></div>
+		<div class="swatch"><b><code>var(--color-16)</code></b></div>
+	</article>
+	
+	<output class="code-output">
+		<pre id="paletteout">
+@import "open-props/palette.css";
 
-<!-- <output class="code-output">
-  <pre id="paletteout">:root {
-  --palette-hue: 358;
-  --palette-hue-rotate-by: -5;
-  --palette-chroma: .9;
-}</pre>
-</output>  -->
+.palette-scope &lcub;
+	--palette-hue: {hue}; <input id="paletteHue" type="range" min="0" max="360" bind:value={hue}>
+	--palette-hue-rotate-by: {hueRotateBy}; <input id="paletteHueRotate" type="range" min="-30" max="30" bind:value={hueRotateBy}>
+	--palette-chroma: {chroma}; <input id="paletteChroma" type="range" min="0" max="2" step="0.01" bind:value={chroma}>
+&rcub;</pre>
+	</output> 
 
-<!-- <section>
-  <dl>
-    <dt><b>17 Colors</b></dt>
-    <dd>8 dark</dd>
-    <dd>8 light</dd>
-    <dd>1 max</dd>
-  </dl>
-</section> -->
+	<section class="normalize">
+		<!-- <div class="title">
+			<b>Open Props</b><sup>v2</sup>
+			<p>Example palette usage :: normalize.css theme</p>
+		</div> -->
+		<p><b>Light</b></p>
+		<p><b>Dark</b></p>
+		<div class="light"> 
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box"><p>Surface</p> <span>1</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box"><p>Surface</p> <span>2</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box"><p>Surface</p> <span>3</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box well"><p>Well</p> <span>1</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box well"><p>Well</p> <span>2</span></div>
+			</div>
+		</div>
+		<div class="dark">
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box"><p>Surface</p> <span>1</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box"><p>Surface</p> <span>2</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box"><p>Surface</p> <span>3</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box well"><p>Well</p> <span>1</span></div>
+			</div>
+			<div style="display: flex;">
+				<div class="contrast"><p></p><p></p></div>
+				<div class="box well"><p>Well</p> <span>2</span></div>
+			</div>
+		</div>
+	</section>
 
-<section class="normalize">
-  <!-- <div class="title">
-    <b>Open Props</b><sup>v2</sup>
-    <p>Example palette usage :: normalize.css theme</p>
-  </div> -->
-  <p><b>Light</b></p>
-  <p><b>Dark</b></p>
-  <div class="light"> 
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box"><p>Surface</p> <span>1</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box"><p>Surface</p> <span>2</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box"><p>Surface</p> <span>3</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box well"><p>Well</p> <span>1</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box well"><p>Well</p> <span>2</span></div>
-    </div>
-  </div>
-  <div class="dark">
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box"><p>Surface</p> <span>1</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box"><p>Surface</p> <span>2</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box"><p>Surface</p> <span>3</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box well"><p>Well</p> <span>1</span></div>
-    </div>
-    <div style="display: flex;">
-      <div class="contrast"><p></p><p></p></div>
-      <div class="box well"><p>Well</p> <span>2</span></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>Press <code>spacebar</code> to shuffle</p>
-<!--   <small>Open Props v2 Colors PreBeta</small> -->
-</footer>
+</div>
 
 <style>
+.svelte-palettes {
+	& :not(a, strong, em, del, span, input, code) + :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
+		margin-top: 0;
+	}
+}
+
 .swatchset {
-  inline-size: clamp(50vw, 75vw, 1024px);
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 3.5vw;
+  display: flex;
   
   & > .swatch:nth-of-type(1)  { background: var(--color-1) }
   & > .swatch:nth-of-type(2)  { background: var(--color-2) }
@@ -183,31 +169,8 @@
   & > .swatch:nth-of-type(16) { background: var(--color-16) }
 }
 
-/* Open Props Normalize.css */
-.light {
-  --surface-1: white;
-  --surface-2: var(--color-1);
-  --surface-3: var(--color-3);
-  --surface-document: var(--color-4);
-  --well-1: var(--color-5);
-  --well-2: var(--color-6);
-  --text-1: var(--color-16);
-  --text-2: var(--color-12);
-}
-  
-.dark {
-  --surface-1: var(--color-11);
-  --surface-2: var(--color-12);
-  --surface-3: var(--color-13);
-  --surface-document: var(--color-14);
-  --well-1: var(--color-15);
-  --well-2: var(--color-16);
-  --text-1: var(--color-1);
-  --text-2: var(--color-5);
-}
-
 .swatch {
-  inline-size: 5vw;
+	inline-size: calc(100%/16);
   aspect-ratio: 1;
   display: grid;
   place-content: start center;
@@ -233,59 +196,32 @@
   }
   
   &.max {
+		inline-size: 5vw;
     background: oklch(70% 100% var(--palette-hue));
   }
 }
 
-.controls {
-  display: grid;
-  justify-content: start;
-  gap: 1.25vmin;
-  grid-auto-rows: 1lh;
-  
-  & > div {
-    display: flex;
-    align-items: center;
-    gap: .5ch;
-    
-    & input {
-      flex: 1;
-    }
-    
-    & output {
-      text-align: right;
-      inline-size: 3ch;
-      color: var(--text-2);
-    }
-  }
+/* Open Props Normalize.css */
+.light {
+  --surface-1: white;
+  --surface-2: var(--color-1);
+  --surface-3: var(--color-3);
+  --surface-document: var(--color-4);
+  --well-1: var(--color-5);
+  --well-2: var(--color-6);
+  --text-1: var(--color-16);
+  --text-2: var(--color-12);
 }
-
-.palettes {
-  display: flex;
-  gap: 5vw;
   
-  @media (width > 1024px) {
-    gap: 10vw;
-  }
-}
-
-:focus {
-  outline-color: oklch(from var(--color-max) l c h / 75%);
-}
-
-.palettes > section {
-  display: grid;
-  gap: 2.5vmin;
-  align-content: start;
-  
-  & p {
-    font-weight: bold;
-  }
-  
-  & > p, & label {
-    white-space: nowrap;
-    color: var(--text-1);
-  }
+.dark {
+  --surface-1: var(--color-11);
+  --surface-2: var(--color-12);
+  --surface-3: var(--color-13);
+  --surface-document: var(--color-14);
+  --well-1: var(--color-15);
+  --well-2: var(--color-16);
+  --text-1: var(--color-1);
+  --text-2: var(--color-5);
 }
 
 .normalize {
@@ -305,6 +241,8 @@
   }
   
   & :is(.light, .dark) > div {
+		margin: 0;
+
     &:nth-of-type(1) > .box { background: var(--surface-1) }
     &:nth-of-type(2) > .box { background: var(--surface-2) }
     &:nth-of-type(3) > .box { background: var(--surface-3) }
@@ -339,25 +277,37 @@
   min-inline-size: 8ch;
 }
 
-.form-group {
-  border: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 1.25vmin;
-  
-  & > legend {
-    height: 0;
-    overflow: hidden;
-    clip: 0;
-  }
+.shuffle {
+	stroke: var(--color-7);
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	border-radius: 1e3px;
+	aspect-ratio: 1;
+	display: inline-flex;
+	place-items: center;
+	cursor: pointer;
+	transform-origin: center;
+	outline-offset: 3px;
+	
+	& > svg {
+		block-size: 1lh;
+		stroke-width: 2px;
+		fill: none;
+		stroke: var(--text-2);
+	}
+	
+	&:hover > svg {
+		stroke: var(--text-1);
+	}
 }
 
 input[type="range"] {
-  
+	/* accent-color: var(--color-7); */
+
   &::-webkit-slider-runnable-track {
     height: 2px;
-/*     background: var(--text-2); */
   }
   
   &::-webkit-slider-thumb {
@@ -366,68 +316,9 @@ input[type="range"] {
   }
 }
 
-input[type="radio"] {
-  margin-inline-start: 0;
-}
-
-p {
-  margin: 0;
-}
-
-.palettes :not(a, strong, em, del, span, input, code) + :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
-	margin-top: 0;
-}
-
-.title-with-control {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  & > button {
-    padding: 0;
-    margin: 0;
-    background: none;
-    border: none;
-    border-radius: 1e3px;
-    aspect-ratio: 1;
-    display: inline-flex;
-    place-items: center;
-    cursor: pointer;
-    transform-origin: center;
-    outline-offset: 3px;
-    
-    & > svg {
-      block-size: 1lh;
-      stroke-width: 2px;
-      fill: none;
-      stroke: var(--text-2);
-    }
-    
-    &:hover > svg {
-      stroke: var(--text-1);
-    }
-  }
-}
-
 .code-output {
-  background: var(--well-1);
   padding-inline: 1rem;
   border-radius: 20px;
   max-inline-size: max-content;
-}
-
-.preset-group {
-  display: flex;
-  align-items: center;
-  gap: 1ch;
-}
-
-dl {
-  display: inline-grid;
-  gap: .5ch;
-  
-  & > dd {
-    grid-column: 2;
-  }
 }
 </style>

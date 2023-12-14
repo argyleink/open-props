@@ -4,8 +4,15 @@ description: ToDo
 tableOfContents: false
 ---
 
+import { Card } from '@astrojs/starlight/components';
 import Palettes from '@components/palettes.svelte'
 
-test paragrpah
+With **only `--palette-hue`**, get back **16 colors**.
 
-<Palettes />
+{/* <Card title="What to do?">
+1. Pick a hue
+1. Pick a saturation
+1. Add optional hue rotational intrigue
+</Card> */}
+
+<Palettes client:visible />

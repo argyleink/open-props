@@ -58,3 +58,13 @@
 .tighten .expressive-code {
 	margin-top: 0.5rem;
 }
+
+.main-pane:has(.svelte-palettes) {
+	& .sl-container {
+		max-width: initial;
+		margin-inline: 0;
+	}
+	& .content-panel:first-of-type {
+		display: none;
+	}
+}
