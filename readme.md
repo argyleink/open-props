@@ -26,6 +26,15 @@
 - [https://unpkg.com/open-props/open-props.figma-tokens.sync.json](https://unpkg.com/open-props/open-props.figma-tokens.sync.json) - Figma Design Tokens
 - [https://unpkg.com/open-props/open-props.style-dictionary-tokens.json](https://unpkg.com/open-props/open-props.style-dictionary-tokens.json) - Style Dictionary Tokens
 
+#### Bookmarklet
+
+```js
+javascript: (() => {
+  const href = "https://unpkg.com/open-props";
+  document.head.append(Object.assign(document.createElement("link"),{rel:"stylesheet",href}));
+})();
+```
+
 #### CLI
 - `npm run gen:op` - runs through `src/` js files and creates the PostCSS files in `src/`
 - `npm run gen:nowhere`  - creates a version of Open Props without the use of `:where()`
