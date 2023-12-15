@@ -50,12 +50,6 @@ function determineContrast() {
 	--palette-hue-rotate-by: {hueRotateBy};
 	--palette-chroma: {chroma};
 ">
-	<button class="shuffle" title="You can also press spacebar!" bind:this={shuffle} on:click={randomizeColors}>
-		<svg viewBox="0 0 24 24" width="17" height="24">
-			<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-		</svg>
-	</button>
-
 	<article class="swatchset" id="swatchset">
 		<div class="swatch"><b><code>var(--color-1)</code></b></div>
 		<div class="swatch"><b><code>var(--color-2)</code></b></div>
@@ -74,17 +68,32 @@ function determineContrast() {
 		<div class="swatch"><b><code>var(--color-15)</code></b></div>
 		<div class="swatch"><b><code>var(--color-16)</code></b></div>
 	</article>
+
+	<button class="shuffle" title="You can also press spacebar!" on:click={randomizeColors}>
+		<svg bind:this={shuffle} viewBox="0 0 24 24" width="34" height="48">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+		</svg>
+		Shuffle
+	</button>
 	
 	<output class="code-output">
-		<pre id="paletteout">
-@import "open-props/palette.css";
-
-.palette-scope &lcub;
-	--palette-hue: {hue}; <input id="paletteHue" type="range" min="0" max="360" bind:value={hue}>
-	--palette-hue-rotate-by: {hueRotateBy}; <input id="paletteHueRotate" type="range" min="-30" max="30" bind:value={hueRotateBy}>
-	--palette-chroma: {chroma}; <input id="paletteChroma" type="range" min="0" max="2" step="0.01" bind:value={chroma}>
-&rcub;</pre>
-	</output> 
+		<div class="split-code-and-controls">
+			<div class="code">
+				<div><span class="at">@</span><span class="import">import</span> <span class="string">"open-props/palette.css"</span></div>
+				<div>&nbsp;</div>
+				<div><span class="cls">.palette-scope</span> <span class="brace">&lcub;</span></div>
+				<div class="two-tabs">  <span class="prop">--palette-hue</span>: <span class="number">{hue}</span>; </div>
+				<div class="two-tabs">  <span class="prop">--palette-hue-rotate-by</span>: <span class="number">{hueRotateBy}</span>; </div>
+				<div class="two-tabs">  <span class="prop">--palette-chroma</span>: <span class="number">{chroma}</span>; </div>
+				<div><span class="brace">&rcub;</span></div>
+			</div>
+			<div class="controls">
+				<input id="paletteHue" type="range" min="0" max="360" bind:value={hue}>
+				<input id="paletteHueRotate" type="range" min="-30" max="30" bind:value={hueRotateBy}>
+				<input id="paletteChroma" type="range" min="0" max="2" step="0.01" bind:value={chroma}>
+			</div>
+		</div>
+	</output>
 
 	<section class="normalize">
 		<!-- <div class="title">
@@ -228,6 +237,7 @@ function determineContrast() {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem 5rem;
+	padding-block-start: 1rem;
   max-inline-size: 70ch;
   
   & > .title {
@@ -286,6 +296,7 @@ function determineContrast() {
 	border-radius: 1e3px;
 	aspect-ratio: 1;
 	display: inline-flex;
+	gap: 1ch;
 	place-items: center;
 	cursor: pointer;
 	transform-origin: center;
@@ -317,8 +328,46 @@ input[type="range"] {
 }
 
 .code-output {
-  padding-inline: 1rem;
-  border-radius: 20px;
   max-inline-size: max-content;
+
+	& :is(.at,.import,.prop) {
+		color: var(--color-5);
+	}
+
+	& :is(.string, .brace) {
+		color: var(--sl-color-gray-2);
+		color: oklch(from var(--color-5) l .05 h);
+	}
+
+	& .number {
+		color: lime;
+		color: oklch(from var(--color-5) l c calc(h + 60));
+	}
+}
+
+.split-code-and-controls {
+	max-inline-size: max-content;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	--sl-card-border: var(--sl-color-purple);
+	--sl-card-bg: var(--sl-color-purple-low);
+	border: 1px solid var(--sl-color-gray-5);
+	background-color: var(--sl-color-black);
+	padding: 1rem;
+
+	& .two-tabs {
+		padding-inline-start: 2ch;
+	}
+
+	& > .controls {
+		display: grid;
+    grid-auto-rows: 1lh;
+    margin-top: 3.5lh;
+		max-inline-size: var(--size-content-1);
+
+		& input[type="range"] {
+			height: 3px;
+		}
+	}
 }
 </style>
