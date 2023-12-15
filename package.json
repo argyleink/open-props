@@ -312,16 +312,16 @@
     "shadow:colors:jungle-hsl": "postcss src/shadow.props.jungle-hsl.css -o jungle-hsl.shadow.min.css"
   },
   "devDependencies": {
-    "ava": "^3.15.0",
-    "colorjs.io": "^0.4.1-patch.1",
-    "concurrently": "^7.2.2",
-    "cssnano": "^5.1.10",
+    "ava": "^6.0.1",
+    "colorjs.io": "^0.4.5",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.0.2",
     "json": "^11.0.0",
     "open-color": "^1.9.1",
-    "postcss": "^8.3.9",
-    "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.2",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^15.1.0",
     "postcss-preset-env": "6.7.x",
-    "typescript": "^4.9.4"
+    "typescript": "^5.3.3"
   }
 }
