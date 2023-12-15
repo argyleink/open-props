@@ -10,7 +10,7 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: cd docsite && npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
