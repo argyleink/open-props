@@ -1,7 +1,7 @@
-const test = require('ava')
-const fs = require('fs')
-const OpenProps = require('../dist/open-props.cjs')
-const OPtokens = require('../open-props.tokens.json')
+import test from 'ava'
+import * as fs from 'node:fs'
+import OpenProps from '../dist/open-props.module.js'
+import OPtokens from '../open-props.tokens.json' assert { type: 'json' }
 
 test('Should have an all included import', t => {
   t.is(Object.keys(OpenProps).length, 1654)
@@ -103,7 +103,7 @@ test('References should be valid', async t => {
     const referencing = formatter.format(Array.from(referencedBy.get(reference)));
 
     t.assert(
-      defined.has(reference), 
+      defined.has(reference),
       `Variable with name ${reference} was referenced by variable ${referencing}, but is not defined`
     );
   }

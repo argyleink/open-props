@@ -184,7 +184,7 @@
   ],
   "scripts": {
     "build": "concurrently npm:gen:op npm:gen:shadowdom && npm run gen:types",
-    "test": "ava test/basic.test.cjs",
+    "test": "ava test/basic.test.js",
     "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25",
     "gen:op": "cd build && node props.js \"\" true",
     "gen:nowhere": "cd build && node props \"\" false",

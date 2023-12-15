@@ -49,6 +49,7 @@ const creator = () => {
     },
   }
 }
+creator.postcss = true;
 
 /**
 * Construct a key that is specific to the AST ancestry of the rule.
@@ -84,5 +85,4 @@ function isKeyframesRule(rule) {
   return false
 }
 
-module.exports = creator
-module.exports.postcss = true
+export default creator

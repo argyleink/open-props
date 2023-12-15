@@ -1,14 +1,14 @@
-const postcssPresetEnv  = require('postcss-preset-env')
-const postcssImport     = require('postcss-import')
-const cssnano           = require('cssnano')
-const combineSelectors  = require('./build/postcss-combine-selectors.cjs')
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssImport from 'postcss-import'
+import cssnano from 'cssnano'
+import combineSelectors from './build/postcss-combine-selectors.js'
 
 const lib = process.env.npm_lifecycle_event
 
 const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports'
 // todo: inline MQs for 'lib:all' when it's supported better
 
-module.exports = {
+export default {
   plugins: [
     postcssImport(),
     postcssPresetEnv({
