@@ -63,6 +63,15 @@
 	& .sl-container {
 		max-width: initial;
 		margin-inline: 0;
+
+		& p {
+			max-inline-size: var(--size-content-3);
+			text-wrap: balance;
+		}
+
+		& .starlight-aside {
+			max-inline-size: var(--size-content-3);
+		}
 	}
 	& .content-panel:first-of-type {
 		display: none;

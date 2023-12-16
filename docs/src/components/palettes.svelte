@@ -1,11 +1,19 @@
 <script>
-// import Color from 'https://colorjs.io/dist/color.js'
+import { onMount } from 'svelte'
+import Color from 'colorjs.io'
 
 let hue = 358
 let hueRotateBy = -5
 let chroma = .9
 
+let normalize
 let shuffle
+
+$: hue, hueRotateBy, chroma, determineContrast();
+
+onMount(async () => {
+	determineContrast()
+})
 
 function randomizeColors() {
   shuffle.animate([
@@ -30,7 +38,7 @@ function randomizeColors() {
 }
 
 function determineContrast() {
-  document.querySelectorAll('.box').forEach(node => {
+  normalize?.querySelectorAll('.box').forEach(node => {
     const bg = new Color(node.computedStyleMap().get('background-color').toString())
     const [p, span] = node.children
     
@@ -39,8 +47,8 @@ function determineContrast() {
     
     const [primary,secondary] = node.previousElementSibling.children
     
-    primary.textContent = 'AA ' + bg.contrast(c2, 'wcag21').toFixed(1)
-    secondary.textContent = 'AA ' + bg.contrast(c3, 'wcag21').toFixed(1)
+    secondary.textContent = 'AA ' + bg.contrast(c2, 'wcag21').toFixed(1)
+    primary.textContent = 'AA ' + bg.contrast(c3, 'wcag21').toFixed(1)
   })
 }
 </script>
@@ -50,7 +58,34 @@ function determineContrast() {
 	--palette-hue-rotate-by: {hueRotateBy};
 	--palette-chroma: {chroma};
 ">
-	<article class="swatchset" id="swatchset">
+	
+	<output class="code-output">
+		<div class="split-code-and-controls">
+			<div class="code">
+				<div><span class="at">@</span><span class="import">import</span> <span class="string">"open-props/palette.css";</span></div>
+				<div>&nbsp;</div>
+				<div><span class="cls">.palette-scope</span> <span class="brace">&lcub;</span></div>
+				<div class="two-tabs">  <span class="prop">--palette-hue</span>: <span class="number" contenteditable bind:innerText={hue}></span>; </div>
+				<div class="two-tabs">  <span class="prop">--palette-hue-rotate-by</span>: <span class="number" contenteditable bind:innerText={hueRotateBy}></span>; </div>
+				<div class="two-tabs">  <span class="prop">--palette-chroma</span>: <span class="number" contenteditable bind:innerText={chroma}></span>; </div>
+				<div><span class="brace">&rcub;</span></div>
+			</div>
+			<div class="controls">
+				<button class="shuffle" title="Shuffle" on:click={randomizeColors}>
+					<svg bind:this={shuffle} viewBox="0 0 24 24" width="34" height="48">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+					</svg>
+				</button>
+				<input type="range" min="0" max="360" bind:value={hue}>
+				<input type="range" min="-30" max="30" bind:value={hueRotateBy}>
+				<input type="range" min="0" max="2" step="0.01" bind:value={chroma}>
+			</div>
+		</div>
+	</output>
+
+	<h3>Your Palette</h3>
+
+	<article class="swatchset">
 		<div class="swatch"><b><code>var(--color-1)</code></b></div>
 		<div class="swatch"><b><code>var(--color-2)</code></b></div>
 		<div class="swatch"><b><code>var(--color-3)</code></b></div>
@@ -69,33 +104,13 @@ function determineContrast() {
 		<div class="swatch"><b><code>var(--color-16)</code></b></div>
 	</article>
 
-	<button class="shuffle" title="You can also press spacebar!" on:click={randomizeColors}>
-		<svg bind:this={shuffle} viewBox="0 0 24 24" width="34" height="48">
-			<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-		</svg>
-		Shuffle
-	</button>
-	
-	<output class="code-output">
-		<div class="split-code-and-controls">
-			<div class="code">
-				<div><span class="at">@</span><span class="import">import</span> <span class="string">"open-props/palette.css"</span></div>
-				<div>&nbsp;</div>
-				<div><span class="cls">.palette-scope</span> <span class="brace">&lcub;</span></div>
-				<div class="two-tabs">  <span class="prop">--palette-hue</span>: <span class="number">{hue}</span>; </div>
-				<div class="two-tabs">  <span class="prop">--palette-hue-rotate-by</span>: <span class="number">{hueRotateBy}</span>; </div>
-				<div class="two-tabs">  <span class="prop">--palette-chroma</span>: <span class="number">{chroma}</span>; </div>
-				<div><span class="brace">&rcub;</span></div>
-			</div>
-			<div class="controls">
-				<input id="paletteHue" type="range" min="0" max="360" bind:value={hue}>
-				<input id="paletteHueRotate" type="range" min="-30" max="30" bind:value={hueRotateBy}>
-				<input id="paletteChroma" type="range" min="0" max="2" step="0.01" bind:value={chroma}>
-			</div>
-		</div>
-	</output>
+	<h3>Palette Applied</h3>
 
-	<section class="normalize">
+	<p>This is example usage of those 16 colors, to create a light and dark theme 
+		that's modern and passes WCAG 2.1 in almost all palette combinations. You see 
+		secondary text may drop below 4.5 when on the least contrasting surface.</p>
+
+	<section class="normalize" bind:this={normalize}>
 		<!-- <div class="title">
 			<b>Open Props</b><sup>v2</sup>
 			<p>Example palette usage :: normalize.css theme</p>
@@ -103,46 +118,52 @@ function determineContrast() {
 		<p><b>Light</b></p>
 		<p><b>Dark</b></p>
 		<div class="light"> 
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast">
+					<p></p>
+					<p></p>
+				</div>
 				<div class="box"><p>Surface</p> <span>1</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast">
+					<p></p>
+					<p></p>
+				</div>
 				<div class="box"><p>Surface</p> <span>2</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box"><p>Surface</p> <span>3</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box well"><p>Well</p> <span>1</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box well"><p>Well</p> <span>2</span></div>
 			</div>
 		</div>
 		<div class="dark">
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box"><p>Surface</p> <span>1</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box"><p>Surface</p> <span>2</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box"><p>Surface</p> <span>3</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box well"><p>Well</p> <span>1</span></div>
 			</div>
-			<div style="display: flex;">
-				<div class="contrast"><p></p><p></p></div>
+			<div>
+				<div class="contrast"><p>AA </p><p>AA </p></div>
 				<div class="box well"><p>Well</p> <span>2</span></div>
 			</div>
 		</div>
@@ -151,13 +172,8 @@ function determineContrast() {
 </div>
 
 <style>
-.svelte-palettes {
-	& :not(a, strong, em, del, span, input, code) + :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
-		margin-top: 0;
-	}
-}
-
 .swatchset {
+	margin-block: 1.5rem !important;
   display: flex;
   
   & > .swatch:nth-of-type(1)  { background: var(--color-1) }
@@ -239,6 +255,10 @@ function determineContrast() {
   gap: 1rem 5rem;
 	padding-block-start: 1rem;
   max-inline-size: 70ch;
+
+	& p {
+		margin: 0;
+	}
   
   & > .title {
     grid-column: span 2;
@@ -251,6 +271,7 @@ function determineContrast() {
   }
   
   & :is(.light, .dark) > div {
+		display: flex;
 		margin: 0;
 
     &:nth-of-type(1) > .box { background: var(--surface-1) }
@@ -285,12 +306,19 @@ function determineContrast() {
   place-content: center start;
   gap: 1rem;
   min-inline-size: 8ch;
+
+	& p {
+		margin: 0;
+	}
 }
 
 .shuffle {
 	stroke: var(--color-7);
 	padding: 0;
 	margin: 0;
+	height: 0lh;
+	inline-size: 0.75lh;
+	justify-self: end;
 	background: none;
 	border: none;
 	border-radius: 1e3px;
@@ -327,21 +355,28 @@ input[type="range"] {
   }
 }
 
+:global([data-theme="dark"]) .code-output {
+	--_output-theme: var(--color-5);
+}
+
 .code-output {
   max-inline-size: max-content;
+	--_output-theme: var(--color-10);
 
 	& :is(.at,.import,.prop) {
-		color: var(--color-5);
+		color: var(--_output-theme);
 	}
 
 	& :is(.string, .brace) {
 		color: var(--sl-color-gray-2);
-		color: oklch(from var(--color-5) l .05 h);
+		color: oklch(from var(--_output-theme) l .05 h);
 	}
 
 	& .number {
+		font-weight: bold;
+		font-variant-numeric: tabular-nums;
 		color: lime;
-		color: oklch(from var(--color-5) l c calc(h + 60));
+		color: oklch(from var(--_output-theme) l c calc(h + 60));
 	}
 }
 
@@ -362,12 +397,16 @@ input[type="range"] {
 	& > .controls {
 		display: grid;
     grid-auto-rows: 1lh;
-    margin-top: 3.5lh;
+    margin-top: 2.5lh;
 		max-inline-size: var(--size-content-1);
 
 		& input[type="range"] {
 			height: 3px;
 		}
 	}
+}
+
+.code > * {
+	margin-top: 0;
 }
 </style>

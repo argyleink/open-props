@@ -7,7 +7,27 @@ tableOfContents: false
 import { Card } from '@astrojs/starlight/components';
 import Palettes from '@components/palettes.svelte'
 
-#### Give a hue, get a **16 color** palette!
+#### 16 dynamic color props
+
+Open Props has 16 supercharged `oklch` variables for making palettes 
+of any hue ([caniuse oklch](https://caniuse.com/mdn-css_types_color_oklch)). This enables 
+**360 hues and all sorts of chromas** to be a palette, not some limited 
+set of indigo, pink, cyan, etc sets like before. 
+
+:::tip[tldr;]
+Open Props v1 has 19 color palettes, each with 12 color variables.
+Open Props v2 has 360*1000 color palettes in just 16 variables.
+:::
+
+In this new workflow you import the palette props. This gives you access to 
+`--color-{1-16}`. Customize the palette with 1-3 palette props: 
+- `--palette-hue`
+- `--palette-hueRotateBy`
+- `--palette-chroma`
+
+Tint with any hue, add hue rotation along the palette for intrigue, 
+and choose the vibrance. Here's an example of the CSS you'll write to customize 
+the palette, as well as handy levers and a fun shuffle button.
 
 <br/>
 
