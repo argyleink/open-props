@@ -1,18 +1,24 @@
 <script>
-import { onMount } from 'svelte'
+import { afterUpdate } from 'svelte'
 import Color from 'colorjs.io'
+import colorNameList from 'color-name-list/dist/colornames.esm.mjs'
+import nearestColor from 'nearest-color'
+
+const nearest = nearestColor.from(
+	colorNameList.reduce((o, { name, hex }) => 
+		Object.assign(o, { [name]: hex }), {}))
 
 let hue = 358
 let hueRotateBy = -5
 let chroma = .9
 
-let normalize
-let shuffle
+let normalize, swatches, shuffle
 
-$: hue, hueRotateBy, chroma, determineContrast();
+$: hue, hueRotateBy, chroma
 
-onMount(async () => {
+afterUpdate(() => {
 	determineContrast()
+	nameColors()
 })
 
 function randomizeColors() {
@@ -33,8 +39,6 @@ function randomizeColors() {
   hue = Math.round(Math.random() * 360)
   hueRotateBy = Math.round(Math.random() * 6 * (Math.random() > .5 ? 1 : -1))
   chroma = Math.random().toFixed(2)
-
-	// determineContrast()
 }
 
 function determineContrast() {
@@ -50,6 +54,15 @@ function determineContrast() {
     secondary.textContent = 'AA ' + bg.contrast(c2, 'wcag21').toFixed(1)
     primary.textContent = 'AA ' + bg.contrast(c3, 'wcag21').toFixed(1)
   })
+}
+
+function nameColors() {
+	swatches?.querySelectorAll('.swatch').forEach(swatch => {
+		const c = new Color(swatch.computedStyleMap().get('background-color').toString())
+		const hex = c.to('srgb').toString({format:'hex'})
+
+		swatch.innerHTML = `<b>${nearest(hex).name}</b>`
+	})
 }
 </script>
 
@@ -85,30 +98,29 @@ function determineContrast() {
 
 	<h3>Your Palette</h3>
 
-	<article class="swatchset">
-		<div class="swatch"><b><code>var(--color-1)</code></b></div>
-		<div class="swatch"><b><code>var(--color-2)</code></b></div>
-		<div class="swatch"><b><code>var(--color-3)</code></b></div>
-		<div class="swatch"><b><code>var(--color-4)</code></b></div>
-		<div class="swatch"><b><code>var(--color-5)</code></b></div>
-		<div class="swatch"><b><code>var(--color-6)</code></b></div>
-		<div class="swatch"><b><code>var(--color-7)</code></b></div>
-		<div class="swatch"><b><code>var(--color-8)</code></b></div>
-		<div class="swatch"><b><code>var(--color-9)</code></b></div>
-		<div class="swatch"><b><code>var(--color-10)</code></b></div>
-		<div class="swatch"><b><code>var(--color-11)</code></b></div>
-		<div class="swatch"><b><code>var(--color-12)</code></b></div>
-		<div class="swatch"><b><code>var(--color-13)</code></b></div>
-		<div class="swatch"><b><code>var(--color-14)</code></b></div>
-		<div class="swatch"><b><code>var(--color-15)</code></b></div>
-		<div class="swatch"><b><code>var(--color-16)</code></b></div>
+	<article class="swatchset" bind:this={swatches} focusgroup>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+		<div class="swatch"></div>
 	</article>
 
 	<h3>Palette Applied</h3>
 
-	<p>This is example usage of those 16 colors, to create a light and dark theme 
-		that's modern and passes WCAG 2.1 in almost all palette combinations. You see 
-		secondary text may drop below 4.5 when on the least contrasting surface.</p>
+	<p>Example usage of those 16 colors to create a light and dark theme 
+		that passes WCAG 2.1 in all cases except secondary text on the 2nd well.</p>
 
 	<section class="normalize" bind:this={normalize}>
 		<!-- <div class="title">
@@ -175,6 +187,8 @@ function determineContrast() {
 .swatchset {
 	margin-block: 1.5rem !important;
   display: flex;
+	position: sticky;
+	bottom: 0;
   
   & > .swatch:nth-of-type(1)  { background: var(--color-1) }
   & > .swatch:nth-of-type(2)  { background: var(--color-2) }
@@ -210,8 +224,13 @@ function determineContrast() {
     opacity: 0;
     transform: scale(.8);
   }
+
+	& code {
+		background: var(--color-12);
+    color: var(--color-1);
+	}
   
-  &:hover {
+  &:is(:hover, :focus-visible) {
     border-radius: 50%;
     
     & > b {
@@ -268,6 +287,10 @@ function determineContrast() {
     display: grid;
     grid-auto-rows: 10ch;
     gap: 0 1rem;
+		margin-block: 0;
+		background: var(--surface-document);
+		color: var(--text-2);
+		padding-inline-start: 1rem;
   }
   
   & :is(.light, .dark) > div {
@@ -343,7 +366,7 @@ function determineContrast() {
 }
 
 input[type="range"] {
-	/* accent-color: var(--color-7); */
+	accent-color: var(--color-7);
 
   &::-webkit-slider-runnable-track {
     height: 2px;
