@@ -12,7 +12,7 @@ let hue = 358
 let hueRotateBy = -5
 let chroma = .9
 
-let normalize, swatches, shuffle
+let normalize, swatches, swatchCards, shuffle
 
 $: hue, hueRotateBy, chroma
 
@@ -57,11 +57,20 @@ function determineContrast() {
 }
 
 function nameColors() {
-	swatches?.querySelectorAll('.swatch').forEach(swatch => {
+	// swatches?.querySelectorAll('.swatch').forEach(swatch => {
+	// 	const c = new Color(swatch.computedStyleMap().get('background-color').toString())
+	// 	const hex = c.to('srgb').toString({format:'hex'})
+
+	// 	swatch.innerHTML = `<b>${nearest(hex).name}</b>`
+	// })
+
+	swatchCards?.querySelectorAll('.swatch').forEach(swatch => {
 		const c = new Color(swatch.computedStyleMap().get('background-color').toString())
 		const hex = c.to('srgb').toString({format:'hex'})
+		const [name,prop,oklch] = swatch.nextElementSibling.children
 
-		swatch.innerHTML = `<b>${nearest(hex).name}</b>`
+		name.textContent = nearest(hex).name
+		oklch.innerHTML = `<small>${c.toString()}</small>`
 	})
 }
 </script>
@@ -98,29 +107,36 @@ function nameColors() {
 
 	<h3>Your Palette</h3>
 
-	<article class="swatchset" bind:this={swatches} focusgroup>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
-		<div class="swatch"></div>
+	<article class="swatchset swatch-strip" bind:this={swatches} focusgroup>
+		{#each Array(16) as _, i}
+			<div class="swatch">
+				<b>var(--color-{i})</b>
+			</div>
+		{/each}
 	</article>
+
+	<ul class="swatchset swatch-cards" bind:this={swatchCards} focusgroup>
+		{#each Array(16) as _, i}
+			<li>
+				<figure>
+					<div class="swatch"></div>
+					<figcaption>
+						<div class="name"></div>
+						<div class="prop">var(--color-{i+1})</div>
+						<div class="oklch"></div>
+					</figcaption>
+				</figure>
+			</li>
+		{/each}
+	</ul>
 
 	<h3>Palette Applied</h3>
 
-	<p>Example usage of those 16 colors to create a light and dark theme 
-		that passes WCAG 2.1 in all cases except secondary text on the 2nd well.</p>
+	<p>Example usage of those 16 colors to create a light and dark theme. 
+		<b>1 document background, 3 surfaces (cards, etc) and 2 wells.</b></p>
+
+	<p>The following demo shows the WCAG contrast of a primary and 
+		secondary text colors on each well and surface.</p>
 
 	<section class="normalize" bind:this={normalize}>
 		<!-- <div class="title">
@@ -185,27 +201,33 @@ function nameColors() {
 
 <style>
 .swatchset {
+  & > :nth-of-type(1)  { --swatch: var(--color-1) }
+  & > :nth-of-type(2)  { --swatch: var(--color-2) }
+  & > :nth-of-type(3)  { --swatch: var(--color-3) }
+  & > :nth-of-type(4)  { --swatch: var(--color-4) }
+  & > :nth-of-type(5)  { --swatch: var(--color-5) }
+  & > :nth-of-type(6)  { --swatch: var(--color-6) }
+  & > :nth-of-type(7)  { --swatch: var(--color-7) }
+  & > :nth-of-type(8)  { --swatch: var(--color-8) }
+  & > :nth-of-type(9)  { --swatch: var(--color-9) }
+  & > :nth-of-type(10) { --swatch: var(--color-10) }
+  & > :nth-of-type(11) { --swatch: var(--color-11) }
+  & > :nth-of-type(12) { --swatch: var(--color-12) }
+  & > :nth-of-type(13) { --swatch: var(--color-13) }
+  & > :nth-of-type(14) { --swatch: var(--color-14) }
+  & > :nth-of-type(15) { --swatch: var(--color-15) }
+  & > :nth-of-type(16) { --swatch: var(--color-16) }
+}
+
+.swatch-strip {
 	margin-block: 1.5rem !important;
   display: flex;
 	position: sticky;
 	bottom: 0;
-  
-  & > .swatch:nth-of-type(1)  { background: var(--color-1) }
-  & > .swatch:nth-of-type(2)  { background: var(--color-2) }
-  & > .swatch:nth-of-type(3)  { background: var(--color-3) }
-  & > .swatch:nth-of-type(4)  { background: var(--color-4) }
-  & > .swatch:nth-of-type(5)  { background: var(--color-5) }
-  & > .swatch:nth-of-type(6)  { background: var(--color-6) }
-  & > .swatch:nth-of-type(7)  { background: var(--color-7) }
-  & > .swatch:nth-of-type(8)  { background: var(--color-8) }
-  & > .swatch:nth-of-type(9)  { background: var(--color-9) }
-  & > .swatch:nth-of-type(10) { background: var(--color-10) }
-  & > .swatch:nth-of-type(11) { background: var(--color-11) }
-  & > .swatch:nth-of-type(12) { background: var(--color-12) }
-  & > .swatch:nth-of-type(13) { background: var(--color-13) }
-  & > .swatch:nth-of-type(14) { background: var(--color-14) }
-  & > .swatch:nth-of-type(15) { background: var(--color-15) }
-  & > .swatch:nth-of-type(16) { background: var(--color-16) }
+
+	& > .swatch {
+		background: var(--swatch);
+	}
 }
 
 .swatch {
@@ -243,6 +265,42 @@ function nameColors() {
 		inline-size: 5vw;
     background: oklch(70% 100% var(--palette-hue));
   }
+}
+
+.swatch-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10ch, 20ch));
+	gap: 1rem;
+	padding: 0;
+
+	& > li {
+		list-style-type: none;
+	}
+
+	& :is(figure,figcaption, figcaption > *) {
+		margin: 0;
+	}
+
+	& .swatch {
+		inline-size: 100%;
+		background: var(--swatch);
+	}
+
+	& figcaption {
+		padding-block-start: .5rem;
+
+		& > * {
+			line-height: 1.2;
+		}
+	}
+
+	& .name {
+		font-weight: bold;
+	}
+
+	& .prop {
+		color: var(--sl-color-accent-high);
+	}
 }
 
 /* Open Props Normalize.css */

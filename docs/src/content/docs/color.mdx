@@ -4,7 +4,7 @@ description: ToDo
 tableOfContents: false
 ---
 
-import { Card } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 import Palettes from '@components/palettes.svelte'
 
 #### 16 dynamic color props
@@ -16,7 +16,7 @@ set of indigo, pink, cyan, etc sets like before.
 
 :::tip[tldr;]
 Open Props v1 has 19 color palettes, each with 12 color variables.
-Open Props v2 has 360*1000 color palettes in just 16 variables.
+Open Props v2 has 360*1000 color palette,s in just 19 variables.
 :::
 
 In this new workflow you import the palette props. This gives you access to 
@@ -32,3 +32,39 @@ the palette, as well as handy levers and a fun shuffle button.
 <br/>
 
 <Palettes client:visible />
+
+<Tabs>
+	<TabItem label="Light">
+		```css
+		[data-theme="light"], .light {
+			--surface-1: white;
+			--surface-2: var(--color-1);
+			--surface-3: var(--color-3);
+			--surface-document: var(--color-4);
+			--well-1: var(--color-5);
+			--well-2: var(--color-6);
+			--text-1: var(--color-16);
+			--text-2: var(--color-12);
+		}
+		```
+  </TabItem>
+  <TabItem label="Dark">
+		```css
+		[data-theme="dark"], .dark {
+			--surface-1: var(--color-11);
+			--surface-2: var(--color-12);
+			--surface-3: var(--color-13);
+			--surface-document: var(--color-14);
+			--well-1: var(--color-15);
+			--well-2: var(--color-16);
+			--text-1: var(--color-1);
+			--text-2: var(--color-5);
+		}
+		```
+	</TabItem>
+</Tabs>
+
+:::tip
+You can also build a dark theme with an entirely different 
+hue than the light theme, reusing everything.
+:::
