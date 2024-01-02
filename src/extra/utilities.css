@@ -28,7 +28,7 @@
   opacity: 0;
   animation: 
     var(--animation-fade-in) forwards,
-    var(--animation-slide-up) forwards;
+    var(--animation-slide-in-up) forwards;
   animation-delay: .3s, 0s;
   animation-duration: .7s, 1s;
 }
