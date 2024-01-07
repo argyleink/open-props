@@ -108,8 +108,13 @@
 	--_scroll-x: initial;
 	--_scroll-y: initial;
 
+	overscroll-behavior: contain;
 	overflow: var(--_scroll-x, var(--_scroll, auto))
 		var(--_scroll-y, var(--_scroll, auto));
+
+	@media (--motionOK) {
+		scroll-behavior: smooth;
+	}
 }
 
 :where(.snaps) {
