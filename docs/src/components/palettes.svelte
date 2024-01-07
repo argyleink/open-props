@@ -135,6 +135,8 @@ function nameColors() {
 	<p>Example usage of those 16 colors to create a light and dark theme. 
 		<b>1 document background, 3 surfaces (cards, etc) and 2 wells.</b></p>
 
+	<h4>Accessibility</h4>
+
 	<p>The following demo shows the WCAG contrast of a primary and 
 		secondary text colors on each well and surface.</p>
 
