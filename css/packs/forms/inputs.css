@@ -195,7 +195,7 @@
 
 :where(
 		input:is(
-				[type='text'],
+				/* [type='text'], */
 				[type='password'],
 				[type='url'],
 				[type='email'],
