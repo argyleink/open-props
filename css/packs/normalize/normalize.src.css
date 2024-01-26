@@ -4,6 +4,14 @@
 	box-sizing: border-box;
 }
 
+:where(:root) {
+	--transition-focus: outline-offset 145ms var(--ease-2);
+
+	@supports (transition-timing-function: linear(0, 1)) {
+		--transition-focus: outline-offset 145ms var(--ease-spring-3);
+	}
+}
+
 :where(:not(dialog)) {
 	margin: 0;
 }
@@ -18,7 +26,7 @@
 :where(html) {
 	block-size: 100%;
 	font-family: var(--font-sans);
-	line-height: var(--font-lineheight-3);
+	line-height: 1.5;
 	-webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 
 	@media (--motionOK) {
@@ -28,11 +36,7 @@
 
 @media (--motionOK) {
 	:where(:focus-visible) {
-		transition: outline-offset 145ms var(--ease-2);
-
-		@supports (transition-timing-function: linear(0, 1)) {
-			transition-timing-function: var(--ease-spring-3);
-		}
+		transition: var(--transition-focus);
 	}
 	:where(:not(:active):focus-visible) {
 		transition-duration: 0.25s;
@@ -48,7 +52,7 @@
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-	line-height: var(--font-lineheight-1);
+	line-height: 1.25;
 	font-weight: var(--font-weight-9);
 	text-wrap: balance;
 }
@@ -127,10 +131,10 @@
 
 :where(a) {
 	&:where([href]) {
-		text-decoration-color: var(--indigo-2);
+		text-decoration-color: var(--link);
 
 		&:where(:visited) {
-			text-decoration-color: var(--purple-2);
+			text-decoration-color: var(--link-visited);
 		}
 	}
 
@@ -157,7 +161,7 @@
 }
 
 ::placeholder {
-	color: var(--gray-7);
+	color: var(--color-8);
 	opacity: 0.75;
 }
 
@@ -167,8 +171,8 @@
 }
 
 :where(select) {
-	padding-inline: var(--size-relative-4) 0;
-	padding-block: 0.75ch;
+	padding-inline: var(--size-4) 0;
+	padding-block: var(--size-2);
 }
 
 :where(
@@ -176,7 +180,7 @@
 		select,
 		input:not([type='button'], [type='submit'], [type='reset'])
 	) {
-	background-color: var(--surface-2);
+	background-color: var(--well-1);
 	border-radius: var(--radius-2);
 }
 
@@ -185,6 +189,7 @@
 }
 
 :where(input[type='checkbox'], input[type='radio']) {
+	background-color: var(--well-1);
 	block-size: var(--size-3);
 	inline-size: var(--size-3);
 }
@@ -413,7 +418,7 @@
 
 :where(table tr:hover td),
 :where(tbody tr:nth-child(even):hover td) {
-	background-color: var(--gray-10);
+	background-color: var(--color-10);
 
 	@media (prefers-color-scheme: light) {
 		background-color: white;

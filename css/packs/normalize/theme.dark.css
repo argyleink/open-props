@@ -34,23 +34,23 @@
 		}
 	}
 
-	&
+	/* &
 		:where(
 			button,
 			.btn,
 			input:is([type='button'], [type='submit'], [type='reset'])
 		)[disabled] {
 		--_text: var(--gray-5);
-	}
+	} */
 
-	&
+	/* &
 		:where(
 			textarea,
 			select,
 			input:not([type='button'], [type='submit'], [type='reset'])
 		) {
 		background-color: hsl(210deg 11% 10%);
-	}
+	} */
 
 	& :where([type='submit']),
 	& :where(form button:not([type='button'])),
