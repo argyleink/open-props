@@ -194,13 +194,7 @@
 }
 
 :where(
-		input:is(
-				/* [type='text'], */
-				[type='password'],
-				[type='url'],
-				[type='email'],
-				[type='tel']
-			)
+		input:is([type='password'], [type='url'], [type='email'], [type='tel'])
 	) {
 	padding-inline-end: 3.5ch;
 }
@@ -335,8 +329,11 @@
 	border-radius: var(--radius-round);
 
 	&::-webkit-search-cancel-button {
-		margin-right: -5px;
-		padding: 0.1ch;
+		margin-right: -16px; /* size of the list-icon */
+	}
+
+	&::-webkit-calendar-picker-indicator {
+		color: transparent;
 	}
 
 	&:where([list]):placeholder-shown {
@@ -349,10 +346,6 @@
 		&:focus {
 			background-image: var(--icon-search), var(--icon-arrow-up);
 		}
-	}
-
-	&::-webkit-calendar-picker-indicator {
-		color: transparent;
 	}
 }
 

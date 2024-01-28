@@ -173,6 +173,7 @@
 :where(select) {
 	padding-inline: var(--size-4) 0;
 	padding-block: var(--size-2);
+	field-sizing: content;
 }
 
 :where(
@@ -186,6 +187,12 @@
 
 :where(textarea) {
 	resize: block;
+	field-sizing: content;
+	min-block-size: 3rlh;
+	min-block-size: 3lh;
+	max-block-size: 80svh;
+	min-inline-size: var(--size-content-1);
+	max-inline-size: var(--size-content-2);
 }
 
 :where(input[type='checkbox'], input[type='radio']) {
@@ -317,17 +324,17 @@
 }
 
 :where(del) {
-	background: var(--red-9);
-	color: var(--red-2);
+	background: var(--red-9, #c92a2a);
+	color: var(--red-2, #ffc9c9);
 }
 
 :where(ins) {
-	background: var(--green-9);
-	color: var(--green-1);
+	background: var(--green-9, #2b8a3e);
+	color: var(--green-1, #d3f9d8);
 }
 
 :where(abbr) {
-	text-decoration-color: var(--blue-5);
+	text-decoration-color: var(--blue-5, #339af0);
 }
 
 :where(dialog) {
