@@ -1,3 +1,5 @@
+@import '../../media-queries.css';
+
 :where(.rounded) {
 	--_rounded: initial;
 	border-radius: var(--_rounded, var(--radius-2));
