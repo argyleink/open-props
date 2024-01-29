@@ -109,6 +109,7 @@
     "./sizes": "./sizes.min.css",
     "./stone": "./stone.min.css",
     "./stone-hsl": "./stone-hsl.min.css",
+    "./supports": "./supports.min.css",
     "./teal": "./teal.min.css",
     "./teal-hsl": "./teal-hsl.min.css",
     "./violet": "./violet.min.css",
