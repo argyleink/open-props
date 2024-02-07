@@ -514,6 +514,7 @@ pre[class*="language-"] {
 
 .color-swatch {
   --size: var(--size-5);
+  --scale: 1.5;
   border-radius: var(--radius-round);
   box-shadow: var(--inner-shadow-0);
   inline-size: 6.7%;
@@ -532,8 +533,8 @@ pre[class*="language-"] {
     color: white;
   }
 
-  &:is(:hover,:focus) {
-    transform: scale(1.5);
+  &:is(:hover,:focus-visible) {
+    transform: scale(var(--scale));
     transition-delay: 0s;
     transition-timing-function: var(--ease-elastic-out-3);
 
@@ -542,10 +543,14 @@ pre[class*="language-"] {
     }
   }
 
+  &:is(:active) {
+    transform: scale(calc(var(--scale) * .88));
+  }
+
   @media (--motionOK) {
     transition: transform 2s var(--ease-squish-5) 3s;
 
-    &:is(:hover,:focus) {
+    &:is(:hover,:focus-visible) {
       transition-duration: .1s;
     }
   }
