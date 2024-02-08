@@ -7,6 +7,7 @@
 @import "../src/props.masks.corner-cuts.css";
 
 @import "./syntax-highlight.css";
+@import "./color-copy.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
@@ -512,53 +513,6 @@ pre[class*="language-"] {
   }
 }
 
-
-.copy-options {
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-3);
-  & .example {
-    font-style: italic;
-    color: var(--gray-5);
-  }
-
-  [data-theme="light"] & .example {
-    color: var(--gray-7);
-  }
-
-  & input:is(:disabled) {
-
-    cursor: not-allowed;
-
-    &~label {
-      color: var(--gray-5);
-      cursor: not-allowed;
-    }
-  }
-}
-
-.options {
-  display: flex;
-  gap: var(--size-7);
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.options:nth-child(2) {
-  gap: var(--size-5);
-
-}
-
-.input-group {
-  display: flex;
-  gap: var(--size-2);
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.color-format:has(:disabled) {
-  color: var(--gray-5);
-}
 
 .color-swatch {
   --size: var(--size-5);
