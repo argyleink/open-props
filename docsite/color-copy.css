@@ -45,3 +45,32 @@
 .color-format:has(:disabled) {
   color: var(--gray-5);
 }
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -100%;
+  min-width: max-content;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: var(--size-2);
+  background-color: #000;
+  color: #fff;
+  z-index: 9999;
+
+}
+
+.tooltip-show {
+  animation: var(--animation-fade-in) forwards;
+  animation-duration: 0.5s;
+}
+
+.tooltip-hide {
+  animation: var(--animation-fade-out) forwards;
+  animation-duration: 0.5s;
+}
+
+.color-swatch:has(.tooltip) {
+  position: relative;
+}
