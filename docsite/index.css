@@ -1252,13 +1252,13 @@ pre[class*="language-"] {
 
 .count-em {
 
-  &::before {
+  &:not(.tooltip):before {
   content: '';
   counter-reset: basic;
   position: absolute;
 }
 
-  & > *::before {
+  & > *:not(.tooltip):before {
     counter-increment: basic;
     content: counter(basic);
   }
