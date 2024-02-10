@@ -52,8 +52,8 @@
   transform: translateX(-50%);
   top: -100%;
   min-width: max-content;
-  padding: 5px;
-  border-radius: 5px;
+  border-radius: var(--radius-round);
+  padding: var(--size-1) var(--size-2);
   font-size: var(--size-2);
   background-color: #000;
   color: #fff;
