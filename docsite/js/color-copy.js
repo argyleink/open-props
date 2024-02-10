@@ -2,7 +2,9 @@ function addTooltip(e, value) {
   const tooltip = document.createElement('span');
   tooltip.className = 'tooltip tooltip-show';
   tooltip.innerHTML = `${value} copied to clipboard!`;
+
   e.appendChild(tooltip);
+
   setTimeout(() => {
     tooltip.className = 'tooltip tooltip-hide';
   }, 1500);
@@ -22,9 +24,7 @@ function hyphenateCSS(input) {
     return 'float';
   }
 
-  return input.replace(/[A-Z]/g, function (match) {
-    return '-' + match.toLowerCase();
-  });
+  return input.replace(/[A-Z]/g, (match) => '-' + match.toLowerCase() );
 }
 
 /**
@@ -105,31 +105,22 @@ function copyPropertyToClipboard(e, property) {
   }
 
   if (cb_color?.checked) {
+    let rgb = window
+      .getComputedStyle(e)
+      .getPropertyValue(hyphenateCSS(property));
+
     if (cb_rgb?.checked) {
-      copiedText = window
-        .getComputedStyle(e)
-        .getPropertyValue(hyphenateCSS(property));
+      copiedText = rgb;
     }
 
+    rgb = rgb.match(/\d+/g);
+    const r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
     if (cb_hex?.checked) {
-      let rgb = window
-        .getComputedStyle(e)
-        .getPropertyValue(hyphenateCSS(property));
-      rgb = rgb.match(/\d+/g);
-      copiedText = RGBToHex(
-        parseInt(rgb[0]),
-        parseInt(rgb[1]),
-        parseInt(rgb[2])
-      );
+      copiedText = RGBToHex(r, g, b);
     }
 
     if (cb_hsl?.checked) {
-      let rgb = window
-        .getComputedStyle(e)
-        .getPropertyValue(hyphenateCSS(property));
-      rgb = rgb.match(/\d+/g);
-      copiedText = RGBToHSL(parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2]));
-      
+      copiedText = RGBToHSL(r, g, b);
     }
   }
 
@@ -141,12 +132,12 @@ function copyPropertyToClipboard(e, property) {
   return copiedText;
 }
 
-function addCopyToColorSwatches() {
-  const colorSwatches = document.querySelectorAll('.color-swatch');
+function attachCopyEvent(query, property) {
+  const elements = document.querySelectorAll(query);
 
-  colorSwatches.forEach((colorSwatch) => {
-    colorSwatch.addEventListener('click', function (e) {
-      const copiedText = copyPropertyToClipboard(e.target, 'backgroundColor');
+  elements.forEach((element) => {
+    element.addEventListener('click', function (e) {
+      const copiedText = copyPropertyToClipboard(e.target, property);
       addTooltip(e.target, copiedText);
     });
   });
@@ -154,7 +145,7 @@ function addCopyToColorSwatches() {
 
 function selectCopyFormat() {
   const cb_prop = document.querySelector('#prop');
-  const cb_color = document.querySelector('#color-code');
+  // const cb_color = document.querySelector('#color-code');
   const color_format_inputs = document.querySelectorAll(
     'input[name="color-format"]'
   );
@@ -170,7 +161,7 @@ function selectCopyFormat() {
   }
 }
 
-function addSelectCopyFormat() {
+function attachSelectCopyFormat() {
   const cb_prop = document.querySelector('#prop');
   const cb_color = document.querySelector('#color-code');
 
@@ -179,8 +170,8 @@ function addSelectCopyFormat() {
 }
 
 function initializeCopy() {
-  addCopyToColorSwatches();
-  addSelectCopyFormat();
+  attachCopyEvent('.color-swatch', 'backgroundColor');
+  attachSelectCopyFormat();
 }
 
-window.onload = initializeCopy;
+document.addEventListener('DOMContentLoaded', initializeCopy);
