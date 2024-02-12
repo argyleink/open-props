@@ -36,10 +36,13 @@
 }
 
 .input-group {
+  
   display: flex;
-  gap: var(--size-2);
   align-items: center;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  & > label {
+    padding-inline-start: var(--size-2);
+  }
 }
 
 .color-format:has(:disabled) {
