@@ -1,4 +1,7 @@
+import { rovingIndex } from 'roving-ux';
+
 function addTooltip(e, value) {
+
   const tooltip = document.createElement('span');
   tooltip.className = 'tooltip tooltip-show';
   tooltip.innerHTML = `${value} copied to clipboard!`;
@@ -172,6 +175,10 @@ function attachSelectCopyFormat() {
 function initializeCopy() {
   attachCopyEvent('.color-swatch', 'backgroundColor');
   attachSelectCopyFormat();
+
+  document.querySelectorAll('.color-swatch-list').forEach((list) => {
+    rovingIndex({element: list, target: 'button'});
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initializeCopy);

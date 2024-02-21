@@ -457,7 +457,7 @@ pre[class*="language-"] {
   & > h4 {
     counter-reset: basic -1;
   }
-
+  
   & > h4::before {
     display: none;
   }
@@ -513,13 +513,30 @@ pre[class*="language-"] {
   }
 }
 
+.color-swatch-list {
+  padding-inline-start: 0;
+
+  & > li {
+    --size: var(--size-5);
+    --scale: 1.5;
+    padding-inline-start: 0;
+    inline-size: 6.7%;
+    block-size: var(--size);
+  }
+
+  & > li:nth-child(n+8) > button::before {
+    color: white;
+  }
+}
+
+
 
 .color-swatch {
   --size: var(--size-5);
   --scale: 1.5;
   border-radius: var(--radius-round);
   box-shadow: var(--inner-shadow-0);
-  inline-size: 6.7%;
+  inline-size: 100%;
   block-size: var(--size);
   display: grid;
   place-content: center;
@@ -1252,13 +1269,18 @@ pre[class*="language-"] {
 
 .count-em {
 
-  &:not(.tooltip):before {
-  content: '';
-  counter-reset: basic;
-  position: absolute;
-}
+  &:not(.tooltip, li):before {
+    content: '';
+    counter-reset: basic -1;
+    position: absolute;
+  }
 
-  & > *:not(.tooltip):before {
+  & > *:not(.tooltip, li):before {
+    counter-increment: basic;
+    content: counter(basic);
+  }
+
+  & button:before {
     counter-increment: basic;
     content: counter(basic);
   }

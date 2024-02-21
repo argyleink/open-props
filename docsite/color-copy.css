@@ -77,3 +77,7 @@
 .color-swatch:has(.tooltip) {
   position: relative;
 }
+
+.color-swatch-list {
+  list-style: none;
+}
