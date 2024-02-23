@@ -1,11 +1,12 @@
 .copy-options {
+  font-family: var(--font-sans);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--size-3);
 
   & .example {
     font-style: italic;
-    color: var(--gray-5);
+    color: var(--text-2);
   }
 
   [data-theme="light"] & .example {
@@ -28,6 +29,13 @@
   gap: var(--size-7);
   align-items: center;
   justify-content: flex-start;
+  padding-inline: var(--size-4);
+  padding-block: var(--size-3);
+  margin: var(--size-2) 0;
+  overflow: auto;
+  border-radius: var(--radius-conditional-2);
+  border: var(--border-size-1) solid var(--surface-3);
+  background: var(--surface-2);
 }
 
 .options:nth-child(2) {
