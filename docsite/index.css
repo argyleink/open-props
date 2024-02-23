@@ -520,7 +520,7 @@ pre[class*="language-"] {
     --size: var(--size-5);
     --scale: 1.5;
     padding-inline-start: 0;
-    inline-size: 6.7%;
+    inline-size: 8.33%;
     block-size: var(--size);
   }
 
