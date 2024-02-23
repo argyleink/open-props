@@ -12,6 +12,7 @@ export const CustomMedia = {
   "--highContrast": "(prefers-contrast: more)",
   "--lowContrast": "(prefers-contrast: less)",
 
+  "--invertedColors": "(inverted-colors: inverted)",
   "--forcedColors": "(forced-colors: active)",
 
   "--portrait": "(orientation: portrait)",
