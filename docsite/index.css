@@ -576,6 +576,7 @@ pre[class*="language-"] {
   &::before {
     opacity: 0;
     transition: opacity .4s var(--ease-out-3);
+    line-height: 1;
   }
 
 }
