@@ -1,6 +1,7 @@
 .copy-options {
   font-family: var(--font-sans);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: var(--size-3);
 
@@ -22,10 +23,15 @@
       cursor: not-allowed;
     }
   }
+
+  @media (--md-n-below) {
+    flex-direction: column;
+  }
 }
 
 .options {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--size-7);
   align-items: center;
   justify-content: flex-start;
@@ -36,6 +42,11 @@
   border-radius: var(--radius-conditional-2);
   border: var(--border-size-1) solid var(--surface-3);
   background: var(--surface-2);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .options:nth-child(2) {
@@ -69,6 +80,7 @@
   background-color: #000;
   color: #fff;
   z-index: 9999;
+  pointer-events: none;
 
 }
 
