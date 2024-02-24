@@ -41,7 +41,13 @@
   overflow: auto;
   border-radius: var(--radius-conditional-2);
   border: var(--border-size-1) solid var(--surface-3);
-  background: var(--surface-2);
+  background: white;
+  box-shadow: var(--shadow-4);
+
+  [data-theme="dark"] & {
+    background: var(--surface-2);
+    box-shadow: var(--shadow-3);
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
