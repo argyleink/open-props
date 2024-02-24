@@ -545,9 +545,12 @@ pre[class*="language-"] {
   }
 
   @media (--motionOK) {
-    transition: transform 0.2s var(--ease-squish-5) 3s;
+    transition: transform var(--ease-squish-5);
+    transition-duration: 2s;
+    transition-delay: 3s;
 
-    &:is(:hover, :focus-visible) {
+    &:is(:hover, :focus-visible),
+    &:has(button:is(:focus-visible)) {
       transition-duration: .1s;
     }
   }
