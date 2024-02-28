@@ -56,13 +56,13 @@
           <circle class="op-icon-o" cx="100" cy="100" r="85" fill="transparent" stroke-width="25"/>
         </svg>
         <span class="op-logo">
-          <span>Open</span> 
+          <span>Open</span>
           <span>Props</span>
         </span>
       </a>
       <a href="#getting-started">Get Started</a>
       <a class="md-hidden" href="https://stackblitz.com/@argyleink/collections/open-props">
-        Try in browser 
+        Try in browser
         <small class="green-badge">RAD</small>
       </a>
       <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
@@ -550,8 +550,8 @@
     <section class="dogfood place-full block-wrap">
       <header>
         <h2>
-          This site 
-          <br>is built 
+          This site
+          <br>is built
           <br>with Open Props.
         </h2>
       </header>
@@ -945,10 +945,10 @@
                 </div>
               </div>
             </details>
-            
+
             <details class="started-details">
               <summary>PostCSS</summary>
-              
+
               <div>
                 <h6>CSS Imports</h6>
                 <pre class="language-css"><code>
@@ -1004,7 +1004,7 @@
                     import OpenProps from 'open-props/src'; // unbundled ES module
                     import Colors from 'open-props/src/colors';
 
-                    // object notation access is special to OpenProps 
+                    // object notation access is special to OpenProps
                     console.info(OpenProps.size1);
                     console.info(OpenProps['--size-1']);
 
@@ -1062,7 +1062,7 @@
                     // postcss.config.js
                     const postcssJitProps = require('postcss-jit-props');
                     const OpenProps = require('open-props');
-                    
+
                     module.exports = {
                       plugins: [
                         postcssJitProps(OpenProps),
@@ -1106,14 +1106,14 @@
                     npm run gen:shadowdom                   // src files with `:host` instead of `html`
                     npm run gen:nowhere                     // src files without `:where()`
                     npm run gen:prefixed                    // each prop prefixed with `op`, like `--op-font-size-1`
-                    
+
                     // full custom! pass args with node to the props.js script
                     node props.js 'ns' true ':root' 'my'
                     ⇣
                     // arg1: default '', is a custom namespace, props will be --ns-gray-1
                     // arg2: default false, indicates wrapping in :where() or not
                     // arg3: default '', set a custom selector like :scope, .my-class, etc
-                    // arg4: default '', set a file prefix, files will be my.props.easing.css, etc 
+                    // arg4: default '', set a file prefix, files will be my.props.easing.css, etc
                   </code></pre>
                 </div>
                 <div>
@@ -1191,13 +1191,13 @@
             <summary>Sublime Text</summary>
             <ol>
               <li>
-                There are number of ways with which the autocomplete engine of Sublime Text can be extended. 
-                You can decide to use the <a href="https://www.sublimetext.com/docs/completions.html#completion-files" target="_blank">completion files</a>, 
-                <a href="https://www.sublimetext.com/docs/completions.html#snippets" target="_blank">snippets</a> or 
-                <a href="https://www.sublimetext.com/docs/completions.html#plugins" target="_blank">plugins</a>. 
+                There are number of ways with which the autocomplete engine of Sublime Text can be extended.
+                You can decide to use the <a href="https://www.sublimetext.com/docs/completions.html#completion-files" target="_blank">completion files</a>,
+                <a href="https://www.sublimetext.com/docs/completions.html#snippets" target="_blank">snippets</a> or
+                <a href="https://www.sublimetext.com/docs/completions.html#plugins" target="_blank">plugins</a>.
               </li>
               <li>
-                An approach that is less strenous is the "completion file" approach. 
+                An approach that is less strenous is the "completion file" approach.
                 Here, all you'd be required to do is point the `scope` keyword in the .sublime-completions file to the open-props classes in the node_modules folder like so:
               </li>
               <pre class="language-js"><code>
@@ -1216,7 +1216,7 @@
                   "scope": "path/to/your/variables",
               }
               </code></pre>
-              <li>Another approach for enabling autocomplete would be to open the settings json file of Sublime Text via 
+              <li>Another approach for enabling autocomplete would be to open the settings json file of Sublime Text via
                 <b>Preferences > Settings</b>, then you'll modify the file to include the snippet below &mdash; replacing "source" with the path to your variables.
               </li>
               <pre class="language-js"><code>
@@ -1333,7 +1333,7 @@
             <div class="input-group">
               <input type="radio" name="copy-format" id="color-code">
               <label for="color-code">
-                Color Code <span class="example">Ex: #1a1a1a</span>
+                Color Code <span class="example">Ex: rgb(3, 5, 7)</span>
               </label>
             </div>
           </div>
@@ -1357,7 +1357,7 @@
           </div>
         </form>
       </div>
-      
+
       <article class="just-stretch">
         <ul class="open-colors count-em color-swatch-list">
           <h4>Gray</h4>
@@ -1746,7 +1746,7 @@
             <h3>2) Creating adaptive color schemes</h3>
             <p>It's not ideal for components to reference individual light or dark theme colors. Instead, you should prefer to use these individual variables to build a set of theme-agnostic aliases. This allows you to reference a custom property without worrying about its underlying value, which will dynamically adapt to the current context's theme.</p>
           </header>
-          
+
           <div class="block-wrap">
             <div>
               <h5>No Preference (Light)</h5>
@@ -1823,7 +1823,7 @@
             <h3>3) Using the aliases</h3>
             <p>Your app is now free to use adaptive custom properties! Now, your team only needs to remember a single naming convention rather than wrestling with individual theming variables. Here are a few examples of how the above color theme system could be used.</p>
           </header>
-          
+
           <div class="block-wrap">
             <div>
               <h5>Page Styles Using Themes</h5>
@@ -1867,7 +1867,7 @@
                 }
 
                 h5,h6,small,dd {
-                  color: var(--text-2); 
+                  color: var(--text-2);
                 }
               </code></pre>
             </div>
@@ -2049,9 +2049,9 @@
               --ratio-square: 1;
               --ratio-landscape: 4/3;
               --ratio-portrait: 3/4;
-              --ratio-widescreen: 16/9; 
+              --ratio-widescreen: 16/9;
               --ratio-ultrawide: 18/5;
-              --ratio-golden: 1.6180/1; 
+              --ratio-golden: 1.6180/1;
             </code></pre>
           </div>
         </div>
@@ -2094,7 +2094,7 @@
             </code></pre>
           </div>
         </div>
-        
+
         <div>
           <h5>Usage Sample</h5>
             <pre class="language-css"><code>
@@ -2155,14 +2155,14 @@
           </div>
           <div class="font-demo">
             <div class="sample-text" style="font-size: var(--font-size-8)">Aa</div>
-            <input 
+            <input
               class="font-slider"
-              name="weight" 
+              name="weight"
               data-prop="fontWeight"
-              type="range" 
-              value="4" 
-              min="1" 
-              max="9" 
+              type="range"
+              value="4"
+              min="1"
+              max="9"
               style="--track-fill: 35%"
             >
           </div>
@@ -2186,14 +2186,14 @@
           </div>
           <div class="font-demo">
             <div class="sample-text letterspacing-demo">Letter Spacing</div>
-            <input 
+            <input
               class="font-slider"
-              name="letterspacing" 
+              name="letterspacing"
               data-prop="letter-spacing"
-              type="range" 
-              value="1" 
-              min="0" 
-              max="7" 
+              type="range"
+              value="1"
+              min="0"
+              max="7"
               style="--track-fill: 15%"
             >
           </div>
@@ -2218,14 +2218,14 @@
             <div class="sample-text" style="max-inline-size: var(--size-content-1);">
               Sample paragraph content to provide a preview for OP's line heights
             </div>
-            <input 
+            <input
               class="font-slider"
-              name="lineheight" 
+              name="lineheight"
               data-prop="lineHeight"
-              type="range" 
-              value="1" 
-              min="-1" 
-              max="5" 
+              type="range"
+              value="1"
+              min="-1"
+              max="5"
               style="--track-fill: 33%"
             >
           </div>
@@ -2248,7 +2248,7 @@
           --font-relative-lineheight-6: calc(1rem + 3ch);
         </code></pre>
       </article> -->
-      
+
       <article class="font-sizes">
         <h4>Font Sizes</h4>
         <pre class="language-css"><code>
@@ -2325,7 +2325,7 @@
 
               --ease-elastic-out-{1-5}
               --ease-elastic-in-{1-5}
-              --ease-elastic-in-out-{1-5} 
+              --ease-elastic-in-out-{1-5}
 
               --ease-spring-{1-5}
               --ease-bounce-{1-5}
@@ -2611,7 +2611,7 @@
               animation: var(--animation-slide-out-down) forwards;
 
               &.open {
-                animation: var(--animation-slide-in-up) forwards;  
+                animation: var(--animation-slide-in-up) forwards;
               }
             }
 
@@ -2654,7 +2654,7 @@
               </svg>
             </button>
           </div>
-          
+
           <div class="animation-demo-target" data-animation="fade-out-bloom">
             <h6>Bloom Fade Out</h6>
             <button class="play-button">
@@ -2863,7 +2863,7 @@
             <div>
               <pre class="language-css"><code>
                 .slide-fade {
-                  animation: 
+                  animation:
                     var(--animation-fade-out) forwards,
                     var(--animation-slide-out-down);
                   animation-timing-function: var(--ease-elastic-in-out-3);
@@ -2887,7 +2887,7 @@
             <div>
               <pre class="language-css"><code>
                 .shake-in {
-                  animation: 
+                  animation:
                     var(--animation-shake-y),
                     var(--animation-fade-in),
                     var(--animation-slide-in-left);
@@ -2909,7 +2909,7 @@
             <div>
               <pre class="language-css"><code>
                 .push-out {
-                  animation: 
+                  animation:
                     var(--animation-scale-down),
                     var(--animation-fade-out);
                   animation-timing-function: var(--ease-elastic-in-out-4);
@@ -2968,12 +2968,12 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            article { 
+            article {
               display: grid;
               gap: var(--size-3);
             }
 
-            li { 
+            li {
               padding-inline-start: var(--size-2);
             }
 
@@ -3023,11 +3023,11 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            body { 
+            body {
               padding: var(--size-fluid-3);
             }
 
-            hr { 
+            hr {
               margin-block: var(--size-fluid-5);
             }
           </code></pre>
@@ -3060,11 +3060,11 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            p { 
+            p {
               max-inline-size: var(--size-content-3);
             }
 
-            aside { 
+            aside {
               max-inline-size: var(--size-content-2);
             }
           </code></pre>
@@ -3095,11 +3095,11 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            h1 { 
+            h1 {
               max-inline-size: var(--size-header-2);
             }
 
-            small { 
+            small {
               max-inline-size: var(--size-header-1);
             }
           </code></pre>
@@ -3143,7 +3143,7 @@
         </div>
         <div class="relative-sizes-demo">
           <label>
-            Pick a different base font size: 
+            Pick a different base font size:
             <select>
               <optgroup label="Base Font Size">
                 <option value="5">--font-size-5</option>
@@ -3181,7 +3181,7 @@
       </header>
       <div class="block-wrap">
         <div>
-          
+
           <h5>Vars Sample</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
@@ -3404,7 +3404,7 @@
 
               @custom-media --motionOK      (prefers-reduced-motion: no-preference);
               @custom-media --motionNotOK   (prefers-reduced-motion: reduce);
-              
+
               @custom-media --invertedColors  (inverted-colors: inverted);
               @custom-media --forcedColors  (forced-colors: active);
             </code></pre>
@@ -3507,7 +3507,7 @@
           </code></pre>
         </div>
       </div>
-    
+
       <div class="just-for-gap">
         <header>
           <h3>Mask Edges</h3>
@@ -3580,7 +3580,7 @@
 
         <br>
 
-        <h5>Zig-Zag</h5>          
+        <h5>Zig-Zag</h5>
         <article class="border-demos mask-demos">
           <div style="-webkit-mask: var(--mask-edge-zig-zag-top)">Top</div>
           <div style="-webkit-mask: var(--mask-edge-zig-zag-right)">Right</div>
@@ -3597,7 +3597,7 @@
           }
         </code></pre>
       </div>
-    
+
       <div class="just-for-gap">
         <header>
           <h3>Mask Corner Cuts</h3>
@@ -3621,7 +3621,7 @@
           </article>
           <pre class="language-css"><code>
             --mask-corner-cut-circles-{1,2,3}
-  
+
             .mask-usage {
               -webkit-mask: var(--mask-corner-cut-circles-2);
             }
@@ -3639,7 +3639,7 @@
           </article>
           <pre class="language-css"><code>
             --mask-corner-cut-squares-{1,2,3}
-  
+
             .mask-usage {
               -webkit-mask: var(--mask-corner-cut-squares-2);
             }
@@ -3655,7 +3655,7 @@
           </article>
           <pre class="language-css"><code>
             --mask-corner-cut-angles-{1,2,3}
-  
+
             .mask-usage {
               -webkit-mask: var(--mask-corner-cut-angles-2);
             }
@@ -3699,7 +3699,7 @@
           <dt>Showcase</dt>
           <dd><a href="https://props-color-finder.netlify.app/" target="_blank">Color helper</a></dd>
         </div>
-        
+
         <div>
           <dt>Connect</dt>
           <dd><a href="https://github.com/argyleink/open-props/">GitHub</a></dd>
