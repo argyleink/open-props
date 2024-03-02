@@ -4,5 +4,6 @@ export default {
   '--layer-3': 3,
   '--layer-4': 4,
   '--layer-5': 5,
-  '--layer-important': 2147483647,  
-}
+  '--layer-max': 2147483647,
+  '--layer-important': 'infinity',
+};
