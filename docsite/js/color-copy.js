@@ -130,7 +130,6 @@ function copyPropertyToClipboard(e, property) {
   if (copiedText === '')
     return;
 
-  console.log(copiedText);
   navigator.clipboard.writeText(copiedText);
   return copiedText;
 }
@@ -148,7 +147,6 @@ function attachCopyEvent(query, property) {
 
 function selectCopyFormat() {
   const cb_prop = document.querySelector('#prop');
-  // const cb_color = document.querySelector('#color-code');
   const color_format_inputs = document.querySelectorAll(
     'input[name="color-format"]'
   );

@@ -1271,18 +1271,18 @@ pre[class*="language-"] {
 
 .count-em {
 
-  &:not(.tooltip, li):before {
+  &:not(.tooltip, li)::before {
     content: '';
     counter-reset: basic -1;
     position: absolute;
   }
 
-  & > *:not(.tooltip, li):before {
+  & > *:not(.tooltip, li)::before {
     counter-increment: basic;
     content: counter(basic);
   }
 
-  & button:before {
+  & button::before {
     counter-increment: basic;
     content: counter(basic);
   }

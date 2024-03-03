@@ -15,7 +15,6 @@
   }
 
   & input:is(:disabled) {
-
     cursor: not-allowed;
 
     &~label {
@@ -57,11 +56,9 @@
 
 .options:nth-child(2) {
   gap: var(--size-5);
-
 }
 
 .input-group {
-  
   display: flex;
   align-items: center;
   /* justify-content: flex-start; */
