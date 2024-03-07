@@ -321,10 +321,10 @@
     "gzip-size": "^7.0.0",
     "json": "^11.0.0",
     "open-color": "^1.9.1",
-    "postcss": "^8.3.9",
+    "postcss": "^8.4.21",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.2",
-    "postcss-preset-env": "6.7.x",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.1.4",
     "typescript": "^4.9.4"
   }
 }
