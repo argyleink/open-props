@@ -7,6 +7,7 @@
 @import "../src/props.masks.corner-cuts.css";
 
 @import "./syntax-highlight.css";
+@import "./color-copy.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
@@ -456,7 +457,7 @@ pre[class*="language-"] {
   & > h4 {
     counter-reset: basic -1;
   }
-
+  
   & > h4::before {
     display: none;
   }
@@ -512,11 +513,63 @@ pre[class*="language-"] {
   }
 }
 
-.color-swatch {
+.color-swatch-list {
+  padding-inline-start: 0;
+}
+
+.color-swatch-list > li {
+  --scale: 1.5;
   --size: var(--size-5);
+  padding-inline-start: 0;
+  inline-size: 6.7%;
+  block-size: var(--size);
+
+  &:nth-child(n+8)>button::before {
+    color: white;
+  }
+
+  &:is(:hover, :focus-visible),
+  &:has(button:is(:focus-visible))
+  {
+    transform: scale(var(--scale));
+    transition-delay: 0s;
+    transition-timing-function: var(--ease-elastic-out-3);
+
+    & > button::before {
+      opacity: 1;
+    }
+  }
+
+  &:is(:active) {
+    transform: scale(calc(var(--scale) * .88)) !important;
+  }
+
+  @media (--motionOK) {
+    transition: transform var(--ease-squish-5);
+    transition-duration: 2s;
+    transition-delay: 3s;
+
+    &:is(:hover, :focus-visible),
+    &:has(button:is(:focus-visible)) {
+      transition-duration: .1s;
+    }
+  }
+
+  @media (--md-n-below) {
+    --size: var(--size-3);
+  }
+
+  @media (--xs-n-below) {
+    --size: var(--size-2);
+  }
+
+}
+
+.color-swatch {
+  padding-inline: 0;
   border-radius: var(--radius-round);
   box-shadow: var(--inner-shadow-0);
-  inline-size: 6.7%;
+  inline-size: 100%;
   block-size: var(--size);
   display: grid;
   place-content: center;
@@ -526,36 +579,9 @@ pre[class*="language-"] {
   &::before {
     opacity: 0;
     transition: opacity .4s var(--ease-out-3);
+    line-height: 1;
   }
 
-  &:nth-child(n+8)::before {
-    color: white;
-  }
-
-  &:is(:hover,:focus) {
-    transform: scale(1.5);
-    transition-delay: 0s;
-    transition-timing-function: var(--ease-elastic-out-3);
-
-    &::before {
-      opacity: 1;
-    }
-  }
-
-  @media (--motionOK) {
-    transition: transform 2s var(--ease-squish-5) 3s;
-
-    &:is(:hover,:focus) {
-      transition-duration: .1s;
-    }
-  }
-
-  @media (--md-n-below) {
-    --size: var(--size-3);
-  }
-  @media (--xs-n-below) {
-    --size: var(--size-2);
-  }
 }
 
 .ui-gradients {
@@ -1245,13 +1271,18 @@ pre[class*="language-"] {
 
 .count-em {
 
-  &::before {
-  content: '';
-  counter-reset: basic;
-  position: absolute;
-}
+  &:not(.tooltip, li)::before {
+    content: '';
+    counter-reset: basic -1;
+    position: absolute;
+  }
 
-  & > *::before {
+  & > *:not(.tooltip, li)::before {
+    counter-increment: basic;
+    content: counter(basic);
+  }
+
+  & button::before {
     counter-increment: basic;
     content: counter(basic);
   }

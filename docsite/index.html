@@ -56,13 +56,13 @@
           <circle class="op-icon-o" cx="100" cy="100" r="85" fill="transparent" stroke-width="25"/>
         </svg>
         <span class="op-logo">
-          <span>Open</span> 
+          <span>Open</span>
           <span>Props</span>
         </span>
       </a>
       <a href="#getting-started">Get Started</a>
       <a class="md-hidden" href="https://stackblitz.com/@argyleink/collections/open-props">
-        Try in browser 
+        Try in browser
         <small class="green-badge">RAD</small>
       </a>
       <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
@@ -550,8 +550,8 @@
     <section class="dogfood place-full block-wrap">
       <header>
         <h2>
-          This site 
-          <br>is built 
+          This site
+          <br>is built
           <br>with Open Props.
         </h2>
       </header>
@@ -945,10 +945,10 @@
                 </div>
               </div>
             </details>
-            
+
             <details class="started-details">
               <summary>PostCSS</summary>
-              
+
               <div>
                 <h6>CSS Imports</h6>
                 <pre class="language-css"><code>
@@ -1004,7 +1004,7 @@
                     import OpenProps from 'open-props/src'; // unbundled ES module
                     import Colors from 'open-props/src/colors';
 
-                    // object notation access is special to OpenProps 
+                    // object notation access is special to OpenProps
                     console.info(OpenProps.size1);
                     console.info(OpenProps['--size-1']);
 
@@ -1062,7 +1062,7 @@
                     // postcss.config.js
                     const postcssJitProps = require('postcss-jit-props');
                     const OpenProps = require('open-props');
-                    
+
                     module.exports = {
                       plugins: [
                         postcssJitProps(OpenProps),
@@ -1106,14 +1106,14 @@
                     npm run gen:shadowdom                   // src files with `:host` instead of `html`
                     npm run gen:nowhere                     // src files without `:where()`
                     npm run gen:prefixed                    // each prop prefixed with `op`, like `--op-font-size-1`
-                    
+
                     // full custom! pass args with node to the props.js script
                     node props.js 'ns' true ':root' 'my'
                     ⇣
                     // arg1: default '', is a custom namespace, props will be --ns-gray-1
                     // arg2: default false, indicates wrapping in :where() or not
                     // arg3: default '', set a custom selector like :scope, .my-class, etc
-                    // arg4: default '', set a file prefix, files will be my.props.easing.css, etc 
+                    // arg4: default '', set a file prefix, files will be my.props.easing.css, etc
                   </code></pre>
                 </div>
                 <div>
@@ -1191,13 +1191,13 @@
             <summary>Sublime Text</summary>
             <ol>
               <li>
-                There are number of ways with which the autocomplete engine of Sublime Text can be extended. 
-                You can decide to use the <a href="https://www.sublimetext.com/docs/completions.html#completion-files" target="_blank">completion files</a>, 
-                <a href="https://www.sublimetext.com/docs/completions.html#snippets" target="_blank">snippets</a> or 
-                <a href="https://www.sublimetext.com/docs/completions.html#plugins" target="_blank">plugins</a>. 
+                There are number of ways with which the autocomplete engine of Sublime Text can be extended.
+                You can decide to use the <a href="https://www.sublimetext.com/docs/completions.html#completion-files" target="_blank">completion files</a>,
+                <a href="https://www.sublimetext.com/docs/completions.html#snippets" target="_blank">snippets</a> or
+                <a href="https://www.sublimetext.com/docs/completions.html#plugins" target="_blank">plugins</a>.
               </li>
               <li>
-                An approach that is less strenous is the "completion file" approach. 
+                An approach that is less strenous is the "completion file" approach.
                 Here, all you'd be required to do is point the `scope` keyword in the .sublime-completions file to the open-props classes in the node_modules folder like so:
               </li>
               <pre class="language-js"><code>
@@ -1216,7 +1216,7 @@
                   "scope": "path/to/your/variables",
               }
               </code></pre>
-              <li>Another approach for enabling autocomplete would be to open the settings json file of Sublime Text via 
+              <li>Another approach for enabling autocomplete would be to open the settings json file of Sublime Text via
                 <b>Preferences > Settings</b>, then you'll modify the file to include the snippet below &mdash; replacing "source" with the path to your variables.
               </li>
               <pre class="language-js"><code>
@@ -1319,311 +1319,350 @@
           </code></pre>
         </div>
       </div>
+
+      <div class="copy-options">
+        <form>
+          <p>Copy type</p>
+          <div class="options">
+            <div class="input-group">
+              <input type="radio" name="copy-format" id="prop" checked>
+              <label for="prop">
+                CSS Property <span class="example">Ex: var(--gray-1)</span>
+              </label>
+            </div>
+            <div class="input-group">
+              <input type="radio" name="copy-format" id="color-code">
+              <label for="color-code">
+                Color Code <span class="example">Ex: rgb(3, 5, 7)</span>
+              </label>
+            </div>
+          </div>
+        </form>
+
+        <form>
+          <p>Copy format</p>
+          <div class="options">
+            <div class="input-group">
+              <input type="radio" name="color-format" id="rgb" checked disabled>
+              <label for="rgb">RGB</label>
+            </div>
+            <div class="input-group">
+              <input type="radio" name="color-format" id="hex" disabled>
+              <label for="hex">HEX</label>
+            </div>
+            <div class="input-group">
+              <input type="radio" name="color-format" id="hsl" disabled>
+              <label for="hsl">HSL</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
       <article class="just-stretch">
-        <div class="open-colors count-em">
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Gray</h4>
-          <span class="color-swatch" style="background-color: var(--gray-0)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-1)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-2)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-3)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-4)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-5)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-6)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-7)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-8)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-9)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-10)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-11)"></span>
-          <span class="color-swatch" style="background-color: var(--gray-12)"></span>
-      </div>
-      <div class="open-colors count-em">
-        <h4>Stone</h4>
-        <span class="color-swatch" style="background-color: var(--stone-0)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-1)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-2)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-3)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-4)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-5)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-6)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-7)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-8)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-9)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-10)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-11)"></span>
-        <span class="color-swatch" style="background-color: var(--stone-12)"></span>
-      </div> 
-      <div class="open-colors count-em">
+          <li> <button class="color-swatch" style="background-color: var(--gray-0);" aria-label="gray 0"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-1);" aria-label="gray 1"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-2);" aria-label="gray 2"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-3);" aria-label="gray 3"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-4);" aria-label="gray 4"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-5);" aria-label="gray 5"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-6);" aria-label="gray 6"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-7);" aria-label="gray 7"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-8);" aria-label="gray 8"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-9);" aria-label="gray 9"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-10);" aria-label="gray 10"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-11);" aria-label="gray 11"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--gray-12);" aria-label="gray 12"></button> </li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
+          <h4>Stone</h4>
+          <li> <button class="color-swatch" style="background-color: var(--stone-0)" aria-label="stone 0"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-1)" aria-label="stone 1"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-2)" aria-label="stone 2"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-3)" aria-label="stone 3"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-4)" aria-label="stone 4"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-5)" aria-label="stone 5"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-6)" aria-label="stone 6"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-7)" aria-label="stone 7"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-8)" aria-label="stone 8"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-9)" aria-label="stone 9"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-10)" aria-label="stone 10"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-11)" aria-label="stone 11"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--stone-12)" aria-label="stone 12"></button> </li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Red</h4>
-          <span class="color-swatch" style="background-color: var(--red-0)"></span>
-          <span class="color-swatch" style="background-color: var(--red-1)"></span>
-          <span class="color-swatch" style="background-color: var(--red-2)"></span>
-          <span class="color-swatch" style="background-color: var(--red-3)"></span>
-          <span class="color-swatch" style="background-color: var(--red-4)"></span>
-          <span class="color-swatch" style="background-color: var(--red-5)"></span>
-          <span class="color-swatch" style="background-color: var(--red-6)"></span>
-          <span class="color-swatch" style="background-color: var(--red-7)"></span>
-          <span class="color-swatch" style="background-color: var(--red-8)"></span>
-          <span class="color-swatch" style="background-color: var(--red-9)"></span>
-          <span class="color-swatch" style="background-color: var(--red-10)"></span>
-          <span class="color-swatch" style="background-color: var(--red-11)"></span>
-          <span class="color-swatch" style="background-color: var(--red-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li> <button class="color-swatch" style="background-color: var(--red-0)" aria-label="red 0"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-1)" aria-label="red 1"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-2)" aria-label="red 2"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-3)" aria-label="red 3"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-4)" aria-label="red 4"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-5)" aria-label="red 5"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-6)" aria-label="red 6"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-7)" aria-label="red 7"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-8)" aria-label="red 8"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-9)" aria-label="red 9"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-10)" aria-label="red 10"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-11)" aria-label="red 11"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--red-12)" aria-label="red 12"></button> </li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Pink</h4>
-          <span class="color-swatch" style="background-color: var(--pink-0)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-1)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-2)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-3)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-4)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-5)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-6)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-7)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-8)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-9)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-10)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-11)"></span>
-          <span class="color-swatch" style="background-color: var(--pink-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li> <button class="color-swatch" style="background-color: var(--pink-0)" aria-label="pink 0"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-1)" aria-label="pink 1"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-2)" aria-label="pink 2"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-3)" aria-label="pink 3"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-4)" aria-label="pink 4"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-5)" aria-label="pink 5"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-6)" aria-label="pink 6"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-7)" aria-label="pink 7"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-8)" aria-label="pink 8"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-9)" aria-label="pink 9"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-10)" aria-label="pink 10"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-11)" aria-label="pink 11"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--pink-12)" aria-label="pink 12"></button> </li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Purple</h4>
-          <span class="color-swatch" style="background-color: var(--purple-0)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-1)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-2)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-3)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-4)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-5)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-6)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-7)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-8)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-9)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-10)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-11)"></span>
-          <span class="color-swatch" style="background-color: var(--purple-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li> <button class="color-swatch" style="background-color: var(--purple-0)" aria-label="purple 0"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-1)" aria-label="purple 1"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-2)" aria-label="purple 2"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-3)" aria-label="purple 3"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-4)" aria-label="purple 4"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-5)" aria-label="purple 5"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-6)" aria-label="purple 6"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-7)" aria-label="purple 7"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-8)" aria-label="purple 8"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-9)" aria-label="purple 9"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-10)" aria-label="purple 10"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-11)" aria-label="purple 11"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--purple-12)" aria-label="purple 12"></button> </li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Violet</h4>
-          <span class="color-swatch" style="background-color: var(--violet-0)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-1)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-2)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-3)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-4)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-5)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-6)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-7)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-8)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-9)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-10)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-11)"></span>
-          <span class="color-swatch" style="background-color: var(--violet-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li> <button class="color-swatch" style="background-color: var(--violet-0)" aria-label="violet 0"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-1)" aria-label="violet 1"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-2)" aria-label="violet 2"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-3)" aria-label="violet 3"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-4)" aria-label="violet 4"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-5)" aria-label="violet 5"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-6)" aria-label="violet 6"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-7)" aria-label="violet 7"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-8)" aria-label="violet 8"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-9)" aria-label="violet 9"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-10)" aria-label="violet 10"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-11)" aria-label="violet 11"></button> </li>
+          <li> <button class="color-swatch" style="background-color: var(--violet-12)" aria-label="violet 12"></button> </li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Indigo</h4>
-          <span class="color-swatch" style="background-color: var(--indigo-0)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-1)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-2)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-3)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-4)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-5)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-6)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-7)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-8)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-9)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-10)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-11)"></span>
-          <span class="color-swatch" style="background-color: var(--indigo-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--indigo-0)" aria-label="indigo 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-1)" aria-label="indigo 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-2)" aria-label="indigo 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-3)" aria-label="indigo 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-4)" aria-label="indigo 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-5)" aria-label="indigo 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-6)" aria-label="indigo 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-7)" aria-label="indigo 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-8)" aria-label="indigo 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-9)" aria-label="indigo 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-10)" aria-label="indigo 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-11)" aria-label="indigo 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--indigo-12)" aria-label="indigo 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Blue</h4>
-          <span class="color-swatch" style="background-color: var(--blue-0)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-1)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-2)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-3)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-4)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-5)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-6)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-7)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-8)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-9)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-10)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-11)"></span>
-          <span class="color-swatch" style="background-color: var(--blue-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--blue-0)" aria-label="blue 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-1)" aria-label="blue 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-2)" aria-label="blue 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-3)" aria-label="blue 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-4)" aria-label="blue 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-5)" aria-label="blue 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-6)" aria-label="blue 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-7)" aria-label="blue 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-8)" aria-label="blue 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-9)" aria-label="blue 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-10)" aria-label="blue 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-11)" aria-label="blue 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--blue-12)" aria-label="blue 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Cyan</h4>
-          <span class="color-swatch" style="background-color: var(--cyan-0)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-1)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-2)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-3)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-4)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-5)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-6)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-7)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-8)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-9)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-10)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-11)"></span>
-          <span class="color-swatch" style="background-color: var(--cyan-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--cyan-0)" aria-label="cyan 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-1)" aria-label="cyan 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-2)" aria-label="cyan 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-3)" aria-label="cyan 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-4)" aria-label="cyan 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-5)" aria-label="cyan 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-6)" aria-label="cyan 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-7)" aria-label="cyan 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-8)" aria-label="cyan 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-9)" aria-label="cyan 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-10)" aria-label="cyan 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-11)" aria-label="cyan 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--cyan-12)" aria-label="cyan 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Teal</h4>
-          <span class="color-swatch" style="background-color: var(--teal-0)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-1)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-2)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-3)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-4)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-5)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-6)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-7)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-8)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-9)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-10)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-11)"></span>
-          <span class="color-swatch" style="background-color: var(--teal-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--teal-0)" aria-label="teal 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-1)" aria-label="teal 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-2)" aria-label="teal 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-3)" aria-label="teal 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-4)" aria-label="teal 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-5)" aria-label="teal 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-6)" aria-label="teal 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-7)" aria-label="teal 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-8)" aria-label="teal 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-9)" aria-label="teal 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-10)" aria-label="teal 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-11)" aria-label="teal 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--teal-12)" aria-label="teal 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Green</h4>
-          <span class="color-swatch" style="background-color: var(--green-0)"></span>
-          <span class="color-swatch" style="background-color: var(--green-1)"></span>
-          <span class="color-swatch" style="background-color: var(--green-2)"></span>
-          <span class="color-swatch" style="background-color: var(--green-3)"></span>
-          <span class="color-swatch" style="background-color: var(--green-4)"></span>
-          <span class="color-swatch" style="background-color: var(--green-5)"></span>
-          <span class="color-swatch" style="background-color: var(--green-6)"></span>
-          <span class="color-swatch" style="background-color: var(--green-7)"></span>
-          <span class="color-swatch" style="background-color: var(--green-8)"></span>
-          <span class="color-swatch" style="background-color: var(--green-9)"></span>
-          <span class="color-swatch" style="background-color: var(--green-10)"></span>
-          <span class="color-swatch" style="background-color: var(--green-11)"></span>
-          <span class="color-swatch" style="background-color: var(--green-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--green-0)" aria-label="green 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-1)" aria-label="green 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-2)" aria-label="green 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-3)" aria-label="green 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-4)" aria-label="green 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-5)" aria-label="green 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-6)" aria-label="green 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-7)" aria-label="green 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-8)" aria-label="green 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-9)" aria-label="green 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-10)" aria-label="green 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-11)" aria-label="green 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--green-12)" aria-label="green 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Lime</h4>
-          <span class="color-swatch" style="background-color: var(--lime-0)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-1)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-2)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-3)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-4)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-5)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-6)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-7)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-8)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-9)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-10)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-11)"></span>
-          <span class="color-swatch" style="background-color: var(--lime-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--lime-0)" aria-label="lime 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-1)" aria-label="lime 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-2)" aria-label="lime 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-3)" aria-label="lime 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-4)" aria-label="lime 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-5)" aria-label="lime 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-6)" aria-label="lime 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-7)" aria-label="lime 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-8)" aria-label="lime 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-9)" aria-label="lime 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-10)" aria-label="lime 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-11)" aria-label="lime 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--lime-12)" aria-label="lime 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Yellow</h4>
-          <span class="color-swatch" style="background-color: var(--yellow-0)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-1)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-2)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-3)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-4)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-5)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-6)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-7)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-8)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-9)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-10)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-11)"></span>
-          <span class="color-swatch" style="background-color: var(--yellow-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--yellow-0)" aria-label="yellow 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-1)" aria-label="yellow 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-2)" aria-label="yellow 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-3)" aria-label="yellow 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-4)" aria-label="yellow 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-5)" aria-label="yellow 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-6)" aria-label="yellow 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-7)" aria-label="yellow 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-8)" aria-label="yellow 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-9)" aria-label="yellow 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-10)" aria-label="yellow 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-11)" aria-label="yellow 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--yellow-12)" aria-label="yellow 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Orange</h4>
-          <span class="color-swatch" style="background-color: var(--orange-0)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-1)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-2)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-3)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-4)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-5)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-6)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-7)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-8)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-9)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-10)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-11)"></span>
-          <span class="color-swatch" style="background-color: var(--orange-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--orange-0)" aria-label="orange 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-1)" aria-label="orange 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-2)" aria-label="orange 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-3)" aria-label="orange 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-4)" aria-label="orange 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-5)" aria-label="orange 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-6)" aria-label="orange 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-7)" aria-label="orange 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-8)" aria-label="orange 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-9)" aria-label="orange 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-10)" aria-label="orange 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-11)" aria-label="orange 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--orange-12)" aria-label="orange 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Choco</h4>
-          <span class="color-swatch" style="background-color: var(--choco-0)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-1)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-2)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-3)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-4)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-5)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-6)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-7)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-8)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-9)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-10)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-11)"></span>
-          <span class="color-swatch" style="background-color: var(--choco-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--choco-0)" aria-label="choco 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-1)" aria-label="choco 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-2)" aria-label="choco 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-3)" aria-label="choco 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-4)" aria-label="choco 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-5)" aria-label="choco 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-6)" aria-label="choco 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-7)" aria-label="choco 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-8)" aria-label="choco 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-9)" aria-label="choco 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-10)" aria-label="choco 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-11)" aria-label="choco 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--choco-12)" aria-label="choco 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Brown</h4>
-          <span class="color-swatch" style="background-color: var(--brown-0)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-1)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-2)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-3)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-4)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-5)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-6)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-7)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-8)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-9)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-10)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-11)"></span>
-          <span class="color-swatch" style="background-color: var(--brown-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--brown-0)" aria-label="brown 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-1)" aria-label="brown 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-2)" aria-label="brown 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-3)" aria-label="brown 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-4)" aria-label="brown 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-5)" aria-label="brown 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-6)" aria-label="brown 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-7)" aria-label="brown 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-8)" aria-label="brown 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-9)" aria-label="brown 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-10)" aria-label="brown 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-11)" aria-label="brown 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--brown-12)" aria-label="brown 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Sand</h4>
-          <span class="color-swatch" style="background-color: var(--sand-0)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-1)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-2)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-3)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-4)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-5)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-6)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-7)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-8)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-9)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-10)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-11)"></span>
-          <span class="color-swatch" style="background-color: var(--sand-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--sand-0)" aria-label="sand 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-1)" aria-label="sand 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-2)" aria-label="sand 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-3)" aria-label="sand 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-4)" aria-label="sand 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-5)" aria-label="sand 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-6)" aria-label="sand 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-7)" aria-label="sand 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-8)" aria-label="sand 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-9)" aria-label="sand 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-10)" aria-label="sand 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-11)" aria-label="sand 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--sand-12)" aria-label="sand 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Camo</h4>
-          <span class="color-swatch" style="background-color: var(--camo-0)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-1)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-2)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-3)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-4)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-5)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-6)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-7)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-8)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-9)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-10)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-11)"></span>
-          <span class="color-swatch" style="background-color: var(--camo-12)"></span>
-      </div>
-      <div class="open-colors count-em">
+          <li><button class="color-swatch" style="background-color: var(--camo-0)" aria-label="camo 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-1)" aria-label="camo 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-2)" aria-label="camo 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-3)" aria-label="camo 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-4)" aria-label="camo 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-5)" aria-label="camo 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-6)" aria-label="camo 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-7)" aria-label="camo 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-8)" aria-label="camo 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-9)" aria-label="camo 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-10)" aria-label="camo 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-11)" aria-label="camo 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--camo-12)" aria-label="camo 12"></button></li>
+        </ul>
+        <ul class="open-colors count-em color-swatch-list">
           <h4>Jungle</h4>
-          <span class="color-swatch" style="background-color: var(--jungle-0)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-1)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-2)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-3)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-4)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-5)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-6)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-7)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-8)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-9)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-10)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-11)"></span>
-          <span class="color-swatch" style="background-color: var(--jungle-12)"></span>
-      </div>      
+          <li><button class="color-swatch" style="background-color: var(--jungle-0)" aria-label="jungle 0"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-1)" aria-label="jungle 1"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-2)" aria-label="jungle 2"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-3)" aria-label="jungle 3"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-4)" aria-label="jungle 4"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-5)" aria-label="jungle 5"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-6)" aria-label="jungle 6"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-7)" aria-label="jungle 7"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-8)" aria-label="jungle 8"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-9)" aria-label="jungle 9"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-10)" aria-label="jungle 10"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-11)" aria-label="jungle 11"></button></li>
+          <li><button class="color-swatch" style="background-color: var(--jungle-12)" aria-label="jungle 12"></button></li>
+        </ul>
       </article>
 
       <details>
@@ -1707,7 +1746,7 @@
             <h3>2) Creating adaptive color schemes</h3>
             <p>It's not ideal for components to reference individual light or dark theme colors. Instead, you should prefer to use these individual variables to build a set of theme-agnostic aliases. This allows you to reference a custom property without worrying about its underlying value, which will dynamically adapt to the current context's theme.</p>
           </header>
-          
+
           <div class="block-wrap">
             <div>
               <h5>No Preference (Light)</h5>
@@ -1784,7 +1823,7 @@
             <h3>3) Using the aliases</h3>
             <p>Your app is now free to use adaptive custom properties! Now, your team only needs to remember a single naming convention rather than wrestling with individual theming variables. Here are a few examples of how the above color theme system could be used.</p>
           </header>
-          
+
           <div class="block-wrap">
             <div>
               <h5>Page Styles Using Themes</h5>
@@ -1828,7 +1867,7 @@
                 }
 
                 h5,h6,small,dd {
-                  color: var(--text-2); 
+                  color: var(--text-2);
                 }
               </code></pre>
             </div>
@@ -2010,9 +2049,9 @@
               --ratio-square: 1;
               --ratio-landscape: 4/3;
               --ratio-portrait: 3/4;
-              --ratio-widescreen: 16/9; 
+              --ratio-widescreen: 16/9;
               --ratio-ultrawide: 18/5;
-              --ratio-golden: 1.6180/1; 
+              --ratio-golden: 1.6180/1;
             </code></pre>
           </div>
         </div>
@@ -2055,7 +2094,7 @@
             </code></pre>
           </div>
         </div>
-        
+
         <div>
           <h5>Usage Sample</h5>
             <pre class="language-css"><code>
@@ -2116,14 +2155,14 @@
           </div>
           <div class="font-demo">
             <div class="sample-text" style="font-size: var(--font-size-8)">Aa</div>
-            <input 
+            <input
               class="font-slider"
-              name="weight" 
+              name="weight"
               data-prop="fontWeight"
-              type="range" 
-              value="4" 
-              min="1" 
-              max="9" 
+              type="range"
+              value="4"
+              min="1"
+              max="9"
               style="--track-fill: 35%"
             >
           </div>
@@ -2147,14 +2186,14 @@
           </div>
           <div class="font-demo">
             <div class="sample-text letterspacing-demo">Letter Spacing</div>
-            <input 
+            <input
               class="font-slider"
-              name="letterspacing" 
+              name="letterspacing"
               data-prop="letter-spacing"
-              type="range" 
-              value="1" 
-              min="0" 
-              max="7" 
+              type="range"
+              value="1"
+              min="0"
+              max="7"
               style="--track-fill: 15%"
             >
           </div>
@@ -2179,14 +2218,14 @@
             <div class="sample-text" style="max-inline-size: var(--size-content-1);">
               Sample paragraph content to provide a preview for OP's line heights
             </div>
-            <input 
+            <input
               class="font-slider"
-              name="lineheight" 
+              name="lineheight"
               data-prop="lineHeight"
-              type="range" 
-              value="1" 
-              min="-1" 
-              max="5" 
+              type="range"
+              value="1"
+              min="-1"
+              max="5"
               style="--track-fill: 33%"
             >
           </div>
@@ -2209,7 +2248,7 @@
           --font-relative-lineheight-6: calc(1rem + 3ch);
         </code></pre>
       </article> -->
-      
+
       <article class="font-sizes">
         <h4>Font Sizes</h4>
         <pre class="language-css"><code>
@@ -2286,7 +2325,7 @@
 
               --ease-elastic-out-{1-5}
               --ease-elastic-in-{1-5}
-              --ease-elastic-in-out-{1-5} 
+              --ease-elastic-in-out-{1-5}
 
               --ease-spring-{1-5}
               --ease-bounce-{1-5}
@@ -2572,7 +2611,7 @@
               animation: var(--animation-slide-out-down) forwards;
 
               &.open {
-                animation: var(--animation-slide-in-up) forwards;  
+                animation: var(--animation-slide-in-up) forwards;
               }
             }
 
@@ -2615,7 +2654,7 @@
               </svg>
             </button>
           </div>
-          
+
           <div class="animation-demo-target" data-animation="fade-out-bloom">
             <h6>Bloom Fade Out</h6>
             <button class="play-button">
@@ -2824,7 +2863,7 @@
             <div>
               <pre class="language-css"><code>
                 .slide-fade {
-                  animation: 
+                  animation:
                     var(--animation-fade-out) forwards,
                     var(--animation-slide-out-down);
                   animation-timing-function: var(--ease-elastic-in-out-3);
@@ -2848,7 +2887,7 @@
             <div>
               <pre class="language-css"><code>
                 .shake-in {
-                  animation: 
+                  animation:
                     var(--animation-shake-y),
                     var(--animation-fade-in),
                     var(--animation-slide-in-left);
@@ -2870,7 +2909,7 @@
             <div>
               <pre class="language-css"><code>
                 .push-out {
-                  animation: 
+                  animation:
                     var(--animation-scale-down),
                     var(--animation-fade-out);
                   animation-timing-function: var(--ease-elastic-in-out-4);
@@ -2929,12 +2968,12 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            article { 
+            article {
               display: grid;
               gap: var(--size-3);
             }
 
-            li { 
+            li {
               padding-inline-start: var(--size-2);
             }
 
@@ -2984,11 +3023,11 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            body { 
+            body {
               padding: var(--size-fluid-3);
             }
 
-            hr { 
+            hr {
               margin-block: var(--size-fluid-5);
             }
           </code></pre>
@@ -3021,11 +3060,11 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            p { 
+            p {
               max-inline-size: var(--size-content-3);
             }
 
-            aside { 
+            aside {
               max-inline-size: var(--size-content-2);
             }
           </code></pre>
@@ -3056,11 +3095,11 @@
         <div>
           <h5>Usage Sample</h5>
           <pre class="language-css"><code>
-            h1 { 
+            h1 {
               max-inline-size: var(--size-header-2);
             }
 
-            small { 
+            small {
               max-inline-size: var(--size-header-1);
             }
           </code></pre>
@@ -3104,7 +3143,7 @@
         </div>
         <div class="relative-sizes-demo">
           <label>
-            Pick a different base font size: 
+            Pick a different base font size:
             <select>
               <optgroup label="Base Font Size">
                 <option value="5">--font-size-5</option>
@@ -3142,7 +3181,7 @@
       </header>
       <div class="block-wrap">
         <div>
-          
+
           <h5>Vars Sample</h5>
           <div class="var-examples">
             <pre class="language-css"><code>
@@ -3365,7 +3404,7 @@
 
               @custom-media --motionOK      (prefers-reduced-motion: no-preference);
               @custom-media --motionNotOK   (prefers-reduced-motion: reduce);
-              
+
               @custom-media --invertedColors  (inverted-colors: inverted);
               @custom-media --forcedColors  (forced-colors: active);
             </code></pre>
@@ -3468,7 +3507,7 @@
           </code></pre>
         </div>
       </div>
-    
+
       <div class="just-for-gap">
         <header>
           <h3>Mask Edges</h3>
@@ -3541,7 +3580,7 @@
 
         <br>
 
-        <h5>Zig-Zag</h5>          
+        <h5>Zig-Zag</h5>
         <article class="border-demos mask-demos">
           <div style="-webkit-mask: var(--mask-edge-zig-zag-top)">Top</div>
           <div style="-webkit-mask: var(--mask-edge-zig-zag-right)">Right</div>
@@ -3558,7 +3597,7 @@
           }
         </code></pre>
       </div>
-    
+
       <div class="just-for-gap">
         <header>
           <h3>Mask Corner Cuts</h3>
@@ -3582,7 +3621,7 @@
           </article>
           <pre class="language-css"><code>
             --mask-corner-cut-circles-{1,2,3}
-  
+
             .mask-usage {
               -webkit-mask: var(--mask-corner-cut-circles-2);
             }
@@ -3600,7 +3639,7 @@
           </article>
           <pre class="language-css"><code>
             --mask-corner-cut-squares-{1,2,3}
-  
+
             .mask-usage {
               -webkit-mask: var(--mask-corner-cut-squares-2);
             }
@@ -3616,7 +3655,7 @@
           </article>
           <pre class="language-css"><code>
             --mask-corner-cut-angles-{1,2,3}
-  
+
             .mask-usage {
               -webkit-mask: var(--mask-corner-cut-angles-2);
             }
@@ -3660,7 +3699,7 @@
           <dt>Showcase</dt>
           <dd><a href="https://props-color-finder.netlify.app/" target="_blank">Color helper</a></dd>
         </div>
-        
+
         <div>
           <dt>Connect</dt>
           <dd><a href="https://github.com/argyleink/open-props/">GitHub</a></dd>
