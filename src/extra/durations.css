@@ -7,7 +7,8 @@
     --month:      calc( 30 * var(--day));
     --quarter:    calc( 13 * var(--week));
     --year:       calc(365 * var(--day));
-    --leap-year:  calc(  4 * var(--year));
+    --leap-year:  calc(366 * var(--day));
+    --olympiad:   calc(  4 * var(--year));
     --decade:     calc( 10 * var(--year));
     --generation: calc(  3 * var(--decade));
     --lifetime:   calc(  8 * var(--decade));

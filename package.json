@@ -3,7 +3,7 @@
   "name": "open-props",
   "author": "Adam Argyle",
   "license": "MIT",
-  "version": "1.6.19",
+  "version": "1.6.20",
   "repository": {
     "type": "git",
     "url": "https://github.com/argyleink/open-props"
@@ -186,6 +186,7 @@
     "build": "concurrently npm:gen:op npm:gen:shadowdom && npm run gen:types",
     "test": "ava test/basic.test.cjs",
     "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25",
+    "bundle:sizes": "cd build && node bundle-sizes.js",
     "gen:op": "cd build && node props.js \"\" true",
     "gen:nowhere": "cd build && node props \"\" false",
     "gen:shadowdom": "cd build && node props \"\" false \":host\" \"shadow\"",
@@ -313,9 +314,11 @@
   },
   "devDependencies": {
     "ava": "^3.15.0",
+    "brotli-size": "^4.0.0",
     "colorjs.io": "^0.4.1-patch.1",
     "concurrently": "^7.2.2",
     "cssnano": "^5.1.10",
+    "gzip-size": "^7.0.0",
     "json": "^11.0.0",
     "open-color": "^1.9.1",
     "postcss": "^8.3.9",
