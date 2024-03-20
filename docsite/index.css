@@ -1277,6 +1277,10 @@ pre[class*="language-"] {
     position: absolute;
   }
 
+  &.from-one:not(.tooltip, li)::before {
+      counter-reset: basic;
+  }
+
   & > *:not(.tooltip, li)::before {
     counter-increment: basic;
     content: counter(basic);
