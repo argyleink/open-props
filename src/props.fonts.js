@@ -1,7 +1,7 @@
 export default {
-  '--font-sans': 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
-  '--font-serif': 'ui-serif,serif',
-  '--font-mono': 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
+  '--font-sans': 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  '--font-serif': 'ui-serif, Georgia, Cambria, "Times New Roman", serif',
+  '--font-mono': 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
 
   '--font-weight-1': '100',
   '--font-weight-2': '200',
