@@ -18,7 +18,7 @@ let observer = new IntersectionObserver(entries => {
     const id = entry.target.id;
     // Find it's corresponding link
     const link = linkMap[`#` + id];
-    // Highlight the link of the interesecting container
+    // Highlight the link of the intersecting container
     // and remove any existing containers
     if(entry.isIntersecting) {
       link.classList.add('in-view')
@@ -35,8 +35,8 @@ let observer = new IntersectionObserver(entries => {
     }
   }
   // Set a threshold of 10% of the target's visibility to trigger the 
-  // observer's calback. This will trigger the new section faster and
-  // help keep multiple sections higlighted.
+  // observer's callback. This will trigger the new section faster and
+  // help keep multiple sections highlighted.
 }, { threshold: .1 });
 
 for (let container of containers) {

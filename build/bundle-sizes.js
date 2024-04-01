@@ -39,7 +39,7 @@ const regex = /postcss\s(?<filepath>\S+)\s\-[o]\s(?<filename>.*\.css)(?:.*$)/;
 
 /**
  * @typedef {Object} Size
- * @propety {number} raw - Unminified size in bytes
+ * @property {number} raw - Unminified size in bytes
  * @property {string} size - Unminified size in KiB
  * @property {string} minified - Minified size in KiB
  * @property {string} brotli - Brotli compressed minified size in KiB
