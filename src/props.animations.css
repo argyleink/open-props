@@ -17,7 +17,7 @@
   --animation-slide-in-left: slide-in-left .5s var(--ease-3);
   --animation-shake-x: shake-x .75s var(--ease-out-5);
   --animation-shake-y: shake-y .75s var(--ease-out-5);
-  --animation-wobble: wobble 1s var(--ease-out-5);
+  --animation-wobble: wobble 1s var(--ease-in-out-3);
   --animation-spin: spin 2s linear infinite;
   --animation-ping: ping 5s var(--ease-out-3) infinite;
   --animation-blink: blink 1s var(--ease-out-3) infinite;

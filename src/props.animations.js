@@ -103,7 +103,7 @@ export default {
   60% { transform: translateY(-5%) }
   80% { transform: translateY(5%) }
 }`,
-"--animation-wobble": "wobble 1s var(--ease-out-5)", 
+"--animation-wobble": "wobble 1s var(--ease-in-out-3)", 
 "--animation-wobble-@": `
 @keyframes wobble {
   0%, 100% { transform: rotate(0deg) }
