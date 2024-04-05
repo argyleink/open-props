@@ -103,6 +103,15 @@ export default {
   60% { transform: translateY(-5%) }
   80% { transform: translateY(5%) }
 }`,
+"--animation-shake-z": "shake-z 1s var(--ease-in-out-3)", 
+"--animation-shake-z-@": `
+@keyframes shake-z {
+  0%, 100% { transform: rotate(0deg) }
+  20% { transform: rotate(-2deg) }
+  40% { transform: rotate(2deg) }
+  60% { transform: rotate(-2deg) }
+  80% { transform: rotate(2deg) }
+}`,
   "--animation-spin": "spin 2s linear infinite", 
   "--animation-spin-@": `
 @keyframes spin {

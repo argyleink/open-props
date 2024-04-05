@@ -17,6 +17,7 @@
   --animation-slide-in-left: slide-in-left .5s var(--ease-3);
   --animation-shake-x: shake-x .75s var(--ease-out-5);
   --animation-shake-y: shake-y .75s var(--ease-out-5);
+  --animation-shake-z: shake-z 1s var(--ease-in-out-3);
   --animation-spin: spin 2s linear infinite;
   --animation-ping: ping 5s var(--ease-out-3) infinite;
   --animation-blink: blink 1s var(--ease-out-3) infinite;
@@ -84,6 +85,13 @@
   40% { transform: translateY(5%) }
   60% { transform: translateY(-5%) }
   80% { transform: translateY(5%) }
+}
+@keyframes shake-z {
+  0%, 100% { transform: rotate(0deg) }
+  20% { transform: rotate(-2deg) }
+  40% { transform: rotate(2deg) }
+  60% { transform: rotate(-2deg) }
+  80% { transform: rotate(2deg) }
 }
 @keyframes spin {
   to { transform: rotate(1turn) }

@@ -2562,7 +2562,7 @@
             <pre class="language-css"><code>
               --animation-fade-{in,out}
               --animation-fade-{in,out}-bloom
-              --animation-shake-{x,y}
+              --animation-shake-{x,y,z}
 
               --animation-slide-out-{up,down,left,right}
               --animation-slide-in-{up,down,left,right}
@@ -2837,6 +2837,16 @@
 
           <div class="animation-demo-target" data-animation="shake-y">
             <h6>Shake Y</h6>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="animation-demo-target" data-animation="shake-z">
+            <h6>Shake Z</h6>
             <button class="play-button">
               <svg viewBox="0 0 20 20">
                 <use href="#play-icon"/>
