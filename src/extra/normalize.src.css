@@ -87,11 +87,6 @@
 }
 
 :where(a) {
-  padding-inline: var(--size-1);
-  margin-inline: calc(var(--size-1) * -1);
-  padding-block: var(--size-1);
-  margin-block: calc(var(--size-1) * -1);
-
   &:where([href]) {
     text-decoration-color: var(--indigo-2);
 
