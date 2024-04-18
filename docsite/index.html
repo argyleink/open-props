@@ -3187,7 +3187,7 @@
     <section id="borders">
       <header>
         <h2>Borders</h2>
-        <p>Sizes, corner radii, a circle helper, <a href="https://ishadeed.com/article/conditional-border-radius/">conditional radii</a>, and some blobs.</p>
+        <p>Sizes, corner radii, a circle helper, <a href="https://ishadeed.com/article/conditional-border-radius/">conditional radii</a>, radii that produce a <a href="https://www.getpapercss.com/docs/utilities/borders/">hand-drawn border</a>, and some blobs.</p>
       </header>
       <div class="block-wrap">
         <div>
@@ -3198,6 +3198,7 @@
               --border-size-{1-5}
               --radius-{1-6}
               --radius-round
+              --radius-drawn-{1-6}
               --radius-blob-{1-5}
               --radius-conditional-{1-6}
             </code></pre>
@@ -3216,6 +3217,12 @@
               inline-size: var(--size-5);
               aspect-ratio: var(--ratio-square);
               border-radius: var(--radius-round);
+            }
+            
+            .drawn {
+              inline-size: var(--size-14);
+              border: var(--brown-12) var(--size-4) solid;
+              border-radius: var(--radius-drawn-1);
             }
           </code></pre>
         </div>
@@ -3241,6 +3248,18 @@
           <div style="border-radius: var(--radius-4)">4</div>
           <div style="border-radius: var(--radius-5)">5</div>
           <div style="border-radius: var(--radius-round)">round</div>
+        </article>
+      </div>
+
+      <div class="just-for-gap">
+        <h3>Drawn Borders</h3>
+        <article class="border-demos">
+          <div style="border-radius: var(--radius-drawn-1)">1</div>
+          <div style="border-radius: var(--radius-drawn-2)">2</div>
+          <div style="border-radius: var(--radius-drawn-3)">3</div>
+          <div style="border-radius: var(--radius-drawn-4)">4</div>
+          <div style="border-radius: var(--radius-drawn-5)">5</div>
+          <div style="border-radius: var(--radius-drawn-6)">6</div>
         </article>
       </div>
 
