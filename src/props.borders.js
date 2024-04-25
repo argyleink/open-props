@@ -12,6 +12,13 @@ export default {
   '--radius-5': '4rem',
   '--radius-6': '8rem',
 
+  '--radius-drawn-1': '255px 15px 225px 15px / 15px 225px 15px 255px',
+  '--radius-drawn-2': '125px 10px 20px 185px / 25px 205px 205px 25px',
+  '--radius-drawn-3': '15px 255px 15px 225px / 225px 15px 255px 15px',
+  '--radius-drawn-4': '15px 25px 155px 25px / 225px 150px 25px 115px',
+  '--radius-drawn-5': '250px 25px 15px 20px / 15px 80px 105px 115px',
+  '--radius-drawn-6': '28px 100px 20px 15px / 150px 30px 205px 225px',
+
   '--radius-round': '1e5px',
   '--radius-blob-1': '30% 70% 70% 30% / 53% 30% 70% 47%',
   '--radius-blob-2': '53% 47% 34% 66% / 63% 46% 54% 37%',
