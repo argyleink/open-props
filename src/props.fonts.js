@@ -32,8 +32,6 @@ export default {
     "Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif",
   "--font-handwritten":
     "'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
-  "--font-emoji":
-    "'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 
   "--font-weight-1": "100",
   "--font-weight-2": "200",
