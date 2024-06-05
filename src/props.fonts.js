@@ -1,10 +1,5 @@
 export default {
-  '--font-sans':
-    'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
-  '--font-serif': 'ui-serif,serif',
-  '--font-mono':
-    'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
-  '--font-system-ui': 'system-ui, sans-serif',
+    '--font-system-ui': 'system-ui, sans-serif',
   '--font-transitional':
     'Charter, Bitstream Charter, Sitka Text, Cambria, serif',
   '--font-old-style':
