@@ -1,5 +1,5 @@
 :where(html) {
- --font-system-ui: system-ui, sans-serif;
+  --font-system-ui: system-ui, sans-serif;
   --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
   --font-old-style: Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif;
   --font-humanist: Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif;
