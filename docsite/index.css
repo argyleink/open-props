@@ -1053,21 +1053,31 @@ pre[class*="language-"] {
 }
 
 .font-family-grid {
-  display: grid;
-  gap: var(--size-2);
-  justify-items: flex-start;
+  --grid-cols: repeat(9, minmax(3rem, 1fr));
 
-  & > div {
+  display: grid;
+  grid-template-columns: var(--grid-cols);
+  gap: var(--size-2);
+
+  & > details {
+    grid-column: 1 / -1;
+  }
+
+  & > details > div {
     display: grid;
-    grid-template-columns: repeat(9, minmax(3rem, 1fr));
     place-items: center;
-    font-size: var(--font-size-5);
+    grid-template-columns: var(--grid-cols);
+    grid-column: 1 / -1;
     color: var(--text-1);
+    font-size: var(--font-size-5);
 
     @media (--md-n-below) {
-      grid-template-columns: repeat(6, minmax(2rem, 1fr));
       font-size: var(--font-size-3);
     }
+  }
+
+  @media (--md-n-below) {
+    --grid-cols: repeat(6, minmax(2rem, 1fr));
   }
 }
 
