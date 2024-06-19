@@ -1,5 +1,5 @@
 export default {
-    '--font-system-ui': 'system-ui, sans-serif',
+  '--font-system-ui': 'system-ui, sans-serif',
   '--font-transitional':
     'Charter, Bitstream Charter, Sitka Text, Cambria, serif',
   '--font-old-style':
@@ -27,6 +27,9 @@ export default {
     'Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052, Sylfaen, serif',
   '--font-handwritten':
     'Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual, cursive',
+  '--font-sans': 'var(--font-system-ui)',
+  '--font-serif': 'var(--font-transitional)',
+  '--font-mono': 'var(--font-monospace-code)',
 
   '--font-weight-1': '100',
   '--font-weight-2': '200',
