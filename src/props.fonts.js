@@ -14,7 +14,7 @@ export default {
     'Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans, Arial, sans-serif',
   '--font-monospace-slab-serif': 'Nimbus Mono PS, Courier New, monospace',
   '--font-monospace-code':
-    'ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, DejaVu Sans Mono, monospace',
+    'Dank Mono,Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace',
   '--font-industrial':
     'Bahnschrift, DIN Alternate, Franklin Gothic Medium, Nimbus Sans Narrow, sans-serif-condensed, sans-serif',
   '--font-rounded-sans':
