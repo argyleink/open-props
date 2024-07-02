@@ -28,7 +28,7 @@ export default {
   '--font-handwritten':
     'Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual, cursive',
   '--font-sans': 'var(--font-system-ui)',
-  '--font-serif': 'var(--font-transitional)',
+  '--font-serif': 'ui-serif, serif',
   '--font-mono': 'var(--font-monospace-code)',
 
   '--font-weight-1': '100',
