@@ -1,7 +1,35 @@
 export default {
-  '--font-sans': 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
-  '--font-serif': 'ui-serif,serif',
-  '--font-mono': 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
+  '--font-system-ui': 'system-ui, sans-serif',
+  '--font-transitional':
+    'Charter, Bitstream Charter, Sitka Text, Cambria, serif',
+  '--font-old-style':
+    'Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif',
+  '--font-humanist':
+    'Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif',
+  '--font-geometric-humanist':
+    'Avenir, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif',
+  '--font-classical-humanist':
+    'Optima, Candara, Noto Sans, source-sans-pro, sans-serif',
+  '--font-neo-grotesque':
+    'Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans, Arial, sans-serif',
+  '--font-monospace-slab-serif': 'Nimbus Mono PS, Courier New, monospace',
+  '--font-monospace-code':
+    'Dank Mono,Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace',
+  '--font-industrial':
+    'Bahnschrift, DIN Alternate, Franklin Gothic Medium, Nimbus Sans Narrow, sans-serif-condensed, sans-serif',
+  '--font-rounded-sans':
+    'ui-rounded, Hiragino Maru Gothic ProN, Quicksand, Comfortaa, Manjari, Arial Rounded MT, Arial Rounded MT Bold, Calibri, source-sans-pro, sans-serif',
+  '--font-slab-serif':
+    'Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif, Sitka Small, serif',
+  '--font-antique':
+    'Superclarendon, Bookman Old Style, URW Bookman, URW Bookman L, Georgia Pro, Georgia, serif',
+  '--font-didone':
+    'Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052, Sylfaen, serif',
+  '--font-handwritten':
+    'Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual, cursive',
+  '--font-sans': 'var(--font-system-ui)',
+  '--font-serif': 'ui-serif, serif',
+  '--font-mono': 'var(--font-monospace-code)',
 
   '--font-weight-1': '100',
   '--font-weight-2': '200',
@@ -54,4 +82,4 @@ export default {
   '--font-size-fluid-1': 'clamp(1rem, 4vw, 1.5rem)',
   '--font-size-fluid-2': 'clamp(1.5rem, 6vw, 2.5rem)',
   '--font-size-fluid-3': 'clamp(2rem, 9vw, 3.5rem)',
-}
+};

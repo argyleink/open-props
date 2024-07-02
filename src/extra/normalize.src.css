@@ -15,7 +15,7 @@
 
 :where(html) {
   block-size: 100%;
-  font-family: var(--font-sans);
+  font-family: var(--font-system-ui);
   line-height: var(--font-lineheight-3);
   -webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 
@@ -148,7 +148,7 @@
   inline-size: var(--size-10);
 }
 
-:where(code, kbd, samp, pre) { font-family: var(--font-mono) }
+:where(code, kbd, samp, pre) { font-family: var(--font-monospace-code), monospace; }
 :where(:not(pre) > code, kbd) { white-space: nowrap }
 
 :where(pre) {

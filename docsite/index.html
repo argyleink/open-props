@@ -2092,7 +2092,7 @@
     <section id="typography">
       <header>
         <h2>Typography</h2>
-        <p>Variable and static font sizes, smart line heights, and other familiar typography variables, all ready to go.</p>
+        <p>Variable and static font sizes, smart line heights, <a href="https://modernfontstacks.com">modern font stacks</a>, and other familiar typography variables, all ready to go.</p>
       </header>
       <div class="block-wrap">
         <div>
@@ -2124,29 +2124,147 @@
 
       <article class="font-sizes">
         <h4>Font Families</h4>
+        <p>These rad font-families from <a href="https://github.com/danklammer">Dan Klammer's</a> <a href="https://modernfontstacks.com">modern font stacks</a> provide great typefaces that are entirely local. With these font stacks you won't have to worry about slowing down your page load or layout shift from external fonts!</p>
         <pre class="language-css"><code>
-          --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-          --font-serif: ui-serif, serif;
-          --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+          --font-system-ui: system-ui, sans-serif;
+          --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
+          --font-old-style: Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif;
+          --font-humanist: Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif;
+          --font-geometric-humanist: Avenir, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif;
+          --font-classical-humanist: Optima, Candara, Noto Sans, source-sans-pro, sans-serif;
+          --font-neo-grotesque: Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans, Arial, sans-serif;
+          --font-monospace-slab-serif: Nimbus Mono PS, Courier New, monospace;
+          --font-monospace-code: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono,Monaco, Droid Sans Mono, Source Code Pro, Cascadia Code,Menlo, Consolas, DejaVu Sans Mono, monospace;
+          --font-industrial: Bahnschrift, DIN Alternate, Franklin Gothic Medium, Nimbus Sans Narrow, sans-serif-condensed, sans-serif;
+          --font-rounded-sans: ui-rounded, Hiragino Maru Gothic ProN, Quicksand, Comfortaa, Manjari, Arial Rounded MT, Arial Rounded MT Bold, Calibri, source-sans-pro, sans-serif;
+          --font-slab-serif: Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif, Sitka Small, serif;
+          --font-antique: Superclarendon, Bookman Old Style, URW Bookman, URW Bookman L, Georgia Pro, Georgia, serif;
+          --font-didone: Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052, Sylfaen, serif;
+          --font-handwritten: Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual, cursive;
         </code></pre>
+        <blockquote>
+          Unlike the other props, which are identical to their modern font stack counterparts, <code>--font-monospace-code</code> is modified in open-props.
+        </blockquote>
         <div class="block-wrap">
           <div class="font-family-grid">
-            <code class="language-css">--font-sans</code>
-            <div>
-              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
-            </div>
+            <details>
+              <summary><code class="language-css">--font-system-ui</code></summary>
+                <div style="font-family: var(--font-system-ui)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
           </div>
           <div class="font-family-grid">
-            <code class="language-css">--font-serif</code>
-            <div style="font-family: var(--font-serif)">
-              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
-            </div>
+            <details>
+              <summary><code class="language-css">--font-transitional</code></summary>
+                <div style="font-family: var(--font-transitional)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+           <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-old-style</code></summary>
+                <div style="font-family: var(--font-old-style)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
           </div>
           <div class="font-family-grid">
-            <code class="language-css">--font-mono</code>
-            <div style="font-family: var(--font-mono)">
-              <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
-            </div>
+            <details>
+              <summary><code class="language-css">--font-humanist</code></summary>
+                <div style="font-family: var(--font-humanist)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+          <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-geometric-humanist</code></summary>
+                <div style="font-family: var(--font-geometric-humanist)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+          <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-classical-humanist</code></summary>
+                <div style="font-family: var(--font-classical-humanist)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+          <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-neo-grotesque</code></summary>
+                <div style="font-family: var(--font-neo-grotesque)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+            <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-monospace-slab-serif</code></summary>
+                <div style="font-family: var(--font-monospace-slab-serif)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+            <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-monospace-code</code></summary>
+                <div style="font-family: var(--font-monospace)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+            <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-industrial</code></summary>
+                <div style="font-family: var(--font-industrial)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+            <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-rounded-sans</code></summary>
+                <div style="font-family: var(--font-rounded-sans)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+           <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-slab-serif</code></summary>
+                <div style="font-family: var(--font-slab-serif)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+         <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-antique</code></summary>
+                <div style="font-family: var(--font-antique)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+           <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-didone</code></summary>
+                <div style="font-family: var(--font-didone)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
+          </div>
+           <div class="font-family-grid">
+            <details>
+              <summary><code class="language-css">--font-handwritten</code></summary>
+                <div style="font-family: var(--font-handwritten)">
+                  <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>+</span><span>=</span><span>!</span><span>@</span><span>#</span><span>%</span><span>$</span><span>%</span><span>^</span><span>&amp;</span>
+                </div>
+              </details>
           </div>
         </div>
       </article>
@@ -2460,7 +2578,7 @@
           <div class="ease-demo paused">
             <div style="animation-timing-function: var(--ease-elastic-out-1)">ease-elastic-out-1</div>
             <div style="animation-timing-function: var(--ease-elastic-out-2)">ease-elastic-out-2</div>
-            <div style="animation-timing-function: var(--ease-elastic-out-3)">ease-elastic-out-3</div>
+            <div style="animation-timing-function: var(--etic-elastic-out-3)">ease-elastic-out-3</div>
             <div style="animation-timing-function: var(--ease-elastic-out-4)">ease-elastic-out-4</div>
             <div style="animation-timing-function: var(--ease-elastic-out-5)">ease-elastic-out-5</div>
           </div>
