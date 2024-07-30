@@ -2422,10 +2422,10 @@
       <article class="font-sizes">
         <h4>Fluid Font Sizes</h4>
         <pre class="language-css"><code>
-          --font-size-fluid-0: clamp(.75rem, 1.5vw, 1rem);
-          --font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
-          --font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
-          --font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
+          --font-size-fluid-0: clamp(.75rem, 2vw, 1rem);
+          --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
+          --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+          --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
         </code></pre>
         <div class="scroll-x-overflow"><div class="font-size-examples">
           <code class="language-css">var(--font-size-fluid-0)</code>
@@ -3375,7 +3375,7 @@
               aspect-ratio: var(--ratio-square);
               border-radius: var(--radius-round);
             }
-            
+
             .drawn {
               inline-size: var(--size-14);
               border: var(--brown-12) var(--border-size-4) solid;
