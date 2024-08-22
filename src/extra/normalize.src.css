@@ -270,14 +270,6 @@
   color: inherit;
   border-radius: var(--radius-3);
   box-shadow: var(--shadow-6);
-
-  &::backdrop {
-    backdrop-filter: blur(25px);
-  }
-}
-
-:where(html:has(dialog[open])) {
-  overflow: hidden;
 }
 
 :where(menu) {
