@@ -44,6 +44,7 @@
     "./src/zindex": "./src/props.zindex.js",
     "./src/masks.edges": "./src/props.masks.edges.js",
     "./src/masks.corner-cuts": "./src/props.masks.corner-cuts.js",
+    "./src/brand": "./src/props.brand.js",
     "./style": "./open-props.min.css",
     "./postcss/style": "./src/index.css",
     "./normalize": "./normalize.min.css",
@@ -310,7 +311,8 @@
     "shadow:colors:camo": "postcss src/shadow.props.camo.css -o camo.shadow.min.css",
     "shadow:colors:camo-hsl": "postcss src/shadow.props.camo-hsl.css -o camo-hsl.shadow.min.css",
     "shadow:colors:jungle": "postcss src/shadow.props.jungle.css -o jungle.shadow.min.css",
-    "shadow:colors:jungle-hsl": "postcss src/shadow.props.jungle-hsl.css -o jungle-hsl.shadow.min.css"
+    "shadow:colors:jungle-hsl": "postcss src/shadow.props.jungle-hsl.css -o jungle-hsl.shadow.min.css",
+    "lib:brand": "postcss src/props.brand.css -o brand.min.css"
   },
   "devDependencies": {
     "ava": "^3.15.0",

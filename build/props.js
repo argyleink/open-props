@@ -17,6 +17,7 @@ import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
+import Brand from '../src/props.brand.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
@@ -145,6 +146,11 @@ buildPropsStylesheet({
 buildPropsStylesheet({
   filename: pfx + 'props.colors-oklch-hues.css', 
   props: ColorHues}, 
+  {selector, prefix}
+)
+
+buildPropsStylesheet(
+  {filename: pfx + 'props.brand.css', props: Brand},
   {selector, prefix}
 )
 
