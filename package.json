@@ -117,6 +117,7 @@
     "./yellow": "./yellow.min.css",
     "./yellow-hsl": "./yellow-hsl.min.css",
     "./zindex": "./zindex.min.css",
+    "./brand": "./brand.min.css",
     "./shadow/style": "./open-props.shadow.min.css",
     "./shadow/normalize": "./normalize.shadow.min.css",
     "./shadow/animations": "./animations.shadow.min.css",
