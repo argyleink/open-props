@@ -8,4 +8,3 @@ import '/js/scrollspy.js'
 import '/js/select.js'
 
 import '/js/color-copy.js'
-import '/js/brand-colors.js'

@@ -5,7 +5,7 @@
 @import "../src/props.gray-hsl.css";
 @import "../src/props.masks.edges.css";
 @import "../src/props.masks.corner-cuts.css";
-@import "../src/props.brand.css";
+@import "../src/props.brand-colors.css";
 
 @import "./syntax-highlight.css";
 @import "./color-copy.css";
