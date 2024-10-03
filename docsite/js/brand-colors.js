@@ -1,4 +1,4 @@
-import brandProps from '../../src/props.brand.js'
+import brandProps from '../../src/props.brand-colors.js'
 
 const brandColors = document.querySelector('#brand-colors')
 
