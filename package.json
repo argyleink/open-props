@@ -174,7 +174,7 @@
     "./tokens": "./open-props.tokens.json",
     "./design-tokens": "./open-props.tokens.json",
     "./style-dictionary-tokens": "./open-props.style-dictionary-tokens.json",
-    "./postcss/brand-colors": "./src/extra/brand-colors.css",
+    "./postcss/brand": "./src/extra/brand.css",
     "./postcss/theme": "./src/extra/theme.css",
     "./postcss/theme-dark": "./src/extra/theme-dark.css",
     "./postcss/theme-light": "./src/extra/theme-light.css",
