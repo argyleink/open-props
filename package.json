@@ -117,7 +117,7 @@
     "./yellow": "./yellow.min.css",
     "./yellow-hsl": "./yellow-hsl.min.css",
     "./zindex": "./zindex.min.css",
-    "./brand": "./brand.min.css",
+    "./brand-colors": "./brand-colors.min.css",
     "./shadow/style": "./open-props.shadow.min.css",
     "./shadow/normalize": "./normalize.shadow.min.css",
     "./shadow/animations": "./animations.shadow.min.css",
@@ -313,7 +313,7 @@
     "shadow:colors:camo-hsl": "postcss src/shadow.props.camo-hsl.css -o camo-hsl.shadow.min.css",
     "shadow:colors:jungle": "postcss src/shadow.props.jungle.css -o jungle.shadow.min.css",
     "shadow:colors:jungle-hsl": "postcss src/shadow.props.jungle-hsl.css -o jungle-hsl.shadow.min.css",
-    "lib:brand": "postcss src/props.brand.css -o brand.min.css"
+    "lib:brand-colors": "postcss src/props.brand-colors.css -o brand-colors.min.css"
   },
   "devDependencies": {
     "ava": "^3.15.0",
