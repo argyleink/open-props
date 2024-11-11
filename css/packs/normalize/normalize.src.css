@@ -334,6 +334,7 @@
 }
 
 :where(abbr) {
+	cursor: help;
 	text-decoration-color: var(--blue-5, #339af0);
 }
 
