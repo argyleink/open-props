@@ -3,7 +3,7 @@
 		box-shadow: 0 0 0 0 oklch(70% 100% var(--palette-hue) / 80%);
 	}
 	to {
-		box-shadow: 0 0 0 25pxoklch (70% 100% var(--palette-hue) / 0%);
+		box-shadow: 0 0 0 25px oklch(70% 100% var(--palette-hue) / 0%);
 	}
 }
 
