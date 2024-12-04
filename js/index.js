@@ -1,5 +1,6 @@
 import Animations from './motion/animations.js'
 import Sizes from './sizes.js'
+import NegativeSizes from './packs/negative-sizes.js'
 import ColorsHex from './color/colors.hex.js'
 import ColorsHSL from './color/colors.hsl.js'
 import Palette from './color/palette.oklch.js'
@@ -19,6 +20,7 @@ import MaskCornerCuts from './masks/corner-cuts.js'
 export default {
 	Animations,
 	Sizes,
+	NegativeSizes,
 	ColorsHex,
 	ColorsHSL,
 	Palette,
