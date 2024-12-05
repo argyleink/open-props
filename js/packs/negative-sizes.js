@@ -35,16 +35,16 @@ export const NegativeRelative = [
 ]
 
 export const NegativeFluid = [
-	'clamp(-1rem, -1vw, -.5rem)',
-	'clamp(-1.5rem, -2vw, -1rem)',
-	'clamp(-2rem, -3vw, -1.5rem)',
-	'clamp(-3rem, -4vw, -2rem)',
-	'clamp(-5rem, -5vw, -4rem)',
-	'clamp(-7.5rem, -7vw, -5rem)',
-	'clamp(-10rem, -10vw, -7.5rem)',
-	'clamp(-15rem, -20vw, -10rem)',
-	'clamp(-20rem, -30vw, -15rem)',
-	'clamp(-30rem, -40vw, -20rem)',
+	'clamp(-1rem, -1vi, -.5rem)',
+	'clamp(-1.5rem, -2vi, -1rem)',
+	'clamp(-2rem, -3vi, -1.5rem)',
+	'clamp(-3rem, -4vi, -2rem)',
+	'clamp(-5rem, -5vi, -4rem)',
+	'clamp(-7.5rem, -7vi, -5rem)',
+	'clamp(-10rem, -10vi, -7.5rem)',
+	'clamp(-15rem, -20vi, -10rem)',
+	'clamp(-20rem, -30vi, -15rem)',
+	'clamp(-30rem, -40vi, -20rem)',
 ]
 
 export default {

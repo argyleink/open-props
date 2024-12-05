@@ -1,12 +1,12 @@
 :where(:root) {
-	--size-fluid-1-: clamp(-1rem, -1vw, -0.5rem);
-	--size-fluid-2-: clamp(-1.5rem, -2vw, -1rem);
-	--size-fluid-3-: clamp(-2rem, -3vw, -1.5rem);
-	--size-fluid-4-: clamp(-3rem, -4vw, -2rem);
-	--size-fluid-5-: clamp(-5rem, -5vw, -4rem);
-	--size-fluid-6-: clamp(-7.5rem, -7vw, -5rem);
-	--size-fluid-7-: clamp(-10rem, -10vw, -7.5rem);
-	--size-fluid-8-: clamp(-15rem, -20vw, -10rem);
-	--size-fluid-9-: clamp(-20rem, -30vw, -15rem);
-	--size-fluid-10-: clamp(-30rem, -40vw, -20rem);
+	--size-fluid-1-: clamp(-1rem, -1vi, -0.5rem);
+	--size-fluid-2-: clamp(-1.5rem, -2vi, -1rem);
+	--size-fluid-3-: clamp(-2rem, -3vi, -1.5rem);
+	--size-fluid-4-: clamp(-3rem, -4vi, -2rem);
+	--size-fluid-5-: clamp(-5rem, -5vi, -4rem);
+	--size-fluid-6-: clamp(-7.5rem, -7vi, -5rem);
+	--size-fluid-7-: clamp(-10rem, -10vi, -7.5rem);
+	--size-fluid-8-: clamp(-15rem, -20vi, -10rem);
+	--size-fluid-9-: clamp(-20rem, -30vi, -15rem);
+	--size-fluid-10-: clamp(-30rem, -40vi, -20rem);
 }
