@@ -1,0 +1,6 @@
+:where(:root) {
+	--font-size-fluid-0-: calc(-1 * var(--font-size-fluid-0));
+	--font-size-fluid-1-: calc(-1 * var(--font-size-fluid-1));
+	--font-size-fluid-2-: calc(-1 * var(--font-size-fluid-2));
+	--font-size-fluid-3-: calc(-1 * var(--font-size-fluid-3));
+}
