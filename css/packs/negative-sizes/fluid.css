@@ -1,12 +1,6 @@
 :where(:root) {
-	--size-fluid-1-: clamp(-1rem, -1vi, -0.5rem);
-	--size-fluid-2-: clamp(-1.5rem, -2vi, -1rem);
-	--size-fluid-3-: clamp(-2rem, -3vi, -1.5rem);
-	--size-fluid-4-: clamp(-3rem, -4vi, -2rem);
-	--size-fluid-5-: clamp(-5rem, -5vi, -4rem);
-	--size-fluid-6-: clamp(-7.5rem, -7vi, -5rem);
-	--size-fluid-7-: clamp(-10rem, -10vi, -7.5rem);
-	--size-fluid-8-: clamp(-15rem, -20vi, -10rem);
-	--size-fluid-9-: clamp(-20rem, -30vi, -15rem);
-	--size-fluid-10-: clamp(-30rem, -40vi, -20rem);
+	--font-size-fluid-0-: calc(-1 * var(--font-size-fluid-0));
+	--font-size-fluid-1-: calc(-1 * var(--font-size-fluid-1));
+	--font-size-fluid-2-: calc(-1 * var(--font-size-fluid-2));
+	--font-size-fluid-3-: calc(-1 * var(--font-size-fluid-3));
 }
