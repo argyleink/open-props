@@ -130,6 +130,7 @@
 :where(select) {
   padding-inline: var(--size-relative-4) 0;
   padding-block: .75ch;
+  field-sizing: content;
 }
 
 :where(textarea, select, input:not([type="button"],[type="submit"],[type="reset"])) {
@@ -137,7 +138,7 @@
   border-radius: var(--radius-2);
 }
 
-:where(textarea) { resize: block }
+:where(textarea) { resize: block; field-sizing: content }
 
 :where(input[type="checkbox"], input[type="radio"]) {
   block-size: var(--size-3);
