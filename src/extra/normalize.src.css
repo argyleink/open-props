@@ -138,7 +138,12 @@
   border-radius: var(--radius-2);
 }
 
-:where(textarea) { resize: block; field-sizing: content }
+:where(textarea) { 
+  resize: block;
+  field-sizing: content;
+  min-inline-size: var(--size-content-1);
+  min-block-size: 2lh;
+}
 
 :where(input[type="checkbox"], input[type="radio"]) {
   block-size: var(--size-3);
