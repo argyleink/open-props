@@ -101,6 +101,10 @@
   }
 }
 
+:where(.btn:is(a)) {
+  text-decoration: none;
+}
+
 /* adaptive indigo text */
 :where([type="submit"], form button:not([type],[disabled])) {
   --_text: var(--_accent, var(--link));
