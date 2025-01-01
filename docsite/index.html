@@ -1921,6 +1921,51 @@
           </div>
         </div>
       </details>
+
+      <details>
+        <summary>Color Theming 201</summary>
+
+        <div class="just-for-gap">
+          <header>
+            <h3>1) Theme switch</h3>
+            <p>Color theming 101 shows how open-props implements various themes. With the switch imports, you can customize the appearance of a page by importing the props respectively</p>
+            <p>Similar to how light/dark mode behaviours are controlled with a toggle switch, commonly used with javascript for persistence of user's preference either to localStorage or a cookie on page reload.</p>
+            <p><b>See it in action:</b> <a href="https://codepen.io/argyleink/pen/JjqYdgr">here</a></p>
+          </header>
+
+          <div>
+            <div>
+              <pre class="language-css">
+                <code>
+                  @import "https://unpkg.com/open-props/theme.light.switch.min.css";
+                  @import "https://unpkg.com/open-props/theme.dark.switch.min.css";
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <header>
+            <h3>2) Section theme</h3>
+            <p>When you need to control the appearance of a specific section, you can use the same imports in a slightly different manner</p>
+            <p><b>Play with it</b> <a href="https://codepen.io/argyleink/pen/RwEWRwR">here</a></p>
+          </header>
+
+          <div>
+            <pre class="language-css">
+              <code>
+                  @import "https://unpkg.com/open-props/theme.light.switch.min.css";
+                  @import "https://unpkg.com/open-props/theme.dark.switch.min.css";
+
+                  /* classes toggle the adaptive props */
+                  .dark, .light {
+                    color: var(--text-1);
+                    background: var(--surface-1);
+                  }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section id="gradients" class="just-stretch">
