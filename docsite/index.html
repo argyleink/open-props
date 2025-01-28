@@ -1713,7 +1713,7 @@
       </article>
 
       <details>
-        <summary>Color Theming 101</summary>
+        <summary>Color 101: Themes</summary>
 
         <div class="just-for-gap">
           <header>
@@ -1918,6 +1918,50 @@
                 }
               </code></pre>
             </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Color 201: Normalize Theme Switch</summary>
+
+        <div class="just-for-gap">
+          <header>
+            <h3>1) Normalize Theme Switch</h3>
+            <pre class="language-css">
+              <code>
+                @import "https://unpkg.com/open-props/theme.light.switch.min.css";
+                @import "https://unpkg.com/open-props/theme.dark.switch.min.css";
+              </code>
+            </pre>
+            <p>The Open Props <a href="https://codepen.io/argyleink/pen/KKvRORE">normalize.css</a> has light and dark built in, but it only changes with the media query / operating system. If you want users to be able to change this, you'll need <b>Open Props switch imports</b>. These have the same theme values from normalize, but scoped to selectors.</p>
+
+            <p><b>Light Selectors:</b> <code>.light</code> | <code></code>.light-theme</code> | <code>data-theme="light"</code></p>
+            <p><b>Dark Selectors:</b> <code>.dark</code> | <code>.dark-theme</code> | <code>data-theme="dark"</code></p>
+
+            <p>This allows you to apply a light or dark theme to the page or a portion of the page using the selectors imported.</p>
+            <p><b>See it in action:</b> <a href="https://codepen.io/argyleink/pen/JjqYdgr">here</a></p>
+          </header>
+
+          <header>
+            <h3>2) Section theme</h3>
+            <p>When you need to control the appearance of a specific section, use any of the selectors from the switch imports, like <code>.dark</code> or <code>.light</code>, and apply them to HTML elements.</p>
+            <p><b>Try it</b> <a href="https://codepen.io/argyleink/pen/RwEWRwR">here</a></p>
+          </header>
+
+          <div>
+            <pre class="language-css">
+              <code>
+                  @import "https://unpkg.com/open-props/theme.light.switch.min.css";
+                  @import "https://unpkg.com/open-props/theme.dark.switch.min.css";
+
+                  /* classes toggle the adaptive props */
+                  .dark, .light {
+                    color: var(--text-1);
+                    background: var(--surface-1);
+                  }
+              </code>
+            </pre>
           </div>
         </div>
       </details>
