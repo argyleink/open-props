@@ -351,11 +351,7 @@
 
 :where(table tr:hover td),
 :where(tbody tr:nth-child(even):hover td) {
-  background-color: var(--gray-10);
-
-  @media (prefers-color-scheme: light) {
-    background-color: white;
-  }
+  background-color: var(--surface-3);
 }
 
 :where(table > caption) {
