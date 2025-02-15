@@ -179,6 +179,7 @@
     "./postcss/theme-dark": "./src/extra/theme-dark.css",
     "./postcss/theme-light": "./src/extra/theme-light.css",
     "./utilities": "./src/extra/utilities.css",
+    "./preset-unocss": "./src/presets/unocss/index.js",
     "./*": "./*"
   },
   "browserslist": [
