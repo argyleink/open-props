@@ -32,6 +32,16 @@ ${dark_propsMeta}
 }`
   }
 
+// Add @supports block to gradients
+  if (filename.includes('gradients')) {
+    appendedMeta += `
+@supports (background: linear-gradient(to right in oklab, #000, #fff)) {
+  ${selector} {
+    --space: in oklab;
+  }
+}`;
+  }  
+
   file.write(`${selector} {\n`)
 
   Object.entries(props).forEach(([prop, val]) => {
