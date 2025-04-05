@@ -37,7 +37,7 @@ ${dark_propsMeta}
     appendedMeta += `
 @supports (background: linear-gradient(to right in oklab, #000, #fff)) {
   ${selector} {
-    --space: in oklab;
+    --gradient-space: in oklab;
   }
 }`;
   }  
