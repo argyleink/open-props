@@ -2,6 +2,7 @@ import * as Colors from '../src/props.colors.js'
 
 // Mapping of CSS variable names to dictionary keys
 const dictionaryMap = {
+  "size-px":             "px",
   "size-relative":       "relative",
   "size-fluid":          "fluid",
   "size-header":         "header",

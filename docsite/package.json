@@ -11,8 +11,8 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "postcss-preset-env": "6.7.x",
-    "vite": "2.6.1"
+    "postcss-preset-env": "10.1.5",
+    "vite": "6.2.5"
   },
   "dependencies": {
     "roving-ux": "^1.0.5"

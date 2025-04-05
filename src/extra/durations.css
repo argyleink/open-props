@@ -1,4 +1,29 @@
 :where(html) {
+
+    /* Animation duration based on https://design.brainly.com/8adfd5f36/p/091f75-ux-motion */
+    --duration-instant:    0ms;    /* e.g. text change */
+    --duration-quick-1:    80ms;   /* e.g. checkbox, radio, hover */
+    --duration-quick-2:    120ms;  /* e.g. toggle, tab, chip, color, fade */
+    --duration-moderate-1: 180ms;  /* e.g. dropdown, tooltip */
+    --duration-moderate-2: 260ms;  /* e.g. modal, toast, dialog, notification */
+    --duration-gentle-1:   320ms;  /* e.g. bottom sheet, card expand */
+    --duration-gentle-2:   420ms;  /* e.g. advanced animations */
+
+    /* 
+     * Calculated animation duration based on https://design.brainly.com/8adfd5f36/p/091f75-ux-motion/t/page-091f75-75547432-5018fa-12
+     * Demo: https://codepen.io/T3sT3ro/pen/RNwRLWx
+     * unitless 
+     */
+    --animated-element-distance: 0;
+    --animated-element-width:    0;
+    --animated-element-height:   0;
+    
+    /* Calculated animation duration in milliseconds */
+    --duration-calculated: calc(((0.5  * var(--animated-element-distance, 0)) +
+                                 (0.35 * var(--animated-element-width, 0)) +
+                                 (0.3  * var(--animated-element-height, 0))) * 1ms);
+
+    /* Common time units */
     --minute:     60s;
     --hour:       calc( 60 * var(--minute));
     --day:        calc( 24 * var(--hour));
@@ -17,6 +42,7 @@
     --work-week: calc( 5 * var(--day));
 
     --blink:           .1s;
+    --flinch:          .3s
     --sneeze:          .5s;
     --brief-moment:    15s;
     --pause:           10s;
