@@ -7,3 +7,4 @@ src/shadow.*.css
 *.json
 *.ts
 *.d.ts
+.idea
