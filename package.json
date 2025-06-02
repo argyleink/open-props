@@ -217,6 +217,7 @@
     "lib:zindex": "postcss src/props.zindex.css -o zindex.min.css",
     "lib:masks:edges": "postcss src/props.masks.edges.css -o masks.edges.min.css",
     "lib:masks:cornercuts": "postcss src/props.masks.corner-cuts.css -o masks.corner-cuts.min.css",
+    "lib:container": "postcss src/props.container.css -o container.min.css",
     "lib:colors": "postcss src/props.colors.css -o colors.min.css",
     "lib:colors:oklch-hues": "postcss src/props.colors-oklch-hues.css -o oklch-hues.min.css",
     "lib:colors-hsl": "postcss src/props.colors-hsl.css -o colors-hsl.min.css",
