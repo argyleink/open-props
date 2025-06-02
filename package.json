@@ -271,6 +271,7 @@
     "shadow:shadows": "postcss src/shadow.props.shadows.css -o shadows.shadow.min.css",
     "shadow:sizes": "postcss src/shadow.props.sizes.css -o sizes.shadow.min.css",
     "shadow:zindex": "postcss src/shadow.props.zindex.css -o zindex.shadow.min.css",
+    "shadow:container": "postcss src/shadow.props.container.css -o container.shadow.min.css",
     "shadow:colors": "postcss src/shadow.props.colors.css -o colors.shadow.min.css",
     "shadow:colors:oklch-hues": "postcss src/shadow.props.colors-oklch-hues.css -o oklch-hues.shadow.min.css",
     "shadow:colors-hsl": "postcss src/shadow.props.colors-hsl.css -o colors-hsl.shadow.min.css",

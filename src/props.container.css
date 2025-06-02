@@ -1,121 +1,129 @@
 :where(html) {
-
-  /* XXS */
-
   --is-xxs-only: false;
-  @media screen and (min-width: 0) and (max-width: 240px) {
+  --is-xxs-n-above: false;
+  --is-xxs-n-below: false;
+  --is-xs-only: false;
+  --is-xs-n-above: false;
+  --is-xs-n-below: false;
+  --is-sm-only: false;
+  --is-sm-n-above: false;
+  --is-sm-n-below: false;
+  --is-md-only: false;
+  --is-md-n-above: false;
+  --is-md-n-below: false;
+  --is-lg-only: false;
+  --is-lg-n-above: false;
+  --is-lg-n-below: false;
+  --is-xl-only: false;
+  --is-xl-n-above: false;
+  --is-xl-n-below: false;
+  --is-xxl-only: false;
+  --is-xxl-n-above: false;
+  --is-xxl-n-below: false;
+}
+
+@media screen and (min-width: 0) and (max-width: 240px) {
+  :where(html) {
     --is-xxs-only: true;
   }
-
-  --is-xxs-n-above: false;
-  @media screen and (min-width: 241px) {
+}
+@media screen and (min-width: 241px) {
+  :where(html) {
     --is-xxs-n-above: true;
   }
-
-  --is-xxs-n-below: false;
-  @media screen and (max-width: 240px) {
+}
+@media screen and (max-width: 240px) {
+  :where(html) {
     --is-xxs-n-below: true;
   }
-
-  /* XS */
-
-  --is-xs-only: false;
-  @media screen and (min-width: 241px) and (max-width: 360px) {
+}
+@media screen and (min-width: 241px) and (max-width: 360px) {
+  :where(html) {
     --is-xs-only: true;
   }
-
-  --is-xs-n-above: false;
-  @media screen and (min-width: 361px) {
+}
+@media screen and (min-width: 361px) {
+  :where(html) {
     --is-xs-n-above: true;
   }
-
-  --is-xs-n-below: false;
-  @media screen and (max-width: 360px) {
+}
+@media screen and (max-width: 360px) {
+  :where(html) {
     --is-xs-n-below: true;
   }
-
-  /* SM */
-
-  --is-sm-only: false;
-  @media screen and (min-width: 361px) and (max-width: 480px) {
+}
+@media screen and (min-width: 361px) and (max-width: 480px) {
+  :where(html) {
     --is-sm-only: true;
   }
-
-  --is-sm-n-above: false;
-  @media screen and (min-width: 481px) {
+}
+@media screen and (min-width: 481px) {
+  :where(html) {
     --is-sm-n-above: true;
   }
-
-  --is-sm-n-below: false;
-  @media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 480px) {
+  :where(html) {
     --is-sm-n-below: true;
   }
-
-  /* MD */
-
-  --is-md-only: false;
-  @media screen and (min-width: 481px) and (max-width: 768px) {
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :where(html) {
     --is-md-only: true;
   }
-
-  --is-md-n-above: false;
-  @media screen and (min-width: 769px) {
+}
+@media screen and (min-width: 769px) {
+  :where(html) {
     --is-md-n-above: true;
   }
-
-  --is-md-n-below: false;
-  @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+  :where(html) {
     --is-md-n-below: true;
   }
-
-  /* LG */
-
-  --is-lg-only: false;
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  :where(html) {
     --is-lg-only: true;
   }
-
-  --is-lg-n-above: false;
-  @media screen and (min-width: 1025px) {
+}
+@media screen and (min-width: 1025px) {
+  :where(html) {
     --is-lg-n-above: true;
   }
-
-  --is-lg-n-below: false;
-  @media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 1024px) {
+  :where(html) {
     --is-lg-n-below: true;
   }
-
-  /* XL */
-
-  --is-xl-only: false;
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  :where(html) {
     --is-xl-only: true;
   }
-
-  --is-xl-n-above: false;
-  @media screen and (min-width: 1441px) {
+}
+@media screen and (min-width: 1441px) {
+  :where(html) {
     --is-xl-n-above: true;
   }
-
-  --is-xl-n-below: false;
-  @media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1440px) {
+  :where(html) {
     --is-xl-n-below: true;
   }
-
-  /* XXL */
-
-  --is-xxl-only: false;
-  @media screen and (min-width: 1441px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1441px) {
+  :where(html) {
     --is-xxl-only: true;
   }
-
-  --is-xxl-n-above: false;
-  @media screen and (min-width: 1921px) {
+}
+@media screen and (min-width: 1441px) {
+  :where(html) {
     --is-xxl-n-above: true;
   }
-
-  --is-xxl-n-below: false;
-  @media screen and (max-width: 1920px) {
+}
+@media screen and (max-width: 1440px) {
+  :where(html) {
     --is-xxl-n-below: true;
   }
 }

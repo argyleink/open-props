@@ -7,6 +7,7 @@ import * as ColorsHSL from '../src/props.colors-hsl.js'
 import ColorsOKLCH from '../src/props.colors-oklch.js'
 import ColorsOKLCHgray from '../src/props.gray-oklch.js'
 import ColorHues from '../src/props.colors-oklch-hues.js'
+import Container from '../src/props.container.js'
 import Fonts from '../src/props.fonts.js'
 import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
@@ -39,6 +40,7 @@ const mainbundle = {
   [`${pfx}props.shadows.css`]: Shadows,
   [`${pfx}props.aspects.css`]: Aspects,
   [`${pfx}props.colors.css`]: Colors.default,
+  [`${pfx}props.container.css`]: Container,
   // [`${pfx}props.svg.css`]: SVG,
   [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,
@@ -151,6 +153,11 @@ buildPropsStylesheet({
 
 buildPropsStylesheet(
   {filename: pfx + 'props.brand-colors.css', props: BrandColors},
+  {selector, prefix}
+)
+
+buildPropsStylesheet(
+  {filename: pfx + 'props.container.css', props: Container},
   {selector, prefix}
 )
 

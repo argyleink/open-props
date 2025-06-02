@@ -62,6 +62,15 @@ ${dark_propsMeta}
     file.write(`  ${prop}: ${val};\n`)
   })
 
+  if (filename.includes('container')) {
+    Object.entries(props).forEach(([prop, val]) => {
+      if (prop.includes('-@') && typeof val === 'string') {
+        const baseProp = prop.substring(0, prop.lastIndexOf('-@'));
+        appendedMeta += `\n${val} {\n  ${selector} {\n    ${baseProp}: true;\n  }\n}`
+      }
+    })
+  }
+
   if (filename.includes('animations')) {
     let dark_props = Object.entries(props)
       .filter(([prop, val]) =>
