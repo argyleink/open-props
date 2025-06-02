@@ -2,6 +2,7 @@ import Animations from './props.animations.js'
 import Sizes from './props.sizes.js'
 import Colors from './props.colors.js'
 import ColorsHSL from './props.colors-hsl.js'
+import Container from "./props.container.js";
 import Fonts from './props.fonts.js'
 import Borders from './props.borders.js'
 import Aspects from './props.aspects.js'
@@ -31,6 +32,7 @@ const OpenProps = mapToObjectNotation({
   ...Sizes,
   ...Colors,
   ...ColorsHSL,
+  ...Container,
   ...Fonts,
   ...Borders,
   ...Aspects,
