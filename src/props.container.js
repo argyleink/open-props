@@ -1,0 +1,25 @@
+export const Container = {
+  '--is-xxs-only': false,
+  '--is-xxs-n-above': false,
+  '--is-xxs-n-below': false,
+  '--is-xs-only': false,
+  '--is-xs-n-above': false,
+  '--is-xs-n-below': false,
+  '--is-sm-only': false,
+  '--is-sm-n-above': false,
+  '--is-sm-n-below': false,
+  '--is-md-only': false,
+  '--is-md-n-above': false,
+  '--is-md-n-below': false,
+  '--is-lg-only': false,
+  '--is-lg-n-above': false,
+  '--is-lg-n-below': false,
+  '--is-xl-only': false,
+  '--is-xl-n-above': false,
+  '--is-xl-n-below': false,
+  '--is-xxl-only': false,
+  '--is-xxl-n-above': false,
+  '--is-xxl-n-below': false,
+}
+
+export default Container
