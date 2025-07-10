@@ -108,4 +108,25 @@
     0.908 72.4%, 0.885, 0.878, 0.885, 0.908 79.4%, 1 83%, 0.954 85.5%, 0.943,
     0.939, 0.943, 0.954 90.5%, 1 93%, 0.977, 0.97, 0.977, 1
   );
+  --ease-circ-in: cubic-bezier(.6,.04,.98,.335);
+  --ease-circ-in-out: cubic-bezier(.785,.135,.15,.86);
+  --ease-circ-out: cubic-bezier(.075,.82,.165,1);
+  --ease-cubic-in: cubic-bezier(.55,.055,.675,.19);
+  --ease-cubic-in-out: cubic-bezier(.645,.045,.355,1);
+  --ease-cubic-out: cubic-bezier(.215,.61,.355,1);
+  --ease-expo-in: cubic-bezier(.95,.05,.795,.035);
+  --ease-expo-in-out: cubic-bezier(1,0,0,1);
+  --ease-expo-out: cubic-bezier(.19,1,.22,1);
+  --ease-quad-in: cubic-bezier(.55,.085,.68,.53);
+  --ease-quad-in-out: cubic-bezier(.455,.03,.515,.955);
+  --ease-quad-out: cubic-bezier(.25,.46,.45,.94);
+  --ease-quart-in: cubic-bezier(.895,.03,.685,.22);
+  --ease-quart-in-out: cubic-bezier(.77,0,.175,1);
+  --ease-quart-out: cubic-bezier(.165,.84,.44,1);
+  --ease-quint-in: cubic-bezier(.755,.05,.855,.06);
+  --ease-quint-in-out: cubic-bezier(.86,0,.07,1);
+  --ease-quint-out: cubic-bezier(.23,1,.32,1);
+  --ease-sine-in: cubic-bezier(.47,0,.745,.715);
+  --ease-sine-in-out: cubic-bezier(.445,.05,.55,.95);
+  --ease-sine-out: cubic-bezier(.39,.575,.565,1);
 }

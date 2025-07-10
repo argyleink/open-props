@@ -2520,7 +2520,7 @@
     <section id="easing">
       <header>
         <h2>Easing</h2>
-        <p>Five strengths for the classic <code class="language-css">ease</code>, <code class="language-css">ease-out</code>, <code class="language-css">ease-in</code>, and <code class="language-css">ease-in-out</code> timing functions. Plus some extra easings for mock elasticity and physics!</p>
+        <p>Five strengths for the classic <code class="language-css">ease</code>, <code class="language-css">ease-out</code>, <code class="language-css">ease-in</code>, and <code class="language-css">ease-in-out</code> timing functions. Plus some extra easings for mock elasticity and physics and the battle-tested Bézier curves from Robert Penner's easing equations!</p>
       </header>
       <div class="block-wrap">
         <div>
@@ -2540,6 +2540,15 @@
               --ease-bounce-{1-5}
 
               --ease-step-{1-5}
+
+              /* Robert Penner's easing equations */
+              --ease-circ-{in,out,in-out}
+              --ease-cubic-{in,out,in-out}
+              --ease-expo-{in,out,in-out}
+              --ease-quad-{in,out,in-out}
+              --ease-quart-{in,out,in-out}
+              --ease-quint-{in,out,in-out}
+              --ease-sine-{in,out,in-out}
 
               /* will be removed in v2 */
               --ease-elastic-{1-5}        /* deprecated; equal to elastic-out  */
@@ -2755,8 +2764,126 @@
             <div style="animation-timing-function: var(--ease-step-5)">ease-step-5</div>
           </div>
         </div>
-      </div>
 
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Circular</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-circ-in)">ease-circ-in</div>
+            <div style="animation-timing-function: var(--ease-circ-out)">ease-circ-out</div>
+            <div style="animation-timing-function: var(--ease-circ-in-out)">ease-circ-in-out</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Cubic</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-cubic-in)">ease-cubic-in</div>
+            <div style="animation-timing-function: var(--ease-cubic-out)">ease-cubic-out</div>
+            <div style="animation-timing-function: var(--ease-cubic-in-out)">ease-cubic-in-out</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Exponential</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-expo-in)">ease-expo-in</div>
+            <div style="animation-timing-function: var(--ease-expo-out)">ease-expo-out</div>
+            <div style="animation-timing-function: var(--ease-expo-in-out)">ease-expo-in-out</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Quadratic</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-quad-in)">ease-quad-in</div>
+            <div style="animation-timing-function: var(--ease-quad-out)">ease-quad-out</div>
+            <div style="animation-timing-function: var(--ease-quad-in-out)">ease-quad-in-out</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Quartic</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-quart-in)">ease-quart-in</div>
+            <div style="animation-timing-function: var(--ease-quart-out)">ease-quart-out</div>
+            <div style="animation-timing-function: var(--ease-quart-in-out)">ease-quart-in-out</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Quintic</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-quint-in)">ease-quint-in</div>
+            <div style="animation-timing-function: var(--ease-quint-out)">ease-quint-out</div>
+            <div style="animation-timing-function: var(--ease-quint-in-out)">ease-quint-in-out</div>
+          </div>
+        </div>
+
+        <div class="block-wrap">
+          <header class="animation-control-header">
+            <h5>Sinusoidal</h5>
+            <button class="play-button">
+              <svg viewBox="0 0 20 20">
+                <use href="#play-icon"/>
+                <use href="#pause-icon" class="hidden"/>
+              </svg>
+            </button>
+          </header>
+          <div class="ease-demo paused">
+            <div style="animation-timing-function: var(--ease-sine-in)">ease-sine-in</div>
+            <div style="animation-timing-function: var(--ease-sine-out)">ease-sine-out</div>
+            <div style="animation-timing-function: var(--ease-sine-in-out)">ease-sine-in-out</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="animations">
