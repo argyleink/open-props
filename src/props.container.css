@@ -1,0 +1,129 @@
+:where(html) {
+  --is-xxs-only: false;
+  --is-xxs-n-above: false;
+  --is-xxs-n-below: false;
+  --is-xs-only: false;
+  --is-xs-n-above: false;
+  --is-xs-n-below: false;
+  --is-sm-only: false;
+  --is-sm-n-above: false;
+  --is-sm-n-below: false;
+  --is-md-only: false;
+  --is-md-n-above: false;
+  --is-md-n-below: false;
+  --is-lg-only: false;
+  --is-lg-n-above: false;
+  --is-lg-n-below: false;
+  --is-xl-only: false;
+  --is-xl-n-above: false;
+  --is-xl-n-below: false;
+  --is-xxl-only: false;
+  --is-xxl-n-above: false;
+  --is-xxl-n-below: false;
+}
+
+@media screen and (min-width: 0) and (max-width: 240px) {
+  :where(html) {
+    --is-xxs-only: true;
+  }
+}
+@media screen and (min-width: 241px) {
+  :where(html) {
+    --is-xxs-n-above: true;
+  }
+}
+@media screen and (max-width: 240px) {
+  :where(html) {
+    --is-xxs-n-below: true;
+  }
+}
+@media screen and (min-width: 241px) and (max-width: 360px) {
+  :where(html) {
+    --is-xs-only: true;
+  }
+}
+@media screen and (min-width: 361px) {
+  :where(html) {
+    --is-xs-n-above: true;
+  }
+}
+@media screen and (max-width: 360px) {
+  :where(html) {
+    --is-xs-n-below: true;
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 480px) {
+  :where(html) {
+    --is-sm-only: true;
+  }
+}
+@media screen and (min-width: 481px) {
+  :where(html) {
+    --is-sm-n-above: true;
+  }
+}
+@media screen and (max-width: 480px) {
+  :where(html) {
+    --is-sm-n-below: true;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :where(html) {
+    --is-md-only: true;
+  }
+}
+@media screen and (min-width: 769px) {
+  :where(html) {
+    --is-md-n-above: true;
+  }
+}
+@media screen and (max-width: 768px) {
+  :where(html) {
+    --is-md-n-below: true;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  :where(html) {
+    --is-lg-only: true;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :where(html) {
+    --is-lg-n-above: true;
+  }
+}
+@media screen and (max-width: 1024px) {
+  :where(html) {
+    --is-lg-n-below: true;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  :where(html) {
+    --is-xl-only: true;
+  }
+}
+@media screen and (min-width: 1441px) {
+  :where(html) {
+    --is-xl-n-above: true;
+  }
+}
+@media screen and (max-width: 1440px) {
+  :where(html) {
+    --is-xl-n-below: true;
+  }
+}
+@media screen and (min-width: 1441px) {
+  :where(html) {
+    --is-xxl-only: true;
+  }
+}
+@media screen and (min-width: 1441px) {
+  :where(html) {
+    --is-xxl-n-above: true;
+  }
+}
+@media screen and (max-width: 1440px) {
+  :where(html) {
+    --is-xxl-n-below: true;
+  }
+}

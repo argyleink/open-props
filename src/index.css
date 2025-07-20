@@ -6,6 +6,7 @@
 @import 'props.shadows.css';
 @import 'props.aspects.css';
 @import 'props.colors.css';
+@import 'props.container.css';
 @import 'props.gradients.css';
 @import 'props.animations.css';
 @import 'props.borders.css';
