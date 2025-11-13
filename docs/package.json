@@ -14,7 +14,7 @@
 		"@astrojs/starlight": "^0.15.2",
 		"@astrojs/svelte": "^5.0.3",
 		"astro": "^4.1.1",
-		"color-name-list": "^10.19.0",
+		"color-name-list": "latest",
 		"colorjs.io": "^0.4.5",
 		"nearest-color": "^0.4.4",
 		"sharp": "^0.33.1",
