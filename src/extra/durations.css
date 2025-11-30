@@ -42,7 +42,7 @@
     --work-week: calc( 5 * var(--day));
 
     --blink:           .1s;
-    --flinch:          .3s
+    --flinch:          .3s;
     --sneeze:          .5s;
     --brief-moment:    15s;
     --pause:           10s;
