@@ -13,10 +13,6 @@ import Zindex from './props.zindex.js'
 import MaskEdges from './props.masks.edges.js'
 import MaskCornerCuts from './props.masks.corner-cuts.js'
 import Palette from './props.palette.js'
-import ColorsOKLCH from './props.colors-oklch.js'
-import ColorsOKLCHHues from './props.colors-oklch-hues.js'
-import GrayOKLCH from './props.gray-oklch.js'
-import BrandColors from './props.brand-colors.js'
 
 const camelize = text => {
   text = text.replace(/[-]+(.)?/g, (_, c) => c
@@ -47,10 +43,6 @@ const OpenProps = mapToObjectNotation({
   ...MaskEdges,
   ...MaskCornerCuts,
   ...Palette,
-  ...ColorsOKLCH,
-  ...ColorsOKLCHHues,
-  ...GrayOKLCH,
-  ...BrandColors,
 })
 
 export default OpenProps

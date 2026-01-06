@@ -13,7 +13,6 @@ import Aspects from '../src/props.aspects.js'
 import Easings from '../src/props.easing.js'
 import Gradients from '../src/props.gradients.js'
 import Shadows from '../src/props.shadows.js'
-import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
@@ -40,15 +39,10 @@ const mainbundle = {
   [`${pfx}props.shadows.css`]: Shadows,
   [`${pfx}props.aspects.css`]: Aspects,
   [`${pfx}props.colors.css`]: Colors.default,
-  // [`${pfx}props.svg.css`]: SVG,
   [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,
   [`${pfx}props.borders.css`]: Borders,
   [`${pfx}props.palette.css`]: Palette,
-  [`${pfx}props.colors-oklch.css`]: ColorsOKLCH,
-  [`${pfx}props.colors-oklch-hues.css`]: ColorHues,
-  [`${pfx}props.gray-oklch.css`]: ColorsOKLCHgray,
-  [`${pfx}props.brand-colors.css`]: BrandColors,
 }
 
 const individual_colors = Object.keys(Colors)
