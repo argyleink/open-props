@@ -18,6 +18,7 @@ import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 import BrandColors from '../src/props.brand-colors.js'
+import Palette from '../src/props.palette.js'
 
 import {buildPropsStylesheet} from './to-stylesheet.js'
 import {toTokens} from './to-tokens.js'
@@ -43,6 +44,11 @@ const mainbundle = {
   [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,
   [`${pfx}props.borders.css`]: Borders,
+  [`${pfx}props.palette.css`]: Palette,
+  [`${pfx}props.colors-oklch.css`]: ColorsOKLCH,
+  [`${pfx}props.colors-oklch-hues.css`]: ColorHues,
+  [`${pfx}props.gray-oklch.css`]: ColorsOKLCHgray,
+  [`${pfx}props.brand-colors.css`]: BrandColors,
 }
 
 const individual_colors = Object.keys(Colors)
@@ -111,8 +117,8 @@ CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
 
 // gen prop variants
 Object.entries({
-  ...mainbundle, 
-  ...individual_colors, 
+  ...mainbundle,
+  ...individual_colors,
   ...individual_colors_hsl,
   ...individuals,
 }).forEach(([filename, props]) => {
@@ -121,31 +127,31 @@ Object.entries({
 
 // gen color hsl main file
 buildPropsStylesheet({
-  filename: pfx + 'props.colors-hsl.css', 
-  props: ColorsHSL.default}, 
+  filename: pfx + 'props.colors-hsl.css',
+  props: ColorsHSL.default},
   {selector, prefix}
 )
 
 // gen color oklch files
 buildPropsStylesheet({
-  filename: pfx + 'props.colors-oklch.css', 
-  props: ColorsOKLCH}, 
+  filename: pfx + 'props.colors-oklch.css',
+  props: ColorsOKLCH},
   {
-    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    selector: useWhere === 'true' ? `:where(*)` : '*',
     prefix
   }
 )
 buildPropsStylesheet({
-  filename: pfx + 'props.gray-oklch.css', 
-  props: ColorsOKLCHgray}, 
+  filename: pfx + 'props.gray-oklch.css',
+  props: ColorsOKLCHgray},
   {
-    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    selector: useWhere === 'true' ? `:where(*)` : '*',
     prefix
   }
 )
 buildPropsStylesheet({
-  filename: pfx + 'props.colors-oklch-hues.css', 
-  props: ColorHues}, 
+  filename: pfx + 'props.colors-oklch-hues.css',
+  props: ColorHues},
   {selector, prefix}
 )
 

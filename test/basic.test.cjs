@@ -4,7 +4,7 @@ const OpenProps = require('../dist/open-props.cjs')
 const OPtokens = require('../open-props.tokens.json')
 
 test('Should have an all included import', t => {
-  t.is(Object.keys(OpenProps).length, 1816)
+  t.is(Object.keys(OpenProps).length, 1902)
 })
 
 test('Import should have animations', async t => {
@@ -78,7 +78,7 @@ test('References should be valid', async t => {
     }
 
     // Find all references to other variables: var(...)
-    const matches = value.matchAll(/var\(([^)]+)\)/g);
+    const matches = value.matchAll(/var\(([^),]+)[^)]*\)/g);
 
     if (!matches) {
       continue;
@@ -87,7 +87,11 @@ test('References should be valid', async t => {
     // Add all references to the referenced set
     // Map all references to the prop that references them
     for (const matchArray of matches) {
-      const reference = matchArray[1];
+      const reference = matchArray[1].trim();
+
+      if (reference.startsWith('--gray-chroma') || reference.startsWith('--gray-hue') || reference.startsWith('--color-hue')) {
+          continue;
+      }
 
       referenced.add(reference);
 

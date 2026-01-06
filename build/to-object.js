@@ -12,6 +12,11 @@ import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
+import Palette from '../src/props.palette.js'
+import ColorsOKLCH from '../src/props.colors-oklch.js'
+import ColorsOKLCHHues from '../src/props.colors-oklch-hues.js'
+import GrayOKLCH from '../src/props.gray-oklch.js'
+import BrandColors from '../src/props.brand-colors.js'
 
 import {mapToObjectNotation} from './utils.js'
 
@@ -31,5 +36,10 @@ export const toObject = () => {
     ...Zindex,
     ...MaskEdges,
     ...MaskCornerCuts,
+    ...Palette,
+    ...ColorsOKLCH,
+    ...ColorsOKLCHHues,
+    ...GrayOKLCH,
+    ...BrandColors,
   })
 }
