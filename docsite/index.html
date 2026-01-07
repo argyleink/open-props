@@ -1785,8 +1785,8 @@
 
           :root {
             --palette-hue: 270;
-            --palette-hue-rotate-by: -5;
-            --palette-chroma: 0.1;
+            --palette-hue-rotate-by: 1;
+            --palette-chroma: 0.9;
           }
         </code></pre>
       </div>
@@ -1874,7 +1874,10 @@
 
       <footer>
         <output class="code-output">
-          <pre id="paletteout" class="language-css"><code>:root {
+          <pre id="paletteout" class="language-css"><code>
+@import "open-props/palette";
+
+:root {
   --palette-hue: 270;
   --palette-hue-rotate-by: 1;
   --palette-chroma: .9;

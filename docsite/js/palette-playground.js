@@ -102,9 +102,9 @@ function updateSheet() {
   const hueName = hueNames[palette.hue]
   const hueValue = hueName ? `var(${hueName})` : palette.hue
 
-  const importStatement = hueName ? `@import "open-props/oklch-hues";\n\n` : ''
+  const importStatement = hueName ? `@import "open-props/oklch-hues";\n\n` : '\n'
 
-  const styles = `${importStatement}:root {
+  const styles = `@import "open-props/palette";\n${importStatement}:root {
   --palette-hue: ${hueValue};
   --palette-hue-rotate-by: ${palette.hueRotateBy};
   --palette-chroma: ${palette.chroma};
