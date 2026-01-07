@@ -214,16 +214,17 @@
       padding-block: .75ch;
       padding-inline: var(--size-relative-6);
 
-      & :where(svg) {
+      svg {
         flex-shrink: 0;
         block-size: var(--size-relative-7);
         inline-size: var(--size-relative-7);
+
+        * {
+          stroke: currentColor;
+          stroke-width: var(--border-size-2);
+        }
       }
 
-      & :where(svg *) {
-        stroke: currentColor;
-        stroke-width: var(--border-size-2);
-      }
     }
 
 
