@@ -67,7 +67,6 @@ function updateInputs() {
   paletteChroma.dispatchEvent(new Event('input'))
 }
 
-// palette options
 const palette = {
   hue: 270,
   hueRotateBy: 1,
