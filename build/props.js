@@ -19,13 +19,14 @@ import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 import BrandColors from '../src/props.brand-colors.js'
 
-import {buildPropsStylesheet} from './to-stylesheet.js'
-import {toTokens} from './to-tokens.js'
-import {toObject} from './to-object.js'
-import {toFigmaTokens} from './to-figmatokens.js'
-import {toStyleDictionary} from './to-style-dictionary.js'
+import { buildPropsStylesheet } from './to-stylesheet.js'
+import { toTokens } from './to-tokens.js'
+import { toResolver } from './to-resolver.js'
+import { toObject } from './to-object.js'
+import { toFigmaTokens } from './to-figmatokens.js'
+import { toStyleDictionary } from './to-style-dictionary.js'
 
-const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
+const [, , prefix = '', useWhere, customSubject = '', filePrefix = ''] = process.argv
 
 const subject = customSubject === '' ? 'html' : customSubject
 const selector = useWhere === 'true' ? `:where(${subject})` : subject
@@ -79,6 +80,12 @@ const designtokens = toTokens(jsonbundle)
 const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
 JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
+
+const resolver = toResolver(jsonbundle)
+const resolverStream = fs.createWriteStream('../open-props.resolver.json')
+resolverStream.end(JSON.stringify(resolver, null, 2))
+
+
 // gen style-dictionary tokens
 const styledictionarytokens = toStyleDictionary(jsonbundle)
 const StyleDictionaryTokens = fs.createWriteStream('../open-props.style-dictionary-tokens.json')
@@ -111,47 +118,51 @@ CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)
 
 // gen prop variants
 Object.entries({
-  ...mainbundle, 
-  ...individual_colors, 
+  ...mainbundle,
+  ...individual_colors,
   ...individual_colors_hsl,
   ...individuals,
 }).forEach(([filename, props]) => {
-  buildPropsStylesheet({filename, props}, {selector, prefix})
+  buildPropsStylesheet({ filename, props }, { selector, prefix })
 })
 
 // gen color hsl main file
 buildPropsStylesheet({
-  filename: pfx + 'props.colors-hsl.css', 
-  props: ColorsHSL.default}, 
-  {selector, prefix}
+  filename: pfx + 'props.colors-hsl.css',
+  props: ColorsHSL.default
+},
+  { selector, prefix }
 )
 
 // gen color oklch files
 buildPropsStylesheet({
-  filename: pfx + 'props.colors-oklch.css', 
-  props: ColorsOKLCH}, 
+  filename: pfx + 'props.colors-oklch.css',
+  props: ColorsOKLCH
+},
   {
-    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    selector: useWhere === 'true' ? `:where(*)` : '*',
     prefix
   }
 )
 buildPropsStylesheet({
-  filename: pfx + 'props.gray-oklch.css', 
-  props: ColorsOKLCHgray}, 
+  filename: pfx + 'props.gray-oklch.css',
+  props: ColorsOKLCHgray
+},
   {
-    selector: useWhere === 'true' ? `:where(*)` : '*', 
+    selector: useWhere === 'true' ? `:where(*)` : '*',
     prefix
   }
 )
 buildPropsStylesheet({
-  filename: pfx + 'props.colors-oklch-hues.css', 
-  props: ColorHues}, 
-  {selector, prefix}
+  filename: pfx + 'props.colors-oklch-hues.css',
+  props: ColorHues
+},
+  { selector, prefix }
 )
 
 buildPropsStylesheet(
-  {filename: pfx + 'props.brand-colors.css', props: BrandColors},
-  {selector, prefix}
+  { filename: pfx + 'props.brand-colors.css', props: BrandColors },
+  { selector, prefix }
 )
 
 // gen index.css
