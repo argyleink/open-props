@@ -48,7 +48,7 @@ const parseColor = (input) => {
 
 
 const parseDimension = (input) => {
-  const match = input.match(/^([\-\d.e]+)(px|rem)$/);
+  const match = input.match(/^([\-\d.e]+)(px|rem|em)$/);
   if (!match) {
     return;
   }
@@ -56,7 +56,7 @@ const parseDimension = (input) => {
     $type: 'dimension',
     $value: {
       value: Number.parseFloat(match[1]),
-      unit: match[2],
+      unit: match[2] === 'em' ? 'rem' : match[2],
     }
   };
 };
@@ -102,6 +102,56 @@ const parseVariable = (value) => {
 };
 
 
+const parseFontWeight = (value) => {
+  // Try font-weight detection (1-1000, but only specific common values)
+  const match = String(value).match(/^(\d+)$/);
+  if (match) {
+    const weight = Number.parseInt(match[1], 10);
+    // Only treat as font-weight if it's a common weight value
+    if (weight >= 100 && weight <= 900 && weight % 100 === 0) {
+      return {
+        $type: "fontWeight",
+        $value: weight,
+      };
+    }
+  }
+};
+
+
+const parseFontFamily = (value) => {
+  // Try font-family detection (contains commas outside of functions, or quotes)
+  // Check for commas but make sure they're not inside functions like cubic-bezier()
+  if (value.includes('"') || value.includes("'")) {
+    const families = value
+      .split(",")
+      .map((f) => f.trim().replace(/^["']|["']$/g, ""));
+    if (families.length > 1) {
+      return {
+        $type: "fontFamily",
+        $value: families,
+      };
+    } else if (families.length === 1) {
+      return {
+        $type: "fontFamily",
+        $value: families[0],
+      };
+    }
+  }
+  // Check for commas, but only if not part of a function
+  if (value.includes(",") && !value.includes("(")) {
+    const families = value
+      .split(",")
+      .map((f) => f.trim().replace(/^["']|["']$/g, ""));
+    if (families.length > 1) {
+      return {
+        $type: "fontFamily",
+        $value: families,
+      };
+    }
+  }
+};
+
+
 const excludedPrefixes = [
   // clamp()
   '--radius-conditional',
@@ -123,6 +173,7 @@ const excludedPrefixes = [
   '--size-content',
   // clamp()
   '--size-fluid',
+  '--font-size-fluid'
 ];
 
 export const toResolver = (props) => {
@@ -133,12 +184,14 @@ export const toResolver = (props) => {
       continue;
     }
     const value =
+      parseFontWeight(input) ??
       parseNumber(input) ??
       parseColor(input) ??
       parseDimension(input) ??
       parseRatio(input) ??
       parseCubicBezier(input) ??
-      parseVariable(input);
+      parseVariable(input) ??
+      parseFontFamily(input);
     if (value) {
       // strip leading --
       openPropsSource[key.slice(2)] = value

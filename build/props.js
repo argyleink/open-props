@@ -81,7 +81,16 @@ const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
 JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
 
-const resolver = toResolver(jsonbundle)
+const resolver = toResolver(Object.entries({
+  ...Colors.default,
+  ...Fonts,
+  ...Sizes,
+  ...Easings,
+  ...Zindex,
+  ...Aspects,
+  ...Gradients,
+  ...Borders,
+}).reverse())
 const resolverStream = fs.createWriteStream('../open-props.resolver.json')
 resolverStream.end(JSON.stringify(resolver, null, 2))
 

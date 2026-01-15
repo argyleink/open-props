@@ -64,7 +64,7 @@
   --mask-edge-zig-zag-top: conic-gradient(from 135deg at top,#0000,#000 1deg 90deg,#0000 91deg) 50% / 40px 100%;
   --mask-edge-zig-zag-bottom: conic-gradient(from -45deg at bottom,#0000,#000 1deg 90deg,#0000 91deg) 50% / 40px 100%;
   --mask-edge-zig-zag-left: conic-gradient(from 45deg at left,#0000,#000 1deg 90deg,#0000 91deg) 50% / 100% 40px;
-  --mask-edge-zig-zag-right: conic-gradient(from -135deg at right,#0000,#000 1deg 90deg,#0000 91deg 180deg) 50% / 100% 40px;
+  --mask-edge-zig-zag-right: conic-gradient(from -135deg at right,#0000,#000 1deg 90deg,#0000 91deg) 50% / 100% 40px;
   --mask-edge-zig-zag-horizontal: repeating-conic-gradient(from 45deg at 20px 50%,#0000,#000 1deg 90deg,#0000 91deg 180deg) -20px 50% / 100% 40px;
   --mask-edge-zig-zag-vertical: repeating-conic-gradient(from 135deg at 50% 20px,#0000,#000 1deg 90deg,#0000 91deg 180deg) 50% -20px / 40px 100%;
 }
