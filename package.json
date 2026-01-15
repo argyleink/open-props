@@ -170,6 +170,7 @@
     "./shadow/yellow": "./yellow.shadow.min.css",
     "./shadow/yellow-hsl": "./yellow-hsl.shadow.min.css",
     "./shadow/zindex": "./zindex.shadow.min.css",
+    "./resolver": "./open-props.resolver.json",
     "./json": "./open-props.tokens.json",
     "./tokens": "./open-props.tokens.json",
     "./design-tokens": "./open-props.tokens.json",
