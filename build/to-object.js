@@ -12,6 +12,7 @@ import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
+import Palette from '../src/props.palette.js'
 
 import {mapToObjectNotation} from './utils.js'
 
@@ -31,5 +32,6 @@ export const toObject = () => {
     ...Zindex,
     ...MaskEdges,
     ...MaskCornerCuts,
+    ...Palette,
   })
 }

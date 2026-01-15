@@ -18,6 +18,7 @@ import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
 import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 import BrandColors from '../src/props.brand-colors.js'
+import Palette from '../src/props.palette.js'
 
 import { buildPropsStylesheet } from './to-stylesheet.js'
 import { toTokens } from './to-tokens.js'
@@ -44,6 +45,7 @@ const mainbundle = {
   [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,
   [`${pfx}props.borders.css`]: Borders,
+  [`${pfx}props.palette.css`]: Palette,
 }
 
 const individual_colors = Object.keys(Colors)
@@ -129,16 +131,14 @@ Object.entries({
 // gen color hsl main file
 buildPropsStylesheet({
   filename: pfx + 'props.colors-hsl.css',
-  props: ColorsHSL.default
-},
-  { selector, prefix }
+  props: ColorsHSL.default},
+  {selector, prefix}
 )
 
 // gen color oklch files
 buildPropsStylesheet({
   filename: pfx + 'props.colors-oklch.css',
-  props: ColorsOKLCH
-},
+  props: ColorsOKLCH},
   {
     selector: useWhere === 'true' ? `:where(*)` : '*',
     prefix
@@ -146,8 +146,7 @@ buildPropsStylesheet({
 )
 buildPropsStylesheet({
   filename: pfx + 'props.gray-oklch.css',
-  props: ColorsOKLCHgray
-},
+  props: ColorsOKLCHgray},
   {
     selector: useWhere === 'true' ? `:where(*)` : '*',
     prefix
@@ -155,9 +154,8 @@ buildPropsStylesheet({
 )
 buildPropsStylesheet({
   filename: pfx + 'props.colors-oklch-hues.css',
-  props: ColorHues
-},
-  { selector, prefix }
+  props: ColorHues},
+  {selector, prefix}
 )
 
 buildPropsStylesheet(

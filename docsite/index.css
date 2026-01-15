@@ -6,9 +6,11 @@
 @import "../src/props.masks.edges.css";
 @import "../src/props.masks.corner-cuts.css";
 @import "../src/props.brand-colors.css";
+@import "../src/props.palette.css";
 
 @import "./syntax-highlight.css";
 @import "./color-copy.css";
+@import "./palette-playground.css";
 
 :root {
   --max-inline-body: calc(100vw - (var(--size-8) * 2));
@@ -29,9 +31,9 @@ body {
   display: grid;
   justify-items: flex-start;
   grid-template-columns:
-    var(--size-8) 
-    calc(100% - 2 * var(--size-8)) 
-    var(--size-8) 
+    var(--size-8)
+    calc(100% - 2 * var(--size-8))
+    var(--size-8)
   ;
 
   & > * {
@@ -45,9 +47,9 @@ body {
 
   @media (--md-n-below) {
     grid-template-columns:
-      var(--size-3) 
-      calc(100% - 2 * var(--size-3))  
-      var(--size-3) 
+      var(--size-3)
+      calc(100% - 2 * var(--size-3))
+      var(--size-3)
     ;
   }
 }
@@ -61,7 +63,7 @@ section {
   gap: var(--size-fluid-4);
   justify-items: flex-start;
   padding-block: var(--size-fluid-6);
-  
+
   &:not(:last-of-type) { border-block-end-width: var(--border-size-1) }
   &:nth-of-type(1n) { border-color: var(--orange-5) }
   &:nth-of-type(2n) { border-color: var(--red-5) }
@@ -184,7 +186,7 @@ section.hero {
   }
 
   @media (--lg-n-above) {
-    column-gap: var(--size-12);    
+    column-gap: var(--size-12);
   }
 }
 
@@ -237,7 +239,7 @@ section.hero {
   @media (--motionOK) {
     & > * {
       opacity: 0;
-      animation: 
+      animation:
         var(--animation-fade-in) forwards,
         var(--animation-slide-in-up) forwards;
       animation-timing-function: var(--ease-out-5);
@@ -290,7 +292,7 @@ blockquote {
     &.indigo {
       --_accent-1: var(--indigo-5);
       --_accent-2: var(--indigo-4);
-      
+
       [data-theme="light"] & {
         --_bg: var(--indigo-0);
         --_ink: var(--indigo-9);
@@ -327,11 +329,11 @@ pre[class*="language-"] {
   --glass-lightness: 100%;
   background: hsl(0 0% var(--glass-lightness) / 50%);
   backdrop-filter: blur(40px);
-  
+
   [data-theme="dark"] & {
     --glass-lightness: 0%;
   }
-  
+
   @supports not (backdrop-filter: blur(1px)) {
     background: hsl(0 0% var(--glass-lightness) / 90%);
   }
@@ -354,24 +356,24 @@ pre[class*="language-"] {
   position: relative;
   inline-size: 100%;
   max-inline-size: 100%;
-  
+
   & > * {
     grid-area: stack;
   }
-  
+
   & > img {
     position: absolute;
     inset: 0;
     transform: scaleY(-1);
   }
-  
+
   & > div {
     z-index: 1;
     padding-inline: var(--size-3);
     padding-block: var(--size-3) var(--size-4);
     display: grid;
     gap: var(--size-1);
-    
+
     [data-theme="dark"] & {
       text-shadow: 0 1px 0 hsl(0 0% 0% / 20%);
     }
@@ -458,7 +460,7 @@ pre[class*="language-"] {
   & > h4 {
     counter-reset: basic -1;
   }
-  
+
   & > h4::before {
     display: none;
   }
@@ -478,7 +480,7 @@ pre[class*="language-"] {
   [data-theme="light"] & {
     color: var(--indigo-7);
   }
-  
+
   & > span {
     line-height: .9;
     text-transform: uppercase;
@@ -505,7 +507,7 @@ pre[class*="language-"] {
 .op-icon-o {
   stroke: var(--indigo-4);
   a:hover & { stroke: var(--indigo-3); }
-  
+
   [data-theme="light"] & {
     stroke: var(--indigo-5);
   }
@@ -607,7 +609,7 @@ pre[class*="language-"] {
     scroll-snap-align: start;
     display: grid;
     justify-content: flex-start;
-    
+
     &::before {
       font-size: var(--font-size-fluid-1);
       background: var(--surface-1);
@@ -805,7 +807,7 @@ pre[class*="language-"] {
   }
 
   [data-theme="light"] & {
-    background-image: var(--gradient-18);    
+    background-image: var(--gradient-18);
   }
 
   @media (--md-n-above) {
@@ -916,7 +918,7 @@ pre[class*="language-"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--size-8);
-  
+
   @media (--md-n-below) {
     grid-template-columns: 1fr;
     justify-self: stretch;
@@ -931,19 +933,19 @@ pre[class*="language-"] {
     column-gap: var(--size-12);
   }
 
-  & > div:nth-of-type(1) svg { 
+  & > div:nth-of-type(1) svg {
     color: var(--purple-5);
     border-color: var(--purple-3);
   }
-  & > div:nth-of-type(2) svg { 
+  & > div:nth-of-type(2) svg {
     color: var(--orange-5);
     border-color: var(--orange-3);
   }
-  & > div:nth-of-type(3) svg { 
+  & > div:nth-of-type(3) svg {
     color: var(--indigo-5);
     border-color: var(--indigo-3);
   }
-  & > div:nth-of-type(4) svg { 
+  & > div:nth-of-type(4) svg {
     color: var(--red-5);
     border-color: var(--red-3);
   }
@@ -1032,7 +1034,7 @@ pre[class*="language-"] {
     background: var(--brand-bg-gradient) fixed;
     border-radius: var(--radius-round);
     position: relative;
-    
+
     @media (--motionOK) {
       animation: ping-pong 2s ease infinite;
     }
@@ -1090,7 +1092,7 @@ pre[class*="language-"] {
   display: flex;
   flex-flow: row wrap;
   gap: var(--size-5);
-  
+
   & > div {
     background: white;
     inline-size: var(--size-12);
@@ -1172,7 +1174,7 @@ pre[class*="language-"] {
     color: var(--green-3);
 
     [data-theme="light"] & {
-      color: var(--green-6);        
+      color: var(--green-6);
     }
   }
 
@@ -1180,7 +1182,7 @@ pre[class*="language-"] {
     color: var(--green-4);
 
     [data-theme="light"] & {
-      color: var(--green-7);        
+      color: var(--green-7);
     }
   }
 
@@ -1188,7 +1190,7 @@ pre[class*="language-"] {
     color: var(--green-5);
 
     [data-theme="light"] & {
-      color: var(--green-8);        
+      color: var(--green-8);
     }
   }
 }
@@ -1334,10 +1336,10 @@ input[type="range"] {
     appearance: none;
     block-size: var(--track-height);
     border-radius: 5ex;
-    background: 
+    background:
       linear-gradient(
-        to right, 
-        transparent var(--track-fill), 
+        to right,
+        transparent var(--track-fill),
         var(--surface-3) 0%
       ),
       var(--brand-bg-gradient) fixed;
@@ -1347,10 +1349,10 @@ input[type="range"] {
     appearance: none;
     block-size: var(--track-height);
     border-radius: 5ex;
-    background: 
+    background:
       linear-gradient(
-        to right, 
-        transparent var(--track-fill), 
+        to right,
+        transparent var(--track-fill),
         var(--surface-3) 0%
       ),
       var(--brand-bg-gradient) fixed;
@@ -1367,7 +1369,7 @@ input[type="range"] {
     border-radius: 50%;
     background: var(--brand-bg-gradient) fixed;
     box-shadow: 0 0 0 var(--thumb-highlight-size) var(--thumb-highlight-color);
-    
+
     @media (--motionOK) {
       & {
         transition: box-shadow .1s ease;
@@ -1402,7 +1404,7 @@ input[type="range"] {
   display: flex;
   gap: var(--size-2);
   flex-flow: row wrap;
-  
+
   & > div {
     place-items: center;
     display: inline-flex;
@@ -1423,7 +1425,7 @@ input[type="range"] {
 }
 
 .slide-fade-combo {
-  --animation-slide-down-fade-out: 
+  --animation-slide-down-fade-out:
     var(--animation-fade-out) forwards,
     var(--animation-slide-out-down);
   /* important required because JS is writing props into inline styles */
@@ -1432,14 +1434,14 @@ input[type="range"] {
 }
 
 .shake-fade-combo {
-  --animation-slide-left-fade-in-shake-y: 
+  --animation-slide-left-fade-in-shake-y:
     var(--animation-shake-y),
     var(--animation-fade-in),
     var(--animation-slide-in-left);
 }
 
 .push-out-combo {
-  --animation-push-out: 
+  --animation-push-out:
     var(--animation-scale-down),
     var(--animation-fade-out)
   ;
@@ -1481,7 +1483,7 @@ input[type="range"] {
   stroke: var(--nav-icon);
   stroke-width: 2px;
   transform-origin: center center;
-  transition: 
+  transition:
     transform .5s var(--ease-elastic-out-4),
     opacity var(--_opacity-dur) var(--ease-3);
 
