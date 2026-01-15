@@ -20,13 +20,14 @@ import MaskCornerCuts from '../src/props.masks.corner-cuts.js'
 import BrandColors from '../src/props.brand-colors.js'
 import Palette from '../src/props.palette.js'
 
-import {buildPropsStylesheet} from './to-stylesheet.js'
-import {toTokens} from './to-tokens.js'
-import {toObject} from './to-object.js'
-import {toFigmaTokens} from './to-figmatokens.js'
-import {toStyleDictionary} from './to-style-dictionary.js'
+import { buildPropsStylesheet } from './to-stylesheet.js'
+import { toTokens } from './to-tokens.js'
+import { toResolver } from './to-resolver.js'
+import { toObject } from './to-object.js'
+import { toFigmaTokens } from './to-figmatokens.js'
+import { toStyleDictionary } from './to-style-dictionary.js'
 
-const [,,prefix='',useWhere,customSubject='',filePrefix=''] = process.argv
+const [, , prefix = '', useWhere, customSubject = '', filePrefix = ''] = process.argv
 
 const subject = customSubject === '' ? 'html' : customSubject
 const selector = useWhere === 'true' ? `:where(${subject})` : subject
@@ -81,6 +82,12 @@ const designtokens = toTokens(jsonbundle)
 const JSONtokens = fs.createWriteStream('../open-props.tokens.json')
 JSONtokens.end(JSON.stringify(Object.fromEntries(designtokens), null, 2))
 
+
+const resolver = toResolver(jsonbundle)
+const resolverStream = fs.createWriteStream('../open-props.resolver.json')
+resolverStream.end(JSON.stringify(resolver, null, 2))
+
+
 // gen style-dictionary tokens
 const styledictionarytokens = toStyleDictionary(jsonbundle)
 const StyleDictionaryTokens = fs.createWriteStream('../open-props.style-dictionary-tokens.json')
@@ -118,7 +125,7 @@ Object.entries({
   ...individual_colors_hsl,
   ...individuals,
 }).forEach(([filename, props]) => {
-  buildPropsStylesheet({filename, props}, {selector, prefix})
+  buildPropsStylesheet({ filename, props }, { selector, prefix })
 })
 
 // gen color hsl main file
@@ -152,8 +159,8 @@ buildPropsStylesheet({
 )
 
 buildPropsStylesheet(
-  {filename: pfx + 'props.brand-colors.css', props: BrandColors},
-  {selector, prefix}
+  { filename: pfx + 'props.brand-colors.css', props: BrandColors },
+  { selector, prefix }
 )
 
 // gen index.css
