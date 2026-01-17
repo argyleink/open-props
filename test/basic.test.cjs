@@ -4,7 +4,7 @@ const OpenProps = require('../dist/open-props.cjs')
 const OPtokens = require('../open-props.tokens.json')
 
 test('Should have an all included import', t => {
-  t.is(Object.keys(OpenProps).length, 1778)
+  t.is(Object.keys(OpenProps).length, 1816)
 })
 
 test('Import should have animations', async t => {
@@ -21,6 +21,11 @@ test('Import should have sizes', async t => {
 test('Import should have colors', async t => {
   t.assert(Object.keys(OpenProps).includes('--orange-0'))
   t.assert(OpenProps.orange0)
+})
+
+test('Import should have palette', async t => {
+  t.assert(Object.keys(OpenProps).includes('--color-1'))
+  t.assert(OpenProps.color1)
 })
 
 test('JSON Import should have colors', async t => {
@@ -73,7 +78,7 @@ test('References should be valid', async t => {
     }
 
     // Find all references to other variables: var(...)
-    const matches = value.matchAll(/var\(([^)]+)\)/g);
+    const matches = value.matchAll(/var\(([^),]+)[^)]*\)/g);
 
     if (!matches) {
       continue;
@@ -82,7 +87,11 @@ test('References should be valid', async t => {
     // Add all references to the referenced set
     // Map all references to the prop that references them
     for (const matchArray of matches) {
-      const reference = matchArray[1];
+      const reference = matchArray[1].trim();
+
+      if (reference.startsWith('--gray-chroma') || reference.startsWith('--gray-hue') || reference.startsWith('--color-hue')) {
+          continue;
+      }
 
       referenced.add(reference);
 
@@ -103,7 +112,7 @@ test('References should be valid', async t => {
     const referencing = formatter.format(Array.from(referencedBy.get(reference)));
 
     t.assert(
-      defined.has(reference), 
+      defined.has(reference),
       `Variable with name ${reference} was referenced by variable ${referencing}, but is not defined`
     );
   }

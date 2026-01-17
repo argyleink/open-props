@@ -12,10 +12,11 @@ import SVG from './props.svg.js'
 import Zindex from './props.zindex.js'
 import MaskEdges from './props.masks.edges.js'
 import MaskCornerCuts from './props.masks.corner-cuts.js'
+import Palette from './props.palette.js'
 
 const camelize = text => {
-  text = text.replace(/[-]+(.)?/g, (_, c) => c 
-    ? c.toUpperCase() 
+  text = text.replace(/[-]+(.)?/g, (_, c) => c
+    ? c.toUpperCase()
     : '')
   return text.substr(0, 1).toLowerCase() + text.substr(1)
 }
@@ -41,6 +42,7 @@ const OpenProps = mapToObjectNotation({
   ...Zindex,
   ...MaskEdges,
   ...MaskCornerCuts,
+  ...Palette,
 })
 
 export default OpenProps

@@ -2,15 +2,15 @@ const sliders = document.querySelectorAll('input[type="range"]')
 
 const rangeToPercent = slider => {
   let percent
-  let val = slider.value
-  let max = slider.max
+  let val = Number(slider.value)
+  let min = Number(slider.min)
+  let max = Number(slider.max)
 
-  if (slider.min === '-1' && (val === '-1' || val === '0'))
-    percent = (val+1) / max * 100
-  else if (slider.min === '-1' && val === '1')
-    percent = val / (max-2) * 100
-  else
-    percent = val / max * 100
+  if (min === -1 && (val === -1 || val === 0))
+    percent = ((val + 1) / max) * 100
+  else if (min === -1 && val === 1) percent = (val / (max - 2)) * 100
+  else if (min === -1) percent = (val / max) * 100
+  else percent = ((val - min) / (max - min)) * 100
 
   return `${parseInt(percent)}%`
 }
@@ -18,7 +18,7 @@ const rangeToPercent = slider => {
 const highlightProperty = slider => {
   if (slider.connectedProperty)
     slider.connectedProperty.classList.remove('slider-target')
-    
+
   let offset = parseInt(slider.value)
 
   if (slider.min === '1') offset -= 1
