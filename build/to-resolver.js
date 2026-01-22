@@ -95,8 +95,10 @@ const parseCubicBezier = (value) => {
 const parseVariable = (value) => {
   const match = value.match(/^var\(--([a-zA-Z0-9_-]+)\)$/);
   if (match) {
+    const [groupName, ...tokenNameParts] = match[1].split('-')
+    const tokenName = tokenNameParts.join('-')
     return {
-      $value: `{${match[1]}}`
+      $value: `{${groupName}.${tokenName}}`
     };
   }
 };
@@ -192,9 +194,12 @@ export const toResolver = (props) => {
       parseCubicBezier(input) ??
       parseVariable(input) ??
       parseFontFamily(input);
+    const [groupName, ...tokenNameParts] = key.slice(2).split('-')
+    const tokenName = tokenNameParts.join('-')
     if (value) {
       // strip leading --
-      openPropsSource[key.slice(2)] = value
+      openPropsSource[groupName] ??= {}
+      openPropsSource[groupName][tokenName] = value
     } else {
       console.error(`Cannot parse ${key}: ${input}`)
     }
