@@ -1,5 +1,34 @@
 import Color from 'colorjs.io'
 
+/**
+ * Split by character like space or comma ignoring internals of functions
+ */
+const splitBy = (value, separator) => {
+  const parts = [];
+  let currentPart = "";
+  let depth = 0;
+  for (const character of value) {
+    if (character === "(") {
+      depth += 1;
+    } else if (character === ")") {
+      depth -= 1;
+    } else if (
+      depth === 0 &&
+      currentPart &&
+      (character === separator || character.match(separator))
+    ) {
+      parts.push(currentPart.trim());
+      currentPart = "";
+      continue;
+    }
+    currentPart += character;
+  }
+  if (currentPart.trim()) {
+    parts.push(currentPart.trim());
+  }
+  return parts;
+};
+
 
 const colorSpaceBySpaceId = {
   "p3": "display-p3",
@@ -24,8 +53,7 @@ const parseNumber = (input) => {
 }
 
 
-
-const parseColor = (input) => {
+const parseColorValue = (input) => {
   try {
     const color = new Color(input);
     const value = {
@@ -36,29 +64,54 @@ const parseColor = (input) => {
     if (color.alpha !== 1) {
       value.alpha = color.alpha;
     }
-    value.hex = input;
-    return {
-      $type: 'color',
-      $value: value
-    };
+    // serializing to hex works only for srgb color space
+    if (color.spaceId === "srgb") {
+      value.hex = color.toString({ format: 'hex' });
+    }
+    return value;
   } catch (error) {
     return;
   }
 };
 
 
-const parseDimension = (input) => {
-  const match = input.match(/^([\-\d.e]+)(px|rem|em)$/);
+const parseColor = (input) => {
+  const colorValue = parseColorValue(input)
+  if (colorValue) {
+    return {
+      $type: 'color',
+      $value: colorValue
+    }
+  }
+};
+
+const parseDimensionValue = (input, unitlessZero) => {
+  if (unitlessZero && input === "0") {
+    return {
+      value: 0,
+      unit: "px",
+    };
+  }
+  let match = input.match(/^([\-\d.e]+)(px|rem|em)$/);
   if (!match) {
     return;
   }
   return {
-    $type: 'dimension',
-    $value: {
-      value: Number.parseFloat(match[1]),
-      unit: match[2] === 'em' ? 'rem' : match[2],
-    }
+    value: Number.parseFloat(match[1]),
+    unit: match[2] === 'em' ? 'rem' : match[2],
   };
+};
+
+
+
+const parseDimension = (input) => {
+  const dimensionValue = parseDimensionValue(input)
+  if (dimensionValue) {
+    return {
+      $type: 'dimension',
+      $value: dimensionValue
+    }
+  }
 };
 
 const parseRatio = (input) => {
@@ -102,6 +155,52 @@ const parseVariable = (value) => {
     };
   }
 };
+
+const parseShadowItem = (value) => {
+  const parts = splitBy(value, /\s+/);
+  const inset = parts.some((part) => part === "inset");
+  const color = parts
+    .map((part) => parseVariable(part) ?? parseColorValue(part))
+    .filter((item) => item !== undefined)
+    .at(0);
+  const dimensions = parts
+    .map(item => parseDimensionValue(item, true))
+    .filter((item) => item !== undefined);
+  const offsetX = dimensions.at(0);
+  const offsetY = dimensions.at(1);
+  const blur = dimensions.at(2);
+  const spread = dimensions.at(3);
+  if (!offsetX || !offsetY) {
+    return;
+  }
+  const shadow = {
+    color: color ?? { colorSpace: "srgb", components: [0, 0, 0] },
+    offsetX,
+    offsetY,
+    blur: blur ?? { value: 0, unit: "px" },
+    spread: spread ?? { value: 0, unit: "px" },
+  };
+  if (inset) {
+    shadow.inset = true;
+  }
+  return shadow;
+};
+
+const parseShadow = (value) => {
+  // Handle multiple shadows separated by commas (not inside functions)
+  const shadows = splitBy(value, ",");
+  const parsedShadows = shadows
+    .map(parseShadowItem)
+    .filter((item) => item !== undefined);
+  if (parsedShadows.length === 0) {
+    return;
+  }
+  return {
+    $type: "shadow",
+    $value: parsedShadows.length === 1 ? parsedShadows[0] : parsedShadows,
+  };
+};
+
 
 
 const parseFontWeight = (value) => {
@@ -193,8 +292,14 @@ export const toResolver = (props) => {
       parseRatio(input) ??
       parseCubicBezier(input) ??
       parseVariable(input) ??
+      parseShadow(input) ??
       parseFontFamily(input);
-    const [groupName, ...tokenNameParts] = key.slice(2).split('-')
+    let [groupName, ...tokenNameParts] = key.slice(2).split('-')
+    // inner, shadow-0 -> inner-shadow, 0
+    if (key.startsWith('--inner-shadow')) {
+      groupName = 'inner-shadow'
+      tokenNameParts = tokenNameParts.slice(1)
+    }
     const tokenName = tokenNameParts.join('-')
     if (value) {
       // strip leading --
