@@ -12,7 +12,7 @@ import Borders from '../src/props.borders.js'
 import Aspects from '../src/props.aspects.js'
 import Easings from '../src/props.easing.js'
 import Gradients from '../src/props.gradients.js'
-import Shadows from '../src/props.shadows.js'
+import Shadows, { StaticShadows } from '../src/props.shadows.js'
 import SVG from '../src/props.svg.js'
 import Zindex from '../src/props.zindex.js'
 import MaskEdges from '../src/props.masks.edges.js'
@@ -92,6 +92,7 @@ const resolver = toResolver(Object.entries({
   ...Aspects,
   ...Gradients,
   ...Borders,
+  ...StaticShadows,
 }).reverse())
 const resolverStream = fs.createWriteStream('../open-props.resolver.json')
 resolverStream.end(JSON.stringify(resolver, null, 2))
