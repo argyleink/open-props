@@ -16,6 +16,8 @@ if (durationDemo && durationSelect) {
   }
   
   const playAnimation = () => {
+    if (!ball) return
+    
     const selectedDuration = durationSelect.value
     
     // Update the displayed value
