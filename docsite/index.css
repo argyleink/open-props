@@ -1380,7 +1380,7 @@ input[type="range"] {
   &::-moz-range-thumb {
     appearance: none;
     cursor: ew-resize;
-    border: 3px solid var(--surface3);
+    border: 3px solid var(--surface-1);
     block-size: var(--thumb-size);
     inline-size: var(--thumb-size);
     margin-block-start: var(--thumb-offset);
