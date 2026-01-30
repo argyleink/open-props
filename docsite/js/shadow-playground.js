@@ -17,7 +17,7 @@ const shadowState = {
   hue: 220,
   saturation: 3,
   lightness: 15,
-  strength: 1,
+  strength: 50,
 }
 
 const syncShadowInputs = (range, number, key) => {
