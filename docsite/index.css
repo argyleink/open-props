@@ -1684,6 +1684,8 @@ input[type="range"] {
         overflow: auto;
       }
     }
+  }
+}
 /* Duration Demo Styles */
 .duration-demo-container {
   display: grid;
