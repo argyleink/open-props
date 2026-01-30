@@ -3,13 +3,13 @@
 :where(html) {
   --shadow-color: 220 3% 15%;
   --shadow-strength: 1%;
-  --shadow-strength-3: calc(var(--shadow-strength) + 2%));
-  --shadow-strength-4: calc(var(--shadow-strength) + 3%));
-  --shadow-strength-5: calc(var(--shadow-strength) + 4%));
-  --shadow-strength-6: calc(var(--shadow-strength) + 5%));
-  --shadow-strength-7: calc(var(--shadow-strength) + 6%));
-  --shadow-strength-8: calc(var(--shadow-strength) + 7%));
-  --shadow-strength-10: calc(var(--shadow-strength) + 9%));
+  --shadow-strength-3: calc(var(--shadow-strength) + 2%);
+  --shadow-strength-4: calc(var(--shadow-strength) + 3%);
+  --shadow-strength-5: calc(var(--shadow-strength) + 4%);
+  --shadow-strength-6: calc(var(--shadow-strength) + 5%);
+  --shadow-strength-7: calc(var(--shadow-strength) + 6%);
+  --shadow-strength-8: calc(var(--shadow-strength) + 7%);
+  --shadow-strength-10: calc(var(--shadow-strength) + 9%);
   --inner-shadow-highlight: inset 0 -.5px 0 0 #fff, inset 0 .5px 0 0 #0001;
   --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / var(--shadow-strength-10));
   --shadow-2: 
