@@ -866,8 +866,14 @@
               <div class="block-wrap">
                 <div class="just-for-sm-gap">
                   <h6>JSON</h6>
-                  <p>Follows the <a href="https://design-tokens.github.io/community-group/format/">(draft) Design Tokens
-                      Spec</a></p>
+                  <p>Follows the <a href="https://www.designtokens.org/tr/2025.10/">Design Tokens 2025.10 Spec</a></p>
+                  <pre class="language-js"><code>
+                    https://unpkg.com/open-props/open-props.resolver.json
+                    </code></pre>
+                </div>
+                <div class="just-for-sm-gap">
+                  <h6>JSON</h6>
+                  <p>Follows the <a href="https://design-tokens.github.io/community-group/format/">Design Tokens Spec Draft</a></p>
                   <pre class="language-js"><code>
                     https://unpkg.com/open-props/open-props.tokens.json
                     </code></pre>
@@ -1099,7 +1105,10 @@
             <div>
               <div class="block-wrap">
                 <pre class="language-js"><code>
-                  /* 3 ways to import */
+                  /* 4 ways to import */
+                  /* based on the latest specification */
+                  import 'open-props/resolver'
+                  /* legacy format */
                   import 'open-props/tokens'
                   import 'open-props/json'
                   import 'open-props/design-tokens'
