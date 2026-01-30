@@ -1381,7 +1381,7 @@ input[type="range"] {
   &::-moz-range-thumb {
     appearance: none;
     cursor: ew-resize;
-    border: 3px solid var(--surface3);
+    border: 3px solid var(--surface-1);
     block-size: var(--thumb-size);
     inline-size: var(--thumb-size);
     margin-block-start: var(--thumb-offset);
@@ -1583,6 +1583,109 @@ input[type="range"] {
   }
 }
 
+#shadow-playground {
+  background-color: var(--surface-2);
+  border-radius: var(--radius-conditional-2);
+  border: var(--border-size-1) solid var(--surface-3);
+  box-shadow: var(--shadow-4);
+  display: grid;
+  gap: var(--size-6);
+  inline-size: 100%;
+  padding: var(--size-fluid-4);
+
+  h3 {
+    -webkit-text-fill-color: currentColor;
+    appearance: unset;
+    background: none;
+    color: var(--text-1);
+  }
+
+  & > header {
+    display: grid;
+    gap: var(--size-4);
+  }
+
+  .controls-grid {
+    align-items: stretch;
+    display: grid;
+    gap: var(--size-5);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
+
+    .control-group {
+      background: var(--surface-3);
+      border-radius: var(--radius-conditional-2);
+      border: 1px solid var(--surface-4);
+      box-shadow: var(--shadow-2);
+      display: grid;
+      gap: var(--size-4);
+      margin: 0;
+      padding: var(--size-5);
+
+      & input[type="range"] {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .title-with-control {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      background: var(--surface-2);
+      max-inline-size: 7ch;
+      text-align: center;
+    }
+  }
+
+  .shadow-preview-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-5);
+
+    & > div {
+      background: white;
+      inline-size: var(--size-12);
+      aspect-ratio: var(--ratio-square);
+      border-radius: var(--radius-3);
+      display: grid;
+      place-content: center;
+      font-size: var(--font-size-0);
+
+      [data-theme="dark"] & {
+        background: var(--surface-3);
+      }
+    }
+  }
+
+  footer {
+    align-items: end;
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-5);
+    justify-content: space-between;
+    padding: 0;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+
+    .code-output {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      max-inline-size: 100%;
+      min-inline-size: 0;
+
+      pre {
+        background: var(--surface-1);
+        margin: 0;
+        max-inline-size: 100%;
+        overflow: auto;
+      }
+    }
+  }
+}
 /* Duration Demo Styles */
 .duration-demo-container {
   display: grid;
