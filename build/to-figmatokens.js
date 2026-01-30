@@ -25,7 +25,9 @@ export const toFigmaTokens = props => {
     if (!(meta.type in figmatokens)) figmatokens[meta.type] = {}
     
     if (isColor) {
-      let color = /--(.+?)-/.exec(key)[1]
+      const colorMatch = /--(.+?)-/.exec(key)
+      if (!colorMatch) return
+      let color = colorMatch[1]
       if (!(color in figmatokens[meta.type])) figmatokens[meta.type][color] = {}
       figmatokens[meta.type][color][key] = {
         value: token,

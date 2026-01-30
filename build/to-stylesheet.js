@@ -55,7 +55,7 @@ ${dark_propsMeta}
 
     if (prefix && prefix !== "''") {
       prop = `--${prefix}-` + prop.slice(2)
-      if (typeof(val) == "string" &&  val.includes("var(--"))
+      if (typeof val === "string" && val.includes("var(--"))
         val = val.replace(/var\(--/g, `var(--${prefix}-`)
     }
     

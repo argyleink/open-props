@@ -5,6 +5,6 @@ readFile('./normalize.min.css', 'utf-8', (err, contents) => {
   const replaced = contents.replace(/:where\(html\)/g, ':host')
 
   writeFile('./normalize.shadow.min.css', replaced, 'utf-8', err => {
-    console.log(err)
+    if (err) console.log(err)
   })
 })
