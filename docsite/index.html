@@ -3621,213 +3621,6 @@
 
   </section>
 
-  <section id="durations">
-    <header>
-      <h2>Durations</h2>
-      <p>A comprehensive collection of time-based CSS custom properties for animations and transitions. From quick UI feedback durations to whimsical time units like <code class="language-css">--kermit</code> (14.4 minutes) and astronomical durations like <code class="language-css">--mars-year</code>.</p>
-      <blockquote class="icon-quote indigo">
-        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
-          <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-        <span>Not part of the main bundle. Must be individually imported.</span>
-      </blockquote>
-    </header>
-
-    <div class="block-wrap">
-      <div>
-        <h5>The Props</h5>
-        <div class="var-examples">
-          <pre class="language-css"><code>
-              /* UX Motion Durations */
-              --duration-instant     /* 0ms */
-              --duration-quick-{1,2}
-              --duration-moderate-{1,2}
-              --duration-gentle-{1,2}
-
-              /* Common Time Units */
-              --minute, --hour, --day
-              --week, --fortnight, --month
-              --quarter, --year, --decade
-
-              /* Quick Moments */
-              --blink, --flinch, --sneeze
-              --jiffy, --moment
-
-              /* Whimsical & Astronomical */
-              --kermit, --friedman, --scaramucci
-              --sidereal-day, --lunar-month, --mars-year
-            </code></pre>
-        </div>
-      </div>
-      <div>
-        <h5>Usage Sample</h5>
-        <pre class="language-css"><code>
-            /* Quick UI feedback */
-            .checkbox {
-              transition: all var(--duration-quick-1);
-            }
-
-            /* Modal appearance */
-            .modal {
-              animation: fade-in var(--duration-moderate-2) var(--ease-3);
-            }
-
-            /* Gentle card expansion */
-            .card.expanded {
-              transition: all var(--duration-gentle-1);
-            }
-          </code></pre>
-      </div>
-    </div>
-
-    <div class="just-for-gap">
-      <h5>Interactive Demo</h5>
-      <p>Select a duration and watch the ball animate across the track. UX motion durations are designed for common interface patterns.</p>
-      
-      <div class="duration-demo-container">
-        <div class="duration-controls">
-          <select class="duration-select" aria-label="Select a duration">
-            <optgroup label="UX Motion">
-              <option value="duration-instant">--duration-instant (0ms)</option>
-              <option value="duration-quick-1">--duration-quick-1 (80ms)</option>
-              <option value="duration-quick-2" selected>--duration-quick-2 (120ms)</option>
-              <option value="duration-moderate-1">--duration-moderate-1 (180ms)</option>
-              <option value="duration-moderate-2">--duration-moderate-2 (260ms)</option>
-              <option value="duration-gentle-1">--duration-gentle-1 (320ms)</option>
-              <option value="duration-gentle-2">--duration-gentle-2 (420ms)</option>
-            </optgroup>
-            <optgroup label="Quick Moments">
-              <option value="blink">--blink (0.1s)</option>
-              <option value="flinch">--flinch (0.3s)</option>
-              <option value="sneeze">--sneeze (0.5s)</option>
-              <option value="jiffy">--jiffy (0.01s)</option>
-            </optgroup>
-            <optgroup label="Common Units">
-              <option value="pause">--pause (10s)</option>
-              <option value="brief-moment">--brief-moment (15s)</option>
-            </optgroup>
-          </select>
-          <button class="play-button" aria-label="Play animation">
-            <svg viewBox="0 0 20 20">
-              <use href="#play-icon" />
-            </svg>
-          </button>
-          <span class="duration-value">120ms</span>
-        </div>
-        <div class="duration-demo">
-          <div class="duration-ball"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="block-wrap">
-      <div>
-        <h5>NPM Import</h5>
-        <pre class="language-css"><code>
-            @import "open-props/durations";
-          </code></pre>
-      </div>
-      <div>
-        <h5>CDN Import</h5>
-        <pre class="language-css"><code>
-            @import "https://unpkg.com/open-props/durations.min.css";
-          </code></pre>
-      </div>
-    </div>
-
-    <div class="just-for-gap">
-      <header>
-        <h3>UX Motion Durations</h3>
-        <p>Based on <a href="https://design.brainly.com/8adfd5f36/p/091f75-ux-motion">Brainly's UX Motion guidelines</a>. Use these for consistent, purposeful animations.</p>
-      </header>
-      <pre class="language-css"><code>
-          --duration-instant:    0ms;    /* text change */
-          --duration-quick-1:    80ms;   /* checkbox, radio, hover */
-          --duration-quick-2:    120ms;  /* toggle, tab, chip, color, fade */
-          --duration-moderate-1: 180ms;  /* dropdown, tooltip */
-          --duration-moderate-2: 260ms;  /* modal, toast, dialog, notification */
-          --duration-gentle-1:   320ms;  /* bottom sheet, card expand */
-          --duration-gentle-2:   420ms;  /* advanced animations */
-        </code></pre>
-    </div>
-
-    <div class="just-for-gap">
-      <header>
-        <h3>Quick Moments</h3>
-        <p>Human-scale time units perfect for micro-interactions.</p>
-      </header>
-      <pre class="language-css"><code>
-          --blink:           .1s;
-          --flinch:          .3s;
-          --sneeze:          .5s;
-          --jiffy:           0.01s;
-          --moment:          90s;   /* medieval time unit */
-          --brief-moment:    15s;
-          --pause:           10s;
-          --unhealthy-pause: 30s;
-        </code></pre>
-    </div>
-
-    <div class="just-for-gap">
-      <header>
-        <h3>Common Time Units</h3>
-        <p>Standard time durations built using CSS calc for precision.</p>
-      </header>
-      <pre class="language-css"><code>
-          --minute:     60s;
-          --hour:       calc( 60 * var(--minute));
-          --day:        calc( 24 * var(--hour));
-          --week:       calc(  7 * var(--day));
-          --fortnight:  calc( 14 * var(--day));
-          --month:      calc( 30 * var(--day));
-          --quarter:    calc( 13 * var(--week));
-          --year:       calc(365 * var(--day));
-          --decade:     calc( 10 * var(--year));
-          --generation: calc(  3 * var(--decade));
-          --lifetime:   calc(  8 * var(--decade));
-
-          --work-day:   calc( 8 * var(--hour));
-          --work-week:  calc( 5 * var(--day));
-        </code></pre>
-    </div>
-
-    <div class="just-for-gap">
-      <header>
-        <h3>Whimsical & Unusual Units</h3>
-        <p>Fun and unusual time measurements from <a href="https://en.wikipedia.org/wiki/List_of_unusual_units_of_measurement">Wikipedia's unusual units</a> and <a href="https://www.mentalfloss.com/article/60080/10-little-known-units-time">Mental Floss</a>.</p>
-      </header>
-      <pre class="language-css"><code>
-          --kermit:          calc(14.4 * var(--minute));  /* time to boil an egg */
-          --microfortnight:  1.2096s;
-          --friedman:        calc(6 * var(--month));      /* "the next 6 months" */
-          --scaramucci:      calc(11 * var(--day));       /* political tenure */
-          --nanocentury:     3.156s;
-          --microcentury:    calc((52 * var(--minute)) + 35.7s);
-
-          /* Medieval & Historical */
-          --atom:            .15957s;
-          --ghurry:          calc(24 * var(--minute));
-          --lustre:          calc(5 * var(--year));
-          --mileway:         calc(20 * var(--minute));
-          --punct:           calc(15 * var(--minute));
-        </code></pre>
-    </div>
-
-    <div class="just-for-gap">
-      <header>
-        <h3>Astronomical Durations</h3>
-        <p>For when you need cosmic-scale timing (or just want to have fun).</p>
-      </header>
-      <pre class="language-css"><code>
-          --sidereal-day:    calc((23 * var(--hour)) + (56 * var(--minute)) + 4.091s);
-          --iss-orbit:       calc(91.5 * var(--minute));
-          --lunar-month:     calc(29.5 * var(--day));
-          --venus-year:      calc(225 * var(--day));
-          --sol:             88775s;  /* Mars day */
-          --mars-year:       calc(668.5907 * var(--sol));
-        </code></pre>
-    </div>
-  </section>
 
   <section id="sizes">
     <header>
@@ -4637,6 +4430,213 @@
       </div>
     </div>
   </section>
+  <section id="durations">
+    <header>
+      <h2>Durations</h2>
+      <p>A comprehensive collection of time-based CSS custom properties for animations and transitions. From quick UI feedback durations to whimsical time units like <code class="language-css">--kermit</code> (14.4 minutes) and astronomical durations like <code class="language-css">--mars-year</code>.</p>
+      <blockquote class="icon-quote indigo">
+        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+          <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+        <span>Not part of the main bundle. Must be individually imported.</span>
+      </blockquote>
+    </header>
+
+    <div class="block-wrap">
+      <div>
+        <h5>The Props</h5>
+        <div class="var-examples">
+          <pre class="language-css"><code>
+              /* UX Motion Durations */
+              --duration-instant     /* 0ms */
+              --duration-quick-{1,2}
+              --duration-moderate-{1,2}
+              --duration-gentle-{1,2}
+
+              /* Common Time Units */
+              --minute, --hour, --day
+              --week, --fortnight, --month
+              --quarter, --year, --decade
+
+              /* Quick Moments */
+              --blink, --flinch, --sneeze
+              --jiffy, --moment
+
+              /* Whimsical & Astronomical */
+              --kermit, --friedman, --scaramucci
+              --sidereal-day, --lunar-month, --mars-year
+            </code></pre>
+        </div>
+      </div>
+      <div>
+        <h5>Usage Sample</h5>
+        <pre class="language-css"><code>
+            /* Quick UI feedback */
+            .checkbox {
+              transition: all var(--duration-quick-1);
+            }
+
+            /* Modal appearance */
+            .modal {
+              animation: fade-in var(--duration-moderate-2) var(--ease-3);
+            }
+
+            /* Gentle card expansion */
+            .card.expanded {
+              transition: all var(--duration-gentle-1);
+            }
+          </code></pre>
+      </div>
+    </div>
+
+    <div class="just-for-gap">
+      <h5>Interactive Demo</h5>
+      <p>Select a duration and watch the ball animate across the track. UX motion durations are designed for common interface patterns.</p>
+      
+      <div class="duration-demo-container">
+        <div class="duration-controls">
+          <select class="duration-select" aria-label="Select a duration">
+            <optgroup label="UX Motion">
+              <option value="duration-instant">--duration-instant (0ms)</option>
+              <option value="duration-quick-1">--duration-quick-1 (80ms)</option>
+              <option value="duration-quick-2" selected>--duration-quick-2 (120ms)</option>
+              <option value="duration-moderate-1">--duration-moderate-1 (180ms)</option>
+              <option value="duration-moderate-2">--duration-moderate-2 (260ms)</option>
+              <option value="duration-gentle-1">--duration-gentle-1 (320ms)</option>
+              <option value="duration-gentle-2">--duration-gentle-2 (420ms)</option>
+            </optgroup>
+            <optgroup label="Quick Moments">
+              <option value="blink">--blink (0.1s)</option>
+              <option value="flinch">--flinch (0.3s)</option>
+              <option value="sneeze">--sneeze (0.5s)</option>
+              <option value="jiffy">--jiffy (0.01s)</option>
+            </optgroup>
+            <optgroup label="Common Units">
+              <option value="pause">--pause (10s)</option>
+              <option value="brief-moment">--brief-moment (15s)</option>
+            </optgroup>
+          </select>
+          <button class="play-button" aria-label="Play animation">
+            <svg viewBox="0 0 20 20">
+              <use href="#play-icon" />
+            </svg>
+          </button>
+          <span class="duration-value">120ms</span>
+        </div>
+        <div class="duration-demo">
+          <div class="duration-ball"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block-wrap">
+      <div>
+        <h5>NPM Import</h5>
+        <pre class="language-css"><code>
+            @import "open-props/durations";
+          </code></pre>
+      </div>
+      <div>
+        <h5>CDN Import</h5>
+        <pre class="language-css"><code>
+            @import "https://unpkg.com/open-props/durations.min.css";
+          </code></pre>
+      </div>
+    </div>
+
+    <div class="just-for-gap">
+      <header>
+        <h3>UX Motion Durations</h3>
+        <p>Based on <a href="https://design.brainly.com/8adfd5f36/p/091f75-ux-motion">Brainly's UX Motion guidelines</a>. Use these for consistent, purposeful animations.</p>
+      </header>
+      <pre class="language-css"><code>
+          --duration-instant:    0ms;    /* text change */
+          --duration-quick-1:    80ms;   /* checkbox, radio, hover */
+          --duration-quick-2:    120ms;  /* toggle, tab, chip, color, fade */
+          --duration-moderate-1: 180ms;  /* dropdown, tooltip */
+          --duration-moderate-2: 260ms;  /* modal, toast, dialog, notification */
+          --duration-gentle-1:   320ms;  /* bottom sheet, card expand */
+          --duration-gentle-2:   420ms;  /* advanced animations */
+        </code></pre>
+    </div>
+
+    <div class="just-for-gap">
+      <header>
+        <h3>Quick Moments</h3>
+        <p>Human-scale time units perfect for micro-interactions.</p>
+      </header>
+      <pre class="language-css"><code>
+          --blink:           .1s;
+          --flinch:          .3s;
+          --sneeze:          .5s;
+          --jiffy:           0.01s;
+          --moment:          90s;   /* medieval time unit */
+          --brief-moment:    15s;
+          --pause:           10s;
+          --unhealthy-pause: 30s;
+        </code></pre>
+    </div>
+
+    <div class="just-for-gap">
+      <header>
+        <h3>Common Time Units</h3>
+        <p>Standard time durations built using CSS calc for precision.</p>
+      </header>
+      <pre class="language-css"><code>
+          --minute:     60s;
+          --hour:       calc( 60 * var(--minute));
+          --day:        calc( 24 * var(--hour));
+          --week:       calc(  7 * var(--day));
+          --fortnight:  calc( 14 * var(--day));
+          --month:      calc( 30 * var(--day));
+          --quarter:    calc( 13 * var(--week));
+          --year:       calc(365 * var(--day));
+          --decade:     calc( 10 * var(--year));
+          --generation: calc(  3 * var(--decade));
+          --lifetime:   calc(  8 * var(--decade));
+
+          --work-day:   calc( 8 * var(--hour));
+          --work-week:  calc( 5 * var(--day));
+        </code></pre>
+    </div>
+
+    <div class="just-for-gap">
+      <header>
+        <h3>Whimsical & Unusual Units</h3>
+        <p>Fun and unusual time measurements from <a href="https://en.wikipedia.org/wiki/List_of_unusual_units_of_measurement">Wikipedia's unusual units</a> and <a href="https://www.mentalfloss.com/article/60080/10-little-known-units-time">Mental Floss</a>.</p>
+      </header>
+      <pre class="language-css"><code>
+          --kermit:          calc(14.4 * var(--minute));  /* time to boil an egg */
+          --microfortnight:  1.2096s;
+          --friedman:        calc(6 * var(--month));      /* "the next 6 months" */
+          --scaramucci:      calc(11 * var(--day));       /* political tenure */
+          --nanocentury:     3.156s;
+          --microcentury:    calc((52 * var(--minute)) + 35.7s);
+
+          /* Medieval & Historical */
+          --atom:            .15957s;
+          --ghurry:          calc(24 * var(--minute));
+          --lustre:          calc(5 * var(--year));
+          --mileway:         calc(20 * var(--minute));
+          --punct:           calc(15 * var(--minute));
+        </code></pre>
+    </div>
+
+    <div class="just-for-gap">
+      <header>
+        <h3>Astronomical Durations</h3>
+        <p>For when you need cosmic-scale timing (or just want to have fun).</p>
+      </header>
+      <pre class="language-css"><code>
+          --sidereal-day:    calc((23 * var(--hour)) + (56 * var(--minute)) + 4.091s);
+          --iss-orbit:       calc(91.5 * var(--minute));
+          --lunar-month:     calc(29.5 * var(--day));
+          --venus-year:      calc(225 * var(--day));
+          --sol:             88775s;  /* Mars day */
+          --mars-year:       calc(668.5907 * var(--sol));
+        </code></pre>
+    </div>
+  </section>
 
   <ul id="scroll-nav" class="module-list place-full">
     <li><a href="#colors">Colors</a></li>
@@ -4646,12 +4646,12 @@
     <li><a href="#typography">Typography</a></li>
     <li><a href="#easing">Easing</a></li>
     <li><a href="#animations">Animations</a></li>
-    <li><a href="#durations">Durations</a></li>
     <li><a href="#sizes">Sizes</a></li>
     <li><a href="#borders">Borders</a></li>
     <li><a href="#z-index">Z-Index</a></li>
     <li><a href="#media-queries">Media Queries</a></li>
     <li><a href="#masks">Masks</a></li>
+    <li><a href="#durations">Durations</a></li>
   </ul>
 
   <footer class="place-full">
