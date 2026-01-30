@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="/index.css">
   <script src="/theme-toggle.js"></script>
   <script type="module" src="/js/palette-playground.js" defer></script>
+  <script type="module" src="/js/shadow-playground.js" defer></script>
 </head>
 
 <body>
@@ -2489,6 +2490,64 @@
       <div style="box-shadow: var(--inner-shadow-3)"></div>
       <div style="box-shadow: var(--inner-shadow-4)"></div>
     </article>
+
+    <div class="just-for-gap" id="shadow-playground">
+      <header>
+        <h3>Shadow Playground</h3>
+        <p>Customize the shadow tint and strength to match your design.</p>
+        <div class="controls-grid">
+          <div class="control-group">
+            <div class="title-with-control">
+              <p>Hue</p>
+              <input id="shadowHueValue" type="number" min="0" max="360" value="220">
+            </div>
+            <input id="shadowHue" type="range" min="0" max="360" value="220">
+          </div>
+          <div class="control-group">
+            <div class="title-with-control">
+              <p>Saturation</p>
+              <input id="shadowSaturationValue" type="number" min="0" max="100" value="3">
+            </div>
+            <input id="shadowSaturation" type="range" min="0" max="100" value="3">
+          </div>
+          <div class="control-group">
+            <div class="title-with-control">
+              <p>Lightness</p>
+              <input id="shadowLightnessValue" type="number" min="0" max="100" value="15">
+            </div>
+            <input id="shadowLightness" type="range" min="0" max="100" value="15">
+          </div>
+          <div class="control-group">
+            <div class="title-with-control">
+              <p>Strength</p>
+              <input id="shadowStrengthValue" type="number" min="0" max="100" value="1">
+            </div>
+            <input id="shadowStrength" type="range" min="0" max="100" value="1">
+          </div>
+        </div>
+      </header>
+
+      <article class="shadow-preview-grid">
+        <div style="box-shadow: var(--shadow-1)">Shadow 1</div>
+        <div style="box-shadow: var(--shadow-2)">Shadow 2</div>
+        <div style="box-shadow: var(--shadow-3)">Shadow 3</div>
+        <div style="box-shadow: var(--shadow-4)">Shadow 4</div>
+        <div style="box-shadow: var(--shadow-5)">Shadow 5</div>
+        <div style="box-shadow: var(--shadow-6)">Shadow 6</div>
+      </article>
+
+      <footer>
+        <output class="code-output">
+          <pre id="shadowout" class="language-css"><code>
+@import "open-props/shadows";
+
+:root {
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+}</code></pre>
+        </output>
+      </footer>
+    </div>
   </section>
 
   <section id="aspect-ratio">
