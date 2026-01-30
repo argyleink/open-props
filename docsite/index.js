@@ -6,5 +6,6 @@ import '/js/animations.js'
 import '/js/slider.js'
 import '/js/scrollspy.js'
 import '/js/select.js'
+import '/js/durations.js'
 
 import '/js/color-copy.js'
