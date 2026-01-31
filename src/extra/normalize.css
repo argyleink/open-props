@@ -11,7 +11,7 @@
     background-color: var(--surface-2);
   }
 
-  :where(html) {
+  * {
     --shadow-strength: 10%;
     --shadow-color: 220 40% 2%;
   }
