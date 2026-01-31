@@ -63,6 +63,36 @@ test('Should produce typings files', async t => {
   t.assert(fs.existsSync('./src/props.sizes.d.ts'))
 })
 
+test('Should produce typings for all submodule exports', async t => {
+  // Verify type definitions exist for all JavaScript submodule exports
+  const submodules = [
+    'props.animations',
+    'props.aspects',
+    'props.borders',
+    'props.colors',
+    'props.colors-hsl',
+    'props.easing',
+    'props.fonts',
+    'props.gradients',
+    'props.media',
+    'props.shadows',
+    'props.sizes',
+    'props.svg',
+    'props.zindex',
+    'props.masks.edges',
+    'props.masks.corner-cuts',
+    'props.brand-colors',
+    'props.palette',
+  ]
+  
+  for (const submodule of submodules) {
+    t.assert(
+      fs.existsSync(`./src/${submodule}.d.ts`),
+      `Missing type definition for ${submodule}`
+    )
+  }
+})
+
 test('References should be valid', async t => {
   const formatter = new Intl.ListFormat();
   const defined = new Set();
