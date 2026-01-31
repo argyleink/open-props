@@ -41,3 +41,8 @@ jobs:
 
       - name: Push changes
         run: git push --follow-tags
+
+  publish:
+    needs: bump
+    uses: ./.github/workflows/main.yml
+    secrets: inherit

@@ -3,6 +3,7 @@ name: NPM Publish
 on:
   push:
     branches: [ main ]
+  workflow_call:
 
 jobs:
   publish:
