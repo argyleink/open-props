@@ -248,7 +248,7 @@
   "scripts": {
     "build": "concurrently npm:gen:op npm:gen:shadowdom && npm run gen:types",
     "test": "ava test/basic.test.cjs",
-    "changelog": "auto-changelog -p",
+    "changelog": "auto-changelog -p --unreleased",
     "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25",
     "bundle:sizes": "cd build && node bundle-sizes.js",
     "gen:op": "cd build && node props.js \"\" true",
