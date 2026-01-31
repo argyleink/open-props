@@ -29,6 +29,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Fetch all history for changelog generation
+          fetch-tags: true  # Ensure tags are fetched
 
       - uses: actions/setup-node@v4
 
