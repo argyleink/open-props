@@ -28,24 +28,78 @@
       "require": "./dist/open-props.cjs",
       "default": "./dist/open-props.cjs"
     },
-    "./src": "./src/index.js",
-    "./src/animations": "./src/props.animations.js",
-    "./src/aspects": "./src/props.aspects.js",
-    "./src/borders": "./src/props.borders.js",
-    "./src/colors": "./src/props.colors.js",
-    "./src/colors-hsl": "./src/props.colors-hsl.js",
-    "./src/easing": "./src/props.easing.js",
-    "./src/fonts": "./src/props.fonts.js",
-    "./src/gradients": "./src/props.gradients.js",
-    "./src/media": "./src/props.media.js",
-    "./src/shadows": "./src/props.shadows.js",
-    "./src/sizes": "./src/props.sizes.js",
-    "./src/svg": "./src/props.svg.js",
-    "./src/zindex": "./src/props.zindex.js",
-    "./src/masks.edges": "./src/props.masks.edges.js",
-    "./src/masks.corner-cuts": "./src/props.masks.corner-cuts.js",
-    "./src/brand-colors": "./src/props.brand-colors.js",
-    "./src/palette": "./src/props.palette.js",
+    "./src": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./src/animations": {
+      "types": "./src/props.animations.d.ts",
+      "default": "./src/props.animations.js"
+    },
+    "./src/aspects": {
+      "types": "./src/props.aspects.d.ts",
+      "default": "./src/props.aspects.js"
+    },
+    "./src/borders": {
+      "types": "./src/props.borders.d.ts",
+      "default": "./src/props.borders.js"
+    },
+    "./src/colors": {
+      "types": "./src/props.colors.d.ts",
+      "default": "./src/props.colors.js"
+    },
+    "./src/colors-hsl": {
+      "types": "./src/props.colors-hsl.d.ts",
+      "default": "./src/props.colors-hsl.js"
+    },
+    "./src/easing": {
+      "types": "./src/props.easing.d.ts",
+      "default": "./src/props.easing.js"
+    },
+    "./src/fonts": {
+      "types": "./src/props.fonts.d.ts",
+      "default": "./src/props.fonts.js"
+    },
+    "./src/gradients": {
+      "types": "./src/props.gradients.d.ts",
+      "default": "./src/props.gradients.js"
+    },
+    "./src/media": {
+      "types": "./src/props.media.d.ts",
+      "default": "./src/props.media.js"
+    },
+    "./src/shadows": {
+      "types": "./src/props.shadows.d.ts",
+      "default": "./src/props.shadows.js"
+    },
+    "./src/sizes": {
+      "types": "./src/props.sizes.d.ts",
+      "default": "./src/props.sizes.js"
+    },
+    "./src/svg": {
+      "types": "./src/props.svg.d.ts",
+      "default": "./src/props.svg.js"
+    },
+    "./src/zindex": {
+      "types": "./src/props.zindex.d.ts",
+      "default": "./src/props.zindex.js"
+    },
+    "./src/masks.edges": {
+      "types": "./src/props.masks.edges.d.ts",
+      "default": "./src/props.masks.edges.js"
+    },
+    "./src/masks.corner-cuts": {
+      "types": "./src/props.masks.corner-cuts.d.ts",
+      "default": "./src/props.masks.corner-cuts.js"
+    },
+    "./src/brand-colors": {
+      "types": "./src/props.brand-colors.d.ts",
+      "default": "./src/props.brand-colors.js"
+    },
+    "./src/palette": {
+      "types": "./src/props.palette.d.ts",
+      "default": "./src/props.palette.js"
+    },
     "./style": "./open-props.min.css",
     "./postcss/style": "./src/index.css",
     "./normalize": "./normalize.min.css",
@@ -200,7 +254,7 @@
     "gen:nowhere": "cd build && node props \"\" false",
     "gen:shadowdom": "cd build && node props \"\" false \":host\" \"shadow\"",
     "gen:prefixed": "cd build && node props.js \"op\" true",
-    "gen:types": "tsc -p tsconfig.json",
+    "gen:types": "rm -f src/*.d.ts dist/*.d.ts && tsc -p tsconfig.json",
     "lib:all": "postcss src/index.css -o open-props.min.css",
     "lib:normalize": "postcss src/extra/normalize.css -o normalize.min.css && node ./build/extras.js",
     "lib:normalize:light": "postcss src/extra/normalize.light.css -o normalize.light.min.css",
