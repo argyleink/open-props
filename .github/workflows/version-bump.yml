@@ -38,10 +38,13 @@ jobs:
       - name: Bump version
         run: npm version ${{ inputs.version }} --no-git-tag-version
 
+      - name: Generate changelog
+        run: npm run changelog
+
       - name: Commit and tag
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          git add package.json package-lock.json
+          git add package.json package-lock.json CHANGELOG.md
           MESSAGE="${{ inputs.message }}"
           if [ -n "$MESSAGE" ]; then
             git commit -m "✂️ $VERSION - $MESSAGE"

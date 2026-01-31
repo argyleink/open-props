@@ -248,6 +248,7 @@
   "scripts": {
     "build": "concurrently npm:gen:op npm:gen:shadowdom && npm run gen:types",
     "test": "ava test/basic.test.cjs",
+    "changelog": "auto-changelog -p",
     "bundle": "concurrently npm:lib:* -m 25 && concurrently npm:shadow:* -m 25",
     "bundle:sizes": "cd build && node bundle-sizes.js",
     "gen:op": "cd build && node props.js \"\" true",
@@ -380,6 +381,7 @@
     "lib:brand-colors": "postcss src/props.brand-colors.css -o brand-colors.min.css"
   },
   "devDependencies": {
+    "auto-changelog": "^2.5.0",
     "ava": "^3.15.0",
     "brotli-size": "^4.0.0",
     "colorjs.io": "^0.4.1-patch.1",
