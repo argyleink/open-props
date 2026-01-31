@@ -5,6 +5,9 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
 
   let appendedMeta = ''
 
+  // Use * selector for shadows to allow inheritance of custom properties
+  const effectiveSelector = filename.includes('shadows') ? '*' : selector
+
   if (filename.includes('shadows') || filename.includes('animations')) {
     file.write(`@import 'props.media.css';\n\n`)
   }
@@ -26,7 +29,7 @@ export const buildPropsStylesheet = ({filename,props}, {selector,prefix}) => {
     })
     appendedMeta += `
 @media (--OSdark) {
-  ${selector} {
+  ${effectiveSelector} {
 ${dark_propsMeta}
   }
 }`
@@ -42,7 +45,7 @@ ${dark_propsMeta}
 }`;
   }  
 
-  file.write(`${selector} {\n`)
+  file.write(`${effectiveSelector} {\n`)
 
   Object.entries(props).forEach(([prop, val]) => {
     if (prop.includes('-@'))

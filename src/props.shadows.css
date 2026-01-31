@@ -1,6 +1,6 @@
 @import 'props.media.css';
 
-:where(html) {
+* {
   --shadow-color: 220 3% 15%;
   --shadow-strength: 1%;
   --shadow-strength-3: calc(var(--shadow-strength) + 2%);
@@ -51,7 +51,7 @@
 }
 
 @media (--OSdark) {
-  :where(html) {
+  * {
     --shadow-color: 220 40% 2%;
     --shadow-strength: 25%;
     --inner-shadow-highlight: inset 0 -.5px 0 0 #fff1, inset 0 .5px 0 0 #0007;
