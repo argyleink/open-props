@@ -1,0 +1,43 @@
+name: Version Bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version
+        run: npm version ${{ inputs.version }} --no-git-tag-version
+
+      - name: Commit and tag
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          git add package.json package-lock.json
+          git commit -m "chore: bump version to $VERSION"
+          git tag "v$VERSION"
+
+      - name: Push changes
+        run: git push --follow-tags
