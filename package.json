@@ -6,7 +6,7 @@
   "version": "1.7.19",
   "repository": {
     "type": "git",
-    "url": "https://github.com/argyleink/open-props"
+    "url": "git+https://github.com/argyleink/open-props.git"
   },
   "keywords": [
     "css",
