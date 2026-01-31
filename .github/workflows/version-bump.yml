@@ -30,6 +30,9 @@ jobs:
 
       - uses: actions/setup-node@v4
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
