@@ -12,6 +12,11 @@ on:
           - patch
           - minor
           - major
+      message:
+        description: 'Commit message (will be appended after ✂️ version)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -37,7 +42,12 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           git add package.json package-lock.json
-          git commit -m "✂️ $VERSION"
+          MESSAGE="${{ inputs.message }}"
+          if [ -n "$MESSAGE" ]; then
+            git commit -m "✂️ $VERSION - $MESSAGE"
+          else
+            git commit -m "✂️ $VERSION"
+          fi
           git tag "v$VERSION"
 
       - name: Push changes
