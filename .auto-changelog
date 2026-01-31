@@ -1,0 +1,8 @@
+{
+  "output": "CHANGELOG.md",
+  "template": "compact",
+  "unreleased": false,
+  "commitLimit": 3,
+  "backfillLimit": 3,
+  "hideCredit": true
+}
