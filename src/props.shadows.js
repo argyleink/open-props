@@ -48,6 +48,13 @@ const Shadows = {
     0 41px 33px -2px hsl(var(--shadow-color) / var(--shadow-strength-7)),
     0 100px 80px -2px hsl(var(--shadow-color) / var(--shadow-strength-8))`,
 
+  '--text-shadow-1': '0 0 1px hsl(var(--shadow-color) / var(--shadow-strength-3))',
+  '--text-shadow-2': '0 0 2px hsl(var(--shadow-color) / var(--shadow-strength-4))',
+  '--text-shadow-3': '0 0 3px hsl(var(--shadow-color) / var(--shadow-strength-5))',
+  '--text-shadow-4': '0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-6))',
+  '--text-shadow-5': '0 0 7px hsl(var(--shadow-color) / var(--shadow-strength-7))',
+  '--text-shadow-6': '0 0 10px hsl(var(--shadow-color) / var(--shadow-strength-8))',
+
   '--inner-shadow-0': 'inset 0 0 0 1px hsl(var(--shadow-color) / var(--shadow-strength-10))',
   '--inner-shadow-1': 'inset 0 1px 2px 0 hsl(var(--shadow-color) / var(--shadow-strength-10)), var(--inner-shadow-highlight)',
   '--inner-shadow-2': 'inset 0 1px 4px 0 hsl(var(--shadow-color) / var(--shadow-strength-10)), var(--inner-shadow-highlight)',

@@ -401,6 +401,188 @@
               ]
             }
           },
+          "text": {
+            "shadow-6": {
+              "$type": "shadow",
+              "$value": {
+                "color": {
+                  "colorSpace": "hsl",
+                  "components": [
+                    220,
+                    3,
+                    15
+                  ],
+                  "alpha": 0.08
+                },
+                "offsetX": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "offsetY": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "blur": {
+                  "value": 10,
+                  "unit": "px"
+                },
+                "spread": {
+                  "value": 0,
+                  "unit": "px"
+                }
+              }
+            },
+            "shadow-5": {
+              "$type": "shadow",
+              "$value": {
+                "color": {
+                  "colorSpace": "hsl",
+                  "components": [
+                    220,
+                    3,
+                    15
+                  ],
+                  "alpha": 0.07
+                },
+                "offsetX": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "offsetY": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "blur": {
+                  "value": 7,
+                  "unit": "px"
+                },
+                "spread": {
+                  "value": 0,
+                  "unit": "px"
+                }
+              }
+            },
+            "shadow-4": {
+              "$type": "shadow",
+              "$value": {
+                "color": {
+                  "colorSpace": "hsl",
+                  "components": [
+                    220,
+                    3,
+                    15
+                  ],
+                  "alpha": 0.06
+                },
+                "offsetX": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "offsetY": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "blur": {
+                  "value": 5,
+                  "unit": "px"
+                },
+                "spread": {
+                  "value": 0,
+                  "unit": "px"
+                }
+              }
+            },
+            "shadow-3": {
+              "$type": "shadow",
+              "$value": {
+                "color": {
+                  "colorSpace": "hsl",
+                  "components": [
+                    220,
+                    3,
+                    15
+                  ],
+                  "alpha": 0.05
+                },
+                "offsetX": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "offsetY": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "blur": {
+                  "value": 3,
+                  "unit": "px"
+                },
+                "spread": {
+                  "value": 0,
+                  "unit": "px"
+                }
+              }
+            },
+            "shadow-2": {
+              "$type": "shadow",
+              "$value": {
+                "color": {
+                  "colorSpace": "hsl",
+                  "components": [
+                    220,
+                    3,
+                    15
+                  ],
+                  "alpha": 0.04
+                },
+                "offsetX": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "offsetY": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "blur": {
+                  "value": 2,
+                  "unit": "px"
+                },
+                "spread": {
+                  "value": 0,
+                  "unit": "px"
+                }
+              }
+            },
+            "shadow-1": {
+              "$type": "shadow",
+              "$value": {
+                "color": {
+                  "colorSpace": "hsl",
+                  "components": [
+                    220,
+                    3,
+                    15
+                  ],
+                  "alpha": 0.03
+                },
+                "offsetX": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "offsetY": {
+                  "value": 0,
+                  "unit": "px"
+                },
+                "blur": {
+                  "value": 1,
+                  "unit": "px"
+                },
+                "spread": {
+                  "value": 0,
+                  "unit": "px"
+                }
+              }
+            }
+          },
           "shadow": {
             "1": {
               "$type": "shadow",
