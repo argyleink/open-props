@@ -9,6 +9,14 @@ const Shadows = {
   '--shadow-strength-8': 'calc(var(--shadow-strength) + 7%)',
   '--shadow-strength-10': 'calc(var(--shadow-strength) + 9%)',
 
+  '--text-shadow-strength': '25%',
+  '--text-shadow-strength-1': 'calc(var(--text-shadow-strength) + 5%)',
+  '--text-shadow-strength-2': 'calc(var(--text-shadow-strength) + 10%)',
+  '--text-shadow-strength-3': 'calc(var(--text-shadow-strength) + 15%)',
+  '--text-shadow-strength-4': 'calc(var(--text-shadow-strength) + 20%)',
+  '--text-shadow-strength-5': 'calc(var(--text-shadow-strength) + 25%)',
+  '--text-shadow-strength-6': 'calc(var(--text-shadow-strength) + 30%)',
+
   '--shadow-color-@media:dark': '220 40% 2%',
   '--shadow-strength-@media:dark': '25%',
 
@@ -48,12 +56,12 @@ const Shadows = {
     0 41px 33px -2px hsl(var(--shadow-color) / var(--shadow-strength-7)),
     0 100px 80px -2px hsl(var(--shadow-color) / var(--shadow-strength-8))`,
 
-  '--text-shadow-1': '0 0 1px hsl(var(--shadow-color) / var(--shadow-strength-3))',
-  '--text-shadow-2': '0 0 2px hsl(var(--shadow-color) / var(--shadow-strength-4))',
-  '--text-shadow-3': '0 0 3px hsl(var(--shadow-color) / var(--shadow-strength-5))',
-  '--text-shadow-4': '0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-6))',
-  '--text-shadow-5': '0 0 7px hsl(var(--shadow-color) / var(--shadow-strength-7))',
-  '--text-shadow-6': '0 0 10px hsl(var(--shadow-color) / var(--shadow-strength-8))',
+  '--text-shadow-1': '0 0 1px hsl(var(--shadow-color) / var(--text-shadow-strength-1))',
+  '--text-shadow-2': '0 0 2px hsl(var(--shadow-color) / var(--text-shadow-strength-2))',
+  '--text-shadow-3': '0 0 3px hsl(var(--shadow-color) / var(--text-shadow-strength-3))',
+  '--text-shadow-4': '0 0 5px hsl(var(--shadow-color) / var(--text-shadow-strength-4))',
+  '--text-shadow-5': '0 0 7px hsl(var(--shadow-color) / var(--text-shadow-strength-5))',
+  '--text-shadow-6': '0 0 10px hsl(var(--shadow-color) / var(--text-shadow-strength-6))',
 
   '--inner-shadow-0': 'inset 0 0 0 1px hsl(var(--shadow-color) / var(--shadow-strength-10))',
   '--inner-shadow-1': 'inset 0 1px 2px 0 hsl(var(--shadow-color) / var(--shadow-strength-10)), var(--inner-shadow-highlight)',
@@ -69,6 +77,7 @@ export const StaticShadows = Object.fromEntries(
     .map(([key, value]) => {
       value = value.replace(/var\(--shadow-color\)/g, Shadows['--shadow-color'])
       value = value.replace(/var\(--shadow-strength-(\d+)\)/g, (_match, strenth) => `${strenth}%`)
+      value = value.replace(/var\(--text-shadow-strength-(\d+)\)/g, (_match, strength) => `${Number(strength) * 5 + 25}%`)
       value = value.replace(/var\(--inner-shadow-highlight\)/g, Shadows['--inner-shadow-highlight'])
       return [key, value]
     })

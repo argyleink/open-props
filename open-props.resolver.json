@@ -412,7 +412,7 @@
                     3,
                     15
                   ],
-                  "alpha": 0.08
+                  "alpha": 0.55
                 },
                 "offsetX": {
                   "value": 0,
@@ -442,7 +442,7 @@
                     3,
                     15
                   ],
-                  "alpha": 0.07
+                  "alpha": 0.5
                 },
                 "offsetX": {
                   "value": 0,
@@ -472,7 +472,7 @@
                     3,
                     15
                   ],
-                  "alpha": 0.06
+                  "alpha": 0.45
                 },
                 "offsetX": {
                   "value": 0,
@@ -502,7 +502,7 @@
                     3,
                     15
                   ],
-                  "alpha": 0.05
+                  "alpha": 0.4
                 },
                 "offsetX": {
                   "value": 0,
@@ -532,7 +532,7 @@
                     3,
                     15
                   ],
-                  "alpha": 0.04
+                  "alpha": 0.35
                 },
                 "offsetX": {
                   "value": 0,
@@ -562,7 +562,7 @@
                     3,
                     15
                   ],
-                  "alpha": 0.03
+                  "alpha": 0.3
                 },
                 "offsetX": {
                   "value": 0,

@@ -1121,6 +1121,21 @@ pre[class*="language-"] {
   }
 }
 
+.text-shadow-demos {
+  display: grid;
+  gap: var(--size-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+
+  & > h3 {
+    background: var(--surface-2);
+    border-radius: var(--radius-3);
+    color: var(--text-1);
+    margin: 0;
+    padding: var(--size-6) var(--size-4);
+    text-align: center;
+  }
+}
+
 .border-demos {
   display: flex;
   flex-flow: row wrap;
