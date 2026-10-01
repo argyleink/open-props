@@ -1,0 +1,28 @@
+@import "../props.media.css";
+
+/*
+  Open/close transitions for [popover] and dialog, including ::backdrop.
+  Transitioning display and overlay with allow-discrete keeps the element
+  rendered while the closed-state animation plays; @starting-style handles
+  the shown state. From the recipes in #536.
+*/
+
+@media (--motionOK) {
+  [popover], dialog, ::backdrop {
+    transition:
+      display 1s allow-discrete,
+      overlay 1s allow-discrete,
+      opacity 1s;
+    opacity: 0;
+  }
+
+  :popover-open, :popover-open::backdrop, [open], [open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    :popover-open, :popover-open::backdrop, [open], [open]::backdrop {
+      opacity: 0;
+    }
+  }
+}
