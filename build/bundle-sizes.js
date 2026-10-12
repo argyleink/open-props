@@ -3,7 +3,8 @@ import postcss from 'postcss';
 import fs from 'node:fs/promises';
 import pkg from '../postcss.config.cjs';
 import { createRequire } from 'node:module';
-import { sync as brotli } from 'brotli-size';
+import { brotliCompressSync } from 'node:zlib';
+const brotli = (buf) => brotliCompressSync(buf).length;
 import { gzipSizeSync as gzip } from 'gzip-size';
 
 // Comes in handy later when we run postcss

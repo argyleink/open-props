@@ -381,19 +381,18 @@
     "lib:brand-colors": "postcss src/props.brand-colors.css -o brand-colors.min.css"
   },
   "devDependencies": {
-    "auto-changelog": "^2.5.0",
-    "ava": "^3.15.0",
-    "brotli-size": "^4.0.0",
+    "auto-changelog": "^2.7.0",
+    "ava": "^7.0.0",
     "colorjs.io": "^0.4.1-patch.1",
-    "concurrently": "^7.2.2",
-    "cssnano": "^5.1.10",
+    "concurrently": "^10.0.5",
+    "cssnano": "^9.1.2",
     "gzip-size": "^7.0.0",
     "json": "^11.0.0",
     "open-color": "^1.9.1",
-    "postcss": "^8.3.9",
-    "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.2",
-    "postcss-preset-env": "^10.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^12.0.0",
+    "postcss-import": "^17.0.0",
+    "postcss-preset-env": "^11.5.5",
     "typescript": "^4.9.4"
   }
 }
